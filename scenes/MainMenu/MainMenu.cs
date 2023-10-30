@@ -10,6 +10,7 @@ namespace GetOn.scenes.MainMenu {
         private Button _testPDFButton;
 
         public override void _Ready() {
+            // Hi!
             _sharedNode = GetNode<SharedNode>("/root/SharedNode");
             _nameInput = GetNode<LineEdit>("NameInput");
             _nameInput.Connect("text_changed", this, nameof(OnTextEntered));
