@@ -10,7 +10,7 @@ namespace GetOn.scenes.MainMenu {
         private Button _testPDFButton;
 
         public override void _Ready() {
-            // Hi!
+            // Hi! I'm the main menu. I'm the first thing you see when you start the game.
             _sharedNode = GetNode<SharedNode>("/root/SharedNode");
             _nameInput = GetNode<LineEdit>("NameInput");
             _nameInput.Connect("text_changed", this, nameof(OnTextEntered));
