@@ -1,6 +1,14 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://scenes/Programming/Programming.cs" type="Script" id=1]
+[ext_resource path="res://scenes/Programming/DragAndDrop.cs" type="Script" id=2]
+[ext_resource path="res://icon.png" type="Texture" id=3]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 31.5, 30.5 )
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 32, 31 )
 
 [node name="Programming" type="Node2D"]
 script = ExtResource( 1 )
@@ -11,3 +19,52 @@ margin_top = 8.0
 margin_right = 1015.0
 margin_bottom = 47.0
 text = "Back"
+
+[node name="CodeBox" type="Area2D" parent="."]
+visible = false
+position = Vector2( 165, 155 )
+collision_layer = 4
+collision_mask = 4
+script = ExtResource( 2 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CodeBox"]
+position = Vector2( 0.5, 0.5 )
+shape = SubResource( 1 )
+
+[node name="Sprite" type="Sprite" parent="CodeBox"]
+texture = ExtResource( 3 )
+
+[node name="Area2D2" type="Area2D" parent="."]
+visible = false
+position = Vector2( 408, 156 )
+script = ExtResource( 2 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D2"]
+shape = SubResource( 1 )
+
+[node name="Sprite" type="Sprite" parent="Area2D2"]
+texture = ExtResource( 3 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." groups=["DragAndDropGroup"]]
+position = Vector2( 304, 238 )
+input_pickable = true
+script = ExtResource( 2 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+shape = SubResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="StaticBody2D"]
+texture = ExtResource( 3 )
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="." groups=["DragAndDropGroup"]]
+position = Vector2( 574, 238 )
+collision_layer = 2
+collision_mask = 2
+input_pickable = true
+script = ExtResource( 2 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2"]
+shape = SubResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="StaticBody2D2"]
+texture = ExtResource( 3 )
