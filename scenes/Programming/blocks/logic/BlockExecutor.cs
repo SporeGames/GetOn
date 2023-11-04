@@ -12,6 +12,10 @@ namespace GetOn.scenes.Programming.blocks.logic {
         public AbstractBlock StartBlock;
 
         public void Start() {
+            if (StartBlock == null) {
+                GD.PrintErr("No start block set!");
+                return;
+            }
             _threadStart = Execute;
             ExecutionThread = new Thread(_threadStart);
             ExecutionThread.Start();
@@ -32,7 +36,12 @@ namespace GetOn.scenes.Programming.blocks.logic {
                     return;
                 }
                 GD.Print("Unknown exception occurred during block execution: " + e.Message);
+                GD.Print(e.StackTrace);
             }
+        }
+
+        public void Kill() {
+            ExecutionThread.Abort();
         }
     }
 }

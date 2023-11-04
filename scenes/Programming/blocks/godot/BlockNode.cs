@@ -9,9 +9,9 @@ namespace GetOn.scenes.Programming.blocks.godot {
         public string BlockType = "";
 
         public BlockNode Previous;
-        public BlockNode Next;
-        
-        public List<VariableNode> ConnectedVariables = new List<VariableNode>();
+
+        public GodotNode[] ConnectedVariables = new GodotNode[8];
+        public List<ConditionNode> ConnectedConditions = new List<ConditionNode>();
         
         public override void _Ready() {
             RectMinSize = new Vector2(0, 100);

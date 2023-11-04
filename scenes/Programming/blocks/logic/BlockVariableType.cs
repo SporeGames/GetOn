@@ -5,6 +5,10 @@
         Bool,
         String,
         Node,
+        Condition,
+        PositionX,
+        PositionY,
+        Float,
         None
     }
 }

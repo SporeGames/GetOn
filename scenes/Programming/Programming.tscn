@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=20 format=2]
 
 [ext_resource path="res://scenes/Programming/Programming.cs" type="Script" id=1]
 [ext_resource path="res://scenes/Programming/blocks/godot/VariableNode.cs" type="Script" id=2]
@@ -9,6 +9,11 @@
 [ext_resource path="res://art/Hintergrund .png" type="Texture" id=7]
 [ext_resource path="res://scenes/Programming/CountdownTimer.cs" type="Script" id=8]
 [ext_resource path="res://font/BAHNSCHRIFT 1.TTF" type="DynamicFontData" id=9]
+[ext_resource path="res://scenes/Programming/blocks/KeyAPressedCondition.cs" type="Script" id=10]
+[ext_resource path="res://scenes/Programming/blocks/IfBlock.cs" type="Script" id=11]
+[ext_resource path="res://scenes/Programming/blocks/ProcessBlock.cs" type="Script" id=12]
+[ext_resource path="res://scenes/Programming/blocks/PlayerPositionXBlock.cs" type="Script" id=13]
+[ext_resource path="res://scenes/Programming/blocks/PlayerPositionYBlock.cs" type="Script" id=14]
 
 [sub_resource type="DynamicFont" id=5]
 size = 22
@@ -31,8 +36,8 @@ script = ExtResource( 1 )
 [node name="Game" type="Node" parent="."]
 
 [node name="Background" type="Sprite" parent="Game"]
-position = Vector2( 1480.5, 539.5 )
-scale = Vector2( 0.380085, 0.627439 )
+position = Vector2( 1480.5, 550 )
+scale = Vector2( 0.380085, 0.614634 )
 texture = ExtResource( 7 )
 
 [node name="Flag" type="Sprite" parent="Game"]
@@ -99,8 +104,6 @@ shape = SubResource( 4 )
 margin_right = 1058.0
 margin_bottom = 1078.0
 
-[node name="Nodes" type="Node" parent="ProgrammingUI"]
-
 [node name="AspectRatioContainer" type="AspectRatioContainer" parent="ProgrammingUI"]
 margin_right = 1032.0
 margin_bottom = 1080.0
@@ -115,27 +118,209 @@ scroll_offset = Vector2( -40, -40 )
 minimap_enabled = false
 script = ExtResource( 3 )
 
-[node name="VariableNode" type="GraphNode" parent="ProgrammingUI/AspectRatioContainer/NodeGraph"]
+[node name="FloatInput2" type="GraphNode" parent="ProgrammingUI/AspectRatioContainer/NodeGraph"]
 margin_left = 40.0
 margin_top = 40.0
-margin_right = 150.0
-margin_bottom = 111.0
+margin_right = 182.0
+margin_bottom = 118.0
 mouse_filter = 1
-title = "Test"
+title = "Variable"
 slot/0/left_enabled = false
 slot/0/left_type = 0
 slot/0/left_color = Color( 0.745098, 0, 0, 1 )
 slot/0/right_enabled = true
-slot/0/right_type = 0
-slot/0/right_color = Color( 1, 1, 1, 1 )
+slot/0/right_type = 2
+slot/0/right_color = Color( 0.0431373, 0, 0.784314, 1 )
+slot/1/left_enabled = false
+slot/1/left_type = 0
+slot/1/left_color = Color( 1, 1, 1, 1 )
+slot/1/right_enabled = false
+slot/1/right_type = 0
+slot/1/right_color = Color( 1, 1, 1, 1 )
 script = ExtResource( 2 )
+Type = 8
+configureable = true
 
-[node name="ItemList" type="ItemList" parent="ProgrammingUI/AspectRatioContainer/NodeGraph/VariableNode"]
+[node name="Player" type="RichTextLabel" parent="ProgrammingUI/AspectRatioContainer/NodeGraph/FloatInput2"]
 margin_left = 16.0
 margin_top = 24.0
-margin_right = 94.0
-margin_bottom = 33.0
-auto_height = true
+margin_right = 126.0
+margin_bottom = 39.0
+bbcode_enabled = true
+bbcode_text = "[right]Float"
+text = "Float"
+fit_content_height = true
+
+[node name="InputSlider" type="HSlider" parent="ProgrammingUI/AspectRatioContainer/NodeGraph/FloatInput2"]
+margin_left = 16.0
+margin_top = 40.0
+margin_right = 126.0
+margin_bottom = 56.0
+step = 0.5
+
+[node name="InputSliderText" type="RichTextLabel" parent="ProgrammingUI/AspectRatioContainer/NodeGraph/FloatInput2/InputSlider"]
+margin_top = 19.0
+margin_right = 40.0
+margin_bottom = 35.0
+text = "0"
+
+[node name="FloatInput" type="GraphNode" parent="ProgrammingUI/AspectRatioContainer/NodeGraph"]
+margin_left = 40.0
+margin_top = 40.0
+margin_right = 181.0
+margin_bottom = 117.0
+mouse_filter = 1
+title = "Variable"
+slot/0/left_enabled = false
+slot/0/left_type = 0
+slot/0/left_color = Color( 0.745098, 0, 0, 1 )
+slot/0/right_enabled = true
+slot/0/right_type = 2
+slot/0/right_color = Color( 0.0431373, 0, 0.784314, 1 )
+slot/1/left_enabled = false
+slot/1/left_type = 0
+slot/1/left_color = Color( 1, 1, 1, 1 )
+slot/1/right_enabled = false
+slot/1/right_type = 0
+slot/1/right_color = Color( 1, 1, 1, 1 )
+script = ExtResource( 2 )
+Type = 8
+configureable = true
+
+[node name="Player" type="RichTextLabel" parent="ProgrammingUI/AspectRatioContainer/NodeGraph/FloatInput"]
+margin_left = 16.0
+margin_top = 24.0
+margin_right = 125.0
+margin_bottom = 39.0
+bbcode_enabled = true
+bbcode_text = "[right]Float"
+text = "Float"
+fit_content_height = true
+
+[node name="InputSlider" type="HSlider" parent="ProgrammingUI/AspectRatioContainer/NodeGraph/FloatInput"]
+margin_left = 16.0
+margin_top = 40.0
+margin_right = 125.0
+margin_bottom = 56.0
+step = 0.5
+
+[node name="InputSliderText" type="RichTextLabel" parent="ProgrammingUI/AspectRatioContainer/NodeGraph/FloatInput/InputSlider"]
+margin_top = 19.0
+margin_right = 40.0
+margin_bottom = 35.0
+text = "0"
+
+[node name="PlayerVariable" type="GraphNode" parent="ProgrammingUI/AspectRatioContainer/NodeGraph"]
+margin_left = 40.0
+margin_top = 40.0
+margin_right = 189.0
+margin_bottom = 128.0
+mouse_filter = 1
+title = "Variable"
+slot/0/left_enabled = false
+slot/0/left_type = 0
+slot/0/left_color = Color( 0.745098, 0, 0, 1 )
+slot/0/right_enabled = true
+slot/0/right_type = 2
+slot/0/right_color = Color( 0.0431373, 0, 0.784314, 1 )
+slot/1/left_enabled = false
+slot/1/left_type = 0
+slot/1/left_color = Color( 1, 1, 1, 1 )
+slot/1/right_enabled = false
+slot/1/right_type = 0
+slot/1/right_color = Color( 1, 1, 1, 1 )
+script = ExtResource( 2 )
+
+[node name="Player" type="RichTextLabel" parent="ProgrammingUI/AspectRatioContainer/NodeGraph/PlayerVariable"]
+margin_left = 16.0
+margin_top = 24.0
+margin_right = 133.0
+margin_bottom = 39.0
+bbcode_enabled = true
+bbcode_text = "[right]Player"
+text = "Player"
+fit_content_height = true
+
+[node name="InputSlider" type="HSlider" parent="ProgrammingUI/AspectRatioContainer/NodeGraph/PlayerVariable"]
+visible = false
+margin_left = 16.0
+margin_top = 40.0
+margin_right = 133.0
+margin_bottom = 56.0
+step = 0.5
+
+[node name="InputSliderText" type="RichTextLabel" parent="ProgrammingUI/AspectRatioContainer/NodeGraph/PlayerVariable/InputSlider"]
+margin_top = 19.0
+margin_right = 40.0
+margin_bottom = 35.0
+text = "0"
+
+[node name="Addition2" type="GraphNode" parent="ProgrammingUI/AspectRatioContainer/NodeGraph"]
+margin_left = 40.0
+margin_top = 40.0
+margin_right = 159.0
+margin_bottom = 148.0
+mouse_filter = 1
+title = "a + b"
+slot/0/left_enabled = true
+slot/0/left_type = 0
+slot/0/left_color = Color( 1, 1, 1, 1 )
+slot/0/right_enabled = true
+slot/0/right_type = 0
+slot/0/right_color = Color( 1, 1, 1, 1 )
+slot/1/left_enabled = true
+slot/1/left_type = 3
+slot/1/left_color = Color( 0, 1, 0.972549, 1 )
+slot/1/right_enabled = false
+slot/1/right_type = 0
+slot/1/right_color = Color( 1, 1, 1, 1 )
+slot/2/left_enabled = true
+slot/2/left_type = 3
+slot/2/left_color = Color( 0, 1, 0.972549, 1 )
+slot/2/right_enabled = false
+slot/2/right_type = 0
+slot/2/right_color = Color( 1, 1, 1, 1 )
+slot/3/left_enabled = false
+slot/3/left_type = 0
+slot/3/left_color = Color( 1, 1, 1, 1 )
+slot/3/right_enabled = true
+slot/3/right_type = 3
+slot/3/right_color = Color( 0, 1, 0.972549, 1 )
+script = ExtResource( 4 )
+
+[node name="ExecutionFlowPlaceholder" type="RichTextLabel" parent="ProgrammingUI/AspectRatioContainer/NodeGraph/Addition2"]
+margin_left = 16.0
+margin_top = 24.0
+margin_right = 103.0
+margin_bottom = 54.0
+text = "- - - - - - - - - - - - >"
+fit_content_height = true
+
+[node name="Input 1" type="RichTextLabel" parent="ProgrammingUI/AspectRatioContainer/NodeGraph/Addition2"]
+margin_left = 16.0
+margin_top = 55.0
+margin_right = 103.0
+margin_bottom = 70.0
+text = "a"
+fit_content_height = true
+
+[node name="Input 2" type="RichTextLabel" parent="ProgrammingUI/AspectRatioContainer/NodeGraph/Addition2"]
+margin_left = 16.0
+margin_top = 71.0
+margin_right = 103.0
+margin_bottom = 86.0
+text = "b"
+fit_content_height = true
+
+[node name="Output" type="RichTextLabel" parent="ProgrammingUI/AspectRatioContainer/NodeGraph/Addition2"]
+margin_left = 16.0
+margin_top = 87.0
+margin_right = 103.0
+margin_bottom = 102.0
+bbcode_enabled = true
+bbcode_text = "[right]="
+text = "="
+fit_content_height = true
 
 [node name="Addition" type="GraphNode" parent="ProgrammingUI/AspectRatioContainer/NodeGraph"]
 margin_left = 40.0
@@ -151,14 +336,14 @@ slot/0/right_enabled = true
 slot/0/right_type = 0
 slot/0/right_color = Color( 1, 1, 1, 1 )
 slot/1/left_enabled = true
-slot/1/left_type = 0
-slot/1/left_color = Color( 1, 0, 0, 1 )
+slot/1/left_type = 3
+slot/1/left_color = Color( 0, 1, 0.972549, 1 )
 slot/1/right_enabled = false
 slot/1/right_type = 0
 slot/1/right_color = Color( 1, 1, 1, 1 )
 slot/2/left_enabled = true
-slot/2/left_type = 0
-slot/2/left_color = Color( 1, 0, 0, 1 )
+slot/2/left_type = 3
+slot/2/left_color = Color( 0, 1, 0.972549, 1 )
 slot/2/right_enabled = false
 slot/2/right_type = 0
 slot/2/right_color = Color( 1, 1, 1, 1 )
@@ -166,8 +351,8 @@ slot/3/left_enabled = false
 slot/3/left_type = 0
 slot/3/left_color = Color( 1, 1, 1, 1 )
 slot/3/right_enabled = true
-slot/3/right_type = 0
-slot/3/right_color = Color( 1, 1, 1, 1 )
+slot/3/right_type = 3
+slot/3/right_color = Color( 0, 1, 0.972549, 1 )
 script = ExtResource( 4 )
 
 [node name="ExecutionFlowPlaceholder" type="RichTextLabel" parent="ProgrammingUI/AspectRatioContainer/NodeGraph/Addition"]
@@ -199,7 +384,63 @@ margin_left = 16.0
 margin_top = 72.0
 margin_right = 135.0
 margin_bottom = 87.0
+bbcode_enabled = true
+bbcode_text = "[right]="
 text = "="
+fit_content_height = true
+
+[node name="PlayerPosY" type="GraphNode" parent="ProgrammingUI/AspectRatioContainer/NodeGraph"]
+margin_left = 40.0
+margin_top = 40.0
+margin_right = 159.0
+margin_bottom = 132.0
+rect_pivot_offset = Vector2( -638, -126 )
+mouse_filter = 1
+title = "Position.Y"
+slot/0/left_enabled = true
+slot/0/left_type = 0
+slot/0/left_color = Color( 1, 1, 1, 1 )
+slot/0/right_enabled = true
+slot/0/right_type = 0
+slot/0/right_color = Color( 1, 1, 1, 1 )
+slot/1/left_enabled = true
+slot/1/left_type = 2
+slot/1/left_color = Color( 0.0431373, 0, 0.784314, 1 )
+slot/1/right_enabled = false
+slot/1/right_type = 3
+slot/1/right_color = Color( 0, 1, 0.972549, 1 )
+slot/2/left_enabled = false
+slot/2/left_type = 0
+slot/2/left_color = Color( 1, 1, 1, 1 )
+slot/2/right_enabled = true
+slot/2/right_type = 3
+slot/2/right_color = Color( 0, 1, 0.972549, 1 )
+script = ExtResource( 14 )
+
+[node name="ExecutionFlowPlaceholder" type="RichTextLabel" parent="ProgrammingUI/AspectRatioContainer/NodeGraph/PlayerPosY"]
+margin_left = 16.0
+margin_top = 24.0
+margin_right = 103.0
+margin_bottom = 54.0
+text = "- - - - - - - - - - - - >"
+fit_content_height = true
+
+[node name="Player" type="RichTextLabel" parent="ProgrammingUI/AspectRatioContainer/NodeGraph/PlayerPosY"]
+margin_left = 16.0
+margin_top = 55.0
+margin_right = 103.0
+margin_bottom = 70.0
+text = "Player"
+fit_content_height = true
+
+[node name="PosY" type="RichTextLabel" parent="ProgrammingUI/AspectRatioContainer/NodeGraph/PlayerPosY"]
+margin_left = 16.0
+margin_top = 71.0
+margin_right = 103.0
+margin_bottom = 86.0
+bbcode_enabled = true
+bbcode_text = "[right]Position Y"
+text = "Position Y"
 fit_content_height = true
 
 [node name="SetPlayerPosition" type="GraphNode" parent="ProgrammingUI/AspectRatioContainer/NodeGraph"]
@@ -218,11 +459,23 @@ slot/0/right_enabled = true
 slot/0/right_type = 0
 slot/0/right_color = Color( 1, 1, 1, 1 )
 slot/1/left_enabled = true
-slot/1/left_type = 0
+slot/1/left_type = 2
 slot/1/left_color = Color( 0.14902, 0, 1, 1 )
 slot/1/right_enabled = false
 slot/1/right_type = 0
 slot/1/right_color = Color( 1, 1, 1, 1 )
+slot/2/left_enabled = true
+slot/2/left_type = 3
+slot/2/left_color = Color( 0, 1, 0.972549, 1 )
+slot/2/right_enabled = false
+slot/2/right_type = 0
+slot/2/right_color = Color( 1, 1, 1, 1 )
+slot/3/left_enabled = true
+slot/3/left_type = 3
+slot/3/left_color = Color( 0, 1, 0.972549, 1 )
+slot/3/right_enabled = false
+slot/3/right_type = 0
+slot/3/right_color = Color( 1, 1, 1, 1 )
 script = ExtResource( 4 )
 
 [node name="ExecutionFlowPlaceholder" type="RichTextLabel" parent="ProgrammingUI/AspectRatioContainer/NodeGraph/SetPlayerPosition"]
@@ -240,3 +493,242 @@ margin_right = 135.0
 margin_bottom = 55.0
 text = "Player"
 fit_content_height = true
+
+[node name="x" type="RichTextLabel" parent="ProgrammingUI/AspectRatioContainer/NodeGraph/SetPlayerPosition"]
+margin_left = 16.0
+margin_top = 56.0
+margin_right = 135.0
+margin_bottom = 71.0
+text = "x"
+fit_content_height = true
+
+[node name="y" type="RichTextLabel" parent="ProgrammingUI/AspectRatioContainer/NodeGraph/SetPlayerPosition"]
+margin_left = 16.0
+margin_top = 72.0
+margin_right = 135.0
+margin_bottom = 87.0
+text = "y"
+fit_content_height = true
+
+[node name="PlayerPosX" type="GraphNode" parent="ProgrammingUI/AspectRatioContainer/NodeGraph"]
+margin_left = 43.0
+margin_top = 235.0
+margin_right = 192.0
+margin_bottom = 312.0
+rect_pivot_offset = Vector2( -638, -126 )
+mouse_filter = 1
+title = "Position.X"
+slot/0/left_enabled = true
+slot/0/left_type = 0
+slot/0/left_color = Color( 1, 1, 1, 1 )
+slot/0/right_enabled = true
+slot/0/right_type = 0
+slot/0/right_color = Color( 1, 1, 1, 1 )
+slot/1/left_enabled = true
+slot/1/left_type = 2
+slot/1/left_color = Color( 0.0431373, 0, 0.784314, 1 )
+slot/1/right_enabled = false
+slot/1/right_type = 2
+slot/1/right_color = Color( 0, 1, 0.972549, 1 )
+slot/2/left_enabled = false
+slot/2/left_type = 0
+slot/2/left_color = Color( 1, 1, 1, 1 )
+slot/2/right_enabled = true
+slot/2/right_type = 3
+slot/2/right_color = Color( 0, 1, 0.972549, 1 )
+script = ExtResource( 13 )
+
+[node name="ExecutionFlowPlaceholder" type="RichTextLabel" parent="ProgrammingUI/AspectRatioContainer/NodeGraph/PlayerPosX"]
+margin_left = 16.0
+margin_top = 24.0
+margin_right = 133.0
+margin_bottom = 39.0
+text = "- - - - - - - - - - - - >"
+fit_content_height = true
+
+[node name="Player" type="RichTextLabel" parent="ProgrammingUI/AspectRatioContainer/NodeGraph/PlayerPosX"]
+margin_left = 16.0
+margin_top = 40.0
+margin_right = 133.0
+margin_bottom = 55.0
+text = "Player"
+fit_content_height = true
+
+[node name="PosX" type="RichTextLabel" parent="ProgrammingUI/AspectRatioContainer/NodeGraph/PlayerPosX"]
+margin_left = 16.0
+margin_top = 56.0
+margin_right = 133.0
+margin_bottom = 71.0
+bbcode_enabled = true
+bbcode_text = "[right]Position X"
+text = "Position X"
+fit_content_height = true
+
+[node name="IfBlock2" type="GraphNode" parent="ProgrammingUI/AspectRatioContainer/NodeGraph"]
+margin_left = 40.0
+margin_top = 40.0
+margin_right = 159.0
+margin_bottom = 116.0
+mouse_filter = 1
+title = "if ()"
+slot/0/left_enabled = true
+slot/0/left_type = 0
+slot/0/left_color = Color( 1, 1, 1, 1 )
+slot/0/right_enabled = true
+slot/0/right_type = 0
+slot/0/right_color = Color( 1, 1, 1, 1 )
+slot/1/left_enabled = true
+slot/1/left_type = 1
+slot/1/left_color = Color( 0.933333, 0, 0.701961, 1 )
+slot/1/right_enabled = false
+slot/1/right_type = 0
+slot/1/right_color = Color( 1, 1, 1, 1 )
+script = ExtResource( 11 )
+
+[node name="ExecutionFlowPlaceholder" type="RichTextLabel" parent="ProgrammingUI/AspectRatioContainer/NodeGraph/IfBlock2"]
+margin_left = 16.0
+margin_top = 24.0
+margin_right = 103.0
+margin_bottom = 54.0
+text = "- - - - - - - - - - - - >"
+fit_content_height = true
+
+[node name="Condition" type="RichTextLabel" parent="ProgrammingUI/AspectRatioContainer/NodeGraph/IfBlock2"]
+margin_left = 16.0
+margin_top = 55.0
+margin_right = 103.0
+margin_bottom = 70.0
+text = "Condition"
+fit_content_height = true
+
+[node name="IfBlock" type="GraphNode" parent="ProgrammingUI/AspectRatioContainer/NodeGraph"]
+margin_left = 40.0
+margin_top = 40.0
+margin_right = 191.0
+margin_bottom = 117.0
+mouse_filter = 1
+title = "if ()"
+slot/0/left_enabled = true
+slot/0/left_type = 0
+slot/0/left_color = Color( 1, 1, 1, 1 )
+slot/0/right_enabled = true
+slot/0/right_type = 0
+slot/0/right_color = Color( 1, 1, 1, 1 )
+slot/1/left_enabled = true
+slot/1/left_type = 1
+slot/1/left_color = Color( 0.933333, 0, 0.701961, 1 )
+slot/1/right_enabled = false
+slot/1/right_type = 0
+slot/1/right_color = Color( 1, 1, 1, 1 )
+script = ExtResource( 11 )
+
+[node name="ExecutionFlowPlaceholder" type="RichTextLabel" parent="ProgrammingUI/AspectRatioContainer/NodeGraph/IfBlock"]
+margin_left = 16.0
+margin_top = 24.0
+margin_right = 135.0
+margin_bottom = 39.0
+text = "- - - - - - - - - - - - >"
+fit_content_height = true
+
+[node name="Condition" type="RichTextLabel" parent="ProgrammingUI/AspectRatioContainer/NodeGraph/IfBlock"]
+margin_left = 16.0
+margin_top = 40.0
+margin_right = 135.0
+margin_bottom = 55.0
+text = "Condition"
+fit_content_height = true
+
+[node name="IfDPressed" type="GraphNode" parent="ProgrammingUI/AspectRatioContainer/NodeGraph"]
+margin_left = 40.0
+margin_top = 40.0
+margin_right = 187.0
+margin_bottom = 85.0
+mouse_filter = 1
+title = "isKeyPressed(\"D\")"
+slot/0/left_enabled = false
+slot/0/left_type = 0
+slot/0/left_color = Color( 1, 1, 1, 1 )
+slot/0/right_enabled = true
+slot/0/right_type = 1
+slot/0/right_color = Color( 0.580392, 0, 0.678431, 1 )
+script = ExtResource( 10 )
+
+[node name="RichTextLabel" type="RichTextLabel" parent="ProgrammingUI/AspectRatioContainer/NodeGraph/IfDPressed"]
+margin_left = 16.0
+margin_top = 24.0
+margin_right = 131.0
+margin_bottom = 39.0
+text = "pressed"
+fit_content_height = true
+
+[node name="IfAPressed" type="GraphNode" parent="ProgrammingUI/AspectRatioContainer/NodeGraph"]
+margin_left = 40.0
+margin_top = 40.0
+margin_right = 187.0
+margin_bottom = 97.0
+mouse_filter = 1
+title = "isKeyPressed(\"A\")"
+slot/0/left_enabled = false
+slot/0/left_type = 0
+slot/0/left_color = Color( 1, 1, 1, 1 )
+slot/0/right_enabled = true
+slot/0/right_type = 1
+slot/0/right_color = Color( 0.580392, 0, 0.678431, 1 )
+script = ExtResource( 10 )
+
+[node name="RichTextLabel" type="RichTextLabel" parent="ProgrammingUI/AspectRatioContainer/NodeGraph/IfAPressed"]
+margin_left = 16.0
+margin_top = 24.0
+margin_right = 131.0
+margin_bottom = 39.0
+text = "pressed"
+fit_content_height = true
+
+[node name="Process" type="GraphNode" parent="ProgrammingUI/AspectRatioContainer/NodeGraph"]
+margin_left = 40.0
+margin_top = 40.0
+margin_right = 188.0
+margin_bottom = 99.0
+mouse_filter = 1
+title = "Process"
+slot/0/left_enabled = true
+slot/0/left_type = 0
+slot/0/left_color = Color( 1, 1, 1, 1 )
+slot/0/right_enabled = true
+slot/0/right_type = 0
+slot/0/right_color = Color( 1, 1, 1, 1 )
+script = ExtResource( 12 )
+
+[node name="ExecutionFlowPlaceholder" type="RichTextLabel" parent="ProgrammingUI/AspectRatioContainer/NodeGraph/Process"]
+margin_left = 16.0
+margin_top = 24.0
+margin_right = 132.0
+margin_bottom = 39.0
+text = "- - - - - - - - - - - - >"
+fit_content_height = true
+
+[node name="RunButton" type="Button" parent="ProgrammingUI"]
+anchor_left = 0.892
+anchor_right = 1.0
+margin_left = 7.26398
+margin_top = 4.0
+margin_right = 44.0
+margin_bottom = 46.0
+text = "Execute Code"
+
+[node name="RunOverlay" type="ColorRect" parent="ProgrammingUI"]
+visible = false
+margin_right = 1030.0
+margin_bottom = 1077.0
+color = Color( 0, 0, 0, 0.623529 )
+
+[node name="RunOverlayText" type="RichTextLabel" parent="ProgrammingUI/RunOverlay"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -57.0
+margin_top = -19.5001
+margin_right = 65.57
+margin_bottom = 20.3489
+text = "Code executing..."

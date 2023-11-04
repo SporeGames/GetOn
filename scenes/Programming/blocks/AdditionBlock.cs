@@ -6,12 +6,17 @@ namespace GetOn.scenes.Programming.blocks {
 
 		public AdditionBlock() {
 			Name = "Addition";
-			InputTypes = new List<BlockVariableType> {BlockVariableType.Int, BlockVariableType.Int};
+			InputTypes = new List<BlockVariableType> {BlockVariableType.Float, BlockVariableType.Float};
 		}
-		
+
+		public override void _Ready() {
+			Returns = true;
+			ReturnType = BlockVariableType.Float;
+		}
+
 		public override BlockVariable Execute() {
-			var firstNumber = Inputs[0].IntValue;
-			var secondNumber = Inputs[1].IntValue;
+			var firstNumber = Inputs[0].FloatValue;
+			var secondNumber = Inputs[1].FloatValue;
 			return new BlockVariable(this, firstNumber + secondNumber);
 		}
 		
@@ -20,8 +25,8 @@ namespace GetOn.scenes.Programming.blocks {
 				ValidationErrorMessage = "Addition block must have exactly 2 inputs!";
 				return false;
 			}
-			if (Inputs[0].Type != BlockVariableType.Int || Inputs[1].Type != BlockVariableType.Int) {
-				ValidationErrorMessage = "Addition block must have 2 integer inputs!";
+			if (Inputs[0].Type != BlockVariableType.Float || Inputs[1].Type != BlockVariableType.Float) {
+				ValidationErrorMessage = "Addition block must have 2 float inputs!";
 				return false;
 			}
 			return true;
