@@ -11,7 +11,7 @@ config_version=4
 [application]
 
 config/name="GetOn"
-run/main_scene="res://scenes/Programming/Programming.tscn"
+run/main_scene="res://scenes/MainMenu/MainMenu.tscn"
 config/icon="res://icon.png"
 
 [autoload]
@@ -23,7 +23,6 @@ SharedNode="*res://scenes/SharedNode.tscn"
 window/size/width=1920
 window/size/height=1080
 window/stretch/mode="2d"
-window/stretch/aspect="expand"
 
 [gui]
 

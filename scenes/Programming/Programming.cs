@@ -11,7 +11,7 @@ namespace GetOn.scenes.GameSelectionRoom
 		private Button _backToGameSelectionRoom;
 		public override void _Ready() {
 			_sharedNode = GetNode<SharedNode>("/root/SharedNode");
-			_backToGameSelectionRoom = GetNode<Button>("BackToGameSelection");
+			_backToGameSelectionRoom = GetNode<Button>("Game/BackToGameSelection");
 			_backToGameSelectionRoom.Connect("pressed", this, nameof(OnBackToSelectionRoomPressed));
 		}
 

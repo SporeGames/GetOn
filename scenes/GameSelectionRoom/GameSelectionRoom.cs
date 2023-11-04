@@ -29,22 +29,22 @@ namespace GetOn.scenes.GameSelectionRoom {
 
 		public void OnGoToProgrammingPressed()
 		{
-			_sharedNode.SwitchScene("res://scenes/Programming/Programming.tscn");
+			_sharedNode.SwitchScene("res://scenes/Programming/ProgrammingRoom.tscn");
 		}
 
 		public void OnGoToManagmentPressed()
 		{
-			_sharedNode.SwitchScene("res://scenes/Programming/Programming.tscn");
+			_sharedNode.SwitchScene("res://scenes/Programming/ProgrammingRoom.tscn");
 		}
 
 		public void OnGoToNarrativeAndSoundPressed()
 		{
-			_sharedNode.SwitchScene("res://scenes/Programming/Programming.tscn");
+			_sharedNode.SwitchScene("res://scenes/Programming/ProgrammingRoom.tscn");
 		}
 
 		public void OnGoToSoundPressed()
 		{
-			_sharedNode.SwitchScene("res://scenes/Programming/Programming.tscn");
+			_sharedNode.SwitchScene("res://scenes/Programming/ProgrammingRoom.tscn");
 		}
 		//  // Called every frame. 'delta' is the elapsed time since the previous frame.
 		//  public override void _Process(float delta)

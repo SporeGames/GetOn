@@ -1,34 +1,74 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://scenes/Programming/Programming.cs" type="Script" id=1]
 [ext_resource path="res://scenes/Programming/blocks/godot/VariableNode.cs" type="Script" id=2]
 [ext_resource path="res://scenes/Programming/NodeGraph.cs" type="Script" id=3]
 [ext_resource path="res://scenes/Programming/blocks/SetPlayerPositionBlock.cs" type="Script" id=4]
+[ext_resource path="res://icon.png" type="Texture" id=5]
+[ext_resource path="res://art/ProgrammierAufgabePrototy.png" type="Texture" id=6]
+[ext_resource path="res://art/Hintergrund .png" type="Texture" id=7]
+[ext_resource path="res://scenes/Programming/CountdownTimer.cs" type="Script" id=8]
+[ext_resource path="res://font/BAHNSCHRIFT 1.TTF" type="DynamicFontData" id=9]
+
+[sub_resource type="DynamicFont" id=5]
+size = 22
+font_data = ExtResource( 9 )
 
 [sub_resource type="RectangleShape2D" id=2]
-extents = Vector2( 459, 10 )
+extents = Vector2( 381, 10 )
 
 [sub_resource type="CircleShape2D" id=1]
+
+[sub_resource type="RectangleShape2D" id=3]
+extents = Vector2( 65.5, 64.5 )
+
+[sub_resource type="RectangleShape2D" id=4]
+extents = Vector2( 64, 127.5 )
 
 [node name="Programming" type="Node2D"]
 script = ExtResource( 1 )
 
-[node name="BackToGameSelection" type="Button" parent="."]
+[node name="Game" type="Node" parent="."]
+
+[node name="Background" type="Sprite" parent="Game"]
+position = Vector2( 1480.5, 539.5 )
+scale = Vector2( 0.380085, 0.627439 )
+texture = ExtResource( 7 )
+
+[node name="Flag" type="Sprite" parent="Game"]
+position = Vector2( 1872, 676 )
+texture = ExtResource( 5 )
+
+[node name="Level" type="Sprite" parent="Game"]
+position = Vector2( 1475, 705 )
+scale = Vector2( 0.375848, 0.429268 )
+texture = ExtResource( 6 )
+
+[node name="BackToGameSelection" type="Button" parent="Game"]
+light_mask = 0
 anchor_right = 1.207
 margin_left = 1825.0
-margin_top = 7.0
-margin_right = 1867.0
-margin_bottom = 29.0
+margin_top = 8.0
+margin_right = -450.44
+margin_bottom = 30.0
 rect_scale = Vector2( 2, 2 )
 text = "Back"
 
-[node name="Game" type="Node" parent="."]
+[node name="Timer" type="Label" parent="Game"]
+margin_left = 1779.0
+margin_top = 80.0
+margin_right = 1890.0
+margin_bottom = 127.0
+custom_fonts/font = SubResource( 5 )
+text = "
+"
+script = ExtResource( 8 )
 
 [node name="Floor" type="Area2D" parent="Game"]
 position = Vector2( 1340, 1061 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Game/Floor"]
-position = Vector2( 144, 0 )
+position = Vector2( 74, -82 )
 shape = SubResource( 2 )
 
 [node name="Player" type="Area2D" parent="Game"]
@@ -37,6 +77,23 @@ position = Vector2( 1134, 931 )
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Game/Player"]
 position = Vector2( 0, 3 )
 shape = SubResource( 1 )
+
+[node name="Sprite" type="Sprite" parent="Game/Player"]
+texture = ExtResource( 5 )
+
+[node name="Box" type="Area2D" parent="Game"]
+position = Vector2( 1531, 851 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Game/Box"]
+position = Vector2( 55.5, 53.5 )
+shape = SubResource( 3 )
+
+[node name="Area2D" type="Area2D" parent="Game"]
+position = Vector2( 1824, 727 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Game/Area2D"]
+position = Vector2( 31, 114.5 )
+shape = SubResource( 4 )
 
 [node name="ProgrammingUI" type="Control" parent="."]
 margin_right = 1058.0
@@ -81,10 +138,10 @@ margin_bottom = 33.0
 auto_height = true
 
 [node name="Addition" type="GraphNode" parent="ProgrammingUI/AspectRatioContainer/NodeGraph"]
-margin_left = 42.0
-margin_top = 162.0
-margin_right = 193.0
-margin_bottom = 255.0
+margin_left = 40.0
+margin_top = 40.0
+margin_right = 191.0
+margin_bottom = 133.0
 mouse_filter = 1
 title = "a + b"
 slot/0/left_enabled = true
@@ -138,7 +195,7 @@ text = "b"
 fit_content_height = true
 
 [node name="Output" type="RichTextLabel" parent="ProgrammingUI/AspectRatioContainer/NodeGraph/Addition"]
-margin_left = 120.0
+margin_left = 16.0
 margin_top = 72.0
 margin_right = 135.0
 margin_bottom = 87.0
