@@ -21,7 +21,7 @@ namespace GetOn.scenes.Programming.blocks {
         }
 		
         public override bool Validate() {
-            if (Inputs.Count != 2) {
+            if (Inputs[0] == null || Inputs[1] == null || Inputs[2] == null) {
                 ValidationErrorMessage = "SetPlayerVelocity block must have exactly 3 inputs!";
                 return false;
             }

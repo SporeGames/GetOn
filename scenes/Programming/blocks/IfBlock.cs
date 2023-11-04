@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using GetOn.scenes.Programming.blocks.logic;
+using Godot;
 
 namespace GetOn.scenes.Programming.blocks {
     public class IfBlock : AbstractBlock {
@@ -8,7 +9,8 @@ namespace GetOn.scenes.Programming.blocks {
     public IfBlock() {
             Name = "if () {}";
             InputTypes = new List<BlockVariableType> {BlockVariableType.Condition};
-        }
+            ReturnType = BlockVariableType.Bool;
+    }
         
         public override BlockVariable Execute() {
             var result = true;

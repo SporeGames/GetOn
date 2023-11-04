@@ -21,8 +21,8 @@ namespace GetOn.scenes.Programming.blocks {
 		}
 		
 		public override bool Validate() {
-			if (Inputs.Count != 2) {
-				ValidationErrorMessage = "Addition block must have exactly 2 inputs!";
+			if (Inputs[0] == null || Inputs[1] == null) {
+				ValidationErrorMessage = "Addition block must have 2 inputs!";
 				return false;
 			}
 			if (Inputs[0].Type != BlockVariableType.Float || Inputs[1].Type != BlockVariableType.Float) {

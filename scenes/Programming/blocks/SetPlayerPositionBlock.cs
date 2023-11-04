@@ -18,13 +18,12 @@ namespace GetOn.scenes.Programming.blocks {
 		}
 		
 		public override bool Validate() {
-			if (Inputs.Count != 3) {
-				ValidationErrorMessage = "SetPlayerPosition block must have exactly 3 inputs!";
-				GD.Print(Inputs.ToString());
+			if (Inputs[0] == null || Inputs[1] == null || Inputs[2] == null) {
+				ValidationErrorMessage = "SetPositionBlock must have 3 inputs!";
 				return false;
 			}
 			if (Inputs[0].Type != BlockVariableType.Node || Inputs[1].Type != BlockVariableType.Float || Inputs[2].Type != BlockVariableType.Float) {
-				ValidationErrorMessage = "SetPlayerPosition block must have 2 ;float inputs and one Node input!";
+				ValidationErrorMessage = "SetPlayerPosition block must have 2 ;float inputs and one Node input! Found:" + Inputs[0].Type + " | " + Inputs[1].Type + " | " + Inputs[2].Type + "";
 				return false;
 			}
 			return true;

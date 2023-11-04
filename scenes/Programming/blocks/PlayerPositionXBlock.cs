@@ -6,6 +6,7 @@ namespace GetOn.scenes.Programming.blocks {
     public class PlayerPositionXBlock : AbstractBlock {
         public PlayerPositionXBlock() {
             InputTypes = new List<BlockVariableType> {BlockVariableType.Node};
+            Returns = true;
         }
 
         public override void _Ready() {

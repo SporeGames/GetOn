@@ -17,8 +17,8 @@ namespace GetOn.scenes.Programming.blocks {
         }
         
         public override bool Validate() {
-            if (Inputs.Count != 2) {
-                ValidationErrorMessage = "GreaterThan block must have exactly 2 inputs!";
+            if (Inputs[0] == null || Inputs[1] == null) {
+                ValidationErrorMessage = "GreaterThanBlock block must have exactly 2 inputs!";
                 return false;
             }
             if (Inputs[0].Type != BlockVariableType.Int || Inputs[1].Type != BlockVariableType.Int) {
