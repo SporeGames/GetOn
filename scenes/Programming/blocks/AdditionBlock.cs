@@ -17,17 +17,13 @@ namespace GetOn.scenes.Programming.blocks {
 		}
 
 		public override BlockVariable Execute() {
-			var firstNumber = Inputs[0].FloatValue;
-			var secondNumber = Inputs[1].FloatValue;
+			var firstNumber = Inputs[1].FloatValue;
+			var secondNumber = Inputs[2].FloatValue;
 			return new BlockVariable(this, firstNumber + secondNumber);
 		}
 		
 		public override bool Validate() {
-			if (Inputs[0] == null || Inputs[1] == null) {
-				ValidationErrorMessage = "Addition block must have 2 inputs!";
-				return false;
-			}
-			if (Inputs[0].Type != BlockVariableType.Float || Inputs[1].Type != BlockVariableType.Float) {
+			if (Inputs[1].Type != BlockVariableType.Float || Inputs[2].Type != BlockVariableType.Float) {
 				ValidationErrorMessage = "Addition block must have 2 float inputs!";
 				return false;
 			}

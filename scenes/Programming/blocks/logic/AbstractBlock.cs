@@ -14,7 +14,7 @@ namespace GetOn.scenes.Programming.blocks.logic {
 		public List<BlockVariableType> InputTypes { get; set; }
 
 		public BlockVariable ReturnVariable = new BlockVariable();
-		protected bool Returns = false;
+		public bool Returns = false;
 
 		protected string ValidationErrorMessage = "Block validation failed!";
 
@@ -52,49 +52,53 @@ namespace GetOn.scenes.Programming.blocks.logic {
 			throw new BlockLogicException("No validation implemented for this block!");
 		}
 
-		public void Connected(int slot) {
-			if (slot == -1) { // Execution
+		public void Connected(GodotNode connectingNode, int slot) {
+			if (connectingNode == this) {
 				return;
 			}
-			for (var i = 0; i < ConnectedVariables.Length; i++) {
-				var node = ConnectedVariables[i];
-				if (node == null) {
-					continue;
-				}
-				
-				if (node is VariableNode variableNode) {
-					GD.Print("Node type: " + variableNode.Type);
-					if (variableNode.configureable) {
-						Inputs[slot] = new BlockVariable(this, variableNode.GetFloat());
-						GD.Print("Added configurable float input");
-						break;
-					}
-					switch (variableNode.Type) {
-						case BlockVariableType.Node:
-							Inputs[slot] = new BlockVariable(this, variableNode.GetPlayer());
-							GD.Print("Added node input");
-							break;
-						case BlockVariableType.Int:
-							Inputs[slot] = new BlockVariable(this, variableNode.GetRandom());
-							GD.Print("Added int input");
-							break;
-						case BlockVariableType.PositionX:
-							Inputs[slot] = new BlockVariable(this, variableNode.GetPlayer().Position.x);
-							GD.Print("Added position x input");
-							break;
-						case BlockVariableType.PositionY:
-							Inputs[slot] = new BlockVariable(this, variableNode.GetPlayer().Position.y);
-							GD.Print("Added position y input");
-							break;
 
-					}
+			if (slot == 0) {
+				return;
+			}
+			var currentNodeInSlot = ConnectedVariables[slot];
+			if (currentNodeInSlot != null) {
+				GD.Print("Slot " + slot + " already connected! (" + currentNodeInSlot.Name + ")");
+				return;
+			}
+			ConnectedVariables[slot] = connectingNode;
+			if (connectingNode is VariableNode variableNode) {
+				GD.Print("Node type: " + variableNode.Type);
+				if (variableNode.configureable) {
+					Inputs[slot] = new BlockVariable(this, variableNode.GetFloat());
+					GD.Print("Added configurable float input");
+					return;
 				}
-				if (node is AbstractBlock nodeBlock) {
-					GD.Print("AbstractBlock return type: " + nodeBlock.ReturnType + " for slot " + slot + " with nodeBlock " + nodeBlock.Name);
-					if (nodeBlock.Returns) {
-						Inputs[slot] = nodeBlock.ReturnVariable;
-						GD.Print("Added return variable input");
-					}
+
+				switch (variableNode.Type) {
+					case BlockVariableType.Node:
+						Inputs[slot] = new BlockVariable(this, variableNode.GetPlayer());
+						GD.Print("Added node input");
+						return;
+					case BlockVariableType.Int:
+						Inputs[slot] = new BlockVariable(this, variableNode.GetRandom());
+						GD.Print("Added int input");
+						return;
+					case BlockVariableType.PositionX:
+						Inputs[slot] = new BlockVariable(this, variableNode.GetPlayer().Position.x);
+						GD.Print("Added position x input");
+						return;
+					case BlockVariableType.PositionY:
+						Inputs[slot] = new BlockVariable(this, variableNode.GetPlayer().Position.y);
+						GD.Print("Added position y input");
+						return;
+
+				}
+			}
+			if (connectingNode is AbstractBlock connectingNodeBlock) {
+				GD.Print("AbstractBlock return type: " + connectingNodeBlock.ReturnType + " for slot " + slot + " with nodeBlock " + connectingNodeBlock.Name + " (this: " + Name + ", Returns: " + connectingNodeBlock.Returns + ", nodeBlock class: " + connectingNodeBlock.GetType() + ")");
+				if (connectingNodeBlock.Returns) {
+					Inputs[slot] = connectingNodeBlock.ReturnVariable;
+					GD.Print("Added return variable input");
 				}
 			}
 
