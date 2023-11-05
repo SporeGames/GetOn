@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using GetOn.scenes.Programming.blocks.logic;
+using Godot;
 
 namespace GetOn.scenes.Programming.blocks {
 	public class AdditionBlock : AbstractBlock {
@@ -19,7 +20,8 @@ namespace GetOn.scenes.Programming.blocks {
 		public override BlockVariable Execute() {
 			var firstNumber = Inputs[1].FloatValue;
 			var secondNumber = Inputs[2].FloatValue;
-			return new BlockVariable(this, firstNumber + secondNumber);
+			GD.Print("Adding " + firstNumber + " and " + secondNumber + " = " + (firstNumber + secondNumber) + ".");
+			return new BlockVariable(this, firstNumber + secondNumber); // TODO: This does not seem to reach the SetPositionBlock (receives 0)
 		}
 		
 		public override bool Validate() {

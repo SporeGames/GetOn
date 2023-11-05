@@ -76,7 +76,7 @@ public class NodeGraph : GraphEdit {
             ConnectNode(from_node, 0, to_node, to_port);
             GD.Print("Added at index " + to_port + "");
             if (toVariableBlock is AbstractBlock abstractBlock) {
-                abstractBlock.Connected(abstractBlock, to_port);
+                abstractBlock.Connected(fromVariable, to_port);
             }
             GD.Print("Connected variable " + from_node + " to " + to_node + " at port " + (to_port));
         }

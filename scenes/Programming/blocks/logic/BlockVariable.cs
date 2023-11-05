@@ -5,13 +5,13 @@ namespace GetOn.scenes.Programming.blocks.logic {
     public class BlockVariable {
         public BlockVariableType Type { get; }
         public GodotNode Block { get; }
-        
-        public int IntValue { get; }
-        public float FloatValue { get; }
-        public bool BoolValue { get; }
-        public string StringValue { get; }
-        public Vector2 VectorValue { get; }
-        public Node2D NodeValue { get; }
+
+        public int IntValue;
+        public float FloatValue;
+        public bool BoolValue;
+        public string StringValue;
+        public Vector2 VectorValue;
+        public Node2D NodeValue;
 
         public BlockVariable() {
             

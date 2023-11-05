@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using GetOn.scenes.Programming.blocks.logic;
 using Godot;
-
+	
 namespace GetOn.scenes.Programming.blocks {
 	public class SetPlayerPositionBlock : AbstractBlock {
 		public SetPlayerPositionBlock() {
@@ -10,9 +10,10 @@ namespace GetOn.scenes.Programming.blocks {
 		}
 		
 		public override BlockVariable Execute() {
-			Node2D player = Inputs[0].NodeValue;
-			var x = Inputs[1].FloatValue;
-			var y = Inputs[2].FloatValue;
+			Node2D player = Inputs[1].NodeValue;
+			var x = Inputs[2].FloatValue;
+			var y = Inputs[3].FloatValue;
+			GD.Print("Setting position to " + x + ", " + y + "");
 			player.Position = new Vector2(x, y);
 			return new BlockVariable(this, true);
 		}
@@ -27,7 +28,7 @@ namespace GetOn.scenes.Programming.blocks {
 				output += input.Type + "/";
 			}
 			GD.Print(output);
-			if (Inputs[0] == null || Inputs[1] == null || Inputs[2] == null) {
+			if (Inputs[1] == null || Inputs[2] == null || Inputs[3] == null) {
 				ValidationErrorMessage = "SetPositionBlock must have 3 inputs!";
 				return false;
 			}
