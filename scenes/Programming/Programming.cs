@@ -1,5 +1,6 @@
 using Godot;
 using System;
+using GetOn.scenes.Programming.blocks.godot;
 using GetOn.scenes.Programming.blocks.logic;
 
 namespace GetOn.scenes.GameSelectionRoom
@@ -37,8 +38,10 @@ namespace GetOn.scenes.GameSelectionRoom
 
 		public void OnRunPressed() {
 			if (running) {
+				GD.Print("Stopping...");
 				Stop();
 			} else {
+				GD.Print("Running...");
 				Run();
 			}
 		}

@@ -12,7 +12,7 @@ namespace GetOn.scenes.Programming.blocks.godot {
         
         private HSlider _slider;
         private RichTextLabel _label;
-        
+
         public override void _Ready() {
             _slider = GetNode<HSlider>("InputSlider");
             _slider.Connect("value_changed", this, nameof(OnValueChanged));
@@ -61,6 +61,14 @@ namespace GetOn.scenes.Programming.blocks.godot {
         private void OnValueChanged(float value) {
             configureableValue = (float) _slider.Value;
             _label.Text = configureableValue.ToString();
+        }
+
+        public float getPosX() {
+            return VariableProvider.PlayerNode.Position.x;
+        }
+        
+        public float getPosY() {
+            return VariableProvider.PlayerNode.Position.y;
         }
     }
 }

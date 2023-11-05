@@ -48,6 +48,10 @@ public class NodeGraph : GraphEdit {
             return;
         }
 
+        if (from == to) {
+            return;
+        }
+
         GD.Print("Connecting " + from_node + " to " + to_node + "");
         if (from is ConditionNode && to is BlockNode toBlocknode) {
             if (to_port == 0) { // Don't allow plugging variables into execution inputs
@@ -57,9 +61,9 @@ public class NodeGraph : GraphEdit {
             ConnectNode(from_node, 0, to_node, to_port);
             toBlocknode.ConnectedConditions.Add(from as ConditionNode);
             if (toBlocknode is AbstractBlock abstractBlock) {
-                abstractBlock.Connected(to_port - 1);
+                abstractBlock.Connected(to_port);
             }
-            GD.Print("Connected condition " + from_node + " to " + to_node);
+            GD.Print("Connected condition " + from_node + " to " + to_node + " at port " + (to_port));
         }
         
         if (from is VariableNode fromNode && to is BlockNode toNode) {
@@ -72,9 +76,9 @@ public class NodeGraph : GraphEdit {
             GD.Print("Added at index " + to_port + "");
             GD.Print(toNode.ConnectedVariables[to_port].Name);
             if (toNode is AbstractBlock abstractBlock) {
-                abstractBlock.Connected(to_port - 1);
+                abstractBlock.Connected(to_port);
             }
-            GD.Print("Connected variable " + from_node + " to " + to_node);
+            GD.Print("Connected variable " + from_node + " to " + to_node + " at port " + (to_port));
         }
 
         if (from is AbstractBlock fromBlock && to is AbstractBlock toBlock) {
@@ -82,27 +86,35 @@ public class NodeGraph : GraphEdit {
                 toBlock.Previous = fromBlock;
                 fromBlock.NextBlock = toBlock;
                 ConnectNode(from_node, from_port, to_node, 0);
-                toBlock.Connected(to_port - 1);
-                GD.Print("Connected execution " + from_node + " to " + to_node);
+                toBlock.Connected(-1);
+                GD.Print("Connected execution " + from_node + " to " + to_node + " at port " + (to_port));
                 return;
             }
             ConnectNode(from_node, from_port, to_node, to_port);
             toBlock.ConnectedVariables[to_port] = fromBlock;
-            toBlock.Connected(to_port - 1);
-            GD.Print("Connected return variable " + from_node + " to " + to_node);
+            toBlock.Connected(to_port);
+            GD.Print("Connected return variable " + from_node + " to " + to_node + " at port " + (to_port));
         }
     }
     
     public void DisconnectRequest(string from_node, int from_port, string to_node, int to_port) {
-        var from = GetNode<BlockNode>(from_node);
-        var to = GetNode<BlockNode>(to_node);
+        var from = GetNode<GodotNode>(from_node);
+        var to = GetNode<GodotNode>(to_node);
         if (from == null || to == null) {
             return;
         }
+        DisconnectNode(from_node, from_port, to_node, to_port);
 
         if (from_port == 0) {
             if (from is AbstractBlock blockFrom && to is AbstractBlock blockTo) {
                 blockFrom.NextBlock = null;
+                return;
+            }
+        }
+        if (to is BlockNode blockNode) {
+            blockNode.ConnectedVariables[to_port - 1] = null;
+            if (from is ConditionNode node) {
+                blockNode.ConnectedConditions.Remove(node);
             }
         }
     }

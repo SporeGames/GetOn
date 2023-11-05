@@ -1,5 +1,6 @@
 ﻿namespace GetOn.scenes.Programming.blocks.logic {
     public enum BlockVariableType {
+        None,
         Vector,
         Int,
         Bool,
@@ -8,7 +9,6 @@
         Condition,
         PositionX,
         PositionY,
-        Float,
-        None
+        Float
     }
 }

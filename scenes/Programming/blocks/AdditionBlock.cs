@@ -7,6 +7,8 @@ namespace GetOn.scenes.Programming.blocks {
 		public AdditionBlock() {
 			Name = "Addition";
 			InputTypes = new List<BlockVariableType> {BlockVariableType.Float, BlockVariableType.Float};
+			Returns = true;
+			ReturnType = BlockVariableType.Float;
 		}
 
 		public override void _Ready() {

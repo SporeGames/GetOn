@@ -25,16 +25,21 @@ namespace GetOn.scenes.Programming.blocks.logic {
 		}
 
 		public void Run() {
-			GD.Print("Executing : " + Name);
-			if (!Validate()) {
-				throw new BlockLogicException(ValidationErrorMessage);
+			GD.Print("Executing: " + base.Name);
+			try {
+				if (!Validate()) {
+					throw new BlockLogicException(ValidationErrorMessage);
+				}
+			} catch (BlockLogicException e) {
+				GD.Print(e.Message);
+				return;
 			}
 
 			var returnValue = Execute();
 			if (Returns) {
 				ReturnVariable = returnValue;
 			}
-			if (NextBlock != null && returnValue.BoolValue) {
+			if (NextBlock != null) {
 				NextBlock.Run();
 			}
 		}
@@ -48,7 +53,7 @@ namespace GetOn.scenes.Programming.blocks.logic {
 		}
 
 		public void Connected(int slot) {
-			if (slot == -1) {
+			if (slot == -1) { // Execution
 				return;
 			}
 			for (var i = 0; i < ConnectedVariables.Length; i++) {
@@ -56,6 +61,7 @@ namespace GetOn.scenes.Programming.blocks.logic {
 				if (node == null) {
 					continue;
 				}
+				
 				if (node is VariableNode variableNode) {
 					GD.Print("Node type: " + variableNode.Type);
 					if (variableNode.configureable) {
@@ -72,18 +78,34 @@ namespace GetOn.scenes.Programming.blocks.logic {
 							Inputs[slot] = new BlockVariable(this, variableNode.GetRandom());
 							GD.Print("Added int input");
 							break;
+						case BlockVariableType.PositionX:
+							Inputs[slot] = new BlockVariable(this, variableNode.GetPlayer().Position.x);
+							GD.Print("Added position x input");
+							break;
+						case BlockVariableType.PositionY:
+							Inputs[slot] = new BlockVariable(this, variableNode.GetPlayer().Position.y);
+							GD.Print("Added position y input");
+							break;
 
 					}
 				}
 				if (node is AbstractBlock nodeBlock) {
-					GD.Print("AbstractBlock return type: " + nodeBlock.ReturnType);
+					GD.Print("AbstractBlock return type: " + nodeBlock.ReturnType + " for slot " + slot + " with nodeBlock " + nodeBlock.Name);
 					if (nodeBlock.Returns) {
 						Inputs[slot] = nodeBlock.ReturnVariable;
 						GD.Print("Added return variable input");
 					}
 				}
 			}
-			GD.Print("Connected inputs: " + Inputs.ToString());
+
+			GD.Print("Connected inputs:");
+			foreach (var input in Inputs) {
+				if (input == null) {
+					GD.Print("null");
+					continue;
+				}
+				GD.Print(input.Type);
+			}
 		}
 	}
 }
