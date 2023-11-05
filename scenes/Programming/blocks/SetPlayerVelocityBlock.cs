@@ -17,7 +17,7 @@ namespace GetOn.scenes.Programming.blocks {
             var y = Inputs[2].IntValue;
             var velocity = new Vector2(x, y);
             player.Position += velocity * _delta;
-            return new BlockVariable(this, true);
+            return new BlockVariable("SetVeloReturn", this, true);
         }
 		
         public override bool Validate() {

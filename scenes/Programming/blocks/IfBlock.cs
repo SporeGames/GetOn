@@ -20,7 +20,7 @@ namespace GetOn.scenes.Programming.blocks {
                     result = false;
                 }
             }
-            return new BlockVariable(this, result);
+            return new BlockVariable("ifReturn", this, result);
         }
         
         public override bool Validate() {

@@ -16,7 +16,7 @@ namespace GetOn.scenes.Programming.blocks {
 
         public override BlockVariable Execute() {
             Node2D player = Inputs[0].NodeValue;
-            return new BlockVariable(this, player.Position.x);
+            return new BlockVariable("posXReturn", this, player.Position.x);
         }
 		
         public override bool Validate() {

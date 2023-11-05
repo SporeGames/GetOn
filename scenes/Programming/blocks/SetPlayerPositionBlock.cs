@@ -15,7 +15,7 @@ namespace GetOn.scenes.Programming.blocks {
 			var y = Inputs[3].FloatValue;
 			GD.Print("Setting position to " + x + ", " + y + "");
 			player.Position = new Vector2(x, y);
-			return new BlockVariable(this, true);
+			return new BlockVariable("posReturn", this, true);
 		}
 		
 		public override bool Validate() {

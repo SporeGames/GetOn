@@ -11,9 +11,9 @@ namespace GetOn.scenes.Programming.blocks {
             var firstNumber = Inputs[0].IntValue;
             var secondNumber = Inputs[1].IntValue;
             if (firstNumber > secondNumber) {
-                return new BlockVariable(this, true);
+                return new BlockVariable("greaterReturn", this, true);
             }
-            return new BlockVariable(this, false);
+            return new BlockVariable("greaterReturn", this, false);
         }
         
         public override bool Validate() {

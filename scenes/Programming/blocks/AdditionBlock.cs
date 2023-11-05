@@ -21,14 +21,11 @@ namespace GetOn.scenes.Programming.blocks {
 			var firstNumber = Inputs[1].FloatValue;
 			var secondNumber = Inputs[2].FloatValue;
 			GD.Print("Adding " + firstNumber + " and " + secondNumber + " = " + (firstNumber + secondNumber) + ".");
-			return new BlockVariable(this, firstNumber + secondNumber); // TODO: This does not seem to reach the SetPositionBlock (receives 0)
+			ReturnVariable = new BlockVariable("addReturn1", this, firstNumber + secondNumber);
+			return new BlockVariable("addReturn", this, firstNumber + secondNumber); // TODO: This does not seem to reach the SetPositionBlock (receives 0)
 		}
 		
 		public override bool Validate() {
-			if (Inputs[1].Type != BlockVariableType.Float || Inputs[2].Type != BlockVariableType.Float) {
-				ValidationErrorMessage = "Addition block must have 2 float inputs!";
-				return false;
-			}
 			return true;
 		}
 	}

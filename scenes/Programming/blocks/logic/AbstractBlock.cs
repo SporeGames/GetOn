@@ -9,8 +9,10 @@ namespace GetOn.scenes.Programming.blocks.logic {
 
 		public string Name { get; set; }
 		public AbstractBlock NextBlock { get; set; }
+		public AbstractBlock PreviousBlock { get; set; }
 		public BlockVariableType ReturnType { get; set; }
 		public BlockVariable[] Inputs { get; set; } = new BlockVariable[8];
+		public BlockVariable[] Outputs { get; set; } = new BlockVariable[8];
 		public List<BlockVariableType> InputTypes { get; set; }
 
 		public BlockVariable ReturnVariable = new BlockVariable(); // TODO: Apparently also not being updated?!
@@ -20,7 +22,7 @@ namespace GetOn.scenes.Programming.blocks.logic {
 
 		public override void _Ready() {
 			if (Returns) {
-				ReturnVariable = new BlockVariable(this, false);
+				ReturnVariable = new BlockVariable("temp", this, false);
 			}
 		}
 
@@ -36,9 +38,9 @@ namespace GetOn.scenes.Programming.blocks.logic {
 			}
 			var returnValue = Execute();
 			if (Returns) {
-				ReturnVariable = returnValue;
+				ReturnVariable = returnValue; // This seems to be wrong. Value is always reset to default (0) for some reason.
 			}
-			//UpdateVariables(); Doesn't work
+			UpdateVariables(); 
 			if (ReturnType == BlockVariableType.Bool) { 
 				if (NextBlock != null && returnValue.BoolValue) {
 					NextBlock.Run();
@@ -61,27 +63,27 @@ namespace GetOn.scenes.Programming.blocks.logic {
 			throw new BlockLogicException("No validation implemented for this block!");
 		}
 
-		public void Connected(GodotNode connectingNode, int slot) {
+		public void Connected(GodotNode connectingNode, int thisSlot, int connectingSlot) {
 			if (connectingNode == this) {
 				GD.Print("Cannot connect node to itself!");
 				return;
 			}
 
-			if (slot == 0) { // Slot 0 is always the slot for execution logic (white lines)
+			if (thisSlot == 0) { // Slot 0 is always the slot for execution logic (white lines)
 				GD.Print("Execution slot, skipping Connected()");
 				return;
 			}
-			var currentNodeInSlot = ConnectedVariables[slot];
+			var currentNodeInSlot = ConnectedVariables[thisSlot];
 			if (currentNodeInSlot != null) {
-				GD.Print("Slot " + slot + " already connected! (" + currentNodeInSlot.Name + ")");
+				GD.Print("Slot " + thisSlot + " already connected! (" + currentNodeInSlot.Name + ")");
 				return;
 			}
-			ConnectedVariables[slot] = connectingNode;
-			GD.Print("Connected " + connectingNode.Name + " to " + Name + " at slot " + slot + "");
+			ConnectedVariables[thisSlot] = connectingNode;
+			GD.Print("Connected " + connectingNode.Name + " to " + Name + " at slot " + thisSlot + "");
 			if (connectingNode is VariableNode variableNode) {
 				GD.Print("Node type: " + variableNode.Type);
 				if (variableNode.configureable) { // This is the node with the slider
-					Inputs[slot] = new BlockVariable(this, variableNode.GetFloat());
+					Inputs[thisSlot] = new BlockVariable("configNodeReturn", connectingNode, variableNode.GetFloat());
 					GD.Print("Added configurable float input");
 					return;
 				}
@@ -89,28 +91,28 @@ namespace GetOn.scenes.Programming.blocks.logic {
 				// Add a new input BlockVariable with the current value.
 				switch (variableNode.Type) {
 					case BlockVariableType.Node:
-						Inputs[slot] = new BlockVariable(this, variableNode.GetPlayer());
+						Inputs[thisSlot] = new BlockVariable("node", connectingNode, variableNode.GetPlayer());
 						GD.Print("Added node input");
 						return;
 					case BlockVariableType.Int:
-						Inputs[slot] = new BlockVariable(this, variableNode.GetRandom());
+						Inputs[thisSlot] = new BlockVariable("int", connectingNode, variableNode.GetRandom());
 						GD.Print("Added int input");
 						return;
 					case BlockVariableType.PositionX:
-						Inputs[slot] = new BlockVariable(this, variableNode.GetPlayer().Position.x);
+						Inputs[thisSlot] = new BlockVariable("posX", connectingNode, variableNode.GetPlayer().Position.x);
 						GD.Print("Added position x input");
 						return;
 					case BlockVariableType.PositionY:
-						Inputs[slot] = new BlockVariable(this, variableNode.GetPlayer().Position.y);
+						Inputs[thisSlot] = new BlockVariable("posY", connectingNode, variableNode.GetPlayer().Position.y);
 						GD.Print("Added position y input");
 						return;
 
 				}
 			}
 			if (connectingNode is AbstractBlock connectingNodeBlock) {
-				GD.Print("AbstractBlock return type: " + connectingNodeBlock.ReturnType + " for slot " + slot + " with nodeBlock " + connectingNodeBlock.Name + " (this: " + Name + ", Returns: " + connectingNodeBlock.Returns + ", nodeBlock class: " + connectingNodeBlock.GetType() + ")");
+				GD.Print("AbstractBlock return type: " + connectingNodeBlock.ReturnType + " for slot " + thisSlot + " with nodeBlock " + connectingNodeBlock.Name + " (this: " + Name + ", Returns: " + connectingNodeBlock.Returns + ", nodeBlock class: " + connectingNodeBlock.GetType() + ")");
 				if (connectingNodeBlock.Returns) {
-					Inputs[slot] = connectingNodeBlock.ReturnVariable;
+					Inputs[thisSlot] = connectingNodeBlock.ReturnVariable;
 					GD.Print("Added return variable input");
 				}
 			}
@@ -126,25 +128,24 @@ namespace GetOn.scenes.Programming.blocks.logic {
 		}
 
 		
-		/* Doesn't work.
 		private void UpdateVariables() {
 			foreach (var blockVariable in Inputs) {
 				if (blockVariable == null) { // Unconnected variables will be null
 					continue;
 				}
-				if (blockVariable.Block is VariableNode varNode && varNode.configureable) { // TODO: This does not work at all
-					blockVariable.FloatValue = varNode.configureableValue;
-					continue;
+
+				if (blockVariable.id == "posX") {
+					blockVariable.FloatValue = VariableProvider.PlayerNode.Position.x;
 				}
-				switch (blockVariable.Type) { // Update the current player position stored in a BlockVariable
-					case BlockVariableType.PositionX:
-						blockVariable.FloatValue = VariableProvider.PlayerNode.Position.x;
-						break;
-					case BlockVariableType.PositionY:
-						blockVariable.FloatValue = VariableProvider.PlayerNode.Position.x;
-						break;
+				if (blockVariable.id == "posY") {
+					blockVariable.FloatValue = VariableProvider.PlayerNode.Position.y;
+				}
+				if (blockVariable.id == "configNodeReturn") {
+					if (blockVariable.Block is VariableNode variableNode) {
+						blockVariable.FloatValue = variableNode.configureableValue;
+					}
 				}
 			}
-		}*/
+		}
 	}
 }
