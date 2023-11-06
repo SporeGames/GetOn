@@ -1,70 +1,839 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=27 format=2]
 
 [ext_resource path="res://scenes/Programming/Programming.cs" type="Script" id=1]
-[ext_resource path="res://scenes/Programming/DragAndDrop.cs" type="Script" id=2]
-[ext_resource path="res://icon.png" type="Texture" id=3]
+[ext_resource path="res://scenes/Programming/blocks/godot/VariableNode.cs" type="Script" id=2]
+[ext_resource path="res://scenes/Programming/NodeGraph.cs" type="Script" id=3]
+[ext_resource path="res://scenes/Programming/blocks/SetPlayerPositionBlock.cs" type="Script" id=4]
+[ext_resource path="res://icon.png" type="Texture" id=5]
+[ext_resource path="res://art/ProgrammierAufgabePrototy.png" type="Texture" id=6]
+[ext_resource path="res://art/Hintergrund .png" type="Texture" id=7]
+[ext_resource path="res://scenes/Programming/CountdownTimer.cs" type="Script" id=8]
+[ext_resource path="res://font/BAHNSCHRIFT 1.TTF" type="DynamicFontData" id=9]
+[ext_resource path="res://scenes/Programming/blocks/KeyDPressedCondition.cs" type="Script" id=10]
+[ext_resource path="res://scenes/Programming/blocks/IfBlock.cs" type="Script" id=11]
+[ext_resource path="res://scenes/Programming/blocks/ProcessBlock.cs" type="Script" id=12]
+[ext_resource path="res://scenes/Programming/blocks/AdditionBlock.cs" type="Script" id=13]
+[ext_resource path="res://scenes/Programming/Player.cs" type="Script" id=14]
+[ext_resource path="res://scenes/Programming/blocks/KeySpacePressedCondition.cs" type="Script" id=15]
+[ext_resource path="res://scenes/Programming/blocks/JumpBlock.cs" type="Script" id=16]
+[ext_resource path="res://scenes/Programming/Checklist.cs" type="Script" id=17]
+[ext_resource path="res://art/Fahne.png" type="Texture" id=18]
 
-[sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 31.5, 30.5 )
+[sub_resource type="RectangleShape2D" id=6]
+extents = Vector2( 69, 65.25 )
+
+[sub_resource type="DynamicFont" id=5]
+size = 22
+font_data = ExtResource( 9 )
+
+[sub_resource type="RectangleShape2D" id=8]
+extents = Vector2( 8.5, 548.5 )
 
 [sub_resource type="RectangleShape2D" id=2]
-extents = Vector2( 32, 31 )
+extents = Vector2( 381, 10 )
+
+[sub_resource type="CircleShape2D" id=1]
+radius = 34.0147
+
+[sub_resource type="RectangleShape2D" id=7]
+extents = Vector2( 30.75, 30.25 )
+
+[sub_resource type="RectangleShape2D" id=3]
+extents = Vector2( 65.5, 64.5 )
+
+[sub_resource type="RectangleShape2D" id=4]
+extents = Vector2( 64, 127.5 )
 
 [node name="Programming" type="Node2D"]
 script = ExtResource( 1 )
 
-[node name="BackToGameSelection" type="Button" parent="."]
-margin_left = 946.0
-margin_top = 8.0
-margin_right = 1015.0
-margin_bottom = 47.0
+[node name="Checklist" type="AspectRatioContainer" parent="."]
+margin_left = 1631.0
+margin_top = 52.0
+margin_right = 1902.0
+margin_bottom = 268.0
+stretch_mode = 0
+alignment_vertical = 0
+script = ExtResource( 17 )
+
+[node name="BG" type="ColorRect" parent="Checklist"]
+margin_right = 271.0
+margin_bottom = 271.0
+color = Color( 0.94902, 0.913725, 0.00784314, 1 )
+
+[node name="Items" type="GridContainer" parent="Checklist"]
+margin_right = 271.0
+margin_bottom = 271.0
+
+[node name="Jumping" type="CheckBox" parent="Checklist/Items"]
+margin_right = 271.0
+margin_bottom = 24.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_colors/font_color_pressed = Color( 0, 0, 0, 1 )
+button_mask = 0
+text = "Jumping"
+
+[node name="JumpingKey" type="CheckBox" parent="Checklist/Items"]
+margin_top = 28.0
+margin_right = 271.0
+margin_bottom = 52.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_colors/font_color_pressed = Color( 0, 0, 0, 1 )
+button_mask = 0
+text = "Jumping when Space is pressed"
+
+[node name="Moving" type="CheckBox" parent="Checklist/Items"]
+margin_top = 56.0
+margin_right = 271.0
+margin_bottom = 80.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_colors/font_color_pressed = Color( 0, 0, 0, 1 )
+button_mask = 0
+text = "Moving to the right"
+
+[node name="MovingKey" type="CheckBox" parent="Checklist/Items"]
+margin_top = 84.0
+margin_right = 271.0
+margin_bottom = 108.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_colors/font_color_pressed = Color( 0, 0, 0, 1 )
+button_mask = 0
+text = "Moving to the right when D is pressed"
+
+[node name="MovingSpeed" type="CheckBox" parent="Checklist/Items"]
+margin_top = 112.0
+margin_right = 271.0
+margin_bottom = 136.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_colors/font_color_pressed = Color( 0, 0, 0, 1 )
+button_mask = 0
+text = "Moving at adequate speed"
+
+[node name="EasyFlag" type="CheckBox" parent="Checklist/Items"]
+margin_top = 140.0
+margin_right = 271.0
+margin_bottom = 164.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_colors/font_color_pressed = Color( 0, 0, 0, 1 )
+button_mask = 0
+text = "Reached first Flag"
+
+[node name="HardFlag" type="CheckBox" parent="Checklist/Items"]
+margin_top = 168.0
+margin_right = 271.0
+margin_bottom = 192.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_colors/font_color_pressed = Color( 0, 0, 0, 1 )
+button_mask = 0
+text = "Reached last Flag"
+
+[node name="SubmitButton" type="Button" parent="Checklist/Items"]
+margin_top = 196.0
+margin_right = 271.0
+margin_bottom = 216.0
+text = "Submit"
+
+[node name="Game" type="Node" parent="."]
+
+[node name="Background" type="Sprite" parent="Game"]
+position = Vector2( 1480.5, 550 )
+scale = Vector2( 0.380085, 0.614634 )
+z_index = -1
+texture = ExtResource( 7 )
+
+[node name="EasyFlag" type="Area2D" parent="Game"]
+position = Vector2( 1140, 726 )
+
+[node name="Flag" type="Sprite" parent="Game/EasyFlag"]
+position = Vector2( -28.9998, 3 )
+rotation = -4.69843
+scale = Vector2( -0.277691, 0.277691 )
+texture = ExtResource( 18 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Game/EasyFlag"]
+position = Vector2( -2, -21.75 )
+shape = SubResource( 6 )
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Game/EasyFlag"]
+margin_left = -45.0
+margin_top = -32.0
+margin_right = -5.0
+margin_bottom = 8.0
+text = "Easy
+"
+
+[node name="HardFlag" type="Area2D" parent="Game"]
+position = Vector2( 1861, 674 )
+
+[node name="Flag" type="Sprite" parent="Game/HardFlag"]
+position = Vector2( 0, -21 )
+scale = Vector2( 0.218033, 0.218033 )
+texture = ExtResource( 18 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Game/HardFlag"]
+position = Vector2( -2, -21.75 )
+shape = SubResource( 6 )
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Game/HardFlag"]
+margin_left = -16.0
+margin_top = -80.0
+margin_right = 24.0
+margin_bottom = -40.0
+text = "Hard
+"
+
+[node name="Level" type="Sprite" parent="Game"]
+position = Vector2( 1475, 705 )
+scale = Vector2( 0.375848, 0.429268 )
+texture = ExtResource( 6 )
+
+[node name="BackToGameSelection" type="Button" parent="Game"]
+visible = false
+light_mask = 0
+anchor_left = 1.0
+anchor_right = 1.0
+margin_left = -90.0
+margin_top = 1.0
+margin_right = -48.0
+margin_bottom = 21.0
+rect_scale = Vector2( 2, 2 )
 text = "Back"
 
-[node name="CodeBox" type="Area2D" parent="."]
-visible = false
-position = Vector2( 165, 155 )
-collision_layer = 4
-collision_mask = 4
-script = ExtResource( 2 )
+[node name="Timer" type="Label" parent="Game"]
+margin_left = 1753.0
+margin_top = 56.0
+margin_right = 1887.0
+margin_bottom = 105.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 5 )
+text = "3:00
+"
+align = 2
+script = ExtResource( 8 )
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="CodeBox"]
-position = Vector2( 0.5, 0.5 )
-shape = SubResource( 1 )
+[node name="WallLeft" type="StaticBody2D" parent="Game"]
+position = Vector2( 1040, 524 )
 
-[node name="Sprite" type="Sprite" parent="CodeBox"]
-texture = ExtResource( 3 )
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Game/WallLeft"]
+position = Vector2( -2.5, 19.5 )
+shape = SubResource( 8 )
 
-[node name="Area2D2" type="Area2D" parent="."]
-visible = false
-position = Vector2( 408, 156 )
-script = ExtResource( 2 )
+[node name="WallRight" type="StaticBody2D" parent="Game"]
+position = Vector2( 1928, 508 )
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D2"]
-shape = SubResource( 1 )
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Game/WallRight"]
+position = Vector2( -2.5, 19.5 )
+shape = SubResource( 8 )
 
-[node name="Sprite" type="Sprite" parent="Area2D2"]
-texture = ExtResource( 3 )
+[node name="Floor" type="StaticBody2D" parent="Game"]
+position = Vector2( 1340, 1061 )
 
-[node name="StaticBody2D" type="StaticBody2D" parent="." groups=["DragAndDropGroup"]]
-position = Vector2( 304, 238 )
-input_pickable = true
-script = ExtResource( 2 )
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Game/Floor"]
+position = Vector2( 74, -82 )
 shape = SubResource( 2 )
 
-[node name="Sprite" type="Sprite" parent="StaticBody2D"]
-texture = ExtResource( 3 )
+[node name="Player" type="KinematicBody2D" parent="Game"]
+position = Vector2( 1136, 869 )
+script = ExtResource( 14 )
 
-[node name="StaticBody2D2" type="StaticBody2D" parent="." groups=["DragAndDropGroup"]]
-position = Vector2( 574, 238 )
-collision_layer = 2
-collision_mask = 2
-input_pickable = true
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Game/Player"]
+position = Vector2( 0, 3 )
+shape = SubResource( 1 )
+
+[node name="Sprite" type="Sprite" parent="Game/Player"]
+texture = ExtResource( 5 )
+
+[node name="FlagArea" type="Area2D" parent="Game/Player"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Game/Player/FlagArea"]
+position = Vector2( 0.25, 0.25 )
+shape = SubResource( 7 )
+
+[node name="Box" type="StaticBody2D" parent="Game"]
+position = Vector2( 1531, 851 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Game/Box"]
+position = Vector2( 55.5, 53.5 )
+shape = SubResource( 3 )
+
+[node name="Area2D" type="StaticBody2D" parent="Game"]
+position = Vector2( 1824, 727 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Game/Area2D"]
+position = Vector2( 31, 114.5 )
+shape = SubResource( 4 )
+
+[node name="ProgrammingUI" type="Control" parent="."]
+margin_right = 1058.0
+margin_bottom = 1078.0
+
+[node name="AspectRatioContainer" type="AspectRatioContainer" parent="ProgrammingUI"]
+margin_right = 1032.0
+margin_bottom = 1080.0
+stretch_mode = 0
+
+[node name="NodeGraph" type="GraphEdit" parent="ProgrammingUI/AspectRatioContainer"]
+margin_top = 24.0
+margin_right = 1032.0
+margin_bottom = 1056.0
+right_disconnects = true
+scroll_offset = Vector2( -250, -250 )
+minimap_enabled = false
+script = ExtResource( 3 )
+
+[node name="Process" type="GraphNode" parent="ProgrammingUI/AspectRatioContainer/NodeGraph"]
+margin_left = 250.0
+margin_top = 250.0
+margin_right = 409.0
+margin_bottom = 341.0
+mouse_filter = 1
+title = "Process"
+slot/0/left_enabled = false
+slot/0/left_type = 0
+slot/0/left_color = Color( 1, 1, 1, 1 )
+slot/0/right_enabled = true
+slot/0/right_type = 0
+slot/0/right_color = Color( 1, 1, 1, 1 )
+slot/1/left_enabled = false
+slot/1/left_type = 0
+slot/1/left_color = Color( 1, 1, 1, 1 )
+slot/1/right_enabled = false
+slot/1/right_type = 0
+slot/1/right_color = Color( 1, 1, 1, 1 )
+script = ExtResource( 12 )
+
+[node name="ExecutionFlowPlaceholder" type="RichTextLabel" parent="ProgrammingUI/AspectRatioContainer/NodeGraph/Process"]
+margin_left = 16.0
+margin_top = 24.0
+margin_right = 143.0
+margin_bottom = 39.0
+text = "- - - - - - - - - - - - - >"
+fit_content_height = true
+
+[node name="Hint" type="RichTextLabel" parent="ProgrammingUI/AspectRatioContainer/NodeGraph/Process"]
+margin_left = 16.0
+margin_top = 40.0
+margin_right = 143.0
+margin_bottom = 85.0
+text = "
+This node is called every frame."
+fit_content_height = true
+
+[node name="Jump" type="GraphNode" parent="ProgrammingUI/AspectRatioContainer/NodeGraph"]
+margin_left = 250.0
+margin_top = 250.0
+margin_right = 401.0
+margin_bottom = 343.0
+mouse_filter = 1
+title = "Jump"
+slot/0/left_enabled = true
+slot/0/left_type = 0
+slot/0/left_color = Color( 1, 1, 1, 1 )
+slot/0/right_enabled = true
+slot/0/right_type = 0
+slot/0/right_color = Color( 1, 1, 1, 1 )
+slot/1/left_enabled = true
+slot/1/left_type = 2
+slot/1/left_color = Color( 0.14902, 0, 1, 1 )
+slot/1/right_enabled = false
+slot/1/right_type = 0
+slot/1/right_color = Color( 1, 1, 1, 1 )
+script = ExtResource( 16 )
+
+[node name="ExecutionFlowPlaceholder" type="RichTextLabel" parent="ProgrammingUI/AspectRatioContainer/NodeGraph/Jump"]
+margin_left = 16.0
+margin_top = 24.0
+margin_right = 135.0
+margin_bottom = 39.0
+text = "- - - - - - - - - - - - >"
+fit_content_height = true
+
+[node name="Player" type="RichTextLabel" parent="ProgrammingUI/AspectRatioContainer/NodeGraph/Jump"]
+margin_left = 16.0
+margin_top = 40.0
+margin_right = 135.0
+margin_bottom = 55.0
+text = "Player"
+fit_content_height = true
+
+[node name="SetPlayerPosition" type="GraphNode" parent="ProgrammingUI/AspectRatioContainer/NodeGraph"]
+anchor_left = 1.0
+anchor_right = 1.0
+margin_left = -782.0
+margin_top = 250.0
+margin_right = -627.0
+margin_bottom = 345.0
+mouse_filter = 1
+title = "Set Player Position"
+slot/0/left_enabled = true
+slot/0/left_type = 0
+slot/0/left_color = Color( 1, 1, 1, 1 )
+slot/0/right_enabled = true
+slot/0/right_type = 0
+slot/0/right_color = Color( 1, 1, 1, 1 )
+slot/1/left_enabled = true
+slot/1/left_type = 2
+slot/1/left_color = Color( 0.14902, 0, 1, 1 )
+slot/1/right_enabled = false
+slot/1/right_type = 0
+slot/1/right_color = Color( 1, 1, 1, 1 )
+slot/2/left_enabled = true
+slot/2/left_type = 3
+slot/2/left_color = Color( 0, 1, 0.972549, 1 )
+slot/2/right_enabled = false
+slot/2/right_type = 0
+slot/2/right_color = Color( 1, 1, 1, 1 )
+slot/3/left_enabled = true
+slot/3/left_type = 3
+slot/3/left_color = Color( 0, 1, 0.972549, 1 )
+slot/3/right_enabled = false
+slot/3/right_type = 0
+slot/3/right_color = Color( 1, 1, 1, 1 )
+script = ExtResource( 4 )
+
+[node name="ExecutionFlowPlaceholder" type="RichTextLabel" parent="ProgrammingUI/AspectRatioContainer/NodeGraph/SetPlayerPosition"]
+margin_left = 16.0
+margin_top = 24.0
+margin_right = 139.0
+margin_bottom = 39.0
+text = "- - - - - - - - - - - - >"
+fit_content_height = true
+
+[node name="Player" type="RichTextLabel" parent="ProgrammingUI/AspectRatioContainer/NodeGraph/SetPlayerPosition"]
+margin_left = 16.0
+margin_top = 40.0
+margin_right = 139.0
+margin_bottom = 55.0
+text = "Player"
+fit_content_height = true
+
+[node name="x" type="RichTextLabel" parent="ProgrammingUI/AspectRatioContainer/NodeGraph/SetPlayerPosition"]
+margin_left = 16.0
+margin_top = 56.0
+margin_right = 139.0
+margin_bottom = 71.0
+text = "x"
+fit_content_height = true
+
+[node name="y" type="RichTextLabel" parent="ProgrammingUI/AspectRatioContainer/NodeGraph/SetPlayerPosition"]
+margin_left = 16.0
+margin_top = 72.0
+margin_right = 139.0
+margin_bottom = 87.0
+text = "y"
+fit_content_height = true
+
+[node name="FloatInput" type="GraphNode" parent="ProgrammingUI/AspectRatioContainer/NodeGraph"]
+margin_left = 250.0
+margin_top = 250.0
+margin_right = 391.0
+margin_bottom = 327.0
+mouse_filter = 1
+title = "Variable"
+slot/0/left_enabled = false
+slot/0/left_type = 0
+slot/0/left_color = Color( 0.745098, 0, 0, 1 )
+slot/0/right_enabled = true
+slot/0/right_type = 2
+slot/0/right_color = Color( 0.0431373, 0, 0.784314, 1 )
+slot/1/left_enabled = false
+slot/1/left_type = 0
+slot/1/left_color = Color( 1, 1, 1, 1 )
+slot/1/right_enabled = false
+slot/1/right_type = 0
+slot/1/right_color = Color( 1, 1, 1, 1 )
+script = ExtResource( 2 )
+Type = 8
+configureable = true
+
+[node name="Player" type="RichTextLabel" parent="ProgrammingUI/AspectRatioContainer/NodeGraph/FloatInput"]
+margin_left = 16.0
+margin_top = 24.0
+margin_right = 125.0
+margin_bottom = 39.0
+bbcode_enabled = true
+bbcode_text = "[right]Float"
+text = "Float"
+fit_content_height = true
+
+[node name="InputSlider" type="HSlider" parent="ProgrammingUI/AspectRatioContainer/NodeGraph/FloatInput"]
+margin_left = 16.0
+margin_top = 40.0
+margin_right = 125.0
+margin_bottom = 56.0
+min_value = -10.0
+max_value = 10.0
+step = 0.5
+
+[node name="InputSliderText" type="RichTextLabel" parent="ProgrammingUI/AspectRatioContainer/NodeGraph/FloatInput/InputSlider"]
+margin_top = 19.0
+margin_right = 40.0
+margin_bottom = 35.0
+text = "0"
+
+[node name="PlayerVariable" type="GraphNode" parent="ProgrammingUI/AspectRatioContainer/NodeGraph"]
+margin_left = 250.0
+margin_top = 250.0
+margin_right = 399.0
+margin_bottom = 312.0
+mouse_filter = 1
+title = "Variable"
+slot/0/left_enabled = false
+slot/0/left_type = 0
+slot/0/left_color = Color( 0.745098, 0, 0, 1 )
+slot/0/right_enabled = true
+slot/0/right_type = 2
+slot/0/right_color = Color( 0.0431373, 0, 0.784314, 1 )
+slot/1/left_enabled = false
+slot/1/left_type = 0
+slot/1/left_color = Color( 1, 1, 1, 1 )
+slot/1/right_enabled = false
+slot/1/right_type = 0
+slot/1/right_color = Color( 1, 1, 1, 1 )
 script = ExtResource( 2 )
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2"]
-shape = SubResource( 2 )
+[node name="Player" type="RichTextLabel" parent="ProgrammingUI/AspectRatioContainer/NodeGraph/PlayerVariable"]
+margin_left = 16.0
+margin_top = 24.0
+margin_right = 133.0
+margin_bottom = 39.0
+bbcode_enabled = true
+bbcode_text = "[right]Player"
+text = "Player"
+fit_content_height = true
 
-[node name="Sprite" type="Sprite" parent="StaticBody2D2"]
-texture = ExtResource( 3 )
+[node name="InputSlider" type="HSlider" parent="ProgrammingUI/AspectRatioContainer/NodeGraph/PlayerVariable"]
+visible = false
+margin_left = 16.0
+margin_top = 40.0
+margin_right = 133.0
+margin_bottom = 56.0
+step = 0.5
+
+[node name="InputSliderText" type="RichTextLabel" parent="ProgrammingUI/AspectRatioContainer/NodeGraph/PlayerVariable/InputSlider"]
+margin_top = 19.0
+margin_right = 40.0
+margin_bottom = 35.0
+text = "0"
+
+[node name="Addition" type="GraphNode" parent="ProgrammingUI/AspectRatioContainer/NodeGraph"]
+margin_left = 250.0
+margin_top = 250.0
+margin_right = 401.0
+margin_bottom = 343.0
+mouse_filter = 1
+title = "a + b"
+slot/0/left_enabled = true
+slot/0/left_type = 0
+slot/0/left_color = Color( 1, 1, 1, 1 )
+slot/0/right_enabled = true
+slot/0/right_type = 0
+slot/0/right_color = Color( 1, 1, 1, 1 )
+slot/1/left_enabled = true
+slot/1/left_type = 3
+slot/1/left_color = Color( 0, 1, 0.972549, 1 )
+slot/1/right_enabled = false
+slot/1/right_type = 0
+slot/1/right_color = Color( 1, 1, 1, 1 )
+slot/2/left_enabled = true
+slot/2/left_type = 3
+slot/2/left_color = Color( 0, 1, 0.972549, 1 )
+slot/2/right_enabled = false
+slot/2/right_type = 0
+slot/2/right_color = Color( 1, 1, 1, 1 )
+slot/3/left_enabled = false
+slot/3/left_type = 0
+slot/3/left_color = Color( 1, 1, 1, 1 )
+slot/3/right_enabled = true
+slot/3/right_type = 3
+slot/3/right_color = Color( 0, 1, 0.972549, 1 )
+script = ExtResource( 13 )
+
+[node name="ExecutionFlowPlaceholder" type="RichTextLabel" parent="ProgrammingUI/AspectRatioContainer/NodeGraph/Addition"]
+margin_left = 16.0
+margin_top = 24.0
+margin_right = 135.0
+margin_bottom = 39.0
+text = "- - - - - - - - - - - - >"
+fit_content_height = true
+
+[node name="Input 1" type="RichTextLabel" parent="ProgrammingUI/AspectRatioContainer/NodeGraph/Addition"]
+margin_left = 16.0
+margin_top = 40.0
+margin_right = 135.0
+margin_bottom = 55.0
+text = "a"
+fit_content_height = true
+
+[node name="Input 2" type="RichTextLabel" parent="ProgrammingUI/AspectRatioContainer/NodeGraph/Addition"]
+margin_left = 16.0
+margin_top = 56.0
+margin_right = 135.0
+margin_bottom = 71.0
+text = "b"
+fit_content_height = true
+
+[node name="Output" type="RichTextLabel" parent="ProgrammingUI/AspectRatioContainer/NodeGraph/Addition"]
+margin_left = 16.0
+margin_top = 72.0
+margin_right = 135.0
+margin_bottom = 87.0
+bbcode_enabled = true
+bbcode_text = "[right]="
+text = "="
+fit_content_height = true
+
+[node name="PlayerPosX" type="GraphNode" parent="ProgrammingUI/AspectRatioContainer/NodeGraph"]
+margin_left = 250.0
+margin_top = 250.0
+margin_right = 399.0
+margin_bottom = 327.0
+rect_pivot_offset = Vector2( -638, -126 )
+mouse_filter = 1
+title = "Position.X"
+slot/0/left_enabled = false
+slot/0/left_type = 0
+slot/0/left_color = Color( 1, 1, 1, 1 )
+slot/0/right_enabled = true
+slot/0/right_type = 0
+slot/0/right_color = Color( 1, 1, 1, 1 )
+slot/1/left_enabled = true
+slot/1/left_type = 2
+slot/1/left_color = Color( 0.0431373, 0, 0.784314, 1 )
+slot/1/right_enabled = false
+slot/1/right_type = 2
+slot/1/right_color = Color( 0, 1, 0.972549, 1 )
+script = ExtResource( 2 )
+Type = 7
+
+[node name="PosX" type="RichTextLabel" parent="ProgrammingUI/AspectRatioContainer/NodeGraph/PlayerPosX"]
+margin_left = 16.0
+margin_top = 24.0
+margin_right = 133.0
+margin_bottom = 39.0
+bbcode_enabled = true
+bbcode_text = "[right]Position X"
+text = "Position X"
+fit_content_height = true
+
+[node name="InputSlider" type="HSlider" parent="ProgrammingUI/AspectRatioContainer/NodeGraph/PlayerPosX"]
+visible = false
+margin_left = 16.0
+margin_top = 40.0
+margin_right = 133.0
+margin_bottom = 56.0
+step = 0.5
+
+[node name="InputSliderText" type="RichTextLabel" parent="ProgrammingUI/AspectRatioContainer/NodeGraph/PlayerPosX/InputSlider"]
+margin_top = 19.0
+margin_right = 40.0
+margin_bottom = 35.0
+text = "0"
+
+[node name="PlayerPosY" type="GraphNode" parent="ProgrammingUI/AspectRatioContainer/NodeGraph"]
+margin_left = 250.0
+margin_top = 250.0
+margin_right = 398.0
+margin_bottom = 327.0
+rect_pivot_offset = Vector2( -638, -126 )
+mouse_filter = 1
+title = "Position.Y"
+slot/0/left_enabled = false
+slot/0/left_type = 0
+slot/0/left_color = Color( 1, 1, 1, 1 )
+slot/0/right_enabled = true
+slot/0/right_type = 0
+slot/0/right_color = Color( 1, 1, 1, 1 )
+slot/1/left_enabled = true
+slot/1/left_type = 2
+slot/1/left_color = Color( 0.0431373, 0, 0.784314, 1 )
+slot/1/right_enabled = false
+slot/1/right_type = 3
+slot/1/right_color = Color( 0, 1, 0.972549, 1 )
+script = ExtResource( 2 )
+Type = 8
+
+[node name="PosY" type="RichTextLabel" parent="ProgrammingUI/AspectRatioContainer/NodeGraph/PlayerPosY"]
+margin_left = 16.0
+margin_top = 24.0
+margin_right = 132.0
+margin_bottom = 39.0
+bbcode_enabled = true
+bbcode_text = "[right]Position Y"
+text = "Position Y"
+fit_content_height = true
+
+[node name="InputSlider" type="HSlider" parent="ProgrammingUI/AspectRatioContainer/NodeGraph/PlayerPosY"]
+visible = false
+margin_left = 16.0
+margin_top = 40.0
+margin_right = 132.0
+margin_bottom = 56.0
+step = 0.5
+
+[node name="InputSliderText" type="RichTextLabel" parent="ProgrammingUI/AspectRatioContainer/NodeGraph/PlayerPosY/InputSlider"]
+margin_top = 19.0
+margin_right = 40.0
+margin_bottom = 35.0
+text = "0"
+
+[node name="IfBlock2" type="GraphNode" parent="ProgrammingUI/AspectRatioContainer/NodeGraph"]
+margin_left = 250.0
+margin_top = 250.0
+margin_right = 402.0
+margin_bottom = 326.0
+mouse_filter = 1
+title = "if ()"
+slot/0/left_enabled = true
+slot/0/left_type = 0
+slot/0/left_color = Color( 1, 1, 1, 1 )
+slot/0/right_enabled = true
+slot/0/right_type = 0
+slot/0/right_color = Color( 1, 1, 1, 1 )
+slot/1/left_enabled = true
+slot/1/left_type = 1
+slot/1/left_color = Color( 0.933333, 0, 0.701961, 1 )
+slot/1/right_enabled = false
+slot/1/right_type = 0
+slot/1/right_color = Color( 1, 1, 1, 1 )
+script = ExtResource( 11 )
+
+[node name="ExecutionFlowPlaceholder" type="RichTextLabel" parent="ProgrammingUI/AspectRatioContainer/NodeGraph/IfBlock2"]
+margin_left = 16.0
+margin_top = 24.0
+margin_right = 136.0
+margin_bottom = 39.0
+text = "- - - - - - - - - - - - >"
+fit_content_height = true
+
+[node name="Condition" type="RichTextLabel" parent="ProgrammingUI/AspectRatioContainer/NodeGraph/IfBlock2"]
+margin_left = 16.0
+margin_top = 40.0
+margin_right = 136.0
+margin_bottom = 55.0
+text = "Condition"
+fit_content_height = true
+
+[node name="IfBlock" type="GraphNode" parent="ProgrammingUI/AspectRatioContainer/NodeGraph"]
+margin_left = 250.0
+margin_top = 250.0
+margin_right = 401.0
+margin_bottom = 327.0
+mouse_filter = 1
+title = "if ()"
+slot/0/left_enabled = true
+slot/0/left_type = 0
+slot/0/left_color = Color( 1, 1, 1, 1 )
+slot/0/right_enabled = true
+slot/0/right_type = 0
+slot/0/right_color = Color( 1, 1, 1, 1 )
+slot/1/left_enabled = true
+slot/1/left_type = 1
+slot/1/left_color = Color( 0.933333, 0, 0.701961, 1 )
+slot/1/right_enabled = false
+slot/1/right_type = 0
+slot/1/right_color = Color( 1, 1, 1, 1 )
+script = ExtResource( 11 )
+
+[node name="ExecutionFlowPlaceholder" type="RichTextLabel" parent="ProgrammingUI/AspectRatioContainer/NodeGraph/IfBlock"]
+margin_left = 16.0
+margin_top = 24.0
+margin_right = 135.0
+margin_bottom = 39.0
+text = "- - - - - - - - - - - - >"
+fit_content_height = true
+
+[node name="Condition" type="RichTextLabel" parent="ProgrammingUI/AspectRatioContainer/NodeGraph/IfBlock"]
+margin_left = 16.0
+margin_top = 40.0
+margin_right = 135.0
+margin_bottom = 55.0
+text = "Condition"
+fit_content_height = true
+
+[node name="IfSpacePressed" type="GraphNode" parent="ProgrammingUI/AspectRatioContainer/NodeGraph"]
+margin_left = 250.0
+margin_top = 250.0
+margin_right = 424.0
+margin_bottom = 311.0
+mouse_filter = 1
+title = "isKeyPressed(\"Space\")"
+slot/0/left_enabled = false
+slot/0/left_type = 0
+slot/0/left_color = Color( 1, 1, 1, 1 )
+slot/0/right_enabled = true
+slot/0/right_type = 1
+slot/0/right_color = Color( 0.580392, 0, 0.678431, 1 )
+script = ExtResource( 15 )
+
+[node name="RichTextLabel" type="RichTextLabel" parent="ProgrammingUI/AspectRatioContainer/NodeGraph/IfSpacePressed"]
+margin_left = 16.0
+margin_top = 24.0
+margin_right = 158.0
+margin_bottom = 39.0
+bbcode_enabled = true
+bbcode_text = "[right]pressed"
+text = "pressed"
+fit_content_height = true
+
+[node name="IfDPressed" type="GraphNode" parent="ProgrammingUI/AspectRatioContainer/NodeGraph"]
+margin_left = 250.0
+margin_top = 250.0
+margin_right = 397.0
+margin_bottom = 312.0
+mouse_filter = 1
+title = "isKeyPressed(\"D\")"
+slot/0/left_enabled = false
+slot/0/left_type = 0
+slot/0/left_color = Color( 1, 1, 1, 1 )
+slot/0/right_enabled = true
+slot/0/right_type = 1
+slot/0/right_color = Color( 0.580392, 0, 0.678431, 1 )
+script = ExtResource( 10 )
+
+[node name="RichTextLabel" type="RichTextLabel" parent="ProgrammingUI/AspectRatioContainer/NodeGraph/IfDPressed"]
+margin_left = 16.0
+margin_top = 24.0
+margin_right = 131.0
+margin_bottom = 39.0
+bbcode_enabled = true
+bbcode_text = "[right]pressed"
+text = "pressed"
+fit_content_height = true
+
+[node name="RunOverlay" type="ColorRect" parent="ProgrammingUI"]
+visible = false
+margin_right = 1030.0
+margin_bottom = 1077.0
+color = Color( 0, 0, 0, 0.623529 )
+
+[node name="RunOverlayText" type="RichTextLabel" parent="ProgrammingUI/RunOverlay"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -57.0
+margin_top = -19.5001
+margin_right = 65.57
+margin_bottom = 20.3489
+text = "Code executing..."
+
+[node name="ResetButton" type="Button" parent="ProgrammingUI"]
+anchor_left = 0.892
+anchor_right = 1.0
+margin_left = 479.264
+margin_top = 1.0
+margin_right = 459.0
+margin_bottom = 43.0
+focus_mode = 0
+text = "Reset Game"
+
+[node name="RunButton" type="Button" parent="ProgrammingUI"]
+anchor_left = 0.892
+anchor_right = 1.0
+margin_left = 7.26398
+margin_top = 4.0
+margin_right = 44.0
+margin_bottom = 46.0
+focus_mode = 0
+text = "Execute Code"

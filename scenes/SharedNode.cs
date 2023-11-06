@@ -5,6 +5,9 @@ namespace GetOn.scenes {
 	public class SharedNode : Node2D {
 		private Node CurrentScene { get; set; }
 		public string PlayerName { get; set; } = "No name";
+		
+		public int programmingPoints = 0;
+		public float programmingTime = 0;
 
 		public bool isDragging;
 
@@ -26,7 +29,10 @@ namespace GetOn.scenes {
 		}
 
 		public void Print() {
-			GetNode("Printer").Call("_print", PlayerName);
+			var minutes = Mathf.FloorToInt(programmingTime / 60);
+			var seconds = Mathf.FloorToInt(programmingTime % 60);
+			var timeFormatted = $"{minutes:00}:{seconds:00}";
+			GetNode("Printer").Call("_print", PlayerName, programmingPoints, timeFormatted);
 		}
 	}
 }
