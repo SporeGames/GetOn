@@ -1,6 +1,7 @@
 using Godot;
 using System;
 using GetOn.scenes;
+using GetOn.scenes.Programming;
 
 public class Player : KinematicBody2D {
 	
@@ -40,7 +41,10 @@ public class Player : KinematicBody2D {
 
 	public void OnAreaEnter(Area2D area) {
 		if (area.Name == "HardFlag") {
-			_sharedNode.SwitchScene("res://scenes/EndScreen/EndScreen.tscn");
+			GetNode<Checklist>("/root/Programming/Checklist").HardFlag();
+		}
+		if (area.Name == "EasyFlag") {
+			GetNode<Checklist>("/root/Programming/Checklist").EasyFlag();
 		}
 	}
 

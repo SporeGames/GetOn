@@ -20,6 +20,7 @@ namespace GetOn.scenes.Programming.blocks {
 			Vector2 posDiff = new Vector2(x, y) - player.Position;
 			posDiff *= _movementMultiplier;
 			if (player is Player body) {
+				GetNode<Checklist>("/root/Programming/Checklist").OnMove();
 				body.MoveAndSlide(posDiff);
 			}
 			return new BlockVariable("posReturn", this, true);

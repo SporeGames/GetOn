@@ -61,6 +61,7 @@ namespace GetOn.scenes.Programming.blocks.godot {
         private void OnValueChanged(float value) {
             configureableValue = (float) _slider.Value;
             _label.Text = configureableValue.ToString();
+            GetNode<Checklist>("/root/Programming/Checklist").MoveSpeed(configureableValue);
         }
 
         public float getPosX() {

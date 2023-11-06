@@ -13,6 +13,7 @@ namespace GetOn.scenes.Programming.blocks {
         public override BlockVariable Execute() {
             Node2D player = Inputs[1].NodeValue;
             if (player is Player body) {
+                GetNode<Checklist>("/root/Programming/Checklist").OnJump();
                 body.Jump();
             }
             return new BlockVariable("jumpReturn", this, true);
