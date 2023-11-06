@@ -5,6 +5,8 @@ using Godot;
 namespace GetOn.scenes.Programming.blocks {
 	public class AdditionBlock : AbstractBlock {
 
+		private float result = 0;
+
 		public AdditionBlock() {
 			Name = "Addition";
 			InputTypes = new List<BlockVariableType> {BlockVariableType.Float, BlockVariableType.Float};
@@ -18,15 +20,20 @@ namespace GetOn.scenes.Programming.blocks {
 		}
 
 		public override BlockVariable Execute() {
-			var firstNumber = Inputs[1].FloatValue;
-			var secondNumber = Inputs[2].FloatValue;
-			GD.Print("Adding " + firstNumber + " and " + secondNumber + " = " + (firstNumber + secondNumber) + ".");
-			ReturnVariable = new BlockVariable("addReturn1", this, firstNumber + secondNumber);
-			return new BlockVariable("addReturn", this, firstNumber + secondNumber); // TODO: This does not seem to reach the SetPositionBlock (receives 0)
+			float firstNumber = Inputs[1].getFloat();
+			float secondNumber = Inputs[2].getFloat();
+			result = firstNumber + secondNumber;
+			GD.Print("Adding " + firstNumber + " and " + secondNumber + " = " + result + ".");
+			ReturnVariable = new BlockVariable("addReturn", this, result);
+			return new BlockVariable("addReturn", this, result); 
 		}
 		
 		public override bool Validate() {
 			return true;
+		}
+
+		public override float getFloat() {
+			return result;
 		}
 	}
 }

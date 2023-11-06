@@ -7,12 +7,14 @@ namespace GetOn.scenes.Programming.blocks.logic {
         public BlockVariableType Type { get; }
         public GodotNode Block { get; }
         public String id;
-        public int IntValue;
-        public float FloatValue = 0;
+        public int IntValue { set; private get; }
+        public float FloatValue { set; private get; }
         public bool BoolValue;
         public string StringValue;
         public Vector2 VectorValue;
         public Node2D NodeValue;
+
+        public bool isProvidedByBlock = false;
 
         public BlockVariable() {
             
@@ -64,6 +66,37 @@ namespace GetOn.scenes.Programming.blocks.logic {
             Type = BlockVariableType.Node;
             NodeValue = value;
             this.id = id;
+        }
+
+        public BlockVariable(GodotNode block, string placeholder) {
+            this.id = placeholder;
+            Block = block;
+        }
+
+        public int getInt() {
+            if (isProvidedByBlock && Block is AbstractBlock abstractBlock) {
+                return abstractBlock.getInt();
+            }
+            return IntValue;
+        }
+        
+        public float getFloat() {
+            if (isProvidedByBlock && Block is AbstractBlock abstractBlock) {
+                return abstractBlock.getFloat();
+            }
+            return FloatValue;
+        }
+        
+        public bool getBool() {
+            if (isProvidedByBlock && Block is AbstractBlock abstractBlock) {
+                return abstractBlock.getBool();
+            }
+            return BoolValue;
+        }
+        
+        public BlockVariable SetProvidedByBlock(bool value) {
+            isProvidedByBlock = value;
+            return this;
         }
     }
 }

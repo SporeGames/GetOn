@@ -15,7 +15,7 @@ namespace GetOn.scenes.Programming.blocks.logic {
 		public BlockVariable[] Outputs { get; set; } = new BlockVariable[8];
 		public List<BlockVariableType> InputTypes { get; set; }
 
-		public BlockVariable ReturnVariable = new BlockVariable(); // TODO: Apparently also not being updated?!
+		public BlockVariable ReturnVariable;
 		public bool Returns = false;
 
 		protected string ValidationErrorMessage = "Block validation failed!";
@@ -37,7 +37,7 @@ namespace GetOn.scenes.Programming.blocks.logic {
 				return;
 			}
 			var returnValue = Execute();
-			if (Returns) {
+			if (Returns && returnValue != null) {
 				ReturnVariable = returnValue; // This seems to be wrong. Value is always reset to default (0) for some reason.
 			}
 			UpdateVariables(); 
@@ -112,7 +112,7 @@ namespace GetOn.scenes.Programming.blocks.logic {
 			if (connectingNode is AbstractBlock connectingNodeBlock) {
 				GD.Print("AbstractBlock return type: " + connectingNodeBlock.ReturnType + " for slot " + thisSlot + " with nodeBlock " + connectingNodeBlock.Name + " (this: " + Name + ", Returns: " + connectingNodeBlock.Returns + ", nodeBlock class: " + connectingNodeBlock.GetType() + ")");
 				if (connectingNodeBlock.Returns) {
-					Inputs[thisSlot] = connectingNodeBlock.ReturnVariable;
+					Inputs[thisSlot] = new BlockVariable(connectingNodeBlock, "test").SetProvidedByBlock(true);
 					GD.Print("Added return variable input");
 				}
 			}
@@ -129,11 +129,13 @@ namespace GetOn.scenes.Programming.blocks.logic {
 
 		
 		private void UpdateVariables() {
+			var i = 0;
 			foreach (var blockVariable in Inputs) {
 				if (blockVariable == null) { // Unconnected variables will be null
+					i++;
 					continue;
 				}
-
+				
 				if (blockVariable.id == "posX") {
 					blockVariable.FloatValue = VariableProvider.PlayerNode.Position.x;
 				}
@@ -145,7 +147,20 @@ namespace GetOn.scenes.Programming.blocks.logic {
 						blockVariable.FloatValue = variableNode.configureableValue;
 					}
 				}
+				i++;
 			}
+		}
+
+		public virtual int getInt() {
+			return 0;
+		}
+
+		public virtual float getFloat() {
+			return 0f;
+		}
+
+		public virtual bool getBool() {
+			return false;
 		}
 	}
 }

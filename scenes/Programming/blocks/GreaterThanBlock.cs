@@ -8,8 +8,8 @@ namespace GetOn.scenes.Programming.blocks {
         }
         
         public override BlockVariable Execute() {
-            var firstNumber = Inputs[0].IntValue;
-            var secondNumber = Inputs[1].IntValue;
+            var firstNumber = Inputs[0].getInt();
+            var secondNumber = Inputs[1].getInt();
             if (firstNumber > secondNumber) {
                 return new BlockVariable("greaterReturn", this, true);
             }

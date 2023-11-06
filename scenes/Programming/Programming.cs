@@ -16,6 +16,8 @@ namespace GetOn.scenes.GameSelectionRoom
 		private NodeGraph _programmingUI;
 
 		private bool running = false;
+
+		private bool firstStart = true;
 		public override void _Ready() {
 			_sharedNode = GetNode<SharedNode>("/root/SharedNode");
 			_backToGameSelectionRoom = GetNode<Button>("Game/BackToGameSelection");
@@ -27,8 +29,12 @@ namespace GetOn.scenes.GameSelectionRoom
 		}
 
 		public override void _Process(float delta) {
-			if (running) {
+			if (running && firstStart) {
 				_programmingUI.Executor.Start();
+				firstStart = false;
+			}
+			if (running) {
+				_programmingUI.Executor.Execute();
 			}
 		}
 

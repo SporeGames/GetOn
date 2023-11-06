@@ -11,8 +11,8 @@ namespace GetOn.scenes.Programming.blocks {
 		
 		public override BlockVariable Execute() {
 			Node2D player = Inputs[1].NodeValue;
-			var x = Inputs[2].FloatValue;
-			var y = Inputs[3].FloatValue;
+			var x = Inputs[2].getFloat();
+			var y = Inputs[3].getFloat();
 			GD.Print("Setting position to " + x + ", " + y + "");
 			player.Position = new Vector2(x, y);
 			return new BlockVariable("posReturn", this, true);

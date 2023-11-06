@@ -22,7 +22,7 @@ namespace GetOn.scenes.Programming.blocks.logic {
         }
 
         // Run the block execution in a separate thread to not stall the game.
-        private void Execute() {
+        public void Execute() {
             try {
                 StartBlock.Run();
             }

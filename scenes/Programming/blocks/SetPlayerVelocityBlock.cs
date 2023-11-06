@@ -13,8 +13,8 @@ namespace GetOn.scenes.Programming.blocks {
 		
         public override BlockVariable Execute() {
             var player = Inputs[0].NodeValue;
-            var x = Inputs[1].IntValue;
-            var y = Inputs[2].IntValue;
+            var x = Inputs[1].getInt();
+            var y = Inputs[2].getInt();
             var velocity = new Vector2(x, y);
             player.Position += velocity * _delta;
             return new BlockVariable("SetVeloReturn", this, true);
