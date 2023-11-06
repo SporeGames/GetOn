@@ -281,10 +281,10 @@ minimap_enabled = false
 script = ExtResource( 3 )
 
 [node name="Process" type="GraphNode" parent="ProgrammingUI/AspectRatioContainer/NodeGraph"]
-margin_left = 250.0
-margin_top = 250.0
-margin_right = 398.0
-margin_bottom = 309.0
+margin_left = 466.0
+margin_top = 292.0
+margin_right = 625.0
+margin_bottom = 383.0
 mouse_filter = 1
 title = "Process"
 slot/0/left_enabled = false
@@ -293,14 +293,29 @@ slot/0/left_color = Color( 1, 1, 1, 1 )
 slot/0/right_enabled = true
 slot/0/right_type = 0
 slot/0/right_color = Color( 1, 1, 1, 1 )
+slot/1/left_enabled = false
+slot/1/left_type = 0
+slot/1/left_color = Color( 1, 1, 1, 1 )
+slot/1/right_enabled = false
+slot/1/right_type = 0
+slot/1/right_color = Color( 1, 1, 1, 1 )
 script = ExtResource( 12 )
 
 [node name="ExecutionFlowPlaceholder" type="RichTextLabel" parent="ProgrammingUI/AspectRatioContainer/NodeGraph/Process"]
 margin_left = 16.0
 margin_top = 24.0
-margin_right = 132.0
+margin_right = 143.0
 margin_bottom = 39.0
-text = "- - - - - - - - - - - - >"
+text = "- - - - - - - - - - - - - >"
+fit_content_height = true
+
+[node name="Hint" type="RichTextLabel" parent="ProgrammingUI/AspectRatioContainer/NodeGraph/Process"]
+margin_left = 16.0
+margin_top = 40.0
+margin_right = 143.0
+margin_bottom = 85.0
+text = "
+This node is called every frame."
 fit_content_height = true
 
 [node name="Jump" type="GraphNode" parent="ProgrammingUI/AspectRatioContainer/NodeGraph"]
@@ -575,7 +590,7 @@ margin_bottom = 327.0
 rect_pivot_offset = Vector2( -638, -126 )
 mouse_filter = 1
 title = "Position.X"
-slot/0/left_enabled = true
+slot/0/left_enabled = false
 slot/0/left_type = 0
 slot/0/left_color = Color( 1, 1, 1, 1 )
 slot/0/right_enabled = true
@@ -622,7 +637,7 @@ margin_bottom = 327.0
 rect_pivot_offset = Vector2( -638, -126 )
 mouse_filter = 1
 title = "Position.Y"
-slot/0/left_enabled = true
+slot/0/left_enabled = false
 slot/0/left_type = 0
 slot/0/left_color = Color( 1, 1, 1, 1 )
 slot/0/right_enabled = true
