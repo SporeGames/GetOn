@@ -280,6 +280,29 @@ scroll_offset = Vector2( -250, -250 )
 minimap_enabled = false
 script = ExtResource( 3 )
 
+[node name="Process" type="GraphNode" parent="ProgrammingUI/AspectRatioContainer/NodeGraph"]
+margin_left = 250.0
+margin_top = 250.0
+margin_right = 398.0
+margin_bottom = 309.0
+mouse_filter = 1
+title = "Process"
+slot/0/left_enabled = false
+slot/0/left_type = 0
+slot/0/left_color = Color( 1, 1, 1, 1 )
+slot/0/right_enabled = true
+slot/0/right_type = 0
+slot/0/right_color = Color( 1, 1, 1, 1 )
+script = ExtResource( 12 )
+
+[node name="ExecutionFlowPlaceholder" type="RichTextLabel" parent="ProgrammingUI/AspectRatioContainer/NodeGraph/Process"]
+margin_left = 16.0
+margin_top = 24.0
+margin_right = 132.0
+margin_bottom = 39.0
+text = "- - - - - - - - - - - - >"
+fit_content_height = true
+
 [node name="Jump" type="GraphNode" parent="ProgrammingUI/AspectRatioContainer/NodeGraph"]
 margin_left = 250.0
 margin_top = 250.0
@@ -760,29 +783,6 @@ margin_bottom = 39.0
 bbcode_enabled = true
 bbcode_text = "[right]pressed"
 text = "pressed"
-fit_content_height = true
-
-[node name="Process" type="GraphNode" parent="ProgrammingUI/AspectRatioContainer/NodeGraph"]
-margin_left = 250.0
-margin_top = 250.0
-margin_right = 398.0
-margin_bottom = 309.0
-mouse_filter = 1
-title = "Process"
-slot/0/left_enabled = false
-slot/0/left_type = 0
-slot/0/left_color = Color( 1, 1, 1, 1 )
-slot/0/right_enabled = true
-slot/0/right_type = 0
-slot/0/right_color = Color( 1, 1, 1, 1 )
-script = ExtResource( 12 )
-
-[node name="ExecutionFlowPlaceholder" type="RichTextLabel" parent="ProgrammingUI/AspectRatioContainer/NodeGraph/Process"]
-margin_left = 16.0
-margin_top = 24.0
-margin_right = 132.0
-margin_bottom = 39.0
-text = "- - - - - - - - - - - - >"
 fit_content_height = true
 
 [node name="RunOverlay" type="ColorRect" parent="ProgrammingUI"]
