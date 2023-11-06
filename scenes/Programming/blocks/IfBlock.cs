@@ -16,7 +16,6 @@ namespace GetOn.scenes.Programming.blocks {
             var result = true;
             foreach (var condition in ConnectedConditions) {
                 if (!condition.Check()) {
-                    GD.Print("Condition failed!");
                     result = false;
                 }
             }

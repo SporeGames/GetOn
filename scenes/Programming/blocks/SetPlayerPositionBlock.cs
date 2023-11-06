@@ -4,6 +4,10 @@ using Godot;
 	
 namespace GetOn.scenes.Programming.blocks {
 	public class SetPlayerPositionBlock : AbstractBlock {
+		
+		[Export]
+		private float _movementMultiplier = 50f;
+		
 		public SetPlayerPositionBlock() {
 			InputTypes = new List<BlockVariableType> {BlockVariableType.Node, BlockVariableType.Float, BlockVariableType.Float};
 			Name = "SetPlayerPosition";
@@ -14,8 +18,9 @@ namespace GetOn.scenes.Programming.blocks {
 			var x = Inputs[2].getFloat();
 			var y = Inputs[3].getFloat();
 			Vector2 posDiff = new Vector2(x, y) - player.Position;
-			if (player is KinematicBody2D body) {
-				body.MoveAndCollide(posDiff);
+			posDiff *= _movementMultiplier;
+			if (player is Player body) {
+				body.MoveAndSlide(posDiff);
 			}
 			return new BlockVariable("posReturn", this, true);
 		}
