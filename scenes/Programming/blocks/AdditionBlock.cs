@@ -23,7 +23,6 @@ namespace GetOn.scenes.Programming.blocks {
 			float firstNumber = Inputs[1].getFloat();
 			float secondNumber = Inputs[2].getFloat();
 			result = firstNumber + secondNumber;
-			GD.Print("Adding " + firstNumber + " and " + secondNumber + " = " + result + ".");
 			ReturnVariable = new BlockVariable("addReturn", this, result);
 			return new BlockVariable("addReturn", this, result); 
 		}

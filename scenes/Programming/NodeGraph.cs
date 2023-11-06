@@ -19,7 +19,7 @@ public class NodeGraph : GraphEdit {
     public override void _Ready() {
         Start = GetNode<AbstractBlock>("Process");
         Executor.StartBlock = Start;
-        VariableProvider.PlayerNode = GetNode<Area2D>("/root/Programming/Game/Player");
+        VariableProvider.PlayerNode = GetNode<KinematicBody2D>("/root/Programming/Game/Player");
         VariableProvider.FlagNode = GetNode<Node2D>("/root/Programming/Game/Flag");
         Connect("connection_request", this, nameof(ConnectRequest));
         Connect("disconnection_request", this, nameof(DisconnectRequest));
@@ -84,7 +84,7 @@ public class NodeGraph : GraphEdit {
         if (from is AbstractBlock fromBlock && to is AbstractBlock toBlock) {
             if (from_port == 0 && to_port == 0) { // Port 0 is always execution logic
                 toBlock.PreviousBlock = fromBlock;
-                fromBlock.NextBlock = toBlock;
+                fromBlock.NextBlocks.Add(toBlock);
                 ConnectNode(from_node, from_port, to_node, 0);
                 toBlock.Connected(fromBlock, to_port, from_port);
                 GD.Print("Connected execution " + from_node + " to " + to_node + " at port " + (to_port));
@@ -106,7 +106,7 @@ public class NodeGraph : GraphEdit {
 
         if (from_port == 0) {
             if (from is AbstractBlock blockFrom && to is AbstractBlock blockTo) {
-                blockFrom.NextBlock = null;
+                blockFrom.NextBlocks.Remove(blockTo);
                 return;
             }
         }

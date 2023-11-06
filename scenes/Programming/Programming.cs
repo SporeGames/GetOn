@@ -12,8 +12,11 @@ namespace GetOn.scenes.GameSelectionRoom
 		private Button _backToGameSelectionRoom;
 		
 		private Button _runButton;
+		private Button _resetButton;
 		private ColorRect _runOverlay;
 		private NodeGraph _programmingUI;
+
+		private Vector2 _playerOrigin;
 
 		private bool running = false;
 
@@ -26,6 +29,9 @@ namespace GetOn.scenes.GameSelectionRoom
 			_runButton = GetNode<Button>("ProgrammingUI/RunButton");
 			_runButton.Connect("pressed", this, nameof(OnRunPressed));
 			_runOverlay = GetNode<ColorRect>("ProgrammingUI/RunOverlay");
+			_resetButton = GetNode<Button>("ProgrammingUI/ResetButton");
+			_resetButton.Connect("pressed", this, nameof(OnResetPressed));
+			_playerOrigin = GetNode<KinematicBody2D>("Game/Player").Position;
 		}
 
 		public override void _Process(float delta) {
@@ -40,6 +46,10 @@ namespace GetOn.scenes.GameSelectionRoom
 
 		public void OnBackToSelectionRoomPressed() {
 			_sharedNode.SwitchScene("res://scenes/GameSelectionRoom/GameSelectionRoom.tscn");
+		}
+
+		public void OnResetPressed() {
+			GetNode<KinematicBody2D>("Game/Player").Position = _playerOrigin;
 		}
 
 		public void OnRunPressed() {

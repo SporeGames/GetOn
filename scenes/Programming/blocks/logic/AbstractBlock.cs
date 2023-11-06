@@ -8,7 +8,7 @@ namespace GetOn.scenes.Programming.blocks.logic {
 	public class AbstractBlock : BlockNode {
 
 		public string Name { get; set; }
-		public AbstractBlock NextBlock { get; set; }
+		public List<AbstractBlock> NextBlocks = new List<AbstractBlock>();
 		public AbstractBlock PreviousBlock { get; set; }
 		public BlockVariableType ReturnType { get; set; }
 		public BlockVariable[] Inputs { get; set; } = new BlockVariable[8];
@@ -27,7 +27,6 @@ namespace GetOn.scenes.Programming.blocks.logic {
 		}
 
 		public void Run() {
-			GD.Print("Executing: " + base.Name);
 			try {
 				if (!Validate()) {
 					throw new BlockLogicException(ValidationErrorMessage);
@@ -42,13 +41,17 @@ namespace GetOn.scenes.Programming.blocks.logic {
 			}
 			UpdateVariables(); 
 			if (ReturnType == BlockVariableType.Bool) { 
-				if (NextBlock != null && returnValue.BoolValue) {
-					NextBlock.Run();
+				if (NextBlocks.Count != 0 && returnValue.BoolValue) {
+					foreach (var block in NextBlocks) {
+						block.Run();
+					}
 				}
 			}
 			else {
-				if (NextBlock != null) {
-					NextBlock.Run();
+				if (NextBlocks.Count != 0) {
+					foreach (var block in NextBlocks) {
+						block.Run();
+					}
 				}
 			}
 		}

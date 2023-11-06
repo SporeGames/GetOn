@@ -13,21 +13,14 @@ namespace GetOn.scenes.Programming.blocks {
 			Node2D player = Inputs[1].NodeValue;
 			var x = Inputs[2].getFloat();
 			var y = Inputs[3].getFloat();
-			GD.Print("Setting position to " + x + ", " + y + "");
-			player.Position = new Vector2(x, y);
+			Vector2 posDiff = new Vector2(x, y) - player.Position;
+			if (player is KinematicBody2D body) {
+				body.MoveAndCollide(posDiff);
+			}
 			return new BlockVariable("posReturn", this, true);
 		}
 		
 		public override bool Validate() {
-			var output = "";
-			foreach (var input in Inputs) {
-				if (input == null) {
-					output += "none/";
-					continue;
-				}
-				output += input.Type + "/";
-			}
-			GD.Print(output);
 			if (Inputs[1] == null || Inputs[2] == null || Inputs[3] == null) {
 				ValidationErrorMessage = "SetPositionBlock must have 3 inputs!";
 				return false;
