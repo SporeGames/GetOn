@@ -17,6 +17,7 @@ public class NodeGraph : GraphEdit {
 	public AbstractBlock Start;
 	
 	public override void _Ready() {
+		GetZoomHbox().Visible = false; // Zooming is bugged, so lets disable it.
 		Start = GetNode<AbstractBlock>("Process");
 		Executor.StartBlock = Start;
 		VariableProvider.PlayerNode = GetNode<KinematicBody2D>("/root/Programming/Game/Player");
@@ -38,6 +39,12 @@ public class NodeGraph : GraphEdit {
 				}
 			}
 			
+		}
+	}
+
+	public override void _Input(InputEvent @event) {
+		if (@event is InputEventMouseButton mouse && (mouse.ButtonIndex == 4 || mouse.ButtonIndex == 5)) { // Disable scroll input
+			AcceptEvent();
 		}
 	}
 
