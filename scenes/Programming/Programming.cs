@@ -35,12 +35,12 @@ namespace GetOn.scenes.GameSelectionRoom
 		}
 
 		public override void _Process(float delta) {
-			if (running && firstStart) {
+			/*if (running && firstStart) {
 				_programmingUI.Executor.Start();
 				firstStart = false;
-			}
+			}*/
 			if (running) {
-				_programmingUI.Executor.Execute();
+				_programmingUI.Executor.StartBlock.Run();
 			}
 		}
 

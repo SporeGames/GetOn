@@ -82,6 +82,14 @@ texture = ExtResource( 5 )
 position = Vector2( -2, -21.75 )
 shape = SubResource( 6 )
 
+[node name="RichTextLabel" type="RichTextLabel" parent="Game/HardFlag"]
+margin_left = -15.0
+margin_top = -51.0
+margin_right = 25.0
+margin_bottom = -11.0
+text = "Hard
+"
+
 [node name="Level" type="Sprite" parent="Game"]
 position = Vector2( 1475, 705 )
 scale = Vector2( 0.375848, 0.429268 )
