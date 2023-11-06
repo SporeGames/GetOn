@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using GetOn.scenes.Programming.blocks.logic;
 using Godot;
@@ -23,6 +24,7 @@ namespace GetOn.scenes.Programming.blocks {
 			float firstNumber = Inputs[1].getFloat();
 			float secondNumber = Inputs[2].getFloat();
 			result = firstNumber + secondNumber;
+			GetNode<Checklist>("/root/Programming/Checklist").MoveSpeed(Math.Abs(firstNumber - secondNumber));
 			ReturnVariable = new BlockVariable("addReturn", this, result);
 			return new BlockVariable("addReturn", this, result); 
 		}

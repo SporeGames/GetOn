@@ -9,7 +9,7 @@
 [ext_resource path="res://art/Hintergrund .png" type="Texture" id=7]
 [ext_resource path="res://scenes/Programming/CountdownTimer.cs" type="Script" id=8]
 [ext_resource path="res://font/BAHNSCHRIFT 1.TTF" type="DynamicFontData" id=9]
-[ext_resource path="res://scenes/Programming/blocks/KeyAPressedCondition.cs" type="Script" id=10]
+[ext_resource path="res://scenes/Programming/blocks/KeyDPressedCondition.cs" type="Script" id=10]
 [ext_resource path="res://scenes/Programming/blocks/IfBlock.cs" type="Script" id=11]
 [ext_resource path="res://scenes/Programming/blocks/ProcessBlock.cs" type="Script" id=12]
 [ext_resource path="res://scenes/Programming/blocks/AdditionBlock.cs" type="Script" id=13]
@@ -282,10 +282,10 @@ minimap_enabled = false
 script = ExtResource( 3 )
 
 [node name="Process" type="GraphNode" parent="ProgrammingUI/AspectRatioContainer/NodeGraph"]
-margin_left = 466.0
-margin_top = 292.0
-margin_right = 625.0
-margin_bottom = 383.0
+margin_left = 250.0
+margin_top = 250.0
+margin_right = 409.0
+margin_bottom = 341.0
 mouse_filter = 1
 title = "Process"
 slot/0/left_enabled = false
