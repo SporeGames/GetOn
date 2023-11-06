@@ -108,12 +108,11 @@ scale = Vector2( 1.01198, 0.85 )
 texture = ExtResource( 4 )
 
 [node name="ColorRect" type="ColorRect" parent="Owl"]
-visible = false
 margin_left = 502.0
 margin_top = 340.0
 margin_right = 1560.0
 margin_bottom = 852.0
-color = Color( 0.733333, 0.960784, 0.694118, 0.74902 )
+color = Color( 0.258824, 0.415686, 0.352941, 1 )
 
 [node name="Label2" type="Label" parent="Owl/ColorRect"]
 margin_left = 30.0
@@ -140,3 +139,8 @@ margin_left = 861.0
 margin_top = 458.0
 margin_right = 975.0
 margin_bottom = 494.0
+custom_colors/font_color_disabled = Color( 1, 1, 1, 1 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_colors/font_color_hover = Color( 1, 1, 1, 1 )
+custom_colors/font_color_pressed = Color( 1, 1, 1, 1 )
+text = "Ready"
