@@ -81,7 +81,7 @@ custom_styles/focus = SubResource( 4 )
 custom_styles/disabled = SubResource( 5 )
 custom_styles/normal = SubResource( 6 )
 
-[node name="StartPuzzle" type="Button" parent="Owl"]
+[node name="OpenIntroduction" type="Button" parent="Owl"]
 visible = false
 margin_left = 1345.0
 margin_top = 461.0
@@ -106,3 +106,37 @@ one_shot = true
 position = Vector2( 1447.5, 535 )
 scale = Vector2( 1.01198, 0.85 )
 texture = ExtResource( 4 )
+
+[node name="ColorRect" type="ColorRect" parent="Owl"]
+visible = false
+margin_left = 502.0
+margin_top = 340.0
+margin_right = 1560.0
+margin_bottom = 852.0
+color = Color( 0.733333, 0.960784, 0.694118, 0.74902 )
+
+[node name="Label2" type="Label" parent="Owl/ColorRect"]
+margin_left = 30.0
+margin_top = 29.0
+margin_right = 1027.0
+margin_bottom = 484.0
+custom_fonts/font = SubResource( 1 )
+text = "You have 4 minutes to accomplish this task.
+
+There are several different boxes which you have to put in the right order 
+and connect. 
+
+Goal: Move the player and reach both flags.
+
+Side goal: Accomplish the task as fast as possible!
+
+
+
+
+"
+
+[node name="StartPuzzle" type="Button" parent="Owl/ColorRect"]
+margin_left = 861.0
+margin_top = 458.0
+margin_right = 975.0
+margin_bottom = 494.0

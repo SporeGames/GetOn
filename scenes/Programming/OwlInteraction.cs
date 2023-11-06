@@ -12,11 +12,13 @@ namespace GetOn.scenes.Programming
 		private Label _owlText;
 		private Label _owlText2;
 		private Label _owlText3;
-		private Button _startPuzzle;
+		private Button _openIntroduction;
 		private Timer _textTime;
 		private Timer _textTime2;
 		private Timer _textTime3;
 		private Sprite _computerOutline;
+		private ColorRect _introduction;
+		private Button _startPuzzle;
 	
 		public override void _Ready()
 		{
@@ -25,21 +27,25 @@ namespace GetOn.scenes.Programming
 			_textTime2 = GetNode<Timer>("Timer2");
 			_textTime3 = GetNode<Timer>("Timer3");
 			_interactOwl = GetNode<Button>("InteractOwl");
-			_startPuzzle = GetNode<Button>("StartPuzzle");
+			_openIntroduction = GetNode<Button>("OpenIntroduction");
 			_owlText = GetNode<Label>("Label");
 			_owlText2 = GetNode<Label>("Label2");
 			_owlText3 = GetNode<Label>("Label3");
 			_computerOutline = GetNode<Sprite>("ComputerOutline");
 			_interactOwl.Connect("pressed", this, nameof(InteractOwlPressed));
-			_startPuzzle.Connect("pressed", this, nameof(StartPuzzle));
+			_openIntroduction.Connect("pressed", this, nameof(OpenIntroduction));
 			_textTime.Connect("timeout", this, nameof(OnTimerOver));
 			_textTime2.Connect("timeout", this, nameof(OnTimerOver2));
 			_textTime3.Connect("timeout", this, nameof(OnTimerOver3));
+			_introduction = GetNode<ColorRect>("ColorRect");
+			_startPuzzle = GetNode<Button>("ColorRect/StartPuzzle");
+			_startPuzzle.Connect("pressed",this,nameof(StartPuzzle));
 			_owlText.Hide();
 			_owlText2.Hide();
 			_owlText3.Hide();
-			_startPuzzle.Hide();
+			_openIntroduction.Hide();
 			_computerOutline.Hide();
+			_introduction.Hide();
 		}
 
 		public void InteractOwlPressed()
@@ -53,6 +59,12 @@ namespace GetOn.scenes.Programming
 		public void StartPuzzle()
 		{
 			_sharedNode.SwitchScene("res://scenes/Programming/Programming.tscn");
+		}
+		
+		public void OpenIntroduction()
+		{
+			GD.Print("ShowInto");
+			_introduction.Show();
 		}
 
 		private void OnTimerOver()
@@ -72,7 +84,7 @@ namespace GetOn.scenes.Programming
 		{
 			GD.Print("3");
 			_owlText3.Show();
-			_startPuzzle.Show();
+			_openIntroduction.Show();
 			_computerOutline.Show();
 		}
 	}
