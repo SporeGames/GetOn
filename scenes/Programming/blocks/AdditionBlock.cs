@@ -30,6 +30,10 @@ namespace GetOn.scenes.Programming.blocks {
 		}
 		
 		public override bool Validate() {
+			if (Inputs[1] == null || Inputs[2] == null) {
+				ValidationErrorMessage = "AdditionBlock must have 2 inputs!";
+				return false;
+			}
 			return true;
 		}
 
