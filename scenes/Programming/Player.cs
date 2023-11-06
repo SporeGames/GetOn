@@ -9,7 +9,7 @@ public class Player : KinematicBody2D {
 	[Export]
 	private float gravity = 200.0f;
 	[Export]
-	private float jumpForce = 300.0f;
+	private float jumpForce = 500.0f;
 	private Vector2 _velocity;
 	private Area2D _flagArea;
 	

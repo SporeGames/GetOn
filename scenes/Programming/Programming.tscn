@@ -9,7 +9,7 @@
 [ext_resource path="res://art/Hintergrund .png" type="Texture" id=7]
 [ext_resource path="res://scenes/Programming/CountdownTimer.cs" type="Script" id=8]
 [ext_resource path="res://font/BAHNSCHRIFT 1.TTF" type="DynamicFontData" id=9]
-[ext_resource path="res://scenes/Programming/blocks/KeyAPressedCondition.cs" type="Script" id=10]
+[ext_resource path="res://scenes/Programming/blocks/KeyDPressedCondition.cs" type="Script" id=10]
 [ext_resource path="res://scenes/Programming/blocks/IfBlock.cs" type="Script" id=11]
 [ext_resource path="res://scenes/Programming/blocks/ProcessBlock.cs" type="Script" id=12]
 [ext_resource path="res://scenes/Programming/blocks/AdditionBlock.cs" type="Script" id=13]

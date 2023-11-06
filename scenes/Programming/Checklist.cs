@@ -55,7 +55,7 @@ namespace GetOn.scenes.Programming {
         }
 
         public void MoveSpeed(float speed) {
-            if (speed > 5) {
+            if (speed > 4) {
                 _movingSpeed.Pressed = true;
             }
         }
