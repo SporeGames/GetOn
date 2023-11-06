@@ -1,9 +1,10 @@
 using Godot;
 using System;
+using GetOn.scenes.Programming;
 
 public class CountdownTimer : Label
 {
-	private float _currentTime = 240; 
+	public float CurrentTime = 300; 
 	private Timer _timer;
 
 	public override void _Ready()
@@ -17,12 +18,13 @@ public class CountdownTimer : Label
 
 	private void OnTimerTimeout()
 	{
-		_currentTime -= 1;
+		CurrentTime -= 1;
 
-		if (_currentTime <= 0)
+		if (CurrentTime <= 0)
 		{
-			_currentTime = 0;
+			CurrentTime = 0;
 			_timer.Stop();
+			GetNode<Checklist>("/root/Programming/Checklist").TimeOut();
 		}
 
 		UpdateTimerDisplay();
@@ -31,8 +33,8 @@ public class CountdownTimer : Label
 	private void UpdateTimerDisplay()
 	{
 		
-		int minutes = Mathf.FloorToInt(_currentTime / 60);
-		int seconds = Mathf.FloorToInt(_currentTime % 60);
-		Text = $"Time: {minutes:00}:{seconds:00}";
+		int minutes = Mathf.FloorToInt(CurrentTime / 60);
+		int seconds = Mathf.FloorToInt(CurrentTime % 60);
+		Text = $"Time left: {minutes:00}:{seconds:00}";
 	}
 }

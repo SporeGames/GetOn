@@ -1,7 +1,5 @@
 using Godot;
-using System;
-using GetOn.scenes.Programming.blocks.godot;
-using GetOn.scenes.Programming.blocks.logic;
+using GetOn.scenes.Programming;
 
 namespace GetOn.scenes.GameSelectionRoom
 {
@@ -15,6 +13,7 @@ namespace GetOn.scenes.GameSelectionRoom
 		private Button _resetButton;
 		private ColorRect _runOverlay;
 		private NodeGraph _programmingUI;
+		public Checklist Checklist;
 
 		private Vector2 _playerOrigin;
 
@@ -32,6 +31,7 @@ namespace GetOn.scenes.GameSelectionRoom
 			_resetButton = GetNode<Button>("ProgrammingUI/ResetButton");
 			_resetButton.Connect("pressed", this, nameof(OnResetPressed));
 			_playerOrigin = GetNode<KinematicBody2D>("Game/Player").Position;
+			Checklist = GetNode<Checklist>("Checklist");
 		}
 
 		public override void _Process(float delta) {
@@ -66,13 +66,14 @@ namespace GetOn.scenes.GameSelectionRoom
 			_runOverlay.Visible = true;
 			_runButton.Text = "Stop";
 			running = true;
+			Checklist.Reset();
 		}
 		
 		private void Stop() {
 			_runOverlay.Visible = false;
 			_runButton.Text = "Run";
 			running = false;
-			_programmingUI.Executor.Kill();
+			//_programmingUI.Executor.Kill();
 		}
 	}
 }

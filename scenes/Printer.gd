@@ -1,7 +1,9 @@
 extends Node
 
-func _print(text):
-	print_debug("Printing PDF via JS. Content: " + text)
+func _print(name, points, time):
+	print_debug("Printing PDF via JS. Content: " + name);
 	var window = JavaScript.get_interface("window");
-	window.print(text);
+	var pointsString = "Points: %d" % points;
+	var timeString = "Time remaining: " + time;
+	window.print(name, pointsString, timeString);
 	
