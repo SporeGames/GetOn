@@ -359,9 +359,9 @@ fit_content_height = true
 [node name="SetPlayerPosition" type="GraphNode" parent="ProgrammingUI/AspectRatioContainer/NodeGraph"]
 anchor_left = 1.0
 anchor_right = 1.0
-margin_left = -782.0
+margin_left = 250.0
 margin_top = 250.0
-margin_right = -627.0
+margin_right = 405.0
 margin_bottom = 345.0
 mouse_filter = 1
 title = "Set Player Position"
