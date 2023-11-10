@@ -19,6 +19,7 @@ namespace GetOn.scenes.Programming
 		private Sprite _computerOutline;
 		private ColorRect _introduction;
 		private Button _startPuzzle;
+		private bool owlPressed;
 	
 		public override void _Ready()
 		{
@@ -46,14 +47,20 @@ namespace GetOn.scenes.Programming
 			_openIntroduction.Hide();
 			_computerOutline.Hide();
 			_introduction.Hide();
+			owlPressed = false;
 		}
 
 		public void InteractOwlPressed()
 		{
 			_owlText.Show();
-			_textTime2.Start(2);
-			_textTime3.Start(4);
-			_textTime.Start(6);
+			if (owlPressed == false)
+			{
+				_textTime2.Start(1);
+				_textTime3.Start(2);
+				_textTime.Start(3);
+				owlPressed = true;
+			}
+
 		}
 
 		public void StartPuzzle()
@@ -86,6 +93,7 @@ namespace GetOn.scenes.Programming
 			_owlText3.Show();
 			_openIntroduction.Show();
 			_computerOutline.Show();
+			owlPressed = false;
 		}
 	}
 }

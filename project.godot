@@ -11,7 +11,7 @@ config_version=4
 [application]
 
 config/name="GetOn"
-run/main_scene="res://scenes/GameStudy/GameStudy.tscn"
+run/main_scene="res://scenes/MainMenu/MainMenu.tscn"
 config/icon="res://icon.png"
 
 [autoload]
