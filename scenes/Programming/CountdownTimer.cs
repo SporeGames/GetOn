@@ -20,12 +20,12 @@ public class CountdownTimer : Label
 	{
 		CurrentTime -= 1;
 
-		if (CurrentTime <= 0)
+		/*if (CurrentTime <= 0)
 		{
 			CurrentTime = 0;
 			_timer.Stop();
 			GetNode<Checklist>("/root/Programming/Checklist").TimeOut();
-		}
+		}*/
 
 		UpdateTimerDisplay();
 	}
