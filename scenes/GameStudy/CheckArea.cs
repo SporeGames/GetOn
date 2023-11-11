@@ -1,143 +1,152 @@
 using Godot;
 using System;
 
-public class CheckArea : Area2D
+namespace GetOn.scenes.GameStudy 
 {
-	private bool nESCorrect;
-	private bool xBOXCorrect;
-	private bool gameBoyCorrect;
-	private bool megaDrive1Correct;
-	private Button _submitButton;
-	private int points;
-
-	// Called when the node enters the scene tree for the first time.
-	public override void _Ready()
+	public class CheckArea : Area2D
 	{
-		nESCorrect = false;
-		xBOXCorrect = false;
-		gameBoyCorrect = false;
-		megaDrive1Correct = false;
-		_submitButton = GetNode<Button>("/root/GameStudy/Submit");
-		_submitButton.Connect("pressed", this, nameof(CheckifCorrect));
-		points = 0;
-	}
+		private SharedNode _sharedNode;
+		
+		private bool nESCorrect;
+		private bool xBOXCorrect;
+		private bool gameBoyCorrect;
+		private bool megaDrive1Correct;
+		private Button _submitButton;
+		private int points;
 
-	private void CheckifCorrect()
-	{
-		if (nESCorrect == true)
+		// Called when the node enters the scene tree for the first time.
+		public override void _Ready()
 		{
-			points += 5;
+			_sharedNode = GetNode<SharedNode>("/root/SharedNode");
+			nESCorrect = false;
+			xBOXCorrect = false;
+			gameBoyCorrect = false;
+			megaDrive1Correct = false;
+			_submitButton = GetNode<Button>("/root/GameStudy/Submit");
+			_submitButton.Connect("pressed", this, nameof(CheckifCorrect));
+			points = 0;
 		}
 
-		if (xBOXCorrect)
+		private void CheckifCorrect()
 		{
-			points += 5;
-		}
-
-		if (gameBoyCorrect)
-		{
-			points += 5;
-		}
-
-		if (megaDrive1Correct)
-		{
-			points += 5;
-		}
-		GD.Print(points);
-	}
-
-	private void _on_CheckGameBoy_body_entered(object body)
-	{
-		if (body is KinematicBody2D kinematicBody)
-		{
-			if (kinematicBody.Name == "GameBoy")
+			if (nESCorrect == true)
 			{
-				GD.Print("GAMEBOY");
-				gameBoyCorrect = true;
+				points += 5;
+			}
+
+			if (xBOXCorrect)
+			{
+				points += 5;
+			}
+
+			if (gameBoyCorrect)
+			{
+				points += 5;
+			}
+
+			if (megaDrive1Correct)
+			{
+				points += 5;
+			}
+			GD.Print(points);
+			_sharedNode.gameStudyPoints = points;
+		}
+
+		private void _on_CheckGameBoy_body_entered(object body)
+		{
+			if (body is KinematicBody2D kinematicBody)
+			{
+				if (kinematicBody.Name == "GameBoy")
+				{
+					GD.Print("GAMEBOY");
+					gameBoyCorrect = true;
+				}
 			}
 		}
-	}
-	private void _on_CheckXBOX_body_entered(object body)
-	{
-		if (body is KinematicBody2D kinematicBody)
+		private void _on_CheckXBOX_body_entered(object body)
 		{
-			if (kinematicBody.Name == "XBOX")
+			if (body is KinematicBody2D kinematicBody)
 			{
-				GD.Print("XBOX");
-				megaDrive1Correct = true;
+				if (kinematicBody.Name == "XBOX")
+				{
+					GD.Print("XBOX");
+					xBOXCorrect = true;
+				}
 			}
 		}
-	}
-	private void _on_CheckMegaDrive1_body_entered(object body)
-	{
-		if (body is KinematicBody2D kinematicBody)
+		private void _on_CheckMegaDrive1_body_entered(object body)
 		{
-			if (kinematicBody.Name == "MegaDrive1")
+			if (body is KinematicBody2D kinematicBody)
 			{
-				GD.Print("MegaDrive1");
-				xBOXCorrect = true;
+				if (kinematicBody.Name == "MegaDrive1")
+				{
+					GD.Print("MegaDrive1");
+					megaDrive1Correct = true;
+				}
 			}
 		}
-	}
 
 
-	private void _on_CheckNES_body_entered(object body)
-	{
-		if (body is KinematicBody2D kinematicBody)
+		private void _on_CheckNES_body_entered(object body)
 		{
-			if (kinematicBody.Name == "NES")
+			if (body is KinematicBody2D kinematicBody)
 			{
-				GD.Print("NES");
-				nESCorrect = true;
+				if (kinematicBody.Name == "NES")
+				{
+					GD.Print("NES");
+					nESCorrect = true;
+				}
 			}
 		}
-	}
-	
-	private void _on_CheckGameBoy_body_exited(object body)
-	{
-		if (body is KinematicBody2D kinematicBody)
+		
+		private void _on_CheckGameBoy_body_exited(object body)
 		{
-			if (kinematicBody.Name == "GameBoy")
+			if (body is KinematicBody2D kinematicBody)
 			{
-				gameBoyCorrect = false;
-				GD.Print("GameBoy: "+gameBoyCorrect);
+				if (kinematicBody.Name == "GameBoy")
+				{
+					gameBoyCorrect = false;
+					GD.Print("GameBoy: "+gameBoyCorrect);
+				}
 			}
 		}
-	}
-	private void _on_CheckXBOX_body_exited(object body)
-	{
-		if (body is KinematicBody2D kinematicBody)
+		private void _on_CheckXBOX_body_exited(object body)
 		{
-			if (kinematicBody.Name == "XBOX")
+			if (body is KinematicBody2D kinematicBody)
 			{
-				 xBOXCorrect = false;
+				if (kinematicBody.Name == "XBOX")
+				{
+					 xBOXCorrect = false;
+				}
 			}
 		}
-	}
 
 
-	private void _on_CheckMegaDrive1_body_exited(object body)
-	{
-		if (body is KinematicBody2D kinematicBody)
+		private void _on_CheckNES_body_exited(object body)
 		{
-			if (kinematicBody.Name == "MegaDrive1")
+			if (body is KinematicBody2D kinematicBody)
 			{
-				megaDrive1Correct = false;
+				if (kinematicBody.Name == "NES")
+				{
+					nESCorrect = false;
+				}
 			}
 		}
-	}
-
-
-	private void _on_CheckNES_body_exited(object body)
-	{
-		if (body is KinematicBody2D kinematicBody)
+		private void _on_CheckMegaDrive1_body_exited(object body)
 		{
-			if (kinematicBody.Name == "NES")
+			if (body is KinematicBody2D kinematicBody)
 			{
-				nESCorrect = false;
+				if (kinematicBody.Name == "MegaDrive1")
+				{
+					megaDrive1Correct = false;
+				}
 			}
 		}
+
 	}
 }
+
+
+
 
 

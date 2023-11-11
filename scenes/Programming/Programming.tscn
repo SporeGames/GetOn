@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=2]
+[gd_scene load_steps=28 format=2]
 
 [ext_resource path="res://scenes/Programming/Programming.cs" type="Script" id=1]
 [ext_resource path="res://scenes/Programming/blocks/godot/VariableNode.cs" type="Script" id=2]
@@ -17,10 +17,11 @@
 [ext_resource path="res://scenes/Programming/blocks/KeySpacePressedCondition.cs" type="Script" id=15]
 [ext_resource path="res://scenes/Programming/blocks/JumpBlock.cs" type="Script" id=16]
 [ext_resource path="res://scenes/Programming/Checklist.cs" type="Script" id=17]
-[ext_resource path="res://art/Fahne.png" type="Texture" id=18]
+[ext_resource path="res://art/Münze.PNG" type="Texture" id=18]
+[ext_resource path="res://art/fahne (1).PNG" type="Texture" id=19]
 
 [sub_resource type="RectangleShape2D" id=6]
-extents = Vector2( 69, 65.25 )
+extents = Vector2( 69, 62 )
 
 [sub_resource type="DynamicFont" id=5]
 size = 22
@@ -145,13 +146,13 @@ texture = ExtResource( 7 )
 position = Vector2( 1140, 726 )
 
 [node name="Flag" type="Sprite" parent="Game/EasyFlag"]
-position = Vector2( -28.9998, 3 )
+position = Vector2( -2, -21 )
 rotation = -4.69843
 scale = Vector2( -0.277691, 0.277691 )
 texture = ExtResource( 18 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Game/EasyFlag"]
-position = Vector2( -2, -21.75 )
+position = Vector2( -2, -25 )
 shape = SubResource( 6 )
 
 [node name="RichTextLabel" type="RichTextLabel" parent="Game/EasyFlag"]
@@ -166,9 +167,9 @@ text = "Easy
 position = Vector2( 1861, 674 )
 
 [node name="Flag" type="Sprite" parent="Game/HardFlag"]
-position = Vector2( 0, -21 )
+position = Vector2( 1, -5 )
 scale = Vector2( 0.218033, 0.218033 )
-texture = ExtResource( 18 )
+texture = ExtResource( 19 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Game/HardFlag"]
 position = Vector2( -2, -21.75 )
