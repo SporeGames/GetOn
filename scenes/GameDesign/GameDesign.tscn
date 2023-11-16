@@ -1,22 +1,32 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=3 format=2]
 
 [ext_resource path="res://scenes/GameDesign/PlayerProfile.tscn" type="PackedScene" id=1]
+[ext_resource path="res://scenes/GameDesign/GameDesignSlider.tscn" type="PackedScene" id=2]
 
 [node name="GameDesign" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
 
 [node name="PlayerProfile2" parent="." instance=ExtResource( 1 )]
-margin_left = 953.0
-margin_top = 269.0
-margin_right = 953.0
-margin_bottom = 269.0
+margin_left = 1260.0
+margin_top = 741.0
+margin_right = 1260.0
+margin_bottom = 741.0
 rect_scale = Vector2( 0.33, 0.33 )
 PlayerName = "No name 2"
 
 [node name="PlayerProfile" parent="." instance=ExtResource( 1 )]
-margin_left = 101.0
-margin_top = 527.0
-margin_right = 101.0
-margin_bottom = 527.0
+margin_left = 98.0
+margin_top = 687.0
+margin_right = 98.0
+margin_bottom = 687.0
 rect_scale = Vector2( 0.33, 0.33 )
+
+[node name="GameDesignSlider" parent="PlayerProfile" instance=ExtResource( 2 )]
+margin_left = 1581.82
+margin_top = -1718.18
+margin_right = 1581.82
+margin_bottom = -1718.18
+Images = [ null, null, null ]
+Titles = PoolStringArray( "eins", "zwei", "drei" )
+Descriptions = PoolStringArray( "test1", "test2", "test3" )
