@@ -12,6 +12,8 @@ public class PlayerProfile : Control {
     private RichTextLabel _profileName;
     private RichTextLabel _profileText;
     private TextureRect _profilePicture;
+    
+    public ColorRect Background;
 
     [Export] public string PlayerName = "No name";
     [Export] public string ProfileText = "No text";
@@ -22,6 +24,11 @@ public class PlayerProfile : Control {
     [Export] public Texture GameImage;
     [Export] public string GameName;
     [Export] public string GameDescription;
+    [Export] public string[] ValidGenres;
+    [Export] public string[] ValidMechanics;
+    [Export] public string[] ValidFeatures;
+    [Export] public string[] ValidGameplayExperiences;
+    
     
     public override void _Ready() {
         _gameContainer = GetNode<Control>("GameContainer");
@@ -29,6 +36,7 @@ public class PlayerProfile : Control {
         _profileName = GetNode<RichTextLabel>("ProfileName");
         _profileText = GetNode<RichTextLabel>("ProfileText");
         _profilePicture = GetNode<TextureRect>("ProfilePicture");
+        Background = GetNode<ColorRect>("Background");
         SetupProfile();
         SetupAchievements();
         SetupGame();
@@ -55,6 +63,5 @@ public class PlayerProfile : Control {
         game.Game(GameName, GameImage, GameDescription);
         _gameContainer.AddChild(game);
     }
-    
     
 }
