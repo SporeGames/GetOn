@@ -1,4 +1,6 @@
+using System.IO;
 using Godot;
+using Newtonsoft.Json;
 
 namespace GetOn.scenes {
 	// ReSharper disable once ClassNeverInstantiated.Global
@@ -8,8 +10,8 @@ namespace GetOn.scenes {
 		
 		public int programmingPoints = 0;
 		public float programmingTime = 0;
-		public int gameStudyPoints =0;
-		public int narrativePoints = 0;
+		public int gameStudyPoints = 5;
+		public int gameDesignPoints = 5;
 
 		public bool isDragging;
 
@@ -34,7 +36,14 @@ namespace GetOn.scenes {
 			var minutes = Mathf.FloorToInt(programmingTime / 60);
 			var seconds = Mathf.FloorToInt(programmingTime % 60);
 			var timeFormatted = $"{minutes:00}:{seconds:00}";
-			GetNode("Printer").Call("_print", PlayerName, programmingPoints, timeFormatted, gameStudyPoints, narrativePoints);
+			GetNode("Printer").Call("_print", PlayerName, programmingPoints, timeFormatted, gameStudyPoints, gameDesignPoints);
+		}
+
+		public string ToJson() {
+			var serializer = JsonSerializer.CreateDefault();
+			var json = new StringWriter();
+			serializer.Serialize(new JsonTextWriter(json), this);
+			return json.ToString();
 		}
 	}
 }

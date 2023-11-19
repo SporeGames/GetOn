@@ -23,6 +23,7 @@ namespace GetOn.scenes.Programming.blocks {
 				if ((body.Position.x + posDiff.x) > body.Position.x) {
 					GetNode<Checklist>("/root/Programming/Checklist").OnMove();
 				}
+				posDiff += body.VerticalVelocity;
 				body.MoveAndSlide(posDiff);
 			}
 			return new BlockVariable("posReturn", this, true);

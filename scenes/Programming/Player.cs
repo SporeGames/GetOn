@@ -16,7 +16,7 @@ public class Player : KinematicBody2D {
 	public ulong _lastJump = 0;
 	private bool _jumping = false;
 	
-	private Vector2 _verticalVelocity = new Vector2(0, 0);
+	public Vector2 VerticalVelocity = new Vector2(0, 0);
 	public Vector2 direction = new Vector2(0, 0);
 
 	public override void _Ready() {
@@ -29,14 +29,11 @@ public class Player : KinematicBody2D {
 		if (_jumping && _lastJump + 250 < OS.GetTicksMsec()) {
 			_jumping = false;
 		}
-		_verticalVelocity += gravity * delta * Vector2.Down;
-		MoveAndSlide(_verticalVelocity, Vector2.Up);
+		VerticalVelocity += gravity * delta * Vector2.Down;
+		MoveAndSlide(VerticalVelocity, Vector2.Up);
 		if (IsOnFloor() && _jumping) {
-			_verticalVelocity = jumpForce * Vector2.Up;
+			VerticalVelocity = jumpForce * Vector2.Up;
 		}
-
-		direction.Normalized();
-		MoveAndSlide(direction);
 	}
 
 	public void OnAreaEnter(Area2D area) {

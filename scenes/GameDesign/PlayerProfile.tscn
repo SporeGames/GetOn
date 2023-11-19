@@ -1,0 +1,73 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://Export/GetOn.icon.png" type="Texture" id=1]
+[ext_resource path="res://font/BAHNSCHRIFT 1.TTF" type="DynamicFontData" id=2]
+[ext_resource path="res://scenes/GameDesign/PlayerProfile.cs" type="Script" id=3]
+
+[sub_resource type="DynamicFont" id=1]
+size = 48
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 24
+font_data = ExtResource( 2 )
+
+[node name="PlayerProfile" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 3 )
+
+[node name="Background" type="ColorRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0.101961, 0.101961, 0.14902, 1 )
+
+[node name="ProfileName" type="RichTextLabel" parent="."]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -348.0
+margin_top = 78.0
+margin_right = 347.0
+margin_bottom = 155.0
+custom_fonts/normal_font = SubResource( 1 )
+text = "<Username>"
+
+[node name="ProfileText" type="RichTextLabel" parent="."]
+margin_left = 612.0
+margin_top = 189.0
+margin_right = 1096.0
+margin_bottom = 443.0
+custom_fonts/normal_font = SubResource( 2 )
+text = "<text>"
+
+[node name="ProfilePicture" type="TextureRect" parent="."]
+margin_left = 90.0
+margin_top = 78.0
+margin_right = 572.0
+margin_bottom = 560.0
+texture = ExtResource( 1 )
+expand = true
+
+[node name="Achievements" type="RichTextLabel" parent="."]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -348.0
+margin_top = 292.0
+margin_right = 347.0
+margin_bottom = 369.0
+custom_fonts/normal_font = SubResource( 1 )
+bbcode_enabled = true
+bbcode_text = "Achievements:"
+text = "Achievements:"
+
+[node name="AchievementContainer" type="HFlowContainer" parent="."]
+margin_left = 612.0
+margin_top = 373.0
+margin_right = 1646.0
+margin_bottom = 560.0
+
+[node name="GameContainer" type="Control" parent="."]
+margin_left = 90.0
+margin_top = 551.0
+margin_right = 1768.0
+margin_bottom = 994.0

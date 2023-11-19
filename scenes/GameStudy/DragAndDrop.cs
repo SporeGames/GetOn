@@ -44,6 +44,26 @@ public class DragAndDrop : KinematicBody2D
 			this.ZIndex = 20;
 			currentlyDraggedObject = this; 
 			attached = true;
+			//offset = GetViewport().GetMousePosition();
+		}
+
+		if (!Input.IsActionPressed("left_click"))
+		{
+			attached = false;
+			this.ZIndex = 0;
+			_xBOX.InputPickable = true;
+			_nES.InputPickable = true;
+			_gameBoy.InputPickable = true;
+			_megaDrive1.InputPickable = true;
+		
+			if (currentlyDraggedObject == this)
+			{
+				currentlyDraggedObject = null; 
+			}
+		}
+
+		if (@event is InputEventMouseMotion motion)
+		{
 			offset = GetViewport().GetMousePosition();
 		}
 	}
@@ -53,11 +73,10 @@ public class DragAndDrop : KinematicBody2D
 			hovered = true;
 	}
 
-	public void OnMouseLeft()
-	{
-		attached = false;
+	public void OnMouseLeft() {
+		//attached = false;
 		hovered = false;
-		this.ZIndex = 0;
+		/*this.ZIndex = 0;
 		_xBOX.InputPickable = true;
 		_nES.InputPickable = true;
 		_gameBoy.InputPickable = true;
@@ -66,7 +85,7 @@ public class DragAndDrop : KinematicBody2D
 		if (currentlyDraggedObject == this)
 		{
 			currentlyDraggedObject = null; 
-		}
+		}*/	
 	}
 
 	public override void _Process(float delta)
