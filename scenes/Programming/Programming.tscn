@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=2]
+[gd_scene load_steps=29 format=2]
 
 [ext_resource path="res://scenes/Programming/Programming.cs" type="Script" id=1]
 [ext_resource path="res://scenes/Programming/blocks/godot/VariableNode.cs" type="Script" id=2]
@@ -19,6 +19,7 @@
 [ext_resource path="res://scenes/Programming/Checklist.cs" type="Script" id=17]
 [ext_resource path="res://art/Münze.PNG" type="Texture" id=18]
 [ext_resource path="res://art/fahne (1).PNG" type="Texture" id=19]
+[ext_resource path="res://scenes/Music/Play/MusicBack.gd" type="Script" id=20]
 
 [sub_resource type="RectangleShape2D" id=6]
 extents = Vector2( 69, 62 )
@@ -838,3 +839,8 @@ margin_right = 44.0
 margin_bottom = 46.0
 focus_mode = 0
 text = "Execute Code"
+
+[node name="Music" type="Node" parent="."]
+script = ExtResource( 20 )
+
+[connection signal="pressed" from="Checklist/Items/SubmitButton" to="Music" method="_on_SubmitButton_pressed"]

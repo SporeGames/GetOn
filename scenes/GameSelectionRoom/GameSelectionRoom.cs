@@ -14,6 +14,7 @@ namespace GetOn.scenes.GameSelectionRoom {
 
 		// Called when the node enters the scene tree for the first time.
 		public override void _Ready() {
+			
 			_sharedNode = GetNode<SharedNode>("/root/SharedNode");
 			_goToProgramming = GetNode<Button>("GoToProgramming");
 			_goToProgramming.Connect("pressed", this, nameof(OnGoToProgrammingPressed));

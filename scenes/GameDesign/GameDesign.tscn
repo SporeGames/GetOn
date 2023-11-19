@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://scenes/GameDesign/PlayerProfile.tscn" type="PackedScene" id=1]
 [ext_resource path="res://scenes/GameDesign/GameDesignSlider.tscn" type="PackedScene" id=2]
 [ext_resource path="res://scenes/GameDesign/GameDesign.cs" type="Script" id=3]
+[ext_resource path="res://scenes/Music/Play/MusicGameDes.gd" type="Script" id=4]
 
 [node name="GameDesign" type="Control"]
 anchor_right = 1.0
@@ -12,36 +13,36 @@ script = ExtResource( 3 )
 [node name="GenreSlider" parent="." instance=ExtResource( 2 )]
 visible = false
 rect_pivot_offset = Vector2( -815, -180 )
-Images = [ null, null, null ]
-Titles = PoolStringArray( "eins", "zwei", "drei" )
-Descriptions = PoolStringArray( "test1", "test2", "test3" )
+Images = [ null, null, null, null, null, null ]
+Titles = PoolStringArray( "RPG", "Strategy Game", "Tactical Shooter", "Fighting Game", "MOBA", "Sandbox Game" )
+Descriptions = PoolStringArray( "Role-Playing-Game", "Resource Gathering Game", "First-Person-Shooter", "Combat Game", "Massive Online Battle Arena", "Sandbox/Open World Game" )
 CategoryDisplayName = "Select one genre"
 IsSingleSelect = true
 
 [node name="MechanicSlider" parent="." instance=ExtResource( 2 )]
 visible = false
 rect_pivot_offset = Vector2( -815, -180 )
-Images = [ null, null, null ]
-Titles = PoolStringArray( "eins", "zwei", "drei" )
-Descriptions = PoolStringArray( "test1", "test2", "test3" )
+Images = [ null, null, null, null, null, null, null, null, null, null, null ]
+Titles = PoolStringArray( "Items", "Mana", "Stats", "Loot", "Complex Movement", "Various Attacks", "Grab", "Block", "Building", "Resource Development", "Commanding Units" )
+Descriptions = PoolStringArray( "Gathering / Crafting Items", "Using a resource called Mana to cast Spells or Skills", "Statuspoints like Strength or Intelligence", "Receving Loot from farming or killing stuff", "Combo Heavy or Difficult to Master Movement", "Different Combo varities", "Grabbing an Opponent", "Blocking incoming Attacks", "Building things like Farms", "Gathering and using Materials", "Taking control over Army\'s" )
 Category = 1
 CategoryDisplayName = "Select game mechanics"
 
 [node name="FeatureSlider" parent="." instance=ExtResource( 2 )]
 visible = false
 rect_pivot_offset = Vector2( -815, -180 )
-Images = [ null, null, null ]
-Titles = PoolStringArray( "eins", "zwei", "drei" )
-Descriptions = PoolStringArray( "test1", "test2", "test3" )
+Images = [ null, null, null, null, null, null, null ]
+Titles = PoolStringArray( "Character Creation", "Multiplayer", "Ranked System", "Skill Based Matchmaking", "Story Mode", "Diverse Units", "Multi Select" )
+Descriptions = PoolStringArray( "Customizing a own Character apperance", "Playing with other Players", "Rated Competitive Gameplay", "Matching opponents according to your Rank / Skillevel", "Narrative driven Game", "Different type of Units with different aspects and boni", "Multiple select of different Units" )
 Category = 2
 CategoryDisplayName = "Select features"
 
 [node name="GExpSlider" parent="." instance=ExtResource( 2 )]
 visible = false
 rect_pivot_offset = Vector2( -815, -180 )
-Images = [ null, null, null ]
-Titles = PoolStringArray( "eins", "zwei", "drei" )
-Descriptions = PoolStringArray( "test1", "test2", "test3" )
+Images = [ null, null, null, null, null, null, null, null ]
+Titles = PoolStringArray( "Fast Reaction Time", "Combos", "Predictions", "Management", "Tactics", "Social Interaction", "Exploration", "Immersion" )
+Descriptions = PoolStringArray( "Having to react situationally and adapt fast", "Being able to do various combined attacks", "Being able to predict the outcome", "Managing resources / units ", "Using different Tactics in order to win", "Being able to communicate with different Players", "Being able to Explore freely in a World", "Being able to immerse one self into a written Character" )
 Category = 3
 CategoryDisplayName = "Select gameplay experiences"
 
@@ -58,21 +59,29 @@ text = "Expand Persona"
 
 [node name="PlayerProfile" parent="PersonaHolder" instance=ExtResource( 1 )]
 rect_scale = Vector2( 0.48, 0.48 )
-GameName = "Test123"
+PlayerName = "Bob"
+ProfileText = "Desires: Competition, Fast Gameplay, "
+Achievements = {
+Resource( "res://icon.png" ): PoolStringArray( "Big", "One comboed" )
+}
+GameName = "?"
 GameDescription = "description"
-ValidGenres = PoolStringArray( "genre" )
-ValidMechanics = PoolStringArray( "mechanic" )
-ValidFeatures = PoolStringArray( "feature" )
-ValidGameplayExperiences = PoolStringArray( "exp" )
+ValidGenres = PoolStringArray( "Figthing Game" )
+ValidMechanics = PoolStringArray( "Complex Movement", "Various Attacks", "Grab", "Block" )
+ValidFeatures = PoolStringArray( "Multiplayer", "Ranked System", "Skill Based Matchmaking", "Diverse Units" )
+ValidGameplayExperiences = PoolStringArray( "Fast Reacton Time", "Combos", "Predictions" )
 
 [node name="PlayerProfile2" parent="PersonaHolder" instance=ExtResource( 1 )]
 margin_left = 1000.0
 margin_right = 1000.0
 rect_scale = Vector2( 0.48, 0.48 )
-ValidGenres = PoolStringArray( "genre" )
-ValidMechanics = PoolStringArray( "mechanic" )
-ValidFeatures = PoolStringArray( "feature" )
-ValidGameplayExperiences = PoolStringArray( "exp" )
+PlayerName = "Tactician"
+ProfileText = "blub"
+GameName = "Starcraft"
+ValidGenres = PoolStringArray( "Strategy Game" )
+ValidMechanics = PoolStringArray( "Resource Development", "Commanding Units", "Loot", "Building" )
+ValidFeatures = PoolStringArray( "Diverse Units", "Multi Select", "Skill Based Matchmaking" )
+ValidGameplayExperiences = PoolStringArray( "Predictions", "Management", "Tactics" )
 
 [node name="PlayerProfile3" parent="PersonaHolder" instance=ExtResource( 1 )]
 margin_left = 3.00012
@@ -80,10 +89,12 @@ margin_top = 563.0
 margin_right = 3.00012
 margin_bottom = 563.0
 rect_scale = Vector2( 0.48, 0.48 )
-ValidGenres = PoolStringArray( "genre" )
-ValidMechanics = PoolStringArray( "mechanic" )
-ValidFeatures = PoolStringArray( "feature" )
-ValidGameplayExperiences = PoolStringArray( "exp" )
+PlayerName = "Roleplayer"
+GameName = "Baldur's Gate"
+ValidGenres = PoolStringArray( "RPG" )
+ValidMechanics = PoolStringArray( "Items", "Mana", "Stats", "Loot" )
+ValidFeatures = PoolStringArray( "Character Creation", "Multiplayer", "Story" )
+ValidGameplayExperiences = PoolStringArray( "Social Interaction", "Exploration", "Immersion" )
 
 [node name="SelectThird" type="Button" parent="PersonaHolder"]
 margin_left = 790.0
@@ -120,10 +131,29 @@ margin_top = 591.0
 margin_right = 1526.0
 margin_bottom = 980.0
 bbcode_enabled = true
-bbcode_text = "Select a player persona. You will then create a game for that persona.
+bbcode_text = "Tutorial:
 
-More explanation blah blah"
-text = "Select a player persona. You will then create a game for that persona.
+Read the following personas.
+If you want to see the hidden favourite games of the persona click on the Lock.
+But Be aware that you will get bonus points, if you manage to finish this task without looking at their favourite games.
+When you are done reading you will have to select the most fitting  Genres, Mechanics, Features & Gameplay elements.
+You CAN select multiple options.
+Use <- or -> to go through the options.
+If you are want to go back to the previous category click BACK.
+You can always read the persona again by clicking on EXPAND PERSONA.
+"
+text = "Tutorial:
 
-More explanation blah blah"
+Read the following personas.
+If you want to see the hidden favourite games of the persona click on the Lock.
+But Be aware that you will get bonus points, if you manage to finish this task without looking at their favourite games.
+When you are done reading you will have to select the most fitting  Genres, Mechanics, Features & Gameplay elements.
+You CAN select multiple options.
+Use <- or -> to go through the options.
+If you are want to go back to the previous category click BACK.
+You can always read the persona again by clicking on EXPAND PERSONA.
+"
 fit_content_height = true
+
+[node name="Music" type="Node" parent="."]
+script = ExtResource( 4 )

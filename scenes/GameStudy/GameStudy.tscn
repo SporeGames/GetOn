@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=2]
+[gd_scene load_steps=17 format=2]
 
 [ext_resource path="res://art/GameStudysGame (1).png" type="Texture" id=1]
 [ext_resource path="res://art/IMG_0160.png" type="Texture" id=2]
@@ -7,6 +7,7 @@
 [ext_resource path="res://scenes/GameStudy/DragAndDrop.cs" type="Script" id=5]
 [ext_resource path="res://art/IMG_0173.PNG" type="Texture" id=6]
 [ext_resource path="res://scenes/GameStudy/CheckArea.cs" type="Script" id=7]
+[ext_resource path="res://scenes/Music/Play/Music_GameStud.gd" type="Script" id=8]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 62, 90.5 )
@@ -130,6 +131,9 @@ margin_right = 1895.0
 margin_bottom = 79.0
 text = "Submit"
 
+[node name="Music" type="Node" parent="."]
+script = ExtResource( 8 )
+
 [connection signal="body_entered" from="CheckGameBoy" to="CheckGameBoy" method="_on_CheckGameBoy_body_entered"]
 [connection signal="body_exited" from="CheckGameBoy" to="CheckGameBoy" method="_on_CheckGameBoy_body_exited"]
 [connection signal="body_entered" from="CheckXBOX" to="CheckGameBoy" method="_on_CheckXBOX_body_entered"]
@@ -138,3 +142,4 @@ text = "Submit"
 [connection signal="body_exited" from="CheckMegaDrive1" to="CheckGameBoy" method="_on_CheckMegaDrive1_body_exited"]
 [connection signal="body_entered" from="CheckNES" to="CheckGameBoy" method="_on_CheckNES_body_entered"]
 [connection signal="body_exited" from="CheckNES" to="CheckGameBoy" method="_on_CheckNES_body_exited"]
+[connection signal="pressed" from="Submit" to="Music" method="_on_Submit_pressed"]

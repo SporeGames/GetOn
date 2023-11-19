@@ -13,9 +13,14 @@ config_version=4
 run/main_scene="res://scenes/MainMenu/MainMenu.tscn"
 config/icon="res://icon.png"
 
+[audio]
+
+output_latency.web=180
+
 [autoload]
 
 SharedNode="*res://scenes/SharedNode.tscn"
+MusicPlayer="*res://scenes/Music/MusicPlayer.tscn"
 
 [display]
 
