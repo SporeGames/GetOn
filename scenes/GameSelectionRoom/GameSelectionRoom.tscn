@@ -64,3 +64,10 @@ custom_styles/pressed = SubResource( 3 )
 custom_styles/focus = SubResource( 4 )
 custom_styles/disabled = SubResource( 5 )
 custom_styles/normal = SubResource( 1 )
+
+[node name="PrintPDF" type="Button" parent="."]
+margin_left = 435.0
+margin_top = 86.0
+margin_right = 547.0
+margin_bottom = 128.0
+text = "Test PDF"

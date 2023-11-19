@@ -40,11 +40,13 @@ namespace GetOn.scenes.GameSelectionRoom {
 		}
 
 		public void OnGoToSoundPressed() {
-			_sharedNode.SwitchScene("res://scenes/Programming/ProgrammingRoom.tscn");
+			_sharedNode.SwitchScene("res://scenes/Narrative/Narrative.tscn");
 		}
 
 		public void OnPrintPDFPressed() {
+			GD.Print("Print pdf jetzt los");
 			GetNode<SharedNode>("/root/SharedNode").Print();
+			//_sharedNode.Print();
 		}
 	}
 }
