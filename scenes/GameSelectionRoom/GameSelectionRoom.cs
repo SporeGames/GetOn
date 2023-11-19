@@ -9,6 +9,7 @@ namespace GetOn.scenes.GameSelectionRoom {
 		private Button _goToManagment;
 		private Button _goToNarrativeAndGameDesign;
 		private Button _goToSound;
+		private Button _goToGameStudy;
 		private Button _printPDF;
 
 		// Called when the node enters the scene tree for the first time.
@@ -24,6 +25,8 @@ namespace GetOn.scenes.GameSelectionRoom {
 			_goToSound.Connect("pressed", this, nameof(OnGoToSoundPressed));
 			_printPDF = GetNode<Button>("PrintPDF");
 			_printPDF.Connect("pressed", this, nameof(OnPrintPDFPressed));
+			_goToGameStudy = GetNode<Button>("GoToGameStudy");
+			_goToGameStudy.Connect("pressed", this, nameof(OnGoToGameStudyPressed));
 
 		}
 
@@ -46,7 +49,10 @@ namespace GetOn.scenes.GameSelectionRoom {
 		public void OnPrintPDFPressed() {
 			GD.Print("Print pdf jetzt los");
 			GetNode<SharedNode>("/root/SharedNode").Print();
-			//_sharedNode.Print();
+		}
+
+		public void OnGoToGameStudyPressed() {
+			_sharedNode.SwitchScene("res://scenes/GameStudy/GameStudy.tscn");
 		}
 	}
 }

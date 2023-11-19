@@ -50,6 +50,7 @@ namespace GetOn.scenes.GameStudy
 			}
 			GD.Print(points);
 			_sharedNode.gameStudyPoints = points;
+			_sharedNode.SwitchScene("res://scenes/GameSelectionRoom/GameSelectionRoom.tscn");
 		}
 
 		private void _on_CheckGameBoy_body_entered(object body)
