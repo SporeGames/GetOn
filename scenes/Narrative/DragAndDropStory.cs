@@ -146,14 +146,33 @@ public class DragAndDropStory : KinematicBody2D
 			
 		if (Input.IsActionPressed("left_click") && hovered == true)
 		{
+			
+			
 			DisbablePickable();
 			SetDisableHover();
 
-	
 			this.InputPickable = true;
 			this.ZIndex = 20;
 			currentlyDraggedObject = this; 
 			attached = true;
+			//offset = GetViewport().GetMousePosition();
+		}
+
+		if (!Input.IsActionPressed("left_click"))
+		{
+			attached = false;
+			//hovered = false;
+			this.ZIndex = 1;
+			EnablePickable();
+			SetEnableHover();
+			
+			if (currentlyDraggedObject == this)
+			{
+				currentlyDraggedObject = null; 
+			}
+		}
+		if (@event is InputEventMouseMotion motion)
+		{
 			offset = GetViewport().GetMousePosition();
 		}
 	}
@@ -165,16 +184,18 @@ public class DragAndDropStory : KinematicBody2D
 	
 	public void OnMouseLeft()
 	{
-		attached = false;
+		//attached = false;
 		hovered = false;
-		this.ZIndex = 1;
-		EnablePickable();
-		SetEnableHover();
+		/*
+		//this.ZIndex = 1;
+		//EnablePickable();
+		//SetEnableHover();
 			
 		if (currentlyDraggedObject == this)
 		{
 			currentlyDraggedObject = null; 
 		}
+		*/
 	}
 	
 	public override void _Process(float delta)
