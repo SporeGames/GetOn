@@ -1,11 +1,11 @@
 extends Node
 
 
-onready var main_music = load("res://scenes/Music/Soundtracks/Hauptraum Theme [V2].wav")
-onready var prog_music = load("res://scenes/Music/Soundtracks/Programmieren Theme.wav")
-onready var gameDes_music = load("res://scenes/Music/Soundtracks/Game Design Theme.wav")
-onready var gameStud_music = load("res://scenes/Music/Soundtracks/Game Studies Theme.wav")
-onready var narr_music = load("res://scenes/Music/Soundtracks/Narrative Theme.wav")
+onready var main_music = load("res://SharedAssets/music/Soundtracks/Hauptraum Theme [V2].wav")
+onready var prog_music = load("res://SharedAssets/music/Soundtracks/Programmieren Theme.wav")
+onready var gameDes_music = load("res://SharedAssets/music/Soundtracks/Game Design Theme.wav")
+onready var gameStud_music = load("res://SharedAssets/music/Soundtracks/Game Studies Theme.wav")
+onready var narr_music = load("res://SharedAssets/music/Soundtracks/Narrative Theme.wav")
 
 
 func play_music():
