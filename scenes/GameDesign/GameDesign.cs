@@ -24,6 +24,9 @@ public class GameDesign : Control {
 	private bool _isExpanded = false;
 	private GameDesignCategory _currentCategory;
 	private Godot.Collections.Dictionary<GameDesignCategory, string[]> _selectedValues = new Godot.Collections.Dictionary<GameDesignCategory, string[]>();
+
+	private Button _introReady;
+	private Node2D _introGameStudy;
 	
 	public override void _Ready() {
 		foreach (var child in GetNode("PersonaHolder").GetChildren()) {
@@ -47,6 +50,10 @@ public class GameDesign : Control {
 		_mechanicSlider = GetNode<GameDesignSlider>("MechanicSlider");
 		_featureSlider = GetNode<GameDesignSlider>("FeatureSlider");
 		_gameplayExperienceSlider = GetNode<GameDesignSlider>("GExpSlider");
+
+		_introReady = GetNode<Button>("Intro/Button");
+		_introGameStudy = GetNode<Node2D>("Intro");
+		_introReady.Connect("pressed", this, nameof(OnIntroReadyPressed));
 	}
 
 	private void OnStartGameCreationButtonPressed() {
@@ -127,5 +134,10 @@ public class GameDesign : Control {
 		}
 		GetNode<SharedNode>("/root/SharedNode").gameDesignPoints = points;
 		GetNode<SharedNode>("/root/SharedNode").SwitchScene("res://scenes/GameSelectionRoom/GameSelectionRoom.tscn");
+	}
+
+	public void OnIntroReadyPressed()
+	{
+		_introGameStudy.Visible = false;
 	}
 }
