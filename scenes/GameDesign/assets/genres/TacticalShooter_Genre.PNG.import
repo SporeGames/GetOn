@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/RPG_Genre.PNG-48a5db21279b685a567eca2f2cd8cf48.stex"
+path="res://.import/TacticalShooter_Genre.PNG-c87a82e3fd728fc15cb24c8b1ed69dc9.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://scenes/GameDesign/assets/RPG_Genre.PNG"
-dest_files=[ "res://.import/RPG_Genre.PNG-48a5db21279b685a567eca2f2cd8cf48.stex" ]
+source_file="res://scenes/GameDesign/assets/genres/TacticalShooter_Genre.PNG"
+dest_files=[ "res://.import/TacticalShooter_Genre.PNG-c87a82e3fd728fc15cb24c8b1ed69dc9.stex" ]
 
 [params]
 

@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/StrategyGame_genre.PNG-4a67586d156cd0f7f92ce3b45c4acaca.stex"
+path="res://.import/Moba_Genre.PNG-9b58dbe06d38a3b9b195f59c36679d4c.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://scenes/GameDesign/assets/StrategyGame_genre.PNG"
-dest_files=[ "res://.import/StrategyGame_genre.PNG-4a67586d156cd0f7f92ce3b45c4acaca.stex" ]
+source_file="res://scenes/GameDesign/assets/genres/Moba_Genre.PNG"
+dest_files=[ "res://.import/Moba_Genre.PNG-9b58dbe06d38a3b9b195f59c36679d4c.stex" ]
 
 [params]
 

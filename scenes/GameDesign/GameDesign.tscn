@@ -1,15 +1,26 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=22 format=2]
 
 [ext_resource path="res://scenes/GameDesign/PlayerProfile.tscn" type="PackedScene" id=1]
 [ext_resource path="res://scenes/GameDesign/GameDesignSlider.tscn" type="PackedScene" id=2]
 [ext_resource path="res://scenes/GameDesign/GameDesign.cs" type="Script" id=3]
 [ext_resource path="res://scenes/Music/Play/MusicGameDes.gd" type="Script" id=4]
-[ext_resource path="res://scenes/GameDesign/assets/RPG_Genre.PNG" type="Texture" id=5]
-[ext_resource path="res://scenes/GameDesign/assets/StrategyGame_genre.PNG" type="Texture" id=6]
-[ext_resource path="res://scenes/GameDesign/assets/TacticalShooter_Genre.PNG" type="Texture" id=7]
-[ext_resource path="res://scenes/GameDesign/assets/FightingGame_Genre.PNG" type="Texture" id=8]
-[ext_resource path="res://scenes/GameDesign/assets/Moba_Genre.PNG" type="Texture" id=9]
-[ext_resource path="res://scenes/GameDesign/assets/Sandbox_Genre.PNG" type="Texture" id=10]
+[ext_resource path="res://scenes/GameDesign/assets/genres/RPG_Genre.PNG" type="Texture" id=5]
+[ext_resource path="res://scenes/GameDesign/assets/genres/StrategyGame_genre.PNG" type="Texture" id=6]
+[ext_resource path="res://scenes/GameDesign/assets/genres/TacticalShooter_Genre.PNG" type="Texture" id=7]
+[ext_resource path="res://scenes/GameDesign/assets/genres/FightingGame_Genre.PNG" type="Texture" id=8]
+[ext_resource path="res://scenes/GameDesign/assets/genres/Moba_Genre.PNG" type="Texture" id=9]
+[ext_resource path="res://scenes/GameDesign/assets/genres/Sandbox_Genre.PNG" type="Texture" id=10]
+[ext_resource path="res://scenes/GameDesign/assets/mechanics/Grab_Mechanik.PNG" type="Texture" id=11]
+[ext_resource path="res://scenes/GameDesign/assets/mechanics/variousMovement_Mechanik.PNG" type="Texture" id=12]
+[ext_resource path="res://scenes/GameDesign/assets/mechanics/Stats_Mechanik.PNG" type="Texture" id=13]
+[ext_resource path="res://scenes/GameDesign/assets/mechanics/Block_Mechanik.PNG" type="Texture" id=14]
+[ext_resource path="res://scenes/GameDesign/assets/mechanics/variousAttacks_Mechanik.PNG" type="Texture" id=15]
+[ext_resource path="res://scenes/GameDesign/assets/mechanics/Building_Mechanik.PNG" type="Texture" id=16]
+[ext_resource path="res://scenes/GameDesign/assets/mechanics/commandingUnits_Mechanik.PNG" type="Texture" id=17]
+[ext_resource path="res://scenes/GameDesign/assets/mechanics/Items_Mechanik.PNG" type="Texture" id=18]
+[ext_resource path="res://scenes/GameDesign/assets/mechanics/Mana_Mechanik.PNG" type="Texture" id=19]
+[ext_resource path="res://scenes/GameDesign/assets/mechanics/Loot_Mechanik.PNG" type="Texture" id=20]
+[ext_resource path="res://scenes/GameDesign/assets/mechanics/ResourceDevelopement_Mechanik.PNG" type="Texture" id=21]
 
 [node name="GameDesign" type="Control"]
 anchor_right = 1.0
@@ -28,7 +39,7 @@ IsSingleSelect = true
 [node name="MechanicSlider" parent="." instance=ExtResource( 2 )]
 visible = false
 rect_pivot_offset = Vector2( -815, -180 )
-Images = [ null, null, null, null, null, null, null, null, null, null, null ]
+Images = [ ExtResource( 18 ), ExtResource( 19 ), ExtResource( 13 ), ExtResource( 20 ), ExtResource( 12 ), ExtResource( 15 ), ExtResource( 11 ), ExtResource( 14 ), ExtResource( 16 ), ExtResource( 21 ), ExtResource( 17 ) ]
 Titles = PoolStringArray( "Items", "Mana", "Stats", "Loot", "Complex Movement", "Various Attacks", "Grab", "Block", "Building", "Resource Development", "Commanding Units" )
 Descriptions = PoolStringArray( "Gathering / Crafting Items", "Using a resource called Mana to cast Spells or Skills", "Statuspoints like Strength or Intelligence", "Receving Loot from farming or killing stuff", "Combo Heavy or Difficult to Master Movement", "Different Combo varities", "Grabbing an Opponent", "Blocking incoming Attacks", "Building things like Farms", "Gathering and using Materials", "Taking control over Army\'s" )
 Category = 1

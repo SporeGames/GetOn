@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Sandbox_Genre.PNG-8be4a1c0b5d809112480bac54e7bb81e.stex"
+path="res://.import/StrategyGame_genre.PNG-869a517956bc5ec9e659d682361fdf8d.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://scenes/GameDesign/assets/Sandbox_Genre.PNG"
-dest_files=[ "res://.import/Sandbox_Genre.PNG-8be4a1c0b5d809112480bac54e7bb81e.stex" ]
+source_file="res://scenes/GameDesign/assets/genres/StrategyGame_genre.PNG"
+dest_files=[ "res://.import/StrategyGame_genre.PNG-869a517956bc5ec9e659d682361fdf8d.stex" ]
 
 [params]
 

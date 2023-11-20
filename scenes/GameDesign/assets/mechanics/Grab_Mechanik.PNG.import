@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/TacticalShooter_Genre.PNG-0ae4892a16fe0c6a2c579b71ab02a9f3.stex"
+path="res://.import/Grab_Mechanik.PNG-051f252dd91032d629f77b59fce3db58.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://scenes/GameDesign/assets/TacticalShooter_Genre.PNG"
-dest_files=[ "res://.import/TacticalShooter_Genre.PNG-0ae4892a16fe0c6a2c579b71ab02a9f3.stex" ]
+source_file="res://scenes/GameDesign/assets/mechanics/Grab_Mechanik.PNG"
+dest_files=[ "res://.import/Grab_Mechanik.PNG-051f252dd91032d629f77b59fce3db58.stex" ]
 
 [params]
 

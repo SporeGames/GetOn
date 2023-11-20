@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Moba_Genre.PNG-66267254cd1ea9661f0bde563ca68d1f.stex"
+path="res://.import/Mana_Mechanik.PNG-ccf665b7e064bc1b25937dc95ea2e7f0.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://scenes/GameDesign/assets/Moba_Genre.PNG"
-dest_files=[ "res://.import/Moba_Genre.PNG-66267254cd1ea9661f0bde563ca68d1f.stex" ]
+source_file="res://scenes/GameDesign/assets/mechanics/Mana_Mechanik.PNG"
+dest_files=[ "res://.import/Mana_Mechanik.PNG-ccf665b7e064bc1b25937dc95ea2e7f0.stex" ]
 
 [params]
 
