@@ -1,9 +1,15 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://scenes/GameDesign/PlayerProfile.tscn" type="PackedScene" id=1]
 [ext_resource path="res://scenes/GameDesign/GameDesignSlider.tscn" type="PackedScene" id=2]
 [ext_resource path="res://scenes/GameDesign/GameDesign.cs" type="Script" id=3]
 [ext_resource path="res://scenes/Music/Play/MusicGameDes.gd" type="Script" id=4]
+[ext_resource path="res://scenes/GameDesign/assets/RPG_Genre.PNG" type="Texture" id=5]
+[ext_resource path="res://scenes/GameDesign/assets/StrategyGame_genre.PNG" type="Texture" id=6]
+[ext_resource path="res://scenes/GameDesign/assets/TacticalShooter_Genre.PNG" type="Texture" id=7]
+[ext_resource path="res://scenes/GameDesign/assets/FightingGame_Genre.PNG" type="Texture" id=8]
+[ext_resource path="res://scenes/GameDesign/assets/Moba_Genre.PNG" type="Texture" id=9]
+[ext_resource path="res://scenes/GameDesign/assets/Sandbox_Genre.PNG" type="Texture" id=10]
 
 [node name="GameDesign" type="Control"]
 anchor_right = 1.0
@@ -13,7 +19,7 @@ script = ExtResource( 3 )
 [node name="GenreSlider" parent="." instance=ExtResource( 2 )]
 visible = false
 rect_pivot_offset = Vector2( -815, -180 )
-Images = [ null, null, null, null, null, null ]
+Images = [ ExtResource( 5 ), ExtResource( 6 ), ExtResource( 7 ), ExtResource( 8 ), ExtResource( 9 ), ExtResource( 10 ) ]
 Titles = PoolStringArray( "RPG", "Strategy Game", "Tactical Shooter", "Fighting Game", "MOBA", "Sandbox Game" )
 Descriptions = PoolStringArray( "Role-Playing-Game", "Resource Gathering Game", "First-Person-Shooter", "Combat Game", "Massive Online Battle Arena", "Sandbox/Open World Game" )
 CategoryDisplayName = "Select one genre"
