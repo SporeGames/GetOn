@@ -1,9 +1,9 @@
-[gd_scene load_steps=22 format=2]
+[gd_scene load_steps=29 format=2]
 
 [ext_resource path="res://scenes/GameDesign/PlayerProfile.tscn" type="PackedScene" id=1]
 [ext_resource path="res://scenes/GameDesign/GameDesignSlider.tscn" type="PackedScene" id=2]
 [ext_resource path="res://scenes/GameDesign/GameDesign.cs" type="Script" id=3]
-[ext_resource path="res://scenes/Music/Play/MusicGameDes.gd" type="Script" id=4]
+[ext_resource path="res://SharedAssets/music/Play/MusicGameDes.gd" type="Script" id=4]
 [ext_resource path="res://scenes/GameDesign/assets/genres/RPG_Genre.PNG" type="Texture" id=5]
 [ext_resource path="res://scenes/GameDesign/assets/genres/StrategyGame_genre.PNG" type="Texture" id=6]
 [ext_resource path="res://scenes/GameDesign/assets/genres/TacticalShooter_Genre.PNG" type="Texture" id=7]
@@ -21,6 +21,13 @@
 [ext_resource path="res://scenes/GameDesign/assets/mechanics/Mana_Mechanik.PNG" type="Texture" id=19]
 [ext_resource path="res://scenes/GameDesign/assets/mechanics/Loot_Mechanik.PNG" type="Texture" id=20]
 [ext_resource path="res://scenes/GameDesign/assets/mechanics/ResourceDevelopement_Mechanik.PNG" type="Texture" id=21]
+[ext_resource path="res://scenes/GameDesign/assets/features/CharacterCreation_Experience.png" type="Texture" id=22]
+[ext_resource path="res://scenes/GameDesign/assets/features/Multiplayer_Experience.png" type="Texture" id=23]
+[ext_resource path="res://scenes/GameDesign/assets/features/RankedSystem_Experience.png" type="Texture" id=24]
+[ext_resource path="res://scenes/GameDesign/assets/features/SkilledBasedMatchmaking_Experience.png" type="Texture" id=25]
+[ext_resource path="res://scenes/GameDesign/assets/features/Storymode_Experience.png" type="Texture" id=26]
+[ext_resource path="res://scenes/GameDesign/assets/features/DiverseUnits_Experience.png" type="Texture" id=27]
+[ext_resource path="res://scenes/GameDesign/assets/features/Multiselect_Experience.png" type="Texture" id=28]
 
 [node name="GameDesign" type="Control"]
 anchor_right = 1.0
@@ -48,7 +55,7 @@ CategoryDisplayName = "Select game mechanics"
 [node name="FeatureSlider" parent="." instance=ExtResource( 2 )]
 visible = false
 rect_pivot_offset = Vector2( -815, -180 )
-Images = [ null, null, null, null, null, null, null ]
+Images = [ ExtResource( 22 ), ExtResource( 23 ), ExtResource( 24 ), ExtResource( 25 ), ExtResource( 26 ), ExtResource( 27 ), ExtResource( 28 ) ]
 Titles = PoolStringArray( "Character Creation", "Multiplayer", "Ranked System", "Skill Based Matchmaking", "Story Mode", "Diverse Units", "Multi Select" )
 Descriptions = PoolStringArray( "Customizing a own Character apperance", "Playing with other Players", "Rated Competitive Gameplay", "Matching opponents according to your Rank / Skillevel", "Narrative driven Game", "Different type of Units with different aspects and boni", "Multiple select of different Units" )
 Category = 2

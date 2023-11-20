@@ -1,10 +1,11 @@
 [gd_scene load_steps=17 format=2]
 
-[ext_resource path="res://art/Eule in Büro.png" type="Texture" id=1]
-[ext_resource path="res://font/BAHNSCHRIFT 1.TTF" type="DynamicFontData" id=2]
+[ext_resource path="res://scenes/Programming/assets/Eule in Büro.png" type="Texture" id=1]
+[ext_resource path="res://SharedAssets/font/BAHNSCHRIFT 1.TTF" type="DynamicFontData" id=2]
 [ext_resource path="res://scenes/Programming/OwlInteraction.cs" type="Script" id=3]
-[ext_resource path="res://art/highlight_computer.png" type="Texture" id=4]
-[ext_resource path="res://scenes/Music/Play/MusicProg.gd" type="Script" id=5]
+[ext_resource path="res://SharedAssets/highlight_computer.png" type="Texture" id=4]
+[ext_resource path="res://SharedAssets/music/Play/MusicProg.gd" type="Script" id=5]
+
 
 [sub_resource type="DynamicFont" id=1]
 size = 32

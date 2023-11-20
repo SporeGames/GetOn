@@ -11,6 +11,7 @@ config_version=4
 [application]
 
 run/main_scene="res://scenes/MainMenu/MainMenu.tscn"
+boot_splash/bg_color=Color( 0.0392157, 0.0313726, 0.0313726, 1 )
 config/icon="res://icon.png"
 
 [audio]
@@ -20,7 +21,7 @@ output_latency.web=180
 [autoload]
 
 SharedNode="*res://scenes/SharedNode.tscn"
-MusicPlayer="*res://scenes/Music/MusicPlayer.tscn"
+MusicPlayer="*res://SharedAssets/music/MusicPlayer.tscn"
 
 [display]
 

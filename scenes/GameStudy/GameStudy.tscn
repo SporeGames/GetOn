@@ -1,14 +1,15 @@
 [gd_scene load_steps=20 format=2]
 
-[ext_resource path="res://art/GameStudysGame (1).png" type="Texture" id=1]
-[ext_resource path="res://art/IMG_0160.png" type="Texture" id=2]
-[ext_resource path="res://art/XBox.png" type="Texture" id=3]
-[ext_resource path="res://art/GameBoy.png" type="Texture" id=4]
+[ext_resource path="res://scenes/GameStudy/assets/GameStudysGame (1).png" type="Texture" id=1]
+[ext_resource path="res://scenes/GameStudy/assets/IMG_0160.png" type="Texture" id=2]
+[ext_resource path="res://scenes/GameStudy/assets/XBox.png" type="Texture" id=3]
+[ext_resource path="res://scenes/GameStudy/assets/GameBoy.png" type="Texture" id=4]
 [ext_resource path="res://scenes/GameStudy/DragAndDrop.cs" type="Script" id=5]
-[ext_resource path="res://art/IMG_0173.PNG" type="Texture" id=6]
+[ext_resource path="res://scenes/GameStudy/assets/IMG_0173.PNG" type="Texture" id=6]
 [ext_resource path="res://scenes/GameStudy/CheckArea.cs" type="Script" id=7]
-[ext_resource path="res://scenes/Music/Play/Music_GameStud.gd" type="Script" id=8]
-[ext_resource path="res://font/BAHNSCHRIFT 1.TTF" type="DynamicFontData" id=9]
+[ext_resource path="res://SharedAssets/music/Play/Music_GameStud.gd" type="Script" id=8]
+[ext_resource path="res://SharedAssets/font/BAHNSCHRIFT 1.TTF" type="DynamicFontData" id=9]
+
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 62, 90.5 )

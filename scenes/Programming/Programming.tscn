@@ -5,10 +5,10 @@
 [ext_resource path="res://scenes/Programming/NodeGraph.cs" type="Script" id=3]
 [ext_resource path="res://scenes/Programming/blocks/SetPlayerPositionBlock.cs" type="Script" id=4]
 [ext_resource path="res://icon.png" type="Texture" id=5]
-[ext_resource path="res://art/ProgrammierAufgabePrototy.png" type="Texture" id=6]
-[ext_resource path="res://art/Hintergrund .png" type="Texture" id=7]
+[ext_resource path="res://scenes/Programming/assets/ProgrammierAufgabePrototy.png" type="Texture" id=6]
+[ext_resource path="res://scenes/Programming/assets/Hintergrund .png" type="Texture" id=7]
 [ext_resource path="res://scenes/Programming/CountdownTimer.cs" type="Script" id=8]
-[ext_resource path="res://font/BAHNSCHRIFT 1.TTF" type="DynamicFontData" id=9]
+[ext_resource path="res://SharedAssets/font/BAHNSCHRIFT 1.TTF" type="DynamicFontData" id=9]
 [ext_resource path="res://scenes/Programming/blocks/KeyDPressedCondition.cs" type="Script" id=10]
 [ext_resource path="res://scenes/Programming/blocks/IfBlock.cs" type="Script" id=11]
 [ext_resource path="res://scenes/Programming/blocks/ProcessBlock.cs" type="Script" id=12]
@@ -17,9 +17,10 @@
 [ext_resource path="res://scenes/Programming/blocks/KeySpacePressedCondition.cs" type="Script" id=15]
 [ext_resource path="res://scenes/Programming/blocks/JumpBlock.cs" type="Script" id=16]
 [ext_resource path="res://scenes/Programming/Checklist.cs" type="Script" id=17]
-[ext_resource path="res://art/Münze.PNG" type="Texture" id=18]
-[ext_resource path="res://art/fahne (1).PNG" type="Texture" id=19]
-[ext_resource path="res://scenes/Music/Play/MusicBack.gd" type="Script" id=20]
+[ext_resource path="res://scenes/Programming/assets/Münze.PNG" type="Texture" id=18]
+[ext_resource path="res://scenes/Programming/assets/fahne (1).PNG" type="Texture" id=19]
+[ext_resource path="res://SharedAssets/music/Play/MusicBack.gd" type="Script" id=20]
+
 
 [sub_resource type="RectangleShape2D" id=6]
 extents = Vector2( 69, 62 )

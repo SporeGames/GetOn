@@ -1,7 +1,8 @@
 [gd_scene load_steps=5 format=2]
 
-[ext_resource path="res://font/BAHNSCHRIFT 1.TTF" type="DynamicFontData" id=2]
+[ext_resource path="res://SharedAssets/font/BAHNSCHRIFT 1.TTF" type="DynamicFontData" id=2]
 [ext_resource path="res://scenes/GameDesign/PlayerProfile.cs" type="Script" id=3]
+
 
 [sub_resource type="DynamicFont" id=1]
 size = 48
