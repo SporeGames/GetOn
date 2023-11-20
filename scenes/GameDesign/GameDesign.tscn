@@ -1,4 +1,4 @@
-[gd_scene load_steps=32 format=2]
+[gd_scene load_steps=40 format=2]
 
 [ext_resource path="res://scenes/GameDesign/PlayerProfile.tscn" type="PackedScene" id=1]
 [ext_resource path="res://scenes/GameDesign/GameDesignSlider.tscn" type="PackedScene" id=2]
@@ -29,6 +29,14 @@
 [ext_resource path="res://scenes/GameDesign/assets/features/DiverseUnits_Experience.png" type="Texture" id=27]
 [ext_resource path="res://scenes/GameDesign/assets/features/Multiselect_Experience.png" type="Texture" id=28]
 [ext_resource path="res://SharedAssets/font/BAHNSCHRIFT 1.TTF" type="DynamicFontData" id=29]
+[ext_resource path="res://scenes/GameDesign/assets/experiences/Predictions_Feature.png" type="Texture" id=30]
+[ext_resource path="res://scenes/GameDesign/assets/experiences/Management_Feature.png" type="Texture" id=31]
+[ext_resource path="res://scenes/GameDesign/assets/experiences/socialInteraction_Feature.png" type="Texture" id=32]
+[ext_resource path="res://scenes/GameDesign/assets/experiences/tactics_Feature.png" type="Texture" id=33]
+[ext_resource path="res://scenes/GameDesign/assets/experiences/Exploration_Feature.png" type="Texture" id=34]
+[ext_resource path="res://scenes/GameDesign/assets/experiences/Combos_Feature.png" type="Texture" id=35]
+[ext_resource path="res://scenes/GameDesign/assets/experiences/FastReactionTime_Feature.png" type="Texture" id=36]
+[ext_resource path="res://scenes/GameDesign/assets/experiences/Immersion_Feature.png" type="Texture" id=37]
 
 [sub_resource type="DynamicFont" id=1]
 size = 32
@@ -73,7 +81,7 @@ CategoryDisplayName = "Select features"
 [node name="GExpSlider" parent="." instance=ExtResource( 2 )]
 visible = false
 rect_pivot_offset = Vector2( -815, -180 )
-Images = [ null, null, null, null, null, null, null, null ]
+Images = [ ExtResource( 36 ), ExtResource( 35 ), ExtResource( 30 ), ExtResource( 31 ), ExtResource( 33 ), ExtResource( 32 ), ExtResource( 34 ), ExtResource( 37 ) ]
 Titles = PoolStringArray( "Fast Reaction Time", "Combos", "Predictions", "Management", "Tactics", "Social Interaction", "Exploration", "Immersion" )
 Descriptions = PoolStringArray( "Having to react situationally and adapt fast", "Being able to do various combined attacks", "Being able to predict the outcome", "Managing resources / units ", "Using different Tactics in order to win", "Being able to communicate with different Players", "Being able to Explore freely in a World", "Being able to immerse one self into a written Character" )
 Category = 3
