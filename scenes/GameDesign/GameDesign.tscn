@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=2]
+[gd_scene load_steps=32 format=2]
 
 [ext_resource path="res://scenes/GameDesign/PlayerProfile.tscn" type="PackedScene" id=1]
 [ext_resource path="res://scenes/GameDesign/GameDesignSlider.tscn" type="PackedScene" id=2]
@@ -28,6 +28,15 @@
 [ext_resource path="res://scenes/GameDesign/assets/features/Storymode_Experience.png" type="Texture" id=26]
 [ext_resource path="res://scenes/GameDesign/assets/features/DiverseUnits_Experience.png" type="Texture" id=27]
 [ext_resource path="res://scenes/GameDesign/assets/features/Multiselect_Experience.png" type="Texture" id=28]
+[ext_resource path="res://SharedAssets/font/BAHNSCHRIFT 1.TTF" type="DynamicFontData" id=29]
+
+[sub_resource type="DynamicFont" id=1]
+size = 32
+font_data = ExtResource( 29 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 32
+font_data = ExtResource( 29 )
 
 [node name="GameDesign" type="Control"]
 anchor_right = 1.0
@@ -181,3 +190,37 @@ fit_content_height = true
 
 [node name="Music" type="Node" parent="."]
 script = ExtResource( 4 )
+
+[node name="Intro" type="Node2D" parent="."]
+z_index = 21
+
+[node name="ColorRect2" type="ColorRect" parent="Intro"]
+margin_right = 1925.0
+margin_bottom = 1081.0
+color = Color( 0.027451, 0.364706, 0.317647, 1 )
+
+[node name="Button" type="Button" parent="Intro"]
+margin_left = 1610.0
+margin_top = 940.0
+margin_right = 1844.0
+margin_bottom = 1008.0
+custom_fonts/font = SubResource( 1 )
+text = "Ready?"
+
+[node name="Label2" type="Label" parent="Intro"]
+margin_left = 59.0
+margin_top = 83.0
+margin_right = 1127.0
+margin_bottom = 656.0
+custom_fonts/font = SubResource( 2 )
+text = "Tutorial:
+
+Read the following personas.
+If you want to see the hidden favourite games of the persona click on the Lock.
+But Be aware that you will get bonus points, if you manage to finish this task without looking at their favourite games.
+When you are done reading you will have to select the most fitting  Genres, Mechanics, Features & Gameplay elements.
+You CAN select multiple options.
+Use <- or -> to go through the options.
+If you are want to go back to the previous category click BACK.
+You can always read the persona again by clicking on EXPAND PERSONA."
+autowrap = true

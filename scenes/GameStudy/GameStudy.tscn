@@ -10,7 +10,6 @@
 [ext_resource path="res://SharedAssets/music/Play/Music_GameStud.gd" type="Script" id=8]
 [ext_resource path="res://SharedAssets/font/BAHNSCHRIFT 1.TTF" type="DynamicFontData" id=9]
 
-
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 62, 90.5 )
 
