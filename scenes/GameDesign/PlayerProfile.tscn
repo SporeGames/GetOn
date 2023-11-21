@@ -1,20 +1,23 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
+[ext_resource path="res://SharedAssets/Ashe.PNG" type="Texture" id=1]
 [ext_resource path="res://SharedAssets/font/BAHNSCHRIFT 1.TTF" type="DynamicFontData" id=2]
 [ext_resource path="res://scenes/GameDesign/PlayerProfile.cs" type="Script" id=3]
 
-
 [sub_resource type="DynamicFont" id=1]
-size = 48
+size = 70
 font_data = ExtResource( 2 )
 
 [sub_resource type="DynamicFont" id=2]
-size = 24
+size = 44
 font_data = ExtResource( 2 )
 
 [node name="PlayerProfile" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
+margin_right = 580.0
+margin_bottom = 420.0
+rect_min_size = Vector2( 2500, 1500 )
 script = ExtResource( 3 )
 ValidGenres = PoolStringArray(  )
 
@@ -26,17 +29,17 @@ color = Color( 0.101961, 0.101961, 0.14902, 1 )
 [node name="ProfileName" type="RichTextLabel" parent="."]
 anchor_left = 0.5
 anchor_right = 0.5
-margin_left = -348.0
+margin_left = -473.0
 margin_top = 78.0
-margin_right = 347.0
+margin_right = 222.0
 margin_bottom = 155.0
 custom_fonts/normal_font = SubResource( 1 )
 text = "<Username>"
 
 [node name="ProfileText" type="RichTextLabel" parent="."]
-margin_left = 612.0
+margin_left = 777.0
 margin_top = 189.0
-margin_right = 1096.0
+margin_right = 1261.0
 margin_bottom = 443.0
 custom_fonts/normal_font = SubResource( 2 )
 text = "<text>"
@@ -46,28 +49,49 @@ margin_left = 90.0
 margin_top = 78.0
 margin_right = 572.0
 margin_bottom = 560.0
+texture = ExtResource( 1 )
 expand = true
+
+[node name="LastGame" type="RichTextLabel" parent="."]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -1160.0
+margin_top = 836.0
+margin_right = -465.0
+margin_bottom = 913.0
+custom_fonts/normal_font = SubResource( 1 )
+bbcode_enabled = true
+bbcode_text = "Last played game:"
+text = "Last played game:"
 
 [node name="Achievements" type="RichTextLabel" parent="."]
 anchor_left = 0.5
 anchor_right = 0.5
-margin_left = -348.0
-margin_top = 292.0
-margin_right = 347.0
-margin_bottom = 369.0
+margin_left = -458.0
+margin_top = 401.0
+margin_right = 237.0
+margin_bottom = 478.0
 custom_fonts/normal_font = SubResource( 1 )
 bbcode_enabled = true
 bbcode_text = "Achievements:"
 text = "Achievements:"
 
 [node name="AchievementContainer" type="HFlowContainer" parent="."]
-margin_left = 612.0
-margin_top = 373.0
-margin_right = 1646.0
-margin_bottom = 560.0
+margin_left = 785.0
+margin_top = 478.0
+margin_right = 1785.0
+margin_bottom = 678.0
+
+[node name="Background2" type="ColorRect" parent="AchievementContainer"]
+color = Color( 0.192157, 0.192157, 0.219608, 1 )
 
 [node name="GameContainer" type="Control" parent="."]
 margin_left = 90.0
-margin_top = 551.0
-margin_right = 1768.0
-margin_bottom = 994.0
+margin_top = 988.0
+margin_right = 1690.0
+margin_bottom = 1388.0
+
+[node name="Background" type="ColorRect" parent="GameContainer"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0.192157, 0.192157, 0.219608, 1 )

@@ -14,6 +14,7 @@ public class PlayerProfile : Control {
 	private TextureRect _profilePicture;
 	
 	public ColorRect Background;
+	public ColorRect GameBackground;
 
 	[Export] public string PlayerName = "No name";
 	[Export] public string ProfileText = "No text";
@@ -37,6 +38,7 @@ public class PlayerProfile : Control {
 		_profileText = GetNode<RichTextLabel>("ProfileText");
 		_profilePicture = GetNode<TextureRect>("ProfilePicture");
 		Background = GetNode<ColorRect>("Background");
+		GameBackground = GetNode<ColorRect>("GameContainer/Background");
 		SetupProfile();
 		SetupAchievements();
 		SetupGame();

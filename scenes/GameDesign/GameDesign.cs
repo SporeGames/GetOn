@@ -14,6 +14,8 @@ public class GameDesign : Control {
 	private Button _expandSmallProfileButton;
 	private Button _startGameCreationButton;
 	private List<PlayerProfile> _profiles = new List<PlayerProfile>();
+	private Button _nextProfileButton;
+	private Button _previousProfileButton;
 	
 	private GameDesignSlider _genreSlider;
 	private GameDesignSlider _mechanicSlider;
@@ -27,6 +29,7 @@ public class GameDesign : Control {
 
 	private Button _introReady;
 	private Node2D _introGameStudy;
+	private int _currentProfile = 0;
 	
 	public override void _Ready() {
 		foreach (var child in GetNode("PersonaHolder").GetChildren()) {
@@ -35,9 +38,9 @@ public class GameDesign : Control {
 			}
 		}
 		_defaultBackgroundColor = _profiles[0].Background.Color;
-		_selectFirst = GetNode<Button>("PersonaHolder/SelectFirst");
-		_selectSecond = GetNode<Button>("PersonaHolder/SelectSecond");
-		_selectThird = GetNode<Button>("PersonaHolder/SelectThird");
+		_selectFirst = GetNode<Button>("PersonaHolder/PlayerProfile/Select");
+		_selectSecond = GetNode<Button>("PersonaHolder/PlayerProfile2/Select");
+		_selectThird = GetNode<Button>("PersonaHolder/PlayerProfile3/Select");
 		_selectFirst.Connect("pressed", this, nameof(OnSelectButtonPressed), new Godot.Collections.Array {0});
 		_selectSecond.Connect("pressed", this, nameof(OnSelectButtonPressed), new Godot.Collections.Array {1});
 		_selectThird.Connect("pressed", this, nameof(OnSelectButtonPressed), new Godot.Collections.Array {2});
@@ -50,10 +53,38 @@ public class GameDesign : Control {
 		_mechanicSlider = GetNode<GameDesignSlider>("MechanicSlider");
 		_featureSlider = GetNode<GameDesignSlider>("FeatureSlider");
 		_gameplayExperienceSlider = GetNode<GameDesignSlider>("GExpSlider");
+		
+		_nextProfileButton = GetNode<Button>("PersonaHolder/NextButton");
+		_previousProfileButton = GetNode<Button>("PersonaHolder/PreviousButton");
+		_nextProfileButton.Connect("pressed", this, nameof(OnNextProfileButtonPressed));
+		_previousProfileButton.Connect("pressed", this, nameof(OnPreviousProfileButtonPressed));
 
 		_introReady = GetNode<Button>("Intro/Button");
 		_introGameStudy = GetNode<Node2D>("Intro");
 		_introReady.Connect("pressed", this, nameof(OnIntroReadyPressed));
+		OnPreviousProfileButtonPressed();
+	}
+
+	private void OnNextProfileButtonPressed() {
+		_currentProfile++;
+		if (_currentProfile >= _profiles.Count) {
+			_currentProfile = 0;
+		}
+		foreach (var prof in _profiles) {
+			prof.Visible = false;
+		}
+		_profiles[_currentProfile].Visible = true;
+	}
+	
+	private void OnPreviousProfileButtonPressed() {
+		_currentProfile--;
+		if (_currentProfile < 0) {
+			_currentProfile = _profiles.Count - 1;
+		}
+		foreach (var prof in _profiles) {
+			prof.Visible = false;
+		}
+		_profiles[_currentProfile].Visible = true;
 	}
 
 	private void OnStartGameCreationButtonPressed() {
@@ -73,8 +104,10 @@ public class GameDesign : Control {
 			_selectedProfile.RectGlobalPosition = _smallProfileAnchor.GlobalPosition;
 			_selectedProfile.RectScale = new Vector2(0.3f, 0.3f);
 			_selectedProfile.Background.Color = _defaultBackgroundColor; // Color is carried over from selection earlier
+			_selectedProfile.GameBackground.Color = _defaultBackgroundColor;
 			_expandSmallProfileButton.Text = "Collapse Persona";
 			_isExpanded = true;
+			_selectedProfile.GetNode<Button>("Select").Visible = false;
 		}
 		else {
 			_selectedProfile.Visible = false;
@@ -90,6 +123,7 @@ public class GameDesign : Control {
 			profile.Background.Color = _defaultBackgroundColor;
 		}
 		_selectedProfile.Background.Color = new Color(0.5f, 0.5f, 0.5f);
+		_selectedProfile.GameBackground.Color = new Color(0.4f, 0.4f, 0.4f);
 		_startGameCreationButton.Disabled = false;
 	}
 

@@ -1,4 +1,4 @@
-[gd_scene load_steps=40 format=2]
+[gd_scene load_steps=44 format=2]
 
 [ext_resource path="res://scenes/GameDesign/PlayerProfile.tscn" type="PackedScene" id=1]
 [ext_resource path="res://scenes/GameDesign/GameDesignSlider.tscn" type="PackedScene" id=2]
@@ -37,6 +37,13 @@
 [ext_resource path="res://scenes/GameDesign/assets/experiences/Combos_Feature.png" type="Texture" id=35]
 [ext_resource path="res://scenes/GameDesign/assets/experiences/FastReactionTime_Feature.png" type="Texture" id=36]
 [ext_resource path="res://scenes/GameDesign/assets/experiences/Immersion_Feature.png" type="Texture" id=37]
+[ext_resource path="res://scenes/GameStudy/assets/XBox.png" type="Texture" id=38]
+[ext_resource path="res://scenes/GameStudy/assets/GameBoy.png" type="Texture" id=39]
+[ext_resource path="res://scenes/GameStudy/assets/IMG_0160.png" type="Texture" id=40]
+
+[sub_resource type="DynamicFont" id=3]
+size = 48
+font_data = ExtResource( 29 )
 
 [sub_resource type="DynamicFont" id=1]
 size = 32
@@ -49,6 +56,7 @@ font_data = ExtResource( 29 )
 [node name="GameDesign" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
+rect_min_size = Vector2( 1920, 1080 )
 script = ExtResource( 3 )
 
 [node name="GenreSlider" parent="." instance=ExtResource( 2 )]
@@ -99,12 +107,18 @@ text = "Expand Persona"
 [node name="PersonaHolder" type="Node" parent="."]
 
 [node name="PlayerProfile" parent="PersonaHolder" instance=ExtResource( 1 )]
+visible = false
+margin_left = 333.0
+margin_top = 222.0
+margin_right = 913.0
+margin_bottom = 642.0
 rect_scale = Vector2( 0.48, 0.48 )
 PlayerName = "Bob"
 ProfileText = "Desires: Competition, Fast Gameplay, "
 Achievements = {
 Resource( "res://icon.png" ): PoolStringArray( "Big", "One comboed" )
 }
+GameImage = ExtResource( 38 )
 GameName = "?"
 GameDescription = "description"
 ValidGenres = PoolStringArray( "Figthing Game" )
@@ -112,94 +126,103 @@ ValidMechanics = PoolStringArray( "Complex Movement", "Various Attacks", "Grab",
 ValidFeatures = PoolStringArray( "Multiplayer", "Ranked System", "Skill Based Matchmaking", "Diverse Units" )
 ValidGameplayExperiences = PoolStringArray( "Fast Reacton Time", "Combos", "Predictions" )
 
+[node name="Select" type="Button" parent="PersonaHolder/PlayerProfile"]
+margin_left = 2200.0
+margin_top = 1550.0
+margin_right = 2330.0
+margin_bottom = 1630.0
+rect_scale = Vector2( 2, 2 )
+hint_tooltip = "Select this persona"
+text = "Select"
+
 [node name="PlayerProfile2" parent="PersonaHolder" instance=ExtResource( 1 )]
-margin_left = 1000.0
-margin_right = 1000.0
+visible = false
+margin_left = 333.0
+margin_top = 222.0
+margin_right = 913.0
+margin_bottom = 642.0
 rect_scale = Vector2( 0.48, 0.48 )
 PlayerName = "Tactician"
 ProfileText = "blub"
+GameImage = ExtResource( 39 )
 GameName = "Starcraft"
 ValidGenres = PoolStringArray( "Strategy Game" )
 ValidMechanics = PoolStringArray( "Resource Development", "Commanding Units", "Loot", "Building" )
 ValidFeatures = PoolStringArray( "Diverse Units", "Multi Select", "Skill Based Matchmaking" )
 ValidGameplayExperiences = PoolStringArray( "Predictions", "Management", "Tactics" )
 
+[node name="Select" type="Button" parent="PersonaHolder/PlayerProfile2"]
+margin_left = 2200.0
+margin_top = 1550.0
+margin_right = 2330.0
+margin_bottom = 1630.0
+rect_scale = Vector2( 2, 2 )
+hint_tooltip = "Select this persona"
+text = "Select"
+
 [node name="PlayerProfile3" parent="PersonaHolder" instance=ExtResource( 1 )]
-margin_left = 3.00012
-margin_top = 563.0
-margin_right = 3.00012
-margin_bottom = 563.0
+visible = false
+margin_left = 333.0
+margin_top = 222.0
+margin_right = 913.0
+margin_bottom = 642.0
 rect_scale = Vector2( 0.48, 0.48 )
 PlayerName = "Roleplayer"
+GameImage = ExtResource( 40 )
 GameName = "Baldur's Gate"
 ValidGenres = PoolStringArray( "RPG" )
 ValidMechanics = PoolStringArray( "Items", "Mana", "Stats", "Loot" )
 ValidFeatures = PoolStringArray( "Character Creation", "Multiplayer", "Story" )
 ValidGameplayExperiences = PoolStringArray( "Social Interaction", "Exploration", "Immersion" )
 
-[node name="SelectThird" type="Button" parent="PersonaHolder"]
-margin_left = 790.0
-margin_top = 1006.0
-margin_right = 915.0
-margin_bottom = 1080.0
+[node name="Select" type="Button" parent="PersonaHolder/PlayerProfile3"]
+margin_left = 2200.0
+margin_top = 1550.0
+margin_right = 2330.0
+margin_bottom = 1630.0
+rect_scale = Vector2( 2, 2 )
+hint_tooltip = "Select this persona"
 text = "Select"
 
-[node name="SelectSecond" type="Button" parent="PersonaHolder"]
-margin_left = 1790.0
-margin_top = 441.0
-margin_right = 1915.0
-margin_bottom = 515.0
-text = "Select"
+[node name="NextButton" type="Button" parent="PersonaHolder"]
+margin_left = 1732.0
+margin_top = 479.0
+margin_right = 1917.0
+margin_bottom = 564.0
+rect_pivot_offset = Vector2( 80, 26 )
+text = "Next -->"
 
-[node name="SelectFirst" type="Button" parent="PersonaHolder"]
-margin_left = 793.0
-margin_top = 441.0
-margin_right = 918.0
-margin_bottom = 515.0
-text = "Select"
+[node name="PreviousButton" type="Button" parent="PersonaHolder"]
+margin_top = 477.0
+margin_right = 185.0
+margin_bottom = 562.0
+rect_pivot_offset = Vector2( 80, 26 )
+text = "<-- Previous"
 
 [node name="StartGameCreationButton" type="Button" parent="PersonaHolder"]
-margin_left = 1627.0
-margin_top = 742.0
-margin_right = 1812.0
-margin_bottom = 827.0
+margin_left = 1700.0
+margin_top = 37.0
+margin_right = 1885.0
+margin_bottom = 122.0
+rect_pivot_offset = Vector2( -1621, 200 )
 disabled = true
 text = "Start Game Creation"
 
-[node name="ExplanationLabel" type="RichTextLabel" parent="PersonaHolder"]
-margin_left = 1000.0
-margin_top = 591.0
-margin_right = 1526.0
-margin_bottom = 980.0
-bbcode_enabled = true
-bbcode_text = "Tutorial:
-
-Read the following personas.
-If you want to see the hidden favourite games of the persona click on the Lock.
-But Be aware that you will get bonus points, if you manage to finish this task without looking at their favourite games.
-When you are done reading you will have to select the most fitting  Genres, Mechanics, Features & Gameplay elements.
-You CAN select multiple options.
-Use <- or -> to go through the options.
-If you are want to go back to the previous category click BACK.
-You can always read the persona again by clicking on EXPAND PERSONA.
-"
-text = "Tutorial:
-
-Read the following personas.
-If you want to see the hidden favourite games of the persona click on the Lock.
-But Be aware that you will get bonus points, if you manage to finish this task without looking at their favourite games.
-When you are done reading you will have to select the most fitting  Genres, Mechanics, Features & Gameplay elements.
-You CAN select multiple options.
-Use <- or -> to go through the options.
-If you are want to go back to the previous category click BACK.
-You can always read the persona again by clicking on EXPAND PERSONA.
-"
-fit_content_height = true
+[node name="SelectHint" type="RichTextLabel" parent="PersonaHolder"]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -333.0
+margin_top = 37.0
+margin_right = 304.0
+margin_bottom = 120.0
+custom_fonts/normal_font = SubResource( 3 )
+text = "Select a player persona"
 
 [node name="Music" type="Node" parent="."]
 script = ExtResource( 4 )
 
 [node name="Intro" type="Node2D" parent="."]
+visible = false
 z_index = 21
 
 [node name="ColorRect2" type="ColorRect" parent="Intro"]
