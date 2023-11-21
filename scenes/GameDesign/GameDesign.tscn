@@ -222,7 +222,6 @@ text = "Select a player persona"
 script = ExtResource( 4 )
 
 [node name="Intro" type="Node2D" parent="."]
-visible = false
 z_index = 21
 
 [node name="ColorRect2" type="ColorRect" parent="Intro"]
