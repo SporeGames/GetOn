@@ -1,0 +1,33 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://scenes/GameStudy/PrePuzzleRoom.cs" type="Script" id=1]
+[ext_resource path="res://scenes/GameStudy/assets/Gemeinschafts+GameStdudysRaumSprint2.png" type="Texture" id=2]
+
+[sub_resource type="StyleBoxEmpty" id=1]
+
+[sub_resource type="StyleBoxEmpty" id=2]
+
+[sub_resource type="StyleBoxEmpty" id=3]
+
+[sub_resource type="StyleBoxEmpty" id=4]
+
+[sub_resource type="StyleBoxEmpty" id=5]
+
+[node name="PrePuzzleRoom" type="Node2D"]
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 960, 540 )
+texture = ExtResource( 2 )
+
+[node name="Button" type="Button" parent="."]
+margin_left = 1095.0
+margin_top = 6.0
+margin_right = 1905.0
+margin_bottom = 283.0
+custom_styles/hover = SubResource( 1 )
+custom_styles/pressed = SubResource( 2 )
+custom_styles/focus = SubResource( 3 )
+custom_styles/disabled = SubResource( 4 )
+custom_styles/normal = SubResource( 5 )
+script = ExtResource( 1 )
+sceneToLoad = "res://scenes/GameStudy/GameStudy.tscn"

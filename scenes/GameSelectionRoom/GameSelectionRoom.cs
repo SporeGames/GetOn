@@ -40,7 +40,7 @@ namespace GetOn.scenes.GameSelectionRoom {
 		}
 
 		public void OnGoToNarrativeAndSoundPressed() {
-			_sharedNode.SwitchScene("res://scenes/GameDesign/GameDesign.tscn");
+			_sharedNode.SwitchScene("res://scenes/Narrative/PrePuzzleRoom.tscn");//"res://scenes/Narrative/PrePuzzleRoom.tscn"
 		}
 
 		public void OnGoToSoundPressed() {
@@ -53,7 +53,7 @@ namespace GetOn.scenes.GameSelectionRoom {
 		}
 
 		public void OnGoToGameStudyPressed() {
-			_sharedNode.SwitchScene("res://scenes/GameStudy/GameStudy.tscn");
+			_sharedNode.SwitchScene("res://scenes/GameStudy/PrePuzzleRoom.tscn");
 		}
 	}
 }
