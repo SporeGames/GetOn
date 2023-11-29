@@ -21,7 +21,6 @@
 [ext_resource path="res://scenes/Programming/assets/fahne (1).PNG" type="Texture" id=19]
 [ext_resource path="res://SharedAssets/music/Play/MusicBack.gd" type="Script" id=20]
 
-
 [sub_resource type="RectangleShape2D" id=6]
 extents = Vector2( 69, 62 )
 

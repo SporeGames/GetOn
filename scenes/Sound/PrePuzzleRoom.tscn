@@ -1,7 +1,7 @@
-[gd_scene load_steps=19 format=2]
+[gd_scene load_steps=18 format=2]
 
 [ext_resource path="res://scenes/GameStudy/PrePuzzleRoom.cs" type="Script" id=1]
-[ext_resource path="res://scenes/Narrative/assets/GameDesign+Narrative RaumSprint2.png" type="Texture" id=2]
+[ext_resource path="res://scenes/Sound/assets/ArtRoomSprint2.png" type="Texture" id=2]
 [ext_resource path="res://SharedAssets/font/BAHNSCHRIFT 1.TTF" type="DynamicFontData" id=3]
 [ext_resource path="res://icon.png" type="Texture" id=4]
 [ext_resource path="res://scenes/GameStudy/WorkerText.cs" type="Script" id=5]
@@ -14,9 +14,7 @@
 
 [sub_resource type="StyleBoxEmpty" id=4]
 
-[sub_resource type="StyleBoxEmpty" id=13]
-
-[sub_resource type="StyleBoxEmpty" id=14]
+[sub_resource type="StyleBoxEmpty" id=5]
 
 [sub_resource type="DynamicFont" id=6]
 size = 20
@@ -43,30 +41,18 @@ position = Vector2( 960, 540 )
 texture = ExtResource( 2 )
 
 [node name="Button" type="Button" parent="."]
-margin_left = 274.0
-margin_top = 57.0
-margin_right = 954.0
-margin_bottom = 334.0
+visible = false
+margin_left = 581.0
+margin_top = 272.0
+margin_right = 1391.0
+margin_bottom = 549.0
 custom_styles/hover = SubResource( 1 )
 custom_styles/pressed = SubResource( 2 )
 custom_styles/focus = SubResource( 3 )
 custom_styles/disabled = SubResource( 4 )
-custom_styles/normal = SubResource( 13 )
+custom_styles/normal = SubResource( 5 )
 script = ExtResource( 1 )
-sceneToLoad = "res://scenes/Narrative/Narrative.tscn"
-
-[node name="Button2" type="Button" parent="."]
-margin_left = 140.0
-margin_top = 584.0
-margin_right = 716.0
-margin_bottom = 957.0
-custom_styles/hover = SubResource( 1 )
-custom_styles/pressed = SubResource( 2 )
-custom_styles/focus = SubResource( 3 )
-custom_styles/disabled = SubResource( 4 )
-custom_styles/normal = SubResource( 14 )
-script = ExtResource( 1 )
-sceneToLoad = "res://scenes/GameDesign/GameDesign.tscn"
+sceneToLoad = "res://scenes/GameStudy/GameStudy.tscn"
 
 [node name="BackButton" type="Button" parent="."]
 margin_left = 1731.0
@@ -79,7 +65,7 @@ script = ExtResource( 1 )
 sceneToLoad = "res://scenes/GameSelectionRoom/GameSelectionRoom.tscn"
 
 [node name="Worker" type="Sprite" parent="."]
-position = Vector2( 176, 438 )
+position = Vector2( 1586, 748 )
 texture = ExtResource( 4 )
 script = ExtResource( 5 )
 
@@ -127,58 +113,6 @@ one_shot = true
 [node name="Timer3" type="Timer" parent="Worker"]
 one_shot = true
 
-[node name="Worker2" type="Sprite" parent="."]
-position = Vector2( 778, 730 )
-texture = ExtResource( 4 )
-script = ExtResource( 5 )
-
-[node name="Button" type="Button" parent="Worker2"]
-margin_left = -32.0
-margin_top = -32.0
-margin_right = 32.0
-margin_bottom = 32.0
-custom_styles/hover = SubResource( 7 )
-custom_styles/pressed = SubResource( 8 )
-custom_styles/focus = SubResource( 9 )
-custom_styles/disabled = SubResource( 10 )
-custom_styles/normal = SubResource( 11 )
-
-[node name="Label" type="Label" parent="Worker2"]
-margin_left = 60.0
-margin_top = -49.0
-margin_right = 100.0
-margin_bottom = -33.0
-custom_fonts/font = SubResource( 12 )
-text = "Hi!...."
-
-[node name="Label2" type="Label" parent="Worker2"]
-margin_left = 60.0
-margin_top = -29.0
-margin_right = 161.0
-margin_bottom = -8.0
-custom_fonts/font = SubResource( 12 )
-text = "Na du?"
-
-[node name="Label3" type="Label" parent="Worker2"]
-margin_left = 60.0
-margin_top = -9.0
-margin_right = 161.0
-margin_bottom = 12.0
-custom_fonts/font = SubResource( 12 )
-text = "Hilf mir!"
-
-[node name="Timer" type="Timer" parent="Worker2"]
-one_shot = true
-
-[node name="Timer2" type="Timer" parent="Worker2"]
-one_shot = true
-
-[node name="Timer3" type="Timer" parent="Worker2"]
-one_shot = true
-
 [connection signal="timeout" from="Worker/Timer" to="Worker" method="_on_Timer_timeout"]
 [connection signal="timeout" from="Worker/Timer2" to="Worker" method="_on_Timer2_timeout"]
 [connection signal="timeout" from="Worker/Timer3" to="Worker" method="_on_Timer3_timeout"]
-[connection signal="timeout" from="Worker2/Timer" to="Worker2" method="_on_Timer_timeout"]
-[connection signal="timeout" from="Worker2/Timer2" to="Worker2" method="_on_Timer2_timeout"]
-[connection signal="timeout" from="Worker2/Timer3" to="Worker2" method="_on_Timer3_timeout"]

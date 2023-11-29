@@ -44,7 +44,7 @@ namespace GetOn.scenes.GameSelectionRoom {
 		}
 
 		public void OnGoToSoundPressed() {
-			_sharedNode.SwitchScene("res://scenes/Narrative/Narrative.tscn");
+			_sharedNode.SwitchScene("res://scenes/Sound/PrePuzzleRoom.tscn");
 		}
 
 		public void OnPrintPDFPressed() {
