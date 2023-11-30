@@ -1,0 +1,17 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://scenes/Management/Management.cs" type="Script" id=1]
+[ext_resource path="res://scenes/Management/NoteContent.tres" type="Resource" id=2]
+[ext_resource path="res://scenes/Management/ManagementNote.tscn" type="PackedScene" id=3]
+[ext_resource path="res://scenes/Management/NoteContent.cs" type="Script" id=4]
+
+[sub_resource type="Resource" id=1]
+resource_local_to_scene = true
+script = ExtResource( 4 )
+Content = "blih"
+Color = Color( 0.0156863, 0.0745098, 0.701961, 1 )
+
+[node name="Management" type="Node2D"]
+script = ExtResource( 1 )
+NoteContents = [ SubResource( 1 ), ExtResource( 2 ) ]
+NoteScene = ExtResource( 3 )

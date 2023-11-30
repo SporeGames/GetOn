@@ -1,0 +1,76 @@
+[gd_scene load_steps=10 format=2]
+
+[ext_resource path="res://SharedAssets/font/BAHNSCHRIFT 1.TTF" type="DynamicFontData" id=1]
+[ext_resource path="res://scenes/Management/ManagementNote.cs" type="Script" id=2]
+
+[sub_resource type="StyleBoxLine" id=3]
+
+[sub_resource type="StyleBoxEmpty" id=4]
+
+[sub_resource type="StyleBoxEmpty" id=5]
+
+[sub_resource type="StyleBoxEmpty" id=6]
+
+[sub_resource type="StyleBoxEmpty" id=7]
+
+[sub_resource type="DynamicFont" id=1]
+size = 32
+font_data = ExtResource( 1 )
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 141.5, 139 )
+
+[node name="ManagementNode" type="Area2D"]
+script = ExtResource( 2 )
+
+[node name="NoteColor" type="ColorRect" parent="."]
+margin_left = -132.0
+margin_top = -130.0
+margin_right = 124.0
+margin_bottom = 126.0
+mouse_filter = 2
+color = Color( 0.917647, 0.839216, 0, 1 )
+
+[node name="RightConnectButton" type="Button" parent="."]
+margin_left = 105.0
+margin_top = -17.0
+margin_right = 142.0
+margin_bottom = 18.0
+rect_pivot_offset = Vector2( -209, -117 )
+custom_styles/hover = SubResource( 3 )
+custom_styles/pressed = SubResource( 4 )
+custom_styles/focus = SubResource( 5 )
+custom_styles/disabled = SubResource( 6 )
+custom_styles/normal = SubResource( 7 )
+shortcut_in_tooltip = false
+
+[node name="LeftConnectButton" type="Button" parent="."]
+margin_left = -148.0
+margin_top = -17.0
+margin_right = -111.0
+margin_bottom = 18.0
+rect_pivot_offset = Vector2( -209, -117 )
+custom_styles/hover = SubResource( 3 )
+custom_styles/pressed = SubResource( 4 )
+custom_styles/focus = SubResource( 5 )
+custom_styles/disabled = SubResource( 6 )
+custom_styles/normal = SubResource( 7 )
+shortcut_in_tooltip = false
+
+[node name="NoteText" type="RichTextLabel" parent="."]
+margin_left = -111.0
+margin_top = -109.0
+margin_right = 105.0
+margin_bottom = 112.0
+mouse_filter = 2
+custom_fonts/normal_font = SubResource( 1 )
+text = "post it blah blah"
+
+[node name="RightLineAnchor" type="Node2D" parent="."]
+position = Vector2( -132, 0 )
+
+[node name="LeftLineAnchor" type="Node2D" parent="."]
+position = Vector2( 124, 0 )
+
+[node name="Shape" type="CollisionShape2D" parent="."]
+shape = SubResource( 2 )
