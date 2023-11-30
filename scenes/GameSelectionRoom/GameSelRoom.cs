@@ -2,7 +2,7 @@ using Godot;
 using System;
 
 namespace GetOn.scenes.GameSelectionRoom {
-	public class GameSelectionRoom : Node2D {
+	public class GameSelRoom : Node2D {
 		private SharedNode _sharedNode;
 		
 		private Button _goToProgramming;

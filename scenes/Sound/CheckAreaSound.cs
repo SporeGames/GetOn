@@ -7,7 +7,7 @@ namespace GetOn.scenes.Sound
 	public class CheckAreaSound : Area2D
 	{
 		private SharedNode _sharedNode;
-		private GameSelectionRoom.GameSelectionRoom _gameSelectionRoom;
+		private GameSelRoom _gameSelRoom;
 
 		private bool SoundItem;
 		private bool SoundDeath;
@@ -27,7 +27,7 @@ namespace GetOn.scenes.Sound
 			_submitPoints = GetNode<Button>("/root/Sound/Control/Button3");
 			_submitPoints.Connect("pressed", this, nameof(CountPoints));
 			_sharedNode = GetNode<SharedNode>("/root/SharedNode");
-			_gameSelectionRoom = GetNode<GameSelectionRoom>("/root/scenes/GameSelectionRoom/GameSelectionRoom");
+			_gameSelRoom = GetNode<GameSelRoom>("/root/scenes/GameSelectionRoom/GameSelectionRoom");
 		}
 
 		private void _on_CheckArea_body_entered(object body)
@@ -174,9 +174,9 @@ namespace GetOn.scenes.Sound
 				points += 7.5;
 			}
 			GD.Print(points);
-			_sharedNode.soundPoints = points;
+			_sharedNode.soundPoints = (int) points;
 			_sharedNode.SwitchScene("res://scenes/GameSelectionRoom/GameSelectionRoom.tscn");
-			_gameSelectionRoom.HideSound();
+			_gameSelRoom.HideSound();
 		}
 	}
 }
