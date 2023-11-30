@@ -1,0 +1,23 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/Perfect Block Sound.wav-4cb68924ff996d30b6a2458991c39047.sample"
+
+[deps]
+
+source_file="res://scenes/Sound/Soundeffects/Perfect Block Sound.wav"
+dest_files=[ "res://.import/Perfect Block Sound.wav-4cb68924ff996d30b6a2458991c39047.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=1
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

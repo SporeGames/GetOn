@@ -42,17 +42,17 @@ texture = ExtResource( 2 )
 
 [node name="Button" type="Button" parent="."]
 visible = false
-margin_left = 581.0
-margin_top = 272.0
-margin_right = 1391.0
-margin_bottom = 549.0
+margin_left = 1019.0
+margin_top = 690.0
+margin_right = 1497.0
+margin_bottom = 905.0
 custom_styles/hover = SubResource( 1 )
 custom_styles/pressed = SubResource( 2 )
 custom_styles/focus = SubResource( 3 )
 custom_styles/disabled = SubResource( 4 )
 custom_styles/normal = SubResource( 5 )
 script = ExtResource( 1 )
-sceneToLoad = "res://scenes/GameStudy/GameStudy.tscn"
+sceneToLoad = "res://scenes/Sound/Sound.tscn"
 
 [node name="BackButton" type="Button" parent="."]
 margin_left = 1731.0
