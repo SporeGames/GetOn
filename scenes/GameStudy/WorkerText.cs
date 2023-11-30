@@ -53,15 +53,24 @@ public class WorkerText : Sprite
 	private void _on_Timer2_timeout()
 	{
 		_text3.Visible = true;
-		_timer3.Start(2);
+		_timer3.Start(1);
+		
+		if (this.Name == "Worker")
+		{
+			_prePuzzleRoom.SetButtonVisible();
+		}
+		else
+		{
+			_prePuzzleRoom.SetButton2Visibile();
+		}
 	}
 	
 	private void _on_Timer3_timeout()
 	{
-		_text1.Visible = false;
-		_text2.Visible = false;
-		_text3.Visible = false;
-		_interact.Visible = true;
+		//_text1.Visible = false;
+		//_text2.Visible = false;
+		//_text3.Visible = false;
+		//_interact.Visible = true;
 
 		if (this.Name == "Worker")
 		{

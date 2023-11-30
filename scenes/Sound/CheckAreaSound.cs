@@ -1,12 +1,13 @@
 using Godot;
 using System;
-using System.Runtime.InteropServices.ComTypes;
+using GetOn.scenes.GameSelectionRoom;
 
 namespace GetOn.scenes.Sound
 {
 	public class CheckAreaSound : Area2D
 	{
 		private SharedNode _sharedNode;
+		private GameSelectionRoom.GameSelectionRoom _gameSelectionRoom;
 
 		private bool SoundItem;
 		private bool SoundDeath;
@@ -26,6 +27,7 @@ namespace GetOn.scenes.Sound
 			_submitPoints = GetNode<Button>("/root/Sound/Control/Button3");
 			_submitPoints.Connect("pressed", this, nameof(CountPoints));
 			_sharedNode = GetNode<SharedNode>("/root/SharedNode");
+			_gameSelectionRoom = GetNode<GameSelectionRoom>("/root/scenes/GameSelectionRoom/GameSelectionRoom");
 		}
 
 		private void _on_CheckArea_body_entered(object body)
@@ -174,6 +176,7 @@ namespace GetOn.scenes.Sound
 			GD.Print(points);
 			_sharedNode.soundPoints = points;
 			_sharedNode.SwitchScene("res://scenes/GameSelectionRoom/GameSelectionRoom.tscn");
+			_gameSelectionRoom.HideSound();
 		}
 	}
 }

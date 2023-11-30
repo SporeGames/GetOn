@@ -12,6 +12,8 @@ namespace GetOn.scenes.GameSelectionRoom {
 		private Button _goToGameStudy;
 		private Button _printPDF;
 
+		private ColorRect _soundDone;
+
 		// Called when the node enters the scene tree for the first time.
 		public override void _Ready() {
 			
@@ -28,6 +30,8 @@ namespace GetOn.scenes.GameSelectionRoom {
 			_printPDF.Connect("pressed", this, nameof(OnPrintPDFPressed));
 			_goToGameStudy = GetNode<Button>("GoToGameStudy");
 			_goToGameStudy.Connect("pressed", this, nameof(OnGoToGameStudyPressed));
+
+			_soundDone = GetNode<ColorRect>("SoundDone");
 
 		}
 
@@ -54,6 +58,12 @@ namespace GetOn.scenes.GameSelectionRoom {
 
 		public void OnGoToGameStudyPressed() {
 			_sharedNode.SwitchScene("res://scenes/GameStudy/PrePuzzleRoom.tscn");
+		}
+
+		public void HideSound()
+		{
+			_goToSound.Visible = false;
+			_soundDone.Visible = true;
 		}
 	}
 }

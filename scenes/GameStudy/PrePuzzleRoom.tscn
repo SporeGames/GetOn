@@ -41,10 +41,10 @@ position = Vector2( 960, 540 )
 texture = ExtResource( 2 )
 
 [node name="Button" type="Button" parent="."]
-margin_left = 1095.0
-margin_top = 6.0
-margin_right = 1905.0
-margin_bottom = 283.0
+margin_left = 1180.0
+margin_top = 495.0
+margin_right = 1399.0
+margin_bottom = 610.0
 custom_styles/hover = SubResource( 1 )
 custom_styles/pressed = SubResource( 2 )
 custom_styles/focus = SubResource( 3 )
@@ -93,7 +93,7 @@ margin_top = -29.0
 margin_right = 161.0
 margin_bottom = -8.0
 custom_fonts/font = SubResource( 12 )
-text = "Na du?"
+text = "How are you?"
 
 [node name="Label3" type="Label" parent="Worker"]
 margin_left = 60.0
@@ -101,7 +101,7 @@ margin_top = -9.0
 margin_right = 161.0
 margin_bottom = 12.0
 custom_fonts/font = SubResource( 12 )
-text = "Hilf mir!"
+text = "Can you help me?"
 
 [node name="Timer" type="Timer" parent="Worker"]
 one_shot = true
