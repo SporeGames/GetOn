@@ -1,0 +1,22 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://scenes/Management/NoteBox.cs" type="Script" id=1]
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 80, 80 )
+
+[node name="NoteBox" type="Area2D"]
+script = ExtResource( 1 )
+ValidIDs = PoolStringArray( "test" )
+
+[node name="ColorRect" type="ColorRect" parent="."]
+margin_left = -86.0
+margin_top = -86.0
+margin_right = 104.0
+margin_bottom = 104.0
+mouse_filter = 2
+color = Color( 0.411765, 0.411765, 0.411765, 1 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( 9, 9 )
+shape = SubResource( 2 )

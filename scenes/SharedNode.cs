@@ -13,7 +13,9 @@ namespace GetOn.scenes {
 		public int gameStudyPoints = 0;
 		public int gameDesignPoints = 0;
 		public int narrativePoints = 0;
-		public double soundPoints = 0;
+		public int soundPoints = 0;
+		public int managementPoints = 0;
+		public int managementColors = 0;
 
 		public bool isDragging;
 
@@ -38,7 +40,7 @@ namespace GetOn.scenes {
 			var minutes = Mathf.FloorToInt(programmingTime / 60);
 			var seconds = Mathf.FloorToInt(programmingTime % 60);
 			var timeFormatted = $"{minutes:00}:{seconds:00}";
-			GetNode("Printer").Call("_print", PlayerName, programmingPoints, timeFormatted, gameStudyPoints, gameDesignPoints, narrativePoints, soundPoints);
+			GetNode("Printer").Call("_print", PlayerName, programmingPoints, timeFormatted, gameStudyPoints, gameDesignPoints, soundPoints, managementPoints, managementColors, narrativePoints);
 		}
 
 		public string ToJson() {
