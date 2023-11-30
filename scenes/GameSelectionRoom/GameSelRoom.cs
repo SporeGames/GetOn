@@ -40,7 +40,7 @@ namespace GetOn.scenes.GameSelectionRoom {
 		}
 
 		public void OnGoToManagmentPressed() {
-			_sharedNode.SwitchScene("res://scenes/Programming/ProgrammingRoom.tscn");
+			_sharedNode.SwitchScene("res://scenes/Management/PrePuzzleRoom.tscn");
 		}
 
 		public void OnGoToNarrativeAndSoundPressed() {
