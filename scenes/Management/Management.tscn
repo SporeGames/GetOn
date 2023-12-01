@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=18 format=2]
 
 [ext_resource path="res://scenes/Management/Management.cs" type="Script" id=1]
 [ext_resource path="res://scenes/Management/assets/Sprint Review Village.PNG" type="Texture" id=2]
@@ -11,6 +11,18 @@
 [ext_resource path="res://scenes/Management/assets/Layout Forest.PNG" type="Texture" id=9]
 [ext_resource path="res://scenes/Management/assets/Moodboard.png" type="Texture" id=10]
 [ext_resource path="res://scenes/Management/assets/Sprint Review Tris.PNG" type="Texture" id=11]
+[ext_resource path="res://SharedAssets/font/BAHNSCHRIFT 1.TTF" type="DynamicFontData" id=12]
+[ext_resource path="res://scenes/Management/assets/Instruction.png" type="Texture" id=13]
+[ext_resource path="res://SharedAssets/Anleitung.png" type="Texture" id=14]
+[ext_resource path="res://SharedAssets/AnleitungStartButton.png" type="Texture" id=15]
+
+[sub_resource type="DynamicFont" id=1]
+size = 32
+font_data = ExtResource( 12 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 32
+font_data = ExtResource( 12 )
 
 [node name="Management" type="Node2D"]
 script = ExtResource( 1 )
@@ -337,3 +349,61 @@ margin_right = 62.0
 margin_bottom = 398.0
 rect_min_size = Vector2( 50, 50 )
 text = "SUBMIT"
+
+[node name="Intro" type="Node2D" parent="."]
+z_index = 20
+
+[node name="Sprite2" type="Sprite" parent="Intro"]
+position = Vector2( 960, 540 )
+texture = ExtResource( 14 )
+
+[node name="Label2" type="Label" parent="Intro"]
+margin_left = 113.0
+margin_top = 232.0
+margin_right = 1036.0
+margin_bottom = 1057.0
+custom_fonts/font = SubResource( 1 )
+text = "Introduction:
+
+Sort the different Notes to their old places. 
+The gray outline symbols where you have to put them.
+Additionally, you have to color in the different notes into their coordinating 
+department color.
+
+- Art = 	orange	
+- Programming = blue
+- Game Design = purple
+- Sound = yellow									
+- Narrative = green
+- Management = black
+
+"
+autowrap = true
+
+[node name="StartPuzzle" type="Button" parent="Intro"]
+margin_left = 1240.0
+margin_top = 893.0
+margin_right = 1835.0
+margin_bottom = 1019.0
+custom_colors/font_color_disabled = Color( 1, 1, 1, 1 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_colors/font_color_hover = Color( 1, 1, 1, 1 )
+custom_colors/font_color_pressed = Color( 1, 1, 1, 1 )
+icon = ExtResource( 15 )
+flat = true
+
+[node name="Label3" type="Label" parent="Intro"]
+margin_left = 1175.0
+margin_top = 653.0
+margin_right = 2110.0
+margin_bottom = 692.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_colors/font_outline_modulate = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 2 )
+text = "“You have 5 minutes to complete this test”"
+autowrap = true
+
+[node name="Sprite" type="Sprite" parent="Intro"]
+position = Vector2( 1460, 420 )
+scale = Vector2( 0.682237, 0.768987 )
+texture = ExtResource( 13 )

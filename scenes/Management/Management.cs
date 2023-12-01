@@ -27,6 +27,9 @@ public class Management : Node2D {
 	private Dictionary<NoteBox, ManagementNote> _boxedNotes = new Dictionary<NoteBox, ManagementNote>();
 	private static Color _defaultBoxColor = new Color(0.41f, 0.41f, 0.41f, 1);
 	
+	private Button _start;
+	private Node2D _intro;
+	
 	public override void _Ready() {
 		_colorText = GetNode<RichTextLabel>("ColorSelector/Text");
 		_orangeButton = GetNode<Button>("ColorSelector/Orange");
@@ -36,6 +39,9 @@ public class Management : Node2D {
 		_greenButton = GetNode<Button>("ColorSelector/Green");
 		_blackButton = GetNode<Button>("ColorSelector/Black");
 		_submitButton = GetNode<Button>("ColorSelector/SubmitButton");
+		_start = GetNode<Button>("Intro/StartPuzzle");
+		_intro = GetNode<Node2D>("Intro");
+		_start.Connect("pressed", this, nameof(CloseIntro));
 		_orangeButton.Connect("pressed", this, nameof(OnColorButtonPress), new Godot.Collections.Array {0});
 		_blueButton.Connect("pressed", this, nameof(OnColorButtonPress), new Godot.Collections.Array {1});
 		_purpleButton.Connect("pressed", this, nameof(OnColorButtonPress), new Godot.Collections.Array {2});
@@ -104,7 +110,8 @@ public class Management : Node2D {
 		var shared = GetNode<SharedNode>("/root/SharedNode");
 		shared.managementPoints = points;
 		shared.managementColors = cardsColoredCorrectly;
-		shared.SwitchScene("res://scenes/GameSelRoom/GameSelectionRoom.tscn");
+		//shared.SwitchScene("res://scenes/GameSelRoom/GameSelectionRoom.tscn");
+		shared.SwitchScene("res://scenes/GameSelectionRoom/GameSelectionRoom.tscn");
 	}
 
 	public override void _Process(float delta) {
@@ -167,5 +174,10 @@ public class Management : Node2D {
 		if (_dragOffset == Vector2.Zero) {
 			_currentNote = null;
 		}
+	}
+
+	public void CloseIntro()
+	{
+		_intro.Visible = false;
 	}
 }

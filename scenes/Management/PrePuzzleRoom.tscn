@@ -1,7 +1,7 @@
 [gd_scene load_steps=22 format=2]
 
 [ext_resource path="res://scenes/GameStudy/PrePuzzleRoom.cs" type="Script" id=1]
-[ext_resource path="res://scenes/Sound/assets/ArtRoomSprint2.png" type="Texture" id=2]
+[ext_resource path="res://scenes/Management/assets/ManagementSprint2.png" type="Texture" id=2]
 [ext_resource path="res://SharedAssets/font/BAHNSCHRIFT 1.TTF" type="DynamicFontData" id=3]
 [ext_resource path="res://icon.png" type="Texture" id=4]
 [ext_resource path="res://scenes/GameStudy/WorkerText.cs" type="Script" id=5]
@@ -51,10 +51,10 @@ position = Vector2( 960, 540 )
 texture = ExtResource( 2 )
 
 [node name="Button" type="Button" parent="."]
-margin_left = 1506.0
-margin_top = 672.0
-margin_right = 1751.0
-margin_bottom = 813.0
+margin_left = 644.0
+margin_top = 158.0
+margin_right = 899.0
+margin_bottom = 283.0
 custom_styles/hover = SubResource( 1 )
 custom_styles/pressed = SubResource( 2 )
 custom_styles/focus = SubResource( 3 )
@@ -74,7 +74,7 @@ script = ExtResource( 1 )
 sceneToLoad = "res://scenes/GameSelectionRoom/GameSelectionRoom.tscn"
 
 [node name="Worker" type="Sprite" parent="."]
-position = Vector2( 1586, 748 )
+position = Vector2( 684, 227 )
 texture = ExtResource( 4 )
 script = ExtResource( 5 )
 
