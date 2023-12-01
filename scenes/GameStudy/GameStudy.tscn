@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=2]
+[gd_scene load_steps=23 format=2]
 
 [ext_resource path="res://SharedAssets/font/BAHNSCHRIFT 1.TTF" type="DynamicFontData" id=1]
 [ext_resource path="res://SharedAssets/music/Play/Music_GameStud.gd" type="Script" id=2]
@@ -9,6 +9,9 @@
 [ext_resource path="res://scenes/GameStudy/assets/IMG_0173.PNG" type="Texture" id=7]
 [ext_resource path="res://scenes/GameStudy/CheckArea.cs" type="Script" id=8]
 [ext_resource path="res://scenes/GameStudy/DragAndDrop.cs" type="Script" id=9]
+[ext_resource path="res://SharedAssets/Anleitung.png" type="Texture" id=10]
+[ext_resource path="res://scenes/GameStudy/assets/image (1).png" type="Texture" id=11]
+[ext_resource path="res://SharedAssets/AnleitungStartButton.png" type="Texture" id=12]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 62, 90.5 )
@@ -34,11 +37,11 @@ extents = Vector2( 460.5, 75 )
 [sub_resource type="RectangleShape2D" id=8]
 extents = Vector2( 528, 77 )
 
-[sub_resource type="DynamicFont" id=9]
+[sub_resource type="DynamicFont" id=10]
 size = 32
 font_data = ExtResource( 1 )
 
-[sub_resource type="DynamicFont" id=10]
+[sub_resource type="DynamicFont" id=11]
 size = 32
 font_data = ExtResource( 1 )
 
@@ -154,13 +157,9 @@ margin_right = 1943.0
 margin_bottom = 1083.0
 color = Color( 0.027451, 0.364706, 0.317647, 1 )
 
-[node name="Button" type="Button" parent="Intro"]
-margin_left = 1628.0
-margin_top = 942.0
-margin_right = 1862.0
-margin_bottom = 1010.0
-custom_fonts/font = SubResource( 9 )
-text = "Ready?"
+[node name="Sprite" type="Sprite" parent="Intro"]
+position = Vector2( 960, 540 )
+texture = ExtResource( 10 )
 
 [node name="Label2" type="Label" parent="Intro"]
 margin_left = 77.0
@@ -173,6 +172,22 @@ text = "Instructions:
 Click on the consoles and drag them to their destined shelves.
 "
 autowrap = true
+
+[node name="Button" type="Button" parent="Intro"]
+margin_left = 1242.0
+margin_top = 902.0
+margin_right = 1837.0
+margin_bottom = 1028.0
+custom_fonts/font = SubResource( 11 )
+icon = ExtResource( 12 )
+flat = true
+icon_align = 1
+expand_icon = true
+
+[node name="Sprite2" type="Sprite" parent="Intro"]
+position = Vector2( 1456, 378 )
+scale = Vector2( 0.35, 0.35 )
+texture = ExtResource( 11 )
 
 [connection signal="body_entered" from="CheckGameBoy" to="CheckGameBoy" method="_on_CheckGameBoy_body_entered"]
 [connection signal="body_exited" from="CheckGameBoy" to="CheckGameBoy" method="_on_CheckGameBoy_body_exited"]
