@@ -62,6 +62,7 @@ namespace GetOn.scenes.GameSelectionRoom {
 
 		public void HideSound()
 		{
+			GD.Print("uwu");
 			_goToSound.Visible = false;
 			_soundDone.Visible = true;
 		}

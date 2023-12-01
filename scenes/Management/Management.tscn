@@ -1,84 +1,131 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://scenes/Management/Management.cs" type="Script" id=1]
-[ext_resource path="res://scenes/Management/assets/Bildschirm_grauen_Feldern.png" type="Texture" id=2]
+[ext_resource path="res://scenes/Management/assets/Sprint Review Village.PNG" type="Texture" id=2]
 [ext_resource path="res://scenes/Management/ManagementNote.tscn" type="PackedScene" id=3]
+[ext_resource path="res://scenes/Management/assets/Arrows.png" type="Texture" id=4]
 [ext_resource path="res://scenes/Management/NoteBox.tscn" type="PackedScene" id=5]
+[ext_resource path="res://scenes/Management/assets/Tris Character Traits.PNG" type="Texture" id=6]
+[ext_resource path="res://scenes/Management/assets/Sprint Review Forest.PNG" type="Texture" id=7]
+[ext_resource path="res://scenes/Management/assets/Village Implement.PNG" type="Texture" id=8]
+[ext_resource path="res://scenes/Management/assets/Layout Forest.PNG" type="Texture" id=9]
+[ext_resource path="res://scenes/Management/assets/Moodboard.png" type="Texture" id=10]
+[ext_resource path="res://scenes/Management/assets/Sprint Review Tris.PNG" type="Texture" id=11]
 
 [node name="Management" type="Node2D"]
 script = ExtResource( 1 )
 NoteScene = ExtResource( 3 )
 
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 960, 536 )
+scale = Vector2( 1.60663, 1.67492 )
+texture = ExtResource( 4 )
+
+[node name="Example Notes" type="Node" parent="."]
+
+[node name="ForLay" type="Sprite" parent="Example Notes"]
+position = Vector2( 455, -5 )
+texture = ExtResource( 9 )
+offset = Vector2( 460, 96 )
+
+[node name="Moodboards" type="Sprite" parent="Example Notes"]
+position = Vector2( -352, 1 )
+texture = ExtResource( 10 )
+offset = Vector2( 460, 96 )
+
+[node name="ReviewForest" type="Sprite" parent="Example Notes"]
+position = Vector2( 1330, -1 )
+texture = ExtResource( 7 )
+offset = Vector2( 460, 96 )
+
+[node name="ReviewTrist" type="Sprite" parent="Example Notes"]
+position = Vector2( 1356, 838 )
+texture = ExtResource( 11 )
+offset = Vector2( 460, 96 )
+
+[node name="ReviewVillage" type="Sprite" parent="Example Notes"]
+position = Vector2( 1216, 642 )
+texture = ExtResource( 2 )
+offset = Vector2( 460, 96 )
+
+[node name="CharTristTraits" type="Sprite" parent="Example Notes"]
+position = Vector2( -362, 677 )
+texture = ExtResource( 6 )
+offset = Vector2( 460, 96 )
+
+[node name="VillageImpl" type="Sprite" parent="Example Notes"]
+position = Vector2( 896, 346 )
+texture = ExtResource( 8 )
+offset = Vector2( 460, 96 )
+
 [node name="Boxes" type="Node" parent="."]
 
-[node name="Sprite" type="Sprite" parent="Boxes"]
-visible = false
-position = Vector2( 959, 536.5 )
-scale = Vector2( 0.992746, 1.00093 )
-texture = ExtResource( 2 )
-
 [node name="Moodboards" parent="Boxes" instance=ExtResource( 5 )]
-position = Vector2( 121, 131 )
+visible = false
+position = Vector2( 96, 91 )
 ValidIDs = PoolStringArray(  )
 
 [node name="VillLayout" parent="Boxes" instance=ExtResource( 5 )]
-position = Vector2( 556, 205 )
+position = Vector2( 495, 164 )
 ValidIDs = PoolStringArray(  )
 
 [node name="ForLayout" parent="Boxes" instance=ExtResource( 5 )]
-position = Vector2( 989, 93 )
+visible = false
+position = Vector2( 910, 78 )
 ValidIDs = PoolStringArray(  )
 
 [node name="CharMovement" parent="Boxes" instance=ExtResource( 5 )]
-position = Vector2( 754, 949 )
+position = Vector2( 557, 967 )
 ValidIDs = PoolStringArray(  )
 
 [node name="CharTrisTraits" parent="Boxes" instance=ExtResource( 5 )]
+visible = false
 position = Vector2( 126, 727 )
 ValidIDs = PoolStringArray(  )
 
 [node name="CharTrisVoice" parent="Boxes" instance=ExtResource( 5 )]
-position = Vector2( 1162, 904 )
+position = Vector2( 1049, 843 )
 ValidIDs = PoolStringArray(  )
 
 [node name="IdleAnim" parent="Boxes" instance=ExtResource( 5 )]
-position = Vector2( 956, 749 )
+position = Vector2( 827, 735 )
 ValidIDs = PoolStringArray(  )
 
 [node name="BirdChirp" parent="Boxes" instance=ExtResource( 5 )]
-position = Vector2( 1223, 230 )
+position = Vector2( 1103, 166 )
 ValidIDs = PoolStringArray(  )
 
 [node name="NPCs" parent="Boxes" instance=ExtResource( 5 )]
-position = Vector2( 127, 420 )
+position = Vector2( 105, 479 )
 ValidIDs = PoolStringArray(  )
 
 [node name="NPCsVoice" parent="Boxes" instance=ExtResource( 5 )]
-position = Vector2( 823, 507 )
+position = Vector2( 771, 544 )
 ValidIDs = PoolStringArray(  )
 
 [node name="QuestButcher" parent="Boxes" instance=ExtResource( 5 )]
-position = Vector2( 1202, 649 )
+position = Vector2( 1041, 615 )
 ValidIDs = PoolStringArray(  )
 
 [node name="TreeRustle" parent="Boxes" instance=ExtResource( 5 )]
-position = Vector2( 1052, 440 )
+position = Vector2( 909, 275 )
 ValidIDs = PoolStringArray(  )
 
 [node name="ForImplementation" parent="Boxes" instance=ExtResource( 5 )]
-position = Vector2( 1517, 185 )
+position = Vector2( 1548, 167 )
 ValidIDs = PoolStringArray(  )
 
 [node name="CharTris" parent="Boxes" instance=ExtResource( 5 )]
-position = Vector2( 570, 737 )
+position = Vector2( 501, 754 )
 ValidIDs = PoolStringArray(  )
 
 [node name="VillageImpl" parent="Boxes" instance=ExtResource( 5 )]
-position = Vector2( 1404, 476 )
+visible = false
+position = Vector2( 1355, 434 )
 ValidIDs = PoolStringArray(  )
 
 [node name="TrisInForest" parent="Boxes" instance=ExtResource( 5 )]
-position = Vector2( 1710, 515 )
+position = Vector2( 1737, 408 )
 ValidIDs = PoolStringArray(  )
 
 [node name="TrisMechanics" parent="Boxes" instance=ExtResource( 5 )]
@@ -86,133 +133,143 @@ position = Vector2( 132, 960 )
 ValidIDs = PoolStringArray(  )
 
 [node name="ForestAnimals" parent="Boxes" instance=ExtResource( 5 )]
-position = Vector2( 822, 292 )
+position = Vector2( 716, 228 )
 ValidIDs = PoolStringArray(  )
 
 [node name="ReviewVillage" parent="Boxes" instance=ExtResource( 5 )]
-position = Vector2( 1567, 727 )
+visible = false
+position = Vector2( 1648, 726 )
 ValidIDs = PoolStringArray(  )
 
 [node name="ReviewTris" parent="Boxes" instance=ExtResource( 5 )]
-position = Vector2( 1798, 959 )
+visible = false
+position = Vector2( 1809, 922 )
 ValidIDs = PoolStringArray(  )
 
 [node name="NPCs2" parent="Boxes" instance=ExtResource( 5 )]
-position = Vector2( 553, 454 )
+position = Vector2( 462, 391 )
 ValidIDs = PoolStringArray(  )
 
 [node name="ReviewForest" parent="Boxes" instance=ExtResource( 5 )]
-position = Vector2( 1785, 106 )
+visible = false
+position = Vector2( 1782, 83 )
 ValidIDs = PoolStringArray(  )
 
 [node name="Notes" type="Node" parent="."]
 
 [node name="Moodboards" parent="Notes" instance=ExtResource( 3 )]
-position = Vector2( 121, 129 )
+visible = false
+position = Vector2( 94, 90 )
 scale = Vector2( 0.6, 0.6 )
 Text = "Moodboards"
 
 [node name="VillLayout" parent="Notes" instance=ExtResource( 3 )]
-position = Vector2( 1196, 397 )
+position = Vector2( 1093, 403 )
 scale = Vector2( 0.6, 0.6 )
 Text = "Layout: Village"
 
 [node name="ForLayout" parent="Notes" instance=ExtResource( 3 )]
-position = Vector2( 992, 89 )
+visible = false
+position = Vector2( 911, 80 )
 scale = Vector2( 0.6, 0.6 )
 Text = "Layout: Forest"
 
 [node name="CharMovement" parent="Notes" instance=ExtResource( 3 )]
-position = Vector2( 1110, 799 )
+position = Vector2( 1260, 685 )
 scale = Vector2( 0.6, 0.6 )
 Text = "Character: Movement"
 
 [node name="CharTrisTraits" parent="Notes" instance=ExtResource( 3 )]
+visible = false
 position = Vector2( 128, 721 )
 scale = Vector2( 0.6, 0.6 )
 Text = "Character: Tris - Traits"
 
 [node name="CharTrisVoice" parent="Notes" instance=ExtResource( 3 )]
-position = Vector2( 1389, 81 )
+position = Vector2( 1468, 74 )
 scale = Vector2( 0.6, 0.6 )
 Text = "Character: Tris - Voicelines"
 
 [node name="IdleAnim" parent="Notes" instance=ExtResource( 3 )]
-position = Vector2( 1710, 844 )
+position = Vector2( 1820, 282 )
 scale = Vector2( 0.6, 0.6 )
 Text = "Idle Animation"
 
 [node name="BirdChirp" parent="Notes" instance=ExtResource( 3 )]
-position = Vector2( 858, 529 )
+position = Vector2( 696, 418 )
 scale = Vector2( 0.6, 0.6 )
 Text = "Bird chirping"
 
 [node name="NPCs" parent="Notes" instance=ExtResource( 3 )]
-position = Vector2( 129, 413 )
+position = Vector2( 1269, 971 )
 scale = Vector2( 0.6, 0.6 )
 Text = "NPCs"
 
 [node name="NPCsVoice" parent="Notes" instance=ExtResource( 3 )]
-position = Vector2( 495, 394 )
+position = Vector2( 1309, 235 )
 scale = Vector2( 0.6, 0.6 )
 Text = "NPCs: Voicelines"
 
 [node name="QuestButcher" parent="Notes" instance=ExtResource( 3 )]
-position = Vector2( 244, 893 )
+position = Vector2( 763, 966 )
 scale = Vector2( 0.6, 0.6 )
 Text = "Quest: Butcher"
 
 [node name="TreeRustle" parent="Notes" instance=ExtResource( 3 )]
-position = Vector2( 791, 911 )
+position = Vector2( 959, 969 )
 scale = Vector2( 0.6, 0.6 )
 Text = "Tree rustling"
 
 [node name="ForImplementation" parent="Notes" instance=ExtResource( 3 )]
-position = Vector2( 1455, 614 )
+position = Vector2( 1494, 611 )
 scale = Vector2( 0.6, 0.6 )
 Text = "Forest: Implementation"
 
 [node name="CharTris" parent="Notes" instance=ExtResource( 3 )]
-position = Vector2( 1572, 348 )
+position = Vector2( 1562, 420 )
 scale = Vector2( 0.6, 0.6 )
 Text = "Character: Tris"
 
 [node name="VillageImpl" parent="Notes" instance=ExtResource( 3 )]
-position = Vector2( 784, 106 )
+visible = false
+position = Vector2( 1373, 341 )
 scale = Vector2( 0.6, 0.6 )
 Text = "Village: Implementation"
 
 [node name="TrisInForest" parent="Notes" instance=ExtResource( 3 )]
-position = Vector2( 447, 115 )
+position = Vector2( 324, 83 )
 scale = Vector2( 0.6, 0.6 )
 Text = "Tris in Forest"
 
 [node name="TrisMechanics" parent="Notes" instance=ExtResource( 3 )]
-position = Vector2( 244, 637 )
+position = Vector2( 361, 598 )
 scale = Vector2( 0.6, 0.6 )
 Text = "Tris: Mechanics"
 
 [node name="ForestAnimals" parent="Notes" instance=ExtResource( 3 )]
-position = Vector2( 1436, 922 )
+position = Vector2( 1475, 919 )
 scale = Vector2( 0.6, 0.6 )
 Text = "List of animals in a forest"
 
 [node name="ReviewVillage" parent="Notes" instance=ExtResource( 3 )]
-position = Vector2( 1569, 722 )
+visible = false
+position = Vector2( 1645, 728 )
 scale = Vector2( 0.6, 0.6 )
 Text = "Sprint Review: Village"
 
 [node name="ReviewTris" parent="Notes" instance=ExtResource( 3 )]
-position = Vector2( 1795, 959 )
+visible = false
+position = Vector2( 1815, 904 )
 scale = Vector2( 0.6, 0.6 )
 Text = "Sprint Review: Tris"
 
 [node name="NPCs2" parent="Notes" instance=ExtResource( 3 )]
-position = Vector2( 996, 343 )
+position = Vector2( 100, 280 )
 scale = Vector2( 0.6, 0.6 )
 Text = "NPCs"
 
 [node name="ReviewForest" parent="Notes" instance=ExtResource( 3 )]
+visible = false
 position = Vector2( 1783, 105 )
 scale = Vector2( 0.6, 0.6 )
 Text = "Sprint Review: Forest"
@@ -220,10 +277,10 @@ Text = "Sprint Review: Forest"
 [node name="ColorSelector" type="GridContainer" parent="."]
 anchor_left = 0.5
 anchor_right = 0.5
-margin_left = 1847.0
-margin_top = 358.0
-margin_right = 1919.0
-margin_bottom = 702.0
+margin_left = 1850.0
+margin_top = 376.0
+margin_right = 1922.0
+margin_bottom = 774.0
 
 [node name="Text" type="RichTextLabel" parent="ColorSelector"]
 margin_right = 62.0
@@ -279,5 +336,4 @@ margin_top = 348.0
 margin_right = 62.0
 margin_bottom = 398.0
 rect_min_size = Vector2( 50, 50 )
-disabled = true
 text = "SUBMIT"
