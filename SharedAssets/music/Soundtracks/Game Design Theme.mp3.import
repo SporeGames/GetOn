@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Game Design Theme.mp3-b87bb16d6a2d39d9ef25238f888c21af.mp3str"
+
+[deps]
+
+source_file="res://SharedAssets/music/Soundtracks/Game Design Theme.mp3"
+dest_files=[ "res://.import/Game Design Theme.mp3-b87bb16d6a2d39d9ef25238f888c21af.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

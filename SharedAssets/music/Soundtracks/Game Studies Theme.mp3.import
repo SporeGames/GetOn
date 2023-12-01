@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Game Studies Theme.mp3-32640cee660388932da7d9156c4af9ce.mp3str"
+
+[deps]
+
+source_file="res://SharedAssets/music/Soundtracks/Game Studies Theme.mp3"
+dest_files=[ "res://.import/Game Studies Theme.mp3-32640cee660388932da7d9156c4af9ce.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

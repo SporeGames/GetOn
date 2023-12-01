@@ -168,7 +168,10 @@ margin_top = 85.0
 margin_right = 790.0
 margin_bottom = 658.0
 custom_fonts/font = SubResource( 10 )
-text = "Unfortunately, we have a bit of a mess. Can you help us and put the consoles on the right shelf?"
+text = "Instructions:
+
+Click on the consoles and drag them to their destined shelves.
+"
 autowrap = true
 
 [connection signal="body_entered" from="CheckGameBoy" to="CheckGameBoy" method="_on_CheckGameBoy_body_entered"]

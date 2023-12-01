@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Sound Design Theme.mp3-af2270baa26d2945c664ae88bc02c95e.mp3str"
+
+[deps]
+
+source_file="res://SharedAssets/music/Soundtracks/Sound Design Theme.mp3"
+dest_files=[ "res://.import/Sound Design Theme.mp3-af2270baa26d2945c664ae88bc02c95e.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

@@ -1,12 +1,13 @@
 extends Node
 
 
-onready var main_music = load("res://SharedAssets/music/Soundtracks/Hauptraum Theme [V2].wav")
-onready var prog_music = load("res://SharedAssets/music/Soundtracks/Programmieren Theme.wav")
-onready var gameDes_music = load("res://SharedAssets/music/Soundtracks/Game Design Theme.wav")
-onready var gameStud_music = load("res://SharedAssets/music/Soundtracks/Game Studies Theme.wav")
-onready var narr_music = load("res://SharedAssets/music/Soundtracks/Narrative Theme.wav")
-
+onready var main_music = load("res://SharedAssets/music/Soundtracks/Hauptraum Theme [V2].mp3")
+onready var prog_music = load("res://SharedAssets/music/Soundtracks/Programmieren Theme.mp3")
+onready var gameDes_music = load("res://SharedAssets/music/Soundtracks/Game Design Theme.mp3")
+onready var gameStud_music = load("res://SharedAssets/music/Soundtracks/Game Studies Theme.mp3")
+onready var narr_music = load("res://SharedAssets/music/Soundtracks/Narrative Theme.mp3")
+onready var manage_music = load("res://SharedAssets/music/Soundtracks/Management Theme.mp3")
+onready var soundG_music = load("res://SharedAssets/music/Soundtracks/Sound Design Theme.mp3")
 
 func play_music():
 	
@@ -31,4 +32,14 @@ func play_music4():
 func play_music5():
 
 	$Music.stream = narr_music
+	$Music.play()
+
+func play_music6():
+
+	$Music.stream = manage_music
+	$Music.play()
+	
+func play_music7():
+
+	$Music.stream = soundG_music
 	$Music.play()

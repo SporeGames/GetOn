@@ -1,9 +1,10 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://SharedAssets/font/BAHNSCHRIFT 1.TTF" type="DynamicFontData" id=1]
 [ext_resource path="res://icon.png" type="Texture" id=2]
 [ext_resource path="res://scenes/GameSelectionRoom/assets/LayoutÜbersicht.png" type="Texture" id=3]
 [ext_resource path="res://scenes/GameSelectionRoom/GameSelRoom.cs" type="Script" id=4]
+[ext_resource path="res://scenes/MainMenu/MainThemeMusic.gd" type="Script" id=5]
 
 [sub_resource type="StyleBoxEmpty" id=2]
 
@@ -100,3 +101,6 @@ color = Color( 0.552941, 0.505882, 0.505882, 0.643137 )
 [node name="Sprite" type="Sprite" parent="SoundDone"]
 position = Vector2( 270, 151 )
 texture = ExtResource( 2 )
+
+[node name="Music" type="Node" parent="."]
+script = ExtResource( 5 )

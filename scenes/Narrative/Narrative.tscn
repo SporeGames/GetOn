@@ -20,7 +20,6 @@
 [ext_resource path="res://SharedAssets/Jim.PNG" type="Texture" id=18]
 [ext_resource path="res://SharedAssets/music/Play/Music_Narr.gd" type="Script" id=19]
 
-
 [sub_resource type="StyleBoxEmpty" id=28]
 
 [sub_resource type="StyleBoxEmpty" id=29]
@@ -1634,22 +1633,28 @@ margin_top = 85.0
 margin_right = 1012.0
 margin_bottom = 1126.0
 custom_fonts/font = SubResource( 146 )
-text = "“You will see boxes with the title of an upcoming story, 2 important characters from that story and an Introduction to the Story. But be careful, you can only read the Introduction once, before the timer starts.”
+text = "Instructions:
 
-“With the informations given, your goal is to choose:
+You will see  the title of a  story as well as 2 important characters from that story and an introduction to the story.
+But be careful! You can only read the introduction once, before the timer starts.
 
-1. A fitting Setting in which this Story should play
+Your tasks:
 
-2. Out of 3, the most appropriate Ending for the Story
+1. Choose a fitting setting in which this story takes place
+(per drop down menu)
 
-3. Attributes the Characters will have at the end of the Story”
+2. Out of 3, the most appropriate ending for the story
+(per drag and drop)
 
+3. Attributes the characters based on how they will change
+Hint: take a closer look above the drop down menu
+(per drop down menu)
 
-“You can choose from the Drop-Down Menus at the right side of the Screen. Drag the right answers into the box they belong to.”
+There will be a total of 3 storys, so if you are done with the first, just click on the button NEXT at the top right of the screen.
 
-“There will be a total of 3 storys, so if you are done first the first, just click on the button “Next” at the top right of the screen.”
-
-“After you finished all Storys there is a submit button in the top right corner. But keep in mind only press it after completing all 3 Storys .”"
+After you finished all storys there is a SUBMIT button in the top right corner.
+But keep in mind only press it after completing all 3 storys .
+"
 autowrap = true
 
 [node name="Label2" type="Label" parent="IntroGame"]

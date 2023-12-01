@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Programmieren Theme.mp3-8c2b4a641f4d16d6ed6dda83ffeada4b.mp3str"
+
+[deps]
+
+source_file="res://SharedAssets/music/Soundtracks/Programmieren Theme.mp3"
+dest_files=[ "res://.import/Programmieren Theme.mp3-8c2b4a641f4d16d6ed6dda83ffeada4b.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

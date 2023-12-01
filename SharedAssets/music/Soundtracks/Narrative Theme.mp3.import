@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Narrative Theme.mp3-2ad6968f9feba8860cff1121eba8f26c.mp3str"
+
+[deps]
+
+source_file="res://SharedAssets/music/Soundtracks/Narrative Theme.mp3"
+dest_files=[ "res://.import/Narrative Theme.mp3-2ad6968f9feba8860cff1121eba8f26c.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Hauptraum Theme [V2].mp3-c21617fbcdb53b6dc1e9f2388cb8f135.mp3str"
+
+[deps]
+
+source_file="res://SharedAssets/music/Soundtracks/Hauptraum Theme [V2].mp3"
+dest_files=[ "res://.import/Hauptraum Theme [V2].mp3-c21617fbcdb53b6dc1e9f2388cb8f135.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

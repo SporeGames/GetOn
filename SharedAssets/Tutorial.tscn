@@ -32,14 +32,26 @@ margin_top = 83.0
 margin_right = 1127.0
 margin_bottom = 656.0
 custom_fonts/font = SubResource( 2 )
-text = "Tutorial:
+text = "Instruction:
 
 Read the following personas.
-If you want to see the hidden favourite games of the persona click on the Lock.
-But Be aware that you will get bonus points, if you manage to finish this task without looking at their favourite games.
-When you are done reading you will have to select the most fitting  Genres, Mechanics, Features & Gameplay elements.
+In total: You will have 2 personas + games to complete.
+
+If you want to see the hidden favorite games of the persona click on the lock.
+But be aware that you will get bonus points, if you manage to finish this task without looking at their favorite games.
+
+When you are done reading you will have to select the most fitting
+- genres
+- mechanics
+- features 
+- gameplay elements.
+
 You CAN select multiple options.
 Use <- or -> to go through the options.
-If you are want to go back to the previous category click BACK.
-You can always read the persona again by clicking on EXPAND PERSONA."
+If you  want to go back to the previous category click BACK.
+You can always read the persona again by clicking on EXPAND PERSONA.
+if you are done selecting the different elements click  DONE.
+
+If you are done building the game, you will receive the next persona.
+"
 autowrap = true

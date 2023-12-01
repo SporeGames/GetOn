@@ -1,10 +1,12 @@
-[gd_scene load_steps=18 format=2]
+[gd_scene load_steps=22 format=2]
 
 [ext_resource path="res://scenes/GameStudy/PrePuzzleRoom.cs" type="Script" id=1]
 [ext_resource path="res://scenes/Sound/assets/ArtRoomSprint2.png" type="Texture" id=2]
 [ext_resource path="res://SharedAssets/font/BAHNSCHRIFT 1.TTF" type="DynamicFontData" id=3]
 [ext_resource path="res://icon.png" type="Texture" id=4]
 [ext_resource path="res://scenes/GameStudy/WorkerText.cs" type="Script" id=5]
+[ext_resource path="res://scenes/Management/ManagementMusicPlay.gd" type="Script" id=6]
+[ext_resource path="res://scenes/Management/assets/Instruction.png" type="Texture" id=7]
 
 [sub_resource type="StyleBoxEmpty" id=1]
 
@@ -32,6 +34,14 @@ font_data = ExtResource( 3 )
 
 [sub_resource type="DynamicFont" id=12]
 size = 20
+font_data = ExtResource( 3 )
+
+[sub_resource type="DynamicFont" id=13]
+size = 32
+font_data = ExtResource( 3 )
+
+[sub_resource type="DynamicFont" id=14]
+size = 32
 font_data = ExtResource( 3 )
 
 [node name="PrePuzzleRoom" type="Node2D"]
@@ -111,6 +121,62 @@ one_shot = true
 
 [node name="Timer3" type="Timer" parent="Worker"]
 one_shot = true
+
+[node name="Music" type="Node" parent="."]
+script = ExtResource( 6 )
+
+[node name="ColorRect" type="ColorRect" parent="."]
+visible = false
+margin_right = 1921.0
+margin_bottom = 1078.0
+color = Color( 0.258824, 0.415686, 0.352941, 1 )
+
+[node name="Label2" type="Label" parent="ColorRect"]
+margin_left = 113.0
+margin_top = 232.0
+margin_right = 1374.0
+margin_bottom = 1057.0
+custom_fonts/font = SubResource( 13 )
+text = "Introduction:
+
+Sort the different Notes to their old places. 
+The gray outline symbols where you have to put them.
+Additionally, you have to color in the different notes into their coordinating 
+department color.
+
+- Art = 	orange	
+- Programming = blue
+- Game Design = purple
+- Sound = yellow									
+- Narrative = green
+- Management = black
+
+"
+
+[node name="StartPuzzle" type="Button" parent="ColorRect"]
+margin_left = 1653.0
+margin_top = 893.0
+margin_right = 1839.0
+margin_bottom = 976.0
+custom_colors/font_color_disabled = Color( 1, 1, 1, 1 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_colors/font_color_hover = Color( 1, 1, 1, 1 )
+custom_colors/font_color_pressed = Color( 1, 1, 1, 1 )
+text = "Ready"
+
+[node name="Label3" type="Label" parent="ColorRect"]
+margin_left = 1277.0
+margin_top = 653.0
+margin_right = 2212.0
+margin_bottom = 692.0
+custom_fonts/font = SubResource( 14 )
+text = "“You have 5 minutes to complete this test”"
+autowrap = true
+
+[node name="Sprite" type="Sprite" parent="ColorRect"]
+position = Vector2( 1562, 420 )
+scale = Vector2( 0.682237, 0.768987 )
+texture = ExtResource( 7 )
 
 [connection signal="timeout" from="Worker/Timer" to="Worker" method="_on_Timer_timeout"]
 [connection signal="timeout" from="Worker/Timer2" to="Worker" method="_on_Timer2_timeout"]

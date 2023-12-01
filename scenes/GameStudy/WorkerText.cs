@@ -15,6 +15,8 @@ public class WorkerText : Sprite
 	public Timer _timer3;
 
 	private PrePuzzleRoom _prePuzzleRoom;
+//	private Button _startPuzzle;
+	
 	
 	public override void _Ready()
 	{
@@ -35,6 +37,8 @@ public class WorkerText : Sprite
 		_text3.Visible = false;
 		
 		_interact.Connect("pressed", this, nameof(OnInteractPressed));
+//		_startPuzzle = GetNode<Button>("ColorRect/StartPuzzle");
+//		_startPuzzle.Connect("pressed",this,nameof(StartPuzzle));
 	}
 
 	public void OnInteractPressed()
@@ -81,6 +85,11 @@ public class WorkerText : Sprite
 			_prePuzzleRoom.SetButton2Visibile();
 		}
 	}
+	
+//			public void StartPuzzle()
+//		{
+//			_sharedNode.SwitchScene("res://scenes/Sound/PrePuzzleRoom.tscn");
+//		}
 }
 
 
