@@ -19,6 +19,9 @@ public class SwitchMoment : Control
 	private Node2D[] array; 
 	private int number = 0;
 	private Node2D moment;
+
+	private Node2D _intro;
+	private Button _start;
 	
 	//private bool 
 	
@@ -41,6 +44,11 @@ public class SwitchMoment : Control
 		_lastMoment.Connect("pressed", this, nameof(LastMoment));
 		
 		array = new Node2D[] { _moment1, _moment2,_moment3,_moment4,_moment5,_moment6,_moment7,_moment8,_moment9 };
+
+		_intro = GetNode<Node2D>("/root/Sound/Intro");
+		_start = GetNode<Button>("/root/Sound/Intro/Button");
+		_start.Connect("pressed", this, nameof(CloseIntro));
+
 	}
 
 	public void NextMoment()
@@ -97,5 +105,10 @@ public class SwitchMoment : Control
 		}
 
 
+	}
+
+	public void CloseIntro()
+	{
+		_intro.Visible = false;
 	}
 }

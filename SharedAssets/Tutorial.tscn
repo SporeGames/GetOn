@@ -1,6 +1,8 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://SharedAssets/font/BAHNSCHRIFT 1.TTF" type="DynamicFontData" id=1]
+[ext_resource path="res://SharedAssets/Anleitung.png" type="Texture" id=2]
+[ext_resource path="res://SharedAssets/AnleitungStartButton.png" type="Texture" id=3]
 
 [sub_resource type="DynamicFont" id=1]
 size = 32
@@ -18,19 +20,24 @@ margin_right = 1925.0
 margin_bottom = 1081.0
 color = Color( 0.027451, 0.364706, 0.317647, 1 )
 
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 960, 540 )
+texture = ExtResource( 2 )
+
 [node name="Button" type="Button" parent="."]
-margin_left = 1610.0
-margin_top = 940.0
-margin_right = 1844.0
-margin_bottom = 1008.0
+margin_left = 1240.0
+margin_top = 924.0
+margin_right = 1835.0
+margin_bottom = 1050.0
 custom_fonts/font = SubResource( 1 )
-text = "Ready?"
+icon = ExtResource( 3 )
+flat = true
 
 [node name="Label2" type="Label" parent="."]
 margin_left = 59.0
 margin_top = 83.0
-margin_right = 1127.0
-margin_bottom = 656.0
+margin_right = 1075.0
+margin_bottom = 944.0
 custom_fonts/font = SubResource( 2 )
 text = "Instruction:
 
