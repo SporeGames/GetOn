@@ -30,6 +30,7 @@ public class Management : Node2D {
 	private Button _start;
 	private Node2D _intro;
 	
+	
 	public override void _Ready() {
 		_colorText = GetNode<RichTextLabel>("ColorSelector/Text");
 		_orangeButton = GetNode<Button>("ColorSelector/Orange");
@@ -180,4 +181,6 @@ public class Management : Node2D {
 	{
 		_intro.Visible = false;
 	}
+	
 }
+

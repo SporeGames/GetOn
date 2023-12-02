@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=2]
+[gd_scene load_steps=20 format=2]
 
 [ext_resource path="res://scenes/Management/Management.cs" type="Script" id=1]
 [ext_resource path="res://scenes/Management/assets/Sprint Review Village.PNG" type="Texture" id=2]
@@ -15,6 +15,8 @@
 [ext_resource path="res://scenes/Management/assets/Instruction.png" type="Texture" id=13]
 [ext_resource path="res://SharedAssets/Anleitung.png" type="Texture" id=14]
 [ext_resource path="res://SharedAssets/AnleitungStartButton.png" type="Texture" id=15]
+[ext_resource path="res://scenes/Management/assets/Legend.png" type="Texture" id=16]
+[ext_resource path="res://scenes/Management/OpenLegend.gd" type="Script" id=17]
 
 [sub_resource type="DynamicFont" id=1]
 size = 32
@@ -289,10 +291,10 @@ Text = "Sprint Review: Forest"
 [node name="ColorSelector" type="GridContainer" parent="."]
 anchor_left = 0.5
 anchor_right = 0.5
-margin_left = 1850.0
+margin_left = 1847.0
 margin_top = 376.0
-margin_right = 1922.0
-margin_bottom = 774.0
+margin_right = 1917.0
+margin_bottom = 836.0
 
 [node name="Text" type="RichTextLabel" parent="ColorSelector"]
 margin_right = 62.0
@@ -343,10 +345,26 @@ margin_bottom = 344.0
 rect_min_size = Vector2( 50, 50 )
 text = "Black"
 
-[node name="SubmitButton" type="Button" parent="ColorSelector"]
+[node name="Legend2" type="Button" parent="ColorSelector"]
 margin_top = 348.0
 margin_right = 62.0
 margin_bottom = 398.0
+rect_min_size = Vector2( 50, 50 )
+text = "Legend"
+script = ExtResource( 17 )
+
+[node name="Legend" type="Sprite" parent="ColorSelector/Legend2"]
+modulate = Color( 0.964706, 1, 1, 1 )
+light_mask = 0
+position = Vector2( -201, -542 )
+scale = Vector2( 1.1402, 1.1485 )
+z_index = 1
+texture = ExtResource( 16 )
+
+[node name="SubmitButton" type="Button" parent="ColorSelector"]
+margin_top = 402.0
+margin_right = 62.0
+margin_bottom = 452.0
 rect_min_size = Vector2( 50, 50 )
 text = "SUBMIT"
 
@@ -407,3 +425,5 @@ autowrap = true
 position = Vector2( 1460, 420 )
 scale = Vector2( 0.682237, 0.768987 )
 texture = ExtResource( 13 )
+
+[connection signal="pressed" from="ColorSelector/Legend2" to="ColorSelector/Legend2" method="_on_Legend2_pressed"]
