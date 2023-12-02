@@ -24,8 +24,9 @@ public class Management : Node2D {
 	private Color _selectedColor = Colors.White;
 
 	private List<ManagementNote> _notes = new List<ManagementNote>();
-	private Dictionary<NoteBox, ManagementNote> _boxedNotes = new Dictionary<NoteBox, ManagementNote>();
-	private static Color _defaultBoxColor = new Color(0.41f, 0.41f, 0.41f, 1);
+	public Dictionary<NoteBox, ManagementNote> BoxedNotes = new Dictionary<NoteBox, ManagementNote>();
+	private static Color _defaultBoxColor = new Color(0.69f, 0.69f, 0.69f, 1);
+	private bool _hasJustSnapped = false;
 	
 	private Button _start;
 	private Node2D _intro;
@@ -99,23 +100,33 @@ public class Management : Node2D {
 				note.NoteColor.Color == Colors.Green ? 4 :
 				note.NoteColor.Color == Colors.Black ? 5 : -1;
 			if (ColorID == note.ValidColorID) {
-				points = +3;
+				points += 3;
 				cardsColoredCorrectly++;
 			}
 			else if (ColorID != -1) {
-				points = +1;
+				points += 1;
 			}
 		}
-		points += _boxedNotes.Count * 2;
+
+		foreach (var entry in  BoxedNotes) {
+			if (entry.Value.Name.Equals(entry.Key.Name)) {
+				points += 3;
+			}
+			else {
+				points += 1;
+			}
+		}
 		GD.Print("Points: " + points);
 		var shared = GetNode<SharedNode>("/root/SharedNode");
 		shared.managementPoints = points;
-		shared.managementColors = cardsColoredCorrectly;
-		//shared.SwitchScene("res://scenes/GameSelRoom/GameSelectionRoom.tscn");
+		shared.managementColors = cardsColoredCorrectly; 
 		shared.SwitchScene("res://scenes/GameSelectionRoom/GameSelectionRoom.tscn");
 	}
 
 	public override void _Process(float delta) {
+		if (!Input.IsMouseButtonPressed((int) ButtonList.Left)) {
+			_hasJustSnapped = false;
+		}
 		if (_selectedColor != Colors.White) {
 			if (Input.IsMouseButtonPressed((int) ButtonList.Left) && _currentNote != null) {
 				_currentNote.NoteColor.Color = _selectedColor;
@@ -123,7 +134,7 @@ public class Management : Node2D {
 				_colorText.Text = "Select...";
 			}
 		}
-		if (_currentNote != null && !_boxedNotes.ContainsValue(_currentNote)) {
+		if (_currentNote != null && !_hasJustSnapped) {
 			if (Input.IsMouseButtonPressed((int) ButtonList.Left) && _selectedColor == Colors.White) {
 				if (_dragOffset == Vector2.Zero) {
 					_dragOffset = _currentNote.Position - GetGlobalMousePosition();
@@ -131,17 +142,21 @@ public class Management : Node2D {
 				var x = Mathf.Clamp(GetGlobalMousePosition().x + _dragOffset.x, 0, GetViewport().Size.x);
 				var y = Mathf.Clamp(GetGlobalMousePosition().y + _dragOffset.y, 0, GetViewport().Size.y);
 				_currentNote.Position = new Vector2(x, y);
+				if (BoxedNotes.ContainsValue(_currentNote)) { // Not used for now, maybe we allow reordering later
+					var box = BoxedNotes.First(n => n.Value == _currentNote).Key;
+					box.NoteColor.Color = _defaultBoxColor;
+					BoxedNotes.Remove(box);
+					GD.Print("Removed note " +  _currentNote.Name + " from box " + box.Name);
+				}
 			}
 			else if (_selectedColor == Colors.White) {
 				_dragOffset = Vector2.Zero;
 			}
-
-			if (_boxedNotes.ContainsValue(_currentNote)) { // Not used for now, maybe we allow reordering later
-				var box = _boxedNotes.First(x => x.Value == _currentNote).Key;
-				box.NoteColor.Color = _defaultBoxColor;
-				_boxedNotes.Remove(box);
-			}
 		}
+		if (BoxedNotes.Count < _notes.Count) {
+			_submitButton.Disabled = true;
+		}
+
 	}
 
 	public void BoxEntered(NoteBox box, ManagementNote note) {
@@ -153,11 +168,13 @@ public class Management : Node2D {
 		_currentNote = null;
 		_dragOffset = Vector2.Zero;
 		GD.Print("Note put in box");
-		box.NoteColor.Color = Colors.Green;
-		_boxedNotes.Add(box, note);
-		if (_boxedNotes.Count == _notes.Count) {
+		box.NoteColor.Color = Colors.White;
+		BoxedNotes.Add(box, note);
+		if (BoxedNotes.Count == _notes.Count) {
 			_submitButton.Disabled = false;
 		}
+
+		_hasJustSnapped = true;
 	}
 	
 	public void BoxLeft(NoteBox box, ManagementNote note) {
