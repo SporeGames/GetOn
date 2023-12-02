@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using System.IO;
 using Godot;
 using Newtonsoft.Json;
@@ -7,6 +8,8 @@ namespace GetOn.scenes {
 	public class SharedNode : Node2D {
 		private Node CurrentScene { get; set; }
 		public string PlayerName { get; set; } = "No name";
+		
+		public readonly List<string> CompletedTasks = new List<string>();
 		
 		public int programmingPoints = 0;
 		public float programmingTime = 0;

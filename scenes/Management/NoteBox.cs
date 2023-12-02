@@ -16,10 +16,8 @@ public class NoteBox : Area2D {
 	}
 	
 	private void OnEntered(Area2D area) {
-		if (area is ManagementNote note) {
-			if (ValidIDs.Contains(note.Name) || Name.Equals(note.Name)) { // lets do both so we don't have to type in all the names
-				_management.BoxEntered(this, note);
-			}
+		if (area is ManagementNote note && !_management.BoxedNotes.ContainsKey(this)) {
+			_management.BoxEntered(this, note); // Always snap
 		}
 	}
 	
