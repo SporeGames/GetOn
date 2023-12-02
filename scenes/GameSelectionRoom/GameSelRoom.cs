@@ -32,7 +32,7 @@ namespace GetOn.scenes.GameSelectionRoom {
 			_goToGameStudy.Connect("pressed", this, nameof(OnGoToGameStudyPressed));
 
 			_soundDone = GetNode<ColorRect>("SoundDone");
-
+			CheckCompletions();
 		}
 
 		public void OnGoToProgrammingPressed() {
@@ -60,11 +60,32 @@ namespace GetOn.scenes.GameSelectionRoom {
 			_sharedNode.SwitchScene("res://scenes/GameStudy/PrePuzzleRoom.tscn");
 		}
 
-		public void HideSound()
-		{
-			GD.Print("uwu");
-			_goToSound.Visible = false;
-			_soundDone.Visible = true;
+		private void CheckCompletions() {
+			foreach (var game in _sharedNode.CompletedTasks) {
+				switch (game) {
+					case "programming":
+						_goToProgramming.Disabled = true;
+						_goToProgramming.Visible = false;
+						break;
+					case "management":
+						_goToManagment.Disabled = true;
+						_goToManagment.Visible = false;
+						break;
+					case "narrative":
+						_goToNarrativeAndGameDesign.Disabled = true;
+						_goToNarrativeAndGameDesign.Visible = false;
+						break;
+					case "sound":
+						_goToSound.Disabled = true;
+						_goToSound.Visible = false;
+						_soundDone.Visible = true;
+						break;
+					case "gamestudy":
+						_goToGameStudy.Disabled = true;
+						_goToGameStudy.Visible = false;
+						break;
+				}
+			}
 		}
 	}
 }

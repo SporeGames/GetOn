@@ -120,6 +120,7 @@ public class Management : Node2D {
 		var shared = GetNode<SharedNode>("/root/SharedNode");
 		shared.managementPoints = points;
 		shared.managementColors = cardsColoredCorrectly; 
+		shared.CompletedTasks.Add("management");
 		shared.SwitchScene("res://scenes/GameSelectionRoom/GameSelectionRoom.tscn");
 	}
 

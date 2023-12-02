@@ -725,6 +725,7 @@ namespace GetOn.scenes.Narrative
 			}
 			_sharedNode.narrativePoints = points;
 			GD.Print(points);
+			_sharedNode.CompletedTasks.Add("narrative");
 			_sharedNode.SwitchScene("res://scenes/GameSelectionRoom/GameSelectionRoom.tscn");
 		}
 	}
