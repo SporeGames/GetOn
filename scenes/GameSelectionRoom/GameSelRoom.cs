@@ -12,7 +12,13 @@ namespace GetOn.scenes.GameSelectionRoom {
 		private Button _goToGameStudy;
 		private Button _printPDF;
 
+		private bool narrativeAndDesign = false;
 		private ColorRect _soundDone;
+		private ColorRect _managementDone;
+		private ColorRect _narrativeAndDesignDone;
+		private ColorRect _gameStudyDone;
+		private ColorRect _programmingDone;
+		
 
 		// Called when the node enters the scene tree for the first time.
 		public override void _Ready() {
@@ -32,6 +38,10 @@ namespace GetOn.scenes.GameSelectionRoom {
 			_goToGameStudy.Connect("pressed", this, nameof(OnGoToGameStudyPressed));
 
 			_soundDone = GetNode<ColorRect>("SoundDone");
+			_managementDone = GetNode<ColorRect>("ManagementDone");
+			_narrativeAndDesignDone = GetNode<ColorRect>("NarrativeAndDesignDone");
+			_gameStudyDone = GetNode<ColorRect>("GameStudyDone");
+			_programmingDone = GetNode<ColorRect>("ProgrammingDone");
 			CheckCompletions();
 		}
 
@@ -66,14 +76,24 @@ namespace GetOn.scenes.GameSelectionRoom {
 					case "programming":
 						_goToProgramming.Disabled = true;
 						_goToProgramming.Visible = false;
+						_programmingDone.Visible = true;
 						break;
 					case "management":
 						_goToManagment.Disabled = true;
 						_goToManagment.Visible = false;
+						_managementDone.Visible = true;
 						break;
 					case "narrative":
-						_goToNarrativeAndGameDesign.Disabled = true;
-						_goToNarrativeAndGameDesign.Visible = false;
+						if (narrativeAndDesign)
+						{
+							_goToNarrativeAndGameDesign.Disabled = true;
+							_goToNarrativeAndGameDesign.Visible = false;
+							_narrativeAndDesignDone.Visible = true;
+						}
+						else
+						{
+							narrativeAndDesign = true;
+						}
 						break;
 					case "sound":
 						_goToSound.Disabled = true;
@@ -83,6 +103,19 @@ namespace GetOn.scenes.GameSelectionRoom {
 					case "gamestudy":
 						_goToGameStudy.Disabled = true;
 						_goToGameStudy.Visible = false;
+						_gameStudyDone.Visible = true;
+						break;
+					case "gameDesign" :
+						if (narrativeAndDesign)
+						{
+							_goToNarrativeAndGameDesign.Disabled = true;
+							_goToNarrativeAndGameDesign.Visible = false;
+							_narrativeAndDesignDone.Visible = true;
+						}
+						else
+						{
+							narrativeAndDesign = true;
+						}
 						break;
 				}
 			}
