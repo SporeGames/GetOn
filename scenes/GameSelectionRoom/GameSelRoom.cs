@@ -13,11 +13,11 @@ namespace GetOn.scenes.GameSelectionRoom {
 		private Button _printPDF;
 
 		private bool narrativeAndDesign = false;
-		private ColorRect _soundDone;
-		private ColorRect _managementDone;
-		private ColorRect _narrativeAndDesignDone;
-		private ColorRect _gameStudyDone;
-		private ColorRect _programmingDone;
+		private Sprite _soundDone;
+		private Sprite _managementDone;
+		private Sprite _narrativeAndDesignDone;
+		private Sprite _gameStudyDone;
+		private Sprite _programmingDone;
 		
 
 		// Called when the node enters the scene tree for the first time.
@@ -37,16 +37,16 @@ namespace GetOn.scenes.GameSelectionRoom {
 			_goToGameStudy = GetNode<Button>("GoToGameStudy");
 			_goToGameStudy.Connect("pressed", this, nameof(OnGoToGameStudyPressed));
 
-			_soundDone = GetNode<ColorRect>("SoundDone");
-			_managementDone = GetNode<ColorRect>("ManagementDone");
-			_narrativeAndDesignDone = GetNode<ColorRect>("NarrativeAndDesignDone");
-			_gameStudyDone = GetNode<ColorRect>("GameStudyDone");
-			_programmingDone = GetNode<ColorRect>("ProgrammingDone");
+			_soundDone = GetNode<Sprite>("SoundDone");
+			_managementDone = GetNode<Sprite>("ManagementDone");
+			_narrativeAndDesignDone = GetNode<Sprite>("NarrativeAndDesignDone");
+			_gameStudyDone = GetNode<Sprite>("GameStudyDone");
+			_programmingDone = GetNode<Sprite>("ProgrammingDone");
 			CheckCompletions();
 		}
 
 		public void OnGoToProgrammingPressed() {
-			_sharedNode.SwitchScene("res://scenes/Programming/ProgrammingRoom.tscn");
+			_sharedNode.SwitchScene("res://scenes/Programming/PrePuzzleRoom.tscn");
 		}
 
 		public void OnGoToManagmentPressed() {
