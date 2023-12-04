@@ -1390,9 +1390,8 @@ custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_fonts/font = SubResource( 20 )
 text = "In the 1950s the friendly and highly renowned Professor and Doctor of Archeology Dr. Robert Hustings meets with one of his best students, Jim, with whom he wants to share his research about the “blood-rubies” he gathered over 20 years ago. 
 But shortly after he shares his knowledge about the rubies, revealing they behold a dangerous curse, Hustings gets brutally killed by his own adoptive daughter Emilia who Jim has been in love with since middle-school.
-When he is rescued by a mysterious girl named Ashe, his life suddenly 
-begins to change, as he is confirmed to have magic powers to transform 
-himself into a Dragon."
+
+"
 autowrap = true
 
 [node name="Story3" type="Label" parent="EndingPopup"]
