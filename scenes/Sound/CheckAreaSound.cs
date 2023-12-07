@@ -175,7 +175,7 @@ namespace GetOn.scenes.Sound
 			}
 			GD.Print(points);
 			_sharedNode.soundPoints = (int) points;
-			_sharedNode.SwitchScene("res://scenes/GameSelectionRoom/GameSelectionRoom.tscn");
+			_sharedNode.SwitchScene("res://scenes/Sound/AfterPuzzleRoom.tscn");
 			_sharedNode.CompletedTasks.Add("sound");
 			//_gameSelRoom.HideSound();
 		}

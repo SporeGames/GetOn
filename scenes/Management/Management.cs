@@ -121,7 +121,7 @@ public class Management : Node2D {
 		shared.managementPoints = points;
 		shared.managementColors = cardsColoredCorrectly; 
 		shared.CompletedTasks.Add("management");
-		shared.SwitchScene("res://scenes/GameSelectionRoom/GameSelectionRoom.tscn");
+		shared.SwitchScene("res://scenes/Management/AfterPuzzleRoom.tscn");
 	}
 
 	public override void _Process(float delta) {

@@ -113,7 +113,7 @@ namespace GetOn.scenes.Programming {
 			_sharedNode.programmingPoints = points;
 			_sharedNode.programmingTime = _timer.CurrentTime;
 			_sharedNode.CompletedTasks.Add("programming");
-			_sharedNode.SwitchScene("res://scenes/GameSelectionRoom/GameSelectionRoom.tscn");
+			_sharedNode.SwitchScene("res://scenes/Programming/AfterPuzzleRoom.tscn");
 		}
 	}
 }

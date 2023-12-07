@@ -167,7 +167,7 @@ public class GameDesign : Control {
 			points += 10;
 		}
 		GetNode<SharedNode>("/root/SharedNode").gameDesignPoints = points;
-		GetNode<SharedNode>("/root/SharedNode").SwitchScene("res://scenes/GameSelectionRoom/GameSelectionRoom.tscn");
+		GetNode<SharedNode>("/root/SharedNode").SwitchScene("res://scenes/GameDesign/AfterPuzzleRoom.tscn");
 		GetNode<SharedNode>("/root/SharedNode").CompletedTasks.Add("gameDesign");
 	}
 
