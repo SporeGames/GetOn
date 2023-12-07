@@ -41,11 +41,11 @@ namespace GetOn.scenes.Sound
 
 		public void CheckPoints()
 		{
-			if (points >= (maxPoints/2)*1.4)
+			if (points >= (maxPoints * 0.75))
 			{
 				feedback = "amazing";
 			}
-			else if(points <=(maxPoints/2)*1.4 && points >= (maxPoints/2)*0.6)
+			else if(points <=(maxPoints*0.75) && points >= (maxPoints*0.35))
 			{
 				feedback = "fine";
 			}
