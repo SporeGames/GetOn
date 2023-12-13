@@ -26,11 +26,11 @@ namespace GetOn.scenes.Sound
 
 			if (feedback == "fine")
 			{
-				_text.Text = "Thanks for your help! You did a: " +feedback +" job";
+				_text.Text = feedback;
 			}
 			else
 			{
-				_text.Text = "Thanks for your help! You did an: " +feedback +" job";
+				_text.Text = feedback;
 			}
 		}
 
@@ -41,18 +41,82 @@ namespace GetOn.scenes.Sound
 
 		public void CheckPoints()
 		{
-			if (points >= (maxPoints * 0.75))
+			if (this.Name == "Sound")
 			{
-				feedback = "amazing";
+				if (points >= (maxPoints * 0.75))
+				{
+					feedback = "Inspiring, truly inspiring! Are you a relative of Hans Zimmer perhaps? You can be really proud of your work.";
+				}
+				else if(points <=(maxPoints*0.75) && points >= (maxPoints*0.35))
+				{
+					feedback = "Not bad, you just need some more exercise. Good work!";
+				}
+				else
+				{
+					feedback = "Um yeah, let's leave it by that. You gave it our all, that’s what matters.";
+				}
 			}
-			else if(points <=(maxPoints*0.75) && points >= (maxPoints*0.35))
+			else if(this.Name == "Management")
 			{
-				feedback = "fine";
+				if (points >= (maxPoints * 0.75))
+				{
+					feedback = "Excellent work, just as I imagined. You have great potential.";
+				}
+				else if(points <=(maxPoints*0.75) && points >= (maxPoints*0.35))
+				{
+					feedback = "Good job, know we can get back to work.";
+				}
+				else
+				{
+					feedback = "Oh well, this helps at least a little bit. But don’t feel bad about your result, this is your first time after all.";
+				}
+			}
+			else if (this.Name == "Programming")
+			{
+				if (points >= (maxPoints * 0.75))
+				{
+					feedback = "Holy-moly! That worked better than I thought. Perfect work newbie, that would be all for now.";
+				}
+				else if(points <=(maxPoints*0.75) && points >= (maxPoints*0.35))
+				{
+					feedback = "Not bad, but not really good either. Well I guess that’s all for now.";
+				}
+				else
+				{
+					feedback = "You don’t have any experience with blueprints, have you? Don’t worry about it, I deal with the leftovers myself.";
+				}
+			}
+			else if (this.Name == "Story")
+			{
+				if (points >= (maxPoints * 0.75))
+				{
+					feedback = "Fantastic, you perfectly restored my whiteboard!";
+				}
+				else if(points <=(maxPoints*0.75) && points >= (maxPoints*0.35))
+				{
+					feedback = "You helped me a lot, I think I can think of the rest myself.";
+				}
+				else
+				{
+					feedback = "*Yawn* oh well, let’s just leave it at that. Maybe I can find even better story ideas if I do that task myself.";
+				}
 			}
 			else
 			{
-				feedback = "okay";
+				if (points >= (maxPoints * 0.75))
+				{
+					feedback = "You did an amazing job!";
+				}
+				else if(points <=(maxPoints*0.75) && points >= (maxPoints*0.35))
+				{
+					feedback = "Thanks for you help, you did fine.";
+				}
+				else
+				{
+					feedback = "Ohh well...I need to double check some of your work here.";
+				}
 			}
+			
 			GD.Print(points);
 		}
 
@@ -89,7 +153,6 @@ namespace GetOn.scenes.Sound
 					maxPoints = 40;
 					break;
 			}
-			
 		}
 	}
 }
