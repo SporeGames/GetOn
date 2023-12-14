@@ -57,8 +57,14 @@ namespace GetOn.scenes {
 			_debugText.Text = "Debug \n \n" +
 			                  "\nFPS: " + Engine.GetFramesPerSecond() +
 			                  "\nCurrent scene: " + CurrentScene.Name +
+			                  "\nScene: Objects: " + Performance.GetMonitor(Performance.Monitor.ObjectCount) + 
+									" | Nodes: " + Performance.GetMonitor(Performance.Monitor.ObjectNodeCount) + 
+									" | Resources: " + Performance.GetMonitor(Performance.Monitor.ObjectResourceCount) +
+									" | Orphaned: " + Performance.GetMonitor(Performance.Monitor.ObjectOrphanNodeCount) +
+			                  "\nProcess: " + Math.Round(Performance.GetMonitor(Performance.Monitor.TimeProcess) * 1000, 3) + " ms | Physics: " + Math.Round(Performance.GetMonitor(Performance.Monitor.TimePhysicsProcess) * 1000, 3) + " ms" +
 			                  "\nMemory: " + Math.Round(Performance.GetMonitor(Performance.Monitor.MemoryDynamic) / (1024 * 1024), 2) + "/" + Math.Round(Performance.GetMonitor(Performance.Monitor.MemoryDynamicMax) / (1024 * 1024), 2) + 
 									" MB | " + Math.Round(Performance.GetMonitor(Performance.Monitor.MemoryStatic) / (1024 * 1024), 2) + "/" + Math.Round(Performance.GetMonitor(Performance.Monitor.MemoryStaticMax) / (1024 * 1024), 2) + " MB" +
+			                  "\nVideo: Memory: " + Math.Round(Performance.GetMonitor(Performance.Monitor.RenderVideoMemUsed) / (1024 * 1024), 2) + " MB | Draw calls: " + Performance.GetMonitor(Performance.Monitor.Render2dDrawCallsInFrame) +
 			                  "\nAudio: Device: " + AudioServer.Device + 
 									" | Latency: " + Math.Round(AudioServer.GetOutputLatency(), 4) + "ms" +
 									" | Mix rate: " + AudioServer.GetMixRate() + 
