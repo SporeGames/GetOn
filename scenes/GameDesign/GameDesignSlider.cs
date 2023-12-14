@@ -25,7 +25,7 @@ public class GameDesignSlider : Control {
 	[Export] public GameDesignGame Game;
 	[Export] public string CategoryDisplayName;
 	[Export] public bool IsSingleSelect = false;
-	[Export] public string GameDescription;
+	[Export(PropertyHint.MultilineText)] public string GameDescription;
 	[Export] public Texture GameImage;
 	[Export] public string[] ValidPersonas;
 	
@@ -93,7 +93,10 @@ public class GameDesignSlider : Control {
 	}
 
 	private void UpdateSlider() {
-		_centerImage.Texture = Images[_currentIndex];
+		if (_currentIndex < Images.Length && _currentIndex >= 0) {
+			_centerImage.Texture = Images[_currentIndex];
+		}
+
 		_centerTitle.Text = PersonaNames[_currentIndex];
 		_description.Text = Descriptions[_currentIndex];
 		_motivation.Text = PersonaMotivations[_currentIndex];
