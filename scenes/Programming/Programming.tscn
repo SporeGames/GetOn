@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=2]
+[gd_scene load_steps=27 format=2]
 
 [ext_resource path="res://scenes/Programming/Programming.cs" type="Script" id=1]
 [ext_resource path="res://scenes/Programming/blocks/godot/VariableNode.cs" type="Script" id=2]
@@ -7,8 +7,7 @@
 [ext_resource path="res://icon.png" type="Texture" id=5]
 [ext_resource path="res://scenes/Programming/assets/ProgrammierAufgabePrototy.png" type="Texture" id=6]
 [ext_resource path="res://scenes/Programming/assets/Hintergrund .png" type="Texture" id=7]
-[ext_resource path="res://scenes/Programming/CountdownTimer.cs" type="Script" id=8]
-[ext_resource path="res://SharedAssets/font/BAHNSCHRIFT 1.TTF" type="DynamicFontData" id=9]
+[ext_resource path="res://SharedAssets/Timer.tscn" type="PackedScene" id=8]
 [ext_resource path="res://scenes/Programming/blocks/KeyDPressedCondition.cs" type="Script" id=10]
 [ext_resource path="res://scenes/Programming/blocks/IfBlock.cs" type="Script" id=11]
 [ext_resource path="res://scenes/Programming/blocks/ProcessBlock.cs" type="Script" id=12]
@@ -23,10 +22,6 @@
 
 [sub_resource type="RectangleShape2D" id=6]
 extents = Vector2( 69, 62 )
-
-[sub_resource type="DynamicFont" id=5]
-size = 22
-font_data = ExtResource( 9 )
 
 [sub_resource type="RectangleShape2D" id=8]
 extents = Vector2( 8.5, 548.5 )
@@ -64,6 +59,7 @@ margin_bottom = 271.0
 color = Color( 0.94902, 0.913725, 0.00784314, 1 )
 
 [node name="Items" type="GridContainer" parent="Checklist"]
+margin_top = 20.0
 margin_right = 271.0
 margin_bottom = 271.0
 
@@ -135,6 +131,9 @@ margin_right = 271.0
 margin_bottom = 216.0
 text = "Submit"
 
+[node name="Timer" parent="." instance=ExtResource( 8 )]
+position = Vector2( 1731, 60 )
+
 [node name="Game" type="Node" parent="."]
 
 [node name="Background" type="Sprite" parent="Game"]
@@ -200,18 +199,6 @@ margin_right = -48.0
 margin_bottom = 21.0
 rect_scale = Vector2( 2, 2 )
 text = "Back"
-
-[node name="Timer" type="Label" parent="Game"]
-margin_left = 1753.0
-margin_top = 56.0
-margin_right = 1887.0
-margin_bottom = 105.0
-custom_colors/font_color = Color( 0, 0, 0, 1 )
-custom_fonts/font = SubResource( 5 )
-text = "3:00
-"
-align = 2
-script = ExtResource( 8 )
 
 [node name="WallLeft" type="StaticBody2D" parent="Game"]
 position = Vector2( 1040, 524 )
