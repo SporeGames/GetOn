@@ -11,7 +11,6 @@ public class GameDesign : Control {
 	private GameDesignSlider _apexSlider;
 	private GameDesignSlider _detroitSlider;
 	private GameDesignSlider _deadSpaceSlider;
-	private GameDesignSlider _starfieldSlider;
 	
 	private GameDesignGame _currentGame;
 	private Godot.Collections.Dictionary<GameDesignGame, string[]> _selectedValues = new Godot.Collections.Dictionary<GameDesignGame, string[]>();
@@ -24,7 +23,6 @@ public class GameDesign : Control {
 		_apexSlider = GetNode<GameDesignSlider>("ApexSlider");
 		_detroitSlider = GetNode<GameDesignSlider>("DetroitSlider");
 		_deadSpaceSlider = GetNode<GameDesignSlider>("DeadSpaceSlider");
-		_starfieldSlider = GetNode<GameDesignSlider>("StarfieldSlider");
 
 		_introReady = GetNode<Button>("Intro/Button");
 		_introGameStudy = GetNode<Node2D>("Intro");
@@ -46,11 +44,6 @@ public class GameDesign : Control {
 				break;
 			case GameDesignGame.DeadSpace:
 				_deadSpaceSlider.Visible = false;
-				_starfieldSlider.Visible = true;
-				_currentGame = GameDesignGame.Starfield;
-				break;
-			case GameDesignGame.Starfield:
-				_starfieldSlider.Visible = false;
 				GoBackAndCalculateResults();
 				break;
 		}
@@ -85,16 +78,6 @@ public class GameDesign : Control {
 						points += 2;
 					}
 					if (!_deadSpaceSlider.ValidPersonas.Contains(selected)) {
-						points -= 1;
-					}
-				}
-			}
-			if (entry.Key == GameDesignGame.Starfield) {
-				foreach (var selected in entry.Value) {
-					if (_starfieldSlider.ValidPersonas.Contains(selected)) {
-						points += 2;
-					}
-					if (!_starfieldSlider.ValidPersonas.Contains(selected)) {
 						points -= 1;
 					}
 				}

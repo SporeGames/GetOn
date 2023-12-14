@@ -3,6 +3,5 @@
         Apex,
         Detroit,
         DeadSpace,
-        Starfield
     }
 }
