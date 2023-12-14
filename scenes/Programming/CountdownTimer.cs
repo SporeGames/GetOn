@@ -6,9 +6,10 @@ public class CountdownTimer : Node2D {
 	
 	[Export] public bool countdown = false;
 	[Export] public float CurrentTime = 300; 
+	[Export] public Color FontColor = new Color(0.0f, 0.0f, 0.0f, 1.0f);
+	public bool running = false;
 	private Timer _timer;
 	private RichTextLabel _displayText;
-
 	public override void _Ready() {
 		_displayText = GetNode<RichTextLabel>("Display");
 		_timer = new Timer();
@@ -16,9 +17,13 @@ public class CountdownTimer : Node2D {
 		_timer.WaitTime = 1; 
 		_timer.Connect("timeout", this, nameof(OnTimerTimeout));
 		_timer.Start();
+		_displayText.AddColorOverride("DefaultColor", FontColor);
 	}
 
 	private void OnTimerTimeout() {
+		if (!running) {
+			return;
+		}
 		if (countdown) {
 			CurrentTime -= 1;
 		} else {

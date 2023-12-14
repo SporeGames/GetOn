@@ -59,7 +59,6 @@ margin_bottom = 271.0
 color = Color( 0.94902, 0.913725, 0.00784314, 1 )
 
 [node name="Items" type="GridContainer" parent="Checklist"]
-margin_top = 20.0
 margin_right = 271.0
 margin_bottom = 271.0
 

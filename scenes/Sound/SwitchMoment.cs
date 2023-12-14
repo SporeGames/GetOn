@@ -110,5 +110,6 @@ public class SwitchMoment : Control
 	public void CloseIntro()
 	{
 		_intro.Visible = false;
+		GetNode<CountdownTimer>("/root/Sound/Timer").running = true;
 	}
 }

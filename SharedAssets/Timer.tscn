@@ -8,6 +8,7 @@ size = 36
 font_data = ExtResource( 2 )
 
 [node name="Timer" type="Node2D"]
+z_index = 256
 script = ExtResource( 1 )
 CurrentTime = 0.0
 
