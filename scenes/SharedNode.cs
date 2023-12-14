@@ -71,6 +71,7 @@ namespace GetOn.scenes {
 									" | Last mix: "  + Math.Round(AudioServer.GetTimeSinceLastMix(), 2) + "ms" + 
 									" | Next mix: " + Math.Round(AudioServer.GetTimeToNextMix(), 2) + "ms" +
 			                  "\nScreen: DPI: " + OS.GetScreenDpi() + " | Size: " + OS.GetScreenSize() +
+			                  "\nUser agent: " + JavaScript.Eval("navigator.userAgent") +
 			                  "\nSharedNodeContent: " + ToJson();
 		}
 
