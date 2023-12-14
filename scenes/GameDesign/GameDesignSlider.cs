@@ -79,14 +79,14 @@ public class GameDesignSlider : Control {
 	private void TurnLeft() {
 		_currentIndex--;
 		if (_currentIndex < 0) {
-			_currentIndex = Images.Length - 1;
+			_currentIndex = PersonaNames.Length - 1;
 		}
 		UpdateSlider();
 	}
 	
 	private void TurnRight() {
 		_currentIndex++;
-		if (_currentIndex >= Images.Length) {
+		if (_currentIndex >= PersonaNames.Length) {
 			_currentIndex = 0;
 		}
 		UpdateSlider();
