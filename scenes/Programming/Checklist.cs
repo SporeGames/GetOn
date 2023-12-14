@@ -29,7 +29,7 @@ namespace GetOn.scenes.Programming {
 			_hardFlag = GetNode<CheckBox>("Items/HardFlag");
 			_submit = GetNode<Button>("Items/SubmitButton");
 			_submit.Connect("pressed", this, nameof(Submit));
-			_timer = GetNode<CountdownTimer>("/root/Programming/Game/Timer");
+			_timer = GetNode<CountdownTimer>("/root/Programming/Timer");
 		}
 
 		public void OnJump() {
