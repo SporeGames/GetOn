@@ -2,9 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using Godot;
-using Godot.Collections;
 using Newtonsoft.Json;
-using Newtonsoft.Json.Linq;
 using Directory = Godot.Directory;
 
 namespace GetOn.scenes {
@@ -16,7 +14,8 @@ namespace GetOn.scenes {
 		private RichTextLabel _debugText;
 		private ItemList _debugMenuList;
 
-		private List<string> discoveredScenes = new List<string>();
+		private List<string> _discoveredScenes = new List<string>();
+		[Export] public float SpecializationMultiplier = 1.5f;
 		
 		private Node CurrentScene { get; set; }
 		[JsonProperty] public string PlayerName { get; set; } = "No name";
@@ -44,8 +43,8 @@ namespace GetOn.scenes {
 			_debugText = GetNode<RichTextLabel>("DebugMenu/DebugText");
 			_debugMenuList = GetNode<ItemList>("DebugMenu/Levels");
 			DiscoverSceneFiles("res://scenes", true);
-			GD.Print("Discovered " + discoveredScenes.Count + " scenes");
-			foreach (var scene in discoveredScenes) {
+			GD.Print("Discovered " + _discoveredScenes.Count + " scenes");
+			foreach (var scene in _discoveredScenes) {
 				_debugMenuList.AddItem(scene.Replace("res://scenes/", ""), null, true);
 			}
 			_debugMenuList.Connect("item_selected", this, nameof(OnDebugMenuItemSelected));
@@ -77,8 +76,8 @@ namespace GetOn.scenes {
 		}
 
 		private void OnDebugMenuItemSelected(int index) {
-			GD.Print("Clicked on " + discoveredScenes[index] + " at index " + index + " in the debug menu");
-			SwitchScene(discoveredScenes[index]);
+			GD.Print("Clicked on " + _discoveredScenes[index] + " at index " + index + " in the debug menu");
+			SwitchScene(_discoveredScenes[index]);
 		}
 
 		public override void _Input(InputEvent @event) {
@@ -128,7 +127,7 @@ namespace GetOn.scenes {
 				if (dir.CurrentIsDir() && recursive) {
 					DiscoverSceneFiles(dir.GetCurrentDir() + "/" + file, true);
 				} else if (file.Contains(".tscn")) {
-					discoveredScenes.Add(dir.GetCurrentDir() + "/" + file);
+					_discoveredScenes.Add(dir.GetCurrentDir() + "/" + file);
 					GD.Print("Discovered scene: " + dir.GetCurrentDir() + "/" + file);
 				}
 				file = dir.GetNext();
