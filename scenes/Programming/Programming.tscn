@@ -27,7 +27,7 @@ extents = Vector2( 69, 62 )
 extents = Vector2( 8.5, 548.5 )
 
 [sub_resource type="RectangleShape2D" id=2]
-extents = Vector2( 381, 10 )
+extents = Vector2( 448, 10 )
 
 [sub_resource type="CircleShape2D" id=1]
 radius = 34.0147
@@ -250,6 +250,13 @@ position = Vector2( 1824, 727 )
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Game/Area2D"]
 position = Vector2( 31, 114.5 )
 shape = SubResource( 4 )
+
+[node name="Ceiling" type="StaticBody2D" parent="Game"]
+position = Vector2( 1344, 121 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Game/Ceiling"]
+position = Vector2( 141, -82 )
+shape = SubResource( 2 )
 
 [node name="ProgrammingUI" type="Control" parent="."]
 margin_right = 1058.0
