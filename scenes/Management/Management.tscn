@@ -42,47 +42,47 @@ text = "SUBMIT"
 [node name="Boxes" type="Node" parent="."]
 
 [node name="TrisTraits" parent="Boxes" instance=ExtResource( 5 )]
-position = Vector2( 508, 972 )
+position = Vector2( 102, 721 )
 scale = Vector2( 0.8, 0.8 )
 ValidIDs = PoolStringArray(  )
 
 [node name="TrisSketch" parent="Boxes" instance=ExtResource( 5 )]
-position = Vector2( 114, 709 )
+position = Vector2( 500, 743 )
 scale = Vector2( 0.8, 0.8 )
 ValidIDs = PoolStringArray(  )
 
 [node name="CharMovement" parent="Boxes" instance=ExtResource( 5 )]
-position = Vector2( 507, 734 )
+position = Vector2( 500, 989 )
 scale = Vector2( 0.8, 0.8 )
 ValidIDs = PoolStringArray(  )
 
 [node name="NPCSketch" parent="Boxes" instance=ExtResource( 5 )]
-position = Vector2( 585, 385 )
+position = Vector2( 577, 393 )
 scale = Vector2( 0.8, 0.8 )
 ValidIDs = PoolStringArray(  )
 
 [node name="TrisVillage" parent="Boxes" instance=ExtResource( 5 )]
-position = Vector2( 1605, 556 )
+position = Vector2( 1610, 563 )
 scale = Vector2( 0.8, 0.8 )
 ValidIDs = PoolStringArray(  )
 
 [node name="IdleAnim" parent="Boxes" instance=ExtResource( 5 )]
-position = Vector2( 1151, 503 )
+position = Vector2( 1204, 729 )
 scale = Vector2( 0.8, 0.8 )
 ValidIDs = PoolStringArray(  )
 
 [node name="QuestButcher" parent="Boxes" instance=ExtResource( 5 )]
-position = Vector2( 872, 540 )
+position = Vector2( 1152, 512 )
 scale = Vector2( 0.8, 0.8 )
 ValidIDs = PoolStringArray(  )
 
 [node name="NPCVoice" parent="Boxes" instance=ExtResource( 5 )]
-position = Vector2( 1204, 717 )
+position = Vector2( 870, 548 )
 scale = Vector2( 0.8, 0.8 )
 ValidIDs = PoolStringArray(  )
 
 [node name="VillageImpl" parent="Boxes" instance=ExtResource( 5 )]
-position = Vector2( 1373, 277 )
+position = Vector2( 1377, 281 )
 scale = Vector2( 0.8, 0.8 )
 ValidIDs = PoolStringArray(  )
 
@@ -91,12 +91,12 @@ ValidIDs = PoolStringArray(  )
 [node name="TrisTraits" parent="Notes" instance=ExtResource( 3 )]
 position = Vector2( 98, 90 )
 scale = Vector2( 0.5, 0.5 )
-Text = "Tris character traits"
+Text = "Main character: Traits"
 
 [node name="TrisSketch" parent="Notes" instance=ExtResource( 3 )]
 position = Vector2( 251, 90 )
 scale = Vector2( 0.5, 0.5 )
-Text = "Tris sketch"
+Text = "Main character: Sketch"
 
 [node name="CharMovement" parent="Notes" instance=ExtResource( 3 )]
 position = Vector2( 405, 90 )
@@ -106,12 +106,12 @@ Text = "Character movement"
 [node name="NPCSketch" parent="Notes" instance=ExtResource( 3 )]
 position = Vector2( 98, 238 )
 scale = Vector2( 0.5, 0.5 )
-Text = "Sketch: NPCs"
+Text = "NPCs: Sketch"
 
 [node name="TrisVillage" parent="Notes" instance=ExtResource( 3 )]
 position = Vector2( 251, 238 )
 scale = Vector2( 0.5, 0.5 )
-Text = "Implement Tris into the village"
+Text = "Implement main character into village"
 
 [node name="IdleAnim" parent="Notes" instance=ExtResource( 3 )]
 position = Vector2( 405, 238 )
