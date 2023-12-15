@@ -42,6 +42,14 @@ namespace GetOn.scenes.MainMenu {
 			_sharedNode.Specialization = (AbilitySpecialization) index;
 		}
 
+		public override void _Input(InputEvent @event) {
+			if (@event is InputEventKey keyEvent) {
+				if (keyEvent.Pressed && keyEvent.Scancode == (int) KeyList.Enter && _submitButton.Disabled == false) {
+					OnSubmitButtonPressed();
+				}
+			}
+		}
+
 		private void OnSubmitButtonPressed() {
 			_sharedNode.SwitchScene("res://scenes/GameSelectionRoom/GameSelectionRoom.tscn");
 		}
