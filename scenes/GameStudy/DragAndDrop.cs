@@ -105,6 +105,7 @@ public class DragAndDrop : KinematicBody2D
 	public void OnIntroReadyPressed()
 	{
 		_introGameStudy.Visible = false;
+		GetNode<CountdownTimer>("/root/GameStudy/Timer").running = true;
 	}
 	
 	private void CheckSnap()

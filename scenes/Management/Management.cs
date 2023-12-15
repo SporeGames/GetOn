@@ -198,6 +198,8 @@ public class Management : Node2D {
 	public void CloseIntro()
 	{
 		_intro.Visible = false;
+		GetNode<CountdownTimer>("/root/Management/Timer").running = true;
+
 	}
 	
 }

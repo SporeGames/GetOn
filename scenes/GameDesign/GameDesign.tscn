@@ -1,6 +1,6 @@
-[gd_scene load_steps=43 format=2]
+[gd_scene load_steps=33 format=2]
 
-[ext_resource path="res://scenes/GameDesign/PlayerProfile.tscn" type="PackedScene" id=1]
+[ext_resource path="res://scenes/GameDesign/assets/games/apex.jpg" type="Texture" id=1]
 [ext_resource path="res://scenes/GameDesign/GameDesignSlider.tscn" type="PackedScene" id=2]
 [ext_resource path="res://scenes/GameDesign/GameDesign.cs" type="Script" id=3]
 [ext_resource path="res://SharedAssets/music/Play/MusicGameDes.gd" type="Script" id=4]
@@ -28,23 +28,10 @@
 [ext_resource path="res://scenes/GameDesign/assets/features/Storymode_Experience.png" type="Texture" id=26]
 [ext_resource path="res://scenes/GameDesign/assets/features/DiverseUnits_Experience.png" type="Texture" id=27]
 [ext_resource path="res://scenes/GameDesign/assets/features/Multiselect_Experience.png" type="Texture" id=28]
-[ext_resource path="res://SharedAssets/font/BAHNSCHRIFT 1.TTF" type="DynamicFontData" id=29]
-[ext_resource path="res://scenes/GameDesign/assets/experiences/Predictions_Feature.png" type="Texture" id=30]
-[ext_resource path="res://scenes/GameDesign/assets/experiences/Management_Feature.png" type="Texture" id=31]
-[ext_resource path="res://scenes/GameDesign/assets/experiences/socialInteraction_Feature.png" type="Texture" id=32]
-[ext_resource path="res://scenes/GameDesign/assets/experiences/tactics_Feature.png" type="Texture" id=33]
-[ext_resource path="res://scenes/GameDesign/assets/experiences/Exploration_Feature.png" type="Texture" id=34]
-[ext_resource path="res://scenes/GameDesign/assets/experiences/Combos_Feature.png" type="Texture" id=35]
-[ext_resource path="res://scenes/GameDesign/assets/experiences/FastReactionTime_Feature.png" type="Texture" id=36]
-[ext_resource path="res://scenes/GameDesign/assets/experiences/Immersion_Feature.png" type="Texture" id=37]
-[ext_resource path="res://scenes/GameStudy/assets/XBox.png" type="Texture" id=38]
-[ext_resource path="res://scenes/GameStudy/assets/GameBoy.png" type="Texture" id=39]
-[ext_resource path="res://scenes/GameStudy/assets/IMG_0160.png" type="Texture" id=40]
+[ext_resource path="res://scenes/GameDesign/assets/games/detroit.jpg" type="Texture" id=29]
+[ext_resource path="res://scenes/GameDesign/assets/games/deadspace.jpg" type="Texture" id=38]
+[ext_resource path="res://SharedAssets/Timer.tscn" type="PackedScene" id=40]
 [ext_resource path="res://SharedAssets/Tutorial.tscn" type="PackedScene" id=41]
-
-[sub_resource type="DynamicFont" id=3]
-size = 48
-font_data = ExtResource( 29 )
 
 [node name="GameDesign" type="Control"]
 anchor_right = 1.0
@@ -52,41 +39,60 @@ anchor_bottom = 1.0
 rect_min_size = Vector2( 1920, 1080 )
 script = ExtResource( 3 )
 
-[node name="GenreSlider" parent="." instance=ExtResource( 2 )]
-visible = false
-rect_pivot_offset = Vector2( -815, -180 )
-Images = [ ExtResource( 5 ), ExtResource( 6 ), ExtResource( 7 ), ExtResource( 8 ), ExtResource( 9 ), ExtResource( 10 ) ]
-Titles = PoolStringArray( "RPG", "Strategy Game", "Tactical Shooter", "Fighting Game", "MOBA", "Sandbox Game" )
-Descriptions = PoolStringArray( "Role-Playing-Game", "Resource Gathering Game", "First-Person-Shooter", "Combat Game", "Massive Online Battle Arena", "Sandbox/Open World Game" )
-CategoryDisplayName = "Select one genre"
-IsSingleSelect = true
+[node name="Timer" parent="." instance=ExtResource( 40 )]
 
-[node name="MechanicSlider" parent="." instance=ExtResource( 2 )]
+[node name="ApexSlider" parent="." instance=ExtResource( 2 )]
+rect_pivot_offset = Vector2( -815, -180 )
+Images = [ ExtResource( 5 ), ExtResource( 6 ), ExtResource( 7 ), ExtResource( 8 ), ExtResource( 9 ), ExtResource( 10 ), null, null, null, null, null, null ]
+PersonaNames = PoolStringArray( "Destruction", "Excitement", "Competition", "Community", "Challenge", "Strategy", "Completion", "Power", "Fantasy", "Story", "Design", "Discovery" )
+Descriptions = PoolStringArray( "These players tend to take more destructive measures and like chaos.", "These players like fast gameplay with a lot of exciting things happening all the time.", "These players like to compete against others and improve their skills.", "These players like to connect with different people and socialize through gaming.", "These players like to improve their skills and do not back off if something seems too difficult.", "These players carefully plan their steps and like to examine every possible option.", "These players want to finish 100% of a game and find each easter egg.", "These players want to be powerful, either through their skills, character or equipment.", "These players want to completely immerse into a game and accomplish things they could not in real life.", "These players want to experience an interesting story and live through different scenarios.", "These players want to express themselves and live their best life.", "These players want to discover every piece of the map and find new things." )
+PersonaMotivations = PoolStringArray( "Guns, Explosives, Chaos", "Fast-paced, Surprises, Thrills", "Duels, Matches, Ranking System", "Team, Chatting, Interaction", "Practice, High Difficulty, Challenges", "Thinking Ahead, Making Decisions", "Collectibles, Completions", "Powerful Character, Powerful Equipment", "Being someone else, Being somewhere else", "Elaborate plot, Interesting characters and story", "Expression, Customisation", "Exploration, Excitement" )
+CategoryDisplayName = "Apex Legends"
+GameDescription = "An online multiplayer battle royale game featuring teams of three players using pre-made characters with distinctive abilities. 
+Each match generally features twenty teams.
+Once on the ground, the team can scavenge for equipment that is scattered around buildings, or in crates randomly distributed around the map.
+Over time, the game's safe zone will reduce in size around a randomly-selected point on the map; players outside the safe zone take damage and may die if they do not reach the safe zone in time.
+Players who become knocked down in the course of a game can be revived by their teammates. Should a player be killed completely, they can still be resurrected if their team member(s) collect their respawn banner, which appears at the place where they died, and bring it to one of several beacons on the map. 
+The last team with any members left alive is deemed the winner of that match.
+"
+GameImage = ExtResource( 1 )
+ValidPersonas = PoolStringArray( "Destruction", "Excitement", "Competition", "Community", "Challenge", "Strategy", "Power", "Design", "Discovery" )
+
+[node name="DetroitSlider" parent="." instance=ExtResource( 2 )]
 visible = false
 rect_pivot_offset = Vector2( -815, -180 )
 Images = [ ExtResource( 18 ), ExtResource( 19 ), ExtResource( 13 ), ExtResource( 20 ), ExtResource( 12 ), ExtResource( 15 ), ExtResource( 11 ), ExtResource( 14 ), ExtResource( 16 ), ExtResource( 21 ), ExtResource( 17 ) ]
-Titles = PoolStringArray( "Items", "Mana", "Stats", "Loot", "Complex Movement", "Various Attacks", "Grab", "Block", "Building", "Resource Development", "Commanding Units" )
-Descriptions = PoolStringArray( "Gathering / Crafting Items", "Using a resource called Mana to cast Spells or Skills", "Statuspoints like Strength or Intelligence", "Receving Loot from farming or killing stuff", "Combo Heavy or Difficult to Master Movement", "Different Combo varities", "Grabbing an Opponent", "Blocking incoming Attacks", "Building things like Farms", "Gathering and using Materials", "Taking control over Army\'s" )
-Category = 1
-CategoryDisplayName = "Select game mechanics"
+PersonaNames = PoolStringArray( "Destruction", "Excitement", "Competition", "Community", "Challenge", "Strategy", "Completion", "Power", "Fantasy", "Story", "Design", "Discovery" )
+Descriptions = PoolStringArray( "These players tend to take more destructive measures and like chaos.", "These players like fast gameplay with a lot of exciting things happening all the time.", "These players like to compete against others and improve their skills.", "These players like to connect with different people and socialize through gaming.", "These players like to improve their skills and do not back off if something seems too difficult.", "These players carefully plan their steps and like to examine every possible option.", "These players want to finish 100% of a game and find each easter egg.", "These players want to be powerful, either through their skills, character or equipment.", "These players want to completely immerse into a game and accomplish things they could not in real life.", "These players want to experience an interesting story and live through different scenarios.", "These players want to express themselves and live their best life.", "These players want to discover every piece of the map and find new things." )
+PersonaMotivations = PoolStringArray( "Guns, Explosives, Chaos", "Fast-paced, Surprises, Thrills", "Duels, Matches, Ranking System", "Team, Chatting, Interaction", "Practice, High Difficulty, Challenges", "Thinking Ahead, Making Decisions", "Collectibles, Completions", "Powerful Character, Powerful Equipment", "Being someone else, Being somewhere else", "Elaborate plot, Interesting characters and story", "Expression, Customisation", "Exploration, Excitement" )
+Game = 1
+CategoryDisplayName = "Detroit: Become Human"
+GameDescription = "An adventure game played from a third-person view, which is subject to a set and controllable perspective. 
+There are multiple playable characters who can die as the story continues without them; as a result, there is no \"game over\" message following a character's death. 
+The player is able to interact with objects and observe one's surroundings, move around, and scan the environment for possible actions; the motion controls and touchpad are also employed.
 
-[node name="FeatureSlider" parent="." instance=ExtResource( 2 )]
+Via quick time events and dialogue decisions, the story will branch out depending on which choices are made. These can be viewed in a flowchart during and immediately after a given chapter; the player can rewind to certain points in the story to reshape decisions in the event of regret. Certain scenes feature countdowns, which force quick action. 
+"
+GameImage = ExtResource( 29 )
+ValidPersonas = PoolStringArray( "Excitement", "Strategy", "Completion", "Fantasy", "Story", "Discovery" )
+
+[node name="DeadSpaceSlider" parent="." instance=ExtResource( 2 )]
 visible = false
 rect_pivot_offset = Vector2( -815, -180 )
 Images = [ ExtResource( 22 ), ExtResource( 23 ), ExtResource( 24 ), ExtResource( 25 ), ExtResource( 26 ), ExtResource( 27 ), ExtResource( 28 ) ]
-Titles = PoolStringArray( "Character Creation", "Multiplayer", "Ranked System", "Skill Based Matchmaking", "Story Mode", "Diverse Units", "Multi Select" )
-Descriptions = PoolStringArray( "Customizing a own Character apperance", "Playing with other Players", "Rated Competitive Gameplay", "Matching opponents according to your Rank / Skillevel", "Narrative driven Game", "Different type of Units with different aspects and boni", "Multiple select of different Units" )
-Category = 2
-CategoryDisplayName = "Select features"
-
-[node name="GExpSlider" parent="." instance=ExtResource( 2 )]
-visible = false
-rect_pivot_offset = Vector2( -815, -180 )
-Images = [ ExtResource( 36 ), ExtResource( 35 ), ExtResource( 30 ), ExtResource( 31 ), ExtResource( 33 ), ExtResource( 32 ), ExtResource( 34 ), ExtResource( 37 ) ]
-Titles = PoolStringArray( "Fast Reaction Time", "Combos", "Predictions", "Management", "Tactics", "Social Interaction", "Exploration", "Immersion" )
-Descriptions = PoolStringArray( "Having to react situationally and adapt fast", "Being able to do various combined attacks", "Being able to predict the outcome", "Managing resources / units ", "Using different Tactics in order to win", "Being able to communicate with different Players", "Being able to Explore freely in a World", "Being able to immerse one self into a written Character" )
-Category = 3
-CategoryDisplayName = "Select gameplay experiences"
+PersonaNames = PoolStringArray( "Destruction", "Excitement", "Competition", "Community", "Challenge", "Strategy", "Completion", "Power", "Fantasy", "Story", "Design", "Discovery" )
+Descriptions = PoolStringArray( "These players tend to take more destructive measures and like chaos.", "These players like fast gameplay with a lot of exciting things happening all the time.", "These players like to compete against others and improve their skills.", "These players like to connect with different people and socialize through gaming.", "These players like to improve their skills and do not back off if something seems too difficult.", "These players carefully plan their steps and like to examine every possible option.", "These players want to finish 100% of a game and find each easter egg.", "These players want to be powerful, either through their skills, character or equipment.", "These players want to completely immerse into a game and accomplish things they could not in real life.", "These players want to experience an interesting story and live through different scenarios.", "These players want to express themselves and live their best life.", "These players want to discover every piece of the map and find new things." )
+PersonaMotivations = PoolStringArray( "Guns, Explosives, Chaos", "Fast-paced, Surprises, Thrills", "Duels, Matches, Ranking System", "Team, Chatting, Interaction", "Practice, High Difficulty, Challenges", "Thinking Ahead, Making Decisions", "Collectibles, Completions", "Powerful Character, Powerful Equipment", "Being someone else, Being somewhere else", "Elaborate plot, Interesting characters and story", "Expression, Customisation", "Exploration, Excitement" )
+Game = 2
+CategoryDisplayName = "Dead Space"
+GameDescription = "A single player survival horror game, with the player character visible at all times.
+The character's RIG (Resource Integration Gear) can be outfitted with two special abilities for use in combat and puzzle-solving \"Kinesis\" & \"Stasis\". 
+The RIG also has a slot-based inventory for carrying weapons, ammunition, healing items, and other objects. 
+Gunplay against Necromorphs which are re-animated and re-purposed corpses, lacking dependence on nervous, respiratory, and circulatory systems, the conventions of causing targets to be incapacitated or immobilized are largely irrelevant to them. 
+Ammunition tends to be uncommon, thus necessitating careful usage of the tools at hand.
+"
+GameImage = ExtResource( 38 )
+ValidPersonas = PoolStringArray( "Excitement", "Strategy", "Completion", "Fantasy", "Story", "Design", "Discovery", "Power" )
 
 [node name="SmallProfileAnchor" type="Node2D" parent="."]
 position = Vector2( 167, 0 )
@@ -97,121 +103,8 @@ margin_right = 149.0
 margin_bottom = 37.0
 text = "Expand Persona"
 
-[node name="PersonaHolder" type="Node" parent="."]
-
-[node name="PlayerProfile" parent="PersonaHolder" instance=ExtResource( 1 )]
-visible = false
-margin_left = 333.0
-margin_top = 222.0
-margin_right = 913.0
-margin_bottom = 642.0
-rect_scale = Vector2( 0.48, 0.48 )
-PlayerName = "Bob"
-ProfileText = "Desires: Competition, Fast Gameplay, "
-Achievements = {
-Resource( "res://icon.png" ): PoolStringArray( "Big", "One comboed" )
-}
-GameImage = ExtResource( 38 )
-GameName = "?"
-GameDescription = "description"
-ValidGenres = PoolStringArray( "Figthing Game" )
-ValidMechanics = PoolStringArray( "Complex Movement", "Various Attacks", "Grab", "Block" )
-ValidFeatures = PoolStringArray( "Multiplayer", "Ranked System", "Skill Based Matchmaking", "Diverse Units" )
-ValidGameplayExperiences = PoolStringArray( "Fast Reacton Time", "Combos", "Predictions" )
-
-[node name="Select" type="Button" parent="PersonaHolder/PlayerProfile"]
-margin_left = 2200.0
-margin_top = 1550.0
-margin_right = 2330.0
-margin_bottom = 1630.0
-rect_scale = Vector2( 2, 2 )
-hint_tooltip = "Select this persona"
-text = "Select"
-
-[node name="PlayerProfile2" parent="PersonaHolder" instance=ExtResource( 1 )]
-visible = false
-margin_left = 333.0
-margin_top = 222.0
-margin_right = 913.0
-margin_bottom = 642.0
-rect_scale = Vector2( 0.48, 0.48 )
-PlayerName = "Tactician"
-ProfileText = "blub"
-GameImage = ExtResource( 39 )
-GameName = "Starcraft"
-ValidGenres = PoolStringArray( "Strategy Game" )
-ValidMechanics = PoolStringArray( "Resource Development", "Commanding Units", "Loot", "Building" )
-ValidFeatures = PoolStringArray( "Diverse Units", "Multi Select", "Skill Based Matchmaking" )
-ValidGameplayExperiences = PoolStringArray( "Predictions", "Management", "Tactics" )
-
-[node name="Select" type="Button" parent="PersonaHolder/PlayerProfile2"]
-margin_left = 2200.0
-margin_top = 1550.0
-margin_right = 2330.0
-margin_bottom = 1630.0
-rect_scale = Vector2( 2, 2 )
-hint_tooltip = "Select this persona"
-text = "Select"
-
-[node name="PlayerProfile3" parent="PersonaHolder" instance=ExtResource( 1 )]
-visible = false
-margin_left = 333.0
-margin_top = 222.0
-margin_right = 913.0
-margin_bottom = 642.0
-rect_scale = Vector2( 0.48, 0.48 )
-PlayerName = "Roleplayer"
-GameImage = ExtResource( 40 )
-GameName = "Baldur's Gate"
-ValidGenres = PoolStringArray( "RPG" )
-ValidMechanics = PoolStringArray( "Items", "Mana", "Stats", "Loot" )
-ValidFeatures = PoolStringArray( "Character Creation", "Multiplayer", "Story" )
-ValidGameplayExperiences = PoolStringArray( "Social Interaction", "Exploration", "Immersion" )
-
-[node name="Select" type="Button" parent="PersonaHolder/PlayerProfile3"]
-margin_left = 2200.0
-margin_top = 1550.0
-margin_right = 2330.0
-margin_bottom = 1630.0
-rect_scale = Vector2( 2, 2 )
-hint_tooltip = "Select this persona"
-text = "Select"
-
-[node name="NextButton" type="Button" parent="PersonaHolder"]
-margin_left = 1732.0
-margin_top = 479.0
-margin_right = 1917.0
-margin_bottom = 564.0
-rect_pivot_offset = Vector2( 80, 26 )
-text = "Next -->"
-
-[node name="PreviousButton" type="Button" parent="PersonaHolder"]
-margin_top = 477.0
-margin_right = 185.0
-margin_bottom = 562.0
-rect_pivot_offset = Vector2( 80, 26 )
-text = "<-- Previous"
-
-[node name="StartGameCreationButton" type="Button" parent="PersonaHolder"]
-margin_left = 1700.0
-margin_top = 37.0
-margin_right = 1885.0
-margin_bottom = 122.0
-rect_pivot_offset = Vector2( -1621, 200 )
-disabled = true
-text = "Start Game Creation"
-
-[node name="SelectHint" type="RichTextLabel" parent="PersonaHolder"]
-anchor_left = 0.5
-anchor_right = 0.5
-margin_left = -333.0
-margin_top = 37.0
-margin_right = 304.0
-margin_bottom = 120.0
-custom_fonts/normal_font = SubResource( 3 )
-text = "Select a player persona"
-
 [node name="Music" type="Node" parent="."]
 script = ExtResource( 4 )
 
 [node name="Intro" parent="." instance=ExtResource( 41 )]
+visible = false

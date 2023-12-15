@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=2]
+[gd_scene load_steps=24 format=2]
 
 [ext_resource path="res://SharedAssets/font/BAHNSCHRIFT 1.TTF" type="DynamicFontData" id=1]
 [ext_resource path="res://SharedAssets/music/Play/Music_GameStud.gd" type="Script" id=2]
@@ -12,6 +12,7 @@
 [ext_resource path="res://SharedAssets/Anleitung.png" type="Texture" id=10]
 [ext_resource path="res://scenes/GameStudy/assets/image (1).png" type="Texture" id=11]
 [ext_resource path="res://SharedAssets/AnleitungStartButton.png" type="Texture" id=12]
+[ext_resource path="res://SharedAssets/Timer.tscn" type="PackedScene" id=13]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 62, 90.5 )
@@ -50,6 +51,8 @@ font_data = ExtResource( 1 )
 [node name="Background" type="Sprite" parent="."]
 position = Vector2( 960, 540 )
 texture = ExtResource( 3 )
+
+[node name="Timer" parent="." instance=ExtResource( 13 )]
 
 [node name="GameBoy" type="KinematicBody2D" parent="."]
 position = Vector2( 769, 916 )

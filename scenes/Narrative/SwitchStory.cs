@@ -26,12 +26,6 @@ public class SwitchStory : Button
 
 	public bool wrongWay = false;
 	
-	private float initialTime = 300; // Initial countdown time in seconds
-	private float currentTime;
-	private Timer countdownTimer;
-
-	private Label timerLabel;
-	
 	public override void _Ready()
 	{
 		_greaterThan = GetNode<Button>("/root/Narrative/GreaterThan");
@@ -56,47 +50,13 @@ public class SwitchStory : Button
 		_ready2.Connect("pressed", this, nameof(GreaterThanPressed));
 		_ready3.Connect("pressed", this, nameof(GreaterThanPressed));
 		_closeIntroGame.Connect("pressed", this, nameof(CloseIntroGame));
-
-		timerLabel = GetNode<Label>("/root/Narrative/timerLabel");
 		
-		countdownTimer = new Timer();
-		AddChild(countdownTimer);
 		
-		countdownTimer.Connect("timeout", this, "_OnTimeout");
-
-		
-		currentTime = initialTime;
-
-		
-		countdownTimer.WaitTime = 1; 
-
-		
-		//countdownTimer.Start();
-		
-		timerLabel.Text = $"Time: {Mathf.CeilToInt(currentTime)}s";
 	}
 	
 	public override void _Process(float delta)
 	{
 		
-		if (countdownTimer.IsStopped())
-		{
-			
-		}
-		else
-		{
-			currentTime -= delta;
-			UpdateTimerLabel();
-		}
-	}
-	
-	private void UpdateTimerLabel()
-	{
-		
-		int minutes = Mathf.FloorToInt(currentTime / 60);
-		int seconds = Mathf.CeilToInt(currentTime % 60);
-		
-		timerLabel.Text = $"Time: {minutes:D2}:{seconds:D2}";
 	}
 	
 	private void _OnTimeout()
@@ -115,13 +75,13 @@ public class SwitchStory : Button
 		{
 			if (_story2Intro && wrongWay == false)
 			{
-				countdownTimer.Stop();
+				GetNode<CountdownTimer>("/root/Narrative/Timer").running = false;
 				_story2Intro = false;
 				_introStory2.Visible = true;
 			}
 			else if(wrongWay == false)
 			{
-				countdownTimer.Start();
+				GetNode<CountdownTimer>("/root/Narrative/Timer").running = true;
 				_introStory2.Visible = false;
 				_story1.Visible = false;
 				_story2.Visible = true;
@@ -139,13 +99,13 @@ public class SwitchStory : Button
 		{
 			if (_story3Intro && wrongWay == false)
 			{
-				countdownTimer.Stop();
+				GetNode<CountdownTimer>("/root/Narrative/Timer").running = false;
 				_story3Intro = false;
 				_introStory3.Visible = true;
 			}
 			else if(wrongWay == false)
 			{
-				countdownTimer.Start();
+				GetNode<CountdownTimer>("/root/Narrative/Timer").running = true;
 				_story2.Visible = false;
 				_story3.Visible = true;
 				_introStory3.Visible = false;
@@ -225,12 +185,12 @@ public class SwitchStory : Button
 	{
 		if (_story1Intro)
 		{
-			countdownTimer.Start();
 			_story2Intro = true;
 			_story3Intro = true;
 			_story1Intro = false;
 			_story1.Visible = true;
 			_introStory1.Visible = false;
+			GetNode<CountdownTimer>("/root/Narrative/Timer").running = true;
 		}
 		
 	}

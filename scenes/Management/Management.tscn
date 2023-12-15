@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=2]
+[gd_scene load_steps=21 format=2]
 
 [ext_resource path="res://scenes/Management/Management.cs" type="Script" id=1]
 [ext_resource path="res://scenes/Management/assets/Sprint Review Village.PNG" type="Texture" id=2]
@@ -17,6 +17,7 @@
 [ext_resource path="res://SharedAssets/AnleitungStartButton.png" type="Texture" id=15]
 [ext_resource path="res://scenes/Management/assets/Legend.png" type="Texture" id=16]
 [ext_resource path="res://scenes/Management/OpenLegend.gd" type="Script" id=17]
+[ext_resource path="res://SharedAssets/Timer.tscn" type="PackedScene" id=18]
 
 [sub_resource type="DynamicFont" id=1]
 size = 32
@@ -34,6 +35,8 @@ NoteScene = ExtResource( 3 )
 position = Vector2( 960, 536 )
 scale = Vector2( 1.60663, 1.67492 )
 texture = ExtResource( 4 )
+
+[node name="Timer" parent="." instance=ExtResource( 18 )]
 
 [node name="Example Notes" type="Node" parent="."]
 
@@ -293,6 +296,7 @@ disabled = true
 text = "SUBMIT"
 
 [node name="Intro" type="Node2D" parent="."]
+visible = false
 z_index = 20
 
 [node name="Sprite2" type="Sprite" parent="Intro"]

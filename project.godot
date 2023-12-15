@@ -15,10 +15,6 @@ run/main_scene="res://scenes/MainMenu/MainMenu.tscn"
 boot_splash/bg_color=Color( 0.0392157, 0.0313726, 0.0313726, 1 )
 config/icon="res://icon.png"
 
-[audio]
-
-output_latency.web=180
-
 [autoload]
 
 SharedNode="*res://scenes/SharedNode.tscn"
@@ -64,6 +60,7 @@ common/enable_pause_aware_picking=true
 [rendering]
 
 quality/driver/driver_name="GLES2"
+quality/intended_usage/framebuffer_allocation=0
 vram_compression/import_etc=true
 vram_compression/import_etc2=false
 environment/default_environment="res://default_env.tres"

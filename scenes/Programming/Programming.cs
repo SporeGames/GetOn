@@ -32,6 +32,7 @@ namespace GetOn.scenes.GameSelectionRoom
 			_resetButton.Connect("pressed", this, nameof(OnResetPressed));
 			_playerOrigin = GetNode<KinematicBody2D>("Game/Player").Position;
 			Checklist = GetNode<Checklist>("Checklist");
+			GetNode<CountdownTimer>("/root/Programming/Timer").running = true;
 		}
 
 		public override void _Process(float delta) {
