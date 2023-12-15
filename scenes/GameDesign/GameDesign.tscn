@@ -51,7 +51,9 @@ CategoryDisplayName = "Apex Legends"
 GameDescription = "An online multiplayer battle royale game featuring teams of three players using pre-made characters with distinctive abilities. 
 Each match generally features twenty teams.
 Once on the ground, the team can scavenge for equipment that is scattered around buildings, or in crates randomly distributed around the map.
+
 Over time, the game's safe zone will reduce in size around a randomly-selected point on the map; players outside the safe zone take damage and may die if they do not reach the safe zone in time.
+
 Players who become knocked down in the course of a game can be revived by their teammates. Should a player be killed completely, they can still be resurrected if their team member(s) collect their respawn banner, which appears at the place where they died, and bring it to one of several beacons on the map. 
 The last team with any members left alive is deemed the winner of that match.
 "
@@ -69,6 +71,7 @@ Game = 1
 CategoryDisplayName = "Detroit: Become Human"
 GameDescription = "An adventure game played from a third-person view, which is subject to a set and controllable perspective. 
 There are multiple playable characters who can die as the story continues without them; as a result, there is no \"game over\" message following a character's death. 
+
 The player is able to interact with objects and observe one's surroundings, move around, and scan the environment for possible actions; the motion controls and touchpad are also employed.
 
 Via quick time events and dialogue decisions, the story will branch out depending on which choices are made. These can be viewed in a flowchart during and immediately after a given chapter; the player can rewind to certain points in the story to reshape decisions in the event of regret. Certain scenes feature countdowns, which force quick action. 
@@ -87,8 +90,10 @@ Game = 2
 CategoryDisplayName = "Dead Space"
 GameDescription = "A single player survival horror game, with the player character visible at all times.
 The character's RIG (Resource Integration Gear) can be outfitted with two special abilities for use in combat and puzzle-solving \"Kinesis\" & \"Stasis\". 
+
 The RIG also has a slot-based inventory for carrying weapons, ammunition, healing items, and other objects. 
 Gunplay against Necromorphs which are re-animated and re-purposed corpses, lacking dependence on nervous, respiratory, and circulatory systems, the conventions of causing targets to be incapacitated or immobilized are largely irrelevant to them. 
+
 Ammunition tends to be uncommon, thus necessitating careful usage of the tools at hand.
 "
 GameImage = ExtResource( 38 )
@@ -107,3 +112,4 @@ text = "Expand Persona"
 script = ExtResource( 4 )
 
 [node name="Intro" parent="." instance=ExtResource( 41 )]
+visible = false

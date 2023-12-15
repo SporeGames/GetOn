@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://SharedAssets/font/BAHNSCHRIFT 1.TTF" type="DynamicFontData" id=1]
 [ext_resource path="res://scenes/GameDesign/GameDesignSlider.cs" type="Script" id=2]
@@ -12,7 +12,13 @@ width = 1025
 height = 600
 
 [sub_resource type="DynamicFont" id=6]
-size = 24
+size = 28
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=7]
+size = 32
+use_mipmaps = true
+use_filter = true
 font_data = ExtResource( 1 )
 
 [sub_resource type="DynamicFont" id=4]
@@ -87,16 +93,19 @@ text = "<<<"
 
 [node name="GameDescription" type="RichTextLabel" parent="."]
 margin_left = 51.0
-margin_top = 87.0
+margin_top = 71.0
 margin_right = 886.0
-margin_bottom = 787.0
+margin_bottom = 730.0
 custom_fonts/normal_font = SubResource( 6 )
 
 [node name="Selected" type="RichTextLabel" parent="."]
 margin_left = 100.0
-margin_top = 896.0
+margin_top = 801.0
 margin_right = 838.0
-margin_bottom = 1067.0
+margin_bottom = 972.0
+custom_fonts/normal_font = SubResource( 7 )
+text = "- dfafag
+- afgag"
 
 [node name="MotivationsText" type="RichTextLabel" parent="."]
 anchor_left = 0.5
@@ -140,9 +149,9 @@ text = "Select"
 anchor_left = 0.5
 anchor_right = 0.5
 margin_left = -860.0
-margin_top = 808.0
+margin_top = 730.0
 margin_right = -194.0
-margin_bottom = 879.0
+margin_bottom = 801.0
 custom_fonts/normal_font = SubResource( 5 )
 text = "Selected Personas:"
 
