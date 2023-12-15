@@ -12,22 +12,24 @@ public class DropDownAttribute : OptionButton
 		// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
 	{
-		this.AddItem("Attribute");	
-		this.AddItem("Hero");
-		this.AddItem("Well Liked");			//1
-							//2
-		this.AddItem("Justice");				//3
-		this.AddItem("Loving/caring");			//4
-		this.AddItem("Shadow-Magic");			//5
-		this.AddItem("Letting the past go");	//6
-		this.AddItem("Mentor");				//7
-		this.AddItem("Possessed");				//8
-		this.AddItem("Thoughtless");			//9
-		this.AddItem("Stubborn");				//10
-		this.AddItem("Egoistic");				//11
-		this.AddItem("Vengeful");				//12
-		this.AddItem("Disciplined");			//13
-		this.AddItem("Chaotic");				//14
+		this.AddItem("Attribute");
+		this.AddItem("Befriended");				//1
+		this.AddItem("Heroic");					//2
+		this.AddItem("Stubborn");					//3
+		this.AddItem("Integrated");				//4
+		this.AddItem("Possessed");					//5
+		this.AddItem("Sacrificing");				//6
+		this.AddItem("Aggressive");				//7
+		this.AddItem("Egoistic");					//8
+		this.AddItem("Cocky");						//9
+		this.AddItem("Hopeless");					//10
+		this.AddItem("Depressed");					//11
+		this.AddItem("Well-Liked");				//12
+		this.AddItem("Feels Guilty");				//13
+		this.AddItem("Heroic/Fulfilled");			//14
+		this.AddItem("Twisted");					//15
+		this.AddItem("Betrayed");					//16
+		this.AddItem("Leading");					//17
 	}
 
 	public void DisableHover()
@@ -39,6 +41,12 @@ public class DropDownAttribute : OptionButton
 	{
 		SetMouseFilter(MouseFilterEnum.Stop);
 	}
+
+	public void Reset()
+	{
+		this.Select(0);
+	}
+	
 
 
 //  // Called every frame. 'delta' is the elapsed time since the previous frame.
