@@ -20,7 +20,7 @@ namespace GetOn.scenes {
 		
 		private Node CurrentScene { get; set; }
 		[JsonProperty] public string PlayerName { get; set; } = "No name";
-		
+
 		[JsonProperty] public readonly List<string> CompletedTasks = new List<string>();
 		
 		[JsonProperty] public int programmingPoints = 0;
@@ -32,6 +32,7 @@ namespace GetOn.scenes {
 		[JsonProperty] public int soundPoints = 0;
 		[JsonProperty]public int managementPoints = 0;
 		[JsonProperty] public int managementColors = 0;
+		[JsonProperty] public AbilitySpecialization Specialization = AbilitySpecialization.Programming;
 
 		public bool isDragging;
 
