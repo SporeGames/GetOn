@@ -209,7 +209,6 @@ z_index = 1
 texture = ExtResource( 16 )
 
 [node name="Intro" type="Node2D" parent="."]
-visible = false
 z_index = 20
 
 [node name="Sprite2" type="Sprite" parent="Intro"]
@@ -222,21 +221,13 @@ margin_top = 232.0
 margin_right = 1036.0
 margin_bottom = 1057.0
 custom_fonts/font = SubResource( 1 )
-text = "Introduction:
+text = "Instructions:
 
-Sort the different Notes to their old places. 
-The gray outline symbols where you have to put them.
-Additionally, you have to color in the different notes into their coordinating 
-department color.
+Oh no! All the notes have fallen down and now the project plan is in complete chaos.
 
-- Art = 	orange	
-- Programming = blue
-- Game Design = purple
-- Sound = yellow									
-- Narrative = green
-- Management = black
+Put the notes back where they belong. You can do this by dragging and dropping the notes into the gray boxes.
 
-"
+ The arrows show you which notes are dependent on other notes."
 autowrap = true
 
 [node name="StartPuzzle" type="Button" parent="Intro"]

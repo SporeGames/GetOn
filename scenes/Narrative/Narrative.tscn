@@ -1646,25 +1646,25 @@ margin_bottom = 1128.0
 custom_fonts/font = SubResource( 146 )
 text = "Instructions:
 
-You will see  the title of a  story as well as 2 important characters from that story and an introduction to the story.
-But be careful! You can only read the introduction once, before the timer starts.
+You will see the title of a story, as well as 2 important characters from that story and an introduction to the story.
+But be careful! You can only read the introduction once before the timer starts.
 
 Your tasks:
 
-1. Choose a fitting setting in which this story takes place
-(per drop down menu)
+1. Choose an appropriate setting for this story
+(using the drop-down menu)
 
-2. Out of 3, the most appropriate ending for the story
-(per drag and drop)
+2. Choose the most appropriate ending for the story from 3 choices
+(by drag and drop)
 
 3. Attributes the characters based on how they will change
-Hint: take a closer look above the drop down menu
+Tip: take a closer look at the drop-down menu above
 (per drop down menu)
 
-There will be a total of 3 storys, so if you are done with the first, just click on the button NEXT at the top right of the screen.
+There will be a total of 3 stories, so when you are done with the first one, just click on the NEXT button at the top right of the screen.
 
-After you finished all storys there is a SUBMIT button in the top right corner.
-But keep in mind only press it after completing all 3 storys .
+When you have finished all the stories, there is a SUBMIT button in the top right corner.
+But remember to press it only after you have finished all 3 stories.
 "
 autowrap = true
 

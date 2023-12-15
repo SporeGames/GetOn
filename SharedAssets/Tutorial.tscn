@@ -39,26 +39,12 @@ margin_top = 83.0
 margin_right = 1075.0
 margin_bottom = 944.0
 custom_fonts/font = SubResource( 2 )
-text = "Instruction:
+text = "Instructions:
 
-Read the following personas.
-In total: You will have 2 personas + games to complete.
+Read the following description of the game and select the correct personas that fit the game by checking the SELECT button.
+Use ◁ and ▷ to switch between personas. 
 
-If you want to see the hidden favorite games of the persona click on the lock.
-But be aware that you will get bonus points, if you manage to finish this task without looking at their favorite games.
+When you are finished with a game, press NEXT to go to the next game.
 
-When you are done reading you will have to select the most fitting
-- genres
-- mechanics
-- features 
-- gameplay elements.
-
-You CAN select multiple options.
-Use <- or -> to go through the options.
-If you  want to go back to the previous category click BACK.
-You can always read the persona again by clicking on EXPAND PERSONA.
-if you are done selecting the different elements click  DONE.
-
-If you are done building the game, you will receive the next persona.
-"
+There are a total of three games."
 autowrap = true

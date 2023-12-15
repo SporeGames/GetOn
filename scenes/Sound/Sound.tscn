@@ -4687,11 +4687,12 @@ margin_top = 83.0
 margin_right = 772.0
 margin_bottom = 656.0
 custom_fonts/font = SubResource( 22 )
-text = "Listen to the sound files in the sound library by pressing ▶ ️ and match them with the right ingame moment by pressing “UPLOAD” and selecting your desired sound file.
-If you are certain of your answer you may press “NEXT”.
-If you want to go to the last ingame moment press “BACK”.
-By pressing the submit button in the top right corner you submit you anwsers and the sound game will end.
+text = "Listen to the sound files in the sound library by pressing ▶ ️ and match them with the right moment in the game by pressing \"UPLOAD\" and selecting the desired sound file.
 
+If you are sure of your answer, you can press \"NEXT\".
+If you want to go back to the last ingame moment, press \"BACK\".
+
+By pressing the \"Submit\" button in the top right corner you will submit your answers and the sound game will end.
 "
 autowrap = true
 

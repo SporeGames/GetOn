@@ -107,4 +107,3 @@ text = "Expand Persona"
 script = ExtResource( 4 )
 
 [node name="Intro" parent="." instance=ExtResource( 41 )]
-visible = false
