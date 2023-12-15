@@ -138,7 +138,7 @@ namespace GetOn.scenes.Sound
 					break;
 				case "narrative":
 					points = _sharedNode.narrativePoints;
-					maxPoints = 50;
+					maxPoints = 30;
 					break;
 				case "sound":
 					points = _sharedNode.soundPoints;

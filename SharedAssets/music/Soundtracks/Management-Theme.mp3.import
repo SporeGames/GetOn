@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Management-Theme.mp3-0bbc6b441e7c2577a341c25c73684c6e.mp3str"
+
+[deps]
+
+source_file="res://SharedAssets/music/Soundtracks/Management-Theme.mp3"
+dest_files=[ "res://.import/Management-Theme.mp3-0bbc6b441e7c2577a341c25c73684c6e.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

@@ -47,7 +47,7 @@ public class SwitchStory : Button
 		_ready3 = GetNode<Button>("/root/Narrative/IntroStory3/Button");
 		_closeIntroGame = GetNode<Button>("/root/Narrative/IntroGame/Button");
 		_ready1.Connect("pressed", this, nameof(ReadyPressed));
-		_ready2.Connect("pressed", this, nameof(GreaterThanPressed));
+		_ready2.Connect("pressed", this, nameof(ReadyPressed));
 		_ready3.Connect("pressed", this, nameof(GreaterThanPressed));
 		_closeIntroGame.Connect("pressed", this, nameof(CloseIntroGame));
 		
@@ -71,6 +71,7 @@ public class SwitchStory : Button
 
 	public void GreaterThanPressed()
 	{
+		/*
 		if (_story1.Visible == true)
 		{
 			if (_story2Intro && wrongWay == false)
@@ -136,10 +137,51 @@ public class SwitchStory : Button
 			}
 			
 		}
+		*/
+		if (_story1.Visible == true)
+		{
+			if (wrongWay == false)
+			{
+				wrongWay = true;
+				_introStory2.Visible = true;
+				GetNode<CountdownTimer>("/root/Narrative/Timer").running = false;
+			}
+	
+			_story1.Visible = false;
+			_story2.Visible = true;
+		}
+		else
+		{
+			_story1.Visible = true;
+			_story2.Visible = false;
+		}
+		
 	}
 
 	public void LessThanPressed()
 	{
+		if (_story1.Visible == true)
+		{
+			if (wrongWay == false)
+			{
+				wrongWay = true;
+				_introStory2.Visible = true;
+				GetNode<CountdownTimer>("/root/Narrative/Timer").running = false;
+			}
+
+			_story1.Visible = false;
+			_story2.Visible = true;
+		}
+		else
+		{
+			_story1.Visible = true;
+			_story2.Visible = false;
+		}
+		
+		
+		
+		
+		/*
 		if (_story1.Visible == true)
 		{
 			if (_story3Intro)
@@ -179,6 +221,7 @@ public class SwitchStory : Button
 			_story2.Visible = false;
 			_story1.Visible = true;
 		}
+		*/
 	}
 
 	public void ReadyPressed()
@@ -186,10 +229,15 @@ public class SwitchStory : Button
 		if (_story1Intro)
 		{
 			_story2Intro = true;
-			_story3Intro = true;
+			//_story3Intro = true;
 			_story1Intro = false;
 			_story1.Visible = true;
 			_introStory1.Visible = false;
+			GetNode<CountdownTimer>("/root/Narrative/Timer").running = true;
+		}
+		else
+		{
+			_introStory2.Visible = false;
 			GetNode<CountdownTimer>("/root/Narrative/Timer").running = true;
 		}
 		

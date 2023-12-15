@@ -330,26 +330,31 @@ public class DragAndDropStory : KinematicBody2D
 		_ending33.InputPickable = false;
 	}
 
-	public void ResetInputs()
+	public void ResetInputs(int part)
 	{
-		_dropDownAttribute1.Reset();
-		_dropDownAttribute2.Reset();
-		_dropDownAttribute3.Reset();
-		_dropDownAttribute4.Reset();
-		_dropDownAttribute5.Reset();
-		_dropDownAttribute6.Reset();
-		_dropDownAttribute7.Reset();
-		_dropDownAttribute8.Reset();
-
+		if (part == 1)
+		{
+			_dropDownAttribute1.Reset();
+			_dropDownAttribute2.Reset();
+			_dropDownAttribute3.Reset();
+			_dropDownAttribute4.Reset();
+			_dropDownAttribute5.Reset();
+			_dropDownAttribute6.Reset();
+			_dropDownAttribute7.Reset();
+			_dropDownAttribute8.Reset();
+		}
+		else
+		{
+			_dropDownAttribute21.Reset();
+			_dropDownAttribute22.Reset();
+			_dropDownAttribute23.Reset();
+			_dropDownAttribute24.Reset();
+			_dropDownAttribute25.Reset();
+			_dropDownAttribute26.Reset();
+			_dropDownAttribute27.Reset();
+			_dropDownAttribute28.Reset();
+		}
 		
-		_dropDownAttribute21.Reset();
-		_dropDownAttribute22.Reset();
-		_dropDownAttribute23.Reset();
-		_dropDownAttribute24.Reset();
-		_dropDownAttribute25.Reset();
-		_dropDownAttribute26.Reset();
-		_dropDownAttribute27.Reset();
-		_dropDownAttribute28.Reset();
 	}
 }
 

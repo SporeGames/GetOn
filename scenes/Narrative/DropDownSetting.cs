@@ -10,15 +10,14 @@ public class DropDownSetting : OptionButton
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
 	{
-		this.AddItem("Setting");
-		this.AddItem("High-Fantasy");
-		this.AddItem("Low-Fantasy");
-		this.AddItem("Sci-Fi");
-		this.AddItem("Thriller");
-		this.AddItem("Romance");
-		this.AddItem("Drama");
+		this.AddItem("Sub-Genre");
+		this.AddItem("Shooter");				
 		this.AddItem("Horror");
-		this.AddItem("Comedy");
+		this.AddItem("Strategy");
+		this.AddItem("Bullet Hell");
+		this.AddItem("Thriller");
+		this.AddItem("Fighting Game");
+		
 	}
 	
 	public void DisableHover()
