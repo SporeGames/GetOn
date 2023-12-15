@@ -1,11 +1,10 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://scenes/Management/Management.cs" type="Script" id=1]
 [ext_resource path="res://scenes/Management/ManagementNote.tscn" type="PackedScene" id=3]
 [ext_resource path="res://scenes/Management/assets/vereinfachtes Management background.jpg" type="Texture" id=4]
 [ext_resource path="res://scenes/Management/NoteBox.tscn" type="PackedScene" id=5]
 [ext_resource path="res://SharedAssets/font/BAHNSCHRIFT 1.TTF" type="DynamicFontData" id=12]
-[ext_resource path="res://scenes/Management/assets/Instruction.png" type="Texture" id=13]
 [ext_resource path="res://SharedAssets/Anleitung.png" type="Texture" id=14]
 [ext_resource path="res://SharedAssets/AnleitungStartButton.png" type="Texture" id=15]
 [ext_resource path="res://scenes/Management/assets/Legend.png" type="Texture" id=16]
@@ -34,47 +33,47 @@ texture = ExtResource( 4 )
 [node name="Boxes" type="Node" parent="."]
 
 [node name="TrisTraits" parent="Boxes" instance=ExtResource( 5 )]
-position = Vector2( 499, 966 )
+position = Vector2( 508, 972 )
 scale = Vector2( 0.8, 0.8 )
 ValidIDs = PoolStringArray(  )
 
 [node name="TrisSketch" parent="Boxes" instance=ExtResource( 5 )]
-position = Vector2( 106, 703 )
+position = Vector2( 114, 709 )
 scale = Vector2( 0.8, 0.8 )
 ValidIDs = PoolStringArray(  )
 
 [node name="CharMovement" parent="Boxes" instance=ExtResource( 5 )]
-position = Vector2( 495, 724 )
+position = Vector2( 507, 734 )
 scale = Vector2( 0.8, 0.8 )
 ValidIDs = PoolStringArray(  )
 
 [node name="NPCSketch" parent="Boxes" instance=ExtResource( 5 )]
-position = Vector2( 579, 377 )
+position = Vector2( 585, 385 )
 scale = Vector2( 0.8, 0.8 )
 ValidIDs = PoolStringArray(  )
 
 [node name="TrisVillage" parent="Boxes" instance=ExtResource( 5 )]
-position = Vector2( 1597, 548 )
+position = Vector2( 1605, 556 )
 scale = Vector2( 0.8, 0.8 )
 ValidIDs = PoolStringArray(  )
 
 [node name="IdleAnim" parent="Boxes" instance=ExtResource( 5 )]
-position = Vector2( 1145, 497 )
+position = Vector2( 1151, 503 )
 scale = Vector2( 0.8, 0.8 )
 ValidIDs = PoolStringArray(  )
 
 [node name="QuestButcher" parent="Boxes" instance=ExtResource( 5 )]
-position = Vector2( 861, 532 )
+position = Vector2( 872, 540 )
 scale = Vector2( 0.8, 0.8 )
 ValidIDs = PoolStringArray(  )
 
 [node name="NPCVoice" parent="Boxes" instance=ExtResource( 5 )]
-position = Vector2( 1205, 713 )
+position = Vector2( 1204, 717 )
 scale = Vector2( 0.8, 0.8 )
 ValidIDs = PoolStringArray(  )
 
 [node name="VillageImpl" parent="Boxes" instance=ExtResource( 5 )]
-position = Vector2( 1364, 267 )
+position = Vector2( 1373, 277 )
 scale = Vector2( 0.8, 0.8 )
 ValidIDs = PoolStringArray(  )
 
@@ -262,8 +261,8 @@ text = "“You have 5 minutes to complete this test”"
 autowrap = true
 
 [node name="Sprite" type="Sprite" parent="Intro"]
-position = Vector2( 1460, 420 )
-scale = Vector2( 0.682237, 0.768987 )
-texture = ExtResource( 13 )
+position = Vector2( 1457, 379 )
+scale = Vector2( 0.531568, 0.59916 )
+texture = ExtResource( 4 )
 
 [connection signal="pressed" from="ColorSelector/Legend2" to="ColorSelector/Legend2" method="_on_Legend2_pressed"]
