@@ -24,8 +24,8 @@ script = ExtResource( 1 )
 NoteScene = ExtResource( 3 )
 
 [node name="Background" type="Sprite" parent="."]
-position = Vector2( 959, 558 )
-scale = Vector2( 1.43379, 1.49473 )
+position = Vector2( 957.34, 565.238 )
+scale = Vector2( 1.4523, 1.51403 )
 texture = ExtResource( 4 )
 
 [node name="Timer" parent="." instance=ExtResource( 18 )]
@@ -96,7 +96,7 @@ Text = "Tris character traits"
 [node name="TrisSketch" parent="Notes" instance=ExtResource( 3 )]
 position = Vector2( 251, 90 )
 scale = Vector2( 0.5, 0.5 )
-Text = "Tris character traits"
+Text = "Tris sketch"
 
 [node name="CharMovement" parent="Notes" instance=ExtResource( 3 )]
 position = Vector2( 405, 90 )
@@ -209,6 +209,7 @@ z_index = 1
 texture = ExtResource( 16 )
 
 [node name="Intro" type="Node2D" parent="."]
+visible = false
 z_index = 20
 
 [node name="Sprite2" type="Sprite" parent="Intro"]

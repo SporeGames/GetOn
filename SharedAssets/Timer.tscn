@@ -4,7 +4,11 @@
 [ext_resource path="res://SharedAssets/font/BAHNSCHRIFT 1.TTF" type="DynamicFontData" id=2]
 
 [sub_resource type="DynamicFont" id=1]
-size = 36
+size = 40
+outline_size = 1
+outline_color = Color( 0, 0, 0, 1 )
+use_mipmaps = true
+use_filter = true
 font_data = ExtResource( 2 )
 
 [node name="Timer" type="Node2D"]
@@ -13,7 +17,8 @@ script = ExtResource( 1 )
 CurrentTime = 0.0
 
 [node name="Display" type="RichTextLabel" parent="."]
-margin_right = 296.0
+margin_right = 344.0
 margin_bottom = 66.0
+mouse_filter = 2
 custom_fonts/normal_font = SubResource( 1 )
 text = "0:00"
