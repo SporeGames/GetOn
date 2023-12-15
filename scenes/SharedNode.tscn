@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://scenes/SharedNode.cs" type="Script" id=1]
 [ext_resource path="res://scenes/Printer.gd" type="Script" id=2]
 [ext_resource path="res://SharedAssets/font/BAHNSCHRIFT 1.TTF" type="DynamicFontData" id=3]
+[ext_resource path="res://SharedAssets/Timer.tscn" type="PackedScene" id=4]
 
 [sub_resource type="DynamicFont" id=1]
 size = 18
@@ -39,3 +40,6 @@ fit_content_height = true
 
 [node name="Printer" type="Node" parent="."]
 script = ExtResource( 2 )
+
+[node name="GlobalTimer" parent="." instance=ExtResource( 4 )]
+position = Vector2( 1665, 7 )

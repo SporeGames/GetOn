@@ -48,6 +48,7 @@ namespace GetOn.scenes {
 				_debugMenuList.AddItem(scene.Replace("res://scenes/", ""), null, true);
 			}
 			_debugMenuList.Connect("item_selected", this, nameof(OnDebugMenuItemSelected));
+			GetNode<CountdownTimer>("GlobalTimer").running = true;
 		}
 
 		public override void _Process(float delta) {
