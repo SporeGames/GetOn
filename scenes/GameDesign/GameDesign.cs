@@ -86,7 +86,7 @@ public class GameDesign : Control {
 		if (points < 0) {
 			points = 0;
 		}
-		if (_timer.CurrentTime > 240) {
+		if (_timer.CurrentTime < 240) {
 			points += 10;
 		}
 		var node = GetNode<SharedNode>("/root/SharedNode");
@@ -96,8 +96,8 @@ public class GameDesign : Control {
 		node.CompletedTasks.Add("gameDesign");
 	}
 
-	public void OnIntroReadyPressed()
-	{
+	public void OnIntroReadyPressed() {
 		_introGameStudy.Visible = false;
+		_timer.running = true;
 	}
 }
