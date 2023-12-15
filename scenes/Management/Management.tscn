@@ -30,6 +30,15 @@ texture = ExtResource( 4 )
 
 [node name="Timer" parent="." instance=ExtResource( 18 )]
 
+[node name="SubmitButton" type="Button" parent="."]
+margin_left = 1795.0
+margin_top = 21.0
+margin_right = 1893.0
+margin_bottom = 71.0
+rect_min_size = Vector2( 50, 50 )
+disabled = true
+text = "SUBMIT"
+
 [node name="Boxes" type="Node" parent="."]
 
 [node name="TrisTraits" parent="Boxes" instance=ExtResource( 5 )]
@@ -198,14 +207,6 @@ position = Vector2( -201, -542 )
 scale = Vector2( 1.1402, 1.1485 )
 z_index = 1
 texture = ExtResource( 16 )
-
-[node name="SubmitButton" type="Button" parent="ColorSelector"]
-margin_top = 348.0
-margin_right = 62.0
-margin_bottom = 398.0
-rect_min_size = Vector2( 50, 50 )
-disabled = true
-text = "SUBMIT"
 
 [node name="Intro" type="Node2D" parent="."]
 z_index = 20

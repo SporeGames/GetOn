@@ -40,7 +40,7 @@ public class Management : Node2D {
 		_yellowButton = GetNode<Button>("ColorSelector/Yellow");
 		_greenButton = GetNode<Button>("ColorSelector/Green");
 		_blackButton = GetNode<Button>("ColorSelector/Black");
-		_submitButton = GetNode<Button>("ColorSelector/SubmitButton");
+		_submitButton = GetNode<Button>("SubmitButton");
 		_start = GetNode<Button>("Intro/StartPuzzle");
 		_intro = GetNode<Node2D>("Intro");
 		_start.Connect("pressed", this, nameof(CloseIntro));
