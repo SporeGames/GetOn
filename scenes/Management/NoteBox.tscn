@@ -10,6 +10,7 @@ script = ExtResource( 1 )
 ValidIDs = PoolStringArray( "test" )
 
 [node name="ColorRect" type="ColorRect" parent="."]
+visible = false
 margin_left = -86.0
 margin_top = -86.0
 margin_right = 104.0

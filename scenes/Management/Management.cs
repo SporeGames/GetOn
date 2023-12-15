@@ -92,7 +92,7 @@ public class Management : Node2D {
 	private void SubmitResult() {
 		var points = 0;
 		var cardsColoredCorrectly = 0;
-		foreach (var note in _notes) {
+		/*foreach (var note in _notes) {
 			var ColorID = note.NoteColor.Color == Colors.Orange ? 0 :
 				note.NoteColor.Color == Colors.Blue ? 1 :
 				note.NoteColor.Color == Colors.Purple ? 2 :
@@ -106,7 +106,7 @@ public class Management : Node2D {
 			else if (ColorID != -1) {
 				points += 1;
 			}
-		}
+		}*/
 
 		foreach (var entry in  BoxedNotes) {
 			if (entry.Value.Name.Equals(entry.Key.Name)) {
