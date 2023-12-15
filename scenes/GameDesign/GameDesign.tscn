@@ -102,12 +102,6 @@ ValidPersonas = PoolStringArray( "Excitement", "Strategy", "Completion", "Fantas
 [node name="SmallProfileAnchor" type="Node2D" parent="."]
 position = Vector2( 167, 0 )
 
-[node name="ExpandSmallProfileButton" type="Button" parent="."]
-visible = false
-margin_right = 149.0
-margin_bottom = 37.0
-text = "Expand Persona"
-
 [node name="Music" type="Node" parent="."]
 script = ExtResource( 4 )
 

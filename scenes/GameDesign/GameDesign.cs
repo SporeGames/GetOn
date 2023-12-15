@@ -48,6 +48,23 @@ public class GameDesign : Control {
 				break;
 		}
 	}
+	
+	public void PreviousSliderPressed(GameDesignGame game) {
+		switch (game) {
+			case GameDesignGame.Apex: // First game, no back here
+				break;
+			case GameDesignGame.Detroit:
+				_detroitSlider.Visible = false;
+				_apexSlider.Visible = true;
+				_currentGame = GameDesignGame.Apex;
+				break;
+			case GameDesignGame.DeadSpace:
+				_deadSpaceSlider.Visible = false;
+				_detroitSlider.Visible = true;
+				_currentGame = GameDesignGame.Detroit;
+				break;
+		}
+	}
 
 	private void GoBackAndCalculateResults() {
 		var points = 0;
@@ -100,4 +117,5 @@ public class GameDesign : Control {
 		_introGameStudy.Visible = false;
 		_timer.running = true;
 	}
+	
 }

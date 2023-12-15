@@ -8,6 +8,7 @@ public class GameDesignSlider : Control {
 	private Button _leftButton;
 	private Button _rightButton;
 	private Button _doneButton;
+	private Button _backButton;
 	private Button _selectButton;
 	private TextureRect _centerImage;
 	private RichTextLabel _centerTitle;
@@ -38,6 +39,7 @@ public class GameDesignSlider : Control {
 		_leftButton = GetNode<Button>("LeftButton");
 		_rightButton = GetNode<Button>("RightButton");
 		_doneButton = GetNode<Button>("DoneButton");
+		_backButton = GetNode<Button>("BackButton");
 		_selectButton = GetNode<Button>("SelectButton");
 		_centerImage = GetNode<TextureRect>("CenterImage");
 		_centerTitle = GetNode<RichTextLabel>("SliderTitle");
@@ -51,15 +53,20 @@ public class GameDesignSlider : Control {
 		_rightButton.Connect("pressed", this, nameof(TurnRight));
 		_doneButton.Connect("pressed", this, nameof(OnDonePressed));
 		_selectButton.Connect("pressed", this, nameof(OnSelectPressed));
+		_backButton.Connect("pressed", this, nameof(OnBackPressed));
 		_gameName.Text = CategoryDisplayName;
 		_gameDescription.Text = GameDescription;
 		_gameImage.Texture = GameImage;
 		_selectButton.ToggleMode = true;
 		UpdateSlider(); // Update it once to set the initial values so its not empty
 	}
-	
+
 	private void OnDonePressed() {
 		GetParent<GameDesign>().NextSliderPressed(Game, _selectedValues.ToArray());
+	}
+	
+	private void OnBackPressed() {
+		GetParent<GameDesign>().PreviousSliderPressed(Game);
 	}
 
 	private void OnSelectPressed() {
