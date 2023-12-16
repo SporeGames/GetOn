@@ -1,7 +1,7 @@
 [gd_scene load_steps=18 format=2]
 
 [ext_resource path="res://scenes/GameStudy/PrePuzzleRoom.cs" type="Script" id=1]
-[ext_resource path="res://scenes/GameStudy/assets/GameStudiesss.png" type="Texture" id=2]
+[ext_resource path="res://scenes/GameStudy/assets/GameStudiesGrob.png" type="Texture" id=2]
 [ext_resource path="res://SharedAssets/font/BAHNSCHRIFT 1.TTF" type="DynamicFontData" id=3]
 [ext_resource path="res://icon.png" type="Texture" id=4]
 [ext_resource path="res://scenes/GameStudy/WorkerText.cs" type="Script" id=5]
@@ -36,7 +36,7 @@ font_data = ExtResource( 3 )
 
 [node name="PrePuzzleRoom" type="Node2D"]
 
-[node name="Sprite" type="Sprite" parent="."]
+[node name="Background" type="Sprite" parent="."]
 position = Vector2( 960, 540 )
 texture = ExtResource( 2 )
 
