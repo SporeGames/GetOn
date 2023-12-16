@@ -51,6 +51,12 @@ public class Management : Node2D {
 		_greenButton.Connect("pressed", this, nameof(OnColorButtonPress), new Godot.Collections.Array {4});
 		_blackButton.Connect("pressed", this, nameof(OnColorButtonPress), new Godot.Collections.Array {5});
 		_submitButton.Connect("pressed", this, nameof(SubmitResult));
+		// Apparently modulate isn't exposed to the editor, so we have to do it manually
+		_orangeButton.Modulate = Colors.Orange;
+		_blueButton.Modulate = Colors.Blue;
+		_purpleButton.Modulate = Colors.Purple;
+		_yellowButton.Modulate = Colors.Yellow;
+		_greenButton.Modulate = Colors.Green;
 		foreach (var note in GetNode("Notes").GetChildren()) {
 			if (note is ManagementNote managementNote) {
 				_notes.Add(managementNote);
@@ -62,27 +68,27 @@ public class Management : Node2D {
 		switch (id) {
 			case 0:
 				_selectedColor = Colors.Orange;
-				_colorText.Text = "Orange";
+				_colorText.Text = "Art";
 				break;
 			case 1:
 				_selectedColor = Colors.Blue;
-				_colorText.Text = "Blue";
+				_colorText.Text = "Programming";
 				break;
 			case 2:
 				_selectedColor = Colors.Purple;
-				_colorText.Text = "Purple";
+				_colorText.Text = "Game Design";
 				break;
 			case 3:
 				_selectedColor = Colors.Yellow;
-				_colorText.Text = "Yellow";
+				_colorText.Text = "Sound";
 				break;
 			case 4:
 				_selectedColor = Colors.Green;
-				_colorText.Text = "Green";
+				_colorText.Text = "Narrative";
 				break;
 			case 5:
 				_selectedColor = Colors.Black;
-				_colorText.Text = "Black";
+				_colorText.Text = "Management";
 				break;
 			default:
 				return;
@@ -92,7 +98,7 @@ public class Management : Node2D {
 	private void SubmitResult() {
 		var points = 0;
 		var cardsColoredCorrectly = 0;
-		/*foreach (var note in _notes) {
+		foreach (var note in _notes) {
 			var ColorID = note.NoteColor.Color == Colors.Orange ? 0 :
 				note.NoteColor.Color == Colors.Blue ? 1 :
 				note.NoteColor.Color == Colors.Purple ? 2 :
@@ -106,7 +112,7 @@ public class Management : Node2D {
 			else if (ColorID != -1) {
 				points += 1;
 			}
-		}*/
+		}
 
 		foreach (var entry in  BoxedNotes) {
 			if (entry.Value.Name.Equals(entry.Key.Name)) {
@@ -131,6 +137,12 @@ public class Management : Node2D {
 		if (_selectedColor != Colors.White) {
 			if (Input.IsMouseButtonPressed((int) ButtonList.Left) && _currentNote != null) {
 				_currentNote.NoteColor.Color = _selectedColor;
+				// Black text is a bit hard to read on black background
+				if (_selectedColor == Colors.Black) {
+					_currentNote.GetNode<RichTextLabel>("NoteText").AddColorOverride("default_color", Colors.White);
+				} else {
+					_currentNote.GetNode<RichTextLabel>("NoteText").RemoveColorOverride("default_color");
+				}
 				_selectedColor = Colors.White;
 				_colorText.Text = "Select...";
 			}
