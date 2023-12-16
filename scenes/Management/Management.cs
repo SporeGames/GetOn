@@ -140,7 +140,11 @@ public class Management : Node2D {
 				// Black text is a bit hard to read on black background
 				if (_selectedColor == Colors.Black) {
 					_currentNote.GetNode<RichTextLabel>("NoteText").AddColorOverride("default_color", Colors.White);
-				} else {
+				}
+				if (_selectedColor == Colors.Yellow || _selectedColor == Colors.Green) {
+					_currentNote.GetNode<RichTextLabel>("NoteText").AddColorOverride("default_color", Colors.Black);
+				}
+				else {
 					_currentNote.GetNode<RichTextLabel>("NoteText").RemoveColorOverride("default_color");
 				}
 				_selectedColor = Colors.White;
