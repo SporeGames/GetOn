@@ -42,8 +42,8 @@ text = "Credits"
 [node name="IntroScreen" type="Node2D" parent="."]
 
 [node name="Sprite" type="Sprite" parent="IntroScreen"]
-position = Vector2( 960, 552 )
-scale = Vector2( 1.72966, 1.65466 )
+position = Vector2( 960, 528 )
+scale = Vector2( 1.20823, 1.14951 )
 texture = ExtResource( 2 )
 
 [node name="QuestionaireScreen" type="Node2D" parent="."]
@@ -114,10 +114,10 @@ texture = ExtResource( 5 )
 
 [node name="UnderstandButton" type="Button" parent="."]
 visible = false
-margin_left = 888.0
-margin_top = 736.0
-margin_right = 1005.0
-margin_bottom = 774.0
+margin_left = 896.0
+margin_top = 696.0
+margin_right = 1024.0
+margin_bottom = 744.0
 text = "I understand"
 
 [node name="StartButton" type="Button" parent="."]

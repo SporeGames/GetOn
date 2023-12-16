@@ -8,6 +8,7 @@ public class IntroScene : Control
 		private Button _understandButton;
 		private Button _startButton;
 		private Node2D _introScreen;
+		private Node2D _homeScreen;
 		
 
 		// Called when the node enters the scene tree for the first time.
@@ -21,6 +22,7 @@ public class IntroScene : Control
 		_introScreen = GetNode<Node2D>("IntroScreen");
 		_introScreen.Hide(); // Assuming you want to initially hide the 2D node
 		
+		_homeScreen = GetNode<Node2D>("HomeScreen");
 		_sharedNode = GetNode<SharedNode>("/root/SharedNode");
 		
 		
@@ -32,6 +34,7 @@ public class IntroScene : Control
 		
 		private void OnStartButtonPressed() {
 			_introScreen.Show();
+			_homeScreen.Hide();
 			_startButton.Hide();
 			_understandButton.Show();
 		}
