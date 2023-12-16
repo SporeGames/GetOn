@@ -105,13 +105,11 @@ namespace GetOn.scenes {
 		}
 
 		public void Print() {
-			var time = TimeSpan.FromSeconds(GetNode<CountdownTimer>("GlobalTimer").CurrentTime);
-			var formattedTime = time.ToString(@"hh\:mm\:ss");
 			var result = new GameResult {
 				Name = PlayerName,
 				SelectedSpecialization = "Specialization: " + Specialization,
 				Categories = ToCategories(),
-				TotalTime = "Time: " + formattedTime
+				TotalTime = "Time: " + FormatTime(GetNode<CountdownTimer>("GlobalTimer").CurrentTime, true),
 			};
 			using (var sha256 = SHA256.Create())
 			{
@@ -132,14 +130,14 @@ namespace GetOn.scenes {
 					Title = "Programming",
 					Items = new List<ResultEntry> {
 						new ResultEntry { Title = "Points", Text = programmingPoints.ToString() },
-						new ResultEntry { Title = "Time", Text = programmingTime.ToString() }
+						new ResultEntry { Title = "Time", Text = FormatTime(programmingTime) }
 					}
 				},
 				new ResultCategory {
 					Title = "Game Design",
 					Items = new List<ResultEntry> {
 						new ResultEntry { Title = "Points", Text = gameDesignPoints.ToString() },
-						new ResultEntry { Title = "Time", Text = gameDesignTime.ToString() }
+						new ResultEntry { Title = "Time", Text = FormatTime(gameDesignTime) }
 					}
 				},
 				new ResultCategory {
@@ -194,6 +192,11 @@ namespace GetOn.scenes {
 				}
 				file = dir.GetNext();
 			}
+		}
+		
+		private string FormatTime(float time, bool showHours = false) {
+			var timeSpan = TimeSpan.FromSeconds(time);
+			return timeSpan.ToString(showHours ? @"hh\:mm\:ss" : @"mm\:ss");
 		}
 	}
 }
