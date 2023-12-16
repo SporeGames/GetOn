@@ -41,7 +41,7 @@ margin_bottom = 944.0
 custom_fonts/font = SubResource( 2 )
 text = "Instructions:
 
-Read the following description of the game and select the correct personas that fit the game by checking the SELECT button.
+Read the following description of the game and select the correct personas that fit the game by clicking on the checkbox.
 Use ◁ and ▷ to switch between personas. 
 
 When you are finished with a game, press NEXT to go to the next game.

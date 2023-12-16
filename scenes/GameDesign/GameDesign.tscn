@@ -106,4 +106,3 @@ position = Vector2( 167, 0 )
 script = ExtResource( 4 )
 
 [node name="Intro" parent="." instance=ExtResource( 41 )]
-visible = false
