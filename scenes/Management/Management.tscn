@@ -42,7 +42,6 @@ margin_top = 21.0
 margin_right = 1893.0
 margin_bottom = 71.0
 rect_min_size = Vector2( 50, 50 )
-disabled = true
 text = "SUBMIT"
 
 [node name="Boxes" type="Node" parent="."]

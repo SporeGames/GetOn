@@ -170,9 +170,6 @@ public class Management : Node2D {
 				_dragOffset = Vector2.Zero;
 			}
 		}
-		if (BoxedNotes.Count < _notes.Count) {
-			_submitButton.Disabled = true;
-		}
 
 	}
 
@@ -187,9 +184,6 @@ public class Management : Node2D {
 		GD.Print("Note put in box");
 		box.NoteColor.Color = Colors.White;
 		BoxedNotes.Add(box, note);
-		if (BoxedNotes.Count == _notes.Count) {
-			_submitButton.Disabled = false;
-		}
 
 		_hasJustSnapped = true;
 	}
