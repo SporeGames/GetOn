@@ -11,6 +11,11 @@ namespace GetOn.scenes.GameStudy
 		private bool xBOXCorrect;
 		private bool gameBoyCorrect;
 		private bool megaDrive1Correct;
+		private bool atariCorrect;
+		private bool c64Correct;
+		private bool segaSaturnCorrect;
+		private bool magnavoxCorrect;
+		
 		private Button _submitButton;
 		private int points;
 
@@ -101,6 +106,57 @@ namespace GetOn.scenes.GameStudy
 			}
 		}
 		
+		private void _on_CheckAtari_body_entered(object body)
+		{
+			if (body is KinematicBody2D kinematicBody)
+			{
+				if (kinematicBody.Name == "Atari")
+				{
+					GD.Print("Atari");
+					atariCorrect = true;
+				}
+			}
+		}
+
+
+		private void _on_CheckC64_body_entered(object body)
+		{
+			if (body is KinematicBody2D kinematicBody)
+			{
+				if (kinematicBody.Name == "C64")
+				{
+					GD.Print("C64");
+					c64Correct = true;
+				}
+			}
+		}
+
+
+		private void _on_CheckSegaSaturn_body_entered(object body)
+		{
+			if (body is KinematicBody2D kinematicBody)
+			{
+				if (kinematicBody.Name == "SegaSaturn")
+				{
+					GD.Print("SegaSaturn");
+					segaSaturnCorrect = true;
+				}
+			}
+		}
+
+
+		private void _on_CheckMagnavox_body_entered(object body)
+		{
+			if (body is KinematicBody2D kinematicBody)
+			{
+				if (kinematicBody.Name == "Magnavox")
+				{
+					GD.Print("Magnavox");
+					magnavoxCorrect = true;
+				}
+			}
+		}
+		
 		private void _on_CheckGameBoy_body_exited(object body)
 		{
 			if (body is KinematicBody2D kinematicBody)
@@ -144,9 +200,61 @@ namespace GetOn.scenes.GameStudy
 				}
 			}
 		}
+		
+		private void _on_CheckAtari_body_exited(object body)
+		{
+			if (body is KinematicBody2D kinematicBody)
+			{
+				if (kinematicBody.Name == "Atari")
+				{
+					atariCorrect = false;
+				}
+			}
+		}
+
+
+		private void _on_CheckC64_body_exited(object body)
+		{
+			if (body is KinematicBody2D kinematicBody)
+			{
+				if (kinematicBody.Name == "C64")
+				{
+					c64Correct = false;
+				}
+			}
+		}
+
+
+		private void _on_CheckSegaSaturn_body_exited(object body)
+		{
+			if (body is KinematicBody2D kinematicBody)
+			{
+				if (kinematicBody.Name == "SegaSaturn")
+				{
+					segaSaturnCorrect = false;
+				}
+			}
+		}
+
+
+		private void _on_CheckMagnavox_body_exited(object body)
+		{
+			if (body is KinematicBody2D kinematicBody)
+			{
+				if (kinematicBody.Name == "Magnavox")
+				{
+					magnavoxCorrect = false;
+				}
+			}
+		}
 
 	}
 }
+
+
+
+
+
 
 
 

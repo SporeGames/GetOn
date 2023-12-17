@@ -1,33 +1,21 @@
-[gd_scene load_steps=33 format=2]
+[gd_scene load_steps=21 format=2]
 
 [ext_resource path="res://scenes/GameDesign/assets/games/apex.jpg" type="Texture" id=1]
 [ext_resource path="res://scenes/GameDesign/GameDesignSlider.tscn" type="PackedScene" id=2]
 [ext_resource path="res://scenes/GameDesign/GameDesign.cs" type="Script" id=3]
 [ext_resource path="res://SharedAssets/music/Play/MusicGameDes.gd" type="Script" id=4]
-[ext_resource path="res://scenes/GameDesign/assets/genres/RPG_Genre.PNG" type="Texture" id=5]
-[ext_resource path="res://scenes/GameDesign/assets/genres/StrategyGame_genre.PNG" type="Texture" id=6]
-[ext_resource path="res://scenes/GameDesign/assets/genres/TacticalShooter_Genre.PNG" type="Texture" id=7]
-[ext_resource path="res://scenes/GameDesign/assets/genres/FightingGame_Genre.PNG" type="Texture" id=8]
-[ext_resource path="res://scenes/GameDesign/assets/genres/Moba_Genre.PNG" type="Texture" id=9]
-[ext_resource path="res://scenes/GameDesign/assets/genres/Sandbox_Genre.PNG" type="Texture" id=10]
-[ext_resource path="res://scenes/GameDesign/assets/mechanics/Grab_Mechanik.PNG" type="Texture" id=11]
-[ext_resource path="res://scenes/GameDesign/assets/mechanics/variousMovement_Mechanik.PNG" type="Texture" id=12]
-[ext_resource path="res://scenes/GameDesign/assets/mechanics/Stats_Mechanik.PNG" type="Texture" id=13]
-[ext_resource path="res://scenes/GameDesign/assets/mechanics/Block_Mechanik.PNG" type="Texture" id=14]
-[ext_resource path="res://scenes/GameDesign/assets/mechanics/variousAttacks_Mechanik.PNG" type="Texture" id=15]
-[ext_resource path="res://scenes/GameDesign/assets/mechanics/Building_Mechanik.PNG" type="Texture" id=16]
-[ext_resource path="res://scenes/GameDesign/assets/mechanics/commandingUnits_Mechanik.PNG" type="Texture" id=17]
-[ext_resource path="res://scenes/GameDesign/assets/mechanics/Items_Mechanik.PNG" type="Texture" id=18]
-[ext_resource path="res://scenes/GameDesign/assets/mechanics/Mana_Mechanik.PNG" type="Texture" id=19]
-[ext_resource path="res://scenes/GameDesign/assets/mechanics/Loot_Mechanik.PNG" type="Texture" id=20]
-[ext_resource path="res://scenes/GameDesign/assets/mechanics/ResourceDevelopement_Mechanik.PNG" type="Texture" id=21]
-[ext_resource path="res://scenes/GameDesign/assets/features/CharacterCreation_Experience.png" type="Texture" id=22]
-[ext_resource path="res://scenes/GameDesign/assets/features/Multiplayer_Experience.png" type="Texture" id=23]
-[ext_resource path="res://scenes/GameDesign/assets/features/RankedSystem_Experience.png" type="Texture" id=24]
-[ext_resource path="res://scenes/GameDesign/assets/features/SkilledBasedMatchmaking_Experience.png" type="Texture" id=25]
-[ext_resource path="res://scenes/GameDesign/assets/features/Storymode_Experience.png" type="Texture" id=26]
-[ext_resource path="res://scenes/GameDesign/assets/features/DiverseUnits_Experience.png" type="Texture" id=27]
-[ext_resource path="res://scenes/GameDesign/assets/features/Multiselect_Experience.png" type="Texture" id=28]
+[ext_resource path="res://scenes/GameDesign/assets/personas/Challenge.png" type="Texture" id=5]
+[ext_resource path="res://scenes/GameDesign/assets/personas/Fantasy.png" type="Texture" id=6]
+[ext_resource path="res://scenes/GameDesign/assets/personas/discovery.png" type="Texture" id=7]
+[ext_resource path="res://scenes/GameDesign/assets/personas/strategy.png" type="Texture" id=8]
+[ext_resource path="res://scenes/GameDesign/assets/personas/completion.png" type="Texture" id=9]
+[ext_resource path="res://scenes/GameDesign/assets/personas/Community.png" type="Texture" id=10]
+[ext_resource path="res://scenes/GameDesign/assets/personas/excitement.png" type="Texture" id=11]
+[ext_resource path="res://scenes/GameDesign/assets/personas/Power.png" type="Texture" id=12]
+[ext_resource path="res://scenes/GameDesign/assets/personas/Story.png" type="Texture" id=13]
+[ext_resource path="res://scenes/GameDesign/assets/personas/competition.png" type="Texture" id=14]
+[ext_resource path="res://scenes/GameDesign/assets/personas/Destruction.png" type="Texture" id=15]
+[ext_resource path="res://scenes/GameDesign/assets/personas/design.png" type="Texture" id=16]
 [ext_resource path="res://scenes/GameDesign/assets/games/detroit.jpg" type="Texture" id=29]
 [ext_resource path="res://scenes/GameDesign/assets/games/deadspace.jpg" type="Texture" id=38]
 [ext_resource path="res://SharedAssets/Timer.tscn" type="PackedScene" id=40]
@@ -43,7 +31,7 @@ script = ExtResource( 3 )
 
 [node name="ApexSlider" parent="." instance=ExtResource( 2 )]
 rect_pivot_offset = Vector2( -815, -180 )
-Images = [ ExtResource( 5 ), ExtResource( 6 ), ExtResource( 7 ), ExtResource( 8 ), ExtResource( 9 ), ExtResource( 10 ), null, null, null, null, null, null ]
+Images = [ ExtResource( 15 ), ExtResource( 11 ), ExtResource( 14 ), ExtResource( 10 ), ExtResource( 5 ), ExtResource( 8 ), ExtResource( 9 ), ExtResource( 12 ), ExtResource( 6 ), ExtResource( 13 ), ExtResource( 16 ), ExtResource( 7 ) ]
 PersonaNames = PoolStringArray( "Destruction", "Excitement", "Competition", "Community", "Challenge", "Strategy", "Completion", "Power", "Fantasy", "Story", "Design", "Discovery" )
 Descriptions = PoolStringArray( "These players tend to take more destructive measures and like chaos.", "These players like fast gameplay with a lot of exciting things happening all the time.", "These players like to compete against others and improve their skills.", "These players like to connect with different people and socialize through gaming.", "These players like to improve their skills and do not back off if something seems too difficult.", "These players carefully plan their steps and like to examine every possible option.", "These players want to finish 100% of a game and find each easter egg.", "These players want to be powerful, either through their skills, character or equipment.", "These players want to completely immerse into a game and accomplish things they could not in real life.", "These players want to experience an interesting story and live through different scenarios.", "These players want to express themselves and live their best life.", "These players want to discover every piece of the map and find new things." )
 PersonaMotivations = PoolStringArray( "Guns, Explosives, Chaos", "Fast-paced, Surprises, Thrills", "Duels, Matches, Ranking System", "Team, Chatting, Interaction", "Practice, High Difficulty, Challenges", "Thinking Ahead, Making Decisions", "Collectibles, Completions", "Powerful Character, Powerful Equipment", "Being someone else, Being somewhere else", "Elaborate plot, Interesting characters and story", "Expression, Customisation", "Exploration, Excitement" )
@@ -63,7 +51,7 @@ ValidPersonas = PoolStringArray( "Destruction", "Excitement", "Competition", "Co
 [node name="DetroitSlider" parent="." instance=ExtResource( 2 )]
 visible = false
 rect_pivot_offset = Vector2( -815, -180 )
-Images = [ ExtResource( 18 ), ExtResource( 19 ), ExtResource( 13 ), ExtResource( 20 ), ExtResource( 12 ), ExtResource( 15 ), ExtResource( 11 ), ExtResource( 14 ), ExtResource( 16 ), ExtResource( 21 ), ExtResource( 17 ) ]
+Images = [ ExtResource( 15 ), ExtResource( 11 ), ExtResource( 14 ), ExtResource( 10 ), ExtResource( 5 ), ExtResource( 8 ), ExtResource( 9 ), ExtResource( 12 ), ExtResource( 6 ), ExtResource( 13 ), ExtResource( 16 ), ExtResource( 7 ) ]
 PersonaNames = PoolStringArray( "Destruction", "Excitement", "Competition", "Community", "Challenge", "Strategy", "Completion", "Power", "Fantasy", "Story", "Design", "Discovery" )
 Descriptions = PoolStringArray( "These players tend to take more destructive measures and like chaos.", "These players like fast gameplay with a lot of exciting things happening all the time.", "These players like to compete against others and improve their skills.", "These players like to connect with different people and socialize through gaming.", "These players like to improve their skills and do not back off if something seems too difficult.", "These players carefully plan their steps and like to examine every possible option.", "These players want to finish 100% of a game and find each easter egg.", "These players want to be powerful, either through their skills, character or equipment.", "These players want to completely immerse into a game and accomplish things they could not in real life.", "These players want to experience an interesting story and live through different scenarios.", "These players want to express themselves and live their best life.", "These players want to discover every piece of the map and find new things." )
 PersonaMotivations = PoolStringArray( "Guns, Explosives, Chaos", "Fast-paced, Surprises, Thrills", "Duels, Matches, Ranking System", "Team, Chatting, Interaction", "Practice, High Difficulty, Challenges", "Thinking Ahead, Making Decisions", "Collectibles, Completions", "Powerful Character, Powerful Equipment", "Being someone else, Being somewhere else", "Elaborate plot, Interesting characters and story", "Expression, Customisation", "Exploration, Excitement" )
@@ -82,7 +70,7 @@ ValidPersonas = PoolStringArray( "Excitement", "Strategy", "Completion", "Fantas
 [node name="DeadSpaceSlider" parent="." instance=ExtResource( 2 )]
 visible = false
 rect_pivot_offset = Vector2( -815, -180 )
-Images = [ ExtResource( 22 ), ExtResource( 23 ), ExtResource( 24 ), ExtResource( 25 ), ExtResource( 26 ), ExtResource( 27 ), ExtResource( 28 ) ]
+Images = [ ExtResource( 15 ), ExtResource( 11 ), ExtResource( 14 ), ExtResource( 10 ), ExtResource( 5 ), ExtResource( 8 ), ExtResource( 9 ), ExtResource( 12 ), ExtResource( 6 ), ExtResource( 13 ), ExtResource( 16 ), ExtResource( 7 ) ]
 PersonaNames = PoolStringArray( "Destruction", "Excitement", "Competition", "Community", "Challenge", "Strategy", "Completion", "Power", "Fantasy", "Story", "Design", "Discovery" )
 Descriptions = PoolStringArray( "These players tend to take more destructive measures and like chaos.", "These players like fast gameplay with a lot of exciting things happening all the time.", "These players like to compete against others and improve their skills.", "These players like to connect with different people and socialize through gaming.", "These players like to improve their skills and do not back off if something seems too difficult.", "These players carefully plan their steps and like to examine every possible option.", "These players want to finish 100% of a game and find each easter egg.", "These players want to be powerful, either through their skills, character or equipment.", "These players want to completely immerse into a game and accomplish things they could not in real life.", "These players want to experience an interesting story and live through different scenarios.", "These players want to express themselves and live their best life.", "These players want to discover every piece of the map and find new things." )
 PersonaMotivations = PoolStringArray( "Guns, Explosives, Chaos", "Fast-paced, Surprises, Thrills", "Duels, Matches, Ranking System", "Team, Chatting, Interaction", "Practice, High Difficulty, Challenges", "Thinking Ahead, Making Decisions", "Collectibles, Completions", "Powerful Character, Powerful Equipment", "Being someone else, Being somewhere else", "Elaborate plot, Interesting characters and story", "Expression, Customisation", "Exploration, Excitement" )
