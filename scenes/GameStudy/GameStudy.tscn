@@ -1,8 +1,8 @@
-[gd_scene load_steps=24 format=2]
+[gd_scene load_steps=59 format=2]
 
 [ext_resource path="res://SharedAssets/font/BAHNSCHRIFT 1.TTF" type="DynamicFontData" id=1]
 [ext_resource path="res://SharedAssets/music/Play/Music_GameStud.gd" type="Script" id=2]
-[ext_resource path="res://scenes/GameStudy/assets/GameStudysGame (1).png" type="Texture" id=3]
+[ext_resource path="res://scenes/GameStudy/assets/GameStudieaGameNochmalVerändert.png" type="Texture" id=3]
 [ext_resource path="res://scenes/GameStudy/assets/IMG_0160.png" type="Texture" id=4]
 [ext_resource path="res://scenes/GameStudy/assets/XBox.png" type="Texture" id=5]
 [ext_resource path="res://scenes/GameStudy/assets/GameBoy.png" type="Texture" id=6]
@@ -13,9 +13,20 @@
 [ext_resource path="res://scenes/GameStudy/assets/image (1).png" type="Texture" id=11]
 [ext_resource path="res://SharedAssets/AnleitungStartButton.png" type="Texture" id=12]
 [ext_resource path="res://SharedAssets/Timer.tscn" type="PackedScene" id=13]
+[ext_resource path="res://scenes/GameStudy/assets/GameStudies_PopUp.png" type="Texture" id=14]
+[ext_resource path="res://scenes/GameStudy/assets/IMG_0237.PNG" type="Texture" id=15]
+[ext_resource path="res://scenes/GameStudy/assets/IMG_0236.PNG" type="Texture" id=16]
+[ext_resource path="res://scenes/GameStudy/assets/IMG_0239.PNG" type="Texture" id=17]
+[ext_resource path="res://scenes/GameStudy/assets/IMG_0238.PNG" type="Texture" id=18]
+[ext_resource path="res://scenes/GameStudy/SpawningGames.cs" type="Script" id=19]
+[ext_resource path="res://icon.png" type="Texture" id=20]
+[ext_resource path="res://scenes/GameStudy/PopUpShelf.cs" type="Script" id=21]
+
+[sub_resource type="RectangleShape2D" id=21]
+extents = Vector2( 184.5, 185 )
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 62, 90.5 )
+extents = Vector2( 33.5, 47.5 )
 
 [sub_resource type="RectangleShape2D" id=2]
 extents = Vector2( 127.75, 67.5 )
@@ -26,25 +37,89 @@ extents = Vector2( 112, 79.5 )
 [sub_resource type="RectangleShape2D" id=4]
 extents = Vector2( 108, 50.5 )
 
+[sub_resource type="RectangleShape2D" id=13]
+extents = Vector2( 97.5, 53 )
+
+[sub_resource type="RectangleShape2D" id=14]
+extents = Vector2( 113.5, 38.5 )
+
+[sub_resource type="RectangleShape2D" id=15]
+extents = Vector2( 69, 47 )
+
+[sub_resource type="RectangleShape2D" id=16]
+extents = Vector2( 111.25, 48 )
+
+[sub_resource type="RectangleShape2D" id=22]
+extents = Vector2( 31, 31 )
+
+[sub_resource type="RectangleShape2D" id=23]
+
+[sub_resource type="RectangleShape2D" id=24]
+
+[sub_resource type="RectangleShape2D" id=25]
+
+[sub_resource type="RectangleShape2D" id=26]
+
+[sub_resource type="RectangleShape2D" id=27]
+
+[sub_resource type="RectangleShape2D" id=28]
+
+[sub_resource type="RectangleShape2D" id=29]
+
+[sub_resource type="RectangleShape2D" id=30]
+
+[sub_resource type="RectangleShape2D" id=31]
+
+[sub_resource type="RectangleShape2D" id=32]
+
+[sub_resource type="RectangleShape2D" id=33]
+
 [sub_resource type="RectangleShape2D" id=5]
-extents = Vector2( 302.5, 77.5 )
+extents = Vector2( 168.5, 66.5 )
 
 [sub_resource type="RectangleShape2D" id=6]
-extents = Vector2( 529, 73.5 )
+extents = Vector2( 168, 67 )
 
 [sub_resource type="RectangleShape2D" id=7]
-extents = Vector2( 460.5, 75 )
+extents = Vector2( 167.5, 67.5 )
 
 [sub_resource type="RectangleShape2D" id=8]
-extents = Vector2( 528, 77 )
+extents = Vector2( 167.5, 67.5 )
+
+[sub_resource type="RectangleShape2D" id=17]
+extents = Vector2( 167, 66 )
+
+[sub_resource type="RectangleShape2D" id=18]
+extents = Vector2( 167, 68 )
+
+[sub_resource type="RectangleShape2D" id=19]
+extents = Vector2( 167.5, 68 )
+
+[sub_resource type="RectangleShape2D" id=20]
+extents = Vector2( 169.5, 68.5 )
 
 [sub_resource type="DynamicFont" id=10]
-size = 32
+size = 23
 font_data = ExtResource( 1 )
 
 [sub_resource type="DynamicFont" id=11]
 size = 32
 font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=12]
+size = 20
+use_mipmaps = true
+font_data = ExtResource( 1 )
+
+[sub_resource type="StyleBoxEmpty" id=34]
+
+[sub_resource type="StyleBoxEmpty" id=35]
+
+[sub_resource type="StyleBoxEmpty" id=36]
+
+[sub_resource type="StyleBoxEmpty" id=37]
+
+[sub_resource type="StyleBoxEmpty" id=38]
 
 [node name="GameStudy" type="Node2D"]
 
@@ -54,27 +129,43 @@ texture = ExtResource( 3 )
 
 [node name="Timer" parent="." instance=ExtResource( 13 )]
 
+[node name="SpawningGames" type="Node2D" parent="."]
+visible = false
+position = Vector2( 1711, 683 )
+script = ExtResource( 19 )
+
+[node name="SpawningGames2" type="Sprite" parent="SpawningGames"]
+position = Vector2( -3, 7 )
+texture = ExtResource( 14 )
+
+[node name="Area2D" type="Area2D" parent="SpawningGames"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SpawningGames/Area2D"]
+position = Vector2( 5.5, 7 )
+shape = SubResource( 21 )
+
 [node name="GameBoy" type="KinematicBody2D" parent="."]
-position = Vector2( 769, 916 )
+position = Vector2( 588, 969 )
 input_pickable = true
 script = ExtResource( 9 )
 
 [node name="Sprite" type="Sprite" parent="GameBoy"]
-position = Vector2( 18, 12.9999 )
-scale = Vector2( 0.2, 0.2 )
+position = Vector2( 11, 15 )
+scale = Vector2( 0.1, 0.1 )
 texture = ExtResource( 6 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="GameBoy"]
-position = Vector2( 4, 14.5 )
+position = Vector2( 3, 16 )
 shape = SubResource( 1 )
 
 [node name="XBOX" type="KinematicBody2D" parent="."]
-position = Vector2( 408, 949 )
+position = Vector2( 395, 964 )
 input_pickable = true
 script = ExtResource( 9 )
 
 [node name="Sprite" type="Sprite" parent="XBOX"]
 position = Vector2( 6.10352e-05, 6.00012 )
+rotation = -0.0349066
 scale = Vector2( 0.4, 0.4 )
 texture = ExtResource( 5 )
 
@@ -83,7 +174,7 @@ position = Vector2( 3, 8 )
 shape = SubResource( 2 )
 
 [node name="NES" type="KinematicBody2D" parent="."]
-position = Vector2( 1138, 910 )
+position = Vector2( 949, 948 )
 input_pickable = true
 script = ExtResource( 9 )
 
@@ -97,7 +188,7 @@ position = Vector2( -2, 16.5 )
 shape = SubResource( 3 )
 
 [node name="MegaDrive1" type="KinematicBody2D" parent="."]
-position = Vector2( 1475, 946 )
+position = Vector2( 1207, 962 )
 input_pickable = true
 script = ExtResource( 9 )
 
@@ -110,34 +201,236 @@ texture = ExtResource( 7 )
 position = Vector2( -12, 11 )
 shape = SubResource( 4 )
 
+[node name="Atari" type="KinematicBody2D" parent="."]
+position = Vector2( 141, 985 )
+input_pickable = true
+script = ExtResource( 9 )
+
+[node name="Sprite" type="Sprite" parent="Atari"]
+scale = Vector2( 0.25, 0.25 )
+texture = ExtResource( 17 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Atari"]
+position = Vector2( -8, -37 )
+shape = SubResource( 13 )
+
+[node name="C64" type="KinematicBody2D" parent="."]
+position = Vector2( 1761, 987 )
+input_pickable = true
+script = ExtResource( 9 )
+
+[node name="Sprite" type="Sprite" parent="C64"]
+position = Vector2( 2, -1 )
+scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 16 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="C64"]
+position = Vector2( 2.5, 7.5 )
+shape = SubResource( 14 )
+
+[node name="SegaSaturn" type="KinematicBody2D" parent="."]
+position = Vector2( 714, 972 )
+input_pickable = true
+script = ExtResource( 9 )
+
+[node name="Sprite" type="Sprite" parent="SegaSaturn"]
+scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 18 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SegaSaturn"]
+position = Vector2( 9, 12 )
+shape = SubResource( 15 )
+
+[node name="Magnavox" type="KinematicBody2D" parent="."]
+position = Vector2( 1473, 974 )
+input_pickable = true
+script = ExtResource( 9 )
+
+[node name="Sprite" type="Sprite" parent="Magnavox"]
+scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 15 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Magnavox"]
+position = Vector2( 32.75, 24 )
+shape = SubResource( 16 )
+
+[node name="Games" type="Node2D" parent="."]
+
+[node name="TennisForTwo" type="KinematicBody2D" parent="Games"]
+position = Vector2( 1710, 689 )
+input_pickable = true
+script = ExtResource( 9 )
+
+[node name="Sprite" type="Sprite" parent="Games/TennisForTwo"]
+texture = ExtResource( 20 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Games/TennisForTwo"]
+shape = SubResource( 22 )
+
+[node name="Pong" type="KinematicBody2D" parent="Games"]
+visible = false
+position = Vector2( 1710, 691 )
+input_pickable = true
+script = ExtResource( 9 )
+
+[node name="Sprite" type="Sprite" parent="Games/Pong"]
+texture = ExtResource( 20 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Games/Pong"]
+shape = SubResource( 23 )
+
+[node name="MazeWars" type="KinematicBody2D" parent="Games"]
+visible = false
+position = Vector2( 1710, 686 )
+input_pickable = true
+script = ExtResource( 9 )
+
+[node name="Sprite" type="Sprite" parent="Games/MazeWars"]
+texture = ExtResource( 20 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Games/MazeWars"]
+shape = SubResource( 24 )
+
+[node name="SpaceInvaders" type="KinematicBody2D" parent="Games"]
+visible = false
+position = Vector2( 1710, 686 )
+input_pickable = true
+script = ExtResource( 9 )
+
+[node name="Sprite" type="Sprite" parent="Games/SpaceInvaders"]
+texture = ExtResource( 20 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Games/SpaceInvaders"]
+shape = SubResource( 25 )
+
+[node name="PacMan" type="KinematicBody2D" parent="Games"]
+visible = false
+position = Vector2( 1710, 686 )
+input_pickable = true
+script = ExtResource( 9 )
+
+[node name="Sprite" type="Sprite" parent="Games/PacMan"]
+texture = ExtResource( 20 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Games/PacMan"]
+shape = SubResource( 26 )
+
+[node name="DonkeyKong" type="KinematicBody2D" parent="Games"]
+visible = false
+position = Vector2( 1710, 686 )
+input_pickable = true
+script = ExtResource( 9 )
+
+[node name="Sprite" type="Sprite" parent="Games/DonkeyKong"]
+texture = ExtResource( 20 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Games/DonkeyKong"]
+shape = SubResource( 27 )
+
+[node name="Detroit" type="KinematicBody2D" parent="Games"]
+input_pickable = true
+
+[node name="Sprite" type="Sprite" parent="Games/Detroit"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Games/Detroit"]
+shape = SubResource( 28 )
+
+[node name="Cyberpunk" type="KinematicBody2D" parent="Games"]
+input_pickable = true
+
+[node name="Sprite" type="Sprite" parent="Games/Cyberpunk"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Games/Cyberpunk"]
+shape = SubResource( 29 )
+
+[node name="Starfield" type="KinematicBody2D" parent="Games"]
+input_pickable = true
+
+[node name="Sprite" type="Sprite" parent="Games/Starfield"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Games/Starfield"]
+shape = SubResource( 30 )
+
+[node name="Bioshock" type="KinematicBody2D" parent="Games"]
+input_pickable = true
+
+[node name="Sprite" type="Sprite" parent="Games/Bioshock"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Games/Bioshock"]
+shape = SubResource( 31 )
+
+[node name="Horizon" type="KinematicBody2D" parent="Games"]
+input_pickable = true
+
+[node name="Sprite" type="Sprite" parent="Games/Horizon"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Games/Horizon"]
+shape = SubResource( 32 )
+
+[node name="Stray" type="KinematicBody2D" parent="Games"]
+input_pickable = true
+
+[node name="Sprite" type="Sprite" parent="Games/Stray"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Games/Stray"]
+shape = SubResource( 33 )
+
 [node name="CheckGameBoy" type="Area2D" parent="."]
-position = Vector2( 348, 552 )
+position = Vector2( 519, 344 )
 script = ExtResource( 8 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CheckGameBoy"]
-position = Vector2( -46.5, 50.5 )
+position = Vector2( 1.5, 15.5 )
 shape = SubResource( 5 )
 
 [node name="CheckXBOX" type="Area2D" parent="."]
-position = Vector2( 218, 141 )
+position = Vector2( 523, 91 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CheckXBOX"]
-position = Vector2( 312, 57.5 )
+position = Vector2( -12, 17 )
 shape = SubResource( 6 )
 
 [node name="CheckMegaDrive1" type="Area2D" parent="."]
-position = Vector2( 1036, 703 )
+position = Vector2( 860, 103 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CheckMegaDrive1"]
-position = Vector2( 422.5, 6 )
+position = Vector2( 8.5, 4.5 )
 shape = SubResource( 7 )
 
 [node name="CheckNES" type="Area2D" parent="."]
-position = Vector2( 691, 387 )
+position = Vector2( 860, 358 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CheckNES"]
-position = Vector2( 439, 13 )
+position = Vector2( 13.5, 3.5 )
 shape = SubResource( 8 )
+
+[node name="CheckAtari" type="Area2D" parent="."]
+position = Vector2( 1228, 106 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CheckAtari"]
+position = Vector2( 11, 5 )
+shape = SubResource( 17 )
+
+[node name="CheckC64" type="Area2D" parent="."]
+position = Vector2( 1233, 353 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CheckC64"]
+position = Vector2( 6, 18 )
+shape = SubResource( 18 )
+
+[node name="CheckSegaSaturn" type="Area2D" parent="."]
+position = Vector2( 1614, 360 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CheckSegaSaturn"]
+position = Vector2( 4.5, 10 )
+shape = SubResource( 19 )
+
+[node name="CheckMagnavox" type="Area2D" parent="."]
+position = Vector2( 1614, 108 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CheckMagnavox"]
+position = Vector2( 3.5, 8.5 )
+shape = SubResource( 20 )
 
 [node name="Submit" type="Button" parent="."]
 margin_left = 1728.0
@@ -150,6 +443,7 @@ text = "Submit"
 script = ExtResource( 2 )
 
 [node name="Intro" type="Node2D" parent="."]
+visible = false
 position = Vector2( -18, -2 )
 z_index = 21
 
@@ -192,6 +486,54 @@ position = Vector2( 1456, 378 )
 scale = Vector2( 0.35, 0.35 )
 texture = ExtResource( 11 )
 
+[node name="Sprite" type="Sprite" parent="."]
+visible = false
+position = Vector2( -68, 851 )
+texture = ExtResource( 14 )
+offset = Vector2( 268.479, -171.801 )
+
+[node name="Label" type="Label" parent="Sprite"]
+margin_left = 127.0
+margin_top = -317.0
+margin_right = 439.0
+margin_bottom = -18.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 12 )
+text = "Hallo dies ist ein text, Bitten lesen sie mich"
+autowrap = true
+
+[node name="DelayTimer" type="Timer" parent="."]
+one_shot = true
+
+[node name="PopUp" type="Node2D" parent="."]
+visible = false
+position = Vector2( 1001, 542 )
+script = ExtResource( 21 )
+
+[node name="Sprite" type="Sprite" parent="PopUp"]
+position = Vector2( -22.4999, -10.5 )
+scale = Vector2( 25.7344, 12.8594 )
+texture = ExtResource( 20 )
+
+[node name="ClosePopUp" type="Button" parent="PopUp"]
+margin_left = 710.0
+margin_top = -428.0
+margin_right = 822.0
+margin_bottom = -375.0
+text = "Close"
+
+[node name="OpenPopUp" type="Button" parent="."]
+margin_left = 472.0
+margin_top = 528.0
+margin_right = 1757.0
+margin_bottom = 845.0
+custom_styles/hover = SubResource( 34 )
+custom_styles/pressed = SubResource( 35 )
+custom_styles/focus = SubResource( 36 )
+custom_styles/disabled = SubResource( 37 )
+custom_styles/normal = SubResource( 38 )
+
+[connection signal="body_exited" from="SpawningGames/Area2D" to="SpawningGames" method="_on_Area2D_body_exited"]
 [connection signal="body_entered" from="CheckGameBoy" to="CheckGameBoy" method="_on_CheckGameBoy_body_entered"]
 [connection signal="body_exited" from="CheckGameBoy" to="CheckGameBoy" method="_on_CheckGameBoy_body_exited"]
 [connection signal="body_entered" from="CheckXBOX" to="CheckGameBoy" method="_on_CheckXBOX_body_entered"]
@@ -200,4 +542,13 @@ texture = ExtResource( 11 )
 [connection signal="body_exited" from="CheckMegaDrive1" to="CheckGameBoy" method="_on_CheckMegaDrive1_body_exited"]
 [connection signal="body_entered" from="CheckNES" to="CheckGameBoy" method="_on_CheckNES_body_entered"]
 [connection signal="body_exited" from="CheckNES" to="CheckGameBoy" method="_on_CheckNES_body_exited"]
+[connection signal="body_entered" from="CheckAtari" to="CheckGameBoy" method="_on_CheckAtari_body_entered"]
+[connection signal="body_exited" from="CheckAtari" to="CheckGameBoy" method="_on_CheckAtari_body_exited"]
+[connection signal="body_entered" from="CheckC64" to="CheckGameBoy" method="_on_CheckC64_body_entered"]
+[connection signal="body_exited" from="CheckC64" to="CheckGameBoy" method="_on_CheckC64_body_exited"]
+[connection signal="body_entered" from="CheckSegaSaturn" to="CheckGameBoy" method="_on_CheckSegaSaturn_body_entered"]
+[connection signal="body_exited" from="CheckSegaSaturn" to="CheckGameBoy" method="_on_CheckSegaSaturn_body_exited"]
+[connection signal="body_entered" from="CheckMagnavox" to="CheckGameBoy" method="_on_CheckMagnavox_body_entered"]
+[connection signal="body_exited" from="CheckMagnavox" to="CheckGameBoy" method="_on_CheckMagnavox_body_exited"]
 [connection signal="pressed" from="Submit" to="Music" method="_on_Submit_pressed"]
+[connection signal="timeout" from="DelayTimer" to="GameBoy" method="_on_DelayTimer_timeout"]

@@ -1,9 +1,10 @@
 using Godot;
 using System;
+using System.Threading.Tasks;
 
 public class DragAndDrop : KinematicBody2D
 {
-	private bool hovered;
+	private bool hovered = false;
 	private bool attached;
 	private Vector2 offset;
 	
@@ -15,11 +16,38 @@ public class DragAndDrop : KinematicBody2D
 	private KinematicBody2D _nES;
 	private KinematicBody2D _gameBoy;
 	private KinematicBody2D _megaDrive1;
+
+	private KinematicBody2D _c64;
+	private KinematicBody2D _atari;
+	private KinematicBody2D _segaSaturn;
+	private KinematicBody2D _mganavox;
+
+	private KinematicBody2D _tennisForTwo;
+	private KinematicBody2D _pong;
+	private KinematicBody2D _mazeWars;
+	private KinematicBody2D _spaceInvaders;
+	private KinematicBody2D _pacMan;
+	private KinematicBody2D _donkeyKong;
+	private KinematicBody2D _detriot;
+	private KinematicBody2D _cyberpunk;
+	private KinematicBody2D _starfield;
+	private KinematicBody2D _bioshock;
+	private KinematicBody2D _horizon;
+	private KinematicBody2D _stray;
 	
 	private Node2D _introGameStudy;
 	private Button _introReady;
 	
 	private static DragAndDrop currentlyDraggedObject;
+
+	private Sprite _popUp;
+	private Label _popUpText;
+
+	private Timer delayTimer;
+	private bool popUp;
+	
+	private Button _open;
+	private Button _close;
 
 	public override void _Ready()
 	{
@@ -29,11 +57,42 @@ public class DragAndDrop : KinematicBody2D
 		_nES = GetNode<KinematicBody2D>("/root/GameStudy/NES");
 		_gameBoy = GetNode<KinematicBody2D>("/root/GameStudy/GameBoy");
 		_megaDrive1 = GetNode<KinematicBody2D>("/root/GameStudy/MegaDrive1");
+		_c64 = GetNode<KinematicBody2D>("/root/GameStudy/C64");
+		_atari = GetNode<KinematicBody2D>("/root/GameStudy/Atari");
+		_segaSaturn = GetNode<KinematicBody2D>("/root/GameStudy/SegaSaturn");
+		_mganavox = GetNode<KinematicBody2D>("/root/GameStudy/Magnavox");
+		
+		_tennisForTwo = GetNode<KinematicBody2D>("/root/GameStudy/Games/TennisForTwo");
+		_pong = GetNode<KinematicBody2D>("/root/GameStudy/Games/Pong");
+		_mazeWars = GetNode<KinematicBody2D>("/root/GameStudy/Games/MazeWars");
+		_spaceInvaders = GetNode<KinematicBody2D>("/root/GameStudy/Games/SpaceInvaders");
+		_pacMan= GetNode<KinematicBody2D>("/root/GameStudy/Games/PacMan");
+		_donkeyKong = GetNode<KinematicBody2D>("/root/GameStudy/Games/DonkeyKong");
+		_detriot = GetNode<KinematicBody2D>("/root/GameStudy/Games/Detroit");
+		_cyberpunk = GetNode<KinematicBody2D>("/root/GameStudy/Games/Cyberpunk");
+		_starfield = GetNode<KinematicBody2D>("/root/GameStudy/Games/Starfield");
+		_bioshock = GetNode<KinematicBody2D>("/root/GameStudy/Games/Bioshock");
+		_horizon= GetNode<KinematicBody2D>("/root/GameStudy/Games/Horizon");
+		_stray= GetNode<KinematicBody2D>("/root/GameStudy/Games/Stray");
+		
+		
+		
+		
 		Connect("mouse_entered", this, "OnMouseEntered");
 		Connect("mouse_exited", this, "OnMouseLeft");
 		_introReady.Connect("pressed",this, nameof(OnIntroReadyPressed));
 		originalPosition = Position;
 		GD.Print(_xBOX);
+
+		_popUp = GetNode<Sprite>("/root/GameStudy/Sprite");
+		_popUpText = GetNode<Label>("/root/GameStudy/Sprite/Label");
+		_popUp.Visible = false;
+		
+		_open = GetNode<Button>("/root/GameStudy/OpenPopUp");
+		_close = GetNode<Button>("/root/GameStudy/PopUp/ClosePopUp");
+		
+		//_open.Connect("pressed", this, nameof(InputFalse(true)));
+		//_close.Connect("pressed", this, nameof(InputTrue(true)));
 	}
 
 	public override void _Input(InputEvent @event)
@@ -41,10 +100,9 @@ public class DragAndDrop : KinematicBody2D
 		
 		if (Input.IsActionPressed("left_click") && hovered == true)
 		{
-			_xBOX.InputPickable = false;
-			_nES.InputPickable = false;
-			_gameBoy.InputPickable = false;
-			_megaDrive1.InputPickable = false;
+			InputFalse(false);
+			
+			
 			this.InputPickable = true;
 			this.ZIndex = 20;
 			currentlyDraggedObject = this; 
@@ -56,10 +114,7 @@ public class DragAndDrop : KinematicBody2D
 		{
 			attached = false;
 			this.ZIndex = 0;
-			_xBOX.InputPickable = true;
-			_nES.InputPickable = true;
-			_gameBoy.InputPickable = true;
-			_megaDrive1.InputPickable = true;
+			InputTrue(false);
 		
 			if (currentlyDraggedObject == this)
 			{
@@ -71,26 +126,205 @@ public class DragAndDrop : KinematicBody2D
 		{
 			offset = GetViewport().GetMousePosition();
 		}
+
 	}
 
 	public void OnMouseEntered()
 	{
 			hovered = true;
+			GD.Print("entered: "+hovered);
+
+		
+			if (this.Name == "XBOX")
+			{
+				_popUpText.Text = "The first console with an integrated hard disk.";
+				_popUp.Visible = true;
+			}
+			if (this.Name == "GameBoy")
+			{
+				_popUpText.Text = "Was for a long time the best selling Handheld console. Was sold with the videogame Tetris.";
+				_popUp.Visible = true;
+			}
+			if (this.Name == "NES")
+			{
+				_popUpText.Text = "Is also available in a japanese version with the name “Famicom”.";
+				_popUp.Visible = true;
+			}
+			if (this.Name == "MegaDrive1")
+			{
+				_popUpText.Text = "Was in big competition with the consoles produced by Nintendo.";
+				_popUp.Visible = true;
+			}
+			if (this.Name == "Atari")
+			{
+				_popUpText.Text = "Is one of the most economically and culturally important consoles.";
+				_popUp.Visible = true;
+			}
+			if (this.Name == "C64")
+			{
+				_popUpText.Text = "Was the most sold home computer for a long time.";
+				_popUp.Visible = true;
+			}
+			if (this.Name == "SegaSaturn")
+			{
+				_popUpText.Text = "They tried to establish themselves as a console producer. However, Sony published their Playstation at the same time and “won”.";
+				_popUp.Visible = true;
+			}
+			if (this.Name == "Magnavox")
+			{
+				_popUpText.Text = "First video game console, which was developed by Ralph Bear.";
+				_popUp.Visible = true;
+			}
 	}
 
-	public void OnMouseLeft() {
-		//attached = false;
+	public void OnMouseLeft()
+	{
+		popUp = true;
+		//delayTimer.WaitTime = 0.5f;
+		//delayTimer.Start();
 		hovered = false;
-		/*this.ZIndex = 0;
-		_xBOX.InputPickable = true;
-		_nES.InputPickable = true;
-		_gameBoy.InputPickable = true;
-		_megaDrive1.InputPickable = true;
+		GD.Print("left: "+hovered);
+		//Delay();
 		
-		if (currentlyDraggedObject == this)
+		//_popUp.Visible = false;
+		Useless();
+
+	}
+	
+	private void _on_DelayTimer_timeout()
+	{
+		/*
+		GD.Print("Delay hovered: "+hovered);
+		if (hovered == false)
 		{
-			currentlyDraggedObject = null; 
-		}*/	
+			GD.Print("HEllo here is delay Methode");
+			//hovered = false;
+			_popUp.Visible = false;
+		
+		}
+		*/
+		
+	}
+
+	public async void Useless()
+	{
+		
+		
+		GD.Print("Delay hovered: "+hovered);
+		if (hovered == false)
+		{
+			GD.Print("HEllo here is delay Methode");
+			//hovered = false;
+			_popUp.Visible = false;
+			
+		}
+		
+	}
+
+	public void InputTrue(bool popUp)
+	{
+		if (popUp == false)
+		{
+			_xBOX.InputPickable = true;
+			_nES.InputPickable = true;
+			_gameBoy.InputPickable = true;
+			_megaDrive1.InputPickable = true;
+			_c64.InputPickable = true;
+			_atari.InputPickable = true;
+			_mganavox.InputPickable = true;
+			_segaSaturn.InputPickable = true;
+			
+			_tennisForTwo.InputPickable = true;
+			_pong.InputPickable = true;
+			_mazeWars.InputPickable = true;
+			_spaceInvaders.InputPickable = true;
+			_pacMan.InputPickable = true;
+			_donkeyKong.InputPickable = true;
+			_detriot.InputPickable = true;
+			_cyberpunk.InputPickable = true;
+			_starfield.InputPickable = true;
+			_bioshock.InputPickable = true;
+			_horizon.InputPickable = true;
+			_stray.InputPickable = true;
+		}
+		else
+		{
+			_xBOX.InputPickable = true;
+			_nES.InputPickable = true;
+			_gameBoy.InputPickable = true;
+			_megaDrive1.InputPickable = true;
+			_c64.InputPickable = true;
+			_atari.InputPickable = true;
+			_mganavox.InputPickable = true;
+			_segaSaturn.InputPickable = true;
+			
+			_tennisForTwo.InputPickable = true;
+			_pong.InputPickable = true;
+			_mazeWars.InputPickable = true;
+			_spaceInvaders.InputPickable = true;
+			_pacMan.InputPickable = true;
+			_donkeyKong.InputPickable = true;
+			_detriot.InputPickable = true;
+			_cyberpunk.InputPickable = true;
+			_starfield.InputPickable = true;
+			_bioshock.InputPickable = true;
+			_horizon.InputPickable = true;
+			_stray.InputPickable = true;
+			
+			
+		}
+	}
+
+	public void InputFalse(bool popUp)
+	{
+		if (popUp == false)
+		{
+			_xBOX.InputPickable = false;
+			_nES.InputPickable = false;
+			_gameBoy.InputPickable = false;
+			_megaDrive1.InputPickable = false;
+			_c64.InputPickable = false;
+			_atari.InputPickable = false;
+			_mganavox.InputPickable = false;
+			_segaSaturn.InputPickable = false;
+
+			_tennisForTwo.InputPickable = false;
+			_pong.InputPickable = false;
+			_mazeWars.InputPickable = false;
+			_spaceInvaders.InputPickable = false;
+			_pacMan.InputPickable = false;
+			_donkeyKong.InputPickable = false;
+			_detriot.InputPickable = false;
+			_cyberpunk.InputPickable = false;
+			_starfield.InputPickable = false;
+			_bioshock.InputPickable = false;
+			_horizon.InputPickable = false;
+			_stray.InputPickable = false;
+		}
+		else
+		{
+			_xBOX.InputPickable = false;
+			_nES.InputPickable = false;
+			_gameBoy.InputPickable = false;
+			_megaDrive1.InputPickable = false;
+			_c64.InputPickable = false;
+			_atari.InputPickable = false;
+			_mganavox.InputPickable = false;
+			_segaSaturn.InputPickable = false;
+
+			_tennisForTwo.InputPickable = false;
+			_pong.InputPickable = false;
+			_mazeWars.InputPickable = false;
+			_spaceInvaders.InputPickable = false;
+			_pacMan.InputPickable = false;
+			_donkeyKong.InputPickable = false;
+			_detriot.InputPickable = false;
+			_cyberpunk.InputPickable = false;
+			_starfield.InputPickable = false;
+			_bioshock.InputPickable = false;
+			_horizon.InputPickable = false;
+			_stray.InputPickable = false;
+		}
 	}
 
 	public override void _Process(float delta)
@@ -122,5 +356,8 @@ public class DragAndDrop : KinematicBody2D
 		}
 	}
 }
+
+
+
 
 
