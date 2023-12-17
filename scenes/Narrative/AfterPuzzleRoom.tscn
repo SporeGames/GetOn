@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://SharedAssets/font/BAHNSCHRIFT 1.TTF" type="DynamicFontData" id=1]
-[ext_resource path="res://scenes/Sound/assets/Art.png" type="Texture" id=2]
+[ext_resource path="res://scenes/GameDesign/assets/personas/GameDesign.png" type="Texture" id=2]
 [ext_resource path="res://scenes/Sound/AfterPuzzleRoom.cs" type="Script" id=3]
 
 [sub_resource type="DynamicFont" id=1]

@@ -20,6 +20,9 @@ namespace GetOn.scenes.GameSelectionRoom
 		private bool running = false;
 
 		private bool firstStart = true;
+
+		private Button _start;
+		private Node2D _intro;
 		public override void _Ready() {
 			_sharedNode = GetNode<SharedNode>("/root/SharedNode");
 			_backToGameSelectionRoom = GetNode<Button>("Game/BackToGameSelection");
@@ -33,6 +36,15 @@ namespace GetOn.scenes.GameSelectionRoom
 			_playerOrigin = GetNode<KinematicBody2D>("Game/Player").Position;
 			Checklist = GetNode<Checklist>("Checklist");
 			GetNode<CountdownTimer>("/root/Programming/Timer").running = true;
+
+			_start = GetNode<Button>("/root/Programming/Intro/Button");
+			_start.Connect("pressed", this, nameof(HideIntro));
+			_intro = GetNode<Node2D>("/root/Programming/Intro");
+		}
+
+		public void HideIntro()
+		{
+			_intro.Visible = false;
 		}
 
 		public override void _Process(float delta) {

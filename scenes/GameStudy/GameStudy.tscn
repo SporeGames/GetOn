@@ -671,6 +671,7 @@ text = "Close"
 z_index = 21
 
 [node name="ColorRect2" type="ColorRect" parent="Intro"]
+visible = false
 margin_left = 18.0
 margin_top = 2.0
 margin_right = 1943.0

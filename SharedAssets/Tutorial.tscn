@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://SharedAssets/font/BAHNSCHRIFT 1.TTF" type="DynamicFontData" id=1]
 [ext_resource path="res://SharedAssets/Anleitung.png" type="Texture" id=2]
 [ext_resource path="res://SharedAssets/AnleitungStartButton.png" type="Texture" id=3]
+[ext_resource path="res://scenes/GameDesign/assets/ui/GameDesign.png" type="Texture" id=4]
 
 [sub_resource type="DynamicFont" id=1]
 size = 32
@@ -48,3 +49,8 @@ When you are finished with a game, press NEXT to go to the next game.
 
 There are a total of three games."
 autowrap = true
+
+[node name="Sprite2" type="Sprite" parent="."]
+position = Vector2( 1452, 342 )
+scale = Vector2( 0.315, 0.315 )
+texture = ExtResource( 4 )
