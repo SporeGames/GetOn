@@ -27,12 +27,16 @@ namespace GetOn.scenes {
 		[JsonProperty] public int programmingPoints = 0;
 		[JsonProperty] public float programmingTime = 0;
 		[JsonProperty] public double gameStudyPoints = 0;
+		[JsonProperty] public float gameStudyTime = 0;
 		[JsonProperty] public int gameDesignPoints = 0;
-		[JsonProperty] public int gameDesignTime = 0;
+		[JsonProperty] public float gameDesignTime = 0;
 		[JsonProperty] public int narrativePoints = 0;
+		[JsonProperty] public float narrativeTime = 0;
 		[JsonProperty] public int soundPoints = 0;
+		[JsonProperty] public float soundTime = 0;
 		[JsonProperty]public int managementPoints = 0;
 		[JsonProperty] public int managementColors = 0;
+		[JsonProperty] public float managementTime = 0;
 		[JsonProperty] public AbilitySpecialization Specialization = AbilitySpecialization.Programming;
 
 		public bool isDragging;
@@ -143,26 +147,30 @@ namespace GetOn.scenes {
 				new ResultCategory {
 					Title = "Game Study",
 					Items = new List<ResultEntry> {
-						new ResultEntry { Title = "Points", Text = gameStudyPoints.ToString() }
+						new ResultEntry { Title = "Points", Text = gameStudyPoints.ToString() },
+						new ResultEntry { Title = "Time", Text = FormatTime(gameStudyTime) }
 					}
 				},
 				new ResultCategory {
 					Title = "Narrative",
 					Items = new List<ResultEntry> {
-						new ResultEntry { Title = "Points", Text = narrativePoints.ToString() }
+						new ResultEntry { Title = "Points", Text = narrativePoints.ToString() },
+						new ResultEntry { Title = "Time", Text = FormatTime(narrativeTime) }
 					}
 				},
 				new ResultCategory() {
 					Title = "Sound",
 					Items = new List<ResultEntry> {
-						new ResultEntry { Title = "Points", Text = soundPoints.ToString() }
+						new ResultEntry { Title = "Points", Text = soundPoints.ToString() },
+						new ResultEntry { Title = "Time", Text = FormatTime(soundTime) }
 					}
 				},
 				new ResultCategory() {
 					Title = "Management",
 					Items = new List<ResultEntry> {
 						new ResultEntry { Title = "Points", Text = managementPoints.ToString() },
-						new ResultEntry { Title = "Colors", Text = managementColors.ToString() }
+						new ResultEntry { Title = "Colors", Text = managementColors.ToString() },
+						new ResultEntry { Title = "Time", Text = FormatTime(managementTime) }
 					}
 				}
 			};

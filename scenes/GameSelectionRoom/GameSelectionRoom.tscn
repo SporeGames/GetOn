@@ -89,12 +89,12 @@ custom_styles/disabled = SubResource( 5 )
 custom_styles/normal = SubResource( 1 )
 
 [node name="PrintPDF" type="Button" parent="."]
-margin_left = 59.0
-margin_top = 145.0
-margin_right = 221.0
-margin_bottom = 208.0
+margin_left = 66.0
+margin_top = 70.0
+margin_right = 238.0
+margin_bottom = 133.0
 custom_fonts/font = SubResource( 6 )
-text = "Test PDF"
+text = "Download Results"
 
 [node name="Music" type="Node" parent="."]
 script = ExtResource( 5 )

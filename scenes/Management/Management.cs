@@ -126,6 +126,7 @@ public class Management : Node2D {
 		var shared = GetNode<SharedNode>("/root/SharedNode");
 		shared.managementPoints = points;
 		shared.managementColors = cardsColoredCorrectly; 
+		shared.managementTime = GetNode<CountdownTimer>("/root/Management/Timer").CurrentTime;
 		shared.CompletedTasks.Add("management");
 		shared.SwitchScene("res://scenes/Management/AfterPuzzleRoom.tscn");
 	}
@@ -205,8 +206,7 @@ public class Management : Node2D {
 		}
 	}
 
-	public void CloseIntro()
-	{
+	public void CloseIntro() {
 		_intro.Visible = false;
 		GetNode<CountdownTimer>("/root/Management/Timer").running = true;
 
