@@ -1,10 +1,22 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=18 format=2]
 
 [ext_resource path="res://scenes/MainMenu/MainMenu.cs" type="Script" id=1]
 [ext_resource path="res://ui/MainMenuTheme.tres" type="Theme" id=2]
 [ext_resource path="res://scenes/MainMenu/assets/StarMenu.png" type="Texture" id=3]
 [ext_resource path="res://SharedAssets/font/BAHNSCHRIFT 1.TTF" type="DynamicFontData" id=5]
 [ext_resource path="res://scenes/Introduction/assets/Questionaire01.png" type="Texture" id=6]
+
+[sub_resource type="DynamicFont" id=10]
+size = 100
+font_data = ExtResource( 5 )
+
+[sub_resource type="DynamicFont" id=12]
+size = 100
+font_data = ExtResource( 5 )
+
+[sub_resource type="DynamicFont" id=11]
+size = 100
+font_data = ExtResource( 5 )
 
 [sub_resource type="StyleBoxEmpty" id=4]
 
@@ -42,24 +54,77 @@ position = Vector2( 964, 543 )
 texture = ExtResource( 3 )
 
 [node name="Sprite" type="Sprite" parent="Sprite"]
-position = Vector2( -66, 2 )
-scale = Vector2( 1.4265, 1.89828 )
+position = Vector2( -58, 56 )
+scale = Vector2( 1.76754, 2.77686 )
 texture = ExtResource( 6 )
+
+[node name="Header" type="RichTextLabel" parent="Sprite/Sprite"]
+margin_left = -113.152
+margin_top = -154.131
+margin_right = 485.848
+margin_bottom = -37.1308
+rect_scale = Vector2( 0.422362, 0.422362 )
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+custom_fonts/normal_font = SubResource( 10 )
+text = "Questionare"
+
+[node name="Info" type="RichTextLabel" parent="Sprite/Sprite"]
+margin_left = -199.147
+margin_top = -96.1517
+margin_right = 948.853
+margin_bottom = 36.8483
+rect_scale = Vector2( 0.185904, 0.185904 )
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+custom_fonts/normal_font = SubResource( 10 )
+text = "Personal Information"
+
+[node name="Name" type="RichTextLabel" parent="Sprite/Sprite"]
+margin_left = -199.147
+margin_top = -64.8212
+margin_right = 208.853
+margin_bottom = 52.1788
+rect_scale = Vector2( 0.174888, 0.174888 )
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+custom_fonts/normal_font = SubResource( 10 )
+text = "Name:"
+
+[node name="Emphasis" type="RichTextLabel" parent="Sprite/Sprite"]
+margin_left = -200.0
+margin_top = 1.0
+margin_right = 384.0
+margin_bottom = 128.0
+rect_scale = Vector2( 0.203403, 0.203403 )
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+custom_fonts/normal_font = SubResource( 10 )
+text = "Emphasis:"
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Sprite/Sprite"]
+visible = false
+margin_left = -198.581
+margin_top = -47.8958
+margin_right = 258.419
+margin_bottom = 75.1042
+rect_scale = Vector2( 0.17692, 0.17692 )
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+custom_fonts/normal_font = SubResource( 12 )
+text = "Name:"
 
 [node name="SubmitButton" type="Button" parent="."]
 anchor_left = 0.45
 anchor_top = 0.48
 anchor_right = 0.55
 anchor_bottom = 0.48
-margin_left = 259.0
-margin_top = 407.6
-margin_right = 187.0
-margin_bottom = 470.6
+margin_left = 283.0
+margin_top = 491.6
+margin_right = 407.0
+margin_bottom = 592.6
+rect_scale = Vector2( 0.433971, 0.433971 )
 theme = ExtResource( 2 )
 custom_colors/font_color_disabled = Color( 0, 0, 0, 1 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_colors/font_color_hover = Color( 0, 0, 0, 1 )
 custom_colors/font_color_pressed = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 11 )
 custom_styles/hover = SubResource( 4 )
 custom_styles/pressed = SubResource( 5 )
 custom_styles/focus = SubResource( 6 )
@@ -84,10 +149,10 @@ anchor_left = 0.4
 anchor_top = 0.4
 anchor_right = 0.6
 anchor_bottom = 0.4
-margin_left = 3.0
-margin_top = -25.0
-margin_right = 24.0
-margin_bottom = 32.0
+margin_left = -43.0
+margin_top = -13.0
+margin_right = -22.0
+margin_bottom = 44.0
 theme = ExtResource( 2 )
 custom_colors/selection_color = Color( 0, 0, 0, 1 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
@@ -107,8 +172,8 @@ custom_fonts/normal_font = SubResource( 9 )
 text = "Select specialization:"
 
 [node name="SpecializationSelect" type="OptionButton" parent="."]
-margin_left = 830.0
-margin_top = 544.0
-margin_right = 1109.0
-margin_bottom = 584.0
+margin_left = 802.0
+margin_top = 612.0
+margin_right = 1081.0
+margin_bottom = 652.0
 text = "Select specialization..."
