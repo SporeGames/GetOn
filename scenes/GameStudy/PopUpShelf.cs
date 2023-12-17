@@ -21,10 +21,12 @@ public class PopUpShelf : Node2D
 	public void Open()
 	{
 		_popUp.Visible = true;
+		_open.Visible = false;
 	}
 
 	public void Close()
 	{
 		_popUp.Visible = false;
+		_open.Visible = true;
 	}
 }

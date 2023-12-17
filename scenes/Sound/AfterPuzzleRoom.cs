@@ -10,7 +10,7 @@ namespace GetOn.scenes.Sound
 		private Label _text;
 		private String feedback;
 		private SharedNode _sharedNode;
-		private int points;
+		private double points;
 		private int count;
 		private String lastPuzzle;
 		private int maxPoints;
@@ -146,7 +146,7 @@ namespace GetOn.scenes.Sound
 					break;
 				case "gamestudy":
 					points = _sharedNode.gameStudyPoints;
-					maxPoints = 20;
+					maxPoints = 50;
 					break;
 				case "gameDesign" :
 					points = _sharedNode.gameDesignPoints;

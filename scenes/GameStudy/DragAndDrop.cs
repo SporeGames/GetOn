@@ -48,6 +48,8 @@ public class DragAndDrop : KinematicBody2D
 	
 	private Button _open;
 	private Button _close;
+	private bool isOpen = false;
+	
 
 	public override void _Ready()
 	{
@@ -62,18 +64,18 @@ public class DragAndDrop : KinematicBody2D
 		_segaSaturn = GetNode<KinematicBody2D>("/root/GameStudy/SegaSaturn");
 		_mganavox = GetNode<KinematicBody2D>("/root/GameStudy/Magnavox");
 		
-		_tennisForTwo = GetNode<KinematicBody2D>("/root/GameStudy/Games/TennisForTwo");
-		_pong = GetNode<KinematicBody2D>("/root/GameStudy/Games/Pong");
-		_mazeWars = GetNode<KinematicBody2D>("/root/GameStudy/Games/MazeWars");
-		_spaceInvaders = GetNode<KinematicBody2D>("/root/GameStudy/Games/SpaceInvaders");
-		_pacMan= GetNode<KinematicBody2D>("/root/GameStudy/Games/PacMan");
-		_donkeyKong = GetNode<KinematicBody2D>("/root/GameStudy/Games/DonkeyKong");
-		_detriot = GetNode<KinematicBody2D>("/root/GameStudy/Games/Detroit");
-		_cyberpunk = GetNode<KinematicBody2D>("/root/GameStudy/Games/Cyberpunk");
-		_starfield = GetNode<KinematicBody2D>("/root/GameStudy/Games/Starfield");
-		_bioshock = GetNode<KinematicBody2D>("/root/GameStudy/Games/Bioshock");
-		_horizon= GetNode<KinematicBody2D>("/root/GameStudy/Games/Horizon");
-		_stray= GetNode<KinematicBody2D>("/root/GameStudy/Games/Stray");
+		_tennisForTwo = GetNode<KinematicBody2D>("/root/GameStudy/PopUp/Games/TennisForTwo");	
+		_pong = GetNode<KinematicBody2D>("/root/GameStudy/PopUp/Games/Pong");
+		_mazeWars = GetNode<KinematicBody2D>("/root/GameStudy/PopUp/Games/MazeWars");
+		_spaceInvaders = GetNode<KinematicBody2D>("/root/GameStudy/PopUp/Games/SpaceInvaders");
+		_pacMan= GetNode<KinematicBody2D>("/root/GameStudy/PopUp/Games/PacMan");
+		_donkeyKong = GetNode<KinematicBody2D>("/root/GameStudy/PopUp/Games/DonkeyKong");
+		_detriot = GetNode<KinematicBody2D>("/root/GameStudy/PopUp/Games/Detroit");
+		_cyberpunk = GetNode<KinematicBody2D>("/root/GameStudy/PopUp/Games/Cyberpunk");
+		_starfield = GetNode<KinematicBody2D>("/root/GameStudy/PopUp/Games/Starfield");
+		_bioshock = GetNode<KinematicBody2D>("/root/GameStudy/PopUp/Games/Bioshock");
+		_horizon= GetNode<KinematicBody2D>("/root/GameStudy/PopUp/Games/Horizon");
+		_stray= GetNode<KinematicBody2D>("/root/GameStudy/PopUp/Games/Stray");
 		
 		
 		
@@ -93,12 +95,14 @@ public class DragAndDrop : KinematicBody2D
 		
 		//_open.Connect("pressed", this, nameof(InputFalse(true)));
 		//_close.Connect("pressed", this, nameof(InputTrue(true)));
+		_open.Connect("pressed", this, "InputFalse", new Godot.Collections.Array { true });
+		_close.Connect("pressed", this, "InputTrue", new Godot.Collections.Array { true });
 	}
 
 	public override void _Input(InputEvent @event)
 	{
 		
-		if (Input.IsActionPressed("left_click") && hovered == true)
+		if (Input.IsActionPressed("left_click") && hovered == true )
 		{
 			InputFalse(false);
 			
@@ -109,6 +113,19 @@ public class DragAndDrop : KinematicBody2D
 			attached = true;
 			//offset = GetViewport().GetMousePosition();
 		}
+		/*
+		if (Input.IsActionPressed("left_click") && hovered == true || this.Name == "TennisForTwo" || this.Name == "Pong" || this.Name == "MazeWars" )
+		{
+			InputFalse(false);
+			
+			
+			this.InputPickable = true;
+			this.ZIndex = 20;
+			currentlyDraggedObject = this; 
+			attached = true;
+			//offset = GetViewport().GetMousePosition();
+		}
+		*/
 
 		if (!Input.IsActionPressed("left_click"))
 		{
@@ -132,45 +149,46 @@ public class DragAndDrop : KinematicBody2D
 	public void OnMouseEntered()
 	{
 			hovered = true;
+			
 			GD.Print("entered: "+hovered);
 
 		
-			if (this.Name == "XBOX")
+			if (this.Name == "XBOX" && isOpen == false)
 			{
 				_popUpText.Text = "The first console with an integrated hard disk.";
 				_popUp.Visible = true;
 			}
-			if (this.Name == "GameBoy")
+			if (this.Name == "GameBoy"&& isOpen == false)
 			{
 				_popUpText.Text = "Was for a long time the best selling Handheld console. Was sold with the videogame Tetris.";
 				_popUp.Visible = true;
 			}
-			if (this.Name == "NES")
+			if (this.Name == "NES"&& isOpen == false)
 			{
 				_popUpText.Text = "Is also available in a japanese version with the name “Famicom”.";
 				_popUp.Visible = true;
 			}
-			if (this.Name == "MegaDrive1")
+			if (this.Name == "MegaDrive1"&& isOpen == false)
 			{
 				_popUpText.Text = "Was in big competition with the consoles produced by Nintendo.";
 				_popUp.Visible = true;
 			}
-			if (this.Name == "Atari")
+			if (this.Name == "Atari"&& isOpen == false)
 			{
 				_popUpText.Text = "Is one of the most economically and culturally important consoles.";
 				_popUp.Visible = true;
 			}
-			if (this.Name == "C64")
+			if (this.Name == "C64"&& isOpen == false)
 			{
 				_popUpText.Text = "Was the most sold home computer for a long time.";
 				_popUp.Visible = true;
 			}
-			if (this.Name == "SegaSaturn")
+			if (this.Name == "SegaSaturn"&& isOpen == false)
 			{
 				_popUpText.Text = "They tried to establish themselves as a console producer. However, Sony published their Playstation at the same time and “won”.";
 				_popUp.Visible = true;
 			}
-			if (this.Name == "Magnavox")
+			if (this.Name == "Magnavox"&& isOpen == false)
 			{
 				_popUpText.Text = "First video game console, which was developed by Ralph Bear.";
 				_popUp.Visible = true;
@@ -183,6 +201,7 @@ public class DragAndDrop : KinematicBody2D
 		//delayTimer.WaitTime = 0.5f;
 		//delayTimer.Start();
 		hovered = false;
+		
 		GD.Print("left: "+hovered);
 		//Delay();
 		
@@ -270,8 +289,8 @@ public class DragAndDrop : KinematicBody2D
 			_bioshock.InputPickable = true;
 			_horizon.InputPickable = true;
 			_stray.InputPickable = true;
-			
-			
+
+			isOpen = false;
 		}
 	}
 
@@ -324,6 +343,8 @@ public class DragAndDrop : KinematicBody2D
 			_bioshock.InputPickable = false;
 			_horizon.InputPickable = false;
 			_stray.InputPickable = false;
+
+			isOpen = true;
 		}
 	}
 

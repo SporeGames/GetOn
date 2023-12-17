@@ -1,10 +1,11 @@
-[gd_scene load_steps=19 format=2]
+[gd_scene load_steps=20 format=2]
 
 [ext_resource path="res://scenes/GameStudy/PrePuzzleRoom.cs" type="Script" id=1]
-[ext_resource path="res://scenes/Narrative/assets/GameDesign+Narrative RaumSprint2.png" type="Texture" id=2]
+[ext_resource path="res://scenes/GameDesign/assets/personas/GameDesign.png" type="Texture" id=2]
 [ext_resource path="res://SharedAssets/font/BAHNSCHRIFT 1.TTF" type="DynamicFontData" id=3]
 [ext_resource path="res://icon.png" type="Texture" id=4]
 [ext_resource path="res://scenes/GameStudy/WorkerText.cs" type="Script" id=5]
+[ext_resource path="res://scenes/Narrative/assets/IMG_0232.PNG" type="Texture" id=6]
 
 [sub_resource type="StyleBoxEmpty" id=1]
 
@@ -43,10 +44,10 @@ position = Vector2( 960, 540 )
 texture = ExtResource( 2 )
 
 [node name="Button" type="Button" parent="."]
-margin_left = 134.0
-margin_top = 361.0
-margin_right = 348.0
-margin_bottom = 496.0
+margin_left = 267.0
+margin_top = 425.0
+margin_right = 633.0
+margin_bottom = 735.0
 custom_styles/hover = SubResource( 1 )
 custom_styles/pressed = SubResource( 2 )
 custom_styles/focus = SubResource( 3 )
@@ -56,10 +57,10 @@ script = ExtResource( 1 )
 sceneToLoad = "res://scenes/Narrative/Narrative.tscn"
 
 [node name="Button2" type="Button" parent="."]
-margin_left = 736.0
-margin_top = 680.0
-margin_right = 952.0
-margin_bottom = 771.0
+margin_left = 1314.0
+margin_top = 256.0
+margin_right = 1579.0
+margin_bottom = 347.0
 custom_styles/hover = SubResource( 1 )
 custom_styles/pressed = SubResource( 2 )
 custom_styles/focus = SubResource( 3 )
@@ -79,15 +80,14 @@ script = ExtResource( 1 )
 sceneToLoad = "res://scenes/GameSelectionRoom/GameSelectionRoom.tscn"
 
 [node name="Worker" type="Sprite" parent="."]
-position = Vector2( 176, 438 )
-texture = ExtResource( 4 )
+position = Vector2( 400, 515 )
 script = ExtResource( 5 )
 
 [node name="Button" type="Button" parent="Worker"]
-margin_left = -30.0
-margin_top = -32.0
-margin_right = 34.0
-margin_bottom = 32.0
+margin_left = -134.0
+margin_top = -101.0
+margin_right = 97.0
+margin_bottom = 351.0
 custom_styles/hover = SubResource( 7 )
 custom_styles/pressed = SubResource( 8 )
 custom_styles/focus = SubResource( 9 )
@@ -127,8 +127,13 @@ one_shot = true
 [node name="Timer3" type="Timer" parent="Worker"]
 one_shot = true
 
+[node name="Sprite" type="Sprite" parent="Worker"]
+position = Vector2( -35, 149 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 6 )
+
 [node name="Worker2" type="Sprite" parent="."]
-position = Vector2( 778, 730 )
+position = Vector2( 1356, 311 )
 texture = ExtResource( 4 )
 script = ExtResource( 5 )
 

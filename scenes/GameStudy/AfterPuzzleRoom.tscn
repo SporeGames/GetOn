@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://SharedAssets/font/BAHNSCHRIFT 1.TTF" type="DynamicFontData" id=1]
 [ext_resource path="res://scenes/GameStudy/assets/GameStudiesGrob.png" type="Texture" id=2]
 [ext_resource path="res://scenes/Sound/AfterPuzzleRoom.cs" type="Script" id=3]
+[ext_resource path="res://scenes/GameStudy/assets/Unbenanntes_Projekt.png" type="Texture" id=4]
 
 [sub_resource type="DynamicFont" id=1]
 size = 20
@@ -39,3 +40,8 @@ margin_top = 493.0
 margin_right = 1164.0
 margin_bottom = 525.0
 text = "Menu"
+
+[node name="Sprite" type="Sprite" parent="GameStudy"]
+position = Vector2( 859.125, 588.25 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 4 )

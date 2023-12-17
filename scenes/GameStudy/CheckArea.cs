@@ -15,9 +15,22 @@ namespace GetOn.scenes.GameStudy
 		private bool c64Correct;
 		private bool segaSaturnCorrect;
 		private bool magnavoxCorrect;
+
+		private bool tennisCorrect;
+		private bool pongCorrect;
+		private bool mazeWarsCorrect;
+		private bool spaceInvadersCorrect;
+		private bool pacManCorrect;
+		private bool donkeyKongCorrect;
+		private bool detriotCorrect;
+		private bool bioshockCorrect;
+		private bool strayCorrect;
+		private bool cyberpunkCorrect;
+		private bool horizonCorrect;
+		private bool starfieldCorrect;
 		
 		private Button _submitButton;
-		private int points;
+		private double points;
 
 		// Called when the node enters the scene tree for the first time.
 		public override void _Ready()
@@ -36,23 +49,94 @@ namespace GetOn.scenes.GameStudy
 		{
 			if (nESCorrect == true)
 			{
-				points += 5;
+				points += 2.5;
 			}
 
 			if (xBOXCorrect)
 			{
-				points += 5;
+				points += 2.5;
 			}
 
 			if (gameBoyCorrect)
 			{
-				points += 5;
+				points += 2.5;
 			}
 
 			if (megaDrive1Correct)
 			{
-				points += 5;
+				points += 2.5;
 			}
+			
+			if (atariCorrect)
+			{
+				points += 2.5;
+			}
+			if (c64Correct)
+			{
+				points += 2.5;
+			}
+			if (segaSaturnCorrect)
+			{
+				points += 2.5;
+			}
+			if (magnavoxCorrect)
+			{
+				points += 2.5;
+			}
+			
+			
+			
+			if (tennisCorrect)
+			{
+				points += 3;
+			}
+			if (pongCorrect)
+			{
+				points += 3;
+			}
+			if (mazeWarsCorrect)
+			{
+				points += 3;
+			}
+			if (spaceInvadersCorrect)
+			{
+				points += 3;
+			}
+			if (pacManCorrect)
+			{
+				points += 3;
+			}
+			if (donkeyKongCorrect)
+			{
+				points += 3;
+			}
+			
+			if (detriotCorrect)
+			{
+				points += 2;
+			}
+			if (cyberpunkCorrect)
+			{
+				points += 2;
+			}
+			if (starfieldCorrect)
+			{
+				points += 2;
+			}
+			if (bioshockCorrect)
+			{
+				points += 2;
+			}
+			if (horizonCorrect)
+			{
+				points += 2;
+			}
+			if (strayCorrect)
+			{
+				points += 2;
+			}
+			
+			
 			GD.Print(points);
 			_sharedNode.gameStudyPoints = points;
 			_sharedNode.CompletedTasks.Add("gamestudy");
@@ -247,9 +331,288 @@ namespace GetOn.scenes.GameStudy
 				}
 			}
 		}
+		
+		//Games check 
+
+		private void _on_CheckTennis_body_entered(object body)
+		{
+			if (body is KinematicBody2D kinematicBody)
+			{
+				if (kinematicBody.Name == "TennisForTwo")
+				{
+					GD.Print("TennisForTwo");
+					tennisCorrect = true;
+				}
+			}
+		}
+
+
+		private void _on_CheckPong_body_entered(object body)
+		{
+			if (body is KinematicBody2D kinematicBody)
+			{
+				if (kinematicBody.Name == "Pong")
+				{
+					GD.Print("Pong");
+					pongCorrect = true;
+				}
+			}
+		}
+
+
+		private void _on_CheckMazeWars_body_entered(object body)
+		{
+			if (body is KinematicBody2D kinematicBody)
+			{
+				if (kinematicBody.Name == "MazeWars")
+				{
+					GD.Print("MazeWars");
+					mazeWarsCorrect = true;
+				}
+			}
+		}
+
+
+		private void _on_CheckSpaceInvaders_body_entered(object body)
+		{
+			if (body is KinematicBody2D kinematicBody)
+			{
+				if (kinematicBody.Name == "SpaceInvaders")
+				{
+					GD.Print("SpaceInvaders");
+					spaceInvadersCorrect = true;
+				}
+			}
+		}
+
+
+		private void _on_CheckPacMan_body_entered(object body)
+		{
+			if (body is KinematicBody2D kinematicBody)
+			{
+				if (kinematicBody.Name == "PacMan")
+				{
+					GD.Print("PacMan");
+					pacManCorrect = true;
+				}
+			}
+		}
+
+
+		private void _on_CheckDonkeyKong_body_entered(object body)
+		{
+			if (body is KinematicBody2D kinematicBody)
+			{
+				if (kinematicBody.Name == "DonkeyKong")
+				{
+					GD.Print("DonkeyKong");
+					donkeyKongCorrect = true;
+				}
+			}
+		}
+
+
+		private void _on_CheckDystopie_body_entered(object body)
+		{
+			if (body is KinematicBody2D kinematicBody)
+			{
+				if (kinematicBody.Name == "Bioshock")
+				{
+					GD.Print("Bioshock");
+					bioshockCorrect = true;
+				}
+				else if (kinematicBody.Name == "Detroit")
+				{
+					GD.Print("Detriot");
+					detriotCorrect = true;
+				}
+				else if (kinematicBody.Name == "Stray")
+				{
+					GD.Print("Stray");
+					strayCorrect = true;
+				}
+			}
+		}
+
+
+		private void _on_CheckCyberpunk_body_entered(object body)
+		{
+			if (body is KinematicBody2D kinematicBody)
+			{
+				if (kinematicBody.Name == "Cyberpunk")
+				{
+					GD.Print("Cyberpunk");
+					cyberpunkCorrect = true;
+				}
+			}
+		}
+
+
+		private void _on_CheckSpace_body_entered(object body)
+		{
+			if (body is KinematicBody2D kinematicBody)
+			{
+				if (kinematicBody.Name == "Starfield")
+				{
+					GD.Print("Starfield");
+					starfieldCorrect = true;
+				}
+			}
+		}
+
+
+		private void _on_CheckPostApocaliptic_body_entered(object body)
+		{
+			if (body is KinematicBody2D kinematicBody)
+			{
+				if (kinematicBody.Name == "Horizon")
+				{
+					GD.Print("Horizon");
+					horizonCorrect = true;
+				}
+			}
+		}
+		
+		private void _on_CheckTennis_body_exited(object body)
+		{
+			if (body is KinematicBody2D kinematicBody)
+			{
+				if (kinematicBody.Name == "TennisForTwo")
+				{
+					tennisCorrect = false;
+				}
+			}
+		}
+
+
+		private void _on_CheckPong_body_exited(object body)
+		{
+			if (body is KinematicBody2D kinematicBody)
+			{
+				if (kinematicBody.Name == "Pong")
+				{
+					GD.Print("Pong");
+					pongCorrect = false;
+				}
+			}
+		}
+
+
+		private void _on_CheckMazeWars_body_exited(object body)
+		{
+			if (body is KinematicBody2D kinematicBody)
+			{
+				if (kinematicBody.Name == "MazeWars")
+				{
+					GD.Print("MazeWars");
+					mazeWarsCorrect = false;
+				}
+			}
+		}
+
+
+		private void _on_CheckSpaceInvaders_body_exited(object body)
+		{
+			if (body is KinematicBody2D kinematicBody)
+			{
+				if (kinematicBody.Name == "SpaceInvaders")
+				{
+					GD.Print("SpaceInvaders");
+					spaceInvadersCorrect = false;
+				}
+			}
+		}
+
+
+		private void _on_CheckPacMan_body_exited(object body)
+		{
+			if (body is KinematicBody2D kinematicBody)
+			{
+				if (kinematicBody.Name == "PacMan")
+				{
+					GD.Print("PacMan");
+					pacManCorrect = false;
+				}
+			}
+		}
+
+
+		private void _on_CheckDonkeyKong_body_exited(object body)
+		{
+			if (body is KinematicBody2D kinematicBody)
+			{
+				if (kinematicBody.Name == "DonkeyKong")
+				{
+					GD.Print("DonkeyKong");
+					donkeyKongCorrect = false;
+				}
+			}
+		}
+
+
+		private void _on_CheckDystopie_body_exited(object body)
+		{
+			if (body is KinematicBody2D kinematicBody)
+			{
+				if (kinematicBody.Name == "Bioshock")
+				{
+					GD.Print("Bioshock");
+					bioshockCorrect = false;
+				}
+				else if (kinematicBody.Name == "Detroit")
+				{
+					GD.Print("Detriot");
+					detriotCorrect = false;
+				}
+				else if (kinematicBody.Name == "Stray")
+				{
+					GD.Print("Stray");
+					strayCorrect = false;
+				}
+			}
+		}
+
+
+		private void _on_CheckCyberpunk_body_exited(object body)
+		{
+			if (body is KinematicBody2D kinematicBody)
+			{
+				if (kinematicBody.Name == "Cyberpunk")
+				{
+					GD.Print("Cyberpunk");
+					cyberpunkCorrect = false;
+				}
+			}
+		}
+		private void _on_CheckSpace_body_exited(object body)
+		{
+			if (body is KinematicBody2D kinematicBody)
+			{
+				if (kinematicBody.Name == "Starfield")
+				{
+					GD.Print("Starfield");
+					starfieldCorrect = false;
+				}
+			}
+		}
+
+		private void _on_CheckPostApocaliptic_body_exited(object body)
+		{
+			if (body is KinematicBody2D kinematicBody)
+			{
+				if (kinematicBody.Name == "Horizon")
+				{
+					GD.Print("Horizon");
+					horizonCorrect = false;
+				}
+			}
+		}
 
 	}
 }
+
+
+
 
 
 

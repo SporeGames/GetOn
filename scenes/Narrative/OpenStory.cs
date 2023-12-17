@@ -19,7 +19,8 @@ public class OpenStory : Button
 	private Label _story3;
 	
 	private Button _close;
-	private ColorRect _background;
+	//private ColorRect _background;
+	private Node2D _background;
 	
 	public override void _Ready()
 	{
@@ -35,7 +36,7 @@ public class OpenStory : Button
 		_ending33 = GetNode<Label>("/root/Narrative/EndingPopup/Ending33");
 	
 		_close = GetNode<Button>("/root/Narrative/EndingPopup/CloseStory");
-		_background = GetNode<ColorRect>("/root/Narrative/EndingPopup/BackgroundEnding");
+		_background = GetNode<Node2D>("/root/Narrative/EndingPopup");
 		_story1 = GetNode<Label>("/root/Narrative/EndingPopup/Story1");
 		_story2 = GetNode<Label>("/root/Narrative/EndingPopup/Story2");
 		_story3 = GetNode<Label>("/root/Narrative/EndingPopup/Story3");
