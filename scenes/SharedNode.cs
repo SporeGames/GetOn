@@ -1,6 +1,8 @@
 using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Security.Cryptography;
+using System.Text;
 using Godot;
 using Newtonsoft.Json;
 using Directory = Godot.Directory;
@@ -103,10 +105,67 @@ namespace GetOn.scenes {
 		}
 
 		public void Print() {
-			var minutes = Mathf.FloorToInt(programmingTime / 60);
-			var seconds = Mathf.FloorToInt(programmingTime % 60);
-			var timeFormatted = $"{minutes:00}:{seconds:00}";
-			GetNode("Printer").Call("_print", PlayerName, programmingPoints, timeFormatted, gameStudyPoints, gameDesignPoints, soundPoints, managementPoints, managementColors, narrativePoints);
+			var result = new GameResult {
+				Name = PlayerName,
+				SelectedSpecialization = "Specialization: " + Specialization,
+				Categories = ToCategories(),
+				TotalTime = "Time: " + FormatTime(GetNode<CountdownTimer>("GlobalTimer").CurrentTime, true),
+			};
+			using (var sha256 = SHA256.Create())
+			{
+				var bytes = sha256.ComputeHash(Encoding.UTF8.GetBytes(JsonConvert.SerializeObject(result.Categories, Formatting.Indented)));
+				var builder = new StringBuilder();
+				foreach (var t in bytes) {
+					builder.Append(t.ToString("x2"));
+				}
+				result.Hash = builder.ToString();
+			}
+			var json = JsonConvert.SerializeObject(result, Formatting.Indented);
+			GetNode("Printer").Call("_print", json);
+		}
+		
+		public List<ResultCategory> ToCategories() {
+			return new List<ResultCategory> {
+				new ResultCategory {
+					Title = "Programming",
+					Items = new List<ResultEntry> {
+						new ResultEntry { Title = "Points", Text = programmingPoints.ToString() },
+						new ResultEntry { Title = "Time", Text = FormatTime(programmingTime) }
+					}
+				},
+				new ResultCategory {
+					Title = "Game Design",
+					Items = new List<ResultEntry> {
+						new ResultEntry { Title = "Points", Text = gameDesignPoints.ToString() },
+						new ResultEntry { Title = "Time", Text = FormatTime(gameDesignTime) }
+					}
+				},
+				new ResultCategory {
+					Title = "Game Study",
+					Items = new List<ResultEntry> {
+						new ResultEntry { Title = "Points", Text = gameStudyPoints.ToString() }
+					}
+				},
+				new ResultCategory {
+					Title = "Narrative",
+					Items = new List<ResultEntry> {
+						new ResultEntry { Title = "Points", Text = narrativePoints.ToString() }
+					}
+				},
+				new ResultCategory() {
+					Title = "Sound",
+					Items = new List<ResultEntry> {
+						new ResultEntry { Title = "Points", Text = soundPoints.ToString() }
+					}
+				},
+				new ResultCategory() {
+					Title = "Management",
+					Items = new List<ResultEntry> {
+						new ResultEntry { Title = "Points", Text = managementPoints.ToString() },
+						new ResultEntry { Title = "Colors", Text = managementColors.ToString() }
+					}
+				}
+			};
 		}
 
 		public string ToJson() {
@@ -133,6 +192,11 @@ namespace GetOn.scenes {
 				}
 				file = dir.GetNext();
 			}
+		}
+		
+		private string FormatTime(float time, bool showHours = false) {
+			var timeSpan = TimeSpan.FromSeconds(time);
+			return timeSpan.ToString(showHours ? @"hh\:mm\:ss" : @"mm\:ss");
 		}
 	}
 }

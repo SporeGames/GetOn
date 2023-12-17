@@ -36,7 +36,7 @@ font_data = ExtResource( 3 )
 
 [node name="PrePuzzleRoom" type="Node2D"]
 
-[node name="Sprite" type="Sprite" parent="."]
+[node name="Background" type="Sprite" parent="."]
 position = Vector2( 960, 540 )
 texture = ExtResource( 2 )
 

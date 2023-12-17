@@ -5,11 +5,11 @@ using GetOn.scenes.GameDesign;
 
 public class GameDesignSlider : Control {
 
-	private Button _leftButton;
-	private Button _rightButton;
-	private Button _doneButton;
-	private Button _backButton;
-	private Button _selectButton;
+	private TextureButton _leftButton;
+	private TextureButton _rightButton;
+	private TextureButton _doneButton;
+	private TextureButton _backButton;
+	private TextureButton _selectButton;
 	private TextureRect _centerImage;
 	private RichTextLabel _centerTitle;
 	private RichTextLabel _description;
@@ -29,6 +29,8 @@ public class GameDesignSlider : Control {
 	[Export(PropertyHint.MultilineText)] public string GameDescription;
 	[Export] public Texture GameImage;
 	[Export] public string[] ValidPersonas;
+	[Export] public Texture CheckboxChecked;
+	[Export] public Texture CheckboxUnchecked;
 	
 	private int _currentIndex = 0;
 	
@@ -36,11 +38,11 @@ public class GameDesignSlider : Control {
 	
 	 
 	public override void _Ready() {
-		_leftButton = GetNode<Button>("LeftButton");
-		_rightButton = GetNode<Button>("RightButton");
-		_doneButton = GetNode<Button>("DoneButton");
-		_backButton = GetNode<Button>("BackButton");
-		_selectButton = GetNode<Button>("SelectButton");
+		_leftButton = GetNode<TextureButton>("LeftButton");
+		_rightButton = GetNode<TextureButton>("RightButton");
+		_doneButton = GetNode<TextureButton>("DoneButton");
+		_backButton = GetNode<TextureButton>("BackButton");
+		_selectButton = GetNode<TextureButton>("SelectButton");
 		_centerImage = GetNode<TextureRect>("CenterImage");
 		_centerTitle = GetNode<RichTextLabel>("SliderTitle");
 		_description = GetNode<RichTextLabel>("DescriptionText");
@@ -72,13 +74,13 @@ public class GameDesignSlider : Control {
 	private void OnSelectPressed() {
 		if (_selectedValues.Contains(_centerTitle.Text)) {
 			_selectedValues.Remove(_centerTitle.Text);
-			_selectButton.Text = "Select";
+			_selectButton.TextureNormal = CheckboxUnchecked;
 		} else {
 			if (IsSingleSelect) {
 				_selectedValues.Clear();
 			}
 			_selectedValues.Add(_centerTitle.Text);
-			_selectButton.Text = "Deselect";
+			_selectButton.TextureNormal = CheckboxChecked;
 		} 
 		UpdateSelectedText(); 
 	}
@@ -115,13 +117,7 @@ public class GameDesignSlider : Control {
 		if (rightIndex >= PersonaNames.Length) {
 			rightIndex = 0;
 		}
-		if (_selectedValues.Contains(_centerTitle.Text)) {
-			_selectButton.Text = "Deselect";
-			_selectButton.Pressed = true;
-		} else {
-			_selectButton.Text = "Select";
-			_selectButton.Pressed = false;
-		} 
+		_selectButton.TextureNormal = _selectedValues.Contains(_centerTitle.Text) ? CheckboxChecked : CheckboxUnchecked; 
 	}
 
 	private void UpdateSelectedText() {
