@@ -1,11 +1,9 @@
 using Godot;
 using System;
-using GetOn.scenes.GameStudy;
 
 namespace GetOn.scenes.GameSelectionRoom {
 	public class GameSelRoom : Node2D {
 		private SharedNode _sharedNode;
-		
 		
 		private Button _goToProgramming;
 		private Button _goToManagment;
@@ -13,8 +11,9 @@ namespace GetOn.scenes.GameSelectionRoom {
 		private Button _goToSound;
 		private Button _goToGameStudy;
 		private Button _printPDF;
-
-		private Button _goToSoundPuzzle;
+		
+		private Node2D _DialogueBox;
+		
 
 		private bool narrativeAndDesign = false;
 		private Sprite _soundDone;
@@ -23,13 +22,13 @@ namespace GetOn.scenes.GameSelectionRoom {
 		private Sprite _gameStudyDone;
 		private Sprite _programmingDone;
 		private Sprite _storyDone;
-		
 
 		// Called when the node enters the scene tree for the first time.
 		public override void _Ready() {
 			
-			_sharedNode = GetNode<SharedNode>("/root/SharedNode");
+			_DialogueBox = GetNode<Node2D>("DialogueBox"); 
 			
+			_sharedNode = GetNode<SharedNode>("/root/SharedNode");
 			_goToProgramming = GetNode<Button>("GoToProgramming");
 			_goToProgramming.Connect("pressed", this, nameof(OnGoToProgrammingPressed));
 			_goToManagment = GetNode<Button>("GoToManagment");
@@ -43,10 +42,6 @@ namespace GetOn.scenes.GameSelectionRoom {
 			_goToGameStudy = GetNode<Button>("GoToGameStudy");
 			_goToGameStudy.Connect("pressed", this, nameof(OnGoToGameStudyPressed));
 
-			
-			//_goToSoundPuzzle = GetNode<Button>("/root/Sound/PrePuzzleRoom/Button");
-			
-
 			_soundDone = GetNode<Sprite>("SoundDone");
 			_managementDone = GetNode<Sprite>("ManagementDone");
 			_narrativeAndDesignDone = GetNode<Sprite>("NarrativeAndDesignDone");
@@ -57,18 +52,27 @@ namespace GetOn.scenes.GameSelectionRoom {
 		}
 
 		public void OnGoToProgrammingPressed() {
+			_DialogueBox.QueueFree();
+			
 			_sharedNode.SwitchScene("res://scenes/Programming/PrePuzzleRoom.tscn");
 		}
 
 		public void OnGoToManagmentPressed() {
+			GD.Print("HUAN");
+		if (_DialogueBox != null) {
+			GD.Print("HUAN2111111111");
+			_DialogueBox.QueueFree();
+		}
 			_sharedNode.SwitchScene("res://scenes/Management/PrePuzzleRoom.tscn");
 		}
 
 		public void OnGoToNarrativeAndSoundPressed() {
+			_DialogueBox.QueueFree();
 			_sharedNode.SwitchScene("res://scenes/Narrative/PrePuzzleRoom.tscn");//"res://scenes/Narrative/PrePuzzleRoom.tscn"
 		}
 
 		public void OnGoToSoundPressed() {
+			_DialogueBox.QueueFree();
 			_sharedNode.SwitchScene("res://scenes/Sound/PrePuzzleRoom.tscn");
 		}
 
@@ -78,6 +82,7 @@ namespace GetOn.scenes.GameSelectionRoom {
 		}
 
 		public void OnGoToGameStudyPressed() {
+			_DialogueBox.QueueFree();
 			_sharedNode.SwitchScene("res://scenes/GameStudy/PrePuzzleRoom.tscn");
 		}
 
@@ -113,5 +118,6 @@ namespace GetOn.scenes.GameSelectionRoom {
 				}
 			}
 		}
+		
 	}
 }

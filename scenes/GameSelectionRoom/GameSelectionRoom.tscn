@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=2]
+[gd_scene load_steps=20 format=2]
 
 [ext_resource path="res://SharedAssets/font/BAHNSCHRIFT 1.TTF" type="DynamicFontData" id=1]
 [ext_resource path="res://icon.png" type="Texture" id=2]
@@ -7,10 +7,12 @@
 [ext_resource path="res://scenes/MainMenu/MainThemeMusic.gd" type="Script" id=5]
 [ext_resource path="res://scenes/GameSelectionRoom/assets/grey gemeinschaftsraum.png" type="Texture" id=6]
 [ext_resource path="res://scenes/GameSelectionRoom/assets/sound desk grey.png" type="Texture" id=7]
-[ext_resource path="res://scenes/GameSelectionRoom/assets/story desk grey.png" type="Texture" id=8]
-[ext_resource path="res://scenes/GameSelectionRoom/assets/management desk grey.png" type="Texture" id=9]
-[ext_resource path="res://scenes/GameSelectionRoom/assets/programming 2 desk grey.png" type="Texture" id=10]
-[ext_resource path="res://scenes/GameSelectionRoom/assets/narrative desk grey.png" type="Texture" id=11]
+[ext_resource path="res://scenes/GameSelectionRoom/assets/programming 2 desk grey.png" type="Texture" id=8]
+[ext_resource path="res://scenes/GameSelectionRoom/assets/narrative desk grey.png" type="Texture" id=9]
+[ext_resource path="res://scenes/GameSelectionRoom/assets/management desk grey.png" type="Texture" id=10]
+[ext_resource path="res://SharedAssets/DialogeBox.tscn" type="PackedScene" id=11]
+[ext_resource path="res://SharedAssets/Dialog Charakters/Chloe.png" type="Texture" id=12]
+[ext_resource path="res://scenes/GameSelectionRoom/assets/story desk grey.png" type="Texture" id=13]
 
 [sub_resource type="StyleBoxEmpty" id=2]
 
@@ -199,30 +201,31 @@ texture = ExtResource( 6 )
 
 [node name="SoundDone" type="Sprite" parent="."]
 visible = false
-position = Vector2( 957, 533 )
+position = Vector2( 956, 534 )
 texture = ExtResource( 7 )
 
 [node name="NarrativeAndDesignDone" type="Sprite" parent="."]
 visible = false
-position = Vector2( 956, 533 )
-texture = ExtResource( 11 )
+position = Vector2( 956, 534 )
+texture = ExtResource( 9 )
 
 [node name="ManagementDone" type="Sprite" parent="."]
 visible = false
-position = Vector2( 957, 534 )
-texture = ExtResource( 9 )
-
-[node name="ProgrammingDone" type="Sprite" parent="."]
-visible = false
-position = Vector2( 956, 533 )
+position = Vector2( 956, 534 )
 texture = ExtResource( 10 )
 
-[node name="StoryDone" type="Sprite" parent="."]
+[node name="ProgrammingDone" type="Sprite" parent="."]
 visible = false
 position = Vector2( 956, 534 )
 texture = ExtResource( 8 )
 
+[node name="StoryDone" type="Sprite" parent="."]
+visible = false
+position = Vector2( 955, 533 )
+texture = ExtResource( 13 )
+
 [node name="DialogueBox" parent="." instance=ExtResource( 11 )]
+visible = false
 position = Vector2( 0, 708 )
 Title = "Chloe"
 Icon = ExtResource( 12 )
