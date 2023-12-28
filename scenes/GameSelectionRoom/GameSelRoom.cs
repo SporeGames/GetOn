@@ -1,9 +1,11 @@
 using Godot;
 using System;
+using GetOn.scenes.GameStudy;
 
 namespace GetOn.scenes.GameSelectionRoom {
 	public class GameSelRoom : Node2D {
 		private SharedNode _sharedNode;
+		
 		
 		private Button _goToProgramming;
 		private Button _goToManagment;
@@ -12,18 +14,22 @@ namespace GetOn.scenes.GameSelectionRoom {
 		private Button _goToGameStudy;
 		private Button _printPDF;
 
+		private Button _goToSoundPuzzle;
+
 		private bool narrativeAndDesign = false;
 		private Sprite _soundDone;
 		private Sprite _managementDone;
 		private Sprite _narrativeAndDesignDone;
 		private Sprite _gameStudyDone;
 		private Sprite _programmingDone;
+		private Sprite _storyDone;
 		
 
 		// Called when the node enters the scene tree for the first time.
 		public override void _Ready() {
 			
 			_sharedNode = GetNode<SharedNode>("/root/SharedNode");
+			
 			_goToProgramming = GetNode<Button>("GoToProgramming");
 			_goToProgramming.Connect("pressed", this, nameof(OnGoToProgrammingPressed));
 			_goToManagment = GetNode<Button>("GoToManagment");
@@ -37,11 +43,16 @@ namespace GetOn.scenes.GameSelectionRoom {
 			_goToGameStudy = GetNode<Button>("GoToGameStudy");
 			_goToGameStudy.Connect("pressed", this, nameof(OnGoToGameStudyPressed));
 
+			
+			//_goToSoundPuzzle = GetNode<Button>("/root/Sound/PrePuzzleRoom/Button");
+			
+
 			_soundDone = GetNode<Sprite>("SoundDone");
 			_managementDone = GetNode<Sprite>("ManagementDone");
 			_narrativeAndDesignDone = GetNode<Sprite>("NarrativeAndDesignDone");
 			_gameStudyDone = GetNode<Sprite>("GameStudyDone");
 			_programmingDone = GetNode<Sprite>("ProgrammingDone");
+			_storyDone = GetNode<Sprite>("StoryDone");
 			CheckCompletions();
 		}
 
@@ -74,48 +85,30 @@ namespace GetOn.scenes.GameSelectionRoom {
 			foreach (var game in _sharedNode.CompletedTasks) {
 				switch (game) {
 					case "programming":
-						_goToProgramming.Disabled = true;
-						_goToProgramming.Visible = false;
+						
 						_programmingDone.Visible = true;
 						break;
 					case "management":
-						_goToManagment.Disabled = true;
-						_goToManagment.Visible = false;
+						
 						_managementDone.Visible = true;
 						break;
 					case "narrative":
-						if (narrativeAndDesign)
-						{
-							_goToNarrativeAndGameDesign.Disabled = true;
-							_goToNarrativeAndGameDesign.Visible = false;
-							_narrativeAndDesignDone.Visible = true;
-						}
-						else
-						{
-							narrativeAndDesign = true;
-						}
+						_storyDone.Visible = true;
 						break;
 					case "sound":
-						_goToSound.Disabled = true;
-						_goToSound.Visible = false;
+						//_goToSound.Disabled = true;
+						//_goToSound.Visible = false;
+						//_goToSoundPuzzle.Visible = false;
+						
 						_soundDone.Visible = true;
 						break;
 					case "gamestudy":
-						_goToGameStudy.Disabled = true;
-						_goToGameStudy.Visible = false;
+						
 						_gameStudyDone.Visible = true;
 						break;
 					case "gameDesign" :
-						if (narrativeAndDesign)
-						{
-							_goToNarrativeAndGameDesign.Disabled = true;
-							_goToNarrativeAndGameDesign.Visible = false;
-							_narrativeAndDesignDone.Visible = true;
-						}
-						else
-						{
-							narrativeAndDesign = true;
-						}
+
+						_narrativeAndDesignDone.Visible = true;
 						break;
 				}
 			}

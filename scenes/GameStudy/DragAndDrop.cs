@@ -49,6 +49,8 @@ public class DragAndDrop : KinematicBody2D
 	private Button _open;
 	private Button _close;
 	private bool isOpen = false;
+
+	private Area2D currentArea = null;
 	
 
 	public override void _Ready()
@@ -97,6 +99,10 @@ public class DragAndDrop : KinematicBody2D
 		//_close.Connect("pressed", this, nameof(InputTrue(true)));
 		_open.Connect("pressed", this, "InputFalse", new Godot.Collections.Array { true });
 		_close.Connect("pressed", this, "InputTrue", new Godot.Collections.Array { true });
+		
+		
+		//Connect("area_entered", this, "_OnAreaEntered");
+		//Connect("area_exited", this, "_OnAreaExited");
 	}
 
 	public override void _Input(InputEvent @event)
@@ -129,7 +135,9 @@ public class DragAndDrop : KinematicBody2D
 
 		if (!Input.IsActionPressed("left_click"))
 		{
+			
 			attached = false;
+			CheckSnap();
 			this.ZIndex = 0;
 			InputTrue(false);
 		
@@ -347,13 +355,19 @@ public class DragAndDrop : KinematicBody2D
 			isOpen = true;
 		}
 	}
+	
+	private void _on_CheckTennis_body_entered(object body)
+	{
+		//snap versuch
+	}
+
 
 	public override void _Process(float delta)
 	{
 		if (attached == true && currentlyDraggedObject == this)
 		{
 			Position = new Vector2(offset);
-			CheckSnap();
+			//CheckSnap();
 		}
 	}
 	
@@ -365,18 +379,14 @@ public class DragAndDrop : KinematicBody2D
 	
 	private void CheckSnap()
 	{
-		foreach (Node2D node in GetTree().GetNodesInGroup("DragAndDropGroup"))
-		{
-			//if (node != this && Mathf.Abs(node.Position.y - Position.y) < snapDistance && node.Position.y < Position.y && Mathf.Abs(node.Position.y - Position.y) < snapDistance)
-			if (node != this && Position.x > node.Position.x && Mathf.Abs(node.Position.y - Position.y) < snapDistance && Mathf.Abs(Position.x - (node.Position.x + node.GetNode<Sprite>("Sprite").Texture.GetSize().x)) < 40f)
-			{
-				Position = new Vector2(node.Position.x + 80f, node.Position.y);
-				//hovered = false;
-				break;
-			}
-		}
+		//GD.Print("uwu");
 	}
+	
+
+
 }
+
+
 
 
 

@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://SharedAssets/font/BAHNSCHRIFT 1.TTF" type="DynamicFontData" id=1]
 [ext_resource path="res://scenes/Management/assets/ManagementPrototyp2VerbesserteVersion.png" type="Texture" id=2]
 [ext_resource path="res://scenes/Sound/AfterPuzzleRoom.cs" type="Script" id=3]
+[ext_resource path="res://SharedAssets/DialogeBox.tscn" type="PackedScene" id=4]
 
 [sub_resource type="DynamicFont" id=1]
 size = 20
@@ -39,3 +40,24 @@ margin_top = 379.0
 margin_right = 878.0
 margin_bottom = 411.0
 text = "Menu"
+
+[node name="DialogueBox" parent="Management" instance=ExtResource( 4 )]
+position = Vector2( 0, 708 )
+Title = "Chloe, Management"
+Texts = PoolStringArray( "“Excellent work, just as I imagined.”", "“You have great potential.”" )
+LoadSceneAfter = true
+SceneToLoad = "GameSelectionRoom"
+
+[node name="DialogueBox2" parent="Management" instance=ExtResource( 4 )]
+position = Vector2( 0, 708 )
+Title = "Chloe, Management"
+Texts = PoolStringArray( "“Good job, now we can get back to work.”", "“Good job, now we can get back to work.”" )
+LoadSceneAfter = true
+SceneToLoad = "GameSelectionRoom"
+
+[node name="DialogueBox3" parent="Management" instance=ExtResource( 4 )]
+position = Vector2( 0, 708 )
+Title = "Chloe, Management"
+Texts = PoolStringArray( " “Oh well, this doesn’t really help us… .”", "“But don’t feel bad about your result, this is your first time after all.”" )
+LoadSceneAfter = true
+SceneToLoad = "GameSelectionRoom"

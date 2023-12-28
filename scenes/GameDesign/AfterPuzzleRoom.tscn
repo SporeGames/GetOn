@@ -1,9 +1,10 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://SharedAssets/font/BAHNSCHRIFT 1.TTF" type="DynamicFontData" id=1]
 [ext_resource path="res://scenes/GameDesign/assets/personas/GameDesign.png" type="Texture" id=2]
 [ext_resource path="res://scenes/Sound/AfterPuzzleRoom.cs" type="Script" id=3]
 [ext_resource path="res://scenes/Narrative/assets/IMG_0232.PNG" type="Texture" id=4]
+[ext_resource path="res://SharedAssets/DialogeBox.tscn" type="PackedScene" id=5]
 
 [sub_resource type="DynamicFont" id=1]
 size = 20
@@ -45,3 +46,24 @@ text = "Menu"
 position = Vector2( 366, 662 )
 scale = Vector2( 0.5, 0.5 )
 texture = ExtResource( 4 )
+
+[node name="DialogueBox" parent="GameDesign" instance=ExtResource( 5 )]
+position = Vector2( 0, 708 )
+Title = "Mike, Game-Design"
+Texts = PoolStringArray( "“Five-Star work you did there, I’m almost worried about my position…”", "“Five-Star work you did there, I’m almost worried about my position…”" )
+LoadSceneAfter = true
+SceneToLoad = "GameSelectionRoom"
+
+[node name="DialogueBox2" parent="GameDesign" instance=ExtResource( 5 )]
+position = Vector2( 0, 708 )
+Title = "Mike, Game-Design"
+Texts = PoolStringArray( " “Decent, decent.”", "“Some minor adjustments from me and all should turn out as planned.”" )
+LoadSceneAfter = true
+SceneToLoad = "GameSelectionRoom"
+
+[node name="DialogueBox3" parent="GameDesign" instance=ExtResource( 5 )]
+position = Vector2( 0, 708 )
+Title = "Mike, Game-Design"
+Texts = PoolStringArray( "“Looks like you aren’t really made to be a game-designer, but that\'s ok.”", "“Maybe you will do better at the other tasks.”" )
+LoadSceneAfter = true
+SceneToLoad = "GameSelectionRoom"

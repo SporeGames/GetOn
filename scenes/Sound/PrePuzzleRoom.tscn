@@ -1,8 +1,9 @@
-[gd_scene load_steps=18 format=2]
+[gd_scene load_steps=19 format=2]
 
 [ext_resource path="res://scenes/GameStudy/PrePuzzleRoom.cs" type="Script" id=1]
 [ext_resource path="res://scenes/Sound/assets/Art.png" type="Texture" id=2]
 [ext_resource path="res://SharedAssets/font/BAHNSCHRIFT 1.TTF" type="DynamicFontData" id=3]
+[ext_resource path="res://SharedAssets/DialogeBox.tscn" type="PackedScene" id=4]
 [ext_resource path="res://scenes/GameStudy/WorkerText.cs" type="Script" id=5]
 [ext_resource path="res://scenes/Sound/SoundGameMusic.gd" type="Script" id=6]
 
@@ -41,6 +42,7 @@ position = Vector2( 960, 540 )
 texture = ExtResource( 2 )
 
 [node name="Button" type="Button" parent="."]
+visible = false
 margin_left = 578.0
 margin_top = 332.0
 margin_right = 865.0
@@ -60,8 +62,6 @@ margin_right = 1898.0
 margin_bottom = 87.0
 custom_fonts/font = SubResource( 6 )
 text = "Back"
-script = ExtResource( 1 )
-sceneToLoad = "res://scenes/GameSelectionRoom/GameSelectionRoom.tscn"
 
 [node name="Worker" type="Sprite" parent="."]
 position = Vector2( 650, 452 )
@@ -111,8 +111,19 @@ one_shot = true
 [node name="Timer3" type="Timer" parent="Worker"]
 one_shot = true
 
+[node name="DialogueBox" parent="Worker" instance=ExtResource( 4 )]
+position = Vector2( -650, 256 )
+Title = "Julia, Sound-Design"
+Texts = PoolStringArray( "Hey, there you are, awesome! You really seem like an interesting person. I’m Julia by the way, Spore-Games one and only sound-designer. Over there we have Ash, our art-designer. We both take care of creating wonderful aesthetics and music-themes for our games, even though much of our work gets scrapped.", "Since you are here as an intern, we prepared some tasks for you, just talk to us when you are ready to go!", "Hi again! Could you help me find fitting sounds for specific in-game moments of our new project\? We will make an action-adventure in a futuristic setting, it’s gonna be so awesome!", "I have a sound library that you can use to find just the right sounds. I will explain to you what to do in just a second." )
+LoadSceneAfter = true
+SceneToLoad = "Sound"
+
 [node name="Music" type="Node" parent="."]
 script = ExtResource( 6 )
+
+[node name="Button2" type="Button" parent="."]
+margin_right = 12.0
+margin_bottom = 20.0
 
 [connection signal="timeout" from="Worker/Timer" to="Worker" method="_on_Timer_timeout"]
 [connection signal="timeout" from="Worker/Timer2" to="Worker" method="_on_Timer2_timeout"]

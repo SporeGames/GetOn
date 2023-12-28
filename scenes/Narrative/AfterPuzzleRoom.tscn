@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://SharedAssets/font/BAHNSCHRIFT 1.TTF" type="DynamicFontData" id=1]
 [ext_resource path="res://scenes/GameDesign/assets/personas/GameDesign.png" type="Texture" id=2]
 [ext_resource path="res://scenes/Sound/AfterPuzzleRoom.cs" type="Script" id=3]
+[ext_resource path="res://SharedAssets/DialogeBox.tscn" type="PackedScene" id=4]
 
 [sub_resource type="DynamicFont" id=1]
 size = 20
@@ -39,3 +40,24 @@ margin_top = 427.0
 margin_right = 974.0
 margin_bottom = 459.0
 text = "Menu"
+
+[node name="DialogueBox" parent="Story" instance=ExtResource( 4 )]
+position = Vector2( 0, 708 )
+Title = "Mary, Story-Design"
+Texts = PoolStringArray( "“Fantastic, you perfectly restored my whiteboard!\"", "\"You seem like a main character of some sort…”" )
+LoadSceneAfter = true
+SceneToLoad = "GameSelectionRoom"
+
+[node name="DialogueBox2" parent="Story" instance=ExtResource( 4 )]
+position = Vector2( 0, 708 )
+Title = "Mary, Story-Design"
+Texts = PoolStringArray( "“That helped me a little bit, I think I can restore the rest myself.”", "“That helped me a little bit, I think I can restore the rest myself.”" )
+LoadSceneAfter = true
+SceneToLoad = "GameSelectionRoom"
+
+[node name="DialogueBox3" parent="Story" instance=ExtResource( 4 )]
+position = Vector2( 0, 708 )
+Title = "Mary, Story-Design"
+Texts = PoolStringArray( "\"*Yawn* oh well, let’s just leave it at that.\"", "“Maybe I can find even better story ideas if I do that task myself.”" )
+LoadSceneAfter = true
+SceneToLoad = "GameSelectionRoom"

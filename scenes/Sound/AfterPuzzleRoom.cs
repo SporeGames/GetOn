@@ -14,6 +14,11 @@ namespace GetOn.scenes.Sound
 		private int count;
 		private String lastPuzzle;
 		private int maxPoints;
+
+		private Node2D _dialogueBoxPerfect;
+		private Node2D _dialogueBoxMid;
+		private Node2D _dialogueBoxFail;
+		
 	
 		public override void _Ready()
 		{
@@ -21,6 +26,10 @@ namespace GetOn.scenes.Sound
 			_text = GetNode<Label>("Label");
 			_back = GetNode<Button>("Button");
 			_back.Connect("pressed", this, nameof(BackToMenu));
+			_dialogueBoxPerfect = GetNode<Node2D>("DialogueBox");
+			_dialogueBoxMid = GetNode<Node2D>("DialogueBox2");
+			_dialogueBoxFail = GetNode<Node2D>("DialogueBox3");
+			
 			CheckPuzzle();
 			CheckPoints();
 
@@ -41,6 +50,23 @@ namespace GetOn.scenes.Sound
 
 		public void CheckPoints()
 		{
+			if (points >= (maxPoints * 0.75))
+			{
+				_dialogueBoxPerfect.Visible = true;
+			}
+			else if(points <=(maxPoints*0.75) && points >= (maxPoints*0.35))
+			{
+				_dialogueBoxMid.Visible = true;
+			}
+			else
+			{
+				_dialogueBoxFail.Visible = true;
+			}
+			
+			
+			
+			
+			/*
 			if (this.Name == "Sound")
 			{
 				if (points >= (maxPoints * 0.75))
@@ -116,6 +142,7 @@ namespace GetOn.scenes.Sound
 					feedback = "Ohh well...I need to double check some of your work here.";
 				}
 			}
+			*/
 			
 			GD.Print(points);
 		}

@@ -668,6 +668,7 @@ margin_bottom = -369.0
 text = "Close"
 
 [node name="Intro" type="Node2D" parent="."]
+visible = false
 z_index = 21
 
 [node name="ColorRect2" type="ColorRect" parent="Intro"]
@@ -732,6 +733,7 @@ texture = ExtResource( 11 )
 [connection signal="pressed" from="Submit" to="Music" method="_on_Submit_pressed"]
 [connection signal="timeout" from="DelayTimer" to="GameBoy" method="_on_DelayTimer_timeout"]
 [connection signal="body_exited" from="SpawningGames/Area2D" to="SpawningGames" method="_on_Area2D_body_exited"]
+[connection signal="body_entered" from="PopUp/CheckAreas/CheckTennis" to="GameBoy" method="_on_CheckTennis_body_entered"]
 [connection signal="body_entered" from="PopUp/CheckAreas/CheckTennis" to="CheckGameBoy" method="_on_CheckTennis_body_entered"]
 [connection signal="body_exited" from="PopUp/CheckAreas/CheckTennis" to="CheckGameBoy" method="_on_CheckTennis_body_exited"]
 [connection signal="body_entered" from="PopUp/CheckAreas/CheckPong" to="CheckGameBoy" method="_on_CheckPong_body_entered"]

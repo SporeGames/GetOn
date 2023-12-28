@@ -31,10 +31,13 @@ script = ExtResource( 6 )
 
 [node name="DialogueBox" parent="." instance=ExtResource( 4 )]
 position = Vector2( 0, 708 )
-Title = "Manager Mr. Important"
-Texts = PoolStringArray( "Hello new intern, can you help me\?", "I am stupid and dropped the entire project plan. Oh no!", "Please pick the notes up and put them in the correct order again." )
+Title = "Chloe, Management"
+Texts = PoolStringArray( "Good morning! You must be our new intern.My name is Chloe and I’m the manager around here. We are really looking forward to working with you. We were really impressed by your portfolio that you sent us.You know, it really doesn’t matter what grades you got during your time in university. The most important thing in the games industry are your abilities.", "We’re currently in the pre-production of our game.As you probably know, this phase consists of a ton of research. We got the commission to make a sci-fi game. Therefore, we´re researching what kind of game would fit the genre and would be the most fun to play.", "Now your internship can start!You can move around our studio completely freely!Each team member has some work for you to do.After you´re done with all your tasks, I will talk to you again.Have fun!﻿", "“Hello again! What you see here is our managing room, where I manage our documents for all our sprint-tasks, meetings, protocols and much more. This is very important, since we always work within a strict plan. You will see what I mean by that in a few seconds. If you are ready, talk to me again, then I will explain your task.", "“Our last backup got messed up and most of the task overview got deleted. As our new intern… Would you mind fixing it\?”", "“We can only continue our work if you fix it.”" )
 LoadSceneAfter = true
 AutoNext = true
-TimePerCharacter = 0.08
 ReadTime = 0.3
 SceneToLoad = "Management"
+
+[node name="Button2" type="Button" parent="."]
+margin_right = 12.0
+margin_bottom = 20.0

@@ -1,9 +1,10 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://SharedAssets/font/BAHNSCHRIFT 1.TTF" type="DynamicFontData" id=1]
 [ext_resource path="res://scenes/Sound/AfterPuzzleRoom.cs" type="Script" id=2]
 [ext_resource path="res://scenes/Programming/assets/Programmierraumm.png" type="Texture" id=3]
 [ext_resource path="res://scenes/Programming/assets/IMG_0229.PNG" type="Texture" id=4]
+[ext_resource path="res://SharedAssets/DialogeBox.tscn" type="PackedScene" id=5]
 
 [sub_resource type="DynamicFont" id=1]
 size = 20
@@ -19,6 +20,7 @@ position = Vector2( 960, 540 )
 texture = ExtResource( 3 )
 
 [node name="ColorRect" type="ColorRect" parent="Programming"]
+visible = false
 margin_left = 1109.0
 margin_top = 288.0
 margin_right = 1336.0
@@ -26,6 +28,7 @@ margin_bottom = 470.0
 color = Color( 0, 0, 0, 0.592157 )
 
 [node name="Label" type="Label" parent="Programming"]
+visible = false
 margin_left = 1122.0
 margin_top = 301.0
 margin_right = 1328.0
@@ -35,6 +38,7 @@ text = "Inspiring, truly inspiring! Are you a relative of Hans Zimmer perhaps? Y
 autowrap = true
 
 [node name="Button" type="Button" parent="Programming"]
+visible = false
 margin_left = 1252.0
 margin_top = 432.0
 margin_right = 1329.0
@@ -45,3 +49,24 @@ text = "Menu"
 position = Vector2( 1080, 566 )
 scale = Vector2( 0.4, 0.4 )
 texture = ExtResource( 4 )
+
+[node name="DialogueBox" parent="Programming" instance=ExtResource( 5 )]
+position = Vector2( 0, 708 )
+Title = "Justin, Programmer"
+Texts = PoolStringArray( "\"Holy-moly! That worked better than I thought.\"", "\"Perfect work newbie, that would be all for now.\"" )
+LoadSceneAfter = true
+SceneToLoad = "GameSelectionRoom"
+
+[node name="DialogueBox2" parent="Programming" instance=ExtResource( 5 )]
+position = Vector2( 0, 708 )
+Title = "Justin, Programmer"
+Texts = PoolStringArray( "\" Not bad, but not really good either.\"", "\"Well I guess that’s all for now.\"" )
+LoadSceneAfter = true
+SceneToLoad = "GameSelectionRoom"
+
+[node name="DialogueBox3" parent="Programming" instance=ExtResource( 5 )]
+position = Vector2( 0, 708 )
+Title = "Justin, Programmer"
+Texts = PoolStringArray( "\" You don’t have any experience with blueprints, have you\?\"", "\" You don’t have any experience with blueprints, have you\?\"" )
+LoadSceneAfter = true
+SceneToLoad = "GameSelectionRoom"

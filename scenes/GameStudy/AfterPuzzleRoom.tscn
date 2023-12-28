@@ -1,9 +1,10 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://SharedAssets/font/BAHNSCHRIFT 1.TTF" type="DynamicFontData" id=1]
 [ext_resource path="res://scenes/GameStudy/assets/GameStudiesGrob.png" type="Texture" id=2]
 [ext_resource path="res://scenes/Sound/AfterPuzzleRoom.cs" type="Script" id=3]
 [ext_resource path="res://scenes/GameStudy/assets/Unbenanntes_Projekt.png" type="Texture" id=4]
+[ext_resource path="res://SharedAssets/DialogeBox.tscn" type="PackedScene" id=5]
 
 [sub_resource type="DynamicFont" id=1]
 size = 20
@@ -45,3 +46,24 @@ text = "Menu"
 position = Vector2( 859.125, 588.25 )
 scale = Vector2( 0.5, 0.5 )
 texture = ExtResource( 4 )
+
+[node name="DialogueBox" parent="GameStudy" instance=ExtResource( 5 )]
+position = Vector2( 0, 708 )
+Title = "Emily"
+Texts = PoolStringArray( "\"You really love games, don’t you\?”", "“That’s very cool, thanks for your help.”" )
+LoadSceneAfter = true
+SceneToLoad = "GameSelectionroom"
+
+[node name="DialogueBox2" parent="GameStudy" instance=ExtResource( 5 )]
+position = Vector2( 0, 708 )
+Title = "Emily"
+Texts = PoolStringArray( "“Cool, don’t you think\?”", "“It doesn’t matter if you sorted all of them right.”" )
+LoadSceneAfter = true
+SceneToLoad = "GameSelectionroom"
+
+[node name="DialogueBox3" parent="GameStudy" instance=ExtResource( 5 )]
+position = Vector2( 0, 708 )
+Title = "Emily"
+Texts = PoolStringArray( "“... if you don’t like this task, then I gladly do it.”", "“There is much more to those old-time classics as you would think you know.”" )
+LoadSceneAfter = true
+SceneToLoad = "GameSelectionroom"

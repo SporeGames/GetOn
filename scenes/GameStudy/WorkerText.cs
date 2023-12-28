@@ -16,6 +16,9 @@ public class WorkerText : Sprite
 
 	private PrePuzzleRoom _prePuzzleRoom;
 //	private Button _startPuzzle;
+	private Node2D _dialogueBox;
+
+	[Export] public bool worker2;
 	
 	
 	public override void _Ready()
@@ -35,10 +38,18 @@ public class WorkerText : Sprite
 		_text1.Visible = false;
 		_text2.Visible = false;
 		_text3.Visible = false;
+
+		_dialogueBox = GetNode<Node2D>("DialogueBox");
+		_dialogueBox.Visible = false;
 		
-		_interact.Connect("pressed", this, nameof(OnInteractPressed));
-//		_startPuzzle = GetNode<Button>("ColorRect/StartPuzzle");
-//		_startPuzzle.Connect("pressed",this,nameof(StartPuzzle));
+		_interact.Connect("pressed", this, nameof(WorkerPressed));
+		//		_startPuzzle = GetNode<Button>("ColorRect/StartPuzzle");
+		//		_startPuzzle.Connect("pressed",this,nameof(StartPuzzle));
+	}
+
+	public void WorkerPressed()
+	{
+		_dialogueBox.Visible = true;
 	}
 
 	public void OnInteractPressed()

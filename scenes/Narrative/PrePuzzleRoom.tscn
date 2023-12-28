@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=2]
+[gd_scene load_steps=21 format=2]
 
 [ext_resource path="res://scenes/GameStudy/PrePuzzleRoom.cs" type="Script" id=1]
 [ext_resource path="res://scenes/GameDesign/assets/personas/GameDesign.png" type="Texture" id=2]
@@ -6,6 +6,7 @@
 [ext_resource path="res://icon.png" type="Texture" id=4]
 [ext_resource path="res://scenes/GameStudy/WorkerText.cs" type="Script" id=5]
 [ext_resource path="res://scenes/Narrative/assets/IMG_0232.PNG" type="Texture" id=6]
+[ext_resource path="res://SharedAssets/DialogeBox.tscn" type="PackedScene" id=7]
 
 [sub_resource type="StyleBoxEmpty" id=1]
 
@@ -75,7 +76,6 @@ margin_top = 17.0
 margin_right = 1898.0
 margin_bottom = 87.0
 custom_fonts/font = SubResource( 6 )
-text = "Back"
 script = ExtResource( 1 )
 sceneToLoad = "res://scenes/GameSelectionRoom/GameSelectionRoom.tscn"
 
@@ -132,6 +132,13 @@ position = Vector2( -35, 149 )
 scale = Vector2( 0.5, 0.5 )
 texture = ExtResource( 6 )
 
+[node name="DialogueBox" parent="Worker" instance=ExtResource( 7 )]
+position = Vector2( -400, 193 )
+Title = "Mary, Story Design"
+Texts = PoolStringArray( "“ *Yawn*, huh who are you\? You seem quite interesting, just like a protagonist”", "“Could you perhaps help me\? My Whiteboard with all my great story ideas on it got messed up, I have no clue how that happened…”", "“You’re in\? \"Thank you a lot!”" )
+LoadSceneAfter = true
+SceneToLoad = "Narrative"
+
 [node name="Worker2" type="Sprite" parent="."]
 position = Vector2( 1356, 311 )
 texture = ExtResource( 4 )
@@ -180,6 +187,13 @@ one_shot = true
 
 [node name="Timer3" type="Timer" parent="Worker2"]
 one_shot = true
+
+[node name="DialogueBox" parent="Worker2" instance=ExtResource( 7 )]
+position = Vector2( -1356, 397 )
+Title = "Mike, Game-Design"
+Texts = PoolStringArray( "Hi, I’m Mike, Spore-Games Lead-Game-Designer! In this room me and Mary, over there, work at concepting ideas for our game. This includes her ideas for the story, mine for the mechanics and in general how to make the game attractive for our target groups. Based on our research I then talk to the other departments and further elaborate… . You could almost say I’m the core of our studio!", "But enough about that… Just tell me or Mary if you want to start with your tasks, we both have one for you.", "Well you see, I started off as an intern just like you and… Oh right, you\'re here for your task!We are currently researching which player-motivations fit popular sci-fi games the best. I will explain everything in detail in a second, so don’t worry, you will get the hang of it!" )
+LoadSceneAfter = true
+SceneToLoad = "GameDesign"
 
 [connection signal="timeout" from="Worker/Timer" to="Worker" method="_on_Timer_timeout"]
 [connection signal="timeout" from="Worker/Timer2" to="Worker" method="_on_Timer2_timeout"]
