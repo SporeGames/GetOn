@@ -1,10 +1,12 @@
-[gd_scene load_steps=18 format=2]
+[gd_scene load_steps=20 format=2]
 
 [ext_resource path="res://scenes/MainMenu/MainMenu.cs" type="Script" id=1]
 [ext_resource path="res://ui/MainMenuTheme.tres" type="Theme" id=2]
-[ext_resource path="res://scenes/MainMenu/assets/StarMenu.png" type="Texture" id=3]
+[ext_resource path="res://scenes/GameSelectionRoom/assets/LayoutMaybe.png" type="Texture" id=3]
+[ext_resource path="res://SharedAssets/Dialog Charakters/Chloe.png" type="Texture" id=4]
 [ext_resource path="res://SharedAssets/font/BAHNSCHRIFT 1.TTF" type="DynamicFontData" id=5]
 [ext_resource path="res://scenes/Introduction/assets/Questionaire01.png" type="Texture" id=6]
+[ext_resource path="res://SharedAssets/DialogeBox.tscn" type="PackedScene" id=7]
 
 [sub_resource type="DynamicFont" id=10]
 size = 100
@@ -54,7 +56,7 @@ position = Vector2( 964, 543 )
 texture = ExtResource( 3 )
 
 [node name="Sprite" type="Sprite" parent="Sprite"]
-position = Vector2( -58, 56 )
+position = Vector2( -24, -12 )
 scale = Vector2( 1.76754, 2.77686 )
 texture = ExtResource( 6 )
 
@@ -114,10 +116,10 @@ anchor_left = 0.45
 anchor_top = 0.48
 anchor_right = 0.55
 anchor_bottom = 0.48
-margin_left = 283.0
-margin_top = 491.6
-margin_right = 407.0
-margin_bottom = 592.6
+margin_left = 305.0
+margin_top = 411.6
+margin_right = 429.0
+margin_bottom = 512.6
 rect_scale = Vector2( 0.433971, 0.433971 )
 theme = ExtResource( 2 )
 custom_colors/font_color_disabled = Color( 0, 0, 0, 1 )
@@ -149,10 +151,10 @@ anchor_left = 0.4
 anchor_top = 0.4
 anchor_right = 0.6
 anchor_bottom = 0.4
-margin_left = -43.0
-margin_top = -13.0
-margin_right = -22.0
-margin_bottom = 44.0
+margin_left = -45.0
+margin_top = -84.0
+margin_right = -24.0
+margin_bottom = -27.0
 theme = ExtResource( 2 )
 custom_colors/selection_color = Color( 0, 0, 0, 1 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
@@ -172,8 +174,19 @@ custom_fonts/normal_font = SubResource( 9 )
 text = "Select specialization:"
 
 [node name="SpecializationSelect" type="OptionButton" parent="."]
-margin_left = 802.0
-margin_top = 612.0
-margin_right = 1081.0
-margin_bottom = 652.0
+margin_left = 854.0
+margin_top = 554.0
+margin_right = 1133.0
+margin_bottom = 594.0
 text = "Select specialization..."
+
+[node name="DialogueBox" parent="." instance=ExtResource( 7 )]
+visible = false
+position = Vector2( 0, 708 )
+Title = "Chloe"
+Icon = ExtResource( 4 )
+Texts = PoolStringArray( "Good morning! You must be our new intern.", "My name is Chloe and I’m the manager around here. We are really looking forward to working with you. ", "We were really impressed by your portfolio that you sent us.", "You know, it really doesn’t matter what grades you got during your time in university. The most important thing in the games industry are your abilities.", "We’re currently in the pre-production of our game.As you probably know, this phase consists of a ton of research.", "We got the commission to make a sci-fi game. Therefore, we´re researching what kind of game would fit the genre and would be the most fun to play." )
+AutoNext = true
+AutoNextTime = 8.0
+ReadTime = 0.3
+SceneToLoad = "GameSelectionRoom"
