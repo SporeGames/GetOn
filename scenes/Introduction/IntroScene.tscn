@@ -54,7 +54,6 @@ margin_bottom = 724.0
 text = "Credits"
 
 [node name="IntroScreen" type="Node2D" parent="."]
-visible = false
 
 [node name="Sprite" type="Sprite" parent="IntroScreen"]
 position = Vector2( 960, 528 )
@@ -127,7 +126,6 @@ position = Vector2( 84, 24 )
 texture = ExtResource( 5 )
 
 [node name="UnderstandButton" type="Button" parent="."]
-visible = false
 margin_left = 896.0
 margin_top = 696.0
 margin_right = 1024.0
@@ -135,10 +133,11 @@ margin_bottom = 744.0
 text = "I understand"
 
 [node name="StartButton" type="Button" parent="."]
-margin_left = 801.0
-margin_top = 540.0
-margin_right = 1073.0
-margin_bottom = 608.0
+visible = false
+margin_left = 824.0
+margin_top = 584.0
+margin_right = 1096.0
+margin_bottom = 652.0
 text = "Start"
 
 [node name="Music" type="Node" parent="."]

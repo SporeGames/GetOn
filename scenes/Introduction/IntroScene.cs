@@ -20,23 +20,24 @@ public class IntroScene : Control
 		_startButton.Connect("pressed", this, nameof(OnStartButtonPressed));  
 		
 		_introScreen = GetNode<Node2D>("IntroScreen");
-		_introScreen.Hide(); // Assuming you want to initially hide the 2D node
+		
 		
 		_homeScreen = GetNode<Node2D>("HomeScreen");
+		_homeScreen.Hide();
 		_sharedNode = GetNode<SharedNode>("/root/SharedNode");
 		
 		
 	}
 
-		private void OnUnderstandButtonPressed() {
-			_sharedNode.SwitchScene("res://scenes/MainMenu/MainMenu.tscn");
+		private void OnStartButtonPressed() {
+			_sharedNode.SwitchScene("res://scenes/Intermission/IntermissionScene.tscn");
 		}
 		
-		private void OnStartButtonPressed() {
-			_introScreen.Show();
-			_homeScreen.Hide();
-			_startButton.Hide();
-			_understandButton.Show();
+		private void OnUnderstandButtonPressed() {
+			_introScreen.Hide();
+			_homeScreen.Show();
+			_startButton.Show();
+			_understandButton.Hide();
 		}
 		
 }

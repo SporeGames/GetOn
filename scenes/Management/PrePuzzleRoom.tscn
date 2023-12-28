@@ -35,6 +35,5 @@ Title = "Manager Mr. Important"
 Texts = PoolStringArray( "Hello new intern, can you help me\?", "I am stupid and dropped the entire project plan. Oh no!", "Please pick the notes up and put them in the correct order again." )
 LoadSceneAfter = true
 AutoNext = true
-TimePerCharacter = 0.08
 ReadTime = 0.3
 SceneToLoad = "Management"

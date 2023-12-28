@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=2]
+[gd_scene load_steps=19 format=2]
 
 [ext_resource path="res://SharedAssets/font/BAHNSCHRIFT 1.TTF" type="DynamicFontData" id=1]
 [ext_resource path="res://icon.png" type="Texture" id=2]
@@ -10,6 +10,8 @@
 [ext_resource path="res://scenes/GameSelectionRoom/assets/grey programming.png" type="Texture" id=8]
 [ext_resource path="res://scenes/GameSelectionRoom/assets/grey gd.png" type="Texture" id=9]
 [ext_resource path="res://scenes/GameSelectionRoom/assets/grey sound.png" type="Texture" id=10]
+[ext_resource path="res://SharedAssets/DialogeBox.tscn" type="PackedScene" id=11]
+[ext_resource path="res://SharedAssets/Dialog Charakters/Chloe.png" type="Texture" id=12]
 
 [sub_resource type="StyleBoxEmpty" id=2]
 
@@ -215,3 +217,12 @@ texture = ExtResource( 7 )
 visible = false
 position = Vector2( 958, 540 )
 texture = ExtResource( 8 )
+
+[node name="DialogueBox" parent="." instance=ExtResource( 11 )]
+position = Vector2( 0, 708 )
+Title = "Chloe"
+Icon = ExtResource( 12 )
+Texts = PoolStringArray( "Now your internship can start! You can move around our studio completely freely!", "Each team member has some work for you to do. After you´re done with all your tasks, I will talk to you again.", "Have fun!﻿" )
+AutoNext = true
+AutoNextTime = 8.0
+ReadTime = 0.3
