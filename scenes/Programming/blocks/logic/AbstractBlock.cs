@@ -35,6 +35,15 @@ namespace GetOn.scenes.Programming.blocks.logic {
 				GetNode<Programming>("/root/Programming").RegisterError(e.Message);
 				return;
 			}
+
+			foreach (var block in NextBlocks) {
+				foreach (var block2 in block.NextBlocks) {
+					if (block2 == this) {
+						GetNode<Programming>("/root/Programming").RegisterError("Loop detected! Please remove the loop.");
+						return;
+					}
+				}
+			}
 			var returnValue = Execute();
 			if (Returns && returnValue != null) {
 				ReturnVariable = returnValue; // This seems to be wrong. Value is always reset to default (0) for some reason.

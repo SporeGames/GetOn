@@ -95,6 +95,7 @@ namespace GetOn.scenes.Programming
 		}
 		
 		private void Run() {
+			GetNode<Player>("Game/Player").Velocity = new Vector2(0, 0);
 			_runOverlay.Visible = true;
 			_runButton.Text = "Stop";
 			_running = true;

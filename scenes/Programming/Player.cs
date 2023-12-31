@@ -11,7 +11,7 @@ public class Player : KinematicBody2D {
 	public int Speed = 0;
 	[Export] public int JumpSpeed = -400;
 	[Export] public int Gravity = 1200;
-	Vector2 velocity = new Vector2();
+	public Vector2 Velocity = new Vector2();
 	bool jumping = false;
 
 	public bool JumpingInput;
@@ -24,23 +24,23 @@ public class Player : KinematicBody2D {
 	
 	
 	public void getInput() {
-		velocity.x = 0;
+		Velocity.x = 0;
 		if (JumpingInput && IsOnFloor()) {
 			jumping = true;
-			velocity.y = JumpSpeed;
+			Velocity.y = JumpSpeed;
 		}
 		if (MovingRight) {
-			velocity.x += Speed;
+			Velocity.x += Speed;
 		}
 	}
 
 	public override void _PhysicsProcess(float delta) {
 		getInput();
-		velocity.y += Gravity * delta;
+		Velocity.y += Gravity * delta;
 		if (jumping && IsOnFloor()) {
 			jumping = false;
 		}
-		velocity = MoveAndSlide(velocity, new Vector2(0, -1));
+		Velocity = MoveAndSlide(Velocity, new Vector2(0, -1));
 		JumpingInput = false;
 		MovingRight = false;
 	}
