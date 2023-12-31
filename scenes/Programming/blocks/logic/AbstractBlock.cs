@@ -66,20 +66,20 @@ namespace GetOn.scenes.Programming.blocks.logic {
 			throw new BlockLogicException("No validation implemented for this block!");
 		}
 
-		public void Connected(GodotNode connectingNode, int thisSlot, int connectingSlot) {
+		public bool Connected(GodotNode connectingNode, int thisSlot, int connectingSlot) {
 			if (connectingNode == this) {
 				GD.Print("Cannot connect node to itself!");
-				return;
+				return false;
 			}
 
 			if (thisSlot == 0) { // Slot 0 is always the slot for execution logic (white lines)
 				GD.Print("Execution slot, skipping Connected()");
-				return;
+				return true;
 			}
 			var currentNodeInSlot = ConnectedVariables[thisSlot];
 			if (currentNodeInSlot != null) {
 				GD.Print("Slot " + thisSlot + " already connected! (" + currentNodeInSlot.Name + ")");
-				return;
+				return false;
 			}
 			ConnectedVariables[thisSlot] = connectingNode;
 			GD.Print("Connected " + connectingNode.Name + " to " + Name + " at slot " + thisSlot + "");
@@ -88,7 +88,7 @@ namespace GetOn.scenes.Programming.blocks.logic {
 				if (variableNode.configureable) { // This is the node with the slider
 					Inputs[thisSlot] = new BlockVariable("configNodeReturn", connectingNode, variableNode.GetFloat());
 					GD.Print("Added configurable float input");
-					return;
+					return true;
 				}
 
 				// Add a new input BlockVariable with the current value.
@@ -96,19 +96,19 @@ namespace GetOn.scenes.Programming.blocks.logic {
 					case BlockVariableType.Node:
 						Inputs[thisSlot] = new BlockVariable("node", connectingNode, variableNode.GetPlayer());
 						GD.Print("Added node input");
-						return;
+						return true;
 					case BlockVariableType.Int:
 						Inputs[thisSlot] = new BlockVariable("int", connectingNode, variableNode.GetRandom());
 						GD.Print("Added int input");
-						return;
+						return true;
 					case BlockVariableType.PositionX:
 						Inputs[thisSlot] = new BlockVariable("posX", connectingNode, variableNode.GetPlayer().Position.x);
 						GD.Print("Added position x input");
-						return;
+						return true;
 					case BlockVariableType.PositionY:
 						Inputs[thisSlot] = new BlockVariable("posY", connectingNode, variableNode.GetPlayer().Position.y);
 						GD.Print("Added position y input");
-						return;
+						return true;
 
 				}
 			}
@@ -128,6 +128,8 @@ namespace GetOn.scenes.Programming.blocks.logic {
 				} 
 				GD.Print(input.Type);
 			}
+
+			return true;
 		}
 
 		
