@@ -595,7 +595,6 @@ margin_left = 250.0
 margin_top = 250.0
 margin_right = 399.0
 margin_bottom = 327.0
-rect_pivot_offset = Vector2( -638, -126 )
 mouse_filter = 1
 title = "Position.X"
 slot/0/left_enabled = false
@@ -642,7 +641,6 @@ margin_left = 250.0
 margin_top = 250.0
 margin_right = 398.0
 margin_bottom = 327.0
-rect_pivot_offset = Vector2( -638, -126 )
 mouse_filter = 1
 title = "Position.Y"
 slot/0/left_enabled = false
@@ -849,6 +847,7 @@ text = "Execute Code"
 script = ExtResource( 20 )
 
 [node name="Intro" type="Node2D" parent="."]
+visible = false
 z_index = 20
 
 [node name="Sprite" type="Sprite" parent="Intro"]

@@ -43,9 +43,9 @@ public class NodeGraph : GraphEdit {
 	}
 
 	public override void _Input(InputEvent @event) {
-		if (@event is InputEventMouseButton mouse && (mouse.ButtonIndex == 4 || mouse.ButtonIndex == 5)) { // Disable scroll input
+		/*if (@event is InputEventMouseButton mouse && (mouse.ButtonIndex == 4 || mouse.ButtonIndex == 5)) { // Disable scroll input
 			AcceptEvent();
-		}
+		}*/
 	}
 
 	public void ConnectRequest(string from_node, int from_port, string to_node, int to_port) {
