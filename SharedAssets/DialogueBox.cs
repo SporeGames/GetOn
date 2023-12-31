@@ -52,7 +52,7 @@ namespace GetOn.SharedAssets {
 			}
 		}
 
-		public override void _Process(float delta) {
+		public override void _PhysicsProcess(float delta) {
 			if (_makeArrowBlink) {
 				var currentModulate = _nextButton.Modulate;
 				if (_arrowVisible) {

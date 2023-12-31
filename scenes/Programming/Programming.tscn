@@ -1109,7 +1109,6 @@ text = "Press 'Execute Code' to see errors..."
 script = ExtResource( 20 )
 
 [node name="Intro" type="Node2D" parent="."]
-visible = false
 z_index = 20
 
 [node name="Sprite" type="Sprite" parent="Intro"]
