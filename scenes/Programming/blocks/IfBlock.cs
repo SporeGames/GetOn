@@ -24,7 +24,7 @@ namespace GetOn.scenes.Programming.blocks {
         
         public override bool Validate() {
             if (ConnectedConditions.Count == 0) {
-                throw new BlockLogicException("If block has no conditions!");
+                throw new BlockLogicException("One If node has no conditions connected. Please connect a condition (purple) node to it.");
             }
             return true;
         }

@@ -1,4 +1,5 @@
 ﻿using GetOn.scenes.Programming.blocks.logic;
+using Godot;
 
 namespace GetOn.scenes.Programming.blocks {
     public class MoveTruckBlock : AbstractBlock {
@@ -7,8 +8,8 @@ namespace GetOn.scenes.Programming.blocks {
         }
 		
         public override BlockVariable Execute() {
-            
-            return new BlockVariable("jumpReturn", this, true);
+            GetNode<KinematicBody2D>("/root/Programming/Game/Truck").MoveAndSlide(new Vector2(200, 0));
+            return new BlockVariable("truckReturn", this, true);
         }
 		
         public override bool Validate() {

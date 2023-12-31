@@ -32,7 +32,7 @@ namespace GetOn.scenes.Programming.blocks.logic {
 					throw new BlockLogicException(ValidationErrorMessage);
 				}
 			} catch (BlockLogicException e) {
-				GD.Print(e.Message);
+				GetNode<Programming>("/root/Programming").RegisterError(e.Message);
 				return;
 			}
 			var returnValue = Execute();
