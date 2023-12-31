@@ -1,4 +1,4 @@
-[gd_scene load_steps=33 format=2]
+[gd_scene load_steps=34 format=2]
 
 [ext_resource path="res://scenes/Programming/Programming.cs" type="Script" id=1]
 [ext_resource path="res://scenes/Programming/blocks/godot/VariableNode.cs" type="Script" id=2]
@@ -44,6 +44,12 @@ extents = Vector2( 65.5, 64.5 )
 
 [sub_resource type="RectangleShape2D" id=4]
 extents = Vector2( 64, 127.5 )
+
+[sub_resource type="DynamicFont" id=11]
+size = 18
+use_mipmaps = true
+use_filter = true
+font_data = ExtResource( 21 )
 
 [sub_resource type="DynamicFont" id=9]
 size = 23
@@ -293,6 +299,7 @@ margin_left = 250.0
 margin_top = 250.0
 margin_right = 409.0
 margin_bottom = 341.0
+hint_tooltip = "This is where your code execution starts. Start connecting other nodes from here!"
 mouse_filter = 1
 title = "Process"
 slot/0/left_enabled = false
@@ -313,15 +320,19 @@ script = ExtResource( 12 )
 margin_left = 16.0
 margin_top = 24.0
 margin_right = 143.0
-margin_bottom = 39.0
-text = "- - - - - - - - - - - - - >"
+margin_bottom = 44.0
+mouse_filter = 1
+custom_fonts/normal_font = SubResource( 11 )
+text = "- - - - - - - - ->"
 fit_content_height = true
 
 [node name="Hint" type="RichTextLabel" parent="ProgrammingUI/AspectRatioContainer/NodeGraph/Process"]
 margin_left = 16.0
-margin_top = 40.0
+margin_top = 45.0
 margin_right = 143.0
-margin_bottom = 85.0
+margin_bottom = 125.0
+mouse_filter = 1
+custom_fonts/normal_font = SubResource( 11 )
 text = "
 This node is called every frame."
 fit_content_height = true
@@ -331,6 +342,7 @@ margin_left = 250.0
 margin_top = 250.0
 margin_right = 401.0
 margin_bottom = 343.0
+hint_tooltip = "This will make the player jump. You need to provide a reference to the player."
 mouse_filter = 1
 title = "Jump"
 slot/0/left_enabled = true
@@ -351,15 +363,19 @@ script = ExtResource( 16 )
 margin_left = 16.0
 margin_top = 24.0
 margin_right = 135.0
-margin_bottom = 39.0
-text = "- - - - - - - - - - - - >"
+margin_bottom = 44.0
+mouse_filter = 1
+custom_fonts/normal_font = SubResource( 11 )
+text = "- - - - - - - - ->"
 fit_content_height = true
 
 [node name="Player" type="RichTextLabel" parent="ProgrammingUI/AspectRatioContainer/NodeGraph/Jump"]
 margin_left = 16.0
-margin_top = 40.0
+margin_top = 45.0
 margin_right = 135.0
-margin_bottom = 55.0
+margin_bottom = 65.0
+mouse_filter = 1
+custom_fonts/normal_font = SubResource( 11 )
 text = "Player"
 fit_content_height = true
 
@@ -370,6 +386,9 @@ margin_left = -782.0
 margin_top = 250.0
 margin_right = -627.0
 margin_bottom = 345.0
+hint_tooltip = "This node will set the player position to the provided position. 
+You need to provide a reference to the player, as well as the
+ x and y coordinates that the position should be set to."
 mouse_filter = 1
 title = "Set Player Position"
 slot/0/left_enabled = true
@@ -402,39 +421,50 @@ script = ExtResource( 4 )
 margin_left = 16.0
 margin_top = 24.0
 margin_right = 139.0
-margin_bottom = 39.0
-text = "- - - - - - - - - - - - >"
+margin_bottom = 44.0
+mouse_filter = 1
+custom_fonts/normal_font = SubResource( 11 )
+text = "- - - - - - - - ->"
 fit_content_height = true
 
 [node name="Player" type="RichTextLabel" parent="ProgrammingUI/AspectRatioContainer/NodeGraph/SetPlayerPosition"]
 margin_left = 16.0
-margin_top = 40.0
+margin_top = 45.0
 margin_right = 139.0
-margin_bottom = 55.0
+margin_bottom = 65.0
+mouse_filter = 1
+custom_fonts/normal_font = SubResource( 11 )
 text = "Player"
 fit_content_height = true
 
 [node name="x" type="RichTextLabel" parent="ProgrammingUI/AspectRatioContainer/NodeGraph/SetPlayerPosition"]
 margin_left = 16.0
-margin_top = 56.0
+margin_top = 66.0
 margin_right = 139.0
-margin_bottom = 71.0
+margin_bottom = 86.0
+mouse_filter = 1
+custom_fonts/normal_font = SubResource( 11 )
 text = "x"
 fit_content_height = true
 
 [node name="y" type="RichTextLabel" parent="ProgrammingUI/AspectRatioContainer/NodeGraph/SetPlayerPosition"]
 margin_left = 16.0
-margin_top = 72.0
+margin_top = 87.0
 margin_right = 139.0
-margin_bottom = 87.0
+margin_bottom = 107.0
+mouse_filter = 1
+custom_fonts/normal_font = SubResource( 11 )
 text = "y"
 fit_content_height = true
 
 [node name="FloatInput" type="GraphNode" parent="ProgrammingUI/AspectRatioContainer/NodeGraph"]
-margin_left = 250.0
-margin_top = 250.0
-margin_right = 391.0
-margin_bottom = 327.0
+margin_left = 521.0
+margin_top = 294.0
+margin_right = 675.0
+margin_bottom = 371.0
+hint_tooltip = "This node allows you to input a floating point number.
+Just drag the slider to input your number. The default
+is zero."
 mouse_filter = 1
 title = "Variable"
 slot/0/left_enabled = false
@@ -456,8 +486,10 @@ configureable = true
 [node name="Player" type="RichTextLabel" parent="ProgrammingUI/AspectRatioContainer/NodeGraph/FloatInput"]
 margin_left = 16.0
 margin_top = 24.0
-margin_right = 125.0
-margin_bottom = 39.0
+margin_right = 138.0
+margin_bottom = 44.0
+mouse_filter = 1
+custom_fonts/normal_font = SubResource( 11 )
 bbcode_enabled = true
 bbcode_text = "[right]Float"
 text = "Float"
@@ -465,24 +497,32 @@ fit_content_height = true
 
 [node name="InputSlider" type="HSlider" parent="ProgrammingUI/AspectRatioContainer/NodeGraph/FloatInput"]
 margin_left = 16.0
-margin_top = 40.0
-margin_right = 125.0
-margin_bottom = 56.0
+margin_top = 45.0
+margin_right = 138.0
+margin_bottom = 61.0
 min_value = -10.0
 max_value = 10.0
 step = 0.5
 
 [node name="InputSliderText" type="RichTextLabel" parent="ProgrammingUI/AspectRatioContainer/NodeGraph/FloatInput/InputSlider"]
-margin_top = 19.0
-margin_right = 40.0
-margin_bottom = 35.0
+margin_left = 117.0
+margin_top = -1.0
+margin_right = 157.0
+margin_bottom = 19.0
+mouse_filter = 1
+custom_fonts/normal_font = SubResource( 11 )
 text = "0"
+fit_content_height = true
+scroll_active = false
 
 [node name="PlayerVariable" type="GraphNode" parent="ProgrammingUI/AspectRatioContainer/NodeGraph"]
 margin_left = 250.0
 margin_top = 250.0
 margin_right = 399.0
 margin_bottom = 312.0
+hint_tooltip = "This node provides you with a reference to the
+player in the game. You need this node for other
+nodes that do something with the player."
 mouse_filter = 1
 title = "Variable"
 slot/0/left_enabled = false
@@ -503,7 +543,9 @@ script = ExtResource( 2 )
 margin_left = 16.0
 margin_top = 24.0
 margin_right = 133.0
-margin_bottom = 39.0
+margin_bottom = 44.0
+mouse_filter = 1
+custom_fonts/normal_font = SubResource( 11 )
 bbcode_enabled = true
 bbcode_text = "[right]Player"
 text = "Player"
@@ -515,12 +557,15 @@ margin_left = 16.0
 margin_top = 40.0
 margin_right = 133.0
 margin_bottom = 56.0
+mouse_filter = 1
 step = 0.5
 
 [node name="InputSliderText" type="RichTextLabel" parent="ProgrammingUI/AspectRatioContainer/NodeGraph/PlayerVariable/InputSlider"]
 margin_top = 19.0
 margin_right = 40.0
 margin_bottom = 35.0
+mouse_filter = 1
+custom_fonts/normal_font = SubResource( 11 )
 text = "0"
 
 [node name="Addition" type="GraphNode" parent="ProgrammingUI/AspectRatioContainer/NodeGraph"]
@@ -528,6 +573,8 @@ margin_left = 250.0
 margin_top = 250.0
 margin_right = 401.0
 margin_bottom = 343.0
+hint_tooltip = "This node takes two numbers and adds them together.
+You can use the resulting number for anything you like."
 mouse_filter = 1
 title = "a + b"
 slot/0/left_enabled = true
@@ -560,31 +607,39 @@ script = ExtResource( 13 )
 margin_left = 16.0
 margin_top = 24.0
 margin_right = 135.0
-margin_bottom = 39.0
-text = "- - - - - - - - - - - - >"
+margin_bottom = 44.0
+mouse_filter = 1
+custom_fonts/normal_font = SubResource( 11 )
+text = "- - - - - - - - ->"
 fit_content_height = true
 
 [node name="Input 1" type="RichTextLabel" parent="ProgrammingUI/AspectRatioContainer/NodeGraph/Addition"]
 margin_left = 16.0
-margin_top = 40.0
+margin_top = 45.0
 margin_right = 135.0
-margin_bottom = 55.0
+margin_bottom = 65.0
+mouse_filter = 1
+custom_fonts/normal_font = SubResource( 11 )
 text = "a"
 fit_content_height = true
 
 [node name="Input 2" type="RichTextLabel" parent="ProgrammingUI/AspectRatioContainer/NodeGraph/Addition"]
 margin_left = 16.0
-margin_top = 56.0
+margin_top = 66.0
 margin_right = 135.0
-margin_bottom = 71.0
+margin_bottom = 86.0
+mouse_filter = 1
+custom_fonts/normal_font = SubResource( 11 )
 text = "b"
 fit_content_height = true
 
 [node name="Output" type="RichTextLabel" parent="ProgrammingUI/AspectRatioContainer/NodeGraph/Addition"]
 margin_left = 16.0
-margin_top = 72.0
+margin_top = 87.0
 margin_right = 135.0
-margin_bottom = 87.0
+margin_bottom = 107.0
+mouse_filter = 1
+custom_fonts/normal_font = SubResource( 11 )
 bbcode_enabled = true
 bbcode_text = "[right]="
 text = "="
@@ -595,6 +650,8 @@ margin_left = 250.0
 margin_top = 250.0
 margin_right = 399.0
 margin_bottom = 327.0
+hint_tooltip = "This node gives you the current horizontal
+position of the player in the game."
 mouse_filter = 1
 title = "Position.X"
 slot/0/left_enabled = false
@@ -616,7 +673,9 @@ Type = 7
 margin_left = 16.0
 margin_top = 24.0
 margin_right = 133.0
-margin_bottom = 39.0
+margin_bottom = 44.0
+mouse_filter = 1
+custom_fonts/normal_font = SubResource( 11 )
 bbcode_enabled = true
 bbcode_text = "[right]Position X"
 text = "Position X"
@@ -634,6 +693,8 @@ step = 0.5
 margin_top = 19.0
 margin_right = 40.0
 margin_bottom = 35.0
+mouse_filter = 1
+custom_fonts/normal_font = SubResource( 11 )
 text = "0"
 
 [node name="PlayerPosY" type="GraphNode" parent="ProgrammingUI/AspectRatioContainer/NodeGraph"]
@@ -641,6 +702,8 @@ margin_left = 250.0
 margin_top = 250.0
 margin_right = 398.0
 margin_bottom = 327.0
+hint_tooltip = "This node gives you the current vertical
+position of the player in the game."
 mouse_filter = 1
 title = "Position.Y"
 slot/0/left_enabled = false
@@ -662,7 +725,9 @@ Type = 8
 margin_left = 16.0
 margin_top = 24.0
 margin_right = 132.0
-margin_bottom = 39.0
+margin_bottom = 44.0
+mouse_filter = 1
+custom_fonts/normal_font = SubResource( 11 )
 bbcode_enabled = true
 bbcode_text = "[right]Position Y"
 text = "Position Y"
@@ -680,6 +745,8 @@ step = 0.5
 margin_top = 19.0
 margin_right = 40.0
 margin_bottom = 35.0
+mouse_filter = 1
+custom_fonts/normal_font = SubResource( 11 )
 text = "0"
 
 [node name="IfBlock2" type="GraphNode" parent="ProgrammingUI/AspectRatioContainer/NodeGraph"]
@@ -687,6 +754,11 @@ margin_left = 250.0
 margin_top = 250.0
 margin_right = 402.0
 margin_bottom = 326.0
+hint_tooltip = "This node allows you to check if a condition
+is fulfilled. If the condition is fulfilled, the nodes
+connected after this node will be executed. If the
+condition connected on the left side is not fulfilled, 
+no nodes after this node will be executed."
 mouse_filter = 1
 title = "if ()"
 slot/0/left_enabled = true
@@ -707,15 +779,19 @@ script = ExtResource( 11 )
 margin_left = 16.0
 margin_top = 24.0
 margin_right = 136.0
-margin_bottom = 39.0
-text = "- - - - - - - - - - - - >"
+margin_bottom = 44.0
+mouse_filter = 1
+custom_fonts/normal_font = SubResource( 11 )
+text = "- - - - - - - - ->"
 fit_content_height = true
 
 [node name="Condition" type="RichTextLabel" parent="ProgrammingUI/AspectRatioContainer/NodeGraph/IfBlock2"]
 margin_left = 16.0
-margin_top = 40.0
+margin_top = 45.0
 margin_right = 136.0
-margin_bottom = 55.0
+margin_bottom = 65.0
+mouse_filter = 1
+custom_fonts/normal_font = SubResource( 11 )
 text = "Condition"
 fit_content_height = true
 
@@ -724,6 +800,11 @@ margin_left = 250.0
 margin_top = 250.0
 margin_right = 401.0
 margin_bottom = 327.0
+hint_tooltip = "This node allows you to check if a condition
+is fulfilled. If the condition is fulfilled, the nodes
+connected after this node will be executed. If the
+condition connected on the left side is not fulfilled, 
+no nodes after this node will be executed."
 mouse_filter = 1
 title = "if ()"
 slot/0/left_enabled = true
@@ -744,15 +825,19 @@ script = ExtResource( 11 )
 margin_left = 16.0
 margin_top = 24.0
 margin_right = 135.0
-margin_bottom = 39.0
-text = "- - - - - - - - - - - - >"
+margin_bottom = 44.0
+mouse_filter = 1
+custom_fonts/normal_font = SubResource( 11 )
+text = "- - - - - - - - ->"
 fit_content_height = true
 
 [node name="Condition" type="RichTextLabel" parent="ProgrammingUI/AspectRatioContainer/NodeGraph/IfBlock"]
 margin_left = 16.0
-margin_top = 40.0
+margin_top = 45.0
 margin_right = 135.0
-margin_bottom = 55.0
+margin_bottom = 65.0
+mouse_filter = 1
+custom_fonts/normal_font = SubResource( 11 )
 text = "Condition"
 fit_content_height = true
 
@@ -761,6 +846,8 @@ margin_left = 250.0
 margin_top = 250.0
 margin_right = 424.0
 margin_bottom = 311.0
+hint_tooltip = "This condition node checks if the player
+has pressed the \"Space\" key on their keyboard."
 mouse_filter = 1
 title = "isKeyPressed(\"Space\")"
 slot/0/left_enabled = false
@@ -775,7 +862,9 @@ script = ExtResource( 15 )
 margin_left = 16.0
 margin_top = 24.0
 margin_right = 158.0
-margin_bottom = 39.0
+margin_bottom = 44.0
+mouse_filter = 1
+custom_fonts/normal_font = SubResource( 11 )
 bbcode_enabled = true
 bbcode_text = "[right]pressed"
 text = "pressed"
@@ -795,12 +884,18 @@ slot/0/right_enabled = true
 slot/0/right_type = 1
 slot/0/right_color = Color( 0.580392, 0, 0.678431, 1 )
 script = ExtResource( 10 )
+__meta__ = {
+"_editor_description_": "This condition node checks if the player
+has pressed the \"D\" key on their keyboard."
+}
 
 [node name="RichTextLabel" type="RichTextLabel" parent="ProgrammingUI/AspectRatioContainer/NodeGraph/IfDPressed"]
 margin_left = 16.0
 margin_top = 24.0
 margin_right = 131.0
-margin_bottom = 39.0
+margin_bottom = 44.0
+mouse_filter = 1
+custom_fonts/normal_font = SubResource( 11 )
 bbcode_enabled = true
 bbcode_text = "[right]pressed"
 text = "pressed"
