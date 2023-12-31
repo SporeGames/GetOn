@@ -12,7 +12,7 @@ namespace GetOn.scenes.Programming {
 		private CheckBox _movingSpeed;
 		private CheckBox _easyFlag;
 		private CheckBox _hardFlag;
-		private Button _submit;
+		public Button SubmitButton;
 		private CountdownTimer _timer;
 
 		private bool hasSpacebar = false;
@@ -27,8 +27,9 @@ namespace GetOn.scenes.Programming {
 			_movingSpeed = GetNode<CheckBox>("Items/MovingSpeed");
 			_easyFlag = GetNode<CheckBox>("Items/EasyFlag");
 			_hardFlag = GetNode<CheckBox>("Items/HardFlag");
-			_submit = GetNode<Button>("SubmitButton");
-			_submit.Connect("pressed", this, nameof(Submit));
+			SubmitButton = GetNode<Button>("SubmitButton");
+			SubmitButton.Connect("pressed", this, nameof(Submit));
+			SubmitButton.Disabled = true;
 			_timer = GetNode<CountdownTimer>("/root/Programming/Timer");
 		}
 

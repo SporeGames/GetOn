@@ -13,18 +13,16 @@ namespace GetOn.scenes.Programming
 		private Button _runButton;
 		private Button _resetButton;
 		private ColorRect _runOverlay;
-		private NodeGraph _programmingUI;
-		public Checklist Checklist;
+		private NodeGraph _programmingUi;
+		private Checklist _checklist;
 		public KinematicBody2D Truck;
 
-		public RichTextLabel ErrorList;
+		private RichTextLabel _errorList;
 		private ColorRect _errorBox;
 
 		private Vector2 _playerOrigin;
 
-		private bool running = false;
-
-		private bool firstStart = true;
+		private bool _running = false;
 
 		private Button _start;
 		private Node2D _intro;
@@ -34,16 +32,16 @@ namespace GetOn.scenes.Programming
 			_sharedNode = GetNode<SharedNode>("/root/SharedNode");
 			_backToGameSelectionRoom = GetNode<Button>("Game/BackToGameSelection");
 			_backToGameSelectionRoom.Connect("pressed", this, nameof(OnBackToSelectionRoomPressed));
-			_programmingUI = GetNode<NodeGraph>("ProgrammingUI/AspectRatioContainer/NodeGraph");
+			_programmingUi = GetNode<NodeGraph>("ProgrammingUI/AspectRatioContainer/NodeGraph");
 			_runButton = GetNode<Button>("ProgrammingUI/RunButton");
 			_runButton.Connect("pressed", this, nameof(OnRunPressed));
 			_runOverlay = GetNode<ColorRect>("ProgrammingUI/RunOverlay");
 			_resetButton = GetNode<Button>("ProgrammingUI/ResetButton");
-			ErrorList = GetNode<RichTextLabel>("ProgrammingUI/ErrorBox/ErrorList");
+			_errorList = GetNode<RichTextLabel>("ProgrammingUI/ErrorBox/ErrorList");
 			_errorBox = GetNode<ColorRect>("ProgrammingUI/ErrorBox");
 			_resetButton.Connect("pressed", this, nameof(OnResetPressed));
 			_playerOrigin = GetNode<KinematicBody2D>("Game/Player").Position;
-			Checklist = GetNode<Checklist>("Checklist");
+			_checklist = GetNode<Checklist>("Checklist");
 			GetNode<CountdownTimer>("/root/Programming/Timer").running = true;
 			Truck = GetNode<KinematicBody2D>("Game/Truck");
 
@@ -62,14 +60,14 @@ namespace GetOn.scenes.Programming
 				_programmingUI.Executor.Start();
 				firstStart = false;
 			}*/
-			if (running) {
-				_programmingUI.Executor.StartBlock.Run();
+			if (_running) {
+				_programmingUi.Executor.StartBlock.Run();
 			}
 			var text = "";
 			foreach (var msg in _errors) {
 				text += "- " + msg + "\n";
 			}
-			ErrorList.Text = text;
+			_errorList.Text = text;
 		}
 
 		public void OnBackToSelectionRoomPressed() {
@@ -81,7 +79,7 @@ namespace GetOn.scenes.Programming
 		}
 
 		public void OnRunPressed() {
-			if (running) {
+			if (_running) {
 				GD.Print("Stopping...");
 				Stop();
 			} else {
@@ -99,17 +97,18 @@ namespace GetOn.scenes.Programming
 		private void Run() {
 			_runOverlay.Visible = true;
 			_runButton.Text = "Stop";
-			running = true;
-			ErrorList.Text = "No errors!";
-			Checklist.Reset();
+			_running = true;
+			_errorList.Text = "No errors!";
+			_checklist.Reset();
+			_checklist.SubmitButton.Disabled = false;
 		}
 		
 		private void Stop() {
 			_runOverlay.Visible = false;
 			_runButton.Text = "Run";
-			running = false;
+			_running = false;
 			_errors.Clear();
-			ErrorList.Text = "Press 'Execute Code' to see errors...";
+			_errorList.Text = "Press 'Execute Code' to see errors...";
 			_errorBox.Color = new Color(0f, 0f, 0f);
 			//_programmingUI.Executor.Kill();
 		}
