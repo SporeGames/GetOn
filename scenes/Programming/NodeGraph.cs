@@ -24,7 +24,7 @@ public class NodeGraph : GraphEdit {
 		VariableProvider.FlagNode = GetNode<Area2D>("/root/Programming/Game/EasyFlag");
 		Connect("connection_request", this, nameof(ConnectRequest));
 		Connect("disconnection_request", this, nameof(DisconnectRequest));
-		int i = 0;
+		int i = -200;
 		int y = 0;
 		int rowCounter = 0;
 		foreach (var node in  GetChildren()) {
@@ -32,7 +32,7 @@ public class NodeGraph : GraphEdit {
 				blockNode.Offset = new Vector2(i, y);
 				i += 200;
 				rowCounter++;
-				if (rowCounter > 5) {
+				if (rowCounter > 3) {
 					rowCounter = 0;
 					y += 200;
 					i = 0;
