@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=2]
+[gd_scene load_steps=20 format=2]
 
 [ext_resource path="res://scenes/Programming/assets/IMG_0229.PNG" type="Texture" id=1]
 [ext_resource path="res://scenes/Programming/assets/Programmierraumm.png" type="Texture" id=2]
@@ -6,6 +6,7 @@
 [ext_resource path="res://scenes/GameStudy/PrePuzzleRoom.cs" type="Script" id=4]
 [ext_resource path="res://SharedAssets/font/BAHNSCHRIFT 1.TTF" type="DynamicFontData" id=5]
 [ext_resource path="res://SharedAssets/DialogeBox.tscn" type="PackedScene" id=6]
+[ext_resource path="res://SharedAssets/OutlineMaterial.tres" type="Material" id=7]
 
 [sub_resource type="StyleBoxEmpty" id=1]
 
@@ -111,6 +112,7 @@ one_shot = true
 one_shot = true
 
 [node name="Sprite" type="Sprite" parent="Worker"]
+material = ExtResource( 7 )
 position = Vector2( -16, 105 )
 scale = Vector2( 0.4, 0.4 )
 texture = ExtResource( 1 )

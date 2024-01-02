@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=2]
+[gd_scene load_steps=20 format=2]
 
 [ext_resource path="res://scenes/GameStudy/PrePuzzleRoom.cs" type="Script" id=1]
 [ext_resource path="res://scenes/Sound/assets/Art.png" type="Texture" id=2]
@@ -6,6 +6,7 @@
 [ext_resource path="res://SharedAssets/DialogeBox.tscn" type="PackedScene" id=4]
 [ext_resource path="res://scenes/GameStudy/WorkerText.cs" type="Script" id=5]
 [ext_resource path="res://scenes/Sound/SoundGameMusic.gd" type="Script" id=6]
+[ext_resource path="res://SharedAssets/OutlineMaterial.tres" type="Material" id=7]
 
 [sub_resource type="StyleBoxEmpty" id=1]
 
@@ -64,6 +65,7 @@ custom_fonts/font = SubResource( 6 )
 text = "Back"
 
 [node name="Worker" type="Sprite" parent="."]
+material = ExtResource( 7 )
 position = Vector2( 650, 452 )
 script = ExtResource( 5 )
 

@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=2]
+[gd_scene load_steps=22 format=2]
 
 [ext_resource path="res://scenes/GameStudy/PrePuzzleRoom.cs" type="Script" id=1]
 [ext_resource path="res://scenes/GameDesign/assets/personas/GameDesign.png" type="Texture" id=2]
@@ -7,6 +7,7 @@
 [ext_resource path="res://scenes/GameStudy/WorkerText.cs" type="Script" id=5]
 [ext_resource path="res://scenes/Narrative/assets/IMG_0232.PNG" type="Texture" id=6]
 [ext_resource path="res://SharedAssets/DialogeBox.tscn" type="PackedScene" id=7]
+[ext_resource path="res://SharedAssets/OutlineMaterial.tres" type="Material" id=8]
 
 [sub_resource type="StyleBoxEmpty" id=1]
 
@@ -128,6 +129,7 @@ one_shot = true
 one_shot = true
 
 [node name="Sprite" type="Sprite" parent="Worker"]
+material = ExtResource( 8 )
 position = Vector2( -35, 149 )
 scale = Vector2( 0.5, 0.5 )
 texture = ExtResource( 6 )
@@ -140,6 +142,7 @@ LoadSceneAfter = true
 SceneToLoad = "Narrative"
 
 [node name="Worker2" type="Sprite" parent="."]
+material = ExtResource( 8 )
 position = Vector2( 1356, 311 )
 texture = ExtResource( 4 )
 script = ExtResource( 5 )
