@@ -14,6 +14,7 @@ namespace GetOn.SharedAssets {
 		[Export(PropertyHint.Range, "0.01,1.0")] public float TimePerCharacter = 0.08f; // How long to wait between each character being animated
 		[Export(PropertyHint.Range, "0.01, 0.3")] public float ReadTime = 0.2f; // How long to wait after the text is done animating before the next text is shown if AutoNext is true
 		[Export] public string SceneToLoad; // If LoadSceneAfter is true, this is the scene to load. Simple name is enough, e.g. "Management" to load "scenes/Management/Management.tscn"
+		[Export] public int ResultThreshold = 0; // Result threshold for this dialogue box. If the player has less than this amount of points, the box will not be shown.
 
 		private RichTextLabel _text;
 		private RichTextLabel _title;
@@ -41,7 +42,7 @@ namespace GetOn.SharedAssets {
 			_nextButton.Connect("pressed", this, nameof(OnNextPressed), new Godot.Collections.Array(false));
 			_timer.Connect("timeout", this, nameof(OnNextPressed), new Godot.Collections.Array(true));
 			_animationTimer.Connect("timeout", this, nameof(AnimateText));
-			_animationTimer.WaitTime = Mathf.Clamp(((AutoNextTime / Texts[_currentIndex].Length) * TimePerCharacter) - ReadTime, 0.001f, 10f);
+			_animationTimer.WaitTime = Mathf.Clamp(((AutoNextTime / Texts[_currentIndex - 1].Length) * TimePerCharacter) - ReadTime, 0.001f, 10f);
 			_title.Text = Title;
 			_text.Text = "";
 			_icon.Texture = Icon;
