@@ -15,37 +15,49 @@ public class NodeGraph : GraphEdit {
 
 	public BlockExecutor Executor = new BlockExecutor();
 	public AbstractBlock Start;
+	private BlockNode _truckBlock;
+	private BlockNode _fpressedBlock;
+	private BlockNode _ifBlock;
+	private BlockNode _secondIfBlock;
+	private BlockNode _processBlock;
 	
 	public override void _Ready() {
-		GetZoomHbox().Visible = false; // Zooming is bugged, so lets disable it.
 		Start = GetNode<AbstractBlock>("Process");
 		Executor.StartBlock = Start;
 		VariableProvider.PlayerNode = GetNode<KinematicBody2D>("/root/Programming/Game/Player");
 		VariableProvider.FlagNode = GetNode<Area2D>("/root/Programming/Game/EasyFlag");
 		Connect("connection_request", this, nameof(ConnectRequest));
 		Connect("disconnection_request", this, nameof(DisconnectRequest));
-		int i = 0;
-		int y = 0;
+		_ifBlock = GetNode<BlockNode>("IfBlock3");
+		_secondIfBlock = GetNode<BlockNode>("IfBlock2");
+		_truckBlock = GetNode<BlockNode>("MoveTruck");
+		_fpressedBlock = GetNode<BlockNode>("IfFPressed");
+		_processBlock = GetNode<BlockNode>("Process");
+		int x = -200;
+		int y = 200;
 		int rowCounter = 0;
 		foreach (var node in  GetChildren()) {
 			if (node is GraphNode blockNode) {
-				blockNode.Offset = new Vector2(i, y);
-				i += 200;
+				blockNode.Offset = new Vector2(x, y);
+				x += 200;
 				rowCounter++;
-				if (rowCounter > 5) {
+				if (rowCounter > 3) {
 					rowCounter = 0;
 					y += 200;
-					i = 0;
+					x = -200;
 				}
 			}
-			
 		}
-	}
-
-	public override void _Input(InputEvent @event) {
-		if (@event is InputEventMouseButton mouse && (mouse.ButtonIndex == 4 || mouse.ButtonIndex == 5)) { // Disable scroll input
-			AcceptEvent();
-		}
+		// Setup example
+		_processBlock.Offset = new Vector2(-200, -200);
+		_ifBlock.Offset = new Vector2(0, -200);
+		_secondIfBlock.Offset = new Vector2(0, 0);
+		_truckBlock.Offset = new Vector2(200, -200);
+		_fpressedBlock.Offset = new Vector2(0, -100);
+		ConnectRequest(_processBlock.Name, 0, _ifBlock.Name, 0);
+		ConnectRequest(_processBlock.Name, 0, _secondIfBlock.Name, 0);
+		ConnectRequest(_ifBlock.Name, 0, _truckBlock.Name, 0);
+		ConnectRequest(_fpressedBlock.Name, 0, _ifBlock.Name, 1);
 	}
 
 	public void ConnectRequest(string from_node, int from_port, string to_node, int to_port) {
@@ -67,11 +79,13 @@ public class NodeGraph : GraphEdit {
 				GD.Print("Can't plug variable into execution input.");
 				return;
 			}
+			if (toCondBlock is AbstractBlock abstractBlock) {
+				if (!abstractBlock.Connected(fromCondNode, to_port, from_port)) {
+					return;
+				}
+			}
 			ConnectNode(from_node, 0, to_node, to_port);
 			toCondBlock.ConnectedConditions.Add(fromCondNode);
-			if (toCondBlock is AbstractBlock abstractBlock) {
-				abstractBlock.Connected(fromCondNode, to_port, from_port);
-			}
 			GD.Print("Connected condition " + from_node + " to " + to_node + " at port " + (to_port));
 		}
 		
@@ -80,25 +94,31 @@ public class NodeGraph : GraphEdit {
 				GD.Print("Can't plug variable into execution input.");
 				return;
 			}
-			ConnectNode(from_node, 0, to_node, to_port);
-			GD.Print("Added at index " + to_port + "");
 			if (toVariableBlock is AbstractBlock abstractBlock) {
-				abstractBlock.Connected(fromVariable, to_port, from_port);
+				if (!abstractBlock.Connected(fromVariable, to_port, from_port)) {
+					return;
+				}
 			}
+			GD.Print("Added at index " + to_port + "");
+			ConnectNode(from_node, 0, to_node, to_port);
 			GD.Print("Connected variable " + from_node + " to " + to_node + " at port " + (to_port));
 		}
 
 		if (from is AbstractBlock fromBlock && to is AbstractBlock toBlock) {
 			if (from_port == 0 && to_port == 0) { // Port 0 is always execution logic
+				if (!toBlock.Connected(fromBlock, to_port, from_port)) {
+					return;
+				}
 				toBlock.PreviousBlock = fromBlock;
 				fromBlock.NextBlocks.Add(toBlock);
 				ConnectNode(from_node, from_port, to_node, 0);
-				toBlock.Connected(fromBlock, to_port, from_port);
 				GD.Print("Connected execution " + from_node + " to " + to_node + " at port " + (to_port));
 				return;
 			}
+			if (!toBlock.Connected(fromBlock, to_port, from_port)) {
+				return;
+			}
 			ConnectNode(from_node, from_port, to_node, to_port);
-			toBlock.Connected(fromBlock, to_port, from_port);
 			GD.Print("Connected return variable " + fromBlock.Name + " to " + toBlock.Name + " at port " + (to_port));
 		}
 	}

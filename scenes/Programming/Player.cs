@@ -6,34 +6,43 @@ using GetOn.scenes.Programming;
 public class Player : KinematicBody2D {
 	
 	private SharedNode _sharedNode;
-	[Export]
-	private float gravity = 200.0f;
-	[Export]
-	private float jumpForce = 500.0f;
-	private Vector2 _velocity;
 	private Area2D _flagArea;
-	
-	public ulong _lastJump = 0;
-	private bool _jumping = false;
-	
-	public Vector2 VerticalVelocity = new Vector2(0, 0);
-	public Vector2 direction = new Vector2(0, 0);
 
+	public int Speed = 0;
+	[Export] public int JumpSpeed = -400;
+	[Export] public int Gravity = 1200;
+	public Vector2 Velocity = new Vector2();
+	bool jumping = false;
+
+	public bool JumpingInput;
+	public bool MovingRight;
 	public override void _Ready() {
 		_sharedNode = GetNode<SharedNode>("/root/SharedNode");
 		_flagArea = GetNode<Area2D>("FlagArea");
 		_flagArea.Connect("area_entered", this, nameof(OnAreaEnter));
 	}
+	
+	
+	public void getInput() {
+		Velocity.x = 0;
+		if (JumpingInput && IsOnFloor()) {
+			jumping = true;
+			Velocity.y = JumpSpeed;
+		}
+		if (MovingRight) {
+			Velocity.x += Speed;
+		}
+	}
 
 	public override void _PhysicsProcess(float delta) {
-		if (_jumping && _lastJump + 250 < OS.GetTicksMsec()) {
-			_jumping = false;
+		getInput();
+		Velocity.y += Gravity * delta;
+		if (jumping && IsOnFloor()) {
+			jumping = false;
 		}
-		VerticalVelocity += gravity * delta * Vector2.Down;
-		MoveAndSlide(VerticalVelocity, Vector2.Up);
-		if (IsOnFloor() && _jumping) {
-			VerticalVelocity = jumpForce * Vector2.Up;
-		}
+		Velocity = MoveAndSlide(Velocity, new Vector2(0, -1));
+		JumpingInput = false;
+		MovingRight = false;
 	}
 
 	public void OnAreaEnter(Area2D area) {
@@ -44,12 +53,5 @@ public class Player : KinematicBody2D {
 			GetNode<Checklist>("/root/Programming/Checklist").EasyFlag();
 		}
 	}
-
-	public void Jump() {
-		if (_lastJump + 500 > OS.GetTicksMsec()) {
-			return;
-		}
-		_jumping = true;
-		_lastJump = OS.GetTicksMsec();
-	}
+	
 }

@@ -1,12 +1,12 @@
-[gd_scene load_steps=33 format=2]
+[gd_scene load_steps=40 format=2]
 
 [ext_resource path="res://scenes/Programming/Programming.cs" type="Script" id=1]
 [ext_resource path="res://scenes/Programming/blocks/godot/VariableNode.cs" type="Script" id=2]
 [ext_resource path="res://scenes/Programming/NodeGraph.cs" type="Script" id=3]
 [ext_resource path="res://scenes/Programming/blocks/SetPlayerPositionBlock.cs" type="Script" id=4]
 [ext_resource path="res://icon.png" type="Texture" id=5]
-[ext_resource path="res://scenes/Programming/assets/ProgrammierAufgabePrototy.png" type="Texture" id=6]
-[ext_resource path="res://scenes/Programming/assets/Hintergrund .png" type="Texture" id=7]
+[ext_resource path="res://scenes/Programming/assets/LKW.PNG" type="Texture" id=6]
+[ext_resource path="res://scenes/Programming/assets/Background.PNG" type="Texture" id=7]
 [ext_resource path="res://SharedAssets/Timer.tscn" type="PackedScene" id=8]
 [ext_resource path="res://scenes/Programming/assets/ProgrammingIntro.png" type="Texture" id=9]
 [ext_resource path="res://scenes/Programming/blocks/KeyDPressedCondition.cs" type="Script" id=10]
@@ -23,12 +23,21 @@
 [ext_resource path="res://SharedAssets/font/BAHNSCHRIFT 1.TTF" type="DynamicFontData" id=21]
 [ext_resource path="res://SharedAssets/AnleitungStartButton.png" type="Texture" id=22]
 [ext_resource path="res://SharedAssets/Anleitung.png" type="Texture" id=23]
+[ext_resource path="res://scenes/Programming/blocks/MoveTruckBlock.cs" type="Script" id=24]
+[ext_resource path="res://scenes/Programming/blocks/KeyFPressedCondition.cs" type="Script" id=25]
+[ext_resource path="res://scenes/Programming/assets/Checkliste.PNG" type="Texture" id=26]
+[ext_resource path="res://SharedAssets/font/PressStart2P-Regular.ttf" type="DynamicFontData" id=27]
+
+[sub_resource type="DynamicFont" id=14]
+size = 13
+use_mipmaps = true
+font_data = ExtResource( 27 )
 
 [sub_resource type="RectangleShape2D" id=6]
-extents = Vector2( 69, 62 )
+extents = Vector2( 38.25, 37.25 )
 
 [sub_resource type="RectangleShape2D" id=8]
-extents = Vector2( 8.5, 548.5 )
+extents = Vector2( 8.5, 262.5 )
 
 [sub_resource type="RectangleShape2D" id=2]
 extents = Vector2( 448, 10 )
@@ -39,11 +48,23 @@ radius = 34.0147
 [sub_resource type="RectangleShape2D" id=7]
 extents = Vector2( 30.75, 30.25 )
 
-[sub_resource type="RectangleShape2D" id=3]
-extents = Vector2( 65.5, 64.5 )
+[sub_resource type="RectangleShape2D" id=12]
+extents = Vector2( 131, 123 )
 
-[sub_resource type="RectangleShape2D" id=4]
-extents = Vector2( 64, 127.5 )
+[sub_resource type="RectangleShape2D" id=13]
+extents = Vector2( 111.5, 46 )
+
+[sub_resource type="DynamicFont" id=11]
+size = 18
+use_mipmaps = true
+use_filter = true
+font_data = ExtResource( 21 )
+
+[sub_resource type="DynamicFont" id=15]
+size = 40
+use_mipmaps = true
+use_filter = true
+font_data = ExtResource( 21 )
 
 [sub_resource type="DynamicFont" id=9]
 size = 23
@@ -56,114 +77,132 @@ font_data = ExtResource( 21 )
 [node name="Programming" type="Node2D"]
 script = ExtResource( 1 )
 
-[node name="Checklist" type="AspectRatioContainer" parent="."]
-margin_left = 1631.0
-margin_top = 52.0
-margin_right = 1902.0
-margin_bottom = 268.0
-stretch_mode = 0
-alignment_vertical = 0
+[node name="Checklist" type="Control" parent="."]
+margin_left = 1036.0
+margin_top = 619.0
+margin_right = 1307.0
+margin_bottom = 835.0
 script = ExtResource( 17 )
 
-[node name="BG" type="ColorRect" parent="Checklist"]
-margin_right = 271.0
-margin_bottom = 271.0
-color = Color( 0.94902, 0.913725, 0.00784314, 1 )
+[node name="BG" type="Sprite" parent="Checklist"]
+position = Vector2( 444.25, 121.625 )
+scale = Vector2( 0.848585, 0.896048 )
+texture = ExtResource( 26 )
+
+[node name="SubmitButton" type="Button" parent="Checklist"]
+margin_left = 696.0
+margin_top = -596.0
+margin_right = 850.0
+margin_bottom = -554.0
+text = "Submit"
 
 [node name="Items" type="GridContainer" parent="Checklist"]
-margin_right = 271.0
-margin_bottom = 271.0
+margin_left = -5.0
+margin_top = 30.0
+margin_right = 848.0
+margin_bottom = 252.0
+columns = 2
 
 [node name="Jumping" type="CheckBox" parent="Checklist/Items"]
-margin_right = 271.0
-margin_bottom = 24.0
+margin_right = 340.0
+margin_bottom = 40.0
+rect_min_size = Vector2( 0, 40 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_colors/font_color_pressed = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 14 )
 button_mask = 0
 text = "Jumping"
 
 [node name="JumpingKey" type="CheckBox" parent="Checklist/Items"]
-margin_top = 28.0
-margin_right = 271.0
-margin_bottom = 52.0
+margin_left = 344.0
+margin_right = 853.0
+margin_bottom = 40.0
+rect_min_size = Vector2( 0, 40 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_colors/font_color_pressed = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 14 )
 button_mask = 0
 text = "Jumping when Space is pressed"
 
 [node name="Moving" type="CheckBox" parent="Checklist/Items"]
-margin_top = 56.0
-margin_right = 271.0
-margin_bottom = 80.0
+margin_top = 44.0
+margin_right = 340.0
+margin_bottom = 84.0
+rect_min_size = Vector2( 0, 40 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_colors/font_color_pressed = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 14 )
 button_mask = 0
 text = "Moving to the right"
 
 [node name="MovingKey" type="CheckBox" parent="Checklist/Items"]
-margin_top = 84.0
-margin_right = 271.0
-margin_bottom = 108.0
+margin_left = 344.0
+margin_top = 44.0
+margin_right = 853.0
+margin_bottom = 84.0
+rect_min_size = Vector2( 0, 40 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_colors/font_color_pressed = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 14 )
 button_mask = 0
 text = "Moving to the right when D is pressed"
 
 [node name="MovingSpeed" type="CheckBox" parent="Checklist/Items"]
-margin_top = 112.0
-margin_right = 271.0
-margin_bottom = 136.0
+margin_top = 88.0
+margin_right = 340.0
+margin_bottom = 128.0
+rect_min_size = Vector2( 0, 40 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_colors/font_color_pressed = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 14 )
 button_mask = 0
 text = "Moving at adequate speed"
 
 [node name="EasyFlag" type="CheckBox" parent="Checklist/Items"]
-margin_top = 140.0
-margin_right = 271.0
-margin_bottom = 164.0
+margin_left = 344.0
+margin_top = 88.0
+margin_right = 853.0
+margin_bottom = 128.0
+rect_min_size = Vector2( 0, 40 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_colors/font_color_pressed = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 14 )
 button_mask = 0
-text = "Reached first Flag"
+text = "Collected Drone"
 
 [node name="HardFlag" type="CheckBox" parent="Checklist/Items"]
-margin_top = 168.0
-margin_right = 271.0
-margin_bottom = 192.0
+margin_top = 132.0
+margin_right = 340.0
+margin_bottom = 172.0
+rect_min_size = Vector2( 0, 40 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_colors/font_color_pressed = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 14 )
 button_mask = 0
-text = "Reached last Flag"
-
-[node name="SubmitButton" type="Button" parent="Checklist/Items"]
-margin_top = 196.0
-margin_right = 271.0
-margin_bottom = 216.0
-text = "Submit"
+text = "Delivered Drone"
 
 [node name="Timer" parent="." instance=ExtResource( 8 )]
-position = Vector2( 1731, 60 )
+position = Vector2( 1303, 24 )
 
 [node name="Game" type="Node" parent="."]
 
 [node name="Background" type="Sprite" parent="Game"]
-position = Vector2( 1480.5, 550 )
-scale = Vector2( 0.380085, 0.614634 )
+position = Vector2( 1477, 350 )
+scale = Vector2( 0.84778, 0.84751 )
 z_index = -1
 texture = ExtResource( 7 )
 
 [node name="EasyFlag" type="Area2D" parent="Game"]
-position = Vector2( 1140, 726 )
+position = Vector2( 1225, 461 )
 
 [node name="Flag" type="Sprite" parent="Game/EasyFlag"]
-position = Vector2( -2, -21 )
+position = Vector2( -4, 0 )
 rotation = -4.69843
 scale = Vector2( -0.277691, 0.277691 )
 texture = ExtResource( 18 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Game/EasyFlag"]
-position = Vector2( -2, -25 )
+position = Vector2( 1, 2 )
 shape = SubResource( 6 )
 
 [node name="RichTextLabel" type="RichTextLabel" parent="Game/EasyFlag"]
@@ -175,15 +214,15 @@ text = "Easy
 "
 
 [node name="HardFlag" type="Area2D" parent="Game"]
-position = Vector2( 1861, 674 )
+position = Vector2( 1855, 323 )
 
 [node name="Flag" type="Sprite" parent="Game/HardFlag"]
-position = Vector2( 1, -5 )
+position = Vector2( 1, -4 )
 scale = Vector2( 0.218033, 0.218033 )
 texture = ExtResource( 19 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Game/HardFlag"]
-position = Vector2( -2, -21.75 )
+position = Vector2( 2, -8 )
 shape = SubResource( 6 )
 
 [node name="RichTextLabel" type="RichTextLabel" parent="Game/HardFlag"]
@@ -193,11 +232,6 @@ margin_right = 24.0
 margin_bottom = -40.0
 text = "Hard
 "
-
-[node name="Level" type="Sprite" parent="Game"]
-position = Vector2( 1475, 705 )
-scale = Vector2( 0.375848, 0.429268 )
-texture = ExtResource( 6 )
 
 [node name="BackToGameSelection" type="Button" parent="Game"]
 visible = false
@@ -215,26 +249,27 @@ text = "Back"
 position = Vector2( 1040, 524 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Game/WallLeft"]
-position = Vector2( -2.5, 19.5 )
+position = Vector2( -2.5, -169.5 )
 shape = SubResource( 8 )
 
 [node name="WallRight" type="StaticBody2D" parent="Game"]
 position = Vector2( 1928, 508 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Game/WallRight"]
-position = Vector2( -2.5, 19.5 )
+position = Vector2( 3, -148 )
 shape = SubResource( 8 )
 
 [node name="Floor" type="StaticBody2D" parent="Game"]
 position = Vector2( 1340, 1061 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Game/Floor"]
-position = Vector2( 74, -82 )
+position = Vector2( 145, -452 )
 shape = SubResource( 2 )
 
 [node name="Player" type="KinematicBody2D" parent="Game"]
-position = Vector2( 1136, 869 )
+position = Vector2( 1127, 550 )
 script = ExtResource( 14 )
+JumpSpeed = -600
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Game/Player"]
 position = Vector2( 0, 3 )
@@ -246,28 +281,33 @@ texture = ExtResource( 5 )
 [node name="FlagArea" type="Area2D" parent="Game/Player"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Game/Player/FlagArea"]
-position = Vector2( 0.25, 0.25 )
+position = Vector2( 1, -5 )
 shape = SubResource( 7 )
 
-[node name="Box" type="StaticBody2D" parent="Game"]
-position = Vector2( 1531, 851 )
+[node name="House" type="StaticBody2D" parent="Game"]
+position = Vector2( 1789, 490 )
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Game/Box"]
-position = Vector2( 55.5, 53.5 )
-shape = SubResource( 3 )
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Game/House"]
+position = Vector2( 7, -12 )
+shape = SubResource( 12 )
 
-[node name="Area2D" type="StaticBody2D" parent="Game"]
-position = Vector2( 1824, 727 )
+[node name="Truck" type="KinematicBody2D" parent="Game"]
+position = Vector2( 1360, 547 )
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Game/Area2D"]
-position = Vector2( 31, 114.5 )
-shape = SubResource( 4 )
+[node name="Sprite" type="Sprite" parent="Game/Truck"]
+position = Vector2( 1.00024, 1 )
+scale = Vector2( 0.406061, 0.406061 )
+texture = ExtResource( 6 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Game/Truck"]
+position = Vector2( 0, 5 )
+shape = SubResource( 13 )
 
 [node name="Ceiling" type="StaticBody2D" parent="Game"]
 position = Vector2( 1344, 121 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Game/Ceiling"]
-position = Vector2( 141, -82 )
+position = Vector2( 138, -16 )
 shape = SubResource( 2 )
 
 [node name="ProgrammingUI" type="Control" parent="."]
@@ -292,7 +332,8 @@ script = ExtResource( 3 )
 margin_left = 250.0
 margin_top = 250.0
 margin_right = 409.0
-margin_bottom = 341.0
+margin_bottom = 381.0
+hint_tooltip = "This is where your code execution starts. Start connecting other nodes from here!"
 mouse_filter = 1
 title = "Process"
 slot/0/left_enabled = false
@@ -313,15 +354,19 @@ script = ExtResource( 12 )
 margin_left = 16.0
 margin_top = 24.0
 margin_right = 143.0
-margin_bottom = 39.0
-text = "- - - - - - - - - - - - - >"
+margin_bottom = 44.0
+mouse_filter = 1
+custom_fonts/normal_font = SubResource( 11 )
+text = "- - - - - - - - ->"
 fit_content_height = true
 
 [node name="Hint" type="RichTextLabel" parent="ProgrammingUI/AspectRatioContainer/NodeGraph/Process"]
 margin_left = 16.0
-margin_top = 40.0
+margin_top = 45.0
 margin_right = 143.0
-margin_bottom = 85.0
+margin_bottom = 125.0
+mouse_filter = 1
+custom_fonts/normal_font = SubResource( 11 )
 text = "
 This node is called every frame."
 fit_content_height = true
@@ -331,6 +376,7 @@ margin_left = 250.0
 margin_top = 250.0
 margin_right = 401.0
 margin_bottom = 343.0
+hint_tooltip = "This will make the player jump. You need to provide a reference to the player."
 mouse_filter = 1
 title = "Jump"
 slot/0/left_enabled = true
@@ -351,15 +397,19 @@ script = ExtResource( 16 )
 margin_left = 16.0
 margin_top = 24.0
 margin_right = 135.0
-margin_bottom = 39.0
-text = "- - - - - - - - - - - - >"
+margin_bottom = 44.0
+mouse_filter = 1
+custom_fonts/normal_font = SubResource( 11 )
+text = "- - - - - - - - ->"
 fit_content_height = true
 
 [node name="Player" type="RichTextLabel" parent="ProgrammingUI/AspectRatioContainer/NodeGraph/Jump"]
 margin_left = 16.0
-margin_top = 40.0
+margin_top = 45.0
 margin_right = 135.0
-margin_bottom = 55.0
+margin_bottom = 65.0
+mouse_filter = 1
+custom_fonts/normal_font = SubResource( 11 )
 text = "Player"
 fit_content_height = true
 
@@ -369,7 +419,10 @@ anchor_right = 1.0
 margin_left = -782.0
 margin_top = 250.0
 margin_right = -627.0
-margin_bottom = 345.0
+margin_bottom = 363.0
+hint_tooltip = "This node will set the player position to the provided position. 
+You need to provide a reference to the player, as well as the
+ x and y coordinates that the position should be set to."
 mouse_filter = 1
 title = "Set Player Position"
 slot/0/left_enabled = true
@@ -402,39 +455,50 @@ script = ExtResource( 4 )
 margin_left = 16.0
 margin_top = 24.0
 margin_right = 139.0
-margin_bottom = 39.0
-text = "- - - - - - - - - - - - >"
+margin_bottom = 44.0
+mouse_filter = 1
+custom_fonts/normal_font = SubResource( 11 )
+text = "- - - - - - - - ->"
 fit_content_height = true
 
 [node name="Player" type="RichTextLabel" parent="ProgrammingUI/AspectRatioContainer/NodeGraph/SetPlayerPosition"]
 margin_left = 16.0
-margin_top = 40.0
+margin_top = 45.0
 margin_right = 139.0
-margin_bottom = 55.0
+margin_bottom = 65.0
+mouse_filter = 1
+custom_fonts/normal_font = SubResource( 11 )
 text = "Player"
 fit_content_height = true
 
 [node name="x" type="RichTextLabel" parent="ProgrammingUI/AspectRatioContainer/NodeGraph/SetPlayerPosition"]
 margin_left = 16.0
-margin_top = 56.0
+margin_top = 66.0
 margin_right = 139.0
-margin_bottom = 71.0
+margin_bottom = 86.0
+mouse_filter = 1
+custom_fonts/normal_font = SubResource( 11 )
 text = "x"
 fit_content_height = true
 
 [node name="y" type="RichTextLabel" parent="ProgrammingUI/AspectRatioContainer/NodeGraph/SetPlayerPosition"]
 margin_left = 16.0
-margin_top = 72.0
+margin_top = 87.0
 margin_right = 139.0
-margin_bottom = 87.0
+margin_bottom = 107.0
+mouse_filter = 1
+custom_fonts/normal_font = SubResource( 11 )
 text = "y"
 fit_content_height = true
 
 [node name="FloatInput" type="GraphNode" parent="ProgrammingUI/AspectRatioContainer/NodeGraph"]
 margin_left = 250.0
 margin_top = 250.0
-margin_right = 391.0
+margin_right = 404.0
 margin_bottom = 327.0
+hint_tooltip = "This node allows you to input a floating point number.
+Just drag the slider to input your number. The default
+is zero."
 mouse_filter = 1
 title = "Variable"
 slot/0/left_enabled = false
@@ -456,8 +520,10 @@ configureable = true
 [node name="Player" type="RichTextLabel" parent="ProgrammingUI/AspectRatioContainer/NodeGraph/FloatInput"]
 margin_left = 16.0
 margin_top = 24.0
-margin_right = 125.0
-margin_bottom = 39.0
+margin_right = 138.0
+margin_bottom = 44.0
+mouse_filter = 1
+custom_fonts/normal_font = SubResource( 11 )
 bbcode_enabled = true
 bbcode_text = "[right]Float"
 text = "Float"
@@ -465,24 +531,32 @@ fit_content_height = true
 
 [node name="InputSlider" type="HSlider" parent="ProgrammingUI/AspectRatioContainer/NodeGraph/FloatInput"]
 margin_left = 16.0
-margin_top = 40.0
-margin_right = 125.0
-margin_bottom = 56.0
+margin_top = 45.0
+margin_right = 138.0
+margin_bottom = 61.0
 min_value = -10.0
 max_value = 10.0
 step = 0.5
 
 [node name="InputSliderText" type="RichTextLabel" parent="ProgrammingUI/AspectRatioContainer/NodeGraph/FloatInput/InputSlider"]
-margin_top = 19.0
-margin_right = 40.0
-margin_bottom = 35.0
+margin_left = 117.0
+margin_top = -1.0
+margin_right = 157.0
+margin_bottom = 19.0
+mouse_filter = 1
+custom_fonts/normal_font = SubResource( 11 )
 text = "0"
+fit_content_height = true
+scroll_active = false
 
 [node name="PlayerVariable" type="GraphNode" parent="ProgrammingUI/AspectRatioContainer/NodeGraph"]
 margin_left = 250.0
 margin_top = 250.0
 margin_right = 399.0
-margin_bottom = 312.0
+margin_bottom = 317.0
+hint_tooltip = "This node provides you with a reference to the
+player in the game. You need this node for other
+nodes that do something with the player."
 mouse_filter = 1
 title = "Variable"
 slot/0/left_enabled = false
@@ -503,7 +577,9 @@ script = ExtResource( 2 )
 margin_left = 16.0
 margin_top = 24.0
 margin_right = 133.0
-margin_bottom = 39.0
+margin_bottom = 44.0
+mouse_filter = 1
+custom_fonts/normal_font = SubResource( 11 )
 bbcode_enabled = true
 bbcode_text = "[right]Player"
 text = "Player"
@@ -515,19 +591,24 @@ margin_left = 16.0
 margin_top = 40.0
 margin_right = 133.0
 margin_bottom = 56.0
+mouse_filter = 1
 step = 0.5
 
 [node name="InputSliderText" type="RichTextLabel" parent="ProgrammingUI/AspectRatioContainer/NodeGraph/PlayerVariable/InputSlider"]
 margin_top = 19.0
 margin_right = 40.0
 margin_bottom = 35.0
+mouse_filter = 1
+custom_fonts/normal_font = SubResource( 11 )
 text = "0"
 
 [node name="Addition" type="GraphNode" parent="ProgrammingUI/AspectRatioContainer/NodeGraph"]
 margin_left = 250.0
 margin_top = 250.0
 margin_right = 401.0
-margin_bottom = 343.0
+margin_bottom = 363.0
+hint_tooltip = "This node takes two numbers and adds them together.
+You can use the resulting number for anything you like."
 mouse_filter = 1
 title = "a + b"
 slot/0/left_enabled = true
@@ -560,31 +641,39 @@ script = ExtResource( 13 )
 margin_left = 16.0
 margin_top = 24.0
 margin_right = 135.0
-margin_bottom = 39.0
-text = "- - - - - - - - - - - - >"
+margin_bottom = 44.0
+mouse_filter = 1
+custom_fonts/normal_font = SubResource( 11 )
+text = "- - - - - - - - ->"
 fit_content_height = true
 
 [node name="Input 1" type="RichTextLabel" parent="ProgrammingUI/AspectRatioContainer/NodeGraph/Addition"]
 margin_left = 16.0
-margin_top = 40.0
+margin_top = 45.0
 margin_right = 135.0
-margin_bottom = 55.0
+margin_bottom = 65.0
+mouse_filter = 1
+custom_fonts/normal_font = SubResource( 11 )
 text = "a"
 fit_content_height = true
 
 [node name="Input 2" type="RichTextLabel" parent="ProgrammingUI/AspectRatioContainer/NodeGraph/Addition"]
 margin_left = 16.0
-margin_top = 56.0
+margin_top = 66.0
 margin_right = 135.0
-margin_bottom = 71.0
+margin_bottom = 86.0
+mouse_filter = 1
+custom_fonts/normal_font = SubResource( 11 )
 text = "b"
 fit_content_height = true
 
 [node name="Output" type="RichTextLabel" parent="ProgrammingUI/AspectRatioContainer/NodeGraph/Addition"]
 margin_left = 16.0
-margin_top = 72.0
+margin_top = 87.0
 margin_right = 135.0
-margin_bottom = 87.0
+margin_bottom = 107.0
+mouse_filter = 1
+custom_fonts/normal_font = SubResource( 11 )
 bbcode_enabled = true
 bbcode_text = "[right]="
 text = "="
@@ -595,7 +684,8 @@ margin_left = 250.0
 margin_top = 250.0
 margin_right = 399.0
 margin_bottom = 327.0
-rect_pivot_offset = Vector2( -638, -126 )
+hint_tooltip = "This node gives you the current horizontal
+position of the player in the game."
 mouse_filter = 1
 title = "Position.X"
 slot/0/left_enabled = false
@@ -617,7 +707,9 @@ Type = 7
 margin_left = 16.0
 margin_top = 24.0
 margin_right = 133.0
-margin_bottom = 39.0
+margin_bottom = 44.0
+mouse_filter = 1
+custom_fonts/normal_font = SubResource( 11 )
 bbcode_enabled = true
 bbcode_text = "[right]Position X"
 text = "Position X"
@@ -635,6 +727,8 @@ step = 0.5
 margin_top = 19.0
 margin_right = 40.0
 margin_bottom = 35.0
+mouse_filter = 1
+custom_fonts/normal_font = SubResource( 11 )
 text = "0"
 
 [node name="PlayerPosY" type="GraphNode" parent="ProgrammingUI/AspectRatioContainer/NodeGraph"]
@@ -642,7 +736,8 @@ margin_left = 250.0
 margin_top = 250.0
 margin_right = 398.0
 margin_bottom = 327.0
-rect_pivot_offset = Vector2( -638, -126 )
+hint_tooltip = "This node gives you the current vertical
+position of the player in the game."
 mouse_filter = 1
 title = "Position.Y"
 slot/0/left_enabled = false
@@ -664,7 +759,9 @@ Type = 8
 margin_left = 16.0
 margin_top = 24.0
 margin_right = 132.0
-margin_bottom = 39.0
+margin_bottom = 44.0
+mouse_filter = 1
+custom_fonts/normal_font = SubResource( 11 )
 bbcode_enabled = true
 bbcode_text = "[right]Position Y"
 text = "Position Y"
@@ -682,6 +779,8 @@ step = 0.5
 margin_top = 19.0
 margin_right = 40.0
 margin_bottom = 35.0
+mouse_filter = 1
+custom_fonts/normal_font = SubResource( 11 )
 text = "0"
 
 [node name="IfBlock2" type="GraphNode" parent="ProgrammingUI/AspectRatioContainer/NodeGraph"]
@@ -689,6 +788,11 @@ margin_left = 250.0
 margin_top = 250.0
 margin_right = 402.0
 margin_bottom = 326.0
+hint_tooltip = "This node allows you to check if a condition
+is fulfilled. If the condition is fulfilled, the nodes
+connected after this node will be executed. If the
+condition connected on the left side is not fulfilled, 
+no nodes after this node will be executed."
 mouse_filter = 1
 title = "if ()"
 slot/0/left_enabled = true
@@ -709,15 +813,19 @@ script = ExtResource( 11 )
 margin_left = 16.0
 margin_top = 24.0
 margin_right = 136.0
-margin_bottom = 39.0
-text = "- - - - - - - - - - - - >"
+margin_bottom = 44.0
+mouse_filter = 1
+custom_fonts/normal_font = SubResource( 11 )
+text = "- - - - - - - - ->"
 fit_content_height = true
 
 [node name="Condition" type="RichTextLabel" parent="ProgrammingUI/AspectRatioContainer/NodeGraph/IfBlock2"]
 margin_left = 16.0
-margin_top = 40.0
+margin_top = 45.0
 margin_right = 136.0
-margin_bottom = 55.0
+margin_bottom = 65.0
+mouse_filter = 1
+custom_fonts/normal_font = SubResource( 11 )
 text = "Condition"
 fit_content_height = true
 
@@ -726,6 +834,11 @@ margin_left = 250.0
 margin_top = 250.0
 margin_right = 401.0
 margin_bottom = 327.0
+hint_tooltip = "This node allows you to check if a condition
+is fulfilled. If the condition is fulfilled, the nodes
+connected after this node will be executed. If the
+condition connected on the left side is not fulfilled, 
+no nodes after this node will be executed."
 mouse_filter = 1
 title = "if ()"
 slot/0/left_enabled = true
@@ -746,15 +859,19 @@ script = ExtResource( 11 )
 margin_left = 16.0
 margin_top = 24.0
 margin_right = 135.0
-margin_bottom = 39.0
-text = "- - - - - - - - - - - - >"
+margin_bottom = 44.0
+mouse_filter = 1
+custom_fonts/normal_font = SubResource( 11 )
+text = "- - - - - - - - ->"
 fit_content_height = true
 
 [node name="Condition" type="RichTextLabel" parent="ProgrammingUI/AspectRatioContainer/NodeGraph/IfBlock"]
 margin_left = 16.0
-margin_top = 40.0
+margin_top = 45.0
 margin_right = 135.0
-margin_bottom = 55.0
+margin_bottom = 65.0
+mouse_filter = 1
+custom_fonts/normal_font = SubResource( 11 )
 text = "Condition"
 fit_content_height = true
 
@@ -763,6 +880,8 @@ margin_left = 250.0
 margin_top = 250.0
 margin_right = 424.0
 margin_bottom = 311.0
+hint_tooltip = "This condition node checks if the player
+has pressed the \"Space\" key on their keyboard."
 mouse_filter = 1
 title = "isKeyPressed(\"Space\")"
 slot/0/left_enabled = false
@@ -770,14 +889,16 @@ slot/0/left_type = 0
 slot/0/left_color = Color( 1, 1, 1, 1 )
 slot/0/right_enabled = true
 slot/0/right_type = 1
-slot/0/right_color = Color( 0.580392, 0, 0.678431, 1 )
+slot/0/right_color = Color( 0.933333, 0, 0.701961, 1 )
 script = ExtResource( 15 )
 
 [node name="RichTextLabel" type="RichTextLabel" parent="ProgrammingUI/AspectRatioContainer/NodeGraph/IfSpacePressed"]
 margin_left = 16.0
 margin_top = 24.0
 margin_right = 158.0
-margin_bottom = 39.0
+margin_bottom = 44.0
+mouse_filter = 1
+custom_fonts/normal_font = SubResource( 11 )
 bbcode_enabled = true
 bbcode_text = "[right]pressed"
 text = "pressed"
@@ -795,17 +916,126 @@ slot/0/left_type = 0
 slot/0/left_color = Color( 1, 1, 1, 1 )
 slot/0/right_enabled = true
 slot/0/right_type = 1
-slot/0/right_color = Color( 0.580392, 0, 0.678431, 1 )
+slot/0/right_color = Color( 0.933333, 0, 0.701961, 1 )
 script = ExtResource( 10 )
+__meta__ = {
+"_editor_description_": "This condition node checks if the player
+has pressed the \"D\" key on their keyboard."
+}
 
 [node name="RichTextLabel" type="RichTextLabel" parent="ProgrammingUI/AspectRatioContainer/NodeGraph/IfDPressed"]
 margin_left = 16.0
 margin_top = 24.0
 margin_right = 131.0
-margin_bottom = 39.0
+margin_bottom = 44.0
+mouse_filter = 1
+custom_fonts/normal_font = SubResource( 11 )
 bbcode_enabled = true
 bbcode_text = "[right]pressed"
 text = "pressed"
+fit_content_height = true
+
+[node name="MoveTruck" type="GraphNode" parent="ProgrammingUI/AspectRatioContainer/NodeGraph"]
+margin_left = 250.0
+margin_top = 250.0
+margin_right = 409.0
+margin_bottom = 315.0
+hint_tooltip = "This node moves the truck away."
+mouse_filter = 1
+title = "Move Truck"
+slot/0/left_enabled = true
+slot/0/left_type = 0
+slot/0/left_color = Color( 1, 1, 1, 1 )
+slot/0/right_enabled = true
+slot/0/right_type = 0
+slot/0/right_color = Color( 1, 1, 1, 1 )
+script = ExtResource( 24 )
+
+[node name="ExecutionFlowPlaceholder" type="RichTextLabel" parent="ProgrammingUI/AspectRatioContainer/NodeGraph/MoveTruck"]
+margin_left = 16.0
+margin_top = 24.0
+margin_right = 143.0
+margin_bottom = 44.0
+mouse_filter = 1
+custom_fonts/normal_font = SubResource( 11 )
+text = "- - - - - - - - ->"
+fit_content_height = true
+
+[node name="IfFPressed" type="GraphNode" parent="ProgrammingUI/AspectRatioContainer/NodeGraph"]
+margin_left = 250.0
+margin_top = 250.0
+margin_right = 397.0
+margin_bottom = 312.0
+mouse_filter = 1
+title = "isKeyPressed(\"F\")"
+slot/0/left_enabled = false
+slot/0/left_type = 0
+slot/0/left_color = Color( 1, 1, 1, 1 )
+slot/0/right_enabled = true
+slot/0/right_type = 1
+slot/0/right_color = Color( 0.933333, 0, 0.701961, 1 )
+script = ExtResource( 25 )
+__meta__ = {
+"_editor_description_": "This condition node checks if the player
+has pressed the \"F\" key on their keyboard."
+}
+
+[node name="RichTextLabel" type="RichTextLabel" parent="ProgrammingUI/AspectRatioContainer/NodeGraph/IfFPressed"]
+margin_left = 16.0
+margin_top = 24.0
+margin_right = 131.0
+margin_bottom = 44.0
+mouse_filter = 1
+custom_fonts/normal_font = SubResource( 11 )
+bbcode_enabled = true
+bbcode_text = "[right]pressed"
+text = "pressed"
+fit_content_height = true
+
+[node name="IfBlock3" type="GraphNode" parent="ProgrammingUI/AspectRatioContainer/NodeGraph"]
+margin_left = 250.0
+margin_top = 250.0
+margin_right = 402.0
+margin_bottom = 326.0
+hint_tooltip = "This node allows you to check if a condition
+is fulfilled. If the condition is fulfilled, the nodes
+connected after this node will be executed. If the
+condition connected on the left side is not fulfilled, 
+no nodes after this node will be executed."
+mouse_filter = 1
+title = "if ()"
+slot/0/left_enabled = true
+slot/0/left_type = 0
+slot/0/left_color = Color( 1, 1, 1, 1 )
+slot/0/right_enabled = true
+slot/0/right_type = 0
+slot/0/right_color = Color( 1, 1, 1, 1 )
+slot/1/left_enabled = true
+slot/1/left_type = 1
+slot/1/left_color = Color( 0.933333, 0, 0.701961, 1 )
+slot/1/right_enabled = false
+slot/1/right_type = 0
+slot/1/right_color = Color( 1, 1, 1, 1 )
+script = ExtResource( 11 )
+
+[node name="ExecutionFlowPlaceholder" type="RichTextLabel" parent="ProgrammingUI/AspectRatioContainer/NodeGraph/IfBlock3"]
+margin_left = 16.0
+margin_top = 24.0
+margin_right = 136.0
+margin_bottom = 44.0
+mouse_filter = 1
+custom_fonts/normal_font = SubResource( 11 )
+text = "- - - - - - - - ->"
+fit_content_height = true
+
+[node name="Condition" type="RichTextLabel" parent="ProgrammingUI/AspectRatioContainer/NodeGraph/IfBlock3"]
+margin_left = 16.0
+margin_top = 45.0
+margin_right = 136.0
+margin_bottom = 65.0
+mouse_filter = 1
+custom_fonts/normal_font = SubResource( 11 )
+text = "Condition"
 fit_content_height = true
 
 [node name="RunOverlay" type="ColorRect" parent="ProgrammingUI"]
@@ -828,22 +1058,52 @@ text = "Code executing..."
 [node name="ResetButton" type="Button" parent="ProgrammingUI"]
 anchor_left = 0.892
 anchor_right = 1.0
-margin_left = 479.264
-margin_top = 1.0
-margin_right = 459.0
-margin_bottom = 43.0
+margin_left = 596.264
+margin_top = 22.0
+margin_right = 576.0
+margin_bottom = 64.0
 focus_mode = 0
 text = "Reset Game"
 
 [node name="RunButton" type="Button" parent="ProgrammingUI"]
 anchor_left = 0.892
 anchor_right = 1.0
-margin_left = 7.26398
-margin_top = 4.0
-margin_right = 44.0
-margin_bottom = 46.0
+margin_left = 129.264
+margin_top = 22.0
+margin_right = 166.0
+margin_bottom = 64.0
 focus_mode = 0
 text = "Execute Code"
+
+[node name="ErrorBox" type="ColorRect" parent="ProgrammingUI"]
+margin_left = 1032.0
+margin_top = 862.0
+margin_right = 1922.0
+margin_bottom = 1056.0
+color = Color( 0, 0, 0, 1 )
+
+[node name="RunOverlayText" type="RichTextLabel" parent="ProgrammingUI/ErrorBox"]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -66.0
+margin_right = 66.0
+margin_bottom = 42.0
+custom_fonts/normal_font = SubResource( 15 )
+text = "Errors"
+
+[node name="ColorRect" type="ColorRect" parent="ProgrammingUI/ErrorBox"]
+margin_left = 23.0
+margin_top = 42.0
+margin_right = 864.0
+margin_bottom = 170.0
+color = Color( 0.172549, 0.164706, 0.196078, 1 )
+
+[node name="ErrorList" type="RichTextLabel" parent="ProgrammingUI/ErrorBox"]
+margin_left = 33.0
+margin_top = 51.0
+margin_right = 842.0
+margin_bottom = 162.0
+text = "Press 'Execute Code' to see errors..."
 
 [node name="Music" type="Node" parent="."]
 script = ExtResource( 20 )
@@ -895,4 +1155,4 @@ position = Vector2( 1458.63, 350.575 )
 scale = Vector2( 0.25502, 0.261392 )
 texture = ExtResource( 9 )
 
-[connection signal="pressed" from="Checklist/Items/SubmitButton" to="Music" method="_on_SubmitButton_pressed"]
+[connection signal="pressed" from="Checklist/SubmitButton" to="Music" method="_on_SubmitButton_pressed"]
