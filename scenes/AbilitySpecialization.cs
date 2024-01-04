@@ -6,6 +6,7 @@
         Art,
         Sound,
         GameStudy,
-        Management
+        Management,
+        Narrative
     }
 }

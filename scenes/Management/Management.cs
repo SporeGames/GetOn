@@ -127,8 +127,8 @@ public class Management : Node2D {
 		shared.managementPoints = points;
 		shared.managementColors = cardsColoredCorrectly; 
 		shared.managementTime = GetNode<CountdownTimer>("/root/Management/Timer").CurrentTime;
-		shared.CompletedTasks.Add("management");
-		shared.SwitchScene("res://scenes/Management/AfterPuzzleRoom.tscn");
+		shared.CompletedTasks.Add(AbilitySpecialization.Management);
+		shared.SwitchScene("res://scenes/Rooms/ManagementRoom.tscn");
 	}
 
 	public override void _Process(float delta) {

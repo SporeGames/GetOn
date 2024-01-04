@@ -1,0 +1,56 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://SharedAssets/DialogeBox.tscn" type="PackedScene" id=1]
+[ext_resource path="res://scenes/Rooms/RoomPerson.cs" type="Script" id=2]
+[ext_resource path="res://SharedAssets/OutlineMaterial.tres" type="Material" id=3]
+
+[node name="RoomPerson" type="Node2D"]
+position = Vector2( -4, 1 )
+script = ExtResource( 2 )
+
+[node name="PersonSprite" type="Sprite" parent="."]
+material = ExtResource( 3 )
+
+[node name="InteractButton" type="TextureButton" parent="."]
+margin_right = 283.0
+margin_bottom = 490.0
+
+[node name="WelcomeDialogue" parent="." instance=ExtResource( 1 )]
+visible = false
+position = Vector2( 0, 704 )
+Title = "Julia, Sound-Design"
+Texts = PoolStringArray( "Inspiring, truly inspiring! Are you a relative of Hans Zimmer perhaps\?", "You can be really proud of your work." )
+LoadSceneAfter = true
+SceneToLoad = "GameSelectionRoom"
+
+[node name="ResultDialogue" parent="." instance=ExtResource( 1 )]
+visible = false
+position = Vector2( 0, 704 )
+Title = "Julia, Sound-Design"
+Texts = PoolStringArray( "Inspiring, truly inspiring! Are you a relative of Hans Zimmer perhaps\?", "You can be really proud of your work." )
+LoadSceneAfter = true
+SceneToLoad = "GameSelectionRoom"
+
+[node name="ResultDialogue2" parent="." instance=ExtResource( 1 )]
+visible = false
+position = Vector2( 0, 704 )
+Title = "Julia, Sound-Design"
+Texts = PoolStringArray( " Not bad, you just need some more exercise.", "Good work!”" )
+LoadSceneAfter = true
+SceneToLoad = "GameSelectionRoom"
+
+[node name="ResultDialogue3" parent="." instance=ExtResource( 1 )]
+visible = false
+position = Vector2( 0, 704 )
+Title = "Julia, Sound-Design"
+Texts = PoolStringArray( "\"Um yeah, let\'s leave it by that.\"", "\"If I work on that task myself, I can listen to my tracks again.\"" )
+LoadSceneAfter = true
+SceneToLoad = "GameSelectionRoom"
+
+[node name="EpicFailDialogue" parent="." instance=ExtResource( 1 )]
+visible = false
+position = Vector2( 0, 704 )
+Title = "Julia, Sound-Design"
+Texts = PoolStringArray( "\"Um yeah, let\'s leave it by that.\"", "\"If I work on that task myself, I can listen to my tracks again.\"" )
+LoadSceneAfter = true
+SceneToLoad = "GameSelectionRoom"

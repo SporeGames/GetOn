@@ -35,7 +35,7 @@ namespace GetOn.scenes.GameSelectionRoom {
 			_goToManagment.Connect("pressed", this, nameof(OnGoToManagmentPressed));
 			_goToNarrativeAndGameDesign = GetNode<Button>("GoToNarrativeAndGameDesign");
 			_goToNarrativeAndGameDesign.Connect("pressed", this, nameof(OnGoToNarrativeAndSoundPressed));
-			_goToSound = GetNode<Button>("GoToSound");
+			_goToSound = GetNode<Button>("GoToSoundAndArt");
 			_goToSound.Connect("pressed", this, nameof(OnGoToSoundPressed));
 			_printPDF = GetNode<Button>("PrintPDF");
 			_printPDF.Connect("pressed", this, nameof(OnPrintPDFPressed));
@@ -54,7 +54,7 @@ namespace GetOn.scenes.GameSelectionRoom {
 		public void OnGoToProgrammingPressed() {
 			_DialogueBox.QueueFree();
 			
-			_sharedNode.SwitchScene("res://scenes/Programming/PrePuzzleRoom.tscn");
+			_sharedNode.SwitchScene("res://scenes/Rooms/ProgrammingRoom.tscn");
 		}
 
 		public void OnGoToManagmentPressed() {
@@ -63,17 +63,17 @@ namespace GetOn.scenes.GameSelectionRoom {
 			GD.Print("HUAN2111111111");
 			_DialogueBox.QueueFree();
 		}
-			_sharedNode.SwitchScene("res://scenes/Management/PrePuzzleRoom.tscn");
+			_sharedNode.SwitchScene("res://scenes/Rooms/ManagementRoom.tscn");
 		}
 
 		public void OnGoToNarrativeAndSoundPressed() {
 			_DialogueBox.QueueFree();
-			_sharedNode.SwitchScene("res://scenes/Narrative/PrePuzzleRoom.tscn");//"res://scenes/Narrative/PrePuzzleRoom.tscn"
+			_sharedNode.SwitchScene("res://scenes/Rooms/GDNarrativeRoom.tscn");//"res://scenes/Narrative/PrePuzzleRoom.tscn"
 		}
 
 		public void OnGoToSoundPressed() {
 			_DialogueBox.QueueFree();
-			_sharedNode.SwitchScene("res://scenes/Sound/PrePuzzleRoom.tscn");
+			_sharedNode.SwitchScene("res://scenes/Rooms/SoundArtRoom.tscn");
 		}
 
 		public void OnPrintPDFPressed() {
@@ -83,35 +83,35 @@ namespace GetOn.scenes.GameSelectionRoom {
 
 		public void OnGoToGameStudyPressed() {
 			_DialogueBox.QueueFree();
-			_sharedNode.SwitchScene("res://scenes/GameStudy/PrePuzzleRoom.tscn");
+			_sharedNode.SwitchScene("res://scenes/Rooms/GameStudyRoom.tscn");
 		}
 
 		private void CheckCompletions() {
 			foreach (var game in _sharedNode.CompletedTasks) {
 				switch (game) {
-					case "programming":
+					case AbilitySpecialization.Programming:
 						
 						_programmingDone.Visible = true;
 						break;
-					case "management":
+					case AbilitySpecialization.Management:
 						
 						_managementDone.Visible = true;
 						break;
-					case "narrative":
+					case AbilitySpecialization.Narrative:
 						_storyDone.Visible = true;
 						break;
-					case "sound":
+					case AbilitySpecialization.Sound:
 						//_goToSound.Disabled = true;
 						//_goToSound.Visible = false;
 						//_goToSoundPuzzle.Visible = false;
 						
 						_soundDone.Visible = true;
 						break;
-					case "gamestudy":
+					case AbilitySpecialization.GameStudy:
 						
 						_gameStudyDone.Visible = true;
 						break;
-					case "gameDesign" :
+					case AbilitySpecialization.GameDesign:
 
 						_narrativeAndDesignDone.Visible = true;
 						break;

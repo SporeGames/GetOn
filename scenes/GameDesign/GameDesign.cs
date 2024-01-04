@@ -109,8 +109,8 @@ public class GameDesign : Control {
 		var node = GetNode<SharedNode>("/root/SharedNode");
 		node.gameDesignPoints = points;
 		node.gameDesignTime = (int) _timer.CurrentTime;
-		node.SwitchScene("res://scenes/GameDesign/AfterPuzzleRoom.tscn");
-		node.CompletedTasks.Add("gameDesign");
+		node.CompletedTasks.Add(AbilitySpecialization.GameDesign);
+		node.SwitchScene("res://scenes/Rooms/GDNarrativeRoom.tscn");
 	}
 
 	public void OnIntroReadyPressed() {

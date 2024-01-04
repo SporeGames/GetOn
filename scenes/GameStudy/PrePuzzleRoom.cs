@@ -106,22 +106,22 @@ namespace GetOn.scenes.GameStudy
 			{
 				switch (game)
 				{
-					case "sound":
+					case AbilitySpecialization.Sound:
 						soundDone = true;
 						break;
-					case "programming":
+					case AbilitySpecialization.Programming:
 						programmingDone = true;
 						break;
-					case "management":
+					case AbilitySpecialization.Management:
 						mangamentDone = true;
 						break;
-					case "narrative":
+					case AbilitySpecialization.Narrative:
 						narrativeDone = true;
 						break;
-					case "gamestudy":
+					case AbilitySpecialization.GameStudy:
 						gameStudyDone = true;
 						break;
-					case "gameDesign" :
+					case AbilitySpecialization.GameDesign:
 						gamedesignDone = true;
 						break;
 				}

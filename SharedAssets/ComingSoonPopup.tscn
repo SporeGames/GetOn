@@ -1,0 +1,34 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://SharedAssets/font/BAHNSCHRIFT 1.TTF" type="DynamicFontData" id=1]
+
+[sub_resource type="DynamicFont" id=3]
+size = 40
+use_mipmaps = true
+use_filter = true
+font_data = ExtResource( 1 )
+
+[node name="ComingSoonPopup" type="Node2D"]
+position = Vector2( 755, 397 )
+
+[node name="ColorRect" type="ColorRect" parent="."]
+margin_right = 453.0
+margin_bottom = 280.0
+color = Color( 1, 0, 0, 1 )
+
+[node name="ColorRect2" type="ColorRect" parent="."]
+margin_left = 24.0
+margin_top = 25.0
+margin_right = 431.0
+margin_bottom = 257.0
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+margin_left = 40.0
+margin_top = 40.0
+margin_right = 413.0
+margin_bottom = 243.0
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+custom_fonts/normal_font = SubResource( 3 )
+text = "Coming soon
+
+This feature is still in development."

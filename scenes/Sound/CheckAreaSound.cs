@@ -176,9 +176,8 @@ namespace GetOn.scenes.Sound
 			GD.Print(points);
 			_sharedNode.soundPoints = (int) points;
 			_sharedNode.soundTime = GetNode<CountdownTimer>("/root/Sound/Timer").CurrentTime;
-			_sharedNode.SwitchScene("res://scenes/Sound/AfterPuzzleRoom.tscn");
-			_sharedNode.CompletedTasks.Add("sound");
-			//_gameSelRoom.HideSound();
+			_sharedNode.CompletedTasks.Add(AbilitySpecialization.Sound);
+			_sharedNode.SwitchScene("res://scenes/Rooms/SoundArtRoom.tscn");
 		}
 	}
 }

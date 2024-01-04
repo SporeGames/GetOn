@@ -113,8 +113,8 @@ namespace GetOn.scenes.Programming {
 			}
 			_sharedNode.programmingPoints = points;
 			_sharedNode.programmingTime = _timer.CurrentTime;
-			_sharedNode.CompletedTasks.Add("programming");
-			_sharedNode.SwitchScene("res://scenes/Programming/AfterPuzzleRoom.tscn");
+			_sharedNode.CompletedTasks.Add(AbilitySpecialization.Programming);
+			_sharedNode.SwitchScene("res://scenes/Rooms/ProgrammingRoom.tscn");
 		}
 	}
 }

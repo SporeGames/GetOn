@@ -22,7 +22,8 @@ namespace GetOn.scenes {
 		private Node CurrentScene { get; set; }
 		[JsonProperty] public string PlayerName { get; set; } = "No name";
 
-		[JsonProperty] public readonly List<string> CompletedTasks = new List<string>();
+		[JsonProperty] public readonly List<AbilitySpecialization> CompletedTasks = new List<AbilitySpecialization>();
+		[JsonProperty] public readonly List<string> SeenDialogues = new List<string>();
 		
 		[JsonProperty] public int programmingPoints = 0;
 		[JsonProperty] public float programmingTime = 0;

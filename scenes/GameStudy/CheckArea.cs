@@ -140,8 +140,8 @@ namespace GetOn.scenes.GameStudy
 			GD.Print(points);
 			_sharedNode.gameStudyPoints = points;
 			_sharedNode.gameStudyTime = GetNode<CountdownTimer>("/root/GameStudy/Timer").CurrentTime;
-			_sharedNode.CompletedTasks.Add("gamestudy");
-			_sharedNode.SwitchScene("res://scenes/GameStudy/AfterPuzzleRoom.tscn");
+			_sharedNode.CompletedTasks.Add(AbilitySpecialization.GameStudy);
+			_sharedNode.SwitchScene("res://scenes/Rooms/GameStudyRoom.tscn");
 		}
 
 		private void _on_CheckGameBoy_body_entered(object body)

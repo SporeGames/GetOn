@@ -148,7 +148,7 @@ namespace GetOn.scenes.Sound
 		}
 
 		public void CheckPuzzle()
-		{
+		{/*
 
 			count = _sharedNode.CompletedTasks.Count;
 			lastPuzzle = _sharedNode.CompletedTasks[count-1];
@@ -179,7 +179,7 @@ namespace GetOn.scenes.Sound
 					points = _sharedNode.gameDesignPoints;
 					maxPoints = 40;
 					break;
-			}
+			}*/
 		}
 	}
 }

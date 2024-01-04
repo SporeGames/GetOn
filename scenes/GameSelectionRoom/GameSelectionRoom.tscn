@@ -69,7 +69,7 @@ custom_styles/focus = SubResource( 4 )
 custom_styles/disabled = SubResource( 5 )
 custom_styles/normal = SubResource( 1 )
 
-[node name="GoToSound" type="Button" parent="."]
+[node name="GoToSoundAndArt" type="Button" parent="."]
 margin_left = 42.0
 margin_top = 466.0
 margin_right = 562.0
