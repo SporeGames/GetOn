@@ -2,7 +2,6 @@ using Godot;
 
 namespace GetOn.scenes.Art {
     public class Art : Node2D {
-
         private TextureButton _backButton;
         private TextureButton _uploadButton;
         private Node2D _comingSoonPopup;
