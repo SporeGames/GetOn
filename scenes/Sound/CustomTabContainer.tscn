@@ -1,0 +1,1127 @@
+[gd_scene load_steps=37 format=2]
+
+[ext_resource path="res://scenes/Sound/assets/FeldFürSounds.png" type="Texture" id=1]
+[ext_resource path="res://scenes/Sound/Soundeffects/Wrong Sounds/Power Boost Sound.wav" type="AudioStream" id=2]
+[ext_resource path="res://scenes/Sound/assets/GameplayFeld (1).png" type="Texture" id=3]
+[ext_resource path="res://scenes/Sound/CustomTabContainer.cs" type="Script" id=4]
+[ext_resource path="res://scenes/Sound/DragAndDropSound.cs" type="Script" id=5]
+[ext_resource path="res://scenes/Sound/assets/PlayButton.png" type="Texture" id=6]
+[ext_resource path="res://SharedAssets/font/BAHNSCHRIFT 1.TTF" type="DynamicFontData" id=7]
+[ext_resource path="res://scenes/Sound/Soundeffects/Secret Found Sound.wav" type="AudioStream" id=8]
+[ext_resource path="res://scenes/Sound/PlaySoundeffect.cs" type="Script" id=9]
+[ext_resource path="res://scenes/Sound/Soundeffects/Death Sound.wav" type="AudioStream" id=10]
+[ext_resource path="res://scenes/Sound/Soundeffects/Spend Money Sound (Digital).wav" type="AudioStream" id=11]
+[ext_resource path="res://scenes/Sound/Soundeffects/Low On Energy Sound.wav" type="AudioStream" id=12]
+[ext_resource path="res://scenes/Sound/Soundeffects/Wrong Sounds/Jumpscare Sound.wav" type="AudioStream" id=13]
+[ext_resource path="res://scenes/Sound/Soundeffects/Ambience Keller.wav" type="AudioStream" id=14]
+[ext_resource path="res://scenes/Sound/Soundeffects/Wrong Sounds/Ambience Night.wav" type="AudioStream" id=15]
+[ext_resource path="res://scenes/Sound/Soundeffects/Ambience City.wav" type="AudioStream" id=16]
+[ext_resource path="res://scenes/Sound/Soundeffects/Wrong Sounds/Shot Sound.wav" type="AudioStream" id=17]
+[ext_resource path="res://scenes/Sound/Soundeffects/Item Collected Sound.wav" type="AudioStream" id=18]
+[ext_resource path="res://scenes/Sound/Soundeffects/Drunk Status Sound.wav" type="AudioStream" id=19]
+[ext_resource path="res://scenes/Sound/Soundeffects/Wrong Sounds/Kill Sound.wav" type="AudioStream" id=20]
+[ext_resource path="res://scenes/Sound/Soundeffects/Wrong Sounds/Ambience Bar.wav" type="AudioStream" id=21]
+[ext_resource path="res://scenes/Sound/Soundeffects/Wrong Sounds/Level Up Sound.wav" type="AudioStream" id=22]
+[ext_resource path="res://scenes/Sound/Soundeffects/Perfect Block Sound.wav" type="AudioStream" id=23]
+[ext_resource path="res://scenes/Sound/assets/SoundGame2.png" type="Texture" id=24]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 347, 150.5 )
+
+[sub_resource type="DynamicFont" id=8]
+size = 22
+outline_color = Color( 0, 0, 0, 1 )
+use_mipmaps = true
+font_data = ExtResource( 7 )
+
+[sub_resource type="StyleBoxEmpty" id=9]
+
+[sub_resource type="StyleBoxEmpty" id=10]
+
+[sub_resource type="StyleBoxEmpty" id=11]
+
+[sub_resource type="StyleBoxEmpty" id=3]
+
+[sub_resource type="StyleBoxEmpty" id=4]
+
+[sub_resource type="StyleBoxEmpty" id=5]
+
+[sub_resource type="StyleBoxEmpty" id=6]
+
+[sub_resource type="StyleBoxEmpty" id=7]
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 98.5, 19 )
+
+[sub_resource type="RectangleShape2D" id=12]
+extents = Vector2( 122, 23 )
+
+[node name="CustomTabContainer" type="Node2D"]
+script = ExtResource( 4 )
+
+[node name="Sprite5" type="Sprite" parent="."]
+visible = false
+position = Vector2( 960, 540 )
+texture = ExtResource( 24 )
+
+[node name="Tab1" type="TextureButton" parent="."]
+margin_left = 174.0
+margin_top = 594.0
+margin_right = 327.0
+margin_bottom = 644.0
+texture_normal = ExtResource( 3 )
+
+[node name="Label" type="Label" parent="Tab1"]
+margin_left = 38.0
+margin_top = 16.0
+margin_right = 103.0
+margin_bottom = 30.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_colors/font_outline_modulate = Color( 0, 0, 0, 1 )
+text = "Ambience"
+
+[node name="Tab2" type="TextureButton" parent="."]
+margin_left = 337.0
+margin_top = 594.0
+margin_right = 490.0
+margin_bottom = 644.0
+texture_normal = ExtResource( 3 )
+
+[node name="Label" type="Label" parent="Tab2"]
+margin_left = 38.0
+margin_top = 16.0
+margin_right = 103.0
+margin_bottom = 30.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_colors/font_outline_modulate = Color( 0, 0, 0, 1 )
+text = "Gameplay"
+
+[node name="Tab3" type="TextureButton" parent="."]
+margin_left = 501.0
+margin_top = 594.0
+margin_right = 654.0
+margin_bottom = 644.0
+texture_normal = ExtResource( 3 )
+
+[node name="Label" type="Label" parent="Tab3"]
+margin_left = 38.0
+margin_top = 16.0
+margin_right = 103.0
+margin_bottom = 30.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_colors/font_outline_modulate = Color( 0, 0, 0, 1 )
+text = "Player data"
+
+[node name="Tab4" type="TextureButton" parent="."]
+margin_left = 665.0
+margin_top = 594.0
+margin_right = 818.0
+margin_bottom = 644.0
+texture_normal = ExtResource( 3 )
+
+[node name="Label" type="Label" parent="Tab4"]
+margin_left = 38.0
+margin_top = 16.0
+margin_right = 103.0
+margin_bottom = 30.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_colors/font_outline_modulate = Color( 0, 0, 0, 1 )
+text = "Combat"
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 523, 802 )
+texture = ExtResource( 1 )
+
+[node name="Sprite2" type="Sprite" parent="."]
+position = Vector2( 523, 802 )
+texture = ExtResource( 1 )
+
+[node name="Sprite3" type="Sprite" parent="."]
+position = Vector2( 523, 802 )
+texture = ExtResource( 1 )
+
+[node name="Sprite4" type="Sprite" parent="."]
+position = Vector2( 523, 802 )
+texture = ExtResource( 1 )
+
+[node name="CheckIfSoundInPanel" type="Area2D" parent="."]
+position = Vector2( 495, 773 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CheckIfSoundInPanel"]
+position = Vector2( 20, 20.5 )
+shape = SubResource( 1 )
+
+[node name="Sound1" type="KinematicBody2D" parent="." groups=["Sound"]]
+position = Vector2( 303, 689 )
+z_index = 10
+input_pickable = true
+script = ExtResource( 5 )
+
+[node name="LineEdit" type="LineEdit" parent="Sound1"]
+margin_left = -77.0
+margin_top = -17.0
+margin_right = 94.0
+margin_bottom = 14.0
+mouse_filter = 2
+custom_colors/cursor_color = Color( 0, 0, 0, 1 )
+custom_colors/clear_button_color_pressed = Color( 0, 0, 0, 1 )
+custom_colors/font_color_selected = Color( 0, 0, 0, 1 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_colors/clear_button_color = Color( 0, 0, 0, 1 )
+custom_colors/font_color_uneditable = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 8 )
+custom_styles/read_only = SubResource( 9 )
+custom_styles/focus = SubResource( 10 )
+custom_styles/normal = SubResource( 11 )
+text = "Sound1.wav"
+context_menu_enabled = false
+selecting_enabled = false
+
+[node name="Button" type="Button" parent="Sound1"]
+margin_left = 89.0
+margin_top = -22.0
+margin_right = 125.0
+margin_bottom = 17.0
+custom_styles/hover = SubResource( 3 )
+custom_styles/pressed = SubResource( 4 )
+custom_styles/focus = SubResource( 5 )
+custom_styles/disabled = SubResource( 6 )
+custom_styles/normal = SubResource( 7 )
+icon = ExtResource( 6 )
+script = ExtResource( 9 )
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Sound1/Button"]
+stream = ExtResource( 14 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sound1"]
+position = Vector2( -13.5, -2 )
+shape = SubResource( 2 )
+
+[node name="Area2D" type="Area2D" parent="Sound1"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sound1/Area2D"]
+position = Vector2( 6, -2 )
+shape = SubResource( 12 )
+
+[node name="Sound2" type="KinematicBody2D" parent="." groups=["Sound"]]
+position = Vector2( 303, 749 )
+z_index = 10
+input_pickable = true
+script = ExtResource( 5 )
+
+[node name="LineEdit" type="LineEdit" parent="Sound2"]
+margin_left = -77.0
+margin_top = -17.0
+margin_right = 94.0
+margin_bottom = 14.0
+mouse_filter = 2
+custom_colors/cursor_color = Color( 0, 0, 0, 1 )
+custom_colors/clear_button_color_pressed = Color( 0, 0, 0, 1 )
+custom_colors/font_color_selected = Color( 0, 0, 0, 1 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_colors/clear_button_color = Color( 0, 0, 0, 1 )
+custom_colors/font_color_uneditable = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 8 )
+custom_styles/read_only = SubResource( 9 )
+custom_styles/focus = SubResource( 10 )
+custom_styles/normal = SubResource( 11 )
+text = "Sound2.wav"
+context_menu_enabled = false
+selecting_enabled = false
+
+[node name="Button" type="Button" parent="Sound2"]
+margin_left = 89.0
+margin_top = -22.0
+margin_right = 125.0
+margin_bottom = 17.0
+custom_styles/hover = SubResource( 3 )
+custom_styles/pressed = SubResource( 4 )
+custom_styles/focus = SubResource( 5 )
+custom_styles/disabled = SubResource( 6 )
+custom_styles/normal = SubResource( 7 )
+icon = ExtResource( 6 )
+script = ExtResource( 9 )
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Sound2/Button"]
+stream = ExtResource( 16 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sound2"]
+position = Vector2( -13.5, -2 )
+shape = SubResource( 2 )
+
+[node name="RayCast2D" type="RayCast2D" parent="Sound2"]
+visible = false
+cast_to = Vector2( 130, 0 )
+
+[node name="RayCast2D2" type="RayCast2D" parent="Sound2"]
+visible = false
+cast_to = Vector2( 0, 40 )
+
+[node name="RayCast2D3" type="RayCast2D" parent="Sound2"]
+visible = false
+cast_to = Vector2( -120, 0 )
+
+[node name="RayCast2D4" type="RayCast2D" parent="Sound2"]
+visible = false
+cast_to = Vector2( 0, -40 )
+
+[node name="Area2D" type="Area2D" parent="Sound2"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sound2/Area2D"]
+position = Vector2( 6, -2 )
+shape = SubResource( 12 )
+
+[node name="Sound3" type="KinematicBody2D" parent="." groups=["Sound"]]
+position = Vector2( 303, 815 )
+z_index = 10
+input_pickable = true
+script = ExtResource( 5 )
+
+[node name="LineEdit" type="LineEdit" parent="Sound3"]
+margin_left = -77.0
+margin_top = -17.0
+margin_right = 94.0
+margin_bottom = 14.0
+mouse_filter = 2
+custom_colors/cursor_color = Color( 0, 0, 0, 1 )
+custom_colors/clear_button_color_pressed = Color( 0, 0, 0, 1 )
+custom_colors/font_color_selected = Color( 0, 0, 0, 1 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_colors/clear_button_color = Color( 0, 0, 0, 1 )
+custom_colors/font_color_uneditable = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 8 )
+custom_styles/read_only = SubResource( 9 )
+custom_styles/focus = SubResource( 10 )
+custom_styles/normal = SubResource( 11 )
+text = "Sound3.wav"
+context_menu_enabled = false
+selecting_enabled = false
+
+[node name="Button" type="Button" parent="Sound3"]
+margin_left = 89.0
+margin_top = -22.0
+margin_right = 125.0
+margin_bottom = 17.0
+custom_styles/hover = SubResource( 3 )
+custom_styles/pressed = SubResource( 4 )
+custom_styles/focus = SubResource( 5 )
+custom_styles/disabled = SubResource( 6 )
+custom_styles/normal = SubResource( 7 )
+icon = ExtResource( 6 )
+script = ExtResource( 9 )
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Sound3/Button"]
+stream = ExtResource( 15 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sound3"]
+position = Vector2( -13.5, -2 )
+shape = SubResource( 2 )
+
+[node name="Area2D" type="Area2D" parent="Sound3"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sound3/Area2D"]
+position = Vector2( 6, -2 )
+shape = SubResource( 12 )
+
+[node name="Sound4" type="KinematicBody2D" parent="." groups=["Sound"]]
+position = Vector2( 303, 881 )
+z_index = 10
+input_pickable = true
+script = ExtResource( 5 )
+
+[node name="LineEdit" type="LineEdit" parent="Sound4"]
+margin_left = -77.0
+margin_top = -17.0
+margin_right = 94.0
+margin_bottom = 14.0
+mouse_filter = 2
+custom_colors/cursor_color = Color( 0, 0, 0, 1 )
+custom_colors/clear_button_color_pressed = Color( 0, 0, 0, 1 )
+custom_colors/font_color_selected = Color( 0, 0, 0, 1 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_colors/clear_button_color = Color( 0, 0, 0, 1 )
+custom_colors/font_color_uneditable = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 8 )
+custom_styles/read_only = SubResource( 9 )
+custom_styles/focus = SubResource( 10 )
+custom_styles/normal = SubResource( 11 )
+text = "Sound4.wav"
+context_menu_enabled = false
+selecting_enabled = false
+
+[node name="Button" type="Button" parent="Sound4"]
+margin_left = 89.0
+margin_top = -22.0
+margin_right = 125.0
+margin_bottom = 17.0
+custom_styles/hover = SubResource( 3 )
+custom_styles/pressed = SubResource( 4 )
+custom_styles/focus = SubResource( 5 )
+custom_styles/disabled = SubResource( 6 )
+custom_styles/normal = SubResource( 7 )
+icon = ExtResource( 6 )
+script = ExtResource( 9 )
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Sound4/Button"]
+stream = ExtResource( 21 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sound4"]
+position = Vector2( -13.5, -2 )
+shape = SubResource( 2 )
+
+[node name="Area2D" type="Area2D" parent="Sound4"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sound4/Area2D"]
+position = Vector2( 6, -2 )
+shape = SubResource( 12 )
+
+[node name="Sound5" type="KinematicBody2D" parent="." groups=["Sound"]]
+visible = false
+position = Vector2( 303, 689 )
+z_index = 10
+input_pickable = true
+script = ExtResource( 5 )
+
+[node name="LineEdit" type="LineEdit" parent="Sound5"]
+margin_left = -77.0
+margin_top = -17.0
+margin_right = 94.0
+margin_bottom = 14.0
+mouse_filter = 2
+custom_colors/cursor_color = Color( 0, 0, 0, 1 )
+custom_colors/clear_button_color_pressed = Color( 0, 0, 0, 1 )
+custom_colors/font_color_selected = Color( 0, 0, 0, 1 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_colors/clear_button_color = Color( 0, 0, 0, 1 )
+custom_colors/font_color_uneditable = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 8 )
+custom_styles/read_only = SubResource( 9 )
+custom_styles/focus = SubResource( 10 )
+custom_styles/normal = SubResource( 11 )
+text = "Sound1.wav"
+context_menu_enabled = false
+selecting_enabled = false
+
+[node name="Button" type="Button" parent="Sound5"]
+margin_left = 89.0
+margin_top = -22.0
+margin_right = 125.0
+margin_bottom = 17.0
+custom_styles/hover = SubResource( 3 )
+custom_styles/pressed = SubResource( 4 )
+custom_styles/focus = SubResource( 5 )
+custom_styles/disabled = SubResource( 6 )
+custom_styles/normal = SubResource( 7 )
+icon = ExtResource( 6 )
+script = ExtResource( 9 )
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Sound5/Button"]
+stream = ExtResource( 23 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sound5"]
+position = Vector2( -13.5, -2 )
+shape = SubResource( 2 )
+
+[node name="Area2D" type="Area2D" parent="Sound5"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sound5/Area2D"]
+position = Vector2( 6, -2 )
+shape = SubResource( 12 )
+
+[node name="Sound6" type="KinematicBody2D" parent="." groups=["Sound"]]
+visible = false
+position = Vector2( 303, 749 )
+z_index = 10
+input_pickable = true
+script = ExtResource( 5 )
+
+[node name="LineEdit" type="LineEdit" parent="Sound6"]
+margin_left = -77.0
+margin_top = -17.0
+margin_right = 94.0
+margin_bottom = 14.0
+mouse_filter = 2
+custom_colors/cursor_color = Color( 0, 0, 0, 1 )
+custom_colors/clear_button_color_pressed = Color( 0, 0, 0, 1 )
+custom_colors/font_color_selected = Color( 0, 0, 0, 1 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_colors/clear_button_color = Color( 0, 0, 0, 1 )
+custom_colors/font_color_uneditable = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 8 )
+custom_styles/read_only = SubResource( 9 )
+custom_styles/focus = SubResource( 10 )
+custom_styles/normal = SubResource( 11 )
+text = "Sound2.wav"
+context_menu_enabled = false
+selecting_enabled = false
+
+[node name="Button" type="Button" parent="Sound6"]
+margin_left = 89.0
+margin_top = -22.0
+margin_right = 125.0
+margin_bottom = 17.0
+custom_styles/hover = SubResource( 3 )
+custom_styles/pressed = SubResource( 4 )
+custom_styles/focus = SubResource( 5 )
+custom_styles/disabled = SubResource( 6 )
+custom_styles/normal = SubResource( 7 )
+icon = ExtResource( 6 )
+script = ExtResource( 9 )
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Sound6/Button"]
+stream = ExtResource( 20 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sound6"]
+position = Vector2( -13.5, -2 )
+shape = SubResource( 2 )
+
+[node name="RayCast2D" type="RayCast2D" parent="Sound6"]
+visible = false
+cast_to = Vector2( 130, 0 )
+
+[node name="RayCast2D2" type="RayCast2D" parent="Sound6"]
+visible = false
+cast_to = Vector2( 0, 40 )
+
+[node name="RayCast2D3" type="RayCast2D" parent="Sound6"]
+visible = false
+cast_to = Vector2( -120, 0 )
+
+[node name="RayCast2D4" type="RayCast2D" parent="Sound6"]
+visible = false
+cast_to = Vector2( 0, -40 )
+
+[node name="Area2D" type="Area2D" parent="Sound6"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sound6/Area2D"]
+position = Vector2( 6, -2 )
+shape = SubResource( 12 )
+
+[node name="Sound7" type="KinematicBody2D" parent="." groups=["Sound"]]
+visible = false
+position = Vector2( 303, 815 )
+z_index = 10
+input_pickable = true
+script = ExtResource( 5 )
+
+[node name="LineEdit" type="LineEdit" parent="Sound7"]
+margin_left = -77.0
+margin_top = -17.0
+margin_right = 94.0
+margin_bottom = 14.0
+mouse_filter = 2
+custom_colors/cursor_color = Color( 0, 0, 0, 1 )
+custom_colors/clear_button_color_pressed = Color( 0, 0, 0, 1 )
+custom_colors/font_color_selected = Color( 0, 0, 0, 1 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_colors/clear_button_color = Color( 0, 0, 0, 1 )
+custom_colors/font_color_uneditable = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 8 )
+custom_styles/read_only = SubResource( 9 )
+custom_styles/focus = SubResource( 10 )
+custom_styles/normal = SubResource( 11 )
+text = "Sound3.wav"
+context_menu_enabled = false
+selecting_enabled = false
+
+[node name="Button" type="Button" parent="Sound7"]
+margin_left = 89.0
+margin_top = -22.0
+margin_right = 125.0
+margin_bottom = 17.0
+custom_styles/hover = SubResource( 3 )
+custom_styles/pressed = SubResource( 4 )
+custom_styles/focus = SubResource( 5 )
+custom_styles/disabled = SubResource( 6 )
+custom_styles/normal = SubResource( 7 )
+icon = ExtResource( 6 )
+script = ExtResource( 9 )
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Sound7/Button"]
+stream = ExtResource( 2 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sound7"]
+position = Vector2( -13.5, -2 )
+shape = SubResource( 2 )
+
+[node name="Area2D" type="Area2D" parent="Sound7"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sound7/Area2D"]
+position = Vector2( 6, -2 )
+shape = SubResource( 12 )
+
+[node name="Sound8" type="KinematicBody2D" parent="." groups=["Sound"]]
+visible = false
+position = Vector2( 303, 881 )
+z_index = 10
+input_pickable = true
+script = ExtResource( 5 )
+
+[node name="LineEdit" type="LineEdit" parent="Sound8"]
+margin_left = -77.0
+margin_top = -17.0
+margin_right = 94.0
+margin_bottom = 14.0
+mouse_filter = 2
+custom_colors/cursor_color = Color( 0, 0, 0, 1 )
+custom_colors/clear_button_color_pressed = Color( 0, 0, 0, 1 )
+custom_colors/font_color_selected = Color( 0, 0, 0, 1 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_colors/clear_button_color = Color( 0, 0, 0, 1 )
+custom_colors/font_color_uneditable = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 8 )
+custom_styles/read_only = SubResource( 9 )
+custom_styles/focus = SubResource( 10 )
+custom_styles/normal = SubResource( 11 )
+text = "Sound4.wav"
+context_menu_enabled = false
+selecting_enabled = false
+
+[node name="Button" type="Button" parent="Sound8"]
+margin_left = 89.0
+margin_top = -22.0
+margin_right = 125.0
+margin_bottom = 17.0
+custom_styles/hover = SubResource( 3 )
+custom_styles/pressed = SubResource( 4 )
+custom_styles/focus = SubResource( 5 )
+custom_styles/disabled = SubResource( 6 )
+custom_styles/normal = SubResource( 7 )
+icon = ExtResource( 6 )
+script = ExtResource( 9 )
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Sound8/Button"]
+stream = ExtResource( 17 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sound8"]
+position = Vector2( -13.5, -2 )
+shape = SubResource( 2 )
+
+[node name="Area2D" type="Area2D" parent="Sound8"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sound8/Area2D"]
+position = Vector2( 6, -2 )
+shape = SubResource( 12 )
+
+[node name="Sound9" type="KinematicBody2D" parent="." groups=["Sound"]]
+visible = false
+position = Vector2( 303, 689 )
+z_index = 10
+input_pickable = true
+script = ExtResource( 5 )
+
+[node name="LineEdit" type="LineEdit" parent="Sound9"]
+margin_left = -77.0
+margin_top = -17.0
+margin_right = 94.0
+margin_bottom = 14.0
+mouse_filter = 2
+custom_colors/cursor_color = Color( 0, 0, 0, 1 )
+custom_colors/clear_button_color_pressed = Color( 0, 0, 0, 1 )
+custom_colors/font_color_selected = Color( 0, 0, 0, 1 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_colors/clear_button_color = Color( 0, 0, 0, 1 )
+custom_colors/font_color_uneditable = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 8 )
+custom_styles/read_only = SubResource( 9 )
+custom_styles/focus = SubResource( 10 )
+custom_styles/normal = SubResource( 11 )
+text = "Sound1.wav"
+context_menu_enabled = false
+selecting_enabled = false
+
+[node name="Button" type="Button" parent="Sound9"]
+margin_left = 89.0
+margin_top = -22.0
+margin_right = 125.0
+margin_bottom = 17.0
+custom_styles/hover = SubResource( 3 )
+custom_styles/pressed = SubResource( 4 )
+custom_styles/focus = SubResource( 5 )
+custom_styles/disabled = SubResource( 6 )
+custom_styles/normal = SubResource( 7 )
+icon = ExtResource( 6 )
+script = ExtResource( 9 )
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Sound9/Button"]
+stream = ExtResource( 10 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sound9"]
+position = Vector2( -13.5, -2 )
+shape = SubResource( 2 )
+
+[node name="Area2D" type="Area2D" parent="Sound9"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sound9/Area2D"]
+position = Vector2( 6, -2 )
+shape = SubResource( 12 )
+
+[node name="Sound10" type="KinematicBody2D" parent="." groups=["Sound"]]
+visible = false
+position = Vector2( 303, 749 )
+z_index = 10
+input_pickable = true
+script = ExtResource( 5 )
+
+[node name="LineEdit" type="LineEdit" parent="Sound10"]
+margin_left = -77.0
+margin_top = -17.0
+margin_right = 94.0
+margin_bottom = 14.0
+mouse_filter = 2
+custom_colors/cursor_color = Color( 0, 0, 0, 1 )
+custom_colors/clear_button_color_pressed = Color( 0, 0, 0, 1 )
+custom_colors/font_color_selected = Color( 0, 0, 0, 1 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_colors/clear_button_color = Color( 0, 0, 0, 1 )
+custom_colors/font_color_uneditable = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 8 )
+custom_styles/read_only = SubResource( 9 )
+custom_styles/focus = SubResource( 10 )
+custom_styles/normal = SubResource( 11 )
+text = "Sound2.wav"
+context_menu_enabled = false
+selecting_enabled = false
+
+[node name="Button" type="Button" parent="Sound10"]
+margin_left = 89.0
+margin_top = -22.0
+margin_right = 125.0
+margin_bottom = 17.0
+custom_styles/hover = SubResource( 3 )
+custom_styles/pressed = SubResource( 4 )
+custom_styles/focus = SubResource( 5 )
+custom_styles/disabled = SubResource( 6 )
+custom_styles/normal = SubResource( 7 )
+icon = ExtResource( 6 )
+script = ExtResource( 9 )
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Sound10/Button"]
+stream = ExtResource( 19 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sound10"]
+position = Vector2( -13.5, -2 )
+shape = SubResource( 2 )
+
+[node name="RayCast2D" type="RayCast2D" parent="Sound10"]
+visible = false
+cast_to = Vector2( 130, 0 )
+
+[node name="RayCast2D2" type="RayCast2D" parent="Sound10"]
+visible = false
+cast_to = Vector2( 0, 40 )
+
+[node name="RayCast2D3" type="RayCast2D" parent="Sound10"]
+visible = false
+cast_to = Vector2( -120, 0 )
+
+[node name="RayCast2D4" type="RayCast2D" parent="Sound10"]
+visible = false
+cast_to = Vector2( 0, -40 )
+
+[node name="Area2D" type="Area2D" parent="Sound10"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sound10/Area2D"]
+position = Vector2( 6, -2 )
+shape = SubResource( 12 )
+
+[node name="Sound11" type="KinematicBody2D" parent="." groups=["Sound"]]
+visible = false
+position = Vector2( 303, 815 )
+z_index = 10
+input_pickable = true
+script = ExtResource( 5 )
+
+[node name="LineEdit" type="LineEdit" parent="Sound11"]
+margin_left = -77.0
+margin_top = -17.0
+margin_right = 94.0
+margin_bottom = 14.0
+mouse_filter = 2
+custom_colors/cursor_color = Color( 0, 0, 0, 1 )
+custom_colors/clear_button_color_pressed = Color( 0, 0, 0, 1 )
+custom_colors/font_color_selected = Color( 0, 0, 0, 1 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_colors/clear_button_color = Color( 0, 0, 0, 1 )
+custom_colors/font_color_uneditable = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 8 )
+custom_styles/read_only = SubResource( 9 )
+custom_styles/focus = SubResource( 10 )
+custom_styles/normal = SubResource( 11 )
+text = "Sound3.wav"
+context_menu_enabled = false
+selecting_enabled = false
+
+[node name="Button" type="Button" parent="Sound11"]
+margin_left = 89.0
+margin_top = -22.0
+margin_right = 125.0
+margin_bottom = 17.0
+custom_styles/hover = SubResource( 3 )
+custom_styles/pressed = SubResource( 4 )
+custom_styles/focus = SubResource( 5 )
+custom_styles/disabled = SubResource( 6 )
+custom_styles/normal = SubResource( 7 )
+icon = ExtResource( 6 )
+script = ExtResource( 9 )
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Sound11/Button"]
+stream = ExtResource( 12 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sound11"]
+position = Vector2( -13.5, -2 )
+shape = SubResource( 2 )
+
+[node name="Area2D" type="Area2D" parent="Sound11"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sound11/Area2D"]
+position = Vector2( 6, -2 )
+shape = SubResource( 12 )
+
+[node name="Sound12" type="KinematicBody2D" parent="." groups=["Sound"]]
+visible = false
+position = Vector2( 303, 881 )
+z_index = 10
+input_pickable = true
+script = ExtResource( 5 )
+
+[node name="LineEdit" type="LineEdit" parent="Sound12"]
+margin_left = -77.0
+margin_top = -17.0
+margin_right = 94.0
+margin_bottom = 14.0
+mouse_filter = 2
+custom_colors/cursor_color = Color( 0, 0, 0, 1 )
+custom_colors/clear_button_color_pressed = Color( 0, 0, 0, 1 )
+custom_colors/font_color_selected = Color( 0, 0, 0, 1 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_colors/clear_button_color = Color( 0, 0, 0, 1 )
+custom_colors/font_color_uneditable = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 8 )
+custom_styles/read_only = SubResource( 9 )
+custom_styles/focus = SubResource( 10 )
+custom_styles/normal = SubResource( 11 )
+text = "Sound4.wav"
+context_menu_enabled = false
+selecting_enabled = false
+
+[node name="Button" type="Button" parent="Sound12"]
+margin_left = 89.0
+margin_top = -22.0
+margin_right = 125.0
+margin_bottom = 17.0
+custom_styles/hover = SubResource( 3 )
+custom_styles/pressed = SubResource( 4 )
+custom_styles/focus = SubResource( 5 )
+custom_styles/disabled = SubResource( 6 )
+custom_styles/normal = SubResource( 7 )
+icon = ExtResource( 6 )
+script = ExtResource( 9 )
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Sound12/Button"]
+stream = ExtResource( 22 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sound12"]
+position = Vector2( -13.5, -2 )
+shape = SubResource( 2 )
+
+[node name="Area2D" type="Area2D" parent="Sound12"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sound12/Area2D"]
+position = Vector2( 6, -2 )
+shape = SubResource( 12 )
+
+[node name="Sound13" type="KinematicBody2D" parent="." groups=["Sound"]]
+visible = false
+position = Vector2( 303, 689 )
+z_index = 10
+input_pickable = true
+script = ExtResource( 5 )
+
+[node name="LineEdit" type="LineEdit" parent="Sound13"]
+margin_left = -77.0
+margin_top = -17.0
+margin_right = 94.0
+margin_bottom = 14.0
+mouse_filter = 2
+custom_colors/cursor_color = Color( 0, 0, 0, 1 )
+custom_colors/clear_button_color_pressed = Color( 0, 0, 0, 1 )
+custom_colors/font_color_selected = Color( 0, 0, 0, 1 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_colors/clear_button_color = Color( 0, 0, 0, 1 )
+custom_colors/font_color_uneditable = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 8 )
+custom_styles/read_only = SubResource( 9 )
+custom_styles/focus = SubResource( 10 )
+custom_styles/normal = SubResource( 11 )
+text = "Sound1.wav"
+context_menu_enabled = false
+selecting_enabled = false
+
+[node name="Button" type="Button" parent="Sound13"]
+margin_left = 89.0
+margin_top = -22.0
+margin_right = 125.0
+margin_bottom = 17.0
+custom_styles/hover = SubResource( 3 )
+custom_styles/pressed = SubResource( 4 )
+custom_styles/focus = SubResource( 5 )
+custom_styles/disabled = SubResource( 6 )
+custom_styles/normal = SubResource( 7 )
+icon = ExtResource( 6 )
+script = ExtResource( 9 )
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Sound13/Button"]
+stream = ExtResource( 18 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sound13"]
+position = Vector2( -13.5, -2 )
+shape = SubResource( 2 )
+
+[node name="Area2D" type="Area2D" parent="Sound13"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sound13/Area2D"]
+position = Vector2( 6, -2 )
+shape = SubResource( 12 )
+
+[node name="Sound14" type="KinematicBody2D" parent="." groups=["Sound"]]
+visible = false
+position = Vector2( 303, 749 )
+z_index = 10
+input_pickable = true
+script = ExtResource( 5 )
+
+[node name="LineEdit" type="LineEdit" parent="Sound14"]
+margin_left = -77.0
+margin_top = -17.0
+margin_right = 94.0
+margin_bottom = 14.0
+mouse_filter = 2
+custom_colors/cursor_color = Color( 0, 0, 0, 1 )
+custom_colors/clear_button_color_pressed = Color( 0, 0, 0, 1 )
+custom_colors/font_color_selected = Color( 0, 0, 0, 1 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_colors/clear_button_color = Color( 0, 0, 0, 1 )
+custom_colors/font_color_uneditable = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 8 )
+custom_styles/read_only = SubResource( 9 )
+custom_styles/focus = SubResource( 10 )
+custom_styles/normal = SubResource( 11 )
+text = "Sound2.wav"
+context_menu_enabled = false
+selecting_enabled = false
+
+[node name="Button" type="Button" parent="Sound14"]
+margin_left = 89.0
+margin_top = -22.0
+margin_right = 125.0
+margin_bottom = 17.0
+custom_styles/hover = SubResource( 3 )
+custom_styles/pressed = SubResource( 4 )
+custom_styles/focus = SubResource( 5 )
+custom_styles/disabled = SubResource( 6 )
+custom_styles/normal = SubResource( 7 )
+icon = ExtResource( 6 )
+script = ExtResource( 9 )
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Sound14/Button"]
+stream = ExtResource( 8 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sound14"]
+position = Vector2( -13.5, -2 )
+shape = SubResource( 2 )
+
+[node name="RayCast2D" type="RayCast2D" parent="Sound14"]
+visible = false
+cast_to = Vector2( 130, 0 )
+
+[node name="RayCast2D2" type="RayCast2D" parent="Sound14"]
+visible = false
+cast_to = Vector2( 0, 40 )
+
+[node name="RayCast2D3" type="RayCast2D" parent="Sound14"]
+visible = false
+cast_to = Vector2( -120, 0 )
+
+[node name="RayCast2D4" type="RayCast2D" parent="Sound14"]
+visible = false
+cast_to = Vector2( 0, -40 )
+
+[node name="Area2D" type="Area2D" parent="Sound14"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sound14/Area2D"]
+position = Vector2( 6, -2 )
+shape = SubResource( 12 )
+
+[node name="Sound15" type="KinematicBody2D" parent="." groups=["Sound"]]
+visible = false
+position = Vector2( 303, 815 )
+z_index = 10
+input_pickable = true
+script = ExtResource( 5 )
+
+[node name="LineEdit" type="LineEdit" parent="Sound15"]
+margin_left = -77.0
+margin_top = -17.0
+margin_right = 94.0
+margin_bottom = 14.0
+mouse_filter = 2
+custom_colors/cursor_color = Color( 0, 0, 0, 1 )
+custom_colors/clear_button_color_pressed = Color( 0, 0, 0, 1 )
+custom_colors/font_color_selected = Color( 0, 0, 0, 1 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_colors/clear_button_color = Color( 0, 0, 0, 1 )
+custom_colors/font_color_uneditable = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 8 )
+custom_styles/read_only = SubResource( 9 )
+custom_styles/focus = SubResource( 10 )
+custom_styles/normal = SubResource( 11 )
+text = "Sound3.wav"
+context_menu_enabled = false
+selecting_enabled = false
+
+[node name="Button" type="Button" parent="Sound15"]
+margin_left = 89.0
+margin_top = -22.0
+margin_right = 125.0
+margin_bottom = 17.0
+custom_styles/hover = SubResource( 3 )
+custom_styles/pressed = SubResource( 4 )
+custom_styles/focus = SubResource( 5 )
+custom_styles/disabled = SubResource( 6 )
+custom_styles/normal = SubResource( 7 )
+icon = ExtResource( 6 )
+script = ExtResource( 9 )
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Sound15/Button"]
+stream = ExtResource( 11 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sound15"]
+position = Vector2( -13.5, -2 )
+shape = SubResource( 2 )
+
+[node name="Area2D" type="Area2D" parent="Sound15"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sound15/Area2D"]
+position = Vector2( 6, -2 )
+shape = SubResource( 12 )
+
+[node name="Sound16" type="KinematicBody2D" parent="." groups=["Sound"]]
+visible = false
+position = Vector2( 303, 881 )
+z_index = 10
+input_pickable = true
+script = ExtResource( 5 )
+
+[node name="LineEdit" type="LineEdit" parent="Sound16"]
+margin_left = -77.0
+margin_top = -17.0
+margin_right = 94.0
+margin_bottom = 14.0
+mouse_filter = 2
+custom_colors/cursor_color = Color( 0, 0, 0, 1 )
+custom_colors/clear_button_color_pressed = Color( 0, 0, 0, 1 )
+custom_colors/font_color_selected = Color( 0, 0, 0, 1 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_colors/clear_button_color = Color( 0, 0, 0, 1 )
+custom_colors/font_color_uneditable = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 8 )
+custom_styles/read_only = SubResource( 9 )
+custom_styles/focus = SubResource( 10 )
+custom_styles/normal = SubResource( 11 )
+text = "Sound4.wav"
+context_menu_enabled = false
+selecting_enabled = false
+
+[node name="Button" type="Button" parent="Sound16"]
+margin_left = 89.0
+margin_top = -22.0
+margin_right = 125.0
+margin_bottom = 17.0
+custom_styles/hover = SubResource( 3 )
+custom_styles/pressed = SubResource( 4 )
+custom_styles/focus = SubResource( 5 )
+custom_styles/disabled = SubResource( 6 )
+custom_styles/normal = SubResource( 7 )
+icon = ExtResource( 6 )
+script = ExtResource( 9 )
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Sound16/Button"]
+stream = ExtResource( 13 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sound16"]
+position = Vector2( -13.5, -2 )
+shape = SubResource( 2 )
+
+[node name="Area2D" type="Area2D" parent="Sound16"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sound16/Area2D"]
+position = Vector2( 6, -2 )
+shape = SubResource( 12 )
+
+[connection signal="body_entered" from="CheckIfSoundInPanel" to="." method="_on_CheckIfSoundInPanel_body_entered"]
+[connection signal="body_exited" from="CheckIfSoundInPanel" to="." method="_on_CheckIfSoundInPanel_body_exited"]
+[connection signal="text_changed" from="Sound1/LineEdit" to="Sound1" method="_on_LineEdit_text_changed"]
+[connection signal="text_entered" from="Sound1/LineEdit" to="Sound1" method="_on_LineEdit_text_entered"]
+[connection signal="area_entered" from="Sound1/Area2D" to="Sound1" method="_on_Area2D_area_entered"]
+[connection signal="area_exited" from="Sound1/Area2D" to="Sound1" method="_on_Area2D_area_exited"]
+[connection signal="text_changed" from="Sound2/LineEdit" to="Sound2" method="_on_LineEdit_text_changed"]
+[connection signal="text_entered" from="Sound2/LineEdit" to="Sound2" method="_on_LineEdit_text_entered"]
+[connection signal="area_entered" from="Sound2/Area2D" to="Sound2" method="_on_Area2D_area_entered"]
+[connection signal="area_exited" from="Sound2/Area2D" to="Sound2" method="_on_Area2D_area_exited"]
+[connection signal="text_changed" from="Sound3/LineEdit" to="Sound3" method="_on_LineEdit_text_changed"]
+[connection signal="text_entered" from="Sound3/LineEdit" to="Sound3" method="_on_LineEdit_text_entered"]
+[connection signal="area_entered" from="Sound3/Area2D" to="Sound3" method="_on_Area2D_area_entered"]
+[connection signal="area_exited" from="Sound3/Area2D" to="Sound3" method="_on_Area2D_area_exited"]
+[connection signal="text_changed" from="Sound4/LineEdit" to="Sound4" method="_on_LineEdit_text_changed"]
+[connection signal="text_entered" from="Sound4/LineEdit" to="Sound4" method="_on_LineEdit_text_entered"]
+[connection signal="area_entered" from="Sound4/Area2D" to="Sound4" method="_on_Area2D_area_entered"]
+[connection signal="area_exited" from="Sound4/Area2D" to="Sound4" method="_on_Area2D_area_exited"]
+[connection signal="text_changed" from="Sound5/LineEdit" to="Sound5" method="_on_LineEdit_text_changed"]
+[connection signal="text_entered" from="Sound5/LineEdit" to="Sound5" method="_on_LineEdit_text_entered"]
+[connection signal="area_entered" from="Sound5/Area2D" to="Sound5" method="_on_Area2D_area_entered"]
+[connection signal="area_exited" from="Sound5/Area2D" to="Sound5" method="_on_Area2D_area_exited"]
+[connection signal="text_changed" from="Sound6/LineEdit" to="Sound6" method="_on_LineEdit_text_changed"]
+[connection signal="text_entered" from="Sound6/LineEdit" to="Sound6" method="_on_LineEdit_text_entered"]
+[connection signal="area_entered" from="Sound6/Area2D" to="Sound6" method="_on_Area2D_area_entered"]
+[connection signal="area_exited" from="Sound6/Area2D" to="Sound6" method="_on_Area2D_area_exited"]
+[connection signal="text_changed" from="Sound7/LineEdit" to="Sound7" method="_on_LineEdit_text_changed"]
+[connection signal="text_entered" from="Sound7/LineEdit" to="Sound7" method="_on_LineEdit_text_entered"]
+[connection signal="area_entered" from="Sound7/Area2D" to="Sound7" method="_on_Area2D_area_entered"]
+[connection signal="area_exited" from="Sound7/Area2D" to="Sound7" method="_on_Area2D_area_exited"]
+[connection signal="text_changed" from="Sound8/LineEdit" to="Sound8" method="_on_LineEdit_text_changed"]
+[connection signal="text_entered" from="Sound8/LineEdit" to="Sound8" method="_on_LineEdit_text_entered"]
+[connection signal="area_entered" from="Sound8/Area2D" to="Sound8" method="_on_Area2D_area_entered"]
+[connection signal="area_exited" from="Sound8/Area2D" to="Sound8" method="_on_Area2D_area_exited"]
+[connection signal="text_changed" from="Sound9/LineEdit" to="Sound9" method="_on_LineEdit_text_changed"]
+[connection signal="text_entered" from="Sound9/LineEdit" to="Sound9" method="_on_LineEdit_text_entered"]
+[connection signal="area_entered" from="Sound9/Area2D" to="Sound9" method="_on_Area2D_area_entered"]
+[connection signal="area_exited" from="Sound9/Area2D" to="Sound9" method="_on_Area2D_area_exited"]
+[connection signal="text_changed" from="Sound10/LineEdit" to="Sound10" method="_on_LineEdit_text_changed"]
+[connection signal="text_entered" from="Sound10/LineEdit" to="Sound10" method="_on_LineEdit_text_entered"]
+[connection signal="area_entered" from="Sound10/Area2D" to="Sound10" method="_on_Area2D_area_entered"]
+[connection signal="area_exited" from="Sound10/Area2D" to="Sound10" method="_on_Area2D_area_exited"]
+[connection signal="text_changed" from="Sound11/LineEdit" to="Sound11" method="_on_LineEdit_text_changed"]
+[connection signal="text_entered" from="Sound11/LineEdit" to="Sound11" method="_on_LineEdit_text_entered"]
+[connection signal="area_entered" from="Sound11/Area2D" to="Sound11" method="_on_Area2D_area_entered"]
+[connection signal="area_exited" from="Sound11/Area2D" to="Sound11" method="_on_Area2D_area_exited"]
+[connection signal="text_changed" from="Sound12/LineEdit" to="Sound12" method="_on_LineEdit_text_changed"]
+[connection signal="text_entered" from="Sound12/LineEdit" to="Sound12" method="_on_LineEdit_text_entered"]
+[connection signal="area_entered" from="Sound12/Area2D" to="Sound12" method="_on_Area2D_area_entered"]
+[connection signal="area_exited" from="Sound12/Area2D" to="Sound12" method="_on_Area2D_area_exited"]
+[connection signal="text_changed" from="Sound13/LineEdit" to="Sound13" method="_on_LineEdit_text_changed"]
+[connection signal="text_entered" from="Sound13/LineEdit" to="Sound13" method="_on_LineEdit_text_entered"]
+[connection signal="area_entered" from="Sound13/Area2D" to="Sound13" method="_on_Area2D_area_entered"]
+[connection signal="area_exited" from="Sound13/Area2D" to="Sound13" method="_on_Area2D_area_exited"]
+[connection signal="text_changed" from="Sound14/LineEdit" to="Sound14" method="_on_LineEdit_text_changed"]
+[connection signal="text_entered" from="Sound14/LineEdit" to="Sound14" method="_on_LineEdit_text_entered"]
+[connection signal="area_entered" from="Sound14/Area2D" to="Sound14" method="_on_Area2D_area_entered"]
+[connection signal="area_exited" from="Sound14/Area2D" to="Sound14" method="_on_Area2D_area_exited"]
+[connection signal="text_changed" from="Sound15/LineEdit" to="Sound15" method="_on_LineEdit_text_changed"]
+[connection signal="text_entered" from="Sound15/LineEdit" to="Sound15" method="_on_LineEdit_text_entered"]
+[connection signal="area_entered" from="Sound15/Area2D" to="Sound15" method="_on_Area2D_area_entered"]
+[connection signal="area_exited" from="Sound15/Area2D" to="Sound15" method="_on_Area2D_area_exited"]
+[connection signal="text_changed" from="Sound16/LineEdit" to="Sound16" method="_on_LineEdit_text_changed"]
+[connection signal="text_entered" from="Sound16/LineEdit" to="Sound16" method="_on_LineEdit_text_entered"]
+[connection signal="area_entered" from="Sound16/Area2D" to="Sound16" method="_on_Area2D_area_entered"]
+[connection signal="area_exited" from="Sound16/Area2D" to="Sound16" method="_on_Area2D_area_exited"]
