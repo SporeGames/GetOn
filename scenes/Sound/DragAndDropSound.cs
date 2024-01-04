@@ -11,18 +11,29 @@ public class DragAndDropSound : KinematicBody2D
 	
 	private DragAndDropSound currentlyDraggedObject;
 	
+	private ulong lastClickTime = 0;
+	private float doubleClickThreshold = 0.5f;
+	private LineEdit _lineEdit;
+	public bool lineEdit;
+	
+	private bool colliding;
+	private bool area1;
+	private bool area2;
+	
+	private int enteredAreasCount = 0;
+	
 	public override void _Ready()
 	{
 		Connect("mouse_entered", this, "OnMouseEntered");
 		Connect("mouse_exited", this, "OnMouseLeft");
+
+		_lineEdit = GetNode<LineEdit>("LineEdit");
 		
 		originalPosition = Position;
-		
 	}
 	
 	public override void _Input(InputEvent @event)
 	{
-			
 		if (Input.IsActionPressed("left_click") && hovered == true)
 		{
 			
@@ -34,10 +45,14 @@ public class DragAndDropSound : KinematicBody2D
 			this.ZIndex = 20;
 			currentlyDraggedObject = this; 
 			attached = true;
+			
+			
 		}
 
-		if (!Input.IsActionPressed("left_click"))
+		if (!Input.IsActionPressed("left_click") && colliding == false)
 		{
+			
+			
 			attached = false;
 			this.ZIndex = 1;
 			EnablePickable();
@@ -51,6 +66,18 @@ public class DragAndDropSound : KinematicBody2D
 		if (@event is InputEventMouseMotion motion)
 		{
 			offset = GetViewport().GetMousePosition();
+		}
+
+		if (Input.IsActionJustReleased("left_click") && hovered)
+		{
+			ulong currentTime = OS.GetTicksUsec() / 1000; 
+
+			if (currentTime - lastClickTime < (ulong)(doubleClickThreshold * 1000))
+			{
+				OnDoubleClick();
+			}
+
+			lastClickTime = currentTime;
 		}
 	}
 	public void OnMouseEntered()
@@ -69,7 +96,20 @@ public class DragAndDropSound : KinematicBody2D
 		{
 			Position = new Vector2(offset);
 		}
+		/*
+		if (rayCast.IsColliding())
+		{
+			raycastColliding = true;
+			GD.Print("Cannot place here. Another object is present.");
+		}
+		else
+		{
+			raycastColliding = false;
+			GD.Print("You can place the object here.");
+		}
+		*/
 	}
+	
 
 	public void DisablePickable()
 	{
@@ -98,5 +138,113 @@ public class DragAndDropSound : KinematicBody2D
 			kinematicBody.InputPickable = newValue;
 		}
 	}
+
+	private void OnDoubleClick()
+	{
+		GD.Print("Double-click detected!");
+		// Your double-click handling code here
+		if (!lineEdit)
+		{
+			_lineEdit.SetMouseFilter(Control.MouseFilterEnum.Stop);
+			lineEdit = true;
+		}
+		else
+		{
+			_lineEdit.SetMouseFilter(Control.MouseFilterEnum.Ignore);
+			lineEdit = false;
+		}
+
+	}
+	private void _on_LineEdit_text_changed(String new_text)
+	{
+		//_lineEdit.SetMouseFilter(Control.MouseFilterEnum.Ignore);
+		//lineEdit = false;
+	}
+
+
 	
+	private void _on_LineEdit_text_entered(String new_text)
+	{
+		_lineEdit.SetMouseFilter(Control.MouseFilterEnum.Ignore);
+		lineEdit = false;
+	}
+	
+	private void _on_Area2D_area_entered(object area)
+	{
+		
+		if (area is Area2D area2d && area2d.Name == "Area2D")
+		{
+			
+			enteredAreasCount++;
+			colliding = true;
+			
+		}
+		
+		/*
+		if (area is Area2D area2d)
+		{
+			if (area2d.Name == "Area2D")
+			{
+				area1 = true;
+				colliding = true;
+			}
+			if (area2d.Name == "Area2D2")
+			{
+				area2 = true;
+				colliding = true;
+			}
+		}
+		*/
+	}
+
+	private void _on_Area2D_area_exited(object area)
+	{
+		
+		if (area is Area2D area2d && area2d.Name == "Area2D")
+		{
+			
+			enteredAreasCount--;
+
+			// Only set raycastColliding to false if no areas are entered
+			if (enteredAreasCount <= 0)
+			{
+				enteredAreasCount = 0; // Ensure the count doesn't go negative
+				colliding = false;
+				
+			}
+		}
+		
+		/*
+		if (area is Area2D area2d)
+		{
+			if (area2d.Name == "Area2D")
+			{
+				area1 = false;
+			}
+			if (area2d.Name == "Area2D2")
+			{
+				area2 = false;
+			}
+
+			if (area1 == false && area2 == false)
+				colliding = false;
+		}
+		*/
+	}
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
