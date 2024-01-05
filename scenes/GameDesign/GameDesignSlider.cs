@@ -3,8 +3,7 @@ using System;
 using System.Collections.Generic;
 using GetOn.scenes.GameDesign;
 
-public class GameDesignSlider : Control
-{
+public class GameDesignSlider : Node2D {
 	private TextureButton _leftButton;
 	private TextureButton _rightButton;
 //	private TextureButton _doneButton;

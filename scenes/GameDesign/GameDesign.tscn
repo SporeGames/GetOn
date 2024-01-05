@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=2]
+[gd_scene load_steps=26 format=2]
 
 [ext_resource path="res://scenes/GameDesign/assets/games/apex.jpg" type="Texture" id=1]
 [ext_resource path="res://scenes/GameDesign/GameDesignSlider.tscn" type="PackedScene" id=2]
@@ -18,10 +18,11 @@
 [ext_resource path="res://scenes/GameDesign/assets/personas/design.png" type="Texture" id=16]
 [ext_resource path="res://SharedAssets/font/BAHNSCHRIFT 1.TTF" type="DynamicFontData" id=17]
 [ext_resource path="res://SharedAssets/UI/B_Base2.png" type="Texture" id=18]
+[ext_resource path="res://SharedAssets/TopBar.tscn" type="PackedScene" id=19]
+[ext_resource path="res://SharedAssets/ui/Game Design.PNG" type="Texture" id=20]
+[ext_resource path="res://scenes/GameDesign/assets/ui/GameDesign.png" type="Texture" id=21]
 [ext_resource path="res://scenes/GameDesign/assets/games/detroit.jpg" type="Texture" id=29]
 [ext_resource path="res://scenes/GameDesign/assets/games/deadspace.jpg" type="Texture" id=38]
-[ext_resource path="res://SharedAssets/Timer.tscn" type="PackedScene" id=40]
-[ext_resource path="res://SharedAssets/Tutorial.tscn" type="PackedScene" id=41]
 
 [sub_resource type="DynamicFont" id=9]
 size = 100
@@ -30,16 +31,27 @@ font_data = ExtResource( 17 )
 [sub_resource type="Theme" id=10]
 default_font = SubResource( 9 )
 
-[node name="GameDesign" type="Control"]
-anchor_right = 1.0
-anchor_bottom = 1.0
-rect_min_size = Vector2( 1920, 1080 )
+[node name="GameDesign" type="Node2D"]
 script = ExtResource( 3 )
 
-[node name="Timer" parent="." instance=ExtResource( 40 )]
+[node name="TopBar" parent="." instance=ExtResource( 19 )]
+Description = "Instructions:
+
+Read the following descriptions of the 3 games and choose the correct motivations that fit to each game by checking the box ☐.
+Use            and              to switch between the motivations.
+When you are finished with the first game use	        and        ,below the game descriptions, to switch between them. 
+
+If you are done with the task press DONE. 
+
+Use         and          to switch between personas. 
+
+When you are finished with a game, press NEXT to go to the next game.
+
+There are a total of three games."
+LeftImage = ExtResource( 20 )
+HelpImage = ExtResource( 21 )
 
 [node name="ApexSlider" parent="." instance=ExtResource( 2 )]
-rect_pivot_offset = Vector2( -815, -180 )
 Images = [ ExtResource( 15 ), ExtResource( 11 ), ExtResource( 14 ), ExtResource( 10 ), ExtResource( 5 ), ExtResource( 8 ), ExtResource( 9 ), ExtResource( 12 ), ExtResource( 6 ), ExtResource( 13 ), ExtResource( 16 ), ExtResource( 7 ) ]
 PersonaNames = PoolStringArray( "Destruction", "Excitement", "Competition", "Community", "Challenge", "Strategy", "Completion", "Power", "Fantasy", "Story", "Design", "Discovery" )
 Descriptions = PoolStringArray( "These players tend to take more destructive measures and like chaos.", "These players like fast gameplay with a lot of exciting things happening all the time.", "These players like to compete against others and improve their skills.", "These players like to connect with different people and socialize through gaming.", "These players like to improve their skills and do not back off if something seems too difficult.", "These players carefully plan their steps and like to examine every possible option.", "These players want to finish 100% of a game and find each easter egg.", "These players want to be powerful, either through their skills, character or equipment.", "These players want to completely immerse into a game and accomplish things they could not in real life.", "These players want to experience an interesting story and live through different scenarios.", "These players want to express themselves and live their best life.", "These players want to discover every piece of the map and find new things." )
@@ -58,7 +70,6 @@ ValidPersonas = PoolStringArray( "Destruction", "Excitement", "Competition", "Co
 
 [node name="DetroitSlider" parent="." instance=ExtResource( 2 )]
 visible = false
-rect_pivot_offset = Vector2( -815, -180 )
 Images = [ ExtResource( 15 ), ExtResource( 11 ), ExtResource( 14 ), ExtResource( 10 ), ExtResource( 5 ), ExtResource( 8 ), ExtResource( 9 ), ExtResource( 12 ), ExtResource( 6 ), ExtResource( 13 ), ExtResource( 16 ), ExtResource( 7 ) ]
 PersonaNames = PoolStringArray( "Destruction", "Excitement", "Competition", "Community", "Challenge", "Strategy", "Completion", "Power", "Fantasy", "Story", "Design", "Discovery" )
 Descriptions = PoolStringArray( "These players tend to take more destructive measures and like chaos.", "These players like fast gameplay with a lot of exciting things happening all the time.", "These players like to compete against others and improve their skills.", "These players like to connect with different people and socialize through gaming.", "These players like to improve their skills and do not back off if something seems too difficult.", "These players carefully plan their steps and like to examine every possible option.", "These players want to finish 100% of a game and find each easter egg.", "These players want to be powerful, either through their skills, character or equipment.", "These players want to completely immerse into a game and accomplish things they could not in real life.", "These players want to experience an interesting story and live through different scenarios.", "These players want to express themselves and live their best life.", "These players want to discover every piece of the map and find new things." )
@@ -81,7 +92,6 @@ ValidPersonas = PoolStringArray( "Strategy", "Completion", "Fantasy", "Story", "
 
 [node name="DeadSpaceSlider" parent="." instance=ExtResource( 2 )]
 visible = false
-rect_pivot_offset = Vector2( -815, -180 )
 Images = [ ExtResource( 15 ), ExtResource( 11 ), ExtResource( 14 ), ExtResource( 10 ), ExtResource( 5 ), ExtResource( 8 ), ExtResource( 9 ), ExtResource( 12 ), ExtResource( 6 ), ExtResource( 13 ), ExtResource( 16 ), ExtResource( 7 ) ]
 PersonaNames = PoolStringArray( "Destruction", "Excitement", "Competition", "Community", "Challenge", "Strategy", "Completion", "Power", "Fantasy", "Story", "Design", "Discovery" )
 Descriptions = PoolStringArray( "These players tend to take more destructive measures and like chaos.", "These players like fast gameplay with a lot of exciting things happening all the time.", "These players like to compete against others and improve their skills.", "These players like to connect with different people and socialize through gaming.", "These players like to improve their skills and do not back off if something seems too difficult.", "These players carefully plan their steps and like to examine every possible option.", "These players want to finish 100% of a game and find each easter egg.", "These players want to be powerful, either through their skills, character or equipment.", "These players want to completely immerse into a game and accomplish things they could not in real life.", "These players want to experience an interesting story and live through different scenarios.", "These players want to express themselves and live their best life.", "These players want to discover every piece of the map and find new things." )
@@ -105,11 +115,6 @@ position = Vector2( 167, 0 )
 
 [node name="Music" type="Node" parent="."]
 script = ExtResource( 4 )
-
-[node name="Intro" parent="." instance=ExtResource( 41 )]
-__meta__ = {
-"_editor_description_": ""
-}
 
 [node name="DoneButton" type="TextureButton" parent="."]
 visible = false

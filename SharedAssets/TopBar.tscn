@@ -1,10 +1,9 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://SharedAssets/Timer.tscn" type="PackedScene" id=1]
 [ext_resource path="res://SharedAssets/UI/B_help_pressed.png" type="Texture" id=2]
 [ext_resource path="res://SharedAssets/UI/B_help.png" type="Texture" id=3]
 [ext_resource path="res://SharedAssets/TopBar.cs" type="Script" id=4]
-[ext_resource path="res://SharedAssets/UI/Management.PNG" type="Texture" id=5]
 [ext_resource path="res://SharedAssets/font/BAHNSCHRIFT 1.TTF" type="DynamicFontData" id=6]
 [ext_resource path="res://SharedAssets/UI/B_Base2.png" type="Texture" id=7]
 
@@ -21,10 +20,13 @@ use_filter = true
 font_data = ExtResource( 6 )
 
 [node name="TopBar" type="Node2D"]
+z_index = 2048
+z_as_relative = false
 script = ExtResource( 4 )
 Description = "lksgsh"
 
 [node name="ColorRect" type="ColorRect" parent="."]
+visible = false
 margin_right = 1923.0
 margin_bottom = 84.0
 color = Color( 0.458824, 0.458824, 0.458824, 0.560784 )
@@ -54,7 +56,6 @@ mouse_filter = 2
 [node name="LeftSide" type="Sprite" parent="Introduction"]
 position = Vector2( 159, 175 )
 scale = Vector2( 0.905092, 0.905093 )
-texture = ExtResource( 5 )
 
 [node name="Text" type="RichTextLabel" parent="Introduction"]
 margin_left = -562.0
@@ -90,7 +91,7 @@ margin_left = 111.0
 margin_top = 42.0
 margin_right = 264.0
 margin_bottom = 105.0
-mouse_filter = 1
+mouse_filter = 2
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 custom_fonts/normal_font = SubResource( 2 )
 text = "Close"
@@ -102,7 +103,8 @@ margin_right = 739.0
 margin_bottom = 319.0
 
 [node name="Image" type="Sprite" parent="Introduction"]
-position = Vector2( 504, 44 )
+position = Vector2( 608, 1 )
+scale = Vector2( 0.33, 0.33 )
 
 [node name="RightSide" type="Sprite" parent="Introduction"]
 position = Vector2( 159, 175 )

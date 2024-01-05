@@ -5,9 +5,9 @@ using GetOn.scenes;
 public class TopBar : Node2D {
 
 	[Export] public AbilitySpecialization Game;
-	[Export] public string Description;
+	[Export(PropertyHint.MultilineText)] public string Description;
 	[Export] public string Title;
-	[Export] public string ImageCaption;
+	[Export(PropertyHint.MultilineText)] public string ImageCaption;
 	[Export] public Texture LeftImage;
 	[Export] public Texture RightImage;
 	[Export] public Texture HelpImage;

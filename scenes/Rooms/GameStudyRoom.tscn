@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://scenes/Rooms/BaseRoom.cs" type="Script" id=1]
 [ext_resource path="res://scenes/GameStudy/assets/GameStudiesGrob.png" type="Texture" id=2]
@@ -7,6 +7,14 @@
 [ext_resource path="res://SharedAssets/ui/B_Home_pressed.png" type="Texture" id=5]
 [ext_resource path="res://SharedAssets/ui/B_menu.png" type="Texture" id=6]
 [ext_resource path="res://SharedAssets/Decoration.tscn" type="PackedScene" id=7]
+[ext_resource path="res://SharedAssets/OutlineShader.tres" type="Shader" id=8]
+
+[sub_resource type="ShaderMaterial" id=1]
+resource_local_to_scene = true
+shader = ExtResource( 8 )
+shader_param/blink_strength = 0.1
+shader_param/blink_rate = 2.0
+shader_param/outline_color = Color( 1, 1, 1, 1 )
 
 [node name="GameStudyRoom" type="Node2D"]
 script = ExtResource( 1 )
@@ -19,6 +27,7 @@ texture = ExtResource( 2 )
 GameSpecialization = 5
 
 [node name="PersonSprite" parent="GSPerson" index="0"]
+material = SubResource( 1 )
 position = Vector2( 917, 511 )
 scale = Vector2( 0.542813, 0.542813 )
 texture = ExtResource( 4 )
@@ -64,6 +73,5 @@ texture_pressed = ExtResource( 5 )
 expand = true
 
 [node name="Deco" parent="." instance=ExtResource( 7 )]
-OutlineColor = Color( 0, 0, 0, 1 )
 
 [editable path="GSPerson"]

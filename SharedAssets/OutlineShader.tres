@@ -8,7 +8,7 @@ uniform vec4 outline_color : hint_color = vec4(.0, .8, .2, 1.0);
 
 void fragment() {
 	vec2 px = vec2(TEXTURE_PIXEL_SIZE.x, 0) + vec2(0.02, 0); // This is a bit of an ugly hack but whatever
-	vec2 py = vec2(0, TEXTURE_PIXEL_SIZE.y) + vec2(0, 0.01);
+	vec2 py = vec2(0, TEXTURE_PIXEL_SIZE.y) + vec2(0, 0.02 );
 	vec4 r = texture(TEXTURE, UV + px);
 	vec4 l = texture(TEXTURE, UV - px);
 	vec4 u = texture(TEXTURE, UV - py);
