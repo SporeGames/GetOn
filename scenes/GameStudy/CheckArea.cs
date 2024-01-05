@@ -139,7 +139,7 @@ namespace GetOn.scenes.GameStudy
 			
 			GD.Print(points);
 			_sharedNode.gameStudyPoints = points;
-			_sharedNode.gameStudyTime = GetNode<CountdownTimer>("/root/GameStudy/Timer").CurrentTime;
+			_sharedNode.gameStudyTime = GetNode<CountdownTimer>("/root/GameStudy/TopBar/Timer").CurrentTime;
 			_sharedNode.CompletedTasks.Add(AbilitySpecialization.GameStudy);
 			_sharedNode.SwitchScene("res://scenes/Rooms/GameStudyRoom.tscn");
 		}

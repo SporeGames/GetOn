@@ -28,9 +28,6 @@ public class Management : Node2D {
 	private static Color _defaultBoxColor = new Color(0.69f, 0.69f, 0.69f, 1);
 	private bool _hasJustSnapped = false;
 	
-	private Button _start;
-	private Node2D _intro;
-	
 	
 	public override void _Ready() {
 		_colorText = GetNode<RichTextLabel>("ColorSelector/Text");
@@ -41,9 +38,6 @@ public class Management : Node2D {
 		_greenButton = GetNode<Button>("ColorSelector/Green");
 		_blackButton = GetNode<Button>("ColorSelector/Black");
 		_submitButton = GetNode<Button>("SubmitButton");
-		_start = GetNode<Button>("Intro/StartPuzzle");
-		_intro = GetNode<Node2D>("Intro");
-		_start.Connect("pressed", this, nameof(CloseIntro));
 		_orangeButton.Connect("pressed", this, nameof(OnColorButtonPress), new Godot.Collections.Array {0});
 		_blueButton.Connect("pressed", this, nameof(OnColorButtonPress), new Godot.Collections.Array {1});
 		_purpleButton.Connect("pressed", this, nameof(OnColorButtonPress), new Godot.Collections.Array {2});
@@ -126,7 +120,7 @@ public class Management : Node2D {
 		var shared = GetNode<SharedNode>("/root/SharedNode");
 		shared.managementPoints = points;
 		shared.managementColors = cardsColoredCorrectly; 
-		shared.managementTime = GetNode<CountdownTimer>("/root/Management/Timer").CurrentTime;
+		shared.managementTime = GetNode<CountdownTimer>("/root/Management/TopBar/Timer").CurrentTime;
 		shared.CompletedTasks.Add(AbilitySpecialization.Management);
 		shared.SwitchScene("res://scenes/Rooms/ManagementRoom.tscn");
 	}
@@ -199,18 +193,13 @@ public class Management : Node2D {
 		}
 		_currentNote = note;
 	}
-	
+
 	public void MouseLeft(ManagementNote note) {
 		if (_dragOffset == Vector2.Zero) {
 			_currentNote = null;
 		}
-	}
-
-	public void CloseIntro() {
-		_intro.Visible = false;
-		GetNode<CountdownTimer>("/root/Management/Timer").running = true;
 
 	}
-	
+
 }
 
