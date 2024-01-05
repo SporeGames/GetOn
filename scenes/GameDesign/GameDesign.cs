@@ -11,6 +11,9 @@ public class GameDesign : Control {
 	private GameDesignSlider _apexSlider;
 	private GameDesignSlider _detroitSlider;
 	private GameDesignSlider _deadSpaceSlider;
+	private TextureButton doneButton;
+	private int counter = 0;
+	private int maxPressCount = 2;
 	
 	private GameDesignGame _currentGame;
 	private Godot.Collections.Dictionary<GameDesignGame, string[]> _selectedValues = new Godot.Collections.Dictionary<GameDesignGame, string[]>();
@@ -27,31 +30,57 @@ public class GameDesign : Control {
 		_introReady = GetNode<Button>("Intro/Button");
 		_introGameStudy = GetNode<Node2D>("Intro");
 		_introReady.Connect("pressed", this, nameof(OnIntroReadyPressed));
+		doneButton = GetNode<TextureButton>("DoneButton");
+		doneButton.Connect("pressed", this, nameof(OnDonePressed));
+
+		
+	}
+	
+		private void OnDonePressed()
+	{
+		GoBackAndCalculateResults();
 	}
 
-	public void NextSliderPressed(GameDesignGame game, string[] values) {
-		_selectedValues[game] = values;
-		switch (game) {
-			case GameDesignGame.Apex:
-				_apexSlider.Visible = false;
-				_detroitSlider.Visible = true;
-				_currentGame = GameDesignGame.Detroit;
-				break;
-			case GameDesignGame.Detroit:
-				_detroitSlider.Visible = false;
-				_deadSpaceSlider.Visible = true;
-				_currentGame = GameDesignGame.DeadSpace;
-				break;
-			case GameDesignGame.DeadSpace:
-				_deadSpaceSlider.Visible = false;
-				GoBackAndCalculateResults();
-				break;
+		public void NextSliderPressed(GameDesignGame game, string[] values) {
+			counter++;
+
+			// Check if the counter has reached the desired limit
+			if (counter >= maxPressCount)
+			{
+				// Show the "Done" button or perform any other action
+				GetNode<TextureButton>("DoneButton").Show();
+
+				// Reset the counter to 0
+				counter = 0;
+			}
+
+			_selectedValues[game] = values;
+			switch (game) {
+				case GameDesignGame.Apex:
+					_apexSlider.Visible = false;
+					_detroitSlider.Visible = true;
+					_currentGame = GameDesignGame.Detroit;
+					break;
+				case GameDesignGame.Detroit:
+					_detroitSlider.Visible = false;
+					_deadSpaceSlider.Visible = true;
+					_currentGame = GameDesignGame.DeadSpace;
+					break;
+				case GameDesignGame.DeadSpace:
+					_deadSpaceSlider.Visible = false;
+					_apexSlider.Visible = true;
+					_currentGame = GameDesignGame.Apex;
+					break;
+			}
 		}
-	}
+
 	
 	public void PreviousSliderPressed(GameDesignGame game) {
 		switch (game) {
 			case GameDesignGame.Apex: // First game, no back here
+				_deadSpaceSlider.Visible = true;
+				_currentGame = GameDesignGame.DeadSpace;
+				_apexSlider.Visible = false;
 				break;
 			case GameDesignGame.Detroit:
 				_detroitSlider.Visible = false;

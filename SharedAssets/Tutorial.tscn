@@ -1,9 +1,11 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://SharedAssets/font/BAHNSCHRIFT 1.TTF" type="DynamicFontData" id=1]
 [ext_resource path="res://SharedAssets/Anleitung.png" type="Texture" id=2]
 [ext_resource path="res://SharedAssets/AnleitungStartButton.png" type="Texture" id=3]
 [ext_resource path="res://scenes/GameDesign/assets/ui/GameDesign.png" type="Texture" id=4]
+[ext_resource path="res://scenes/GameDesign/assets/ui/PfeilNachLinks.png" type="Texture" id=5]
+[ext_resource path="res://scenes/GameDesign/assets/ui/PfeilNachRechts.png" type="Texture" id=6]
 
 [sub_resource type="DynamicFont" id=1]
 size = 32
@@ -42,8 +44,13 @@ margin_bottom = 944.0
 custom_fonts/font = SubResource( 2 )
 text = "Instructions:
 
-Read the following description of the game and select the correct personas that fit the game by clicking on the checkbox.
-Use ◁ and ▷ to switch between personas. 
+Read the following descriptions of the 3 games and choose the correct motivations that fit to each game by checking the box ☐.
+Use            and              to switch between the motivations.
+When you are finished with the first game use	     ,below the game descriptions, to switch between them. 
+
+If you are done with the task press DONE. 
+
+Use            and               to switch between personas. 
 
 When you are finished with a game, press NEXT to go to the next game.
 
@@ -54,3 +61,43 @@ autowrap = true
 position = Vector2( 1452, 342 )
 scale = Vector2( 0.315, 0.315 )
 texture = ExtResource( 4 )
+
+[node name="NextButton" type="TextureButton" parent="."]
+margin_left = 249.0
+margin_top = 231.0
+margin_right = 288.0
+margin_bottom = 272.0
+rect_scale = Vector2( 0.827861, 0.559712 )
+texture_normal = ExtResource( 6 )
+expand = true
+stretch_mode = 3
+
+[node name="BackButton" type="TextureButton" parent="."]
+margin_left = 129.0
+margin_top = 232.0
+margin_right = 161.0
+margin_bottom = 278.0
+rect_scale = Vector2( 0.807821, 0.561403 )
+texture_normal = ExtResource( 5 )
+expand = true
+stretch_mode = 3
+
+[node name="NextButton2" type="TextureButton" parent="."]
+margin_left = 247.0
+margin_top = 447.0
+margin_right = 286.0
+margin_bottom = 488.0
+rect_scale = Vector2( 0.827861, 0.559712 )
+texture_normal = ExtResource( 6 )
+expand = true
+stretch_mode = 3
+
+[node name="BackButton2" type="TextureButton" parent="."]
+margin_left = 131.0
+margin_top = 446.0
+margin_right = 163.0
+margin_bottom = 492.0
+rect_scale = Vector2( 0.807821, 0.561403 )
+texture_normal = ExtResource( 5 )
+expand = true
+stretch_mode = 3
