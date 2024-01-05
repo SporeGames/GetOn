@@ -5,12 +5,12 @@ using GetOn.scenes;
 public class TopBar : Node2D {
 
 	[Export] public AbilitySpecialization Game;
-	[Export(PropertyHint.MultilineText)] public string Description;
 	[Export] public string Title;
-	[Export(PropertyHint.MultilineText)] public string ImageCaption;
+	[Export] public string ImageCaption;
 	[Export] public Texture LeftImage;
 	[Export] public Texture RightImage;
 	[Export] public Texture HelpImage;
+	[Export(PropertyHint.MultilineText)] public string Description;
 
 	private SharedNode _shared;
 	private TextureButton _helpButton;
@@ -43,6 +43,7 @@ public class TopBar : Node2D {
 		_introImageCaption.Text = ImageCaption;
 		_leftSideImage.Texture = LeftImage;
 		_rightSideImage.Texture = RightImage;
+		GetNode<Node2D>("Introduction").Visible = true; // Do this so we can still see the scene lol
 	}
 
 	private void OnHelpButtonPressed() {
@@ -67,5 +68,6 @@ public class TopBar : Node2D {
 	private void OnCloseButtonPressed() {
 		_introduction.Visible = false;
 		_timer.running = true;
+		GetViewport().SetInputAsHandled();
 	}
 }

@@ -34,23 +34,6 @@ default_font = SubResource( 9 )
 [node name="GameDesign" type="Node2D"]
 script = ExtResource( 3 )
 
-[node name="TopBar" parent="." instance=ExtResource( 19 )]
-Description = "Instructions:
-
-Read the following descriptions of the 3 games and choose the correct motivations that fit to each game by checking the box ☐.
-Use            and              to switch between the motivations.
-When you are finished with the first game use	        and        ,below the game descriptions, to switch between them. 
-
-If you are done with the task press DONE. 
-
-Use         and          to switch between personas. 
-
-When you are finished with a game, press NEXT to go to the next game.
-
-There are a total of three games."
-LeftImage = ExtResource( 20 )
-HelpImage = ExtResource( 21 )
-
 [node name="ApexSlider" parent="." instance=ExtResource( 2 )]
 Images = [ ExtResource( 15 ), ExtResource( 11 ), ExtResource( 14 ), ExtResource( 10 ), ExtResource( 5 ), ExtResource( 8 ), ExtResource( 9 ), ExtResource( 12 ), ExtResource( 6 ), ExtResource( 13 ), ExtResource( 16 ), ExtResource( 7 ) ]
 PersonaNames = PoolStringArray( "Destruction", "Excitement", "Competition", "Community", "Challenge", "Strategy", "Completion", "Power", "Fantasy", "Story", "Design", "Discovery" )
@@ -139,3 +122,21 @@ rect_scale = Vector2( 0.489506, 0.489506 )
 mouse_filter = 2
 theme = SubResource( 10 )
 text = "Done"
+
+[node name="TopBar" parent="." instance=ExtResource( 19 )]
+Game = 1
+LeftImage = ExtResource( 20 )
+HelpImage = ExtResource( 21 )
+Description = "Instructions:
+
+Read the following descriptions of the 3 games and choose the correct motivations that fit to each game by checking the box ☐.
+Use            and              to switch between the motivations.
+When you are finished with the first game use	        and        ,below the game descriptions, to switch between them. 
+
+If you are done with the task press DONE. 
+
+Use         and          to switch between personas. 
+
+When you are finished with a game, press NEXT to go to the next game.
+
+There are a total of three games."

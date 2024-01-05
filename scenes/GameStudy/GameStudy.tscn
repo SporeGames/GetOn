@@ -1,4 +1,4 @@
-[gd_scene load_steps=72 format=2]
+[gd_scene load_steps=73 format=2]
 
 [ext_resource path="res://SharedAssets/font/BAHNSCHRIFT 1.TTF" type="DynamicFontData" id=1]
 [ext_resource path="res://SharedAssets/music/Play/Music_GameStud.gd" type="Script" id=2]
@@ -10,6 +10,7 @@
 [ext_resource path="res://scenes/GameStudy/CheckArea.cs" type="Script" id=8]
 [ext_resource path="res://scenes/GameStudy/DragAndDrop.cs" type="Script" id=9]
 [ext_resource path="res://SharedAssets/TopBar.tscn" type="PackedScene" id=10]
+[ext_resource path="res://SharedAssets/ui/Game studies.PNG" type="Texture" id=11]
 [ext_resource path="res://scenes/GameStudy/assets/GameStudies_PopUp.png" type="Texture" id=14]
 [ext_resource path="res://scenes/GameStudy/assets/IMG_0237.PNG" type="Texture" id=15]
 [ext_resource path="res://scenes/GameStudy/assets/IMG_0236.PNG" type="Texture" id=16]
@@ -171,8 +172,6 @@ margin_top = 604.0
 margin_right = 1033.0
 margin_bottom = 667.0
 text = "Shelf"
-
-[node name="TopBar" parent="." instance=ExtResource( 10 )]
 
 [node name="GameBoy" type="KinematicBody2D" parent="."]
 position = Vector2( 588, 969 )
@@ -655,6 +654,10 @@ margin_top = -422.0
 margin_right = 694.0
 margin_bottom = -369.0
 text = "Close"
+
+[node name="TopBar" parent="." instance=ExtResource( 10 )]
+Game = 5
+LeftImage = ExtResource( 11 )
 
 [connection signal="body_entered" from="CheckGameBoy" to="CheckGameBoy" method="_on_CheckGameBoy_body_entered"]
 [connection signal="body_exited" from="CheckGameBoy" to="CheckGameBoy" method="_on_CheckGameBoy_body_exited"]

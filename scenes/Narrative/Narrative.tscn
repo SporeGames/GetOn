@@ -331,12 +331,6 @@ font_data = ExtResource( 11 )
 
 [node name="Narrative" type="Node2D"]
 
-[node name="TopBar" parent="." instance=ExtResource( 25 )]
-z_index = 2048
-Description = "Instruction:You will see Post-it´s with the title of a Sci-Fi story-idea, 2 important characters from that story and an introduction to it. Your goal is to choose:1. Out of 3, the most appropriate ending for the story2. Attributes the characters will have at the chosen ending.The endings are at the right side of the screen.Drag the right one just beneath the introduction.There will be a total of 2 stories, you can go to the next one with NEXT or go back with BACK.If you are done with both stories, click SUBMIT."
-LeftImage = ExtResource( 20 )
-HelpImage = ExtResource( 6 )
-
 [node name="1" type="Node2D" parent="."]
 position = Vector2( -18, -2 )
 
@@ -1631,6 +1625,12 @@ text = "Ready?"
 
 [node name="Music" type="Node" parent="."]
 script = ExtResource( 19 )
+
+[node name="TopBar" parent="." instance=ExtResource( 25 )]
+Game = 7
+LeftImage = ExtResource( 20 )
+HelpImage = ExtResource( 6 )
+Description = "Instruction:You will see Post-it´s with the title of a Sci-Fi story-idea, 2 important characters from that story and an introduction to it. Your goal is to choose:1. Out of 3, the most appropriate ending for the story2. Attributes the characters will have at the chosen ending.The endings are at the right side of the screen.Drag the right one just beneath the introduction.There will be a total of 2 stories, you can go to the next one with NEXT or go back with BACK.If you are done with both stories, click SUBMIT."
 
 [connection signal="item_selected" from="1/DropDownAttribute4" to="CheckCorrect" method="_on_DropDownAttribute4_item_selected"]
 [connection signal="item_selected" from="1/DropDownAttribute3" to="CheckCorrect" method="_on_DropDownAttribute3_item_selected"]
