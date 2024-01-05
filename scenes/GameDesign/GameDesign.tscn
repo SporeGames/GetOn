@@ -65,13 +65,17 @@ Descriptions = PoolStringArray( "These players tend to take more destructive mea
 PersonaMotivations = PoolStringArray( "Guns, Explosives, Chaos", "Fast-paced, Surprises, Thrills", "Duels, Matches, Ranking System", "Team, Chatting, Interaction", "Practice, High Difficulty, Challenges", "Thinking Ahead, Making Decisions", "Collectibles, Completions", "Powerful Character, Powerful Equipment", "Being someone else, Being somewhere else", "Elaborate plot, Interesting characters and story", "Expression, Customisation", "Exploration, Excitement" )
 Game = 1
 CategoryDisplayName = "Humanized"
-GameDescription = "An adventure game played from a third-person view, which is subject to a set and controllable perspective. 
+GameDescription = "• adventure game 
+• third-person view (subject to a set and controllable perspective)
+• multiple playable characters, story can continue without them  
+• observable surroundings 
+• move around, scan the environment for possible actions
+•motion controls and touchpad are also employed.
 
-There are multiple playable characters who can die as the story continues without them; as a result, there is no \"game over\" message following a character's death. 
-
-The player is able to interact with objects and observe one's surroundings, move around, and scan the environment for possible actions; the motion controls and touchpad are also employed.
-
-Via quick time events and dialogue decisions, the story will branch out depending on which choices are made. These can be viewed in a flowchart during and immediately after a given chapter; the player can rewind to certain points in the story to reshape decisions in the event of regret. Certain scenes feature countdowns, which force quick action. "
+• quick time events and dialogue decisions influence the Story individually. 
+•can be reviewed and changed after each chapter.  
+• Certain scenes 
+"
 GameImage = ExtResource( 29 )
 ValidPersonas = PoolStringArray( "Strategy", "Completion", "Fantasy", "Story", "Discovery" )
 
