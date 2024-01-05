@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://scenes/Rooms/BaseRoom.cs" type="Script" id=1]
 [ext_resource path="res://scenes/GameStudy/assets/GameStudiesGrob.png" type="Texture" id=2]
@@ -6,6 +6,7 @@
 [ext_resource path="res://scenes/GameStudy/assets/Standing_Charakter.PNG" type="Texture" id=4]
 [ext_resource path="res://SharedAssets/ui/B_Home_pressed.png" type="Texture" id=5]
 [ext_resource path="res://SharedAssets/ui/B_menu.png" type="Texture" id=6]
+[ext_resource path="res://SharedAssets/Decoration.tscn" type="PackedScene" id=7]
 
 [node name="GameStudyRoom" type="Node2D"]
 script = ExtResource( 1 )
@@ -61,5 +62,8 @@ margin_bottom = 133.0
 texture_normal = ExtResource( 6 )
 texture_pressed = ExtResource( 5 )
 expand = true
+
+[node name="Deco" parent="." instance=ExtResource( 7 )]
+OutlineColor = Color( 0, 0, 0, 1 )
 
 [editable path="GSPerson"]
