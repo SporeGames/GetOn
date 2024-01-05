@@ -2238,16 +2238,16 @@ namespace GetOn.scenes.Narrative
 				points += 2;
 			}
 
-			if (GetNode<CountdownTimer>("/root/Narrative/Timer").CurrentTime <= 300)
+			if (GetNode<CountdownTimer>("/root/Narrative/TopBar/Timer").CurrentTime <= 300)
 			{
-				GD.Print("Time: "+GetNode<CountdownTimer>("/root/Narrative/Timer").CurrentTime);
+				GD.Print("Time: "+GetNode<CountdownTimer>("/root/Narrative/TopBar/Timer").CurrentTime);
 				points += 6;
 			}
 			
 			
 			
 			_sharedNode.narrativePoints = points;
-			_sharedNode.narrativeTime = GetNode<CountdownTimer>("/root/Narrative/Timer").CurrentTime;
+			_sharedNode.narrativeTime = GetNode<CountdownTimer>("/root/Narrative/TopBar/Timer").CurrentTime;
 			GD.Print("points: "+points);
 			_sharedNode.CompletedTasks.Add(AbilitySpecialization.Narrative);
 			_sharedNode.SwitchScene("res://scenes/Rooms/GDNarrativeRoom.tscn");

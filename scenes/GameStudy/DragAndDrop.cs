@@ -35,9 +35,6 @@ public class DragAndDrop : KinematicBody2D
 	private KinematicBody2D _horizon;
 	private KinematicBody2D _stray;
 	
-	private Node2D _introGameStudy;
-	private Button _introReady;
-	
 	private static DragAndDrop currentlyDraggedObject;
 
 	private Sprite _popUp;
@@ -55,8 +52,6 @@ public class DragAndDrop : KinematicBody2D
 
 	public override void _Ready()
 	{
-		_introGameStudy = GetNode<Node2D>("/root/GameStudy/Intro");
-		_introReady = GetNode<Button>("/root/GameStudy/Intro/Button");
 		_xBOX = GetNode<KinematicBody2D>("/root/GameStudy/XBOX");
 		_nES = GetNode<KinematicBody2D>("/root/GameStudy/NES");
 		_gameBoy = GetNode<KinematicBody2D>("/root/GameStudy/GameBoy");
@@ -84,7 +79,6 @@ public class DragAndDrop : KinematicBody2D
 		
 		Connect("mouse_entered", this, "OnMouseEntered");
 		Connect("mouse_exited", this, "OnMouseLeft");
-		_introReady.Connect("pressed",this, nameof(OnIntroReadyPressed));
 		originalPosition = Position;
 		GD.Print(_xBOX);
 
@@ -369,12 +363,6 @@ public class DragAndDrop : KinematicBody2D
 			Position = new Vector2(offset);
 			//CheckSnap();
 		}
-	}
-	
-	public void OnIntroReadyPressed()
-	{
-		_introGameStudy.Visible = false;
-		GetNode<CountdownTimer>("/root/GameStudy/Timer").running = true;
 	}
 	
 	private void CheckSnap()
