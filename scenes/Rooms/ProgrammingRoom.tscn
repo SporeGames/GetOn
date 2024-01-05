@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://scenes/Programming/assets/Programmierraumm.png" type="Texture" id=1]
 [ext_resource path="res://SharedAssets/RoomPerson.tscn" type="PackedScene" id=2]
 [ext_resource path="res://scenes/Rooms/BaseRoom.cs" type="Script" id=3]
 [ext_resource path="res://SharedAssets/ui/B_menu.png" type="Texture" id=4]
 [ext_resource path="res://SharedAssets/ui/B_Home_pressed.png" type="Texture" id=5]
+[ext_resource path="res://scenes/Programming/assets/IMG_0267.PNG" type="Texture" id=6]
 
 [node name="ProgrammingRoom" type="Node2D"]
 script = ExtResource( 3 )
@@ -17,6 +18,11 @@ texture = ExtResource( 1 )
 [node name="RoomPerson" parent="." instance=ExtResource( 2 )]
 GameSpecialization = 2
 
+[node name="PersonSprite" parent="RoomPerson" index="0"]
+position = Vector2( 307.75, 731.75 )
+scale = Vector2( 0.583036, 0.548438 )
+texture = ExtResource( 6 )
+
 [node name="InteractButton" parent="RoomPerson" index="1"]
 margin_left = 152.0
 margin_top = 461.0
@@ -24,23 +30,27 @@ margin_right = 435.0
 margin_bottom = 951.0
 
 [node name="WelcomeDialogue" parent="RoomPerson" index="2"]
-Title = "Justin, Programmer"
-Texts = PoolStringArray( "Hey newbie, welcome to the show. I’m Justin. This is our Programming-Department where we work at implementing our mechanics and codes into the game. ", "Let’s get right into it, I need some assistance with implementing some basic mechanics into our game. Explanations will follow shortly…" )
+Title = "Justin"
+Texts = PoolStringArray( "Let’s get right into it, I need some assistance with implementing some basic mechanics into our game. Explanations will follow shortly…" )
 SceneToLoad = "Programming"
 
 [node name="ResultDialogue" parent="RoomPerson" index="3"]
-Texts = PoolStringArray( "Holy-moly! That worked better than I thought. Perfect work newbie, that would be all for now." )
-ResultThreshold = 90
+Title = "Justin"
+Texts = PoolStringArray( "Holy-moly! That worked better than I thought. Perfect work newbie." )
+ResultThreshold = 38
 
 [node name="ResultDialogue2" parent="RoomPerson" index="4"]
-Texts = PoolStringArray( "Not bad, but not really good either. Well I guess that’s all for now." )
-ResultThreshold = 50
+Title = "Justin"
+Texts = PoolStringArray( "Not bad, but not really good either." )
+ResultThreshold = 23
 
 [node name="ResultDialogue3" parent="RoomPerson" index="5"]
+Title = "Justin"
 Texts = PoolStringArray( "You don’t have any experience with blueprints, have you\?" )
 
 [node name="EpicFailDialogue" parent="RoomPerson" index="6"]
-Texts = PoolStringArray( "I get the point, that not everyone knows blueprints, but since you are specialized Programmer” you should at least know in which order to place them… .", "I’m sorry newbie, but I don’t think you should consider yourself specialized as a programmer in the game-industry." )
+Title = "Justin"
+Texts = PoolStringArray( "I get the point, that not everyone knows blueprints, but since you are supposed to be a specialized programmer, you should at least know in which order to place them… .", " I’m sorry newbie, but I don’t think you should consider yourself an experienced programmer in the game-industry." )
 
 [node name="DoorButton" type="TextureButton" parent="."]
 margin_left = 886.0

@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/B_Base2.png-0a141f747f9d61828c7468139f2c8b5d.stex"
+path="res://.import/Standing_Charakter.PNG-adf35fd176d32f78468b20fc03c5db03.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://SharedAssets/UI/B_Base2.png"
-dest_files=[ "res://.import/B_Base2.png-0a141f747f9d61828c7468139f2c8b5d.stex" ]
+source_file="res://scenes/Programming/Standing_Charakter.PNG"
+dest_files=[ "res://.import/Standing_Charakter.PNG-adf35fd176d32f78468b20fc03c5db03.stex" ]
 
 [params]
 

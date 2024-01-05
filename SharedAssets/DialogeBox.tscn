@@ -1,12 +1,9 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://SharedAssets/DialogueBox.cs" type="Script" id=1]
 [ext_resource path="res://SharedAssets/font/BAHNSCHRIFT 1.TTF" type="DynamicFontData" id=2]
 [ext_resource path="res://scenes/GameDesign/assets/personas/Story.png" type="Texture" id=3]
-[ext_resource path="res://scenes/GameDesign/assets/ui/PfeilNachRechts.png" type="Texture" id=4]
-
-[sub_resource type="NoiseTexture" id=1]
-width = 2048
+[ext_resource path="res://SharedAssets/UI/DialogFenster.png" type="Texture" id=4]
 
 [sub_resource type="DynamicFont" id=2]
 size = 72
@@ -24,36 +21,37 @@ script = ExtResource( 1 )
 [node name="Timer" type="Timer" parent="."]
 
 [node name="Background" type="Sprite" parent="."]
-modulate = Color( 0.282353, 0.972549, 0, 1 )
-position = Vector2( 960, 186 )
+position = Vector2( 902, -17 )
 scale = Vector2( 0.9375, 0.726563 )
-texture = SubResource( 1 )
+texture = ExtResource( 4 )
 
 [node name="Icon" type="Sprite" parent="."]
-position = Vector2( 201, 185 )
+position = Vector2( 265, 154 )
 scale = Vector2( 2.15926, 2.15926 )
 texture = ExtResource( 3 )
 
 [node name="Title" type="RichTextLabel" parent="."]
-margin_left = 407.0
-margin_top = 29.0
-margin_right = 1689.0
-margin_bottom = 113.0
+margin_left = 198.0
+margin_top = -102.0
+margin_right = 433.0
+margin_bottom = -28.0
+custom_colors/default_color = Color( 0, 0, 0, 1 )
 custom_fonts/normal_font = SubResource( 2 )
+fit_content_height = true
 
 [node name="Text" type="RichTextLabel" parent="."]
-margin_left = 407.0
-margin_top = 151.0
-margin_right = 1701.0
-margin_bottom = 331.0
+margin_left = 427.0
+margin_top = -8.0
+margin_right = 1588.0
+margin_bottom = 300.0
+custom_colors/default_color = Color( 0, 0, 0, 1 )
 custom_fonts/normal_font = SubResource( 3 )
 
 [node name="NextButton" type="TextureButton" parent="."]
-margin_left = 1701.0
-margin_top = 71.0
-margin_right = 1919.0
-margin_bottom = 296.0
-texture_normal = ExtResource( 4 )
+margin_left = 1607.0
+margin_top = 251.0
+margin_right = 1731.0
+margin_bottom = 293.0
 expand = true
 stretch_mode = 4
 
