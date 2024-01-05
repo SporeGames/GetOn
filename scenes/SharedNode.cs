@@ -24,6 +24,7 @@ namespace GetOn.scenes {
 
 		[JsonProperty] public readonly List<AbilitySpecialization> CompletedTasks = new List<AbilitySpecialization>();
 		[JsonProperty] public readonly List<string> SeenDialogues = new List<string>();
+		[JsonProperty] public readonly Dictionary<AbilitySpecialization, int> HelpButtonPressed = new Dictionary<AbilitySpecialization, int>();
 		
 		[JsonProperty] public int programmingPoints = 0;
 		[JsonProperty] public float programmingTime = 0;

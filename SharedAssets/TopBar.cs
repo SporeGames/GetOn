@@ -54,15 +54,14 @@ public class TopBar : Node2D {
 		_rightSideImage.Visible = false;
 		_closeButton.Visible = false;
 		_backgroundColor.Modulate = new Color(0.33f, 0.33f, 0.33f, 0.4f);
-		//Methode in sharedNote is missing
-		/*
+
 		if (!_shared.HelpButtonPressed.ContainsKey(Game)) {
 			_shared.HelpButtonPressed.Add(Game, 1);
 		}
 		else {
 			_shared.HelpButtonPressed[Game] += 1;
 		}
-		*/
+		
 	}
 	
 	private void OnCloseButtonPressed() {
