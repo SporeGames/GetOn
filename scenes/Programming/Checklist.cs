@@ -30,7 +30,7 @@ namespace GetOn.scenes.Programming {
 			SubmitButton = GetNode<Button>("SubmitButton");
 			SubmitButton.Connect("pressed", this, nameof(Submit));
 			SubmitButton.Disabled = true;
-			_timer = GetNode<CountdownTimer>("/root/Programming/Timer");
+			_timer = GetNode<CountdownTimer>("/root/Programming/TopBar/Timer");
 		}
 
 		public void OnJump() {

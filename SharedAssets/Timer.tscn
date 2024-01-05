@@ -22,3 +22,5 @@ margin_bottom = 66.0
 mouse_filter = 2
 custom_fonts/normal_font = SubResource( 1 )
 text = "0:00"
+
+[node name="Icon" type="Sprite" parent="."]

@@ -23,9 +23,6 @@ namespace GetOn.scenes.Programming
 		private Vector2 _playerOrigin;
 
 		private bool _running = false;
-
-		private Button _start;
-		private Node2D _intro;
 		
 		private List<string> _errors = new List<string>();
 		public override void _Ready() {
@@ -42,17 +39,7 @@ namespace GetOn.scenes.Programming
 			_resetButton.Connect("pressed", this, nameof(OnResetPressed));
 			_playerOrigin = GetNode<KinematicBody2D>("Game/Player").Position;
 			_checklist = GetNode<Checklist>("Checklist");
-			GetNode<CountdownTimer>("/root/Programming/Timer").running = true;
 			Truck = GetNode<KinematicBody2D>("Game/Truck");
-
-			_start = GetNode<Button>("/root/Programming/Intro/Button");
-			_start.Connect("pressed", this, nameof(HideIntro));
-			_intro = GetNode<Node2D>("/root/Programming/Intro");
-		}
-
-		public void HideIntro()
-		{
-			_intro.Visible = false;
 		}
 
 		public override void _Process(float delta) {
