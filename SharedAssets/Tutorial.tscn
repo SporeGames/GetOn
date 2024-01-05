@@ -1,7 +1,7 @@
 [gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://SharedAssets/font/BAHNSCHRIFT 1.TTF" type="DynamicFontData" id=1]
-[ext_resource path="res://SharedAssets/Anleitung.png" type="Texture" id=2]
+[ext_resource path="res://SharedAssets/UI/Game Design.PNG" type="Texture" id=2]
 [ext_resource path="res://SharedAssets/AnleitungStartButton.png" type="Texture" id=3]
 [ext_resource path="res://scenes/GameDesign/assets/ui/GameDesign.png" type="Texture" id=4]
 [ext_resource path="res://scenes/GameDesign/assets/ui/PfeilNachLinks.png" type="Texture" id=5]
@@ -37,20 +37,21 @@ icon = ExtResource( 3 )
 flat = true
 
 [node name="Label2" type="Label" parent="."]
-margin_left = 59.0
-margin_top = 83.0
-margin_right = 1075.0
-margin_bottom = 944.0
+margin_left = 135.0
+margin_top = 101.0
+margin_right = 1009.0
+margin_bottom = 674.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_fonts/font = SubResource( 2 )
 text = "Instructions:
 
 Read the following descriptions of the 3 games and choose the correct motivations that fit to each game by checking the box ☐.
 Use            and              to switch between the motivations.
-When you are finished with the first game use	     ,below the game descriptions, to switch between them. 
+When you are finished with the first game use	        and        ,below the game descriptions, to switch between them. 
 
 If you are done with the task press DONE. 
 
-Use            and               to switch between personas. 
+Use         and          to switch between personas. 
 
 When you are finished with a game, press NEXT to go to the next game.
 
@@ -58,46 +59,66 @@ There are a total of three games."
 autowrap = true
 
 [node name="Sprite2" type="Sprite" parent="."]
-position = Vector2( 1452, 342 )
+position = Vector2( 1457, 432 )
 scale = Vector2( 0.315, 0.315 )
 texture = ExtResource( 4 )
 
 [node name="NextButton" type="TextureButton" parent="."]
-margin_left = 249.0
-margin_top = 231.0
-margin_right = 288.0
-margin_bottom = 272.0
+margin_left = 324.0
+margin_top = 250.0
+margin_right = 363.0
+margin_bottom = 291.0
 rect_scale = Vector2( 0.827861, 0.559712 )
 texture_normal = ExtResource( 6 )
 expand = true
 stretch_mode = 3
 
 [node name="BackButton" type="TextureButton" parent="."]
-margin_left = 129.0
-margin_top = 232.0
-margin_right = 161.0
-margin_bottom = 278.0
+margin_left = 203.0
+margin_top = 251.0
+margin_right = 235.0
+margin_bottom = 297.0
 rect_scale = Vector2( 0.807821, 0.561403 )
 texture_normal = ExtResource( 5 )
 expand = true
 stretch_mode = 3
 
 [node name="NextButton2" type="TextureButton" parent="."]
-margin_left = 247.0
-margin_top = 447.0
-margin_right = 286.0
-margin_bottom = 488.0
+margin_left = 300.0
+margin_top = 467.0
+margin_right = 339.0
+margin_bottom = 508.0
 rect_scale = Vector2( 0.827861, 0.559712 )
 texture_normal = ExtResource( 6 )
 expand = true
 stretch_mode = 3
 
 [node name="BackButton2" type="TextureButton" parent="."]
-margin_left = 131.0
-margin_top = 446.0
-margin_right = 163.0
-margin_bottom = 492.0
+margin_left = 203.0
+margin_top = 466.0
+margin_right = 235.0
+margin_bottom = 512.0
 rect_scale = Vector2( 0.807821, 0.561403 )
 texture_normal = ExtResource( 5 )
+expand = true
+stretch_mode = 3
+
+[node name="BackButton3" type="TextureButton" parent="."]
+margin_left = 772.0
+margin_top = 285.0
+margin_right = 804.0
+margin_bottom = 331.0
+rect_scale = Vector2( 0.807821, 0.561403 )
+texture_normal = ExtResource( 5 )
+expand = true
+stretch_mode = 3
+
+[node name="NextButton3" type="TextureButton" parent="."]
+margin_left = 861.0
+margin_top = 286.0
+margin_right = 900.0
+margin_bottom = 327.0
+rect_scale = Vector2( 0.827861, 0.559712 )
+texture_normal = ExtResource( 6 )
 expand = true
 stretch_mode = 3

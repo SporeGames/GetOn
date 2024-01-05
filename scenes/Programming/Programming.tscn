@@ -22,7 +22,7 @@
 [ext_resource path="res://SharedAssets/music/Play/MusicBack.gd" type="Script" id=20]
 [ext_resource path="res://SharedAssets/font/BAHNSCHRIFT 1.TTF" type="DynamicFontData" id=21]
 [ext_resource path="res://SharedAssets/AnleitungStartButton.png" type="Texture" id=22]
-[ext_resource path="res://SharedAssets/Anleitung.png" type="Texture" id=23]
+[ext_resource path="res://SharedAssets/UI/Programming.PNG" type="Texture" id=23]
 [ext_resource path="res://scenes/Programming/blocks/MoveTruckBlock.cs" type="Script" id=24]
 [ext_resource path="res://scenes/Programming/blocks/KeyFPressedCondition.cs" type="Script" id=25]
 [ext_resource path="res://scenes/Programming/assets/Checkliste.PNG" type="Texture" id=26]
@@ -1116,10 +1116,11 @@ position = Vector2( 960, 540 )
 texture = ExtResource( 23 )
 
 [node name="Label2" type="Label" parent="Intro"]
-margin_left = 77.0
-margin_top = 85.0
-margin_right = 790.0
-margin_bottom = 658.0
+margin_left = 123.0
+margin_top = 115.0
+margin_right = 1011.0
+margin_bottom = 688.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_fonts/font = SubResource( 9 )
 text = "Introduction:
 
@@ -1151,8 +1152,8 @@ icon_align = 1
 expand_icon = true
 
 [node name="Sprite2" type="Sprite" parent="Intro"]
-position = Vector2( 1458.63, 350.575 )
-scale = Vector2( 0.25502, 0.261392 )
+position = Vector2( 1443, 419 )
+scale = Vector2( 0.320639, 0.345612 )
 texture = ExtResource( 9 )
 
 [connection signal="pressed" from="Checklist/SubmitButton" to="Music" method="_on_SubmitButton_pressed"]

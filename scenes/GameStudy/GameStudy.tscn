@@ -9,7 +9,7 @@
 [ext_resource path="res://scenes/GameStudy/assets/IMG_0173.PNG" type="Texture" id=7]
 [ext_resource path="res://scenes/GameStudy/CheckArea.cs" type="Script" id=8]
 [ext_resource path="res://scenes/GameStudy/DragAndDrop.cs" type="Script" id=9]
-[ext_resource path="res://SharedAssets/Anleitung.png" type="Texture" id=10]
+[ext_resource path="res://SharedAssets/UI/Game studies.PNG" type="Texture" id=10]
 [ext_resource path="res://scenes/GameStudy/assets/GameStudiesIntro.png" type="Texture" id=11]
 [ext_resource path="res://SharedAssets/AnleitungStartButton.png" type="Texture" id=12]
 [ext_resource path="res://SharedAssets/Timer.tscn" type="PackedScene" id=13]
@@ -668,7 +668,6 @@ margin_bottom = -369.0
 text = "Close"
 
 [node name="Intro" type="Node2D" parent="."]
-visible = false
 z_index = 21
 
 [node name="ColorRect2" type="ColorRect" parent="Intro"]
@@ -684,18 +683,22 @@ position = Vector2( 960, 540 )
 texture = ExtResource( 10 )
 
 [node name="Label2" type="Label" parent="Intro"]
-margin_left = 77.0
-margin_top = 85.0
-margin_right = 790.0
-margin_bottom = 658.0
+margin_left = 137.0
+margin_top = 129.0
+margin_right = 1015.0
+margin_bottom = 702.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_fonts/font = SubResource( 10 )
 text = "Instructions:
 
-Click on the consoles and drag them to their destined shelves.
+There are two glass cases. 
 
-By Pressing the \"Shelf\" Button. A close up will apear. Drag the Games into the right spot!
+The left one is for consoles, the right one is for video games.
+Click on one glass case and start dragging the objects to their corresponding places.
 
-Press the \"Submit\" Button if you are finished."
+By pressing BACK, you will get back to the overview of both cases.
+
+Once you have filled both glass cases a DONE button will appear so you can submit your task. "
 autowrap = true
 
 [node name="Button" type="Button" parent="Intro"]
@@ -710,7 +713,7 @@ icon_align = 1
 expand_icon = true
 
 [node name="Sprite2" type="Sprite" parent="Intro"]
-position = Vector2( 1453.5, 344.15 )
+position = Vector2( 1446, 438 )
 scale = Vector2( 0.25, 0.25 )
 texture = ExtResource( 11 )
 
