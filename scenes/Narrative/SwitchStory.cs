@@ -17,12 +17,10 @@ public class SwitchStory : Button
 	public Node2D _introStory1;
 	public Node2D _introStory2;
 	public Node2D _introStory3;
-	public Node2D _introGame;
 
 	public Button _ready1;
 	public Button _ready2;
 	public Button _ready3;
-	public Button _closeIntroGame;
 
 	public bool wrongWay = false;
 	
@@ -40,16 +38,13 @@ public class SwitchStory : Button
 		_introStory1 = GetNode<Node2D>("/root/Narrative/IntroStory1");
 		_introStory2 = GetNode<Node2D>("/root/Narrative/IntroStory2");
 		_introStory3 = GetNode<Node2D>("/root/Narrative/IntroStory3");
-		_introGame = GetNode<Node2D>("/root/Narrative/IntroGame");
 
 		_ready1 = GetNode<Button>("/root/Narrative/IntroStory1/Button");
 		_ready2 = GetNode<Button>("/root/Narrative/IntroStory2/Button");
 		_ready3 = GetNode<Button>("/root/Narrative/IntroStory3/Button");
-		_closeIntroGame = GetNode<Button>("/root/Narrative/IntroGame/Button");
 		_ready1.Connect("pressed", this, nameof(ReadyPressed));
 		_ready2.Connect("pressed", this, nameof(ReadyPressed));
 		_ready3.Connect("pressed", this, nameof(GreaterThanPressed));
-		_closeIntroGame.Connect("pressed", this, nameof(CloseIntroGame));
 		
 		
 	}
@@ -63,11 +58,7 @@ public class SwitchStory : Button
 	{
 		//GD.Print("ohh no Booom");
 	}
-
-	public void CloseIntroGame()
-	{
-		_introGame.Visible = false;
-	}
+	
 
 	public void GreaterThanPressed()
 	{
@@ -144,7 +135,7 @@ public class SwitchStory : Button
 			{
 				wrongWay = true;
 				_introStory2.Visible = true;
-				GetNode<CountdownTimer>("/root/Narrative/Timer").running = false;
+				GetNode<CountdownTimer>("/root/Narrative/TopBar/Timer").running = false;
 			}
 	
 			_story1.Visible = false;
@@ -166,7 +157,7 @@ public class SwitchStory : Button
 			{
 				wrongWay = true;
 				_introStory2.Visible = true;
-				GetNode<CountdownTimer>("/root/Narrative/Timer").running = false;
+				GetNode<CountdownTimer>("/root/Narrative/TopBar/Timer").running = false;
 			}
 
 			_story1.Visible = false;
@@ -233,12 +224,12 @@ public class SwitchStory : Button
 			_story1Intro = false;
 			_story1.Visible = true;
 			_introStory1.Visible = false;
-			GetNode<CountdownTimer>("/root/Narrative/Timer").running = true;
+			GetNode<CountdownTimer>("/root/Narrative/TopBar/Timer").running = true;
 		}
 		else
 		{
 			_introStory2.Visible = false;
-			GetNode<CountdownTimer>("/root/Narrative/Timer").running = true;
+			GetNode<CountdownTimer>("/root/Narrative/TopBar/Timer").running = true;
 		}
 		
 	}

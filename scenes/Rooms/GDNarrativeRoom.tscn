@@ -3,8 +3,8 @@
 [ext_resource path="res://scenes/Rooms/BaseRoom.cs" type="Script" id=1]
 [ext_resource path="res://scenes/GameDesign/assets/personas/GameDesign.png" type="Texture" id=2]
 [ext_resource path="res://SharedAssets/RoomPerson.tscn" type="PackedScene" id=3]
-[ext_resource path="res://icon.png" type="Texture" id=4]
-[ext_resource path="res://scenes/Narrative/assets/IMG_0232.PNG" type="Texture" id=5]
+[ext_resource path="res://scenes/GameDesign/assets/IMG_0257.PNG" type="Texture" id=4]
+[ext_resource path="res://scenes/Narrative/assets/IMG_0259.PNG" type="Texture" id=5]
 [ext_resource path="res://SharedAssets/ui/B_Home_pressed.png" type="Texture" id=6]
 [ext_resource path="res://SharedAssets/ui/B_menu.png" type="Texture" id=7]
 
@@ -19,19 +19,38 @@ texture = ExtResource( 2 )
 GameSpecialization = 1
 
 [node name="PersonSprite" parent="GDPerson" index="0"]
-position = Vector2( 1454, 429 )
+position = Vector2( 1518.5, 541.875 )
+scale = Vector2( 0.579832, 0.516286 )
 texture = ExtResource( 4 )
 
 [node name="InteractButton" parent="GDPerson" index="1"]
-margin_left = 1321.0
-margin_top = 232.0
-margin_right = 1604.0
-margin_bottom = 722.0
+margin_left = 1379.0
+margin_top = 313.0
+margin_right = 1662.0
+margin_bottom = 768.0
 
 [node name="WelcomeDialogue" parent="GDPerson" index="2"]
-Title = "Mike, Game-Design"
-Texts = PoolStringArray( "Hi, I’m Mike, Spore-Games Lead-Game-Designer! In this room me and Mary, over there, work at concepting ideas for our game. This includes her ideas for the story, mine for the mechanics and in general how to make the game attractive for our target groups. Based on our research I then talk to the other departments and further elaborate… . You could almost say I’m the core of our studio!", "But enough about that… Just tell me or Mary if you want to start with your tasks, we both have one for you.", "Well you see, I started off as an intern just like you and… Oh right, you\'re here for your task!We are currently researching which player-motivations fit popular sci-fi games the best. I will explain everything in detail in a second, so don’t worry, you will get the hang of it!" )
+Title = "Mike"
+Texts = PoolStringArray( "Well you see, I started off as an intern just like you and… Oh right, you\'re here for your task!", "We are currently researching which player-motivations fit popular sci-fi games the best. I will explain everything in detail in a second, so don’t worry, you will get the hang of it!" )
 SceneToLoad = "GameDesign"
+
+[node name="ResultDialogue" parent="GDPerson" index="3"]
+Title = "Mike"
+Texts = PoolStringArray( "Five-Star work you did there, I’m almost worried about my position…" )
+ResultThreshold = 38
+
+[node name="ResultDialogue2" parent="GDPerson" index="4"]
+Title = "Mike"
+Texts = PoolStringArray( "Decent, decent. Some minor adjustments from me and all should turn out as planned." )
+ResultThreshold = 23
+
+[node name="ResultDialogue3" parent="GDPerson" index="5"]
+Title = "Mike"
+Texts = PoolStringArray( "Looks like you aren’t really made to be a game-designer. Maybe you will do better at the other tasks." )
+
+[node name="EpicFailDialogue" parent="GDPerson" index="6"]
+Title = "Mike"
+Texts = PoolStringArray( "I’m honest with you, you should rethink if you want to become a Game-Designer, because your work didn’t help me here…" )
 
 [node name="NarrativePerson" parent="." instance=ExtResource( 3 )]
 GameSpecialization = 7
@@ -41,22 +60,34 @@ position = Vector2( 371.563, 665.39 )
 scale = Vector2( 0.497103, 0.482645 )
 texture = ExtResource( 5 )
 
+[node name="InteractButton" parent="NarrativePerson" index="1"]
+margin_left = 255.0
+margin_top = 443.0
+margin_right = 478.0
+margin_bottom = 875.0
+
 [node name="WelcomeDialogue" parent="NarrativePerson" index="2"]
-Title = "Mary, Story Design"
-Texts = PoolStringArray( " *Yawn*, huh who are you\? You seem quite interesting, just like a protagonist", "Could you perhaps help me\? My Whiteboard with all my great story ideas on it got messed up, I have no clue how that happened…", "You’re in\? \"Thank you a lot!" )
+Title = "Mary"
+Texts = PoolStringArray( " *Yawn*, huh who are you\? You seem quite interesting, just like a protagonist.Could you perhaps help me\? My whiteboard with all my great story ideas got messed up, I have no clue how that happened…", "You’re in\? Thank you very much!" )
 SceneToLoad = "Narrative"
 
 [node name="ResultDialogue" parent="NarrativePerson" index="3"]
+Title = "Marie"
 Texts = PoolStringArray( "Fantastic, you perfectly restored my whiteboard! You seem like a main character of some sort…" )
+ResultThreshold = 38
 
 [node name="ResultDialogue2" parent="NarrativePerson" index="4"]
-Texts = PoolStringArray( "That helped me a little bit, I think I can restore the rest myself." )
+Title = "Marie"
+Texts = PoolStringArray( "That helped me a little bit. I think I can restore the rest myself." )
+ResultThreshold = 23
 
 [node name="ResultDialogue3" parent="NarrativePerson" index="5"]
-Texts = PoolStringArray( "*Yawn* oh well, let’s just leave it at that. “Maybe I can find even better story ideas if I do that task myself." )
+Title = "Marie"
+Texts = PoolStringArray( "*Yawn* oh well, let’s just leave it at that. Maybe I can find even better story ideas if I do that task myself." )
 
 [node name="EpicFailDialogue" parent="NarrativePerson" index="6"]
-Texts = PoolStringArray( "That\'s an unexpected twist… . You said you are specialized in Story-Design, was that perhaps a bluff\? This gives me some interesting character concepts…" )
+Title = "Marie"
+Texts = PoolStringArray( "That\'s an unexpected twist… . You said you are specialized in story design, did you try to deceive us\? " )
 
 [node name="BackButton" type="TextureButton" parent="."]
 margin_left = 1772.0

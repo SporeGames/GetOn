@@ -4,7 +4,7 @@ using System.Linq;
 using GetOn.scenes;
 using GetOn.scenes.GameDesign;
 
-public class GameDesign : Control {
+public class GameDesign : Node2D {
 
 	private CountdownTimer _timer;
 	
@@ -17,19 +17,14 @@ public class GameDesign : Control {
 	
 	private GameDesignGame _currentGame;
 	private Godot.Collections.Dictionary<GameDesignGame, string[]> _selectedValues = new Godot.Collections.Dictionary<GameDesignGame, string[]>();
-
-	private Button _introReady;
-	private Node2D _introGameStudy;
+	
 	
 	public override void _Ready() {
-		_timer = GetNode<CountdownTimer>("Timer");
+		_timer = GetNode<CountdownTimer>("/root/GameDesign/TopBar/Timer");
 		_apexSlider = GetNode<GameDesignSlider>("ApexSlider");
 		_detroitSlider = GetNode<GameDesignSlider>("DetroitSlider");
 		_deadSpaceSlider = GetNode<GameDesignSlider>("DeadSpaceSlider");
-
-		_introReady = GetNode<Button>("Intro/Button");
-		_introGameStudy = GetNode<Node2D>("Intro");
-		_introReady.Connect("pressed", this, nameof(OnIntroReadyPressed));
+		
 		doneButton = GetNode<TextureButton>("DoneButton");
 		doneButton.Connect("pressed", this, nameof(OnDonePressed));
 
@@ -140,11 +135,6 @@ public class GameDesign : Control {
 		node.gameDesignTime = (int) _timer.CurrentTime;
 		node.CompletedTasks.Add(AbilitySpecialization.GameDesign);
 		node.SwitchScene("res://scenes/Rooms/GDNarrativeRoom.tscn");
-	}
-
-	public void OnIntroReadyPressed() {
-		_introGameStudy.Visible = false;
-		_timer.running = true;
 	}
 	
 }

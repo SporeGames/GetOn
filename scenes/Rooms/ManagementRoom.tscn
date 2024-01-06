@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://scenes/Rooms/BaseRoom.cs" type="Script" id=1]
 [ext_resource path="res://scenes/Management/assets/ManagementPrototyp2VerbesserteVersion.png" type="Texture" id=2]
@@ -6,6 +6,7 @@
 [ext_resource path="res://SharedAssets/RoomPerson.tscn" type="PackedScene" id=4]
 [ext_resource path="res://SharedAssets/ui/B_Home_pressed.png" type="Texture" id=5]
 [ext_resource path="res://SharedAssets/ui/B_menu.png" type="Texture" id=6]
+[ext_resource path="res://scenes/Management/assets/IMG_0262.PNG" type="Texture" id=7]
 
 [node name="ManagementRoom" type="Node2D"]
 script = ExtResource( 1 )
@@ -20,29 +21,38 @@ script = ExtResource( 3 )
 [node name="RoomPerson" parent="." instance=ExtResource( 4 )]
 
 [node name="PersonSprite" parent="RoomPerson" index="0"]
-position = Vector2( 592, 441 )
+position = Vector2( 517, 520 )
+scale = Vector2( 0.513035, 0.488212 )
+texture = ExtResource( 7 )
 
 [node name="InteractButton" parent="RoomPerson" index="1"]
-margin_left = 494.0
-margin_top = 257.0
-margin_right = 777.0
-margin_bottom = 747.0
+margin_left = 387.0
+margin_top = 279.0
+margin_right = 670.0
+margin_bottom = 769.0
 
 [node name="WelcomeDialogue" parent="RoomPerson" index="2"]
-Texts = PoolStringArray( "Good morning! You must be our new intern.My name is Chloe and I’m the manager around here. We are really looking forward to working with you. We were really impressed by your portfolio that you sent us.You know, it really doesn’t matter what grades you got during your time in university. The most important thing in the games industry are your abilities.", "We’re currently in the pre-production of our game.As you probably know, this phase consists of a ton of research. We got the commission to make a sci-fi game. Therefore, we´re researching what kind of game would fit the genre and would be the most fun to play.", "Now your internship can start!You can move around our studio completely freely!Each team member has some work for you to do.After you´re done with all your tasks, I will talk to you again.Have fun!﻿", "“Hello again! What you see here is our managing room, where I manage our documents for all our sprint-tasks, meetings, protocols and much more. This is very important, since we always work within a strict plan. You will see what I mean by that in a few seconds. If you are ready, talk to me again, then I will explain your task.", "“Our last backup got messed up and most of the task overview got deleted. As our new intern… Would you mind fixing it\?”", "“We can only continue our work if you fix it.”" )
+Title = "Chloe"
+Texts = PoolStringArray( "I prepared an example of a management task for you, so you can show me whatcha got. " )
 SceneToLoad = "Management"
 
 [node name="ResultDialogue" parent="RoomPerson" index="3"]
-Texts = PoolStringArray( "Excellent work, just as I imagined.”  “You have great potential." )
+Title = "Chloe"
+Texts = PoolStringArray( "Excellent work, just as I imagined. You have great potential." )
+ResultThreshold = 38
 
 [node name="ResultDialogue2" parent="RoomPerson" index="4"]
+Title = "Chloe"
 Texts = PoolStringArray( "Your work is alright, not perfect though." )
+ResultThreshold = 23
 
 [node name="ResultDialogue3" parent="RoomPerson" index="5"]
-Texts = PoolStringArray( "Oh well, this doesn’t really help us… .” “But don’t feel bad about your result, this is your first time after all." )
+Title = "Chloe"
+Texts = PoolStringArray( "Oh well, this doesn’t really help us… " )
 
 [node name="EpicFailDialogue" parent="RoomPerson" index="6"]
-Texts = PoolStringArray( "An advice for you next intern: Don’t tick Management as your specialization if you don’t have the abilities for the job, this could get you in trouble. That would be all for now." )
+Title = "Chloe"
+Texts = PoolStringArray( "An advice for your next internship: Don’t choose Management as your specialization if you don’t have the abilities for the job, this could get you in trouble." )
 
 [node name="BackButton" type="TextureButton" parent="."]
 margin_left = 1772.0

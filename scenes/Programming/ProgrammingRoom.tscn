@@ -108,6 +108,7 @@ one_shot = true
 one_shot = true
 
 [node name="ComputerOutline" type="Sprite" parent="Owl"]
+visible = false
 position = Vector2( 1447.5, 535 )
 scale = Vector2( 1.01198, 0.85 )
 texture = ExtResource( 4 )

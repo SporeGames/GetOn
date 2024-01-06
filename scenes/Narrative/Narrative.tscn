@@ -1,4 +1,4 @@
-[gd_scene load_steps=169 format=2]
+[gd_scene load_steps=166 format=2]
 
 [ext_resource path="res://scenes/Narrative/assets/StickyNote2.PNG" type="Texture" id=1]
 [ext_resource path="res://scenes/Narrative/DropDownAttribute.cs" type="Script" id=2]
@@ -19,11 +19,10 @@
 [ext_resource path="res://SharedAssets/Anne und Nora.PNG" type="Texture" id=17]
 [ext_resource path="res://scenes/Narrative/assets/John.png" type="Texture" id=18]
 [ext_resource path="res://SharedAssets/music/Play/Music_Narr.gd" type="Script" id=19]
-[ext_resource path="res://SharedAssets/Anleitung.png" type="Texture" id=20]
-[ext_resource path="res://SharedAssets/AnleitungStartButton.png" type="Texture" id=21]
+[ext_resource path="res://SharedAssets/UI/Story.PNG" type="Texture" id=20]
 [ext_resource path="res://icon.png" type="Texture" id=22]
-[ext_resource path="res://SharedAssets/Timer.tscn" type="PackedScene" id=23]
 [ext_resource path="res://scenes/Narrative/assets/EndingPopUp.png" type="Texture" id=24]
+[ext_resource path="res://SharedAssets/TopBar.tscn" type="PackedScene" id=25]
 
 [sub_resource type="StyleBoxEmpty" id=28]
 
@@ -327,14 +326,6 @@ size = 32
 font_data = ExtResource( 11 )
 
 [sub_resource type="DynamicFont" id=145]
-size = 32
-font_data = ExtResource( 11 )
-
-[sub_resource type="DynamicFont" id=147]
-size = 24
-font_data = ExtResource( 11 )
-
-[sub_resource type="DynamicFont" id=148]
 size = 32
 font_data = ExtResource( 11 )
 
@@ -1632,89 +1623,14 @@ margin_bottom = 1008.0
 custom_fonts/font = SubResource( 145 )
 text = "Ready?"
 
-[node name="timerLabel" type="Label" parent="."]
-margin_left = 1504.0
-margin_top = 51.0
-margin_right = 1653.0
-margin_bottom = 76.0
-custom_colors/font_color = Color( 0, 0, 0, 1 )
-custom_colors/font_outline_modulate = Color( 0, 0, 0, 1 )
-custom_fonts/font = SubResource( 147 )
-autowrap = true
-
-[node name="IntroGame" type="Node2D" parent="."]
-position = Vector2( -18, -2 )
-z_index = 21
-
-[node name="ColorRect" type="ColorRect" parent="IntroGame"]
-margin_left = 18.0
-margin_top = 2.0
-margin_right = 1943.0
-margin_bottom = 1083.0
-color = Color( 0.027451, 0.364706, 0.317647, 1 )
-
-[node name="Sprite2" type="Sprite" parent="IntroGame"]
-position = Vector2( 978, 542 )
-texture = ExtResource( 20 )
-
-[node name="Sprite" type="Sprite" parent="IntroGame"]
-position = Vector2( 1491, 336 )
-scale = Vector2( 0.3, 0.3 )
-texture = ExtResource( 6 )
-
-[node name="Label" type="Label" parent="IntroGame"]
-margin_left = 95.0
-margin_top = 87.0
-margin_right = 1030.0
-margin_bottom = 1128.0
-custom_fonts/font = SubResource( 146 )
-text = "Instruction:
-
-You will see Post-it´s with the title of a Sci-Fi story-idea, 2 important characters from that story and an introduction to it. 
-
-Your goal is to choose:
-1. Out of 3, the most appropriate ending for the story
-2. Attributes the characters will have at the chosen ending.
-
-The endings are at the right side of the screen.
-Drag the right one just beneath the introduction.
-
-
-There will be a total of 2 stories, you can go to the next one with NEXT or go back with BACK.
-
-
-If you are done with both stories, click SUBMIT.
-"
-autowrap = true
-
-[node name="Label2" type="Label" parent="IntroGame"]
-margin_left = 1205.0
-margin_top = 508.0
-margin_right = 2140.0
-margin_bottom = 547.0
-custom_colors/font_color = Color( 0, 0, 0, 1 )
-custom_colors/font_outline_modulate = Color( 0, 0, 0, 1 )
-custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
-custom_fonts/font = SubResource( 146 )
-text = "“You have 5 minutes to complete this test”"
-autowrap = true
-
-[node name="Button" type="Button" parent="IntroGame"]
-margin_left = 1260.0
-margin_top = 904.0
-margin_right = 1855.0
-margin_bottom = 1030.0
-custom_fonts/font = SubResource( 148 )
-icon = ExtResource( 21 )
-flat = true
-icon_align = 1
-expand_icon = true
-
 [node name="Music" type="Node" parent="."]
 script = ExtResource( 19 )
 
-[node name="Timer" parent="." instance=ExtResource( 23 )]
-z_as_relative = false
+[node name="TopBar" parent="." instance=ExtResource( 25 )]
+Game = 7
+LeftImage = ExtResource( 20 )
+HelpImage = ExtResource( 6 )
+Description = "Instruction:You will see Post-it´s with the title of a Sci-Fi story-idea, 2 important characters from that story and an introduction to it. Your goal is to choose:1. Out of 3, the most appropriate ending for the story2. Attributes the characters will have at the chosen ending.The endings are at the right side of the screen.Drag the right one just beneath the introduction.There will be a total of 2 stories, you can go to the next one with NEXT or go back with BACK.If you are done with both stories, click SUBMIT."
 
 [connection signal="item_selected" from="1/DropDownAttribute4" to="CheckCorrect" method="_on_DropDownAttribute4_item_selected"]
 [connection signal="item_selected" from="1/DropDownAttribute3" to="CheckCorrect" method="_on_DropDownAttribute3_item_selected"]

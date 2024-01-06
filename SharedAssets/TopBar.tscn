@@ -1,10 +1,9 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://SharedAssets/Timer.tscn" type="PackedScene" id=1]
 [ext_resource path="res://SharedAssets/UI/B_help_pressed.png" type="Texture" id=2]
 [ext_resource path="res://SharedAssets/UI/B_help.png" type="Texture" id=3]
 [ext_resource path="res://SharedAssets/TopBar.cs" type="Script" id=4]
-[ext_resource path="res://SharedAssets/UI/Management.PNG" type="Texture" id=5]
 [ext_resource path="res://SharedAssets/font/BAHNSCHRIFT 1.TTF" type="DynamicFontData" id=6]
 [ext_resource path="res://SharedAssets/UI/B_Base2.png" type="Texture" id=7]
 
@@ -21,12 +20,16 @@ use_filter = true
 font_data = ExtResource( 6 )
 
 [node name="TopBar" type="Node2D"]
+z_index = 1024
+z_as_relative = false
 script = ExtResource( 4 )
 Description = "lksgsh"
 
 [node name="ColorRect" type="ColorRect" parent="."]
+visible = false
 margin_right = 1923.0
 margin_bottom = 84.0
+mouse_filter = 2
 color = Color( 0.458824, 0.458824, 0.458824, 0.560784 )
 
 [node name="HelpButton" type="TextureButton" parent="."]
@@ -41,6 +44,7 @@ expand = true
 position = Vector2( 98, 21 )
 
 [node name="Introduction" type="Node2D" parent="."]
+visible = false
 position = Vector2( 808, 415 )
 z_index = 2048
 
@@ -54,7 +58,6 @@ mouse_filter = 2
 [node name="LeftSide" type="Sprite" parent="Introduction"]
 position = Vector2( 159, 175 )
 scale = Vector2( 0.905092, 0.905093 )
-texture = ExtResource( 5 )
 
 [node name="Text" type="RichTextLabel" parent="Introduction"]
 margin_left = -562.0
@@ -63,47 +66,43 @@ margin_right = 178.0
 margin_bottom = 279.0
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 custom_fonts/normal_font = SubResource( 1 )
-text = "There are several different boxes which you have to put in the right order and connect. 
-
-You can only connect the same colors.
-You can only connect the right  side of boxes with left sides.
-
-Goal:
-- Move the player 
-- Reach the coin 
-- Reach the flag.
-- Accomlish the task as fast as possible
-
-Hint: 
-To view all the boxes you may have to navigate with the scrollbar at the bottom of the screen.
-"
+text = "This is placeholder text. You haven't entered any tutorial text yet."
 
 [node name="CloseButton" type="TextureButton" parent="Introduction"]
-margin_left = 582.0
-margin_top = 485.0
-margin_right = 951.0
-margin_bottom = 629.0
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = 672.0
+margin_top = 481.0
+margin_right = 1041.0
+margin_bottom = 625.0
 texture_normal = ExtResource( 7 )
 
 [node name="RichTextLabel" type="RichTextLabel" parent="Introduction/CloseButton"]
-margin_left = 111.0
-margin_top = 42.0
-margin_right = 264.0
-margin_bottom = 105.0
-mouse_filter = 1
+margin_left = 106.0
+margin_top = 44.0
+margin_right = 259.0
+margin_bottom = 107.0
+mouse_filter = 2
+mouse_default_cursor_shape = 1
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 custom_fonts/normal_font = SubResource( 2 )
 text = "Close"
+scroll_active = false
 
 [node name="ImageCaption" type="RichTextLabel" parent="Introduction"]
 margin_left = 270.0
 margin_top = 245.0
 margin_right = 739.0
 margin_bottom = 319.0
+mouse_filter = 2
 
 [node name="Image" type="Sprite" parent="Introduction"]
-position = Vector2( 504, 44 )
+position = Vector2( 608, 1 )
+scale = Vector2( 0.33, 0.33 )
 
 [node name="RightSide" type="Sprite" parent="Introduction"]
+visible = false
 position = Vector2( 159, 175 )
 scale = Vector2( 0.905092, 0.905093 )

@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=2]
 
-[ext_resource path="res://scenes/GameSelectionRoom/assets/LayoutMaybe.png" type="Texture" id=1]
+[ext_resource path="res://scenes/GameSelectionRoom/assets/Layout3.png" type="Texture" id=1]
 [ext_resource path="res://SharedAssets/Dialog Charakters/Chloe.png" type="Texture" id=2]
 [ext_resource path="res://SharedAssets/DialogeBox.tscn" type="PackedScene" id=3]
 
@@ -14,9 +14,8 @@ texture = ExtResource( 1 )
 position = Vector2( 0, 708 )
 Title = "Chloe"
 Icon = ExtResource( 2 )
-Texts = PoolStringArray( "Good morning! You must be our new intern.", "My name is Chloe and I’m the manager around here. We are really looking forward to working with you. ", "We were really impressed by your portfolio that you sent us.", "You know, it really doesn’t matter what grades you got during your time in university. The most important thing in the games industry are your abilities.", "We’re currently in the pre-production of our game.As you probably know, this phase consists of a ton of research.", "We got the commission to make a sci-fi game. Therefore, we´re researching what kind of game would fit the genre and would be the most fun to play." )
+Texts = PoolStringArray( "Good morning! You must be our new intern.My name is Chloe and I’m the manager around here. We are really looking forward to working with you as we were impressed by your portfolio that you sent us.", "You know, it really doesn’t matter what grades you got during your time in university. The most important thing in the games industry are your abilities.", "We’re currently in the pre-production of our game.As you probably know, this phase consists of a ton of research. We got the commission to make a sci-fi game. Therefore, we´re researching what kind of game would fit the genre and would be the most fun to play.", "If you could please fill out this questionnaire. We need to know in what department you are specialized in, in order to give you accurate feedback for your work." )
 LoadSceneAfter = true
-AutoNext = true
 AutoNextTime = 8.0
 ReadTime = 0.3
 SceneToLoad = "MainMenu"

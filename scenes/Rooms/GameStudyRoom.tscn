@@ -1,11 +1,20 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://scenes/Rooms/BaseRoom.cs" type="Script" id=1]
 [ext_resource path="res://scenes/GameStudy/assets/GameStudiesGrob.png" type="Texture" id=2]
 [ext_resource path="res://SharedAssets/RoomPerson.tscn" type="PackedScene" id=3]
-[ext_resource path="res://scenes/GameStudy/assets/Unbenanntes_Projekt.png" type="Texture" id=4]
+[ext_resource path="res://scenes/GameStudy/assets/Standing_Charakter.PNG" type="Texture" id=4]
 [ext_resource path="res://SharedAssets/ui/B_Home_pressed.png" type="Texture" id=5]
 [ext_resource path="res://SharedAssets/ui/B_menu.png" type="Texture" id=6]
+[ext_resource path="res://SharedAssets/Decoration.tscn" type="PackedScene" id=7]
+[ext_resource path="res://SharedAssets/OutlineShader.tres" type="Shader" id=8]
+
+[sub_resource type="ShaderMaterial" id=1]
+resource_local_to_scene = true
+shader = ExtResource( 8 )
+shader_param/blink_strength = 0.1
+shader_param/blink_rate = 2.0
+shader_param/outline_color = Color( 1, 1, 1, 1 )
 
 [node name="GameStudyRoom" type="Node2D"]
 script = ExtResource( 1 )
@@ -18,28 +27,42 @@ texture = ExtResource( 2 )
 GameSpecialization = 5
 
 [node name="PersonSprite" parent="GSPerson" index="0"]
+material = SubResource( 1 )
 position = Vector2( 917, 511 )
 scale = Vector2( 0.542813, 0.542813 )
 texture = ExtResource( 4 )
 
+[node name="InteractButton" parent="GSPerson" index="1"]
+margin_left = 799.0
+margin_top = 266.0
+margin_right = 1018.0
+margin_bottom = 736.0
+
 [node name="WelcomeDialogue" parent="GSPerson" index="2"]
-Texts = PoolStringArray( "“H-Hello\? I… haven’t seen you around here yet, are you our new intern\?”", "“Ok, so… In this room we meet, take our breaks and look at our great collection of games and consoles of the gaming-history. I really like it here…”", "“If you like games as much as I do, you will surely like the task I have for you. Just talk to me again, if you want to start...”", "“Do you want to start with your task\? -Ok so the explanation is quite simple…”" )
+Title = "Emily"
+Texts = PoolStringArray( "Oh, you want to start with your task\? - It´s quite simple. All you have to do is put the games and consoles back up on the shelves. We did some cleaning before you came." )
 SceneToLoad = "GameStudy"
 
 [node name="ResultDialogue" parent="GSPerson" index="3"]
-Texts = PoolStringArray( "You really love games, don’t you\?”  “That’s very cool, thanks for your help." )
+Title = "Emily"
+Texts = PoolStringArray( "You really love games, don’t you\? That’s very cool, thanks for your help." )
 SceneToLoad = "GameStudy"
+ResultThreshold = 38
 
 [node name="ResultDialogue2" parent="GSPerson" index="4"]
-Texts = PoolStringArray( "Cool, don’t you think\?” “It doesn’t matter if you sorted all of them right." )
+Title = "Emily"
+Texts = PoolStringArray( "Good enough, looks like you know a bit about game studies." )
 SceneToLoad = "GameStudy"
+ResultThreshold = 23
 
 [node name="ResultDialogue3" parent="GSPerson" index="5"]
-Texts = PoolStringArray( "... if you don’t like this task, then I gladly do it.", "There is much more to those old-time classics as you would think you know." )
+Title = "Emily"
+Texts = PoolStringArray( "... If you don’t like this task, then I will gladly do it. There is much more to those old-time classics as you would think you know." )
 SceneToLoad = "GameStudy"
 
 [node name="EpicFailDialogue" parent="GSPerson" index="6"]
-Texts = PoolStringArray( "I don’t want to be rude or something, but I don’t think that you are specialized in Game-Studies…" )
+Title = "Emily"
+Texts = PoolStringArray( "I don’t want to be rude or something, but I don’t think that you have enough knowledge in game-studies to be specialized in this field…" )
 
 [node name="BackButton" type="TextureButton" parent="."]
 margin_left = 1772.0
@@ -48,5 +71,7 @@ margin_bottom = 133.0
 texture_normal = ExtResource( 6 )
 texture_pressed = ExtResource( 5 )
 expand = true
+
+[node name="Deco" parent="." instance=ExtResource( 7 )]
 
 [editable path="GSPerson"]

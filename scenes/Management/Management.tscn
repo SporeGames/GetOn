@@ -1,28 +1,19 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://scenes/Management/Management.cs" type="Script" id=1]
+[ext_resource path="res://SharedAssets/UI/Management.PNG" type="Texture" id=2]
 [ext_resource path="res://scenes/Management/ManagementNote.tscn" type="PackedScene" id=3]
 [ext_resource path="res://scenes/Management/assets/vereinfachtes Management background.jpg" type="Texture" id=4]
 [ext_resource path="res://scenes/Management/NoteBox.tscn" type="PackedScene" id=5]
+[ext_resource path="res://SharedAssets/TopBar.tscn" type="PackedScene" id=6]
 [ext_resource path="res://SharedAssets/font/BAHNSCHRIFT 1.TTF" type="DynamicFontData" id=12]
-[ext_resource path="res://SharedAssets/Anleitung.png" type="Texture" id=14]
-[ext_resource path="res://SharedAssets/AnleitungStartButton.png" type="Texture" id=15]
 [ext_resource path="res://scenes/Management/assets/Legend.png" type="Texture" id=16]
 [ext_resource path="res://scenes/Management/OpenLegend.gd" type="Script" id=17]
-[ext_resource path="res://SharedAssets/Timer.tscn" type="PackedScene" id=18]
 
 [sub_resource type="DynamicFont" id=3]
 size = 18
 use_mipmaps = true
 use_filter = true
-font_data = ExtResource( 12 )
-
-[sub_resource type="DynamicFont" id=1]
-size = 32
-font_data = ExtResource( 12 )
-
-[sub_resource type="DynamicFont" id=2]
-size = 32
 font_data = ExtResource( 12 )
 
 [node name="Management" type="Node2D"]
@@ -34,13 +25,11 @@ position = Vector2( 957.34, 565.238 )
 scale = Vector2( 1.4523, 1.51403 )
 texture = ExtResource( 4 )
 
-[node name="Timer" parent="." instance=ExtResource( 18 )]
-
 [node name="SubmitButton" type="Button" parent="."]
-margin_left = 1795.0
-margin_top = 21.0
-margin_right = 1893.0
-margin_bottom = 71.0
+margin_left = 1803.0
+margin_top = 1047.0
+margin_right = 1901.0
+margin_bottom = 1097.0
 rect_min_size = Vector2( 50, 50 )
 text = "SUBMIT"
 
@@ -225,54 +214,19 @@ scale = Vector2( 1.1402, 1.1485 )
 z_index = 1
 texture = ExtResource( 16 )
 
-[node name="Intro" type="Node2D" parent="."]
-z_index = 20
+[node name="TopBar" parent="." instance=ExtResource( 6 )]
+LeftImage = ExtResource( 2 )
+HelpImage = ExtResource( 4 )
+Description = "Instructions:
 
-[node name="Sprite2" type="Sprite" parent="Intro"]
-position = Vector2( 960, 540 )
-texture = ExtResource( 14 )
+Drag the different tasks to their destined place.
+Additionally, you have to colorize them into their corresponding department color.
+Art - orange	
+Narrative - green
+Game Design - purple
+Programming - blue
+Sound - yellow									
 
-[node name="Label2" type="Label" parent="Intro"]
-margin_left = 113.0
-margin_top = 232.0
-margin_right = 1036.0
-margin_bottom = 1057.0
-custom_fonts/font = SubResource( 1 )
-text = "Instructions:
-
-Oh no! All the notes have fallen down and now the project plan is in complete chaos.
-
-Put the notes back where they belong. You can do this by dragging and dropping the notes into the gray boxes.
-
- The arrows show you which notes are dependent on other notes."
-autowrap = true
-
-[node name="StartPuzzle" type="Button" parent="Intro"]
-margin_left = 1240.0
-margin_top = 893.0
-margin_right = 1835.0
-margin_bottom = 1019.0
-custom_colors/font_color_disabled = Color( 1, 1, 1, 1 )
-custom_colors/font_color = Color( 1, 1, 1, 1 )
-custom_colors/font_color_hover = Color( 1, 1, 1, 1 )
-custom_colors/font_color_pressed = Color( 1, 1, 1, 1 )
-icon = ExtResource( 15 )
-flat = true
-
-[node name="Label3" type="Label" parent="Intro"]
-margin_left = 1175.0
-margin_top = 653.0
-margin_right = 2110.0
-margin_bottom = 692.0
-custom_colors/font_color = Color( 0, 0, 0, 1 )
-custom_colors/font_outline_modulate = Color( 0, 0, 0, 1 )
-custom_fonts/font = SubResource( 2 )
-text = "“You have 5 minutes to complete this test”"
-autowrap = true
-
-[node name="Sprite" type="Sprite" parent="Intro"]
-position = Vector2( 1457, 379 )
-scale = Vector2( 0.531568, 0.59916 )
-texture = ExtResource( 4 )
+If you are done with this task click DONE."
 
 [connection signal="pressed" from="ColorSelector/Legend2" to="ColorSelector/Legend2" method="_on_Legend2_pressed"]
