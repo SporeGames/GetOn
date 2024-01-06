@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=20 format=2]
 
 [ext_resource path="res://scenes/Sound/assets/IngameMoments/drunk walk.PNG" type="Texture" id=1]
 [ext_resource path="res://scenes/Sound/assets/IngameMoments/collect item.PNG" type="Texture" id=2]
@@ -9,6 +9,13 @@
 [ext_resource path="res://scenes/Sound/assets/IngameMoments/buy something.PNG" type="Texture" id=7]
 [ext_resource path="res://scenes/Sound/assets/IngameMoments/YouDied (1).PNG" type="Texture" id=8]
 [ext_resource path="res://SharedAssets/TopBar.tscn" type="PackedScene" id=9]
+[ext_resource path="res://scenes/Sound/assets/right.PNG" type="Texture" id=10]
+[ext_resource path="res://scenes/Sound/assets/left.PNG" type="Texture" id=11]
+[ext_resource path="res://scenes/Sound/assets/IngameMoments/secret find.PNG" type="Texture" id=12]
+[ext_resource path="res://scenes/Sound/assets/leftpressed.PNG" type="Texture" id=13]
+[ext_resource path="res://scenes/Sound/assets/rightpressed.PNG" type="Texture" id=14]
+[ext_resource path="res://SharedAssets/font/BAHNSCHRIFT 1.TTF" type="DynamicFontData" id=15]
+[ext_resource path="res://scenes/Sound/assets/DoneButton.png" type="Texture" id=16]
 [ext_resource path="res://scenes/Sound/SoundSlider.tscn" type="PackedScene" id=52]
 [ext_resource path="res://scenes/Sound/Sound.cs" type="Script" id=53]
 
@@ -18,8 +25,6 @@ font_data = ExtResource( 15 )
 
 [node name="Sound" type="Node2D"]
 script = ExtResource( 53 )
-
-[node name="TopBar" parent="." instance=ExtResource( 9 )]
 
 [node name="Moment1" parent="." instance=ExtResource( 52 )]
 headlineTXT = "IngameMoment: Drunk"
@@ -105,8 +110,8 @@ margin_left = 1657.0
 margin_top = 981.0
 margin_right = 1861.0
 margin_bottom = 1079.0
-texture_normal = ExtResource( 9 )
-texture_pressed = ExtResource( 9 )
+texture_normal = ExtResource( 16 )
+texture_pressed = ExtResource( 16 )
 
 [node name="Label" type="Label" parent="Done"]
 margin_left = 35.0
@@ -118,3 +123,5 @@ custom_fonts/font = SubResource( 1 )
 text = "Submit"
 align = 1
 valign = 1
+
+[node name="TopBar" parent="." instance=ExtResource( 9 )]
