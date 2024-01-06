@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Stealth (1).png-46a1e4d5318e072241fc74545c3f610d.stex"
+path="res://.import/rightpressed.PNG-162d154d525e4c42183e2205a2a46b3f.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://scenes/Sound/assets/IngameMoments/Stealth (1).png"
-dest_files=[ "res://.import/Stealth (1).png-46a1e4d5318e072241fc74545c3f610d.stex" ]
+source_file="res://scenes/Sound/assets/rightpressed.PNG"
+dest_files=[ "res://.import/rightpressed.PNG-162d154d525e4c42183e2205a2a46b3f.stex" ]
 
 [params]
 

@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/PerfectBlock2.png-c6791e546930f75485a3efd0dd2b68c8.stex"
+path="res://.import/DoneButton.png-b88af20aa40a4a62952f2cf57b99519c.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://scenes/Sound/assets/IngameMoments/PerfectBlock2.png"
-dest_files=[ "res://.import/PerfectBlock2.png-c6791e546930f75485a3efd0dd2b68c8.stex" ]
+source_file="res://scenes/Sound/assets/DoneButton.png"
+dest_files=[ "res://.import/DoneButton.png-b88af20aa40a4a62952f2cf57b99519c.stex" ]
 
 [params]
 

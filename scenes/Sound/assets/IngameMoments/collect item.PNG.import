@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/B_Base2.png-0a141f747f9d61828c7468139f2c8b5d.stex"
+path="res://.import/collect item.PNG-ac35ffaad736351975089d3c45e0f5b3.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://SharedAssets/UI/B_Base2.png"
-dest_files=[ "res://.import/B_Base2.png-0a141f747f9d61828c7468139f2c8b5d.stex" ]
+source_file="res://scenes/Sound/assets/IngameMoments/collect item.PNG"
+dest_files=[ "res://.import/collect item.PNG-ac35ffaad736351975089d3c45e0f5b3.stex" ]
 
 [params]
 

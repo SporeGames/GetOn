@@ -33,7 +33,7 @@ namespace GetOn.scenes {
 		[JsonProperty] public float gameDesignTime = 0;
 		[JsonProperty] public int narrativePoints = 0;
 		[JsonProperty] public float narrativeTime = 0;
-		[JsonProperty] public int soundPoints = 0;
+		[JsonProperty] public double soundPoints = 0;
 		[JsonProperty] public float soundTime = 0;
 		[JsonProperty]public int managementPoints = 0;
 		[JsonProperty] public int managementColors = 0;
@@ -41,6 +41,7 @@ namespace GetOn.scenes {
 		[JsonProperty] public AbilitySpecialization Specialization = AbilitySpecialization.Programming;
 
 		public bool isDragging;
+		
 
 		public override void _Ready() {
 			var root = GetTree().Root;

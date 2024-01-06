@@ -1,10 +1,10 @@
-[gd_scene load_steps=37 format=2]
+[gd_scene load_steps=41 format=2]
 
 [ext_resource path="res://scenes/Sound/assets/FeldFürSounds.png" type="Texture" id=1]
 [ext_resource path="res://scenes/Sound/Soundeffects/Wrong Sounds/Power Boost Sound.wav" type="AudioStream" id=2]
 [ext_resource path="res://scenes/Sound/assets/GameplayFeld (1).png" type="Texture" id=3]
 [ext_resource path="res://scenes/Sound/CustomTabContainer.cs" type="Script" id=4]
-[ext_resource path="res://scenes/Sound/DragAndDropSound.cs" type="Script" id=5]
+[ext_resource path="res://scenes/Sound/assets/SoundGame2OhneTabs.png" type="Texture" id=5]
 [ext_resource path="res://scenes/Sound/assets/PlayButton.png" type="Texture" id=6]
 [ext_resource path="res://SharedAssets/font/BAHNSCHRIFT 1.TTF" type="DynamicFontData" id=7]
 [ext_resource path="res://scenes/Sound/Soundeffects/Secret Found Sound.wav" type="AudioStream" id=8]
@@ -23,7 +23,10 @@
 [ext_resource path="res://scenes/Sound/Soundeffects/Wrong Sounds/Ambience Bar.wav" type="AudioStream" id=21]
 [ext_resource path="res://scenes/Sound/Soundeffects/Wrong Sounds/Level Up Sound.wav" type="AudioStream" id=22]
 [ext_resource path="res://scenes/Sound/Soundeffects/Perfect Block Sound.wav" type="AudioStream" id=23]
-[ext_resource path="res://scenes/Sound/assets/SoundGame2.png" type="Texture" id=24]
+[ext_resource path="res://icon.png" type="Texture" id=24]
+[ext_resource path="res://scenes/GameDesign/assets/ui/KästchenLeer.png" type="Texture" id=25]
+[ext_resource path="res://scenes/GameDesign/assets/ui/KästchenAbgehakt.png" type="Texture" id=26]
+[ext_resource path="res://SharedAssets/UI/B_art.png" type="Texture" id=27]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 347, 150.5 )
@@ -56,13 +59,18 @@ extents = Vector2( 98.5, 19 )
 [sub_resource type="RectangleShape2D" id=12]
 extents = Vector2( 122, 23 )
 
+[sub_resource type="DynamicFont" id=13]
+size = 32
+font_data = ExtResource( 7 )
+
 [node name="CustomTabContainer" type="Node2D"]
 script = ExtResource( 4 )
+checkBox = ExtResource( 25 )
+checkBoxPressed = ExtResource( 26 )
 
 [node name="Sprite5" type="Sprite" parent="."]
-visible = false
 position = Vector2( 960, 540 )
-texture = ExtResource( 24 )
+texture = ExtResource( 5 )
 
 [node name="Tab1" type="TextureButton" parent="."]
 margin_left = 174.0
@@ -94,7 +102,7 @@ margin_right = 103.0
 margin_bottom = 30.0
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_colors/font_outline_modulate = Color( 0, 0, 0, 1 )
-text = "Gameplay"
+text = "Combat"
 
 [node name="Tab3" type="TextureButton" parent="."]
 margin_left = 501.0
@@ -126,7 +134,7 @@ margin_right = 103.0
 margin_bottom = 30.0
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_colors/font_outline_modulate = Color( 0, 0, 0, 1 )
-text = "Combat"
+text = "Gameplay"
 
 [node name="Sprite" type="Sprite" parent="."]
 position = Vector2( 523, 802 )
@@ -145,6 +153,7 @@ position = Vector2( 523, 802 )
 texture = ExtResource( 1 )
 
 [node name="CheckIfSoundInPanel" type="Area2D" parent="."]
+visible = false
 position = Vector2( 495, 773 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CheckIfSoundInPanel"]
@@ -155,7 +164,6 @@ shape = SubResource( 1 )
 position = Vector2( 303, 689 )
 z_index = 10
 input_pickable = true
-script = ExtResource( 5 )
 
 [node name="LineEdit" type="LineEdit" parent="Sound1"]
 margin_left = -77.0
@@ -174,8 +182,8 @@ custom_styles/read_only = SubResource( 9 )
 custom_styles/focus = SubResource( 10 )
 custom_styles/normal = SubResource( 11 )
 text = "Sound1.wav"
+editable = false
 context_menu_enabled = false
-selecting_enabled = false
 
 [node name="Button" type="Button" parent="Sound1"]
 margin_left = 89.0
@@ -193,9 +201,30 @@ script = ExtResource( 9 )
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Sound1/Button"]
 stream = ExtResource( 14 )
 
+[node name="Sprite" type="Sprite" parent="Sound1/Button"]
+visible = false
+position = Vector2( 120, -271 )
+scale = Vector2( 10.5, 4.375 )
+texture = ExtResource( 24 )
+
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Sound1"]
 position = Vector2( -13.5, -2 )
 shape = SubResource( 2 )
+
+[node name="CheckBox1" type="TextureButton" parent="Sound1" groups=["CheckBox"]]
+margin_left = 145.0
+margin_top = -37.0
+margin_right = 238.0
+margin_bottom = 42.0
+texture_normal = ExtResource( 25 )
+
+[node name="EditName" type="TextureButton" parent="Sound1"]
+margin_left = 134.0
+margin_top = -17.0
+margin_right = 238.0
+margin_bottom = 78.0
+rect_scale = Vector2( 0.35, 0.35 )
+texture_normal = ExtResource( 27 )
 
 [node name="Area2D" type="Area2D" parent="Sound1"]
 
@@ -207,7 +236,6 @@ shape = SubResource( 12 )
 position = Vector2( 303, 749 )
 z_index = 10
 input_pickable = true
-script = ExtResource( 5 )
 
 [node name="LineEdit" type="LineEdit" parent="Sound2"]
 margin_left = -77.0
@@ -226,8 +254,8 @@ custom_styles/read_only = SubResource( 9 )
 custom_styles/focus = SubResource( 10 )
 custom_styles/normal = SubResource( 11 )
 text = "Sound2.wav"
+editable = false
 context_menu_enabled = false
-selecting_enabled = false
 
 [node name="Button" type="Button" parent="Sound2"]
 margin_left = 89.0
@@ -244,6 +272,11 @@ script = ExtResource( 9 )
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Sound2/Button"]
 stream = ExtResource( 16 )
+
+[node name="Sprite" type="Sprite" parent="Sound2/Button"]
+position = Vector2( 120, -335 )
+scale = Vector2( 10.5, 4.375 )
+texture = ExtResource( 24 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Sound2"]
 position = Vector2( -13.5, -2 )
@@ -271,11 +304,71 @@ cast_to = Vector2( 0, -40 )
 position = Vector2( 6, -2 )
 shape = SubResource( 12 )
 
+[node name="CheckBox2" type="TextureButton" parent="Sound2" groups=["CheckBox"]]
+margin_left = 145.0
+margin_top = -36.0
+margin_right = 238.0
+margin_bottom = 43.0
+texture_normal = ExtResource( 25 )
+
+[node name="EditName" type="TextureButton" parent="Sound2"]
+margin_left = 134.0
+margin_top = -15.9999
+margin_right = 238.0
+margin_bottom = 79.0001
+rect_scale = Vector2( 0.35, 0.35 )
+texture_normal = ExtResource( 27 )
+
 [node name="Sound3" type="KinematicBody2D" parent="." groups=["Sound"]]
 position = Vector2( 303, 815 )
 z_index = 10
 input_pickable = true
-script = ExtResource( 5 )
+
+[node name="Button" type="Button" parent="Sound3"]
+margin_left = 89.0
+margin_top = -22.0
+margin_right = 125.0
+margin_bottom = 17.0
+custom_styles/hover = SubResource( 3 )
+custom_styles/pressed = SubResource( 4 )
+custom_styles/focus = SubResource( 5 )
+custom_styles/disabled = SubResource( 6 )
+custom_styles/normal = SubResource( 7 )
+icon = ExtResource( 6 )
+script = ExtResource( 9 )
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Sound3/Button"]
+stream = ExtResource( 15 )
+
+[node name="Sprite" type="Sprite" parent="Sound3/Button"]
+position = Vector2( 120, -401 )
+scale = Vector2( 10.5, 4.375 )
+texture = ExtResource( 24 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sound3"]
+position = Vector2( -13.5, -2 )
+shape = SubResource( 2 )
+
+[node name="Area2D" type="Area2D" parent="Sound3"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sound3/Area2D"]
+position = Vector2( 6, -2 )
+shape = SubResource( 12 )
+
+[node name="CheckBox3" type="TextureButton" parent="Sound3" groups=["CheckBox"]]
+margin_left = 145.0
+margin_top = -39.0
+margin_right = 238.0
+margin_bottom = 40.0
+texture_normal = ExtResource( 25 )
+
+[node name="EditName" type="TextureButton" parent="Sound3"]
+margin_left = 134.0
+margin_top = -18.9999
+margin_right = 238.0
+margin_bottom = 76.0001
+rect_scale = Vector2( 0.35, 0.35 )
+texture_normal = ExtResource( 27 )
 
 [node name="LineEdit" type="LineEdit" parent="Sound3"]
 margin_left = -77.0
@@ -294,10 +387,15 @@ custom_styles/read_only = SubResource( 9 )
 custom_styles/focus = SubResource( 10 )
 custom_styles/normal = SubResource( 11 )
 text = "Sound3.wav"
+editable = false
 context_menu_enabled = false
-selecting_enabled = false
 
-[node name="Button" type="Button" parent="Sound3"]
+[node name="Sound4" type="KinematicBody2D" parent="." groups=["Sound"]]
+position = Vector2( 303, 881 )
+z_index = 10
+input_pickable = true
+
+[node name="Button" type="Button" parent="Sound4"]
 margin_left = 89.0
 margin_top = -22.0
 margin_right = 125.0
@@ -310,24 +408,38 @@ custom_styles/normal = SubResource( 7 )
 icon = ExtResource( 6 )
 script = ExtResource( 9 )
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Sound3/Button"]
-stream = ExtResource( 15 )
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Sound4/Button"]
+stream = ExtResource( 21 )
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Sound3"]
+[node name="Sprite" type="Sprite" parent="Sound4/Button"]
+position = Vector2( 120, -467 )
+scale = Vector2( 10.5, 4.375 )
+texture = ExtResource( 24 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sound4"]
 position = Vector2( -13.5, -2 )
 shape = SubResource( 2 )
 
-[node name="Area2D" type="Area2D" parent="Sound3"]
+[node name="Area2D" type="Area2D" parent="Sound4"]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Sound3/Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sound4/Area2D"]
 position = Vector2( 6, -2 )
 shape = SubResource( 12 )
 
-[node name="Sound4" type="KinematicBody2D" parent="." groups=["Sound"]]
-position = Vector2( 303, 881 )
-z_index = 10
-input_pickable = true
-script = ExtResource( 5 )
+[node name="CheckBox4" type="TextureButton" parent="Sound4" groups=["CheckBox"]]
+margin_left = 145.0
+margin_top = -41.0
+margin_right = 238.0
+margin_bottom = 38.0
+texture_normal = ExtResource( 25 )
+
+[node name="EditName" type="TextureButton" parent="Sound4"]
+margin_left = 134.0
+margin_top = -20.9999
+margin_right = 238.0
+margin_bottom = 74.0001
+rect_scale = Vector2( 0.35, 0.35 )
+texture_normal = ExtResource( 27 )
 
 [node name="LineEdit" type="LineEdit" parent="Sound4"]
 margin_left = -77.0
@@ -346,10 +458,16 @@ custom_styles/read_only = SubResource( 9 )
 custom_styles/focus = SubResource( 10 )
 custom_styles/normal = SubResource( 11 )
 text = "Sound4.wav"
+editable = false
 context_menu_enabled = false
-selecting_enabled = false
 
-[node name="Button" type="Button" parent="Sound4"]
+[node name="Sound5" type="KinematicBody2D" parent="." groups=["Sound"]]
+visible = false
+position = Vector2( 303, 689 )
+z_index = 10
+input_pickable = true
+
+[node name="Button" type="Button" parent="Sound5"]
 margin_left = 89.0
 margin_top = -22.0
 margin_right = 125.0
@@ -362,25 +480,39 @@ custom_styles/normal = SubResource( 7 )
 icon = ExtResource( 6 )
 script = ExtResource( 9 )
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Sound4/Button"]
-stream = ExtResource( 21 )
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Sound5/Button"]
+stream = ExtResource( 23 )
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Sound4"]
+[node name="Sprite" type="Sprite" parent="Sound5/Button"]
+visible = false
+position = Vector2( 120, -271 )
+scale = Vector2( 10.5, 4.375 )
+texture = ExtResource( 24 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sound5"]
 position = Vector2( -13.5, -2 )
 shape = SubResource( 2 )
 
-[node name="Area2D" type="Area2D" parent="Sound4"]
+[node name="Area2D" type="Area2D" parent="Sound5"]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Sound4/Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sound5/Area2D"]
 position = Vector2( 6, -2 )
 shape = SubResource( 12 )
 
-[node name="Sound5" type="KinematicBody2D" parent="." groups=["Sound"]]
-visible = false
-position = Vector2( 303, 689 )
-z_index = 10
-input_pickable = true
-script = ExtResource( 5 )
+[node name="CheckBox5" type="TextureButton" parent="Sound5" groups=["CheckBox"]]
+margin_left = 145.0
+margin_top = -37.0
+margin_right = 238.0
+margin_bottom = 42.0
+texture_normal = ExtResource( 25 )
+
+[node name="EditName" type="TextureButton" parent="Sound5"]
+margin_left = 134.0
+margin_top = -17.0
+margin_right = 238.0
+margin_bottom = 78.0
+rect_scale = Vector2( 0.35, 0.35 )
+texture_normal = ExtResource( 27 )
 
 [node name="LineEdit" type="LineEdit" parent="Sound5"]
 margin_left = -77.0
@@ -399,61 +531,14 @@ custom_styles/read_only = SubResource( 9 )
 custom_styles/focus = SubResource( 10 )
 custom_styles/normal = SubResource( 11 )
 text = "Sound1.wav"
+editable = false
 context_menu_enabled = false
-selecting_enabled = false
-
-[node name="Button" type="Button" parent="Sound5"]
-margin_left = 89.0
-margin_top = -22.0
-margin_right = 125.0
-margin_bottom = 17.0
-custom_styles/hover = SubResource( 3 )
-custom_styles/pressed = SubResource( 4 )
-custom_styles/focus = SubResource( 5 )
-custom_styles/disabled = SubResource( 6 )
-custom_styles/normal = SubResource( 7 )
-icon = ExtResource( 6 )
-script = ExtResource( 9 )
-
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Sound5/Button"]
-stream = ExtResource( 23 )
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Sound5"]
-position = Vector2( -13.5, -2 )
-shape = SubResource( 2 )
-
-[node name="Area2D" type="Area2D" parent="Sound5"]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Sound5/Area2D"]
-position = Vector2( 6, -2 )
-shape = SubResource( 12 )
 
 [node name="Sound6" type="KinematicBody2D" parent="." groups=["Sound"]]
 visible = false
 position = Vector2( 303, 749 )
 z_index = 10
 input_pickable = true
-script = ExtResource( 5 )
-
-[node name="LineEdit" type="LineEdit" parent="Sound6"]
-margin_left = -77.0
-margin_top = -17.0
-margin_right = 94.0
-margin_bottom = 14.0
-mouse_filter = 2
-custom_colors/cursor_color = Color( 0, 0, 0, 1 )
-custom_colors/clear_button_color_pressed = Color( 0, 0, 0, 1 )
-custom_colors/font_color_selected = Color( 0, 0, 0, 1 )
-custom_colors/font_color = Color( 0, 0, 0, 1 )
-custom_colors/clear_button_color = Color( 0, 0, 0, 1 )
-custom_colors/font_color_uneditable = Color( 0, 0, 0, 1 )
-custom_fonts/font = SubResource( 8 )
-custom_styles/read_only = SubResource( 9 )
-custom_styles/focus = SubResource( 10 )
-custom_styles/normal = SubResource( 11 )
-text = "Sound2.wav"
-context_menu_enabled = false
-selecting_enabled = false
 
 [node name="Button" type="Button" parent="Sound6"]
 margin_left = 89.0
@@ -470,6 +555,11 @@ script = ExtResource( 9 )
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Sound6/Button"]
 stream = ExtResource( 20 )
+
+[node name="Sprite" type="Sprite" parent="Sound6/Button"]
+position = Vector2( 120, -335 )
+scale = Vector2( 10.5, 4.375 )
+texture = ExtResource( 24 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Sound6"]
 position = Vector2( -13.5, -2 )
@@ -497,12 +587,92 @@ cast_to = Vector2( 0, -40 )
 position = Vector2( 6, -2 )
 shape = SubResource( 12 )
 
+[node name="CheckBox6" type="TextureButton" parent="Sound6" groups=["CheckBox"]]
+margin_left = 145.0
+margin_top = -36.0
+margin_right = 238.0
+margin_bottom = 43.0
+texture_normal = ExtResource( 25 )
+
+[node name="EditName" type="TextureButton" parent="Sound6"]
+margin_left = 134.0
+margin_top = -15.9999
+margin_right = 238.0
+margin_bottom = 79.0001
+rect_scale = Vector2( 0.35, 0.35 )
+texture_normal = ExtResource( 27 )
+
+[node name="LineEdit" type="LineEdit" parent="Sound6"]
+margin_left = -77.0
+margin_top = -17.0
+margin_right = 94.0
+margin_bottom = 14.0
+mouse_filter = 2
+custom_colors/cursor_color = Color( 0, 0, 0, 1 )
+custom_colors/clear_button_color_pressed = Color( 0, 0, 0, 1 )
+custom_colors/font_color_selected = Color( 0, 0, 0, 1 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_colors/clear_button_color = Color( 0, 0, 0, 1 )
+custom_colors/font_color_uneditable = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 8 )
+custom_styles/read_only = SubResource( 9 )
+custom_styles/focus = SubResource( 10 )
+custom_styles/normal = SubResource( 11 )
+text = "Sound2.wav"
+editable = false
+context_menu_enabled = false
+
 [node name="Sound7" type="KinematicBody2D" parent="." groups=["Sound"]]
 visible = false
 position = Vector2( 303, 815 )
 z_index = 10
 input_pickable = true
-script = ExtResource( 5 )
+
+[node name="Button" type="Button" parent="Sound7"]
+margin_left = 89.0
+margin_top = -22.0
+margin_right = 125.0
+margin_bottom = 17.0
+custom_styles/hover = SubResource( 3 )
+custom_styles/pressed = SubResource( 4 )
+custom_styles/focus = SubResource( 5 )
+custom_styles/disabled = SubResource( 6 )
+custom_styles/normal = SubResource( 7 )
+icon = ExtResource( 6 )
+script = ExtResource( 9 )
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Sound7/Button"]
+stream = ExtResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="Sound7/Button"]
+position = Vector2( 120, -393 )
+scale = Vector2( 10.5, 4.375 )
+texture = ExtResource( 24 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sound7"]
+position = Vector2( -13.5, -2 )
+shape = SubResource( 2 )
+
+[node name="Area2D" type="Area2D" parent="Sound7"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sound7/Area2D"]
+position = Vector2( 6, -2 )
+shape = SubResource( 12 )
+
+[node name="CheckBox7" type="TextureButton" parent="Sound7" groups=["CheckBox"]]
+margin_left = 145.0
+margin_top = -39.0
+margin_right = 238.0
+margin_bottom = 40.0
+texture_normal = ExtResource( 25 )
+
+[node name="EditName" type="TextureButton" parent="Sound7"]
+margin_left = 134.0
+margin_top = -18.9999
+margin_right = 238.0
+margin_bottom = 76.0001
+rect_scale = Vector2( 0.35, 0.35 )
+texture_normal = ExtResource( 27 )
 
 [node name="LineEdit" type="LineEdit" parent="Sound7"]
 margin_left = -77.0
@@ -521,10 +691,16 @@ custom_styles/read_only = SubResource( 9 )
 custom_styles/focus = SubResource( 10 )
 custom_styles/normal = SubResource( 11 )
 text = "Sound3.wav"
+editable = false
 context_menu_enabled = false
-selecting_enabled = false
 
-[node name="Button" type="Button" parent="Sound7"]
+[node name="Sound8" type="KinematicBody2D" parent="." groups=["Sound"]]
+visible = false
+position = Vector2( 303, 881 )
+z_index = 10
+input_pickable = true
+
+[node name="Button" type="Button" parent="Sound8"]
 margin_left = 89.0
 margin_top = -22.0
 margin_right = 125.0
@@ -537,25 +713,38 @@ custom_styles/normal = SubResource( 7 )
 icon = ExtResource( 6 )
 script = ExtResource( 9 )
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Sound7/Button"]
-stream = ExtResource( 2 )
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Sound8/Button"]
+stream = ExtResource( 17 )
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Sound7"]
+[node name="Sprite" type="Sprite" parent="Sound8/Button"]
+position = Vector2( 120, -459 )
+scale = Vector2( 10.5, 4.375 )
+texture = ExtResource( 24 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sound8"]
 position = Vector2( -13.5, -2 )
 shape = SubResource( 2 )
 
-[node name="Area2D" type="Area2D" parent="Sound7"]
+[node name="Area2D" type="Area2D" parent="Sound8"]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Sound7/Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sound8/Area2D"]
 position = Vector2( 6, -2 )
 shape = SubResource( 12 )
 
-[node name="Sound8" type="KinematicBody2D" parent="." groups=["Sound"]]
-visible = false
-position = Vector2( 303, 881 )
-z_index = 10
-input_pickable = true
-script = ExtResource( 5 )
+[node name="CheckBox8" type="TextureButton" parent="Sound8" groups=["CheckBox"]]
+margin_left = 145.0
+margin_top = -41.0
+margin_right = 238.0
+margin_bottom = 38.0
+texture_normal = ExtResource( 25 )
+
+[node name="EditName" type="TextureButton" parent="Sound8"]
+margin_left = 134.0
+margin_top = -20.9999
+margin_right = 238.0
+margin_bottom = 74.0001
+rect_scale = Vector2( 0.35, 0.35 )
+texture_normal = ExtResource( 27 )
 
 [node name="LineEdit" type="LineEdit" parent="Sound8"]
 margin_left = -77.0
@@ -574,10 +763,16 @@ custom_styles/read_only = SubResource( 9 )
 custom_styles/focus = SubResource( 10 )
 custom_styles/normal = SubResource( 11 )
 text = "Sound4.wav"
+editable = false
 context_menu_enabled = false
-selecting_enabled = false
 
-[node name="Button" type="Button" parent="Sound8"]
+[node name="Sound9" type="KinematicBody2D" parent="." groups=["Sound"]]
+visible = false
+position = Vector2( 303, 689 )
+z_index = 10
+input_pickable = true
+
+[node name="Button" type="Button" parent="Sound9"]
 margin_left = 89.0
 margin_top = -22.0
 margin_right = 125.0
@@ -590,25 +785,39 @@ custom_styles/normal = SubResource( 7 )
 icon = ExtResource( 6 )
 script = ExtResource( 9 )
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Sound8/Button"]
-stream = ExtResource( 17 )
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Sound9/Button"]
+stream = ExtResource( 10 )
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Sound8"]
+[node name="Sprite" type="Sprite" parent="Sound9/Button"]
+visible = false
+position = Vector2( 120, -271 )
+scale = Vector2( 10.5, 4.375 )
+texture = ExtResource( 24 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sound9"]
 position = Vector2( -13.5, -2 )
 shape = SubResource( 2 )
 
-[node name="Area2D" type="Area2D" parent="Sound8"]
+[node name="Area2D" type="Area2D" parent="Sound9"]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Sound8/Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sound9/Area2D"]
 position = Vector2( 6, -2 )
 shape = SubResource( 12 )
 
-[node name="Sound9" type="KinematicBody2D" parent="." groups=["Sound"]]
-visible = false
-position = Vector2( 303, 689 )
-z_index = 10
-input_pickable = true
-script = ExtResource( 5 )
+[node name="CheckBox9" type="TextureButton" parent="Sound9" groups=["CheckBox"]]
+margin_left = 145.0
+margin_top = -37.0
+margin_right = 238.0
+margin_bottom = 42.0
+texture_normal = ExtResource( 25 )
+
+[node name="EditName" type="TextureButton" parent="Sound9"]
+margin_left = 134.0
+margin_top = -17.0
+margin_right = 238.0
+margin_bottom = 78.0
+rect_scale = Vector2( 0.35, 0.35 )
+texture_normal = ExtResource( 27 )
 
 [node name="LineEdit" type="LineEdit" parent="Sound9"]
 margin_left = -77.0
@@ -627,61 +836,14 @@ custom_styles/read_only = SubResource( 9 )
 custom_styles/focus = SubResource( 10 )
 custom_styles/normal = SubResource( 11 )
 text = "Sound1.wav"
+editable = false
 context_menu_enabled = false
-selecting_enabled = false
-
-[node name="Button" type="Button" parent="Sound9"]
-margin_left = 89.0
-margin_top = -22.0
-margin_right = 125.0
-margin_bottom = 17.0
-custom_styles/hover = SubResource( 3 )
-custom_styles/pressed = SubResource( 4 )
-custom_styles/focus = SubResource( 5 )
-custom_styles/disabled = SubResource( 6 )
-custom_styles/normal = SubResource( 7 )
-icon = ExtResource( 6 )
-script = ExtResource( 9 )
-
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Sound9/Button"]
-stream = ExtResource( 10 )
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Sound9"]
-position = Vector2( -13.5, -2 )
-shape = SubResource( 2 )
-
-[node name="Area2D" type="Area2D" parent="Sound9"]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Sound9/Area2D"]
-position = Vector2( 6, -2 )
-shape = SubResource( 12 )
 
 [node name="Sound10" type="KinematicBody2D" parent="." groups=["Sound"]]
 visible = false
 position = Vector2( 303, 749 )
 z_index = 10
 input_pickable = true
-script = ExtResource( 5 )
-
-[node name="LineEdit" type="LineEdit" parent="Sound10"]
-margin_left = -77.0
-margin_top = -17.0
-margin_right = 94.0
-margin_bottom = 14.0
-mouse_filter = 2
-custom_colors/cursor_color = Color( 0, 0, 0, 1 )
-custom_colors/clear_button_color_pressed = Color( 0, 0, 0, 1 )
-custom_colors/font_color_selected = Color( 0, 0, 0, 1 )
-custom_colors/font_color = Color( 0, 0, 0, 1 )
-custom_colors/clear_button_color = Color( 0, 0, 0, 1 )
-custom_colors/font_color_uneditable = Color( 0, 0, 0, 1 )
-custom_fonts/font = SubResource( 8 )
-custom_styles/read_only = SubResource( 9 )
-custom_styles/focus = SubResource( 10 )
-custom_styles/normal = SubResource( 11 )
-text = "Sound2.wav"
-context_menu_enabled = false
-selecting_enabled = false
 
 [node name="Button" type="Button" parent="Sound10"]
 margin_left = 89.0
@@ -698,6 +860,11 @@ script = ExtResource( 9 )
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Sound10/Button"]
 stream = ExtResource( 19 )
+
+[node name="Sprite" type="Sprite" parent="Sound10/Button"]
+position = Vector2( 120, -335 )
+scale = Vector2( 10.5, 4.375 )
+texture = ExtResource( 24 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Sound10"]
 position = Vector2( -13.5, -2 )
@@ -725,12 +892,92 @@ cast_to = Vector2( 0, -40 )
 position = Vector2( 6, -2 )
 shape = SubResource( 12 )
 
+[node name="CheckBox10" type="TextureButton" parent="Sound10" groups=["CheckBox"]]
+margin_left = 145.0
+margin_top = -36.0
+margin_right = 238.0
+margin_bottom = 43.0
+texture_normal = ExtResource( 25 )
+
+[node name="EditName" type="TextureButton" parent="Sound10"]
+margin_left = 134.0
+margin_top = -15.9999
+margin_right = 238.0
+margin_bottom = 79.0001
+rect_scale = Vector2( 0.35, 0.35 )
+texture_normal = ExtResource( 27 )
+
+[node name="LineEdit" type="LineEdit" parent="Sound10"]
+margin_left = -77.0
+margin_top = -17.0
+margin_right = 94.0
+margin_bottom = 14.0
+mouse_filter = 2
+custom_colors/cursor_color = Color( 0, 0, 0, 1 )
+custom_colors/clear_button_color_pressed = Color( 0, 0, 0, 1 )
+custom_colors/font_color_selected = Color( 0, 0, 0, 1 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_colors/clear_button_color = Color( 0, 0, 0, 1 )
+custom_colors/font_color_uneditable = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 8 )
+custom_styles/read_only = SubResource( 9 )
+custom_styles/focus = SubResource( 10 )
+custom_styles/normal = SubResource( 11 )
+text = "Sound2.wav"
+editable = false
+context_menu_enabled = false
+
 [node name="Sound11" type="KinematicBody2D" parent="." groups=["Sound"]]
 visible = false
 position = Vector2( 303, 815 )
 z_index = 10
 input_pickable = true
-script = ExtResource( 5 )
+
+[node name="Button" type="Button" parent="Sound11"]
+margin_left = 89.0
+margin_top = -22.0
+margin_right = 125.0
+margin_bottom = 17.0
+custom_styles/hover = SubResource( 3 )
+custom_styles/pressed = SubResource( 4 )
+custom_styles/focus = SubResource( 5 )
+custom_styles/disabled = SubResource( 6 )
+custom_styles/normal = SubResource( 7 )
+icon = ExtResource( 6 )
+script = ExtResource( 9 )
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Sound11/Button"]
+stream = ExtResource( 12 )
+
+[node name="Sprite" type="Sprite" parent="Sound11/Button"]
+position = Vector2( 120, -401 )
+scale = Vector2( 10.5, 4.375 )
+texture = ExtResource( 24 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sound11"]
+position = Vector2( -13.5, -2 )
+shape = SubResource( 2 )
+
+[node name="Area2D" type="Area2D" parent="Sound11"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sound11/Area2D"]
+position = Vector2( 6, -2 )
+shape = SubResource( 12 )
+
+[node name="CheckBox11" type="TextureButton" parent="Sound11" groups=["CheckBox"]]
+margin_left = 145.0
+margin_top = -39.0
+margin_right = 238.0
+margin_bottom = 40.0
+texture_normal = ExtResource( 25 )
+
+[node name="EditName" type="TextureButton" parent="Sound11"]
+margin_left = 134.0
+margin_top = -18.9999
+margin_right = 238.0
+margin_bottom = 76.0001
+rect_scale = Vector2( 0.35, 0.35 )
+texture_normal = ExtResource( 27 )
 
 [node name="LineEdit" type="LineEdit" parent="Sound11"]
 margin_left = -77.0
@@ -749,10 +996,16 @@ custom_styles/read_only = SubResource( 9 )
 custom_styles/focus = SubResource( 10 )
 custom_styles/normal = SubResource( 11 )
 text = "Sound3.wav"
+editable = false
 context_menu_enabled = false
-selecting_enabled = false
 
-[node name="Button" type="Button" parent="Sound11"]
+[node name="Sound12" type="KinematicBody2D" parent="." groups=["Sound"]]
+visible = false
+position = Vector2( 303, 881 )
+z_index = 10
+input_pickable = true
+
+[node name="Button" type="Button" parent="Sound12"]
 margin_left = 89.0
 margin_top = -22.0
 margin_right = 125.0
@@ -765,25 +1018,38 @@ custom_styles/normal = SubResource( 7 )
 icon = ExtResource( 6 )
 script = ExtResource( 9 )
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Sound11/Button"]
-stream = ExtResource( 12 )
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Sound12/Button"]
+stream = ExtResource( 22 )
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Sound11"]
+[node name="Sprite" type="Sprite" parent="Sound12/Button"]
+position = Vector2( 120, -467 )
+scale = Vector2( 10.5, 4.375 )
+texture = ExtResource( 24 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sound12"]
 position = Vector2( -13.5, -2 )
 shape = SubResource( 2 )
 
-[node name="Area2D" type="Area2D" parent="Sound11"]
+[node name="Area2D" type="Area2D" parent="Sound12"]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Sound11/Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sound12/Area2D"]
 position = Vector2( 6, -2 )
 shape = SubResource( 12 )
 
-[node name="Sound12" type="KinematicBody2D" parent="." groups=["Sound"]]
-visible = false
-position = Vector2( 303, 881 )
-z_index = 10
-input_pickable = true
-script = ExtResource( 5 )
+[node name="CheckBox12" type="TextureButton" parent="Sound12" groups=["CheckBox"]]
+margin_left = 145.0
+margin_top = -41.0
+margin_right = 238.0
+margin_bottom = 38.0
+texture_normal = ExtResource( 25 )
+
+[node name="EditName" type="TextureButton" parent="Sound12"]
+margin_left = 134.0
+margin_top = -20.9999
+margin_right = 238.0
+margin_bottom = 74.0001
+rect_scale = Vector2( 0.35, 0.35 )
+texture_normal = ExtResource( 27 )
 
 [node name="LineEdit" type="LineEdit" parent="Sound12"]
 margin_left = -77.0
@@ -802,10 +1068,16 @@ custom_styles/read_only = SubResource( 9 )
 custom_styles/focus = SubResource( 10 )
 custom_styles/normal = SubResource( 11 )
 text = "Sound4.wav"
+editable = false
 context_menu_enabled = false
-selecting_enabled = false
 
-[node name="Button" type="Button" parent="Sound12"]
+[node name="Sound13" type="KinematicBody2D" parent="." groups=["Sound"]]
+visible = false
+position = Vector2( 303, 689 )
+z_index = 10
+input_pickable = true
+
+[node name="Button" type="Button" parent="Sound13"]
 margin_left = 89.0
 margin_top = -22.0
 margin_right = 125.0
@@ -818,25 +1090,38 @@ custom_styles/normal = SubResource( 7 )
 icon = ExtResource( 6 )
 script = ExtResource( 9 )
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Sound12/Button"]
-stream = ExtResource( 22 )
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Sound13/Button"]
+stream = ExtResource( 18 )
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Sound12"]
+[node name="Sprite" type="Sprite" parent="Sound13/Button"]
+position = Vector2( 120, -271 )
+scale = Vector2( 10.5, 4.375 )
+texture = ExtResource( 24 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sound13"]
 position = Vector2( -13.5, -2 )
 shape = SubResource( 2 )
 
-[node name="Area2D" type="Area2D" parent="Sound12"]
+[node name="Area2D" type="Area2D" parent="Sound13"]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Sound12/Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sound13/Area2D"]
 position = Vector2( 6, -2 )
 shape = SubResource( 12 )
 
-[node name="Sound13" type="KinematicBody2D" parent="." groups=["Sound"]]
-visible = false
-position = Vector2( 303, 689 )
-z_index = 10
-input_pickable = true
-script = ExtResource( 5 )
+[node name="CheckBox13" type="TextureButton" parent="Sound13" groups=["CheckBox"]]
+margin_left = 145.0
+margin_top = -37.0
+margin_right = 238.0
+margin_bottom = 42.0
+texture_normal = ExtResource( 25 )
+
+[node name="EditName" type="TextureButton" parent="Sound13"]
+margin_left = 134.0
+margin_top = -17.0
+margin_right = 238.0
+margin_bottom = 78.0
+rect_scale = Vector2( 0.35, 0.35 )
+texture_normal = ExtResource( 27 )
 
 [node name="LineEdit" type="LineEdit" parent="Sound13"]
 margin_left = -77.0
@@ -855,61 +1140,14 @@ custom_styles/read_only = SubResource( 9 )
 custom_styles/focus = SubResource( 10 )
 custom_styles/normal = SubResource( 11 )
 text = "Sound1.wav"
+editable = false
 context_menu_enabled = false
-selecting_enabled = false
-
-[node name="Button" type="Button" parent="Sound13"]
-margin_left = 89.0
-margin_top = -22.0
-margin_right = 125.0
-margin_bottom = 17.0
-custom_styles/hover = SubResource( 3 )
-custom_styles/pressed = SubResource( 4 )
-custom_styles/focus = SubResource( 5 )
-custom_styles/disabled = SubResource( 6 )
-custom_styles/normal = SubResource( 7 )
-icon = ExtResource( 6 )
-script = ExtResource( 9 )
-
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Sound13/Button"]
-stream = ExtResource( 18 )
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Sound13"]
-position = Vector2( -13.5, -2 )
-shape = SubResource( 2 )
-
-[node name="Area2D" type="Area2D" parent="Sound13"]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Sound13/Area2D"]
-position = Vector2( 6, -2 )
-shape = SubResource( 12 )
 
 [node name="Sound14" type="KinematicBody2D" parent="." groups=["Sound"]]
 visible = false
 position = Vector2( 303, 749 )
 z_index = 10
 input_pickable = true
-script = ExtResource( 5 )
-
-[node name="LineEdit" type="LineEdit" parent="Sound14"]
-margin_left = -77.0
-margin_top = -17.0
-margin_right = 94.0
-margin_bottom = 14.0
-mouse_filter = 2
-custom_colors/cursor_color = Color( 0, 0, 0, 1 )
-custom_colors/clear_button_color_pressed = Color( 0, 0, 0, 1 )
-custom_colors/font_color_selected = Color( 0, 0, 0, 1 )
-custom_colors/font_color = Color( 0, 0, 0, 1 )
-custom_colors/clear_button_color = Color( 0, 0, 0, 1 )
-custom_colors/font_color_uneditable = Color( 0, 0, 0, 1 )
-custom_fonts/font = SubResource( 8 )
-custom_styles/read_only = SubResource( 9 )
-custom_styles/focus = SubResource( 10 )
-custom_styles/normal = SubResource( 11 )
-text = "Sound2.wav"
-context_menu_enabled = false
-selecting_enabled = false
 
 [node name="Button" type="Button" parent="Sound14"]
 margin_left = 89.0
@@ -926,6 +1164,11 @@ script = ExtResource( 9 )
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Sound14/Button"]
 stream = ExtResource( 8 )
+
+[node name="Sprite" type="Sprite" parent="Sound14/Button"]
+position = Vector2( 120, -335 )
+scale = Vector2( 10.5, 4.375 )
+texture = ExtResource( 24 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Sound14"]
 position = Vector2( -13.5, -2 )
@@ -953,12 +1196,92 @@ cast_to = Vector2( 0, -40 )
 position = Vector2( 6, -2 )
 shape = SubResource( 12 )
 
+[node name="CheckBox14" type="TextureButton" parent="Sound14" groups=["CheckBox"]]
+margin_left = 145.0
+margin_top = -36.0
+margin_right = 238.0
+margin_bottom = 43.0
+texture_normal = ExtResource( 25 )
+
+[node name="EditName" type="TextureButton" parent="Sound14"]
+margin_left = 134.0
+margin_top = -15.9999
+margin_right = 238.0
+margin_bottom = 79.0001
+rect_scale = Vector2( 0.35, 0.35 )
+texture_normal = ExtResource( 27 )
+
+[node name="LineEdit" type="LineEdit" parent="Sound14"]
+margin_left = -77.0
+margin_top = -17.0
+margin_right = 94.0
+margin_bottom = 14.0
+mouse_filter = 2
+custom_colors/cursor_color = Color( 0, 0, 0, 1 )
+custom_colors/clear_button_color_pressed = Color( 0, 0, 0, 1 )
+custom_colors/font_color_selected = Color( 0, 0, 0, 1 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_colors/clear_button_color = Color( 0, 0, 0, 1 )
+custom_colors/font_color_uneditable = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 8 )
+custom_styles/read_only = SubResource( 9 )
+custom_styles/focus = SubResource( 10 )
+custom_styles/normal = SubResource( 11 )
+text = "Sound2.wav"
+editable = false
+context_menu_enabled = false
+
 [node name="Sound15" type="KinematicBody2D" parent="." groups=["Sound"]]
 visible = false
 position = Vector2( 303, 815 )
 z_index = 10
 input_pickable = true
-script = ExtResource( 5 )
+
+[node name="Button" type="Button" parent="Sound15"]
+margin_left = 89.0
+margin_top = -22.0
+margin_right = 125.0
+margin_bottom = 17.0
+custom_styles/hover = SubResource( 3 )
+custom_styles/pressed = SubResource( 4 )
+custom_styles/focus = SubResource( 5 )
+custom_styles/disabled = SubResource( 6 )
+custom_styles/normal = SubResource( 7 )
+icon = ExtResource( 6 )
+script = ExtResource( 9 )
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Sound15/Button"]
+stream = ExtResource( 11 )
+
+[node name="Sprite" type="Sprite" parent="Sound15/Button"]
+position = Vector2( 120, -401 )
+scale = Vector2( 10.5, 4.375 )
+texture = ExtResource( 24 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sound15"]
+position = Vector2( -13.5, -2 )
+shape = SubResource( 2 )
+
+[node name="Area2D" type="Area2D" parent="Sound15"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sound15/Area2D"]
+position = Vector2( 6, -2 )
+shape = SubResource( 12 )
+
+[node name="CheckBox15" type="TextureButton" parent="Sound15" groups=["CheckBox"]]
+margin_left = 145.0
+margin_top = -39.0
+margin_right = 238.0
+margin_bottom = 40.0
+texture_normal = ExtResource( 25 )
+
+[node name="EditName" type="TextureButton" parent="Sound15"]
+margin_left = 134.0
+margin_top = -18.9999
+margin_right = 238.0
+margin_bottom = 76.0001
+rect_scale = Vector2( 0.35, 0.35 )
+texture_normal = ExtResource( 27 )
 
 [node name="LineEdit" type="LineEdit" parent="Sound15"]
 margin_left = -77.0
@@ -977,10 +1300,16 @@ custom_styles/read_only = SubResource( 9 )
 custom_styles/focus = SubResource( 10 )
 custom_styles/normal = SubResource( 11 )
 text = "Sound3.wav"
+editable = false
 context_menu_enabled = false
-selecting_enabled = false
 
-[node name="Button" type="Button" parent="Sound15"]
+[node name="Sound16" type="KinematicBody2D" parent="." groups=["Sound"]]
+visible = false
+position = Vector2( 303, 881 )
+z_index = 10
+input_pickable = true
+
+[node name="Button" type="Button" parent="Sound16"]
 margin_left = 89.0
 margin_top = -22.0
 margin_right = 125.0
@@ -993,25 +1322,38 @@ custom_styles/normal = SubResource( 7 )
 icon = ExtResource( 6 )
 script = ExtResource( 9 )
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Sound15/Button"]
-stream = ExtResource( 11 )
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Sound16/Button"]
+stream = ExtResource( 13 )
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Sound15"]
+[node name="Sprite" type="Sprite" parent="Sound16/Button"]
+position = Vector2( 120, -467 )
+scale = Vector2( 10.5, 4.375 )
+texture = ExtResource( 24 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sound16"]
 position = Vector2( -13.5, -2 )
 shape = SubResource( 2 )
 
-[node name="Area2D" type="Area2D" parent="Sound15"]
+[node name="Area2D" type="Area2D" parent="Sound16"]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Sound15/Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sound16/Area2D"]
 position = Vector2( 6, -2 )
 shape = SubResource( 12 )
 
-[node name="Sound16" type="KinematicBody2D" parent="." groups=["Sound"]]
-visible = false
-position = Vector2( 303, 881 )
-z_index = 10
-input_pickable = true
-script = ExtResource( 5 )
+[node name="CheckBox16" type="TextureButton" parent="Sound16" groups=["CheckBox"]]
+margin_left = 145.0
+margin_top = -41.0
+margin_right = 238.0
+margin_bottom = 38.0
+texture_normal = ExtResource( 25 )
+
+[node name="EditName" type="TextureButton" parent="Sound16"]
+margin_left = 134.0
+margin_top = -20.9999
+margin_right = 238.0
+margin_bottom = 74.0001
+rect_scale = Vector2( 0.35, 0.35 )
+texture_normal = ExtResource( 27 )
 
 [node name="LineEdit" type="LineEdit" parent="Sound16"]
 margin_left = -77.0
@@ -1030,98 +1372,51 @@ custom_styles/read_only = SubResource( 9 )
 custom_styles/focus = SubResource( 10 )
 custom_styles/normal = SubResource( 11 )
 text = "Sound4.wav"
+editable = false
 context_menu_enabled = false
-selecting_enabled = false
 
-[node name="Button" type="Button" parent="Sound16"]
-margin_left = 89.0
-margin_top = -22.0
-margin_right = 125.0
-margin_bottom = 17.0
-custom_styles/hover = SubResource( 3 )
-custom_styles/pressed = SubResource( 4 )
-custom_styles/focus = SubResource( 5 )
-custom_styles/disabled = SubResource( 6 )
-custom_styles/normal = SubResource( 7 )
-icon = ExtResource( 6 )
-script = ExtResource( 9 )
-
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Sound16/Button"]
-stream = ExtResource( 13 )
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Sound16"]
-position = Vector2( -13.5, -2 )
-shape = SubResource( 2 )
-
-[node name="Area2D" type="Area2D" parent="Sound16"]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Sound16/Area2D"]
-position = Vector2( 6, -2 )
-shape = SubResource( 12 )
+[node name="SelectedSound" type="Label" parent="."]
+margin_left = 1128.0
+margin_top = 920.0
+margin_right = 1696.0
+margin_bottom = 968.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 13 )
+text = "Sound"
+align = 1
+valign = 1
 
 [connection signal="body_entered" from="CheckIfSoundInPanel" to="." method="_on_CheckIfSoundInPanel_body_entered"]
 [connection signal="body_exited" from="CheckIfSoundInPanel" to="." method="_on_CheckIfSoundInPanel_body_exited"]
-[connection signal="text_changed" from="Sound1/LineEdit" to="Sound1" method="_on_LineEdit_text_changed"]
-[connection signal="text_entered" from="Sound1/LineEdit" to="Sound1" method="_on_LineEdit_text_entered"]
-[connection signal="area_entered" from="Sound1/Area2D" to="Sound1" method="_on_Area2D_area_entered"]
-[connection signal="area_exited" from="Sound1/Area2D" to="Sound1" method="_on_Area2D_area_exited"]
-[connection signal="text_changed" from="Sound2/LineEdit" to="Sound2" method="_on_LineEdit_text_changed"]
-[connection signal="text_entered" from="Sound2/LineEdit" to="Sound2" method="_on_LineEdit_text_entered"]
-[connection signal="area_entered" from="Sound2/Area2D" to="Sound2" method="_on_Area2D_area_entered"]
-[connection signal="area_exited" from="Sound2/Area2D" to="Sound2" method="_on_Area2D_area_exited"]
-[connection signal="text_changed" from="Sound3/LineEdit" to="Sound3" method="_on_LineEdit_text_changed"]
-[connection signal="text_entered" from="Sound3/LineEdit" to="Sound3" method="_on_LineEdit_text_entered"]
-[connection signal="area_entered" from="Sound3/Area2D" to="Sound3" method="_on_Area2D_area_entered"]
-[connection signal="area_exited" from="Sound3/Area2D" to="Sound3" method="_on_Area2D_area_exited"]
-[connection signal="text_changed" from="Sound4/LineEdit" to="Sound4" method="_on_LineEdit_text_changed"]
-[connection signal="text_entered" from="Sound4/LineEdit" to="Sound4" method="_on_LineEdit_text_entered"]
-[connection signal="area_entered" from="Sound4/Area2D" to="Sound4" method="_on_Area2D_area_entered"]
-[connection signal="area_exited" from="Sound4/Area2D" to="Sound4" method="_on_Area2D_area_exited"]
-[connection signal="text_changed" from="Sound5/LineEdit" to="Sound5" method="_on_LineEdit_text_changed"]
-[connection signal="text_entered" from="Sound5/LineEdit" to="Sound5" method="_on_LineEdit_text_entered"]
-[connection signal="area_entered" from="Sound5/Area2D" to="Sound5" method="_on_Area2D_area_entered"]
-[connection signal="area_exited" from="Sound5/Area2D" to="Sound5" method="_on_Area2D_area_exited"]
-[connection signal="text_changed" from="Sound6/LineEdit" to="Sound6" method="_on_LineEdit_text_changed"]
-[connection signal="text_entered" from="Sound6/LineEdit" to="Sound6" method="_on_LineEdit_text_entered"]
-[connection signal="area_entered" from="Sound6/Area2D" to="Sound6" method="_on_Area2D_area_entered"]
-[connection signal="area_exited" from="Sound6/Area2D" to="Sound6" method="_on_Area2D_area_exited"]
-[connection signal="text_changed" from="Sound7/LineEdit" to="Sound7" method="_on_LineEdit_text_changed"]
-[connection signal="text_entered" from="Sound7/LineEdit" to="Sound7" method="_on_LineEdit_text_entered"]
-[connection signal="area_entered" from="Sound7/Area2D" to="Sound7" method="_on_Area2D_area_entered"]
-[connection signal="area_exited" from="Sound7/Area2D" to="Sound7" method="_on_Area2D_area_exited"]
-[connection signal="text_changed" from="Sound8/LineEdit" to="Sound8" method="_on_LineEdit_text_changed"]
-[connection signal="text_entered" from="Sound8/LineEdit" to="Sound8" method="_on_LineEdit_text_entered"]
-[connection signal="area_entered" from="Sound8/Area2D" to="Sound8" method="_on_Area2D_area_entered"]
-[connection signal="area_exited" from="Sound8/Area2D" to="Sound8" method="_on_Area2D_area_exited"]
-[connection signal="text_changed" from="Sound9/LineEdit" to="Sound9" method="_on_LineEdit_text_changed"]
-[connection signal="text_entered" from="Sound9/LineEdit" to="Sound9" method="_on_LineEdit_text_entered"]
-[connection signal="area_entered" from="Sound9/Area2D" to="Sound9" method="_on_Area2D_area_entered"]
-[connection signal="area_exited" from="Sound9/Area2D" to="Sound9" method="_on_Area2D_area_exited"]
-[connection signal="text_changed" from="Sound10/LineEdit" to="Sound10" method="_on_LineEdit_text_changed"]
-[connection signal="text_entered" from="Sound10/LineEdit" to="Sound10" method="_on_LineEdit_text_entered"]
-[connection signal="area_entered" from="Sound10/Area2D" to="Sound10" method="_on_Area2D_area_entered"]
-[connection signal="area_exited" from="Sound10/Area2D" to="Sound10" method="_on_Area2D_area_exited"]
-[connection signal="text_changed" from="Sound11/LineEdit" to="Sound11" method="_on_LineEdit_text_changed"]
-[connection signal="text_entered" from="Sound11/LineEdit" to="Sound11" method="_on_LineEdit_text_entered"]
-[connection signal="area_entered" from="Sound11/Area2D" to="Sound11" method="_on_Area2D_area_entered"]
-[connection signal="area_exited" from="Sound11/Area2D" to="Sound11" method="_on_Area2D_area_exited"]
-[connection signal="text_changed" from="Sound12/LineEdit" to="Sound12" method="_on_LineEdit_text_changed"]
-[connection signal="text_entered" from="Sound12/LineEdit" to="Sound12" method="_on_LineEdit_text_entered"]
-[connection signal="area_entered" from="Sound12/Area2D" to="Sound12" method="_on_Area2D_area_entered"]
-[connection signal="area_exited" from="Sound12/Area2D" to="Sound12" method="_on_Area2D_area_exited"]
-[connection signal="text_changed" from="Sound13/LineEdit" to="Sound13" method="_on_LineEdit_text_changed"]
-[connection signal="text_entered" from="Sound13/LineEdit" to="Sound13" method="_on_LineEdit_text_entered"]
-[connection signal="area_entered" from="Sound13/Area2D" to="Sound13" method="_on_Area2D_area_entered"]
-[connection signal="area_exited" from="Sound13/Area2D" to="Sound13" method="_on_Area2D_area_exited"]
-[connection signal="text_changed" from="Sound14/LineEdit" to="Sound14" method="_on_LineEdit_text_changed"]
-[connection signal="text_entered" from="Sound14/LineEdit" to="Sound14" method="_on_LineEdit_text_entered"]
-[connection signal="area_entered" from="Sound14/Area2D" to="Sound14" method="_on_Area2D_area_entered"]
-[connection signal="area_exited" from="Sound14/Area2D" to="Sound14" method="_on_Area2D_area_exited"]
-[connection signal="text_changed" from="Sound15/LineEdit" to="Sound15" method="_on_LineEdit_text_changed"]
-[connection signal="text_entered" from="Sound15/LineEdit" to="Sound15" method="_on_LineEdit_text_entered"]
-[connection signal="area_entered" from="Sound15/Area2D" to="Sound15" method="_on_Area2D_area_entered"]
-[connection signal="area_exited" from="Sound15/Area2D" to="Sound15" method="_on_Area2D_area_exited"]
-[connection signal="text_changed" from="Sound16/LineEdit" to="Sound16" method="_on_LineEdit_text_changed"]
-[connection signal="text_entered" from="Sound16/LineEdit" to="Sound16" method="_on_LineEdit_text_entered"]
-[connection signal="area_entered" from="Sound16/Area2D" to="Sound16" method="_on_Area2D_area_entered"]
-[connection signal="area_exited" from="Sound16/Area2D" to="Sound16" method="_on_Area2D_area_exited"]
+[connection signal="text_changed" from="Sound1/LineEdit" to="." method="_on_LineEdit_text_changed"]
+[connection signal="text_entered" from="Sound1/LineEdit" to="." method="_on_LineEdit_text_entered"]
+[connection signal="text_changed" from="Sound2/LineEdit" to="." method="_on_LineEdit_text_changed"]
+[connection signal="text_entered" from="Sound2/LineEdit" to="." method="_on_LineEdit_text_entered"]
+[connection signal="text_changed" from="Sound3/LineEdit" to="." method="_on_LineEdit_text_changed"]
+[connection signal="text_entered" from="Sound3/LineEdit" to="." method="_on_LineEdit_text_entered"]
+[connection signal="text_changed" from="Sound4/LineEdit" to="." method="_on_LineEdit_text_changed"]
+[connection signal="text_entered" from="Sound4/LineEdit" to="." method="_on_LineEdit_text_entered"]
+[connection signal="text_changed" from="Sound5/LineEdit" to="." method="_on_LineEdit_text_changed"]
+[connection signal="text_entered" from="Sound5/LineEdit" to="." method="_on_LineEdit_text_entered"]
+[connection signal="text_changed" from="Sound6/LineEdit" to="." method="_on_LineEdit_text_changed"]
+[connection signal="text_entered" from="Sound6/LineEdit" to="." method="_on_LineEdit_text_entered"]
+[connection signal="text_changed" from="Sound7/LineEdit" to="." method="_on_LineEdit_text_changed"]
+[connection signal="text_entered" from="Sound7/LineEdit" to="." method="_on_LineEdit_text_entered"]
+[connection signal="text_changed" from="Sound8/LineEdit" to="." method="_on_LineEdit_text_changed"]
+[connection signal="text_entered" from="Sound8/LineEdit" to="." method="_on_LineEdit_text_entered"]
+[connection signal="text_changed" from="Sound9/LineEdit" to="." method="_on_LineEdit_text_changed"]
+[connection signal="text_entered" from="Sound9/LineEdit" to="." method="_on_LineEdit_text_entered"]
+[connection signal="text_changed" from="Sound10/LineEdit" to="." method="_on_LineEdit_text_changed"]
+[connection signal="text_entered" from="Sound10/LineEdit" to="." method="_on_LineEdit_text_entered"]
+[connection signal="text_changed" from="Sound11/LineEdit" to="." method="_on_LineEdit_text_changed"]
+[connection signal="text_entered" from="Sound11/LineEdit" to="." method="_on_LineEdit_text_entered"]
+[connection signal="text_changed" from="Sound12/LineEdit" to="." method="_on_LineEdit_text_changed"]
+[connection signal="text_entered" from="Sound12/LineEdit" to="." method="_on_LineEdit_text_entered"]
+[connection signal="text_changed" from="Sound13/LineEdit" to="." method="_on_LineEdit_text_changed"]
+[connection signal="text_entered" from="Sound13/LineEdit" to="." method="_on_LineEdit_text_entered"]
+[connection signal="text_changed" from="Sound14/LineEdit" to="." method="_on_LineEdit_text_changed"]
+[connection signal="text_entered" from="Sound14/LineEdit" to="." method="_on_LineEdit_text_entered"]
+[connection signal="text_changed" from="Sound15/LineEdit" to="." method="_on_LineEdit_text_changed"]
+[connection signal="text_entered" from="Sound15/LineEdit" to="." method="_on_LineEdit_text_entered"]
+[connection signal="text_changed" from="Sound16/LineEdit" to="." method="_on_LineEdit_text_changed"]
+[connection signal="text_entered" from="Sound16/LineEdit" to="." method="_on_LineEdit_text_entered"]

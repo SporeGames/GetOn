@@ -31,6 +31,11 @@ public class DragAndDropSound : KinematicBody2D
 		
 		originalPosition = Position;
 	}
+
+	public void ChangeText(string name)
+	{
+		GD.Print("name:",name);
+	}
 	
 	public override void _Input(InputEvent @event)
 	{

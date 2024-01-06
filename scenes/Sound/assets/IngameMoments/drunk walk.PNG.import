@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Drunkwalk3.png-769c0d583f72698c2c8fec86c9dce229.stex"
+path="res://.import/drunk walk.PNG-5bc83d1976ddd213da286926f15b7d1a.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://scenes/Sound/assets/IngameMoments/Drunkwalk3.png"
-dest_files=[ "res://.import/Drunkwalk3.png-769c0d583f72698c2c8fec86c9dce229.stex" ]
+source_file="res://scenes/Sound/assets/IngameMoments/drunk walk.PNG"
+dest_files=[ "res://.import/drunk walk.PNG-5bc83d1976ddd213da286926f15b7d1a.stex" ]
 
 [params]
 
