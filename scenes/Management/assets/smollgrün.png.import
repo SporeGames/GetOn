@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/B_Home_pressed.png-6a93555c7b8cef3d83c2ed2926f1b14a.stex"
+path="res://.import/smollgrün.png-5f0bead8b10168ddf8be2b0e44d33bdb.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://SharedAssets/ui/B_Home_pressed.png"
-dest_files=[ "res://.import/B_Home_pressed.png-6a93555c7b8cef3d83c2ed2926f1b14a.stex" ]
+source_file="res://scenes/Management/assets/smollgrün.png"
+dest_files=[ "res://.import/smollgrün.png-5f0bead8b10168ddf8be2b0e44d33bdb.stex" ]
 
 [params]
 

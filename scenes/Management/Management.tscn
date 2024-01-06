@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=18 format=2]
 
 [ext_resource path="res://scenes/Management/Management.cs" type="Script" id=1]
 [ext_resource path="res://SharedAssets/UI/Management.PNG" type="Texture" id=2]
@@ -6,12 +6,24 @@
 [ext_resource path="res://scenes/Management/assets/vereinfachtes Management background.jpg" type="Texture" id=4]
 [ext_resource path="res://scenes/Management/NoteBox.tscn" type="PackedScene" id=5]
 [ext_resource path="res://SharedAssets/TopBar.tscn" type="PackedScene" id=6]
+[ext_resource path="res://scenes/Management/assets/B_art.png" type="Texture" id=7]
+[ext_resource path="res://scenes/Management/assets/B_Story.png" type="Texture" id=8]
+[ext_resource path="res://scenes/Management/assets/IMG_0334.PNG" type="Texture" id=9]
+[ext_resource path="res://scenes/Management/assets/B_GameDesign.png" type="Texture" id=10]
+[ext_resource path="res://scenes/Management/assets/B_sound.png" type="Texture" id=11]
 [ext_resource path="res://SharedAssets/font/BAHNSCHRIFT 1.TTF" type="DynamicFontData" id=12]
-[ext_resource path="res://scenes/Management/assets/Legend.png" type="Texture" id=16]
-[ext_resource path="res://scenes/Management/OpenLegend.gd" type="Script" id=17]
+[ext_resource path="res://scenes/Management/assets/B_programming.png" type="Texture" id=13]
+[ext_resource path="res://scenes/Sound/assets/DoneButton.png" type="Texture" id=14]
+[ext_resource path="res://scenes/Management/assets/cursor.png" type="Texture" id=15]
 
-[sub_resource type="DynamicFont" id=3]
-size = 18
+[sub_resource type="DynamicFont" id=2]
+size = 26
+use_mipmaps = true
+use_filter = true
+font_data = ExtResource( 12 )
+
+[sub_resource type="DynamicFont" id=1]
+size = 40
 use_mipmaps = true
 use_filter = true
 font_data = ExtResource( 12 )
@@ -21,127 +33,209 @@ script = ExtResource( 1 )
 NoteScene = ExtResource( 3 )
 
 [node name="Background" type="Sprite" parent="."]
-position = Vector2( 957.34, 565.238 )
-scale = Vector2( 1.4523, 1.51403 )
-texture = ExtResource( 4 )
+position = Vector2( 960.654, 540.339 )
+scale = Vector2( 0.998277, 0.99752 )
+texture = ExtResource( 9 )
 
-[node name="SubmitButton" type="Button" parent="."]
-margin_left = 1803.0
-margin_top = 1047.0
-margin_right = 1901.0
-margin_bottom = 1097.0
+[node name="Labels" type="Node" parent="."]
+
+[node name="Village" type="RichTextLabel" parent="Labels"]
+margin_left = 1544.0
+margin_top = 195.0
+margin_right = 1671.0
+margin_bottom = 267.0
+mouse_filter = 2
+custom_fonts/normal_font = SubResource( 2 )
+text = "Village"
+
+[node name="VillageSketch" type="RichTextLabel" parent="Labels"]
+margin_left = 752.0
+margin_top = 187.0
+margin_right = 879.0
+margin_bottom = 259.0
+mouse_filter = 2
+custom_fonts/normal_font = SubResource( 2 )
+text = "Village Sketch"
+scroll_active = false
+
+[node name="MCMech" type="RichTextLabel" parent="Labels"]
+margin_left = 55.0
+margin_top = 927.0
+margin_right = 203.0
+margin_bottom = 1023.0
+mouse_filter = 2
+custom_fonts/normal_font = SubResource( 2 )
+text = "Main character mechanics"
+scroll_active = false
+
+[node name="MCVoice" type="RichTextLabel" parent="Labels"]
+margin_left = 893.0
+margin_top = 829.0
+margin_right = 1041.0
+margin_bottom = 925.0
+mouse_filter = 2
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+custom_fonts/normal_font = SubResource( 2 )
+text = "Main character voicelines"
+scroll_active = false
+
+[node name="MC" type="RichTextLabel" parent="Labels"]
+margin_left = 1428.0
+margin_top = 902.0
+margin_right = 1576.0
+margin_bottom = 998.0
+mouse_filter = 2
+custom_fonts/normal_font = SubResource( 2 )
+text = "Main character"
+scroll_active = false
+
+[node name="SubmitButton" type="TextureButton" parent="."]
+margin_left = 1686.0
+margin_top = 886.0
+margin_right = 1890.0
+margin_bottom = 984.0
 rect_min_size = Vector2( 50, 50 )
-text = "SUBMIT"
+texture_normal = ExtResource( 14 )
+
+[node name="RichTextLabel" type="RichTextLabel" parent="SubmitButton"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -48.0
+margin_top = -17.0
+margin_right = 75.0
+margin_bottom = 26.0
+mouse_filter = 2
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+custom_fonts/normal_font = SubResource( 1 )
+text = "Done"
 
 [node name="Boxes" type="Node" parent="."]
 
 [node name="TrisTraits" parent="Boxes" instance=ExtResource( 5 )]
-position = Vector2( 102, 721 )
+position = Vector2( 123, 697 )
 scale = Vector2( 0.8, 0.8 )
 ValidIDs = PoolStringArray(  )
 
 [node name="TrisSketch" parent="Boxes" instance=ExtResource( 5 )]
-position = Vector2( 500, 743 )
+position = Vector2( 482, 761 )
 scale = Vector2( 0.8, 0.8 )
 ValidIDs = PoolStringArray(  )
 
 [node name="CharMovement" parent="Boxes" instance=ExtResource( 5 )]
-position = Vector2( 500, 989 )
+position = Vector2( 706, 993 )
 scale = Vector2( 0.8, 0.8 )
 ValidIDs = PoolStringArray(  )
 
 [node name="NPCSketch" parent="Boxes" instance=ExtResource( 5 )]
-position = Vector2( 577, 393 )
+position = Vector2( 692, 389 )
 scale = Vector2( 0.8, 0.8 )
 ValidIDs = PoolStringArray(  )
 
 [node name="TrisVillage" parent="Boxes" instance=ExtResource( 5 )]
-position = Vector2( 1610, 563 )
+position = Vector2( 1495, 609 )
 scale = Vector2( 0.8, 0.8 )
 ValidIDs = PoolStringArray(  )
 
 [node name="IdleAnim" parent="Boxes" instance=ExtResource( 5 )]
-position = Vector2( 1204, 729 )
+position = Vector2( 1196, 764 )
 scale = Vector2( 0.8, 0.8 )
 ValidIDs = PoolStringArray(  )
 
 [node name="QuestButcher" parent="Boxes" instance=ExtResource( 5 )]
-position = Vector2( 1152, 512 )
+position = Vector2( 1126, 510 )
 scale = Vector2( 0.8, 0.8 )
 ValidIDs = PoolStringArray(  )
 
 [node name="NPCVoice" parent="Boxes" instance=ExtResource( 5 )]
-position = Vector2( 870, 548 )
+position = Vector2( 829, 544 )
 scale = Vector2( 0.8, 0.8 )
 ValidIDs = PoolStringArray(  )
 
 [node name="VillageImpl" parent="Boxes" instance=ExtResource( 5 )]
-position = Vector2( 1377, 281 )
+position = Vector2( 1218, 274 )
 scale = Vector2( 0.8, 0.8 )
 ValidIDs = PoolStringArray(  )
 
 [node name="Notes" type="Node" parent="."]
 
 [node name="TrisTraits" parent="Notes" instance=ExtResource( 3 )]
-position = Vector2( 98, 90 )
+position = Vector2( 147, 200 )
 scale = Vector2( 0.5, 0.5 )
 Text = "Main character: Traits"
-ValidColorID = 4
-
-[node name="TrisSketch" parent="Notes" instance=ExtResource( 3 )]
-position = Vector2( 251, 90 )
-scale = Vector2( 0.5, 0.5 )
-Text = "Main character: Sketch"
-
-[node name="CharMovement" parent="Notes" instance=ExtResource( 3 )]
-position = Vector2( 405, 90 )
-scale = Vector2( 0.5, 0.5 )
-Text = "Character movement"
-ValidColorID = 1
-
-[node name="NPCSketch" parent="Notes" instance=ExtResource( 3 )]
-position = Vector2( 98, 238 )
-scale = Vector2( 0.5, 0.5 )
-Text = "NPCs: Sketch"
-
-[node name="TrisVillage" parent="Notes" instance=ExtResource( 3 )]
-position = Vector2( 251, 238 )
-scale = Vector2( 0.5, 0.5 )
-Text = "Implement main character into village"
-ValidColorID = 1
-
-[node name="IdleAnim" parent="Notes" instance=ExtResource( 3 )]
-position = Vector2( 405, 238 )
-scale = Vector2( 0.5, 0.5 )
-Text = "Idle animations"
-
-[node name="QuestButcher" parent="Notes" instance=ExtResource( 3 )]
-position = Vector2( 98, 389 )
-scale = Vector2( 0.5, 0.5 )
-Text = "Quest: Butcher"
+Hint = "Deciding on the traits/attributes that the main character will have.
+"
 ValidColorID = 2
 
-[node name="NPCVoice" parent="Notes" instance=ExtResource( 3 )]
-position = Vector2( 251, 389 )
+[node name="TrisSketch" parent="Notes" instance=ExtResource( 3 )]
+position = Vector2( 300, 200 )
 scale = Vector2( 0.5, 0.5 )
-Text = "NPC voicelines"
-ValidColorID = 3
-
-[node name="VillageImpl" parent="Notes" instance=ExtResource( 3 )]
-position = Vector2( 405, 389 )
-scale = Vector2( 0.5, 0.5 )
-Text = "Implement Village"
+Text = "Main character: Sketch"
+Hint = "Drawing multiple sketches in order to figure out how the design will look like"
 ValidColorID = 1
 
-[node name="ColorSelector" type="GridContainer" parent="."]
+[node name="CharMovement" parent="Notes" instance=ExtResource( 3 )]
+position = Vector2( 454, 200 )
+scale = Vector2( 0.5, 0.5 )
+Text = "Main character movement"
+Hint = "Implementing the movement of the main character."
+ValidColorID = 3
+
+[node name="NPCSketch" parent="Notes" instance=ExtResource( 3 )]
+position = Vector2( 147, 348 )
+scale = Vector2( 0.5, 0.5 )
+Text = "NPCs: Sketch"
+Hint = "Drawing multiple sketches in order to figure out how the design will look like.
+"
+ValidColorID = 1
+
+[node name="TrisVillage" parent="Notes" instance=ExtResource( 3 )]
+position = Vector2( 300, 348 )
+scale = Vector2( 0.5, 0.5 )
+Text = "Implement main character into village"
+Hint = "Implementing the main character into the village."
+ValidColorID = 3
+
+[node name="IdleAnim" parent="Notes" instance=ExtResource( 3 )]
+position = Vector2( 454, 348 )
+scale = Vector2( 0.5, 0.5 )
+Text = "Main character animations"
+Hint = "Animating the main character."
+ValidColorID = 1
+
+[node name="QuestButcher" parent="Notes" instance=ExtResource( 3 )]
+position = Vector2( 147, 499 )
+scale = Vector2( 0.5, 0.5 )
+Text = "Quest: Butcher"
+Hint = "Deciding what the quest \"The Butcher\" should contains."
+ValidColorID = 4
+
+[node name="NPCVoice" parent="Notes" instance=ExtResource( 3 )]
+position = Vector2( 300, 499 )
+scale = Vector2( 0.5, 0.5 )
+Text = "NPC voicelines"
+Hint = "Recording the voice lines for the NPCs."
+ValidColorID = 5
+
+[node name="VillageImpl" parent="Notes" instance=ExtResource( 3 )]
+position = Vector2( 454, 499 )
+scale = Vector2( 0.5, 0.5 )
+Text = "Implement Village"
+Hint = "Implementing the village into the game."
+ValidColorID = 3
+
+[node name="ColorSelector" type="Control" parent="."]
 anchor_left = 0.5
 anchor_right = 0.5
-margin_left = 1795.0
-margin_top = 303.0
-margin_right = 1919.0
-margin_bottom = 763.0
+margin_left = 1719.0
+margin_top = 353.0
+margin_right = 1863.0
+margin_bottom = 877.0
+mouse_filter = 2
 
 [node name="Text" type="RichTextLabel" parent="ColorSelector"]
+visible = false
 margin_right = 124.0
 margin_bottom = 20.0
 rect_min_size = Vector2( 40, 20 )
@@ -149,70 +243,50 @@ custom_colors/default_color = Color( 0, 0, 0, 1 )
 text = "Select..."
 scroll_active = false
 
-[node name="Orange" type="Button" parent="ColorSelector"]
-margin_top = 24.0
-margin_right = 124.0
-margin_bottom = 74.0
+[node name="Orange" type="TextureButton" parent="ColorSelector"]
+margin_left = 16.0
+margin_top = 27.0
+margin_right = 120.0
+margin_bottom = 122.0
 rect_min_size = Vector2( 50, 50 )
-custom_fonts/font = SubResource( 3 )
-text = "Art"
+hint_tooltip = "Art"
+texture_normal = ExtResource( 7 )
 
-[node name="Blue" type="Button" parent="ColorSelector"]
-margin_top = 78.0
-margin_right = 124.0
-margin_bottom = 128.0
+[node name="Green" type="TextureButton" parent="ColorSelector"]
+margin_left = 15.0
+margin_top = 123.0
+margin_right = 121.0
+margin_bottom = 215.0
 rect_min_size = Vector2( 50, 50 )
-custom_fonts/font = SubResource( 3 )
-text = "Programming"
+hint_tooltip = "Narrative"
+texture_normal = ExtResource( 8 )
 
-[node name="Purple" type="Button" parent="ColorSelector"]
-margin_top = 132.0
-margin_right = 124.0
-margin_bottom = 182.0
+[node name="Blue" type="TextureButton" parent="ColorSelector"]
+margin_left = 19.0
+margin_top = 221.0
+margin_right = 115.0
+margin_bottom = 319.0
 rect_min_size = Vector2( 50, 50 )
-custom_fonts/font = SubResource( 3 )
-text = "Game Design"
+hint_tooltip = "Programming"
+texture_normal = ExtResource( 13 )
 
-[node name="Yellow" type="Button" parent="ColorSelector"]
-margin_top = 186.0
-margin_right = 124.0
-margin_bottom = 236.0
+[node name="Purple" type="TextureButton" parent="ColorSelector"]
+margin_left = 20.0
+margin_top = 317.0
+margin_right = 116.0
+margin_bottom = 416.0
 rect_min_size = Vector2( 50, 50 )
-custom_fonts/font = SubResource( 3 )
-text = "Sound"
+hint_tooltip = "Game Design"
+texture_normal = ExtResource( 10 )
 
-[node name="Green" type="Button" parent="ColorSelector"]
-margin_top = 240.0
-margin_right = 124.0
-margin_bottom = 290.0
+[node name="Yellow" type="TextureButton" parent="ColorSelector"]
+margin_left = 22.0
+margin_top = 418.0
+margin_right = 117.0
+margin_bottom = 512.0
 rect_min_size = Vector2( 50, 50 )
-custom_fonts/font = SubResource( 3 )
-text = "Narrative"
-
-[node name="Black" type="Button" parent="ColorSelector"]
-margin_top = 294.0
-margin_right = 124.0
-margin_bottom = 344.0
-rect_min_size = Vector2( 50, 50 )
-custom_fonts/font = SubResource( 3 )
-text = "Management"
-
-[node name="Legend2" type="Button" parent="ColorSelector"]
-visible = false
-margin_top = 348.0
-margin_right = 98.0
-margin_bottom = 398.0
-rect_min_size = Vector2( 50, 50 )
-text = "Legend"
-script = ExtResource( 17 )
-
-[node name="Legend" type="Sprite" parent="ColorSelector/Legend2"]
-modulate = Color( 0.964706, 1, 1, 1 )
-light_mask = 0
-position = Vector2( -201, -542 )
-scale = Vector2( 1.1402, 1.1485 )
-z_index = 1
-texture = ExtResource( 16 )
+hint_tooltip = "Sound"
+texture_normal = ExtResource( 11 )
 
 [node name="TopBar" parent="." instance=ExtResource( 6 )]
 LeftImage = ExtResource( 2 )
@@ -229,4 +303,9 @@ Sound - yellow
 
 If you are done with this task click DONE."
 
-[connection signal="pressed" from="ColorSelector/Legend2" to="ColorSelector/Legend2" method="_on_Legend2_pressed"]
+[node name="MouseFollower" type="Sprite" parent="."]
+visible = false
+rotation = -3.14159
+scale = Vector2( 0.33, 0.33 )
+z_index = 2048
+texture = ExtResource( 15 )
