@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://scenes/Sound/assets/Art.png" type="Texture" id=1]
 [ext_resource path="res://SharedAssets/RoomPerson.tscn" type="PackedScene" id=2]
@@ -7,6 +7,21 @@
 [ext_resource path="res://scenes/Rooms/BaseRoom.cs" type="Script" id=5]
 [ext_resource path="res://SharedAssets/ui/B_menu.png" type="Texture" id=6]
 [ext_resource path="res://scenes/Sound/assets/IMG_0260.PNG" type="Texture" id=7]
+[ext_resource path="res://SharedAssets/OutlineShader.tres" type="Shader" id=8]
+
+[sub_resource type="ShaderMaterial" id=1]
+resource_local_to_scene = true
+shader = ExtResource( 8 )
+shader_param/blink_strength = 0.1
+shader_param/blink_rate = 2.0
+shader_param/outline_color = Color( 1, 1, 1, 1 )
+
+[sub_resource type="ShaderMaterial" id=2]
+resource_local_to_scene = true
+shader = ExtResource( 8 )
+shader_param/blink_strength = 0.1
+shader_param/blink_rate = 2.0
+shader_param/outline_color = Color( 1, 1, 1, 1 )
 
 [node name="SoundArtRoom" type="Node2D"]
 script = ExtResource( 5 )
@@ -20,7 +35,8 @@ texture = ExtResource( 1 )
 GameSpecialization = 4
 
 [node name="PersonSprite" parent="SoundPerson" index="0"]
-position = Vector2( 706, 559 )
+material = SubResource( 1 )
+position = Vector2( 704, 557 )
 scale = Vector2( 0.501812, 0.49002 )
 texture = ExtResource( 7 )
 
@@ -36,32 +52,37 @@ Title = "Julia"
 Texts = PoolStringArray( "Hi again! Could you help me find fitting sounds for specific in-game moments of our new project\? We will make an action-adventure in a futuristic setting, it’s gonna be so awesome!" )
 SceneToLoad = "Sound"
 
-[node name="ResultDialogue" parent="SoundPerson" index="3"]
+[node name="EpicFailDialogue" parent="SoundPerson" index="3"]
+Title = "Julia"
+Texts = PoolStringArray( "I was really excited to work with a fellow sound designer, but it seems like you\'re not quite there yet…" )
+
+[node name="TalkAgainDialoge" parent="SoundPerson" index="4"]
+Title = "Julia, Sound-Design"
+Texts = PoolStringArray( "Oh, you’re back! I don’t have anything for you to do right now, so feel free to look around! " )
+
+[node name="ResultDialogue" parent="SoundPerson" index="5"]
 position = Vector2( 4, 709 )
 Title = "Julia"
 Texts = PoolStringArray( "Inspiring, truly inspiring! Are you a relative of Hans Zimmer perhaps\? You can be really proud of your work." )
 ResultThreshold = 38
 
-[node name="ResultDialogue2" parent="SoundPerson" index="4"]
+[node name="ResultDialogue2" parent="SoundPerson" index="6"]
 position = Vector2( 4, 709 )
 Title = "Julia"
 Texts = PoolStringArray( "Not bad, you just need some more exercise." )
 ResultThreshold = 23
 
-[node name="ResultDialogue3" parent="SoundPerson" index="5"]
+[node name="ResultDialogue3" parent="SoundPerson" index="7"]
 position = Vector2( 4, 709 )
 Title = "Julia"
 Texts = PoolStringArray( "Hm… looks like you´re tone deaf. " )
-
-[node name="EpicFailDialogue" parent="SoundPerson" index="6"]
-Title = "Julia"
-Texts = PoolStringArray( "I was really excited to work with a fellow sound designer, but it seems like you\'re not quite there yet…" )
 
 [node name="ArtPerson" parent="." instance=ExtResource( 2 )]
 position = Vector2( 0, 0 )
 GameSpecialization = 3
 
 [node name="PersonSprite" parent="ArtPerson" index="0"]
+material = SubResource( 2 )
 position = Vector2( 1588, 701 )
 scale = Vector2( 0.593156, 0.588542 )
 texture = ExtResource( 3 )
@@ -78,13 +99,17 @@ Title = "Ash"
 Texts = PoolStringArray( "Do you have your portfolio ready\?" )
 SceneToLoad = "Art"
 
-[node name="ResultDialogue" parent="ArtPerson" index="3"]
+[node name="TalkAgainDialoge" parent="ArtPerson" index="4"]
+Title = "Ash, Artist"
+Texts = PoolStringArray( "Huh\? Didn’t you already give me your portfolio\?" )
+
+[node name="ResultDialogue" parent="ArtPerson" index="5"]
 position = Vector2( 0, 710 )
 
-[node name="ResultDialogue2" parent="ArtPerson" index="4"]
+[node name="ResultDialogue2" parent="ArtPerson" index="6"]
 position = Vector2( 0, 710 )
 
-[node name="ResultDialogue3" parent="ArtPerson" index="5"]
+[node name="ResultDialogue3" parent="ArtPerson" index="7"]
 position = Vector2( 0, 710 )
 
 [node name="BackButton" type="TextureButton" parent="."]

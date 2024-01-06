@@ -13,6 +13,7 @@ public class RoomPerson : Node2D {
 	
 	private DialogueBox _welcomeDialogueBox;
 	private DialogueBox _epicFailDialogueBox;
+	private DialogueBox _talkAgainDialogueBox;
 	private List<DialogueBox> _dialogueBoxes = new List<DialogueBox>();
 	private TextureButton _interactButton;
 	private Sprite _sprite;
@@ -21,6 +22,7 @@ public class RoomPerson : Node2D {
 		_shared = GetNode<SharedNode>("/root/SharedNode");
 		_welcomeDialogueBox = GetNode<DialogueBox>("WelcomeDialogue");
 		_epicFailDialogueBox = GetNode<DialogueBox>("EpicFailDialogue");
+		_talkAgainDialogueBox = GetNode<DialogueBox>("TalkAgainDialogue");
 		_interactButton = GetNode<TextureButton>("InteractButton");
 		_sprite = GetNode<Sprite>("PersonSprite");
 		_interactButton.Connect("pressed", this, nameof(OnInteractButtonPressed));
@@ -44,6 +46,7 @@ public class RoomPerson : Node2D {
 	
 	private void OnInteractButtonPressed() {
 		if (HasCompletedThisTask()) {
+			_talkAgainDialogueBox.Visible = true;
 			return;
 		}
 		_welcomeDialogueBox.Visible = true;
