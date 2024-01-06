@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Game Design.PNG-a80a202fce152e75058bea02787c7f0f.stex"
+path="res://.import/Layout3.png-4be59957aa0aa2e8488fca8c44c4c9dc.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://SharedAssets/UI/Game Design.PNG"
-dest_files=[ "res://.import/Game Design.PNG-a80a202fce152e75058bea02787c7f0f.stex" ]
+source_file="res://scenes/GameSelectionRoom/assets/Layout3.png"
+dest_files=[ "res://.import/Layout3.png-4be59957aa0aa2e8488fca8c44c4c9dc.stex" ]
 
 [params]
 

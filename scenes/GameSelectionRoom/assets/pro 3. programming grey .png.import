@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Game Design.PNG-a80a202fce152e75058bea02787c7f0f.stex"
+path="res://.import/pro 3. programming grey .png-688c34e49dc9228e34deed5bc64f7378.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://SharedAssets/UI/Game Design.PNG"
-dest_files=[ "res://.import/Game Design.PNG-a80a202fce152e75058bea02787c7f0f.stex" ]
+source_file="res://scenes/GameSelectionRoom/assets/pro 3. programming grey .png"
+dest_files=[ "res://.import/pro 3. programming grey .png-688c34e49dc9228e34deed5bc64f7378.stex" ]
 
 [params]
 
