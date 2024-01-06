@@ -15,6 +15,8 @@ namespace GetOn.SharedAssets {
 		[Export(PropertyHint.Range, "0.01, 0.3")] public float ReadTime = 0.2f; // How long to wait after the text is done animating before the next text is shown if AutoNext is true
 		[Export] public string SceneToLoad; // If LoadSceneAfter is true, this is the scene to load. Simple name is enough, e.g. "Management" to load "scenes/Management/Management.tscn"
 		[Export] public int ResultThreshold = 0; // Result threshold for this dialogue box. If the player has less than this amount of points, the box will not be shown.
+		[Export] public bool IsUnique = false; // If true, this box will only be shown once per game
+		[Export] public string UniqueID = ""; // The name of this box. Used to check if it has been shown before.
 
 		private RichTextLabel _text;
 		private RichTextLabel _title;
@@ -47,6 +49,10 @@ namespace GetOn.SharedAssets {
 			_text.Text = "";
 			_icon.Texture = Icon;
 			_textToAnimate = Texts[0];
+			if (_sharedNode.SeenDialogues.Contains(UniqueID)) {
+				Visible = false;
+				return;
+			}
 			if (AutoNext) {
 				_timer.WaitTime = AutoNextTime;
 				_timer.Start();
@@ -88,6 +94,9 @@ namespace GetOn.SharedAssets {
 				_currentIndex++;
 			}
 			else if (!timerTriggered) {
+				if (IsUnique) {
+					_sharedNode.SeenDialogues.Add(UniqueID);
+				}
 				if (LoadSceneAfter) {
 					_sharedNode.SwitchScene("res://scenes/" + SceneToLoad + "/" + SceneToLoad + ".tscn");
 				}
