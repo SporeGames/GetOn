@@ -3,8 +3,9 @@ using Godot;
 namespace GetOn.scenes.Rooms {
     public class Decoration : Node2D {
 
-        [Export] public Texture Texture;
-        [Export(PropertyHint.Range, "0, 5")] public float NormalScale = 0.5f;
+        [Export] public Texture PopupTexture;
+        [Export] public Texture SmallTexture;
+        [Export(PropertyHint.Range, "0, 5")] public float SmallScale = 1.0f;
         [Export(PropertyHint.Range, "0, 5")] public float PopupScale = 1.0f;
     
         private TextureButton _decorationSprite;
@@ -19,10 +20,10 @@ namespace GetOn.scenes.Rooms {
             _popUp = GetNode<Node2D>("Popup");
             _popUpSprite = GetNode<Sprite>("Popup/Sprite");
             _popUp.Visible = false;
-            _popUpSprite.Texture = Texture;
+            _popUpSprite.Texture = PopupTexture;
             _popUpSprite.Scale = new Vector2(PopupScale, PopupScale);
-            _decorationSprite.TextureNormal = Texture;
-            _decorationSprite.RectScale = new Vector2(NormalScale, NormalScale);
+            _decorationSprite.TextureNormal = SmallTexture;
+            _decorationSprite.RectScale = new Vector2(SmallScale, SmallScale);
             _decorationSprite.Connect("mouse_entered", this, nameof(OnMouseEntered));
             _decorationSprite.Connect("mouse_exited", this, nameof(OnMouseExited));
             _decorationSprite.Connect("pressed", this, nameof(OnClicked));

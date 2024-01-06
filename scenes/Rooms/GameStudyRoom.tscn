@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://scenes/Rooms/BaseRoom.cs" type="Script" id=1]
 [ext_resource path="res://scenes/GameStudy/assets/GameStudiesGrob.png" type="Texture" id=2]
@@ -8,6 +8,7 @@
 [ext_resource path="res://SharedAssets/ui/B_menu.png" type="Texture" id=6]
 [ext_resource path="res://SharedAssets/Decoration.tscn" type="PackedScene" id=7]
 [ext_resource path="res://SharedAssets/OutlineShader.tres" type="Shader" id=8]
+[ext_resource path="res://SharedAssets/ui/B_Base1.png" type="Texture" id=9]
 
 [sub_resource type="ShaderMaterial" id=1]
 resource_local_to_scene = true
@@ -73,5 +74,7 @@ texture_pressed = ExtResource( 5 )
 expand = true
 
 [node name="Deco" parent="." instance=ExtResource( 7 )]
+PopupTexture = ExtResource( 9 )
+SmallTexture = ExtResource( 5 )
 
 [editable path="GSPerson"]
