@@ -4,7 +4,7 @@
 [ext_resource path="res://SharedAssets/RoomPerson.tscn" type="PackedScene" id=2]
 [ext_resource path="res://scenes/Rooms/BaseRoom.cs" type="Script" id=3]
 [ext_resource path="res://SharedAssets/UI/B_menu.png" type="Texture" id=4]
-[ext_resource path="res://SharedAssets/ui/B_Home_pressed.png" type="Texture" id=5]
+[ext_resource path="res://SharedAssets/UserInterface/B_Home_pressed.png" type="Texture" id=5]
 [ext_resource path="res://SharedAssets/dialogue_characters/prog.PNG" type="Texture" id=6]
 [ext_resource path="res://scenes/Programming/assets/Programming/Popup.PNG" type="Texture" id=7]
 [ext_resource path="res://SharedAssets/OutlineShader.tres" type="Shader" id=8]
@@ -13,6 +13,7 @@
 [ext_resource path="res://scenes/Programming/assets/Programming.PNG" type="Texture" id=11]
 [ext_resource path="res://scenes/Programming/assets/Programming/Popup2.PNG" type="Texture" id=12]
 [ext_resource path="res://SharedAssets/dialogue_characters/Programming_blank.png" type="Texture" id=13]
+
 
 [sub_resource type="ShaderMaterial" id=1]
 resource_local_to_scene = true

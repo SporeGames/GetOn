@@ -1,4 +1,4 @@
-[gd_scene load_steps=68 format=2]
+[gd_scene load_steps=69 format=2]
 
 [ext_resource path="res://SharedAssets/font/BAHNSCHRIFT 1.TTF" type="DynamicFontData" id=1]
 [ext_resource path="res://scenes/GameStudy/assets/Kärtchen2.png" type="Texture" id=2]
@@ -40,6 +40,7 @@
 [ext_resource path="res://scenes/GameStudy/SpawningGames.cs" type="Script" id=38]
 [ext_resource path="res://scenes/GameStudy/assets/MittleresKärtchen.png" type="Texture" id=39]
 [ext_resource path="res://SharedAssets/Anleitungen/Game studies  ohne Hintergrund.PNG" type="Texture" id=40]
+[ext_resource path="res://SharedAssets/anleitung_gameStud.png" type="Texture" id=41]
 
 [sub_resource type="StyleBoxEmpty" id=49]
 
@@ -249,6 +250,15 @@ texture = ExtResource( 22 )
 Game = 5
 LeftImage = ExtResource( 40 )
 RightImage = ExtResource( 11 )
+HelpImage = ExtResource( 41 )
+Description = "Instructions:
+
+There are two glass cases. 
+The left one is for consoles, the right one is for video games.
+Click on one glass case and start dragging the objects to their corresponding places.
+By pressing BACK, you will get back to the overview of both cases.
+
+Once you have filled both glass cases a DONE button will appear so you can submit your task.  "
 
 [node name="OpenConsoles" type="Button" parent="."]
 margin_left = 306.0

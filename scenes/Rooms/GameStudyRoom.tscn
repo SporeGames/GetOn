@@ -1,15 +1,14 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://scenes/Rooms/BaseRoom.cs" type="Script" id=1]
 [ext_resource path="res://scenes/GameStudy/assets/GameStudies3.png" type="Texture" id=2]
 [ext_resource path="res://SharedAssets/RoomPerson.tscn" type="PackedScene" id=3]
 [ext_resource path="res://scenes/GameStudy/assets/Standing_Charakter.PNG" type="Texture" id=4]
-[ext_resource path="res://SharedAssets/ui/B_Home_pressed.png" type="Texture" id=5]
-[ext_resource path="res://SharedAssets/UI/B_menu.png" type="Texture" id=6]
+[ext_resource path="res://SharedAssets/UserInterface/B_menu.png" type="Texture" id=6]
 [ext_resource path="res://SharedAssets/Decoration.tscn" type="PackedScene" id=7]
 [ext_resource path="res://SharedAssets/OutlineShader.tres" type="Shader" id=8]
-[ext_resource path="res://SharedAssets/ui/B_Base1.png" type="Texture" id=9]
-[ext_resource path="res://SharedAssets/UI/B_Home_pressed.png" type="Texture" id=10]
+[ext_resource path="res://SharedAssets/UserInterface/B_Base1.png" type="Texture" id=9]
+[ext_resource path="res://SharedAssets/UserInterface/B_Home_pressed.png" type="Texture" id=10]
 [ext_resource path="res://SharedAssets/dialogue_characters/Game studies  ohne Hintergrund.PNG" type="Texture" id=11]
 
 [sub_resource type="ShaderMaterial" id=1]
@@ -88,6 +87,6 @@ expand = true
 
 [node name="Deco" parent="." instance=ExtResource( 7 )]
 PopupTexture = ExtResource( 9 )
-SmallTexture = ExtResource( 5 )
+SmallTexture = ExtResource( 10 )
 
 [editable path="GSPerson"]
