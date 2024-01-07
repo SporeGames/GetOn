@@ -43,6 +43,7 @@ public class TopBar : Node2D {
 		_introImageCaption.Text = ImageCaption;
 		_leftSideImage.Texture = LeftImage;
 		_rightSideImage.Texture = RightImage;
+		_leftSideImage.Visible = false;
 		GetNode<Node2D>("Introduction").Visible = true; // Do this so we can still see the scene lol
 	}
 
@@ -51,9 +52,11 @@ public class TopBar : Node2D {
 			_introduction.Visible = false;
 			return;
 		}
+		_leftSideImage.Visible = true;
 		_introduction.Visible = true;
 		_rightSideImage.Visible = false;
 		_closeButton.Visible = false;
+		_introImage.Visible = false;
 		_backgroundColor.Modulate = new Color(0.33f, 0.33f, 0.33f, 0.4f);
 		if (!_shared.HelpButtonPressed.ContainsKey(Game)) {
 			_shared.HelpButtonPressed.Add(Game, 1);
