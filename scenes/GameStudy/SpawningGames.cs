@@ -26,7 +26,7 @@ public class SpawningGames : Node2D
 	private KinematicBody2D _horizon;
 	private KinematicBody2D _stray;
 
-	private List<string> gamesList = new List<string> {"PacMan", "Bioshock", "TennisForTwo","Pong","Horizon","MazeWars","Stray","Starfield","SpaceInvaders","DonkeyKong","Detroit", "Cyberpunk"  };
+	private List<string> gamesList = new List<string> {"PacMan", "Bioshock", "Tennis","Pong","Horizon","MazeWars","Stray","Starfield","SpaceInvaders","DonkeyKong","Detriot", "Cyberpunk"  };
 	//private KinematicBody2D _tennisForTwo;	//private List<KinematicBody2D> gamesListe = new List<KinematicBody2D> {_xBOX,_nES,_gameBoy  };
 	private List<KinematicBody2D> gamesListe;
 	
@@ -38,23 +38,18 @@ public class SpawningGames : Node2D
 	
 	public override void _Ready()
 	{	
-		_xBOX = GetNode<KinematicBody2D>("/root/GameStudy/XBOX");
-		_nES = GetNode<KinematicBody2D>("/root/GameStudy/NES");
-		_gameBoy = GetNode<KinematicBody2D>("/root/GameStudy/GameBoy");
-		_megaDrive1 = GetNode<KinematicBody2D>("/root/GameStudy/MegaDrive1");
-		
-		_tennisForTwo = GetNode<KinematicBody2D>("/root/GameStudy/PopUp/Games/TennisForTwo");
-		_pong = GetNode<KinematicBody2D>("/root/GameStudy/PopUp/Games/Pong");
-		_mazeWars = GetNode<KinematicBody2D>("/root/GameStudy/PopUp/Games/MazeWars");
-		_spaceInvaders = GetNode<KinematicBody2D>("/root/GameStudy/PopUp/Games/SpaceInvaders");
-		_pacMan= GetNode<KinematicBody2D>("/root/GameStudy/PopUp/Games/PacMan");
-		_donkeyKong = GetNode<KinematicBody2D>("/root/GameStudy/PopUp/Games/DonkeyKong");
-		_detriot = GetNode<KinematicBody2D>("/root/GameStudy/PopUp/Games/Detroit");
-		_cyberpunk = GetNode<KinematicBody2D>("/root/GameStudy/PopUp/Games/Cyberpunk");
-		_starfield = GetNode<KinematicBody2D>("/root/GameStudy/PopUp/Games/Starfield");
-		_bioshock = GetNode<KinematicBody2D>("/root/GameStudy/PopUp/Games/Bioshock");
-		_horizon= GetNode<KinematicBody2D>("/root/GameStudy/PopUp/Games/Horizon");
-		_stray= GetNode<KinematicBody2D>("/root/GameStudy/PopUp/Games/Stray");
+		_tennisForTwo = GetNode<KinematicBody2D>("/root/GameStudy/Games/Games/Tennis");	
+		_pong = GetNode<KinematicBody2D>("/root/GameStudy/Games/Games/Pong");
+		_mazeWars = GetNode<KinematicBody2D>("/root/GameStudy/Games/Games/MazeWars");
+		_spaceInvaders = GetNode<KinematicBody2D>("/root/GameStudy/Games/Games/SpaceInvaders");
+		_pacMan= GetNode<KinematicBody2D>("/root/GameStudy/Games/Games/PacMan");
+		_donkeyKong = GetNode<KinematicBody2D>("/root/GameStudy/Games/Games/DonkeyKong");
+		_detriot = GetNode<KinematicBody2D>("/root/GameStudy/Games/Games/Detriot");
+		_cyberpunk = GetNode<KinematicBody2D>("/root/GameStudy/Games/Games/Cyberpunk");
+		_starfield = GetNode<KinematicBody2D>("/root/GameStudy/Games/Games/Starfield");
+		_bioshock = GetNode<KinematicBody2D>("/root/GameStudy/Games/Games/Bioshock");
+		_horizon= GetNode<KinematicBody2D>("/root/GameStudy/Games/Games/Horizon");
+		_stray= GetNode<KinematicBody2D>("/root/GameStudy/Games/Games/Stray");
 		
 		gamesListe = new List<KinematicBody2D> { _pacMan,  _bioshock, _tennisForTwo, _pong, _horizon, _mazeWars, _stray, _starfield, _spaceInvaders, _donkeyKong, _detriot, _cyberpunk  };
 

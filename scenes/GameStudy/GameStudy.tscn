@@ -1,701 +1,1149 @@
-[gd_scene load_steps=73 format=2]
+[gd_scene load_steps=67 format=2]
 
 [ext_resource path="res://SharedAssets/font/BAHNSCHRIFT 1.TTF" type="DynamicFontData" id=1]
-[ext_resource path="res://SharedAssets/music/Play/Music_GameStud.gd" type="Script" id=2]
-[ext_resource path="res://scenes/GameStudy/assets/GameStudieaGameNochmalVerändert.png" type="Texture" id=3]
+[ext_resource path="res://scenes/GameStudy/assets/Kärtchen2.png" type="Texture" id=2]
+[ext_resource path="res://scenes/GameStudy/assets/Kärtchen1.png" type="Texture" id=3]
 [ext_resource path="res://scenes/GameStudy/assets/IMG_0160.png" type="Texture" id=4]
 [ext_resource path="res://scenes/GameStudy/assets/XBox.png" type="Texture" id=5]
 [ext_resource path="res://scenes/GameStudy/assets/GameBoy.png" type="Texture" id=6]
 [ext_resource path="res://scenes/GameStudy/assets/IMG_0173.PNG" type="Texture" id=7]
-[ext_resource path="res://scenes/GameStudy/CheckArea.cs" type="Script" id=8]
-[ext_resource path="res://scenes/GameStudy/DragAndDrop.cs" type="Script" id=9]
+[ext_resource path="res://scenes/GameStudy/DragAndDropConsoles.cs" type="Script" id=8]
+[ext_resource path="res://scenes/GameStudy/SpawningConsoles.cs" type="Script" id=9]
 [ext_resource path="res://SharedAssets/TopBar.tscn" type="PackedScene" id=10]
 [ext_resource path="res://SharedAssets/ui/Game studies.PNG" type="Texture" id=11]
+[ext_resource path="res://scenes/GameStudy/assets/GameStudiesIngame.png" type="Texture" id=12]
+[ext_resource path="res://scenes/Sound/assets/DoneButton.png" type="Texture" id=13]
 [ext_resource path="res://scenes/GameStudy/assets/GameStudies_PopUp.png" type="Texture" id=14]
 [ext_resource path="res://scenes/GameStudy/assets/IMG_0237.PNG" type="Texture" id=15]
 [ext_resource path="res://scenes/GameStudy/assets/IMG_0236.PNG" type="Texture" id=16]
 [ext_resource path="res://scenes/GameStudy/assets/IMG_0239.PNG" type="Texture" id=17]
 [ext_resource path="res://scenes/GameStudy/assets/IMG_0238.PNG" type="Texture" id=18]
-[ext_resource path="res://scenes/GameStudy/SpawningGames.cs" type="Script" id=19]
-[ext_resource path="res://scenes/GameStudy/assets/Games/Stray.PNG" type="Texture" id=20]
-[ext_resource path="res://scenes/GameStudy/PopUpShelf.cs" type="Script" id=21]
-[ext_resource path="res://scenes/GameStudy/assets/PopUpMitKärtchen.png" type="Texture" id=22]
-[ext_resource path="res://scenes/GameStudy/assets/Games/TennisForTwo.PNG" type="Texture" id=23]
-[ext_resource path="res://scenes/GameStudy/assets/Games/Pong.PNG" type="Texture" id=24]
-[ext_resource path="res://scenes/GameStudy/assets/Games/SpaceInvaders.png" type="Texture" id=25]
-[ext_resource path="res://scenes/GameStudy/assets/Games/MazeWars.PNG" type="Texture" id=26]
-[ext_resource path="res://scenes/GameStudy/assets/Games/Cyberpunk.PNG" type="Texture" id=27]
-[ext_resource path="res://scenes/GameStudy/assets/Games/Bioshock.PNG" type="Texture" id=28]
-[ext_resource path="res://scenes/GameStudy/assets/Games/Starfield.PNG" type="Texture" id=29]
-[ext_resource path="res://scenes/GameStudy/assets/Games/Donkey Kong.PNG" type="Texture" id=30]
-[ext_resource path="res://scenes/GameStudy/assets/Games/DetroitBecomeHuman.PNG" type="Texture" id=31]
-[ext_resource path="res://scenes/GameStudy/assets/Games/Horizon Zero Daw.PNG" type="Texture" id=32]
-[ext_resource path="res://scenes/GameStudy/assets/Games/PacMan.png" type="Texture" id=33]
-[ext_resource path="res://scenes/GameStudy/assets/GameStudiesMitVollerVitrine.png" type="Texture" id=34]
+[ext_resource path="res://scenes/GameStudy/assets/RückseiteKarton.png" type="Texture" id=19]
+[ext_resource path="res://scenes/GameStudy/assets/VorderseiteKarton.png" type="Texture" id=20]
+[ext_resource path="res://scenes/GameStudy/Consoles.cs" type="Script" id=21]
+[ext_resource path="res://icon.png" type="Texture" id=22]
+[ext_resource path="res://scenes/GameStudy/assets/GameStudiesIngameGames.png" type="Texture" id=23]
+[ext_resource path="res://scenes/GameStudy/assets/Games/Bioshock.PNG" type="Texture" id=24]
+[ext_resource path="res://scenes/GameStudy/assets/Games/Cyberpunk.PNG" type="Texture" id=25]
+[ext_resource path="res://scenes/GameStudy/assets/Games/DetroitBecomeHuman.PNG" type="Texture" id=26]
+[ext_resource path="res://scenes/GameStudy/assets/Games/MazeWars.PNG" type="Texture" id=27]
+[ext_resource path="res://scenes/GameStudy/assets/Games/PacMan.png" type="Texture" id=28]
+[ext_resource path="res://scenes/GameStudy/assets/Games/Donkey Kong.PNG" type="Texture" id=29]
+[ext_resource path="res://scenes/GameStudy/assets/Games/Horizon Zero Daw.PNG" type="Texture" id=30]
+[ext_resource path="res://scenes/GameStudy/assets/Games/Pong.PNG" type="Texture" id=31]
+[ext_resource path="res://scenes/GameStudy/assets/Games/TennisForTwo.PNG" type="Texture" id=32]
+[ext_resource path="res://scenes/GameStudy/assets/Games/Stray.PNG" type="Texture" id=33]
+[ext_resource path="res://scenes/GameStudy/assets/Games/SpaceInvaders.png" type="Texture" id=34]
+[ext_resource path="res://scenes/GameStudy/assets/GameStudies3.png" type="Texture" id=35]
+[ext_resource path="res://scenes/GameStudy/GameStudy.cs" type="Script" id=36]
+[ext_resource path="res://scenes/GameStudy/assets/Games/Starfield.PNG" type="Texture" id=37]
+[ext_resource path="res://scenes/GameStudy/SpawningGames.cs" type="Script" id=38]
+[ext_resource path="res://scenes/GameStudy/assets/MittleresKärtchen.png" type="Texture" id=39]
 
-[sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 33.5, 47.5 )
+[sub_resource type="StyleBoxEmpty" id=49]
 
-[sub_resource type="RectangleShape2D" id=2]
+[sub_resource type="StyleBoxEmpty" id=50]
+
+[sub_resource type="StyleBoxEmpty" id=51]
+
+[sub_resource type="StyleBoxEmpty" id=52]
+
+[sub_resource type="StyleBoxEmpty" id=53]
+
+[sub_resource type="StyleBoxEmpty" id=66]
+
+[sub_resource type="StyleBoxEmpty" id=67]
+
+[sub_resource type="StyleBoxEmpty" id=68]
+
+[sub_resource type="StyleBoxEmpty" id=69]
+
+[sub_resource type="StyleBoxEmpty" id=70]
+
+[sub_resource type="RectangleShape2D" id=54]
 extents = Vector2( 127.75, 67.5 )
 
-[sub_resource type="RectangleShape2D" id=3]
+[sub_resource type="RectangleShape2D" id=55]
+extents = Vector2( 33.5, 47.5 )
+
+[sub_resource type="RectangleShape2D" id=56]
 extents = Vector2( 112, 79.5 )
 
-[sub_resource type="RectangleShape2D" id=4]
+[sub_resource type="RectangleShape2D" id=57]
 extents = Vector2( 108, 50.5 )
 
-[sub_resource type="RectangleShape2D" id=13]
+[sub_resource type="RectangleShape2D" id=58]
 extents = Vector2( 97.5, 53 )
 
-[sub_resource type="RectangleShape2D" id=14]
+[sub_resource type="RectangleShape2D" id=59]
 extents = Vector2( 113.5, 38.5 )
 
-[sub_resource type="RectangleShape2D" id=15]
+[sub_resource type="RectangleShape2D" id=60]
 extents = Vector2( 69, 47 )
 
-[sub_resource type="RectangleShape2D" id=16]
+[sub_resource type="RectangleShape2D" id=61]
 extents = Vector2( 111.25, 48 )
 
-[sub_resource type="RectangleShape2D" id=5]
-extents = Vector2( 168.5, 66.5 )
-
-[sub_resource type="RectangleShape2D" id=6]
-extents = Vector2( 168, 67 )
-
-[sub_resource type="RectangleShape2D" id=7]
-extents = Vector2( 167.5, 67.5 )
-
-[sub_resource type="RectangleShape2D" id=8]
-extents = Vector2( 167.5, 67.5 )
-
-[sub_resource type="RectangleShape2D" id=17]
-extents = Vector2( 167, 66 )
-
-[sub_resource type="RectangleShape2D" id=18]
-extents = Vector2( 167, 68 )
-
-[sub_resource type="RectangleShape2D" id=19]
-extents = Vector2( 167.5, 68 )
-
-[sub_resource type="RectangleShape2D" id=20]
-extents = Vector2( 169.5, 68.5 )
-
-[sub_resource type="DynamicFont" id=12]
-size = 20
-use_mipmaps = true
+[sub_resource type="DynamicFont" id=62]
+size = 24
+outline_color = Color( 0, 0, 0, 1 )
 font_data = ExtResource( 1 )
 
-[sub_resource type="RectangleShape2D" id=21]
-extents = Vector2( 96.5, 113.5 )
+[sub_resource type="RectangleShape2D" id=63]
+extents = Vector2( 53, 58 )
 
-[sub_resource type="RectangleShape2D" id=22]
-extents = Vector2( 49.5, 63 )
+[sub_resource type="DynamicFont" id=64]
+size = 23
+font_data = ExtResource( 1 )
 
-[sub_resource type="RectangleShape2D" id=23]
-extents = Vector2( 42.5, 63.5 )
+[sub_resource type="RectangleShape2D" id=65]
+extents = Vector2( 176, 95 )
 
-[sub_resource type="RectangleShape2D" id=24]
-extents = Vector2( 41, 61.5 )
+[sub_resource type="RectangleShape2D" id=71]
+extents = Vector2( 140, 206.25 )
 
-[sub_resource type="RectangleShape2D" id=25]
-extents = Vector2( 42.5, 63.5 )
+[sub_resource type="RectangleShape2D" id=72]
+extents = Vector2( 127.5, 96 )
 
-[sub_resource type="RectangleShape2D" id=26]
-extents = Vector2( 42, 63 )
+[sub_resource type="RectangleShape2D" id=73]
+extents = Vector2( 263, 97 )
 
-[sub_resource type="RectangleShape2D" id=27]
-extents = Vector2( 42, 62.5 )
+[sub_resource type="RectangleShape2D" id=74]
+extents = Vector2( 403.5, 77.5 )
 
-[sub_resource type="RectangleShape2D" id=28]
-extents = Vector2( 42.5, 62.5 )
-
-[sub_resource type="RectangleShape2D" id=29]
-extents = Vector2( 41.5, 60 )
-
-[sub_resource type="RectangleShape2D" id=30]
-extents = Vector2( 42, 61.5 )
-
-[sub_resource type="RectangleShape2D" id=31]
-extents = Vector2( 41.5, 62 )
-
-[sub_resource type="RectangleShape2D" id=32]
-extents = Vector2( 42, 62 )
-
-[sub_resource type="RectangleShape2D" id=33]
-extents = Vector2( 43, 62 )
-
-[sub_resource type="RectangleShape2D" id=39]
-extents = Vector2( 142, 81.5 )
-
-[sub_resource type="RectangleShape2D" id=40]
-extents = Vector2( 148, 80.5 )
-
-[sub_resource type="RectangleShape2D" id=41]
-extents = Vector2( 213.5, 79 )
-
-[sub_resource type="RectangleShape2D" id=42]
-extents = Vector2( 138.5, 97.5 )
-
-[sub_resource type="RectangleShape2D" id=43]
-extents = Vector2( 148, 98 )
-
-[sub_resource type="RectangleShape2D" id=44]
-extents = Vector2( 213.5, 95 )
-
-[sub_resource type="RectangleShape2D" id=45]
-extents = Vector2( 530.5, 69 )
-
-[sub_resource type="RectangleShape2D" id=46]
-extents = Vector2( 132.5, 92 )
-
-[sub_resource type="RectangleShape2D" id=47]
-extents = Vector2( 155, 93 )
-
-[sub_resource type="RectangleShape2D" id=48]
-extents = Vector2( 217.5, 94.5 )
+[sub_resource type="DynamicFont" id=75]
+size = 22
+font_data = ExtResource( 1 )
 
 [node name="GameStudy" type="Node2D"]
-
-[node name="Background" type="Sprite" parent="."]
-position = Vector2( 960, 540 )
-texture = ExtResource( 3 )
-
-[node name="BackgroundWithGames" type="Sprite" parent="."]
-visible = false
-position = Vector2( 960, 540 )
-texture = ExtResource( 34 )
-
-[node name="OpenPopUp" type="Button" parent="."]
-margin_left = 928.0
-margin_top = 604.0
-margin_right = 1033.0
-margin_bottom = 667.0
-text = "Shelf"
-
-[node name="GameBoy" type="KinematicBody2D" parent="."]
-position = Vector2( 588, 969 )
-input_pickable = true
-script = ExtResource( 9 )
-
-[node name="Sprite" type="Sprite" parent="GameBoy"]
-position = Vector2( 11, 15 )
-scale = Vector2( 0.1, 0.1 )
-texture = ExtResource( 6 )
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="GameBoy"]
-position = Vector2( 3, 16 )
-shape = SubResource( 1 )
-
-[node name="XBOX" type="KinematicBody2D" parent="."]
-position = Vector2( 395, 964 )
-input_pickable = true
-script = ExtResource( 9 )
-
-[node name="Sprite" type="Sprite" parent="XBOX"]
-position = Vector2( 6.10352e-05, 6.00012 )
-rotation = -0.0349066
-scale = Vector2( 0.4, 0.4 )
-texture = ExtResource( 5 )
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="XBOX"]
-position = Vector2( 3, 8 )
-shape = SubResource( 2 )
-
-[node name="NES" type="KinematicBody2D" parent="."]
-position = Vector2( 949, 948 )
-input_pickable = true
-script = ExtResource( 9 )
-
-[node name="Sprite" type="Sprite" parent="NES"]
-position = Vector2( -20, 38 )
-scale = Vector2( 0.5, 0.5 )
-texture = ExtResource( 4 )
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="NES"]
-position = Vector2( -2, 16.5 )
-shape = SubResource( 3 )
-
-[node name="MegaDrive1" type="KinematicBody2D" parent="."]
-position = Vector2( 1207, 962 )
-input_pickable = true
-script = ExtResource( 9 )
-
-[node name="Sprite" type="Sprite" parent="MegaDrive1"]
-position = Vector2( -1, -16 )
-scale = Vector2( 0.2, 0.2 )
-texture = ExtResource( 7 )
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="MegaDrive1"]
-position = Vector2( -12, 11 )
-shape = SubResource( 4 )
-
-[node name="Atari" type="KinematicBody2D" parent="."]
-position = Vector2( 141, 985 )
-input_pickable = true
-script = ExtResource( 9 )
-
-[node name="Sprite" type="Sprite" parent="Atari"]
-scale = Vector2( 0.25, 0.25 )
-texture = ExtResource( 17 )
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Atari"]
-position = Vector2( -8, -37 )
-shape = SubResource( 13 )
-
-[node name="C64" type="KinematicBody2D" parent="."]
-position = Vector2( 1761, 987 )
-input_pickable = true
-script = ExtResource( 9 )
-
-[node name="Sprite" type="Sprite" parent="C64"]
-position = Vector2( 2, -1 )
-scale = Vector2( 0.2, 0.2 )
-texture = ExtResource( 16 )
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="C64"]
-position = Vector2( 2.5, 7.5 )
-shape = SubResource( 14 )
-
-[node name="SegaSaturn" type="KinematicBody2D" parent="."]
-position = Vector2( 714, 972 )
-input_pickable = true
-script = ExtResource( 9 )
-
-[node name="Sprite" type="Sprite" parent="SegaSaturn"]
-scale = Vector2( 0.2, 0.2 )
-texture = ExtResource( 18 )
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="SegaSaturn"]
-position = Vector2( 9, 12 )
-shape = SubResource( 15 )
-
-[node name="Magnavox" type="KinematicBody2D" parent="."]
-position = Vector2( 1473, 974 )
-input_pickable = true
-script = ExtResource( 9 )
-
-[node name="Sprite" type="Sprite" parent="Magnavox"]
-scale = Vector2( 0.2, 0.2 )
-texture = ExtResource( 15 )
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Magnavox"]
-position = Vector2( 32.75, 24 )
-shape = SubResource( 16 )
-
-[node name="CheckGameBoy" type="Area2D" parent="."]
-position = Vector2( 519, 344 )
-script = ExtResource( 8 )
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="CheckGameBoy"]
-position = Vector2( 1.5, 15.5 )
-shape = SubResource( 5 )
-
-[node name="CheckXBOX" type="Area2D" parent="."]
-position = Vector2( 523, 91 )
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="CheckXBOX"]
-position = Vector2( -12, 17 )
-shape = SubResource( 6 )
-
-[node name="CheckMegaDrive1" type="Area2D" parent="."]
-position = Vector2( 860, 103 )
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="CheckMegaDrive1"]
-position = Vector2( 8.5, 4.5 )
-shape = SubResource( 7 )
-
-[node name="CheckNES" type="Area2D" parent="."]
-position = Vector2( 860, 358 )
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="CheckNES"]
-position = Vector2( 13.5, 3.5 )
-shape = SubResource( 8 )
-
-[node name="CheckAtari" type="Area2D" parent="."]
-position = Vector2( 1228, 106 )
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="CheckAtari"]
-position = Vector2( 11, 5 )
-shape = SubResource( 17 )
-
-[node name="CheckC64" type="Area2D" parent="."]
-position = Vector2( 1233, 353 )
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="CheckC64"]
-position = Vector2( 6, 18 )
-shape = SubResource( 18 )
-
-[node name="CheckSegaSaturn" type="Area2D" parent="."]
-position = Vector2( 1614, 360 )
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="CheckSegaSaturn"]
-position = Vector2( 4.5, 10 )
-shape = SubResource( 19 )
-
-[node name="CheckMagnavox" type="Area2D" parent="."]
-position = Vector2( 1614, 108 )
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="CheckMagnavox"]
-position = Vector2( 3.5, 8.5 )
-shape = SubResource( 20 )
-
-[node name="Submit" type="Button" parent="."]
-margin_left = 1728.0
-margin_top = 19.0
-margin_right = 1895.0
-margin_bottom = 79.0
-text = "Submit"
-
-[node name="Music" type="Node" parent="."]
-script = ExtResource( 2 )
+script = ExtResource( 36 )
 
 [node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 960, 540 )
+texture = ExtResource( 35 )
+
+[node name="SortedSprites" type="Node2D" parent="."]
+
+[node name="xboxArea" type="Sprite" parent="SortedSprites"]
 visible = false
-position = Vector2( -68, 851 )
-texture = ExtResource( 14 )
-offset = Vector2( 268.479, -171.801 )
-
-[node name="Label" type="Label" parent="Sprite"]
-margin_left = 127.0
-margin_top = -317.0
-margin_right = 439.0
-margin_bottom = -18.0
-custom_colors/font_color = Color( 0, 0, 0, 1 )
-custom_fonts/font = SubResource( 12 )
-text = "Hallo dies ist ein text, Bitten lesen sie mich"
-autowrap = true
-
-[node name="DelayTimer" type="Timer" parent="."]
-one_shot = true
-
-[node name="SpawningGames" type="Node2D" parent="."]
-position = Vector2( 1552, 552 )
-z_index = 1
-script = ExtResource( 19 )
-
-[node name="SpawningGames2" type="Sprite" parent="SpawningGames"]
-visible = false
-position = Vector2( -3, 7 )
-texture = ExtResource( 14 )
-
-[node name="Area2D" type="Area2D" parent="SpawningGames"]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="SpawningGames/Area2D"]
-position = Vector2( -9.5, 5.5 )
-shape = SubResource( 21 )
-
-[node name="PopUp" type="Node2D" parent="."]
-visible = false
-position = Vector2( 1001, 542 )
-script = ExtResource( 21 )
-
-[node name="Sprite" type="Sprite" parent="PopUp"]
-position = Vector2( -40.4999, -1.50001 )
+position = Vector2( 770, 276 )
+scale = Vector2( 0.3, 0.3 )
 texture = ExtResource( 22 )
 
-[node name="Games" type="Node2D" parent="PopUp"]
-position = Vector2( -1001, -542 )
-
-[node name="TennisForTwo" type="KinematicBody2D" parent="PopUp/Games"]
+[node name="gameboyArea" type="Sprite" parent="SortedSprites"]
 visible = false
-position = Vector2( 1559, 547 )
-z_index = 1
-input_pickable = true
-script = ExtResource( 9 )
+position = Vector2( 773, 449 )
+scale = Vector2( 0.312502, 0.3 )
+texture = ExtResource( 22 )
 
-[node name="Sprite" type="Sprite" parent="PopUp/Games/TennisForTwo"]
-scale = Vector2( 0.3, 0.3 )
-texture = ExtResource( 23 )
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="PopUp/Games/TennisForTwo"]
-position = Vector2( -0.5, 3 )
-shape = SubResource( 22 )
-
-[node name="Pong" type="KinematicBody2D" parent="PopUp/Games"]
+[node name="nesArea" type="Sprite" parent="SortedSprites"]
 visible = false
-position = Vector2( 1559, 547 )
-z_index = 1
-input_pickable = true
-script = ExtResource( 9 )
-
-[node name="Sprite" type="Sprite" parent="PopUp/Games/Pong"]
+position = Vector2( 445, 753 )
 scale = Vector2( 0.3, 0.3 )
-texture = ExtResource( 24 )
+texture = ExtResource( 22 )
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="PopUp/Games/Pong"]
-position = Vector2( 6.5, -0.5 )
-shape = SubResource( 23 )
-
-[node name="MazeWars" type="KinematicBody2D" parent="PopUp/Games"]
+[node name="c64Area" type="Sprite" parent="SortedSprites"]
 visible = false
-position = Vector2( 1559, 547 )
-z_index = 1
-input_pickable = true
-script = ExtResource( 9 )
-
-[node name="Sprite" type="Sprite" parent="PopUp/Games/MazeWars"]
+position = Vector2( 770, 611 )
 scale = Vector2( 0.3, 0.3 )
-texture = ExtResource( 26 )
+texture = ExtResource( 22 )
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="PopUp/Games/MazeWars"]
-position = Vector2( 7, -0.5 )
-shape = SubResource( 24 )
-
-[node name="SpaceInvaders" type="KinematicBody2D" parent="PopUp/Games"]
+[node name="magnavoxArea" type="Sprite" parent="SortedSprites"]
 visible = false
-position = Vector2( 1559, 547 )
-z_index = 1
-input_pickable = true
-script = ExtResource( 9 )
-
-[node name="Sprite" type="Sprite" parent="PopUp/Games/SpaceInvaders"]
+position = Vector2( 448, 456 )
 scale = Vector2( 0.3, 0.3 )
-texture = ExtResource( 25 )
+texture = ExtResource( 22 )
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="PopUp/Games/SpaceInvaders"]
-position = Vector2( -0.5, 1.5 )
-shape = SubResource( 25 )
-
-[node name="PacMan" type="KinematicBody2D" parent="PopUp/Games"]
-position = Vector2( 1559, 547 )
-z_index = 1
-input_pickable = true
-script = ExtResource( 9 )
-
-[node name="Sprite" type="Sprite" parent="PopUp/Games/PacMan"]
-scale = Vector2( 0.3, 0.3 )
-texture = ExtResource( 33 )
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="PopUp/Games/PacMan"]
-position = Vector2( 5, 1 )
-shape = SubResource( 26 )
-
-[node name="DonkeyKong" type="KinematicBody2D" parent="PopUp/Games"]
+[node name="segaSaturnArea" type="Sprite" parent="SortedSprites"]
 visible = false
-position = Vector2( 1559, 547 )
-z_index = 1
-input_pickable = true
-script = ExtResource( 9 )
-
-[node name="Sprite" type="Sprite" parent="PopUp/Games/DonkeyKong"]
+position = Vector2( 740, 764 )
 scale = Vector2( 0.3, 0.3 )
-texture = ExtResource( 30 )
+texture = ExtResource( 22 )
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="PopUp/Games/DonkeyKong"]
-position = Vector2( 2, 4.5 )
-shape = SubResource( 27 )
-
-[node name="Detroit" type="KinematicBody2D" parent="PopUp/Games"]
+[node name="megaDrive1Area" type="Sprite" parent="SortedSprites"]
 visible = false
-position = Vector2( 1559, 547 )
-z_index = 1
-input_pickable = true
-script = ExtResource( 9 )
-
-[node name="Sprite" type="Sprite" parent="PopUp/Games/Detroit"]
+position = Vector2( 452, 295 )
 scale = Vector2( 0.3, 0.3 )
-texture = ExtResource( 31 )
+texture = ExtResource( 22 )
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="PopUp/Games/Detroit"]
-position = Vector2( -1.5, 0.5 )
-shape = SubResource( 28 )
-
-[node name="Cyberpunk" type="KinematicBody2D" parent="PopUp/Games"]
+[node name="atariArea" type="Sprite" parent="SortedSprites"]
 visible = false
-position = Vector2( 1559, 547 )
-z_index = 1
-input_pickable = true
-script = ExtResource( 9 )
-
-[node name="Sprite" type="Sprite" parent="PopUp/Games/Cyberpunk"]
+position = Vector2( 445, 606 )
 scale = Vector2( 0.3, 0.3 )
-texture = ExtResource( 27 )
+texture = ExtResource( 22 )
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="PopUp/Games/Cyberpunk"]
-position = Vector2( -0.5, 0 )
-shape = SubResource( 29 )
-
-[node name="Starfield" type="KinematicBody2D" parent="PopUp/Games"]
+[node name="tennisArea" type="Sprite" parent="SortedSprites"]
 visible = false
-position = Vector2( 1559, 547 )
-z_index = 1
-input_pickable = true
-script = ExtResource( 9 )
-
-[node name="Sprite" type="Sprite" parent="PopUp/Games/Starfield"]
+position = Vector2( 1065, 294 )
 scale = Vector2( 0.3, 0.3 )
-texture = ExtResource( 29 )
+texture = ExtResource( 22 )
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="PopUp/Games/Starfield"]
-position = Vector2( 1, -0.5 )
-shape = SubResource( 30 )
-
-[node name="Bioshock" type="KinematicBody2D" parent="PopUp/Games"]
+[node name="pongArea" type="Sprite" parent="SortedSprites"]
 visible = false
-position = Vector2( 1559, 547 )
-z_index = 1
-input_pickable = true
-script = ExtResource( 9 )
-
-[node name="Sprite" type="Sprite" parent="PopUp/Games/Bioshock"]
+position = Vector2( 1253, 298 )
 scale = Vector2( 0.3, 0.3 )
-texture = ExtResource( 28 )
+texture = ExtResource( 22 )
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="PopUp/Games/Bioshock"]
-position = Vector2( -2.5, 0 )
-shape = SubResource( 31 )
-
-[node name="Horizon" type="KinematicBody2D" parent="PopUp/Games"]
+[node name="mazeWarsArea" type="Sprite" parent="SortedSprites"]
 visible = false
-position = Vector2( 1559, 547 )
-z_index = 1
-input_pickable = true
-script = ExtResource( 9 )
-
-[node name="Sprite" type="Sprite" parent="PopUp/Games/Horizon"]
+position = Vector2( 1435, 299 )
 scale = Vector2( 0.3, 0.3 )
-texture = ExtResource( 32 )
+texture = ExtResource( 22 )
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="PopUp/Games/Horizon"]
-position = Vector2( 0, 1 )
-shape = SubResource( 32 )
-
-[node name="Stray" type="KinematicBody2D" parent="PopUp/Games"]
+[node name="spaceInvadersArea" type="Sprite" parent="SortedSprites"]
 visible = false
-position = Vector2( 1559, 547 )
-z_index = 1
-input_pickable = true
-script = ExtResource( 9 )
-
-[node name="Sprite" type="Sprite" parent="PopUp/Games/Stray"]
+position = Vector2( 1066, 460 )
 scale = Vector2( 0.3, 0.3 )
-texture = ExtResource( 20 )
+texture = ExtResource( 22 )
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="PopUp/Games/Stray"]
-position = Vector2( -1, 1 )
-shape = SubResource( 33 )
+[node name="pacmanArea" type="Sprite" parent="SortedSprites"]
+visible = false
+position = Vector2( 1246, 460 )
+scale = Vector2( 0.3, 0.3 )
+texture = ExtResource( 22 )
 
-[node name="CheckAreas" type="Node2D" parent="PopUp"]
+[node name="donkeyKongArea" type="Sprite" parent="SortedSprites"]
+visible = false
+position = Vector2( 1465, 459 )
+scale = Vector2( 0.3, 0.3 )
+texture = ExtResource( 22 )
 
-[node name="CheckTennis" type="Area2D" parent="PopUp/CheckAreas"]
-position = Vector2( -628, -223 )
+[node name="egoshooterArea" type="Sprite" parent="SortedSprites"]
+visible = false
+position = Vector2( 1065, 612 )
+scale = Vector2( 0.3, 0.3 )
+texture = ExtResource( 22 )
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="PopUp/CheckAreas/CheckTennis"]
-position = Vector2( 32, -37.5 )
-shape = SubResource( 39 )
+[node name="strayArea" type="Sprite" parent="SortedSprites"]
+visible = false
+position = Vector2( 1447, 616 )
+scale = Vector2( 0.3, 0.3 )
+texture = ExtResource( 22 )
 
-[node name="CheckPong" type="Area2D" parent="PopUp/CheckAreas"]
-position = Vector2( -285, -253 )
+[node name="horizonArea" type="Sprite" parent="SortedSprites"]
+visible = false
+position = Vector2( 1256, 760 )
+scale = Vector2( 0.3, 0.3 )
+texture = ExtResource( 22 )
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="PopUp/CheckAreas/CheckPong"]
-position = Vector2( 16, -6.5 )
-shape = SubResource( 40 )
+[node name="starfieldArea" type="Sprite" parent="SortedSprites"]
+visible = false
+position = Vector2( 1267, 612 )
+scale = Vector2( 0.3, 0.3 )
+texture = ExtResource( 22 )
 
-[node name="CheckMazeWars" type="Area2D" parent="PopUp/CheckAreas"]
-position = Vector2( 77, -262 )
+[node name="cyberpunkArea" type="Sprite" parent="SortedSprites"]
+visible = false
+position = Vector2( 1067, 759 )
+scale = Vector2( 0.3, 0.3 )
+texture = ExtResource( 22 )
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="PopUp/CheckAreas/CheckMazeWars"]
-position = Vector2( 62.5, 0 )
-shape = SubResource( 41 )
-
-[node name="CheckSpaceInvaders" type="Area2D" parent="PopUp/CheckAreas"]
-position = Vector2( -609, -68 )
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="PopUp/CheckAreas/CheckSpaceInvaders"]
-position = Vector2( 11.5, -8.5 )
-shape = SubResource( 42 )
-
-[node name="CheckPacMan" type="Area2D" parent="PopUp/CheckAreas"]
-position = Vector2( -299, -83 )
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="PopUp/CheckAreas/CheckPacMan"]
-position = Vector2( 27, 10 )
-shape = SubResource( 43 )
-
-[node name="CheckDonkeyKong" type="Area2D" parent="PopUp/CheckAreas"]
-position = Vector2( 78, -61 )
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="PopUp/CheckAreas/CheckDonkeyKong"]
-position = Vector2( 62.5, -21 )
-shape = SubResource( 44 )
-
-[node name="CheckDystopie" type="Area2D" parent="PopUp/CheckAreas"]
-position = Vector2( -358, 136 )
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="PopUp/CheckAreas/CheckDystopie"]
-position = Vector2( 179.5, 4 )
-shape = SubResource( 45 )
-
-[node name="CheckCyberpunk" type="Area2D" parent="PopUp/CheckAreas"]
-position = Vector2( -639, 309 )
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="PopUp/CheckAreas/CheckCyberpunk"]
-position = Vector2( 61.5, -1 )
-shape = SubResource( 46 )
-
-[node name="CheckSpace" type="Area2D" parent="PopUp/CheckAreas"]
-position = Vector2( -293, 304 )
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="PopUp/CheckAreas/CheckSpace"]
-position = Vector2( 25, 5 )
-shape = SubResource( 47 )
-
-[node name="CheckPostApocaliptic" type="Area2D" parent="PopUp/CheckAreas"]
-position = Vector2( 77, 308 )
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="PopUp/CheckAreas/CheckPostApocaliptic"]
-position = Vector2( 53.5, 1.5 )
-shape = SubResource( 48 )
-
-[node name="ClosePopUp" type="Button" parent="PopUp"]
-margin_left = 582.0
-margin_top = -422.0
-margin_right = 694.0
-margin_bottom = -369.0
-text = "Close"
+[node name="detriotArea" type="Sprite" parent="SortedSprites"]
+visible = false
+position = Vector2( 1453, 757 )
+scale = Vector2( 0.3, 0.3 )
+texture = ExtResource( 22 )
 
 [node name="TopBar" parent="." instance=ExtResource( 10 )]
 Game = 5
 LeftImage = ExtResource( 11 )
 
-[connection signal="body_entered" from="CheckGameBoy" to="CheckGameBoy" method="_on_CheckGameBoy_body_entered"]
-[connection signal="body_exited" from="CheckGameBoy" to="CheckGameBoy" method="_on_CheckGameBoy_body_exited"]
-[connection signal="body_entered" from="CheckXBOX" to="CheckGameBoy" method="_on_CheckXBOX_body_entered"]
-[connection signal="body_exited" from="CheckXBOX" to="CheckGameBoy" method="_on_CheckXBOX_body_exited"]
-[connection signal="body_entered" from="CheckMegaDrive1" to="CheckGameBoy" method="_on_CheckMegaDrive1_body_entered"]
-[connection signal="body_exited" from="CheckMegaDrive1" to="CheckGameBoy" method="_on_CheckMegaDrive1_body_exited"]
-[connection signal="body_entered" from="CheckNES" to="CheckGameBoy" method="_on_CheckNES_body_entered"]
-[connection signal="body_exited" from="CheckNES" to="CheckGameBoy" method="_on_CheckNES_body_exited"]
-[connection signal="body_entered" from="CheckAtari" to="CheckGameBoy" method="_on_CheckAtari_body_entered"]
-[connection signal="body_exited" from="CheckAtari" to="CheckGameBoy" method="_on_CheckAtari_body_exited"]
-[connection signal="body_entered" from="CheckC64" to="CheckGameBoy" method="_on_CheckC64_body_entered"]
-[connection signal="body_exited" from="CheckC64" to="CheckGameBoy" method="_on_CheckC64_body_exited"]
-[connection signal="body_entered" from="CheckSegaSaturn" to="CheckGameBoy" method="_on_CheckSegaSaturn_body_entered"]
-[connection signal="body_exited" from="CheckSegaSaturn" to="CheckGameBoy" method="_on_CheckSegaSaturn_body_exited"]
-[connection signal="body_entered" from="CheckMagnavox" to="CheckGameBoy" method="_on_CheckMagnavox_body_entered"]
-[connection signal="body_exited" from="CheckMagnavox" to="CheckGameBoy" method="_on_CheckMagnavox_body_exited"]
-[connection signal="pressed" from="Submit" to="Music" method="_on_Submit_pressed"]
-[connection signal="timeout" from="DelayTimer" to="GameBoy" method="_on_DelayTimer_timeout"]
-[connection signal="body_exited" from="SpawningGames/Area2D" to="SpawningGames" method="_on_Area2D_body_exited"]
-[connection signal="body_entered" from="PopUp/CheckAreas/CheckTennis" to="GameBoy" method="_on_CheckTennis_body_entered"]
-[connection signal="body_entered" from="PopUp/CheckAreas/CheckTennis" to="CheckGameBoy" method="_on_CheckTennis_body_entered"]
-[connection signal="body_exited" from="PopUp/CheckAreas/CheckTennis" to="CheckGameBoy" method="_on_CheckTennis_body_exited"]
-[connection signal="body_entered" from="PopUp/CheckAreas/CheckPong" to="CheckGameBoy" method="_on_CheckPong_body_entered"]
-[connection signal="body_exited" from="PopUp/CheckAreas/CheckPong" to="CheckGameBoy" method="_on_CheckPong_body_exited"]
-[connection signal="body_entered" from="PopUp/CheckAreas/CheckMazeWars" to="CheckGameBoy" method="_on_CheckMazeWars_body_entered"]
-[connection signal="body_exited" from="PopUp/CheckAreas/CheckMazeWars" to="CheckGameBoy" method="_on_CheckMazeWars_body_exited"]
-[connection signal="body_entered" from="PopUp/CheckAreas/CheckSpaceInvaders" to="CheckGameBoy" method="_on_CheckSpaceInvaders_body_entered"]
-[connection signal="body_exited" from="PopUp/CheckAreas/CheckSpaceInvaders" to="CheckGameBoy" method="_on_CheckSpaceInvaders_body_exited"]
-[connection signal="body_entered" from="PopUp/CheckAreas/CheckPacMan" to="CheckGameBoy" method="_on_CheckPacMan_body_entered"]
-[connection signal="body_exited" from="PopUp/CheckAreas/CheckPacMan" to="CheckGameBoy" method="_on_CheckPacMan_body_exited"]
-[connection signal="body_entered" from="PopUp/CheckAreas/CheckDonkeyKong" to="CheckGameBoy" method="_on_CheckDonkeyKong_body_entered"]
-[connection signal="body_exited" from="PopUp/CheckAreas/CheckDonkeyKong" to="CheckGameBoy" method="_on_CheckDonkeyKong_body_exited"]
-[connection signal="body_entered" from="PopUp/CheckAreas/CheckDystopie" to="CheckGameBoy" method="_on_CheckDystopie_body_entered"]
-[connection signal="body_exited" from="PopUp/CheckAreas/CheckDystopie" to="CheckGameBoy" method="_on_CheckDystopie_body_exited"]
-[connection signal="body_entered" from="PopUp/CheckAreas/CheckCyberpunk" to="CheckGameBoy" method="_on_CheckCyberpunk_body_entered"]
-[connection signal="body_exited" from="PopUp/CheckAreas/CheckCyberpunk" to="CheckGameBoy" method="_on_CheckCyberpunk_body_exited"]
-[connection signal="body_entered" from="PopUp/CheckAreas/CheckSpace" to="CheckGameBoy" method="_on_CheckSpace_body_entered"]
-[connection signal="body_exited" from="PopUp/CheckAreas/CheckSpace" to="CheckGameBoy" method="_on_CheckSpace_body_exited"]
-[connection signal="body_entered" from="PopUp/CheckAreas/CheckPostApocaliptic" to="CheckGameBoy" method="_on_CheckPostApocaliptic_body_entered"]
-[connection signal="body_exited" from="PopUp/CheckAreas/CheckPostApocaliptic" to="CheckGameBoy" method="_on_CheckPostApocaliptic_body_exited"]
+[node name="OpenConsoles" type="Button" parent="."]
+margin_left = 306.0
+margin_top = 204.0
+margin_right = 930.0
+margin_bottom = 848.0
+custom_styles/hover = SubResource( 49 )
+custom_styles/pressed = SubResource( 50 )
+custom_styles/focus = SubResource( 51 )
+custom_styles/disabled = SubResource( 52 )
+custom_styles/normal = SubResource( 53 )
+
+[node name="OpenGames" type="Button" parent="."]
+margin_left = 978.0
+margin_top = 205.0
+margin_right = 1594.0
+margin_bottom = 821.0
+custom_styles/hover = SubResource( 66 )
+custom_styles/pressed = SubResource( 67 )
+custom_styles/focus = SubResource( 68 )
+custom_styles/disabled = SubResource( 69 )
+custom_styles/normal = SubResource( 70 )
+
+[node name="Submit" type="Button" parent="."]
+margin_left = 1763.0
+margin_top = 1011.0
+margin_right = 1901.0
+margin_bottom = 1070.0
+text = "Submit"
+
+[node name="Consoles" type="Node2D" parent="."]
+visible = false
+script = ExtResource( 21 )
+XBOX = ExtResource( 5 )
+GameBoy = ExtResource( 6 )
+NES = ExtResource( 4 )
+C64 = ExtResource( 16 )
+Magnavox = ExtResource( 15 )
+MegaDrive1 = ExtResource( 7 )
+SegaSaturn = ExtResource( 18 )
+Atari = ExtResource( 17 )
+Tennis = ExtResource( 32 )
+MazeWars = ExtResource( 27 )
+SpaceInvaders = ExtResource( 34 )
+DonkeyKong = ExtResource( 29 )
+Pong = ExtResource( 31 )
+PacMan = ExtResource( 28 )
+Bioshock = ExtResource( 24 )
+Stray = ExtResource( 33 )
+Starfield = ExtResource( 37 )
+Cyberpunk = ExtResource( 25 )
+Detriot = ExtResource( 26 )
+Horizon = ExtResource( 30 )
+
+[node name="Background" type="Sprite" parent="Consoles"]
+position = Vector2( 960, 540 )
+texture = ExtResource( 12 )
+
+[node name="Sprite" type="Sprite" parent="Consoles"]
+position = Vector2( 1440, 800 )
+texture = ExtResource( 19 )
+
+[node name="XBOX" type="KinematicBody2D" parent="Consoles"]
+position = Vector2( 1400, 659 )
+input_pickable = true
+script = ExtResource( 8 )
+
+[node name="Sprite" type="Sprite" parent="Consoles/XBOX"]
+position = Vector2( 6.10352e-05, 6.00012 )
+scale = Vector2( 0.35, 0.35 )
+texture = ExtResource( 5 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Consoles/XBOX"]
+position = Vector2( 3, 8 )
+shape = SubResource( 54 )
+
+[node name="GameBoy" type="KinematicBody2D" parent="Consoles"]
+visible = false
+position = Vector2( 1402, 649 )
+input_pickable = true
+script = ExtResource( 8 )
+
+[node name="Sprite" type="Sprite" parent="Consoles/GameBoy"]
+position = Vector2( 11, 15 )
+scale = Vector2( 0.1, 0.1 )
+texture = ExtResource( 6 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Consoles/GameBoy"]
+position = Vector2( 3, 16 )
+shape = SubResource( 55 )
+
+[node name="NES" type="KinematicBody2D" parent="Consoles"]
+visible = false
+position = Vector2( 1416, 668 )
+input_pickable = true
+script = ExtResource( 8 )
+
+[node name="Sprite" type="Sprite" parent="Consoles/NES"]
+position = Vector2( -20, 38 )
+scale = Vector2( 0.35, 0.35 )
+texture = ExtResource( 4 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Consoles/NES"]
+position = Vector2( -2, 16.5 )
+shape = SubResource( 56 )
+
+[node name="MegaDrive1" type="KinematicBody2D" parent="Consoles"]
+visible = false
+position = Vector2( 1421, 665 )
+input_pickable = true
+script = ExtResource( 8 )
+
+[node name="Sprite" type="Sprite" parent="Consoles/MegaDrive1"]
+position = Vector2( -1, -16 )
+scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 7 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Consoles/MegaDrive1"]
+position = Vector2( -12, 11 )
+shape = SubResource( 57 )
+
+[node name="Atari" type="KinematicBody2D" parent="Consoles"]
+visible = false
+position = Vector2( 1421, 710 )
+input_pickable = true
+script = ExtResource( 8 )
+
+[node name="Sprite" type="Sprite" parent="Consoles/Atari"]
+scale = Vector2( 0.25, 0.25 )
+texture = ExtResource( 17 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Consoles/Atari"]
+position = Vector2( -8, -37 )
+shape = SubResource( 58 )
+
+[node name="C64" type="KinematicBody2D" parent="Consoles"]
+visible = false
+position = Vector2( 1411, 667 )
+input_pickable = true
+script = ExtResource( 8 )
+
+[node name="Sprite" type="Sprite" parent="Consoles/C64"]
+position = Vector2( 2, -1 )
+scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 16 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Consoles/C64"]
+position = Vector2( 2.5, 7.5 )
+shape = SubResource( 59 )
+
+[node name="SegaSaturn" type="KinematicBody2D" parent="Consoles"]
+visible = false
+position = Vector2( 1399, 672 )
+input_pickable = true
+script = ExtResource( 8 )
+
+[node name="Sprite" type="Sprite" parent="Consoles/SegaSaturn"]
+scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 18 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Consoles/SegaSaturn"]
+position = Vector2( 9, 12 )
+shape = SubResource( 60 )
+
+[node name="Magnavox" type="KinematicBody2D" parent="Consoles"]
+visible = false
+position = Vector2( 1397, 649 )
+input_pickable = true
+script = ExtResource( 8 )
+
+[node name="Sprite" type="Sprite" parent="Consoles/Magnavox"]
+scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 15 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Consoles/Magnavox"]
+position = Vector2( 32.75, 24 )
+shape = SubResource( 61 )
+
+[node name="Label" type="Label" parent="Consoles"]
+margin_left = 1014.0
+margin_top = 147.0
+margin_right = 1853.0
+margin_bottom = 364.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 62 )
+align = 1
+valign = 1
+autowrap = true
+
+[node name="BoxFront" type="Sprite" parent="Consoles"]
+position = Vector2( 1438, 798 )
+texture = ExtResource( 20 )
+
+[node name="SpawningGames" type="Node2D" parent="Consoles"]
+position = Vector2( 1416, 660 )
+z_index = 1
+script = ExtResource( 9 )
+
+[node name="SpawningGames2" type="Sprite" parent="Consoles/SpawningGames"]
+visible = false
+position = Vector2( -3, 7 )
+texture = ExtResource( 14 )
+
+[node name="Area2D" type="Area2D" parent="Consoles/SpawningGames"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Consoles/SpawningGames/Area2D"]
+position = Vector2( -9.5, 5.5 )
+shape = SubResource( 63 )
+
+[node name="CorrectNames" type="Node2D" parent="Consoles"]
+
+[node name="Sprite" type="Sprite" parent="Consoles/CorrectNames"]
+position = Vector2( 855, 253 )
+texture = ExtResource( 3 )
+
+[node name="Label" type="Label" parent="Consoles/CorrectNames/Sprite"]
+margin_left = -50.0
+margin_top = -35.0
+margin_right = 66.0
+margin_bottom = 18.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 64 )
+text = "XBOX"
+align = 1
+valign = 1
+autowrap = true
+
+[node name="Sprite2" type="Sprite" parent="Consoles/CorrectNames"]
+position = Vector2( 853, 488 )
+texture = ExtResource( 3 )
+
+[node name="Label" type="Label" parent="Consoles/CorrectNames/Sprite2"]
+margin_left = -50.0
+margin_top = -35.0
+margin_right = 66.0
+margin_bottom = 18.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 64 )
+text = "GameBoy"
+align = 1
+valign = 1
+autowrap = true
+
+[node name="Sprite3" type="Sprite" parent="Consoles/CorrectNames"]
+position = Vector2( 857, 746 )
+texture = ExtResource( 3 )
+
+[node name="Label" type="Label" parent="Consoles/CorrectNames/Sprite3"]
+margin_left = -50.0
+margin_top = -35.0
+margin_right = 66.0
+margin_bottom = 18.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 64 )
+text = "C64"
+align = 1
+valign = 1
+autowrap = true
+
+[node name="Sprite4" type="Sprite" parent="Consoles/CorrectNames"]
+position = Vector2( 855, 949 )
+texture = ExtResource( 3 )
+
+[node name="Label" type="Label" parent="Consoles/CorrectNames/Sprite4"]
+margin_left = -50.0
+margin_top = -35.0
+margin_right = 66.0
+margin_bottom = 18.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 64 )
+text = "Sega Saturn"
+align = 1
+valign = 1
+autowrap = true
+
+[node name="Sprite5" type="Sprite" parent="Consoles/CorrectNames"]
+position = Vector2( 235, 257 )
+texture = ExtResource( 2 )
+
+[node name="Label" type="Label" parent="Consoles/CorrectNames/Sprite5"]
+margin_left = -63.0
+margin_top = -37.0
+margin_right = 55.0
+margin_bottom = 19.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 64 )
+text = "MegaDrive1"
+align = 1
+valign = 1
+autowrap = true
+
+[node name="Sprite6" type="Sprite" parent="Consoles/CorrectNames"]
+position = Vector2( 219, 491 )
+texture = ExtResource( 2 )
+
+[node name="Label" type="Label" parent="Consoles/CorrectNames/Sprite6"]
+margin_left = -63.0
+margin_top = -37.0
+margin_right = 55.0
+margin_bottom = 19.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 64 )
+text = "Magnavox"
+align = 1
+valign = 1
+autowrap = true
+
+[node name="Sprite7" type="Sprite" parent="Consoles/CorrectNames"]
+position = Vector2( 220, 743 )
+texture = ExtResource( 2 )
+
+[node name="Label" type="Label" parent="Consoles/CorrectNames/Sprite7"]
+margin_left = -63.0
+margin_top = -37.0
+margin_right = 55.0
+margin_bottom = 19.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 64 )
+text = "Atari"
+align = 1
+valign = 1
+autowrap = true
+
+[node name="Sprite8" type="Sprite" parent="Consoles/CorrectNames"]
+position = Vector2( 219, 947 )
+texture = ExtResource( 2 )
+
+[node name="Label" type="Label" parent="Consoles/CorrectNames/Sprite8"]
+margin_left = -63.0
+margin_top = -37.0
+margin_right = 55.0
+margin_bottom = 19.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 64 )
+text = "NES"
+align = 1
+valign = 1
+autowrap = true
+
+[node name="CheckAreas" type="Node2D" parent="Consoles"]
+
+[node name="CheckXBOX" type="Area2D" parent="Consoles/CheckAreas"]
+position = Vector2( 712, 173 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Consoles/CheckAreas/CheckXBOX"]
+position = Vector2( 53, 15 )
+shape = SubResource( 65 )
+
+[node name="CheckGameBoy" type="Area2D" parent="Consoles/CheckAreas"]
+position = Vector2( 712, 409 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Consoles/CheckAreas/CheckGameBoy"]
+position = Vector2( 53, 15 )
+shape = SubResource( 65 )
+
+[node name="CheckNES" type="Area2D" parent="Consoles/CheckAreas"]
+position = Vector2( 263, 868 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Consoles/CheckAreas/CheckNES"]
+position = Vector2( 53, 15 )
+shape = SubResource( 65 )
+
+[node name="CheckC64" type="Area2D" parent="Consoles/CheckAreas"]
+position = Vector2( 711, 663 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Consoles/CheckAreas/CheckC64"]
+position = Vector2( 53, 15 )
+shape = SubResource( 65 )
+
+[node name="CheckSegaSaturn" type="Area2D" parent="Consoles/CheckAreas"]
+position = Vector2( 713, 868 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Consoles/CheckAreas/CheckSegaSaturn"]
+position = Vector2( 53, 15 )
+shape = SubResource( 65 )
+
+[node name="CheckMegaDrive1" type="Area2D" parent="Consoles/CheckAreas"]
+position = Vector2( 262, 177 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Consoles/CheckAreas/CheckMegaDrive1"]
+position = Vector2( 53, 15 )
+shape = SubResource( 65 )
+
+[node name="CheckMagnavox" type="Area2D" parent="Consoles/CheckAreas"]
+position = Vector2( 712, 409 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Consoles/CheckAreas/CheckMagnavox"]
+position = Vector2( -398, 16 )
+shape = SubResource( 65 )
+
+[node name="CheckAtari" type="Area2D" parent="Consoles/CheckAreas"]
+position = Vector2( 260, 664 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Consoles/CheckAreas/CheckAtari"]
+position = Vector2( 53, 15 )
+shape = SubResource( 65 )
+
+[node name="Games" type="Node2D" parent="."]
+visible = false
+
+[node name="Sprite" type="Sprite" parent="Games"]
+position = Vector2( 960, 540 )
+texture = ExtResource( 23 )
+
+[node name="Sprite2" type="Sprite" parent="Games"]
+position = Vector2( 1440, 800 )
+texture = ExtResource( 19 )
+
+[node name="Games" type="Node2D" parent="Games"]
+
+[node name="Bioshock" type="KinematicBody2D" parent="Games/Games"]
+visible = false
+position = Vector2( 1414, 649 )
+scale = Vector2( 0.4, 0.4 )
+script = ExtResource( 8 )
+
+[node name="Sprite" type="Sprite" parent="Games/Games/Bioshock"]
+texture = ExtResource( 24 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Games/Games/Bioshock"]
+position = Vector2( -7.5, -3.75 )
+scale = Vector2( 1, 1 )
+shape = SubResource( 71 )
+
+[node name="Cyberpunk" type="KinematicBody2D" parent="Games/Games"]
+visible = false
+position = Vector2( 1414, 657 )
+scale = Vector2( 0.4, 0.4 )
+script = ExtResource( 8 )
+
+[node name="Sprite" type="Sprite" parent="Games/Games/Cyberpunk"]
+texture = ExtResource( 25 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Games/Games/Cyberpunk"]
+position = Vector2( -7.5, -3.75 )
+scale = Vector2( 1, 1 )
+shape = SubResource( 71 )
+
+[node name="Detriot" type="KinematicBody2D" parent="Games/Games"]
+visible = false
+position = Vector2( 1402, 657 )
+scale = Vector2( 0.4, 0.4 )
+script = ExtResource( 8 )
+
+[node name="Sprite" type="Sprite" parent="Games/Games/Detriot"]
+texture = ExtResource( 26 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Games/Games/Detriot"]
+position = Vector2( -7.5, -3.75 )
+scale = Vector2( 1, 1 )
+shape = SubResource( 71 )
+
+[node name="DonkeyKong" type="KinematicBody2D" parent="Games/Games"]
+visible = false
+position = Vector2( 1400, 643 )
+scale = Vector2( 0.4, 0.4 )
+script = ExtResource( 8 )
+
+[node name="Sprite" type="Sprite" parent="Games/Games/DonkeyKong"]
+texture = ExtResource( 29 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Games/Games/DonkeyKong"]
+position = Vector2( 7.5, 22.5 )
+scale = Vector2( 1, 1 )
+shape = SubResource( 71 )
+
+[node name="Horizon" type="KinematicBody2D" parent="Games/Games"]
+visible = false
+position = Vector2( 1406, 649 )
+scale = Vector2( 0.4, 0.4 )
+script = ExtResource( 8 )
+
+[node name="Sprite" type="Sprite" parent="Games/Games/Horizon"]
+texture = ExtResource( 30 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Games/Games/Horizon"]
+position = Vector2( 5, 0 )
+scale = Vector2( 1, 1 )
+shape = SubResource( 71 )
+
+[node name="MazeWars" type="KinematicBody2D" parent="Games/Games"]
+visible = false
+position = Vector2( 1400, 654 )
+scale = Vector2( 0.4, 0.4 )
+script = ExtResource( 8 )
+
+[node name="Sprite" type="Sprite" parent="Games/Games/MazeWars"]
+texture = ExtResource( 27 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Games/Games/MazeWars"]
+position = Vector2( 12.5, -5 )
+scale = Vector2( 1, 1 )
+shape = SubResource( 71 )
+
+[node name="PacMan" type="KinematicBody2D" parent="Games/Games"]
+position = Vector2( 1423, 657 )
+scale = Vector2( 0.4, 0.4 )
+script = ExtResource( 8 )
+
+[node name="Sprite" type="Sprite" parent="Games/Games/PacMan"]
+texture = ExtResource( 28 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Games/Games/PacMan"]
+position = Vector2( 12.5, -5 )
+scale = Vector2( 1, 1 )
+shape = SubResource( 71 )
+
+[node name="Pong" type="KinematicBody2D" parent="Games/Games"]
+visible = false
+position = Vector2( 1400, 649 )
+scale = Vector2( 0.4, 0.4 )
+script = ExtResource( 8 )
+
+[node name="Sprite" type="Sprite" parent="Games/Games/Pong"]
+texture = ExtResource( 31 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Games/Games/Pong"]
+position = Vector2( 12.5, -5 )
+scale = Vector2( 1, 1 )
+shape = SubResource( 71 )
+
+[node name="SpaceInvaders" type="KinematicBody2D" parent="Games/Games"]
+visible = false
+position = Vector2( 1408, 640 )
+scale = Vector2( 0.4, 0.4 )
+script = ExtResource( 8 )
+
+[node name="Sprite" type="Sprite" parent="Games/Games/SpaceInvaders"]
+texture = ExtResource( 34 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Games/Games/SpaceInvaders"]
+position = Vector2( 12.5, -5 )
+scale = Vector2( 1, 1 )
+shape = SubResource( 71 )
+
+[node name="Starfield" type="KinematicBody2D" parent="Games/Games"]
+visible = false
+position = Vector2( 1408, 649 )
+scale = Vector2( 0.4, 0.4 )
+script = ExtResource( 8 )
+
+[node name="Sprite" type="Sprite" parent="Games/Games/Starfield"]
+texture = ExtResource( 37 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Games/Games/Starfield"]
+position = Vector2( 12.5, -5 )
+scale = Vector2( 1, 1 )
+shape = SubResource( 71 )
+
+[node name="Stray" type="KinematicBody2D" parent="Games/Games"]
+visible = false
+position = Vector2( 1411, 646 )
+scale = Vector2( 0.4, 0.4 )
+script = ExtResource( 8 )
+
+[node name="Sprite" type="Sprite" parent="Games/Games/Stray"]
+texture = ExtResource( 33 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Games/Games/Stray"]
+position = Vector2( 12.5, -5 )
+scale = Vector2( 1, 1 )
+shape = SubResource( 71 )
+
+[node name="Tennis" type="KinematicBody2D" parent="Games/Games"]
+visible = false
+position = Vector2( 1403, 643 )
+scale = Vector2( 0.4, 0.4 )
+script = ExtResource( 8 )
+
+[node name="Sprite" type="Sprite" parent="Games/Games/Tennis"]
+texture = ExtResource( 32 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Games/Games/Tennis"]
+position = Vector2( 12.5, -5 )
+scale = Vector2( 1, 1 )
+shape = SubResource( 71 )
+
+[node name="SpawningGames" type="Node2D" parent="Games"]
+position = Vector2( 1416, 660 )
+z_index = 1
+script = ExtResource( 38 )
+
+[node name="SpawningGames2" type="Sprite" parent="Games/SpawningGames"]
+visible = false
+position = Vector2( -3, 7 )
+texture = ExtResource( 14 )
+
+[node name="Area2D" type="Area2D" parent="Games/SpawningGames"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Games/SpawningGames/Area2D"]
+position = Vector2( -4, 4 )
+shape = SubResource( 63 )
+
+[node name="BoxFront" type="Sprite" parent="Games"]
+position = Vector2( 1438, 798 )
+texture = ExtResource( 20 )
+
+[node name="CheckArea" type="Node2D" parent="Games"]
+
+[node name="CheckTennis" type="Area2D" parent="Games/CheckArea"]
+position = Vector2( 257, 193 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Games/CheckArea/CheckTennis"]
+position = Vector2( 7.5, -2 )
+shape = SubResource( 72 )
+
+[node name="CheckMazeWars" type="Area2D" parent="Games/CheckArea"]
+position = Vector2( 818, 191 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Games/CheckArea/CheckMazeWars"]
+position = Vector2( 7.5, -2 )
+shape = SubResource( 72 )
+
+[node name="CheckSpaceInvaders" type="Area2D" parent="Games/CheckArea"]
+position = Vector2( 259, 424 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Games/CheckArea/CheckSpaceInvaders"]
+position = Vector2( 7.5, -2 )
+shape = SubResource( 72 )
+
+[node name="CheckDonkeyKong" type="Area2D" parent="Games/CheckArea"]
+position = Vector2( 809, 424 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Games/CheckArea/CheckDonkeyKong"]
+position = Vector2( 7.5, -2 )
+shape = SubResource( 72 )
+
+[node name="CheckPong" type="Area2D" parent="Games/CheckArea"]
+position = Vector2( 541, 191 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Games/CheckArea/CheckPong"]
+position = Vector2( 7.5, -2 )
+shape = SubResource( 72 )
+
+[node name="CheckPacMan" type="Area2D" parent="Games/CheckArea"]
+position = Vector2( 538, 423 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Games/CheckArea/CheckPacMan"]
+position = Vector2( 7.5, -2 )
+shape = SubResource( 72 )
+
+[node name="CheckBioshock" type="Area2D" parent="Games/CheckArea"]
+position = Vector2( 256, 681 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Games/CheckArea/CheckBioshock"]
+position = Vector2( 7.5, -2 )
+shape = SubResource( 72 )
+
+[node name="CheckStray" type="Area2D" parent="Games/CheckArea"]
+position = Vector2( 805, 672 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Games/CheckArea/CheckStray"]
+position = Vector2( 7.5, -2 )
+shape = SubResource( 72 )
+
+[node name="CheckStarfield" type="Area2D" parent="Games/CheckArea"]
+position = Vector2( 532, 680 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Games/CheckArea/CheckStarfield"]
+position = Vector2( 7.5, -2 )
+shape = SubResource( 72 )
+
+[node name="CheckCyberpunk" type="Area2D" parent="Games/CheckArea"]
+position = Vector2( 255, 887 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Games/CheckArea/CheckCyberpunk"]
+position = Vector2( 7.5, -2 )
+shape = SubResource( 72 )
+
+[node name="CheckHorizon" type="Area2D" parent="Games/CheckArea"]
+position = Vector2( 539, 887 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Games/CheckArea/CheckHorizon"]
+position = Vector2( 7.5, -2 )
+shape = SubResource( 72 )
+
+[node name="CheckDetriot" type="Area2D" parent="Games/CheckArea"]
+position = Vector2( 811, 886 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Games/CheckArea/CheckDetriot"]
+position = Vector2( 7.5, -2 )
+shape = SubResource( 72 )
+
+[node name="ActionRPG" type="Area2D" parent="Games/CheckArea"]
+position = Vector2( 670, 670 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Games/CheckArea/ActionRPG"]
+position = Vector2( 9, 6 )
+shape = SubResource( 73 )
+
+[node name="ActionAdventure" type="Area2D" parent="Games/CheckArea"]
+position = Vector2( 538, 892 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Games/CheckArea/ActionAdventure"]
+position = Vector2( 3.5, 6.5 )
+shape = SubResource( 74 )
+
+[node name="Cards" type="Node2D" parent="Games"]
+
+[node name="Sprite" type="Sprite" parent="Games/Cards"]
+position = Vector2( 855, 256 )
+texture = ExtResource( 3 )
+
+[node name="Label" type="Label" parent="Games/Cards/Sprite"]
+margin_left = -52.0
+margin_top = -37.0
+margin_right = 68.0
+margin_bottom = 18.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 75 )
+text = "1.FPS 1974"
+align = 1
+valign = 1
+
+[node name="Sprite2" type="Sprite" parent="Games/Cards"]
+position = Vector2( 854, 488 )
+texture = ExtResource( 3 )
+
+[node name="Label" type="Label" parent="Games/Cards/Sprite2"]
+margin_left = -52.0
+margin_top = -37.0
+margin_right = 68.0
+margin_bottom = 18.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 75 )
+text = "Founder of JNR 1981"
+align = 1
+valign = 1
+autowrap = true
+
+[node name="Sprite3" type="Sprite" parent="Games/Cards"]
+position = Vector2( 221, 257 )
+texture = ExtResource( 2 )
+
+[node name="Label" type="Label" parent="Games/Cards/Sprite3"]
+margin_left = -66.0
+margin_top = -36.0
+margin_right = 65.0
+margin_bottom = 19.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 75 )
+text = "1.Video- game 1958"
+align = 1
+valign = 1
+autowrap = true
+clip_text = true
+
+[node name="Sprite4" type="Sprite" parent="Games/Cards"]
+position = Vector2( 222, 488 )
+texture = ExtResource( 2 )
+
+[node name="Label" type="Label" parent="Games/Cards/Sprite4"]
+margin_left = -66.0
+margin_top = -36.0
+margin_right = 65.0
+margin_bottom = 19.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 75 )
+text = "Videogame Boom 1978"
+align = 1
+valign = 1
+autowrap = true
+clip_text = true
+
+[node name="Sprite5" type="Sprite" parent="Games/Cards"]
+position = Vector2( 223, 744 )
+texture = ExtResource( 2 )
+
+[node name="Label" type="Label" parent="Games/Cards/Sprite5"]
+margin_left = -66.0
+margin_top = -36.0
+margin_right = 61.0
+margin_bottom = 19.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 75 )
+text = "Ego Shooter"
+align = 1
+valign = 1
+autowrap = true
+clip_text = true
+
+[node name="Sprite6" type="Sprite" parent="Games/Cards"]
+position = Vector2( 670, 741 )
+texture = ExtResource( 39 )
+
+[node name="Label" type="Label" parent="Games/Cards/Sprite6"]
+margin_left = -69.0
+margin_top = -30.0
+margin_right = 58.0
+margin_bottom = 25.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 75 )
+text = "Action RPG"
+align = 1
+valign = 1
+autowrap = true
+clip_text = true
+
+[node name="Sprite7" type="Sprite" parent="Games/Cards"]
+position = Vector2( 550, 254 )
+texture = ExtResource( 39 )
+
+[node name="Label" type="Label" parent="Games/Cards/Sprite7"]
+margin_left = -69.0
+margin_top = -30.0
+margin_right = 58.0
+margin_bottom = 25.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 75 )
+text = "Forefather 1971"
+align = 1
+valign = 1
+autowrap = true
+clip_text = true
+
+[node name="Sprite8" type="Sprite" parent="Games/Cards"]
+position = Vector2( 547, 487 )
+texture = ExtResource( 39 )
+
+[node name="Label" type="Label" parent="Games/Cards/Sprite8"]
+margin_left = -73.0
+margin_top = -43.0
+margin_right = 62.0
+margin_bottom = 38.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 75 )
+text = "1.AI Enemies 1980"
+align = 1
+valign = 1
+autowrap = true
+
+[node name="Sprite9" type="Sprite" parent="Games/Cards"]
+position = Vector2( 556, 948 )
+texture = ExtResource( 39 )
+
+[node name="Label" type="Label" parent="Games/Cards/Sprite9"]
+margin_left = -73.0
+margin_top = -43.0
+margin_right = 62.0
+margin_bottom = 38.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 75 )
+text = "Action Adventure"
+align = 1
+valign = 1
+autowrap = true
+
+[node name="Close" type="TextureButton" parent="."]
+margin_left = 19.0
+margin_top = 983.0
+margin_right = 223.0
+margin_bottom = 1081.0
+texture_normal = ExtResource( 13 )
+
+[connection signal="body_exited" from="Consoles/SpawningGames/Area2D" to="Consoles/SpawningGames" method="_on_Area2D_body_exited"]
+[connection signal="body_entered" from="Consoles/CheckAreas/CheckXBOX" to="Consoles" method="_on_CheckXBOX_body_entered"]
+[connection signal="body_exited" from="Consoles/CheckAreas/CheckXBOX" to="Consoles" method="_on_CheckXBOX_body_exited"]
+[connection signal="body_entered" from="Consoles/CheckAreas/CheckGameBoy" to="Consoles" method="_on_CheckGameBoy_body_entered"]
+[connection signal="body_exited" from="Consoles/CheckAreas/CheckGameBoy" to="Consoles" method="_on_CheckGameBoy_body_exited"]
+[connection signal="body_entered" from="Consoles/CheckAreas/CheckNES" to="Consoles" method="_on_CheckNES_body_entered"]
+[connection signal="body_exited" from="Consoles/CheckAreas/CheckNES" to="Consoles" method="_on_CheckNES_body_exited"]
+[connection signal="body_entered" from="Consoles/CheckAreas/CheckC64" to="Consoles" method="_on_CheckC64_body_entered"]
+[connection signal="body_exited" from="Consoles/CheckAreas/CheckC64" to="Consoles" method="_on_CheckC64_body_exited"]
+[connection signal="body_entered" from="Consoles/CheckAreas/CheckSegaSaturn" to="Consoles" method="_on_CheckSegaSaturn_body_entered"]
+[connection signal="body_exited" from="Consoles/CheckAreas/CheckSegaSaturn" to="Consoles" method="_on_CheckSegaSaturn_body_exited"]
+[connection signal="body_entered" from="Consoles/CheckAreas/CheckMegaDrive1" to="Consoles" method="_on_CheckMegaDrive1_body_entered"]
+[connection signal="body_exited" from="Consoles/CheckAreas/CheckMegaDrive1" to="Consoles" method="_on_CheckMegaDrive1_body_exited"]
+[connection signal="body_entered" from="Consoles/CheckAreas/CheckMagnavox" to="Consoles" method="_on_CheckMagnavox_body_entered"]
+[connection signal="body_exited" from="Consoles/CheckAreas/CheckMagnavox" to="Consoles" method="_on_CheckMagnavox_body_exited"]
+[connection signal="body_entered" from="Consoles/CheckAreas/CheckAtari" to="Consoles" method="_on_CheckAtari_body_entered"]
+[connection signal="body_exited" from="Consoles/CheckAreas/CheckAtari" to="Consoles" method="_on_CheckAtari_body_exited"]
+[connection signal="body_exited" from="Games/SpawningGames/Area2D" to="Games/SpawningGames" method="_on_Area2D_body_exited"]
+[connection signal="body_entered" from="Games/CheckArea/CheckTennis" to="Consoles" method="_on_CheckTennis_body_entered"]
+[connection signal="body_exited" from="Games/CheckArea/CheckTennis" to="Consoles" method="_on_CheckTennis_body_exited"]
+[connection signal="body_entered" from="Games/CheckArea/CheckMazeWars" to="Consoles" method="_on_CheckMazeWars_body_entered"]
+[connection signal="body_exited" from="Games/CheckArea/CheckMazeWars" to="Consoles" method="_on_CheckMazeWars_body_exited"]
+[connection signal="body_entered" from="Games/CheckArea/CheckSpaceInvaders" to="Consoles" method="_on_CheckSpaceInvaders_body_entered"]
+[connection signal="body_exited" from="Games/CheckArea/CheckSpaceInvaders" to="Consoles" method="_on_CheckSpaceInvaders_body_exited"]
+[connection signal="body_entered" from="Games/CheckArea/CheckDonkeyKong" to="Consoles" method="_on_CheckDonkeyKong_body_entered"]
+[connection signal="body_exited" from="Games/CheckArea/CheckDonkeyKong" to="Consoles" method="_on_CheckDonkeyKong_body_exited"]
+[connection signal="body_entered" from="Games/CheckArea/CheckPong" to="Consoles" method="_on_CheckPong_body_entered"]
+[connection signal="body_exited" from="Games/CheckArea/CheckPong" to="Consoles" method="_on_CheckPong_body_exited"]
+[connection signal="body_entered" from="Games/CheckArea/CheckPacMan" to="Consoles" method="_on_CheckPacMan_body_entered"]
+[connection signal="body_exited" from="Games/CheckArea/CheckPacMan" to="Consoles" method="_on_CheckPacMan_body_exited"]
+[connection signal="body_entered" from="Games/CheckArea/CheckBioshock" to="Consoles" method="_on_CheckBioshock_body_entered"]
+[connection signal="body_exited" from="Games/CheckArea/CheckBioshock" to="Consoles" method="_on_CheckBioshock_body_exited"]
+[connection signal="body_entered" from="Games/CheckArea/CheckStray" to="Consoles" method="_on_CheckStray_body_entered"]
+[connection signal="body_exited" from="Games/CheckArea/CheckStray" to="Consoles" method="_on_CheckStray_body_exited"]
+[connection signal="body_entered" from="Games/CheckArea/CheckStarfield" to="Consoles" method="_on_CheckStarfield_body_entered"]
+[connection signal="body_exited" from="Games/CheckArea/CheckStarfield" to="Consoles" method="_on_CheckStarfield_body_exited"]
+[connection signal="body_entered" from="Games/CheckArea/CheckCyberpunk" to="Consoles" method="_on_CheckCyberpunk_body_entered"]
+[connection signal="body_exited" from="Games/CheckArea/CheckCyberpunk" to="Consoles" method="_on_CheckCyberpunk_body_exited"]
+[connection signal="body_entered" from="Games/CheckArea/CheckHorizon" to="Consoles" method="_on_CheckHorizon_body_entered"]
+[connection signal="body_exited" from="Games/CheckArea/CheckHorizon" to="Consoles" method="_on_CheckHorizon_body_exited"]
+[connection signal="body_entered" from="Games/CheckArea/CheckDetriot" to="Consoles" method="_on_CheckDetriot_body_entered"]
+[connection signal="body_exited" from="Games/CheckArea/CheckDetriot" to="Consoles" method="_on_CheckDetriot_body_exited"]
+[connection signal="body_entered" from="Games/CheckArea/ActionRPG" to="Consoles" method="_on_ActionRPG_body_entered"]
+[connection signal="body_exited" from="Games/CheckArea/ActionRPG" to="Consoles" method="_on_ActionRPG_body_exited"]
+[connection signal="body_entered" from="Games/CheckArea/ActionAdventure" to="Consoles" method="_on_ActionAdventure_body_entered"]
+[connection signal="body_exited" from="Games/CheckArea/ActionAdventure" to="Consoles" method="_on_ActionAdventure_body_exited"]
