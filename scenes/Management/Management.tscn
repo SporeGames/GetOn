@@ -1,7 +1,7 @@
 [gd_scene load_steps=18 format=2]
 
 [ext_resource path="res://scenes/Management/Management.cs" type="Script" id=1]
-[ext_resource path="res://SharedAssets/UI/Management.PNG" type="Texture" id=2]
+[ext_resource path="res://SharedAssets/Anleitungen/management  ohne Hintergrund.PNG" type="Texture" id=2]
 [ext_resource path="res://scenes/Management/ManagementNote.tscn" type="PackedScene" id=3]
 [ext_resource path="res://SharedAssets/anleitung_management.png" type="Texture" id=4]
 [ext_resource path="res://scenes/Management/NoteBox.tscn" type="PackedScene" id=5]
@@ -291,6 +291,7 @@ texture_normal = ExtResource( 11 )
 [node name="TopBar" parent="." instance=ExtResource( 6 )]
 Game = 6
 LeftImage = ExtResource( 2 )
+RightImage = ExtResource( 4 )
 HelpImage = ExtResource( 4 )
 Description = "Instructions:
 

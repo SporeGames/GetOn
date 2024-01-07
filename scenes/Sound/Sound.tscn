@@ -17,7 +17,7 @@
 [ext_resource path="res://SharedAssets/font/BAHNSCHRIFT 1.TTF" type="DynamicFontData" id=15]
 [ext_resource path="res://scenes/Sound/assets/DoneButton.png" type="Texture" id=16]
 [ext_resource path="res://SharedAssets/music/Play/MusicSound.gd" type="Script" id=17]
-[ext_resource path="res://SharedAssets/UI/Sound.PNG" type="Texture" id=18]
+[ext_resource path="res://SharedAssets/Anleitungen/Sound_blank.png" type="Texture" id=18]
 [ext_resource path="res://SharedAssets/anleitung_sound.png" type="Texture" id=19]
 [ext_resource path="res://scenes/Sound/SoundSlider.tscn" type="PackedScene" id=52]
 [ext_resource path="res://scenes/Sound/Sound.cs" type="Script" id=53]
@@ -130,6 +130,7 @@ valign = 1
 [node name="TopBar" parent="." instance=ExtResource( 9 )]
 Game = 4
 LeftImage = ExtResource( 18 )
+RightImage = ExtResource( 19 )
 HelpImage = ExtResource( 19 )
 Description = "Listen to the sound files in the sound library by pressing \"Play\" and match them with the right ingame moment by dragging them in the destined space.
 If you are certain of your answer you may press  --> to go to the next moment..

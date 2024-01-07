@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Game studies.PNG-264a355dbdbb34b1931c40ce2fd08740.stex"
+path="res://.import/Game studies.PNG-9ceb10132513814f138f663e73b81080.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://SharedAssets/UI/Game studies.PNG"
-dest_files=[ "res://.import/Game studies.PNG-264a355dbdbb34b1931c40ce2fd08740.stex" ]
+source_file="res://SharedAssets/ui/Game studies.PNG"
+dest_files=[ "res://.import/Game studies.PNG-9ceb10132513814f138f663e73b81080.stex" ]
 
 [params]
 

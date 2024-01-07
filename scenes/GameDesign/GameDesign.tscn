@@ -19,7 +19,7 @@
 [ext_resource path="res://SharedAssets/font/BAHNSCHRIFT 1.TTF" type="DynamicFontData" id=17]
 [ext_resource path="res://SharedAssets/UI/B_Base2.png" type="Texture" id=18]
 [ext_resource path="res://SharedAssets/TopBar.tscn" type="PackedScene" id=19]
-[ext_resource path="res://SharedAssets/ui/Game Design.PNG" type="Texture" id=20]
+[ext_resource path="res://SharedAssets/Anleitungen/Game Design ohne Hintergrund.PNG" type="Texture" id=20]
 [ext_resource path="res://SharedAssets/anleitung_gd.png" type="Texture" id=21]
 [ext_resource path="res://scenes/GameDesign/assets/games/detroit.jpg" type="Texture" id=29]
 [ext_resource path="res://scenes/GameDesign/assets/games/deadspace.jpg" type="Texture" id=38]
@@ -126,6 +126,7 @@ text = "Done"
 [node name="TopBar" parent="." instance=ExtResource( 19 )]
 Game = 1
 LeftImage = ExtResource( 20 )
+RightImage = ExtResource( 21 )
 HelpImage = ExtResource( 21 )
 Description = "Instructions:
 

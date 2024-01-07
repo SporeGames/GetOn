@@ -1,4 +1,4 @@
-[gd_scene load_steps=67 format=2]
+[gd_scene load_steps=68 format=2]
 
 [ext_resource path="res://SharedAssets/font/BAHNSCHRIFT 1.TTF" type="DynamicFontData" id=1]
 [ext_resource path="res://scenes/GameStudy/assets/Kärtchen2.png" type="Texture" id=2]
@@ -39,6 +39,7 @@
 [ext_resource path="res://scenes/GameStudy/assets/Games/Starfield.PNG" type="Texture" id=37]
 [ext_resource path="res://scenes/GameStudy/SpawningGames.cs" type="Script" id=38]
 [ext_resource path="res://scenes/GameStudy/assets/MittleresKärtchen.png" type="Texture" id=39]
+[ext_resource path="res://SharedAssets/Anleitungen/Game studies  ohne Hintergrund.PNG" type="Texture" id=40]
 
 [sub_resource type="StyleBoxEmpty" id=49]
 
@@ -246,7 +247,8 @@ texture = ExtResource( 22 )
 
 [node name="TopBar" parent="." instance=ExtResource( 10 )]
 Game = 5
-LeftImage = ExtResource( 11 )
+LeftImage = ExtResource( 40 )
+RightImage = ExtResource( 11 )
 
 [node name="OpenConsoles" type="Button" parent="."]
 margin_left = 306.0
@@ -668,7 +670,6 @@ texture = ExtResource( 24 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Games/Games/Bioshock"]
 position = Vector2( -7.5, -3.75 )
-scale = Vector2( 1, 1 )
 shape = SubResource( 71 )
 
 [node name="Cyberpunk" type="KinematicBody2D" parent="Games/Games"]
@@ -682,7 +683,6 @@ texture = ExtResource( 25 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Games/Games/Cyberpunk"]
 position = Vector2( -7.5, -3.75 )
-scale = Vector2( 1, 1 )
 shape = SubResource( 71 )
 
 [node name="Detriot" type="KinematicBody2D" parent="Games/Games"]
@@ -696,7 +696,6 @@ texture = ExtResource( 26 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Games/Games/Detriot"]
 position = Vector2( -7.5, -3.75 )
-scale = Vector2( 1, 1 )
 shape = SubResource( 71 )
 
 [node name="DonkeyKong" type="KinematicBody2D" parent="Games/Games"]
@@ -710,7 +709,6 @@ texture = ExtResource( 29 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Games/Games/DonkeyKong"]
 position = Vector2( 7.5, 22.5 )
-scale = Vector2( 1, 1 )
 shape = SubResource( 71 )
 
 [node name="Horizon" type="KinematicBody2D" parent="Games/Games"]
@@ -724,7 +722,6 @@ texture = ExtResource( 30 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Games/Games/Horizon"]
 position = Vector2( 5, 0 )
-scale = Vector2( 1, 1 )
 shape = SubResource( 71 )
 
 [node name="MazeWars" type="KinematicBody2D" parent="Games/Games"]
@@ -738,7 +735,6 @@ texture = ExtResource( 27 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Games/Games/MazeWars"]
 position = Vector2( 12.5, -5 )
-scale = Vector2( 1, 1 )
 shape = SubResource( 71 )
 
 [node name="PacMan" type="KinematicBody2D" parent="Games/Games"]
@@ -751,7 +747,6 @@ texture = ExtResource( 28 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Games/Games/PacMan"]
 position = Vector2( 12.5, -5 )
-scale = Vector2( 1, 1 )
 shape = SubResource( 71 )
 
 [node name="Pong" type="KinematicBody2D" parent="Games/Games"]
@@ -765,7 +760,6 @@ texture = ExtResource( 31 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Games/Games/Pong"]
 position = Vector2( 12.5, -5 )
-scale = Vector2( 1, 1 )
 shape = SubResource( 71 )
 
 [node name="SpaceInvaders" type="KinematicBody2D" parent="Games/Games"]
@@ -779,7 +773,6 @@ texture = ExtResource( 34 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Games/Games/SpaceInvaders"]
 position = Vector2( 12.5, -5 )
-scale = Vector2( 1, 1 )
 shape = SubResource( 71 )
 
 [node name="Starfield" type="KinematicBody2D" parent="Games/Games"]
@@ -793,7 +786,6 @@ texture = ExtResource( 37 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Games/Games/Starfield"]
 position = Vector2( 12.5, -5 )
-scale = Vector2( 1, 1 )
 shape = SubResource( 71 )
 
 [node name="Stray" type="KinematicBody2D" parent="Games/Games"]
@@ -807,7 +799,6 @@ texture = ExtResource( 33 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Games/Games/Stray"]
 position = Vector2( 12.5, -5 )
-scale = Vector2( 1, 1 )
 shape = SubResource( 71 )
 
 [node name="Tennis" type="KinematicBody2D" parent="Games/Games"]
@@ -821,7 +812,6 @@ texture = ExtResource( 32 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Games/Games/Tennis"]
 position = Vector2( 12.5, -5 )
-scale = Vector2( 1, 1 )
 shape = SubResource( 71 )
 
 [node name="SpawningGames" type="Node2D" parent="Games"]
