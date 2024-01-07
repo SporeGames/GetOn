@@ -1,16 +1,21 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=14 format=2]
 
-[ext_resource path="res://scenes/Programming/assets/Programmierraumm.png" type="Texture" id=1]
+[ext_resource path="res://SharedAssets/Decoration.tscn" type="PackedScene" id=1]
 [ext_resource path="res://SharedAssets/RoomPerson.tscn" type="PackedScene" id=2]
 [ext_resource path="res://scenes/Rooms/BaseRoom.cs" type="Script" id=3]
 [ext_resource path="res://SharedAssets/ui/B_menu.png" type="Texture" id=4]
 [ext_resource path="res://SharedAssets/ui/B_Home_pressed.png" type="Texture" id=5]
-[ext_resource path="res://scenes/Programming/assets/IMG_0267.PNG" type="Texture" id=6]
-[ext_resource path="res://SharedAssets/OutlineShader.tres" type="Shader" id=7]
+[ext_resource path="res://SharedAssets/Dialog Charakters/Prog.PNG" type="Texture" id=6]
+[ext_resource path="res://scenes/Programming/assets/Programming/Popup.PNG" type="Texture" id=7]
+[ext_resource path="res://SharedAssets/OutlineShader.tres" type="Shader" id=8]
+[ext_resource path="res://scenes/Programming/assets/Programming/Can Popup.PNG" type="Texture" id=9]
+[ext_resource path="res://scenes/Programming/assets/Programming/Canpopup2.PNG" type="Texture" id=10]
+[ext_resource path="res://scenes/Programming/assets/Programming.PNG" type="Texture" id=11]
+[ext_resource path="res://scenes/Programming/assets/Programming/Popup2.PNG" type="Texture" id=12]
 
 [sub_resource type="ShaderMaterial" id=1]
 resource_local_to_scene = true
-shader = ExtResource( 7 )
+shader = ExtResource( 8 )
 shader_param/blink_strength = 0.1
 shader_param/blink_rate = 2.0
 shader_param/outline_color = Color( 1, 1, 1, 1 )
@@ -21,15 +26,15 @@ HasDoor = true
 
 [node name="Background" type="Sprite" parent="."]
 position = Vector2( 959.75, 539.75 )
-texture = ExtResource( 1 )
+texture = ExtResource( 11 )
 
 [node name="RoomPerson" parent="." instance=ExtResource( 2 )]
 GameSpecialization = 2
 
 [node name="PersonSprite" parent="RoomPerson" index="0"]
 material = SubResource( 1 )
-position = Vector2( 307.75, 731.75 )
-scale = Vector2( 0.583036, 0.548438 )
+position = Vector2( 306, 755 )
+scale = Vector2( 1.04279, 0.980907 )
 texture = ExtResource( 6 )
 
 [node name="InteractButton" parent="RoomPerson" index="1"]
@@ -43,26 +48,23 @@ Title = "Justin"
 Texts = PoolStringArray( "Let’s get right into it, I need some assistance with implementing some basic mechanics into our game. Explanations will follow shortly…" )
 SceneToLoad = "Programming"
 
-[node name="EpicFailDialogue" parent="RoomPerson" index="3"]
-Title = "Justin"
-Texts = PoolStringArray( "I get the point, that not everyone knows blueprints, but since you are supposed to be a specialized programmer, you should at least know in which order to place them… .", " I’m sorry newbie, but I don’t think you should consider yourself an experienced programmer in the game-industry." )
-
-[node name="TalkAgainDialoge" parent="RoomPerson" index="4"]
-Texts = PoolStringArray( " I don’t have anything for you left to do newbie, don’t let the others wait." )
-
-[node name="ResultDialogue" parent="RoomPerson" index="5"]
+[node name="ResultDialogue" parent="RoomPerson" index="3"]
 Title = "Justin"
 Texts = PoolStringArray( "Holy-moly! That worked better than I thought. Perfect work newbie." )
 ResultThreshold = 38
 
-[node name="ResultDialogue2" parent="RoomPerson" index="6"]
+[node name="ResultDialogue2" parent="RoomPerson" index="4"]
 Title = "Justin"
 Texts = PoolStringArray( "Not bad, but not really good either." )
 ResultThreshold = 23
 
-[node name="ResultDialogue3" parent="RoomPerson" index="7"]
+[node name="ResultDialogue3" parent="RoomPerson" index="5"]
 Title = "Justin"
 Texts = PoolStringArray( "You don’t have any experience with blueprints, have you\?" )
+
+[node name="EpicFailDialogue" parent="RoomPerson" index="6"]
+Title = "Justin"
+Texts = PoolStringArray( "I get the point, that not everyone knows blueprints, but since you are supposed to be a specialized programmer, you should at least know in which order to place them… .", " I’m sorry newbie, but I don’t think you should consider yourself an experienced programmer in the game-industry." )
 
 [node name="DoorButton" type="TextureButton" parent="."]
 margin_left = 886.0
@@ -78,4 +80,22 @@ texture_normal = ExtResource( 4 )
 texture_pressed = ExtResource( 5 )
 expand = true
 
+[node name="Deco" parent="." instance=ExtResource( 1 )]
+position = Vector2( 148, 267 )
+PopupTexture = ExtResource( 12 )
+SmallTexture = ExtResource( 10 )
+
+[node name="Popup" parent="Deco" index="1"]
+position = Vector2( -14, -10 )
+
+[node name="Sprite" parent="Deco/Popup" index="0"]
+z_index = 6
+
+[node name="Deco2" parent="." instance=ExtResource( 1 )]
+position = Vector2( 426, 266 )
+PopupTexture = ExtResource( 7 )
+SmallTexture = ExtResource( 9 )
+
 [editable path="RoomPerson"]
+[editable path="Deco"]
+[editable path="Deco2"]
