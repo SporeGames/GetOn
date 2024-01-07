@@ -11,7 +11,6 @@ public class NoteBox : Area2D {
 	public override void _Ready() {
 		_management = GetParent().GetParent<Management>();
 		Connect("area_entered", this, nameof(OnEntered));
-		Connect("area_exited", this, nameof(OnLeft));
 		NoteColor = GetNode<ColorRect>("ColorRect");
 	}
 	
@@ -19,9 +18,6 @@ public class NoteBox : Area2D {
 		if (area is ManagementNote note && !_management.BoxedNotes.ContainsKey(this)) {
 			_management.BoxEntered(this, note); // Always snap
 		}
-	}
-	
-	private void OnLeft(Area2D area) {
 	}
 	
 }

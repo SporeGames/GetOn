@@ -1,7 +1,14 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://SharedAssets/font/BAHNSCHRIFT 1.TTF" type="DynamicFontData" id=1]
 [ext_resource path="res://scenes/Management/ManagementNote.cs" type="Script" id=2]
+[ext_resource path="res://scenes/Management/assets/white.png" type="Texture" id=3]
+
+[sub_resource type="DynamicFont" id=3]
+size = 40
+use_mipmaps = true
+use_filter = true
+font_data = ExtResource( 1 )
 
 [sub_resource type="DynamicFont" id=1]
 size = 38
@@ -15,13 +22,30 @@ extents = Vector2( 141.5, 139 )
 [node name="ManagementNode" type="Area2D"]
 script = ExtResource( 2 )
 
-[node name="NoteColor" type="ColorRect" parent="."]
-margin_left = -142.0
-margin_top = -139.0
-margin_right = 138.0
-margin_bottom = 140.0
+[node name="Hint" type="Node2D" parent="."]
+visible = false
+z_index = 200
+
+[node name="ColorRect" type="ColorRect" parent="Hint"]
+margin_left = 140.0
+margin_top = -127.0
+margin_right = 471.0
+margin_bottom = 112.0
 mouse_filter = 2
-color = Color( 0.968627, 0.968627, 0.968627, 1 )
+color = Color( 0.819608, 0.854902, 0.913725, 1 )
+
+[node name="Label" type="RichTextLabel" parent="Hint"]
+margin_left = 153.0
+margin_top = -118.0
+margin_right = 465.0
+margin_bottom = 100.0
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+custom_fonts/normal_font = SubResource( 3 )
+text = "RichTextLabel"
+
+[node name="NoteColor" type="Sprite" parent="."]
+scale = Vector2( 0.782258, 0.782258 )
+texture = ExtResource( 3 )
 
 [node name="NoteText" type="RichTextLabel" parent="."]
 margin_left = -111.0
@@ -34,4 +58,5 @@ custom_fonts/normal_font = SubResource( 1 )
 text = "post it blah blah"
 
 [node name="Shape" type="CollisionShape2D" parent="."]
+visible = false
 shape = SubResource( 2 )

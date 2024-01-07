@@ -10,47 +10,54 @@ public class Management : Node2D {
 	[Export] public PackedScene NoteScene;
 	
 	private RichTextLabel _colorText;
-	private Button _orangeButton;
-	private Button _blueButton;
-	private Button _purpleButton;
-	private Button _yellowButton;
-	private Button _greenButton;
-	private Button _blackButton;
-	private Button _submitButton;
-
+	private TextureButton _orangeButton;
+	private TextureButton _blueButton;
+	private TextureButton _purpleButton;
+	private TextureButton _yellowButton;
+	private TextureButton _greenButton;
+	private TextureButton _submitButton;
+	private Sprite _mouseFollower;
 	
 	private ManagementNote _currentNote;
+	private NoteBox _currentBox;
 	private Vector2 _dragOffset = Vector2.Zero;
-	private Color _selectedColor = Colors.White;
-
+	private int _selectedColor = 0;
+	private bool isDragging = false;
+	private bool _didJustRecolor = false;
+	private long _lastRecolorTime = 0;
+	
 	private List<ManagementNote> _notes = new List<ManagementNote>();
 	public Dictionary<NoteBox, ManagementNote> BoxedNotes = new Dictionary<NoteBox, ManagementNote>();
 	private static Color _defaultBoxColor = new Color(0.69f, 0.69f, 0.69f, 1);
-	private bool _hasJustSnapped = false;
+	
+	private Dictionary<int, Texture> _colorTextures = new Dictionary<int, Texture> {
+		{0, GD.Load<Texture>("res://scenes/Management/assets/white.png")},
+		{1, GD.Load<Texture>("res://scenes/Management/assets/orange.png")},
+		{2, GD.Load<Texture>("res://scenes/Management/assets/grün.png")},
+		{3, GD.Load<Texture>("res://scenes/Management/assets/blau.png")},
+		{4, GD.Load<Texture>("res://scenes/Management/assets/lila.png")},
+		{5, GD.Load<Texture>("res://scenes/Management/assets/gelb.png")}
+	};
+
+	public Dictionary<Texture, int> TextureToColor;
 	
 	
 	public override void _Ready() {
+		TextureToColor = _colorTextures.ToDictionary(x => x.Value, x => x.Key);
+		_mouseFollower = GetNode<Sprite>("MouseFollower");
 		_colorText = GetNode<RichTextLabel>("ColorSelector/Text");
-		_orangeButton = GetNode<Button>("ColorSelector/Orange");
-		_blueButton = GetNode<Button>("ColorSelector/Blue");
-		_purpleButton = GetNode<Button>("ColorSelector/Purple");
-		_yellowButton = GetNode<Button>("ColorSelector/Yellow");
-		_greenButton = GetNode<Button>("ColorSelector/Green");
-		_blackButton = GetNode<Button>("ColorSelector/Black");
-		_submitButton = GetNode<Button>("SubmitButton");
+		_orangeButton = GetNode<TextureButton>("ColorSelector/Orange");
+		_blueButton = GetNode<TextureButton>("ColorSelector/Blue");
+		_purpleButton = GetNode<TextureButton>("ColorSelector/Purple");
+		_yellowButton = GetNode<TextureButton>("ColorSelector/Yellow");
+		_greenButton = GetNode<TextureButton>("ColorSelector/Green");
+		_submitButton = GetNode<TextureButton>("SubmitButton");
 		_orangeButton.Connect("pressed", this, nameof(OnColorButtonPress), new Godot.Collections.Array {0});
-		_blueButton.Connect("pressed", this, nameof(OnColorButtonPress), new Godot.Collections.Array {1});
-		_purpleButton.Connect("pressed", this, nameof(OnColorButtonPress), new Godot.Collections.Array {2});
-		_yellowButton.Connect("pressed", this, nameof(OnColorButtonPress), new Godot.Collections.Array {3});
-		_greenButton.Connect("pressed", this, nameof(OnColorButtonPress), new Godot.Collections.Array {4});
-		_blackButton.Connect("pressed", this, nameof(OnColorButtonPress), new Godot.Collections.Array {5});
+		_greenButton.Connect("pressed", this, nameof(OnColorButtonPress), new Godot.Collections.Array {1});
+		_blueButton.Connect("pressed", this, nameof(OnColorButtonPress), new Godot.Collections.Array {2});
+		_purpleButton.Connect("pressed", this, nameof(OnColorButtonPress), new Godot.Collections.Array {3});
+		_yellowButton.Connect("pressed", this, nameof(OnColorButtonPress), new Godot.Collections.Array {4});
 		_submitButton.Connect("pressed", this, nameof(SubmitResult));
-		// Apparently modulate isn't exposed to the editor, so we have to do it manually
-		_orangeButton.Modulate = Colors.Orange;
-		_blueButton.Modulate = Colors.Blue;
-		_purpleButton.Modulate = Colors.Purple;
-		_yellowButton.Modulate = Colors.Yellow;
-		_greenButton.Modulate = Colors.Green;
 		foreach (var note in GetNode("Notes").GetChildren()) {
 			if (note is ManagementNote managementNote) {
 				_notes.Add(managementNote);
@@ -59,30 +66,33 @@ public class Management : Node2D {
 	}
 
 	public void OnColorButtonPress(int id) {
+		_mouseFollower.Visible = true;
+		Input.MouseMode = Input.MouseModeEnum.Hidden;
 		switch (id) {
 			case 0:
-				_selectedColor = Colors.Orange;
+				_selectedColor = 1;
 				_colorText.Text = "Art";
+				_mouseFollower.Modulate = Colors.Orange;
 				break;
 			case 1:
-				_selectedColor = Colors.Blue;
-				_colorText.Text = "Programming";
+				_selectedColor = 2;
+				_colorText.Text = "Narrative";
+				_mouseFollower.Modulate = Colors.DarkGreen;
 				break;
 			case 2:
-				_selectedColor = Colors.Purple;
-				_colorText.Text = "Game Design";
+				_selectedColor = 3;
+				_colorText.Text = "Programming";
+				_mouseFollower.Modulate = Colors.Blue;
 				break;
 			case 3:
-				_selectedColor = Colors.Yellow;
-				_colorText.Text = "Sound";
+				_selectedColor = 4;
+				_colorText.Text = "Game Design";
+				_mouseFollower.Modulate = Colors.Purple;
 				break;
 			case 4:
-				_selectedColor = Colors.Green;
-				_colorText.Text = "Narrative";
-				break;
-			case 5:
-				_selectedColor = Colors.Black;
-				_colorText.Text = "Management";
+				_selectedColor = 5;
+				_colorText.Text = "Sound";
+				_mouseFollower.Modulate = Colors.Yellow;
 				break;
 			default:
 				return;
@@ -93,17 +103,12 @@ public class Management : Node2D {
 		var points = 0;
 		var cardsColoredCorrectly = 0;
 		foreach (var note in _notes) {
-			var ColorID = note.NoteColor.Color == Colors.Orange ? 0 :
-				note.NoteColor.Color == Colors.Blue ? 1 :
-				note.NoteColor.Color == Colors.Purple ? 2 :
-				note.NoteColor.Color == Colors.Yellow ? 3 :
-				note.NoteColor.Color == Colors.Green ? 4 :
-				note.NoteColor.Color == Colors.Black ? 5 : -1;
-			if (ColorID == note.ValidColorID) {
+			var colorId = TextureToColor[note.NoteColor.Texture];
+			if (colorId == note.ValidColorID) {
 				points += 3;
 				cardsColoredCorrectly++;
 			}
-			else if (ColorID != -1) {
+			else if (colorId != -1) {
 				points += 1;
 			}
 		}
@@ -126,28 +131,47 @@ public class Management : Node2D {
 	}
 
 	public override void _Process(float delta) {
-		if (!Input.IsMouseButtonPressed((int) ButtonList.Left)) {
-			_hasJustSnapped = false;
+		if (_didJustRecolor && DateTime.Now.Millisecond - _lastRecolorTime > 100) { // Don't allow moving for 100ms after recoloring, otherwise you might accidentally move the note out of the box again
+			_didJustRecolor = false;
+			GD.Print("Can now move again");
 		}
-		if (_selectedColor != Colors.White) {
+		_mouseFollower.Position = GetGlobalMousePosition();
+		if (_currentBox != null && _currentNote != null && isDragging && !_didJustRecolor) {
+			if (!Input.IsMouseButtonPressed((int) ButtonList.Left) && !BoxedNotes.ContainsKey(_currentBox)) {
+				_currentNote.Position = _currentBox.GlobalPosition;
+				_dragOffset = Vector2.Zero;
+				BoxedNotes.Add(_currentBox, _currentNote);
+				isDragging = false;
+				GD.Print("Note " +  _currentNote.Name + " put in box " + _currentBox.Name);
+				return;
+			}
+		}
+		if (_selectedColor != 0) {
 			if (Input.IsMouseButtonPressed((int) ButtonList.Left) && _currentNote != null) {
-				_currentNote.NoteColor.Color = _selectedColor;
-				// Black text is a bit hard to read on black background
-				if (_selectedColor == Colors.Black) {
-					_currentNote.GetNode<RichTextLabel>("NoteText").AddColorOverride("default_color", Colors.White);
-				}
-				if (_selectedColor == Colors.Yellow || _selectedColor == Colors.Green) {
+				_currentNote.NoteColor.Texture = _colorTextures[_selectedColor];
+				var image = _currentNote.NoteColor.Texture.GetData();
+				image.Lock();
+				var color = image.GetPixel(100, 100);
+				_currentNote.ColorRect.Color = color;
+				image.Unlock();
+				if (_selectedColor == 5 || _selectedColor == 2) {
 					_currentNote.GetNode<RichTextLabel>("NoteText").AddColorOverride("default_color", Colors.Black);
 				}
 				else {
 					_currentNote.GetNode<RichTextLabel>("NoteText").RemoveColorOverride("default_color");
 				}
-				_selectedColor = Colors.White;
+				GD.Print("Coloring note " + _currentNote.Name + " with color " + _selectedColor);
+				_selectedColor = 0;
+				_mouseFollower.Visible = false;
+				Input.MouseMode = Input.MouseModeEnum.Visible;
 				_colorText.Text = "Select...";
+				_didJustRecolor = true;
+				_lastRecolorTime = DateTime.Now.Millisecond;
 			}
+			return;
 		}
-		if (_currentNote != null && !_hasJustSnapped) {
-			if (Input.IsMouseButtonPressed((int) ButtonList.Left) && _selectedColor == Colors.White) {
+		if (_currentNote != null && _selectedColor == 0 && !_didJustRecolor) {
+			if (Input.IsMouseButtonPressed((int) ButtonList.Left) && _selectedColor == 0) {
 				if (_dragOffset == Vector2.Zero) {
 					_dragOffset = _currentNote.Position - GetGlobalMousePosition();
 				}
@@ -160,8 +184,9 @@ public class Management : Node2D {
 					BoxedNotes.Remove(box);
 					GD.Print("Removed note " +  _currentNote.Name + " from box " + box.Name);
 				}
+				isDragging = true;
 			}
-			else if (_selectedColor == Colors.White) {
+			else if (_selectedColor == 0) {
 				_dragOffset = Vector2.Zero;
 			}
 		}
@@ -172,19 +197,7 @@ public class Management : Node2D {
 		if (_currentNote != note) {
 			return;
 		}
-
-		_currentNote.Position = box.GlobalPosition;
-		_currentNote = null;
-		_dragOffset = Vector2.Zero;
-		GD.Print("Note put in box");
-		box.NoteColor.Color = Colors.White;
-		BoxedNotes.Add(box, note);
-
-		_hasJustSnapped = true;
-	}
-	
-	public void BoxLeft(NoteBox box, ManagementNote note) {
-		
+		_currentBox = box;
 	}
 
 	public void MouseEntered(ManagementNote note) {

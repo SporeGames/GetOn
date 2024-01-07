@@ -23,6 +23,20 @@ Texts = PoolStringArray( "Inspiring, truly inspiring! Are you a relative of Hans
 LoadSceneAfter = true
 SceneToLoad = "GameSelectionRoom"
 
+[node name="EpicFailDialogue" parent="." instance=ExtResource( 1 )]
+visible = false
+position = Vector2( 0, 704 )
+Title = "Julia, Sound-Design"
+Texts = PoolStringArray( "\"Um yeah, let\'s leave it by that.\"", "\"If I work on that task myself, I can listen to my tracks again.\"" )
+LoadSceneAfter = true
+SceneToLoad = "GameSelectionRoom"
+
+[node name="TalkAgainDialogue" parent="." instance=ExtResource( 1 )]
+visible = false
+position = Vector2( 0, 704 )
+Texts = PoolStringArray( "Hey, you already talked to me." )
+AutoNext = true
+
 [node name="ResultDialogue" parent="." instance=ExtResource( 1 )]
 visible = false
 position = Vector2( 0, 704 )
@@ -40,14 +54,6 @@ LoadSceneAfter = true
 SceneToLoad = "GameSelectionRoom"
 
 [node name="ResultDialogue3" parent="." instance=ExtResource( 1 )]
-visible = false
-position = Vector2( 0, 704 )
-Title = "Julia, Sound-Design"
-Texts = PoolStringArray( "\"Um yeah, let\'s leave it by that.\"", "\"If I work on that task myself, I can listen to my tracks again.\"" )
-LoadSceneAfter = true
-SceneToLoad = "GameSelectionRoom"
-
-[node name="EpicFailDialogue" parent="." instance=ExtResource( 1 )]
 visible = false
 position = Vector2( 0, 704 )
 Title = "Julia, Sound-Design"
