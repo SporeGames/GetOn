@@ -8,6 +8,8 @@ onready var gameDes_music = load("res://SharedAssets/music/Soundtracks/Game Stud
 onready var narr_music = load("res://SharedAssets/music/Soundtracks/Narrative Theme.mp3")
 onready var manage_music = load("res://SharedAssets/music/Soundtracks/Management Theme.mp3")
 onready var soundG_music = load("res://SharedAssets/music/Soundtracks/Sound Design Theme.mp3")
+onready var test = load("res://scenes/Sound/Soundeffects/Stealth Sound.wav")
+
 
 func play_music():
 	
@@ -42,4 +44,9 @@ func play_music6():
 func play_music7():
 
 	$Music.stream = soundG_music
+	$Music.play()
+
+func play_test():
+	
+	$Music.stream = test
 	$Music.play()

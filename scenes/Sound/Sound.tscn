@@ -16,7 +16,7 @@
 [ext_resource path="res://scenes/Sound/assets/rightpressed.PNG" type="Texture" id=14]
 [ext_resource path="res://SharedAssets/font/BAHNSCHRIFT 1.TTF" type="DynamicFontData" id=15]
 [ext_resource path="res://scenes/Sound/assets/DoneButton.png" type="Texture" id=16]
-[ext_resource path="res://SharedAssets/music/Play/MusicSound.gd" type="Script" id=17]
+[ext_resource path="res://scenes/Sound/MusicStop.gd" type="Script" id=17]
 [ext_resource path="res://SharedAssets/Anleitungen/Sound_blank.png" type="Texture" id=18]
 [ext_resource path="res://SharedAssets/anleitung_sound.png" type="Texture" id=19]
 [ext_resource path="res://SharedAssets/Anleitungen/Sound.PNG" type="Texture" id=20]
