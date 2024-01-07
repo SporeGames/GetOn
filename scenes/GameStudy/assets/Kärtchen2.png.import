@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/B_Base2.png-0a141f747f9d61828c7468139f2c8b5d.stex"
+path="res://.import/Kärtchen2.png-48172e64313e0d6c153b7498a8e7f32f.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://SharedAssets/UI/B_Base2.png"
-dest_files=[ "res://.import/B_Base2.png-0a141f747f9d61828c7468139f2c8b5d.stex" ]
+source_file="res://scenes/GameStudy/assets/Kärtchen2.png"
+dest_files=[ "res://.import/Kärtchen2.png-48172e64313e0d6c153b7498a8e7f32f.stex" ]
 
 [params]
 
