@@ -67,6 +67,7 @@ Title = "Justin"
 Texts = PoolStringArray( "You don’t have any experience with blueprints, have you\?" )
 
 [node name="DoorButton" type="TextureButton" parent="."]
+visible = false
 margin_left = 886.0
 margin_top = 193.0
 margin_right = 1145.0

@@ -117,6 +117,7 @@ texture_pressed = ExtResource( 4 )
 expand = true
 
 [node name="DoorButton" type="TextureButton" parent="."]
+visible = false
 margin_left = 937.0
 margin_top = 196.0
 margin_right = 1196.0

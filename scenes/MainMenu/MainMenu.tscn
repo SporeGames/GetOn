@@ -5,7 +5,7 @@
 [ext_resource path="res://scenes/GameSelectionRoom/assets/LayoutMaybe.png" type="Texture" id=3]
 [ext_resource path="res://SharedAssets/dialogue_characters/Chloe.png" type="Texture" id=4]
 [ext_resource path="res://SharedAssets/font/BAHNSCHRIFT 1.TTF" type="DynamicFontData" id=5]
-[ext_resource path="res://scenes/Introduction/assets/Questionaire01.png" type="Texture" id=6]
+[ext_resource path="res://scenes/MainMenu/assets/Questionair .PNG" type="Texture" id=6]
 [ext_resource path="res://SharedAssets/DialogeBox.tscn" type="PackedScene" id=7]
 
 [sub_resource type="DynamicFont" id=10]
@@ -56,35 +56,33 @@ position = Vector2( 964, 543 )
 texture = ExtResource( 3 )
 
 [node name="Sprite" type="Sprite" parent="Sprite"]
-position = Vector2( -24, -12 )
-scale = Vector2( 1.76754, 2.77686 )
 texture = ExtResource( 6 )
 
 [node name="Header" type="RichTextLabel" parent="Sprite/Sprite"]
-margin_left = -113.152
-margin_top = -154.131
-margin_right = 485.848
-margin_bottom = -37.1308
-rect_scale = Vector2( 0.422362, 0.422362 )
+margin_left = -187.0
+margin_top = -484.0
+margin_right = 412.0
+margin_bottom = -367.0
+rect_scale = Vector2( 0.597888, 0.597888 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 custom_fonts/normal_font = SubResource( 10 )
 text = "Questionare"
 
 [node name="Info" type="RichTextLabel" parent="Sprite/Sprite"]
-margin_left = -199.147
-margin_top = -96.1517
-margin_right = 948.853
-margin_bottom = 36.8483
-rect_scale = Vector2( 0.185904, 0.185904 )
+margin_left = -252.0
+margin_top = -346.0
+margin_right = 896.0
+margin_bottom = -213.0
+rect_scale = Vector2( 0.477031, 0.477031 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 custom_fonts/normal_font = SubResource( 10 )
 text = "Personal Information"
 
 [node name="Name" type="RichTextLabel" parent="Sprite/Sprite"]
-margin_left = -199.147
-margin_top = -64.8212
-margin_right = 208.853
-margin_bottom = 52.1788
+margin_left = -256.0
+margin_top = -240.0
+margin_right = 152.0
+margin_bottom = -123.0
 rect_scale = Vector2( 0.174888, 0.174888 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 custom_fonts/normal_font = SubResource( 10 )
@@ -151,10 +149,10 @@ anchor_left = 0.4
 anchor_top = 0.4
 anchor_right = 0.6
 anchor_bottom = 0.4
-margin_left = -45.0
-margin_top = -84.0
-margin_right = -24.0
-margin_bottom = -27.0
+margin_left = -115.0
+margin_top = -92.0
+margin_right = -94.0
+margin_bottom = -35.0
 theme = ExtResource( 2 )
 custom_colors/selection_color = Color( 0, 0, 0, 1 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
@@ -166,18 +164,20 @@ placeholder_text = "Firstname Lastname"
 placeholder_alpha = 0.5
 
 [node name="SelectHint" type="RichTextLabel" parent="."]
-margin_left = 743.0
-margin_top = 770.0
-margin_right = 1032.0
-margin_bottom = 810.0
+margin_left = 618.0
+margin_top = 642.0
+margin_right = 907.0
+margin_bottom = 682.0
+rect_scale = Vector2( 1.4981, 1.4981 )
+custom_colors/default_color = Color( 0, 0, 0, 1 )
 custom_fonts/normal_font = SubResource( 9 )
 text = "Select specialization:"
 
 [node name="SpecializationSelect" type="OptionButton" parent="."]
-margin_left = 854.0
-margin_top = 554.0
-margin_right = 1133.0
-margin_bottom = 594.0
+margin_left = 694.0
+margin_top = 758.0
+margin_right = 973.0
+margin_bottom = 798.0
 text = "Select specialization..."
 
 [node name="DialogueBox" parent="." instance=ExtResource( 7 )]

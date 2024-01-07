@@ -58,6 +58,7 @@ mouse_filter = 2
 [node name="LeftSide" type="Sprite" parent="Introduction"]
 position = Vector2( 159, 175 )
 scale = Vector2( 0.905092, 0.905093 )
+z_index = 2
 
 [node name="Text" type="RichTextLabel" parent="Introduction"]
 margin_left = -562.0

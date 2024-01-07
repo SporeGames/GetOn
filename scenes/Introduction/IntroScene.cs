@@ -6,7 +6,7 @@ public class IntroScene : Control
 {
 		private SharedNode _sharedNode;
 		private Button _understandButton;
-		private Button _startButton;
+		private TextureButton _startButton;
 		private Node2D _introScreen;
 		private Node2D _homeScreen;
 		
@@ -16,7 +16,7 @@ public class IntroScene : Control
 	{
 		_understandButton = GetNode<Button>("UnderstandButton");
 		_understandButton.Connect("pressed", this, nameof(OnUnderstandButtonPressed));  
-		_startButton = GetNode<Button>("StartButton");
+		_startButton = GetNode<TextureButton>("StartButton");
 		_startButton.Connect("pressed", this, nameof(OnStartButtonPressed));  
 		
 		_introScreen = GetNode<Node2D>("IntroScreen");

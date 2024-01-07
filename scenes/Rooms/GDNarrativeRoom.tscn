@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://scenes/Rooms/BaseRoom.cs" type="Script" id=1]
 [ext_resource path="res://scenes/Narrative/assets/GameDesignNarrativeRoom2.png" type="Texture" id=2]
@@ -11,6 +11,7 @@
 [ext_resource path="res://SharedAssets/Decoration.tscn" type="PackedScene" id=9]
 [ext_resource path="res://scenes/GameDesign/assets/GameDes/CanPopUp.PNG" type="Texture" id=10]
 [ext_resource path="res://scenes/GameDesign/assets/GameDes/Popup.PNG" type="Texture" id=11]
+[ext_resource path="res://SharedAssets/dialogue_characters/GameDesChar.PNG" type="Texture" id=12]
 
 [sub_resource type="ShaderMaterial" id=1]
 resource_local_to_scene = true
@@ -88,25 +89,38 @@ margin_bottom = 875.0
 
 [node name="WelcomeDialogue" parent="NarrativePerson" index="2"]
 Title = "Mary"
+Icon = ExtResource( 12 )
 Texts = PoolStringArray( " *Yawn*, huh who are you\? You seem quite interesting, just like a protagonist.Could you perhaps help me\? My whiteboard with all my great story ideas got messed up, I have no clue how that happened…", "You’re in\? Thank you very much!" )
 SceneToLoad = "Narrative"
 
+[node name="Icon" parent="NarrativePerson/WelcomeDialogue" index="2"]
+scale = Vector2( 0.877229, 0.877229 )
+z_index = 1
+texture = ExtResource( 12 )
+
 [node name="EpicFailDialogue" parent="NarrativePerson" index="3"]
 Title = "Marie"
+Icon = ExtResource( 12 )
 Texts = PoolStringArray( "That\'s an unexpected twist… . You said you are specialized in story design, did you try to deceive us\? " )
+
+[node name="TalkAgainDialogue" parent="NarrativePerson" index="4"]
+Icon = ExtResource( 12 )
 
 [node name="ResultDialogue" parent="NarrativePerson" index="5"]
 Title = "Marie"
+Icon = ExtResource( 12 )
 Texts = PoolStringArray( "Fantastic, you perfectly restored my whiteboard! You seem like a main character of some sort…" )
 ResultThreshold = 38
 
 [node name="ResultDialogue2" parent="NarrativePerson" index="6"]
 Title = "Marie"
+Icon = ExtResource( 12 )
 Texts = PoolStringArray( "That helped me a little bit. I think I can restore the rest myself." )
 ResultThreshold = 23
 
 [node name="ResultDialogue3" parent="NarrativePerson" index="7"]
 Title = "Marie"
+Icon = ExtResource( 12 )
 Texts = PoolStringArray( "*Yawn* oh well, let’s just leave it at that. Maybe I can find even better story ideas if I do that task myself." )
 
 [node name="BackButton" type="TextureButton" parent="."]
@@ -132,4 +146,5 @@ rect_scale = Vector2( 0.601389, 0.601389 )
 
 [editable path="GDPerson"]
 [editable path="NarrativePerson"]
+[editable path="NarrativePerson/WelcomeDialogue"]
 [editable path="Deco"]
