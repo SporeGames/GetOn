@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/B_Base2.png-0a141f747f9d61828c7468139f2c8b5d.stex"
+path="res://.import/anleitung_gameStud.png-66e85b92d4e4842e16b8b0772202f825.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://SharedAssets/UI/B_Base2.png"
-dest_files=[ "res://.import/B_Base2.png-0a141f747f9d61828c7468139f2c8b5d.stex" ]
+source_file="res://SharedAssets/anleitung_gameStud.png"
+dest_files=[ "res://.import/anleitung_gameStud.png-66e85b92d4e4842e16b8b0772202f825.stex" ]
 
 [params]
 

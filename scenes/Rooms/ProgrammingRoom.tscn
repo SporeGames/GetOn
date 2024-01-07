@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://SharedAssets/Decoration.tscn" type="PackedScene" id=1]
 [ext_resource path="res://SharedAssets/RoomPerson.tscn" type="PackedScene" id=2]
@@ -12,6 +12,7 @@
 [ext_resource path="res://scenes/Programming/assets/Programming/Canpopup2.PNG" type="Texture" id=10]
 [ext_resource path="res://scenes/Programming/assets/Programming.PNG" type="Texture" id=11]
 [ext_resource path="res://scenes/Programming/assets/Programming/Popup2.PNG" type="Texture" id=12]
+[ext_resource path="res://SharedAssets/dialogue_characters/Programming_blank.png" type="Texture" id=13]
 
 [sub_resource type="ShaderMaterial" id=1]
 resource_local_to_scene = true
@@ -45,25 +46,33 @@ margin_bottom = 951.0
 
 [node name="WelcomeDialogue" parent="RoomPerson" index="2"]
 Title = "Justin"
+Icon = ExtResource( 13 )
 Texts = PoolStringArray( "Let’s get right into it, I need some assistance with implementing some basic mechanics into our game. Explanations will follow shortly…" )
 SceneToLoad = "Programming"
 
 [node name="EpicFailDialogue" parent="RoomPerson" index="3"]
 Title = "Justin"
+Icon = ExtResource( 13 )
 Texts = PoolStringArray( "I get the point, that not everyone knows blueprints, but since you are supposed to be a specialized programmer, you should at least know in which order to place them… .", " I’m sorry newbie, but I don’t think you should consider yourself an experienced programmer in the game-industry." )
+
+[node name="TalkAgainDialogue" parent="RoomPerson" index="4"]
+Icon = ExtResource( 13 )
 
 [node name="ResultDialogue" parent="RoomPerson" index="5"]
 Title = "Justin"
+Icon = ExtResource( 13 )
 Texts = PoolStringArray( "Holy-moly! That worked better than I thought. Perfect work newbie." )
 ResultThreshold = 38
 
 [node name="ResultDialogue2" parent="RoomPerson" index="6"]
 Title = "Justin"
+Icon = ExtResource( 13 )
 Texts = PoolStringArray( "Not bad, but not really good either." )
 ResultThreshold = 23
 
 [node name="ResultDialogue3" parent="RoomPerson" index="7"]
 Title = "Justin"
+Icon = ExtResource( 13 )
 Texts = PoolStringArray( "You don’t have any experience with blueprints, have you\?" )
 
 [node name="DoorButton" type="TextureButton" parent="."]

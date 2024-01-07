@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=16 format=2]
 
 [ext_resource path="res://scenes/Rooms/BaseRoom.cs" type="Script" id=1]
 [ext_resource path="res://scenes/Management/assets/Management.PNG" type="Texture" id=2]
@@ -13,6 +13,7 @@
 [ext_resource path="res://scenes/Management/assets/ManagementPinnwand/Monstera.png" type="Texture" id=11]
 [ext_resource path="res://scenes/Management/assets/ManagementPinnwand/AktenPopUp.png" type="Texture" id=12]
 [ext_resource path="res://scenes/Management/assets/ManagementPinnwand/akternschrank mit pflanze.PNG" type="Texture" id=13]
+[ext_resource path="res://SharedAssets/dialogue_characters/management  ohne Hintergrund.PNG" type="Texture" id=14]
 
 [sub_resource type="ShaderMaterial" id=1]
 resource_local_to_scene = true
@@ -67,21 +68,31 @@ margin_bottom = 783.0
 
 [node name="WelcomeDialogue" parent="RoomPerson" index="2"]
 Title = "Chloe"
+Icon = ExtResource( 14 )
 Texts = PoolStringArray( "I prepared an example of a management task for you, so you can show me whatcha got. " )
 SceneToLoad = "Management"
 
+[node name="EpicFailDialogue" parent="RoomPerson" index="3"]
+Icon = ExtResource( 14 )
+
+[node name="TalkAgainDialogue" parent="RoomPerson" index="4"]
+Icon = ExtResource( 14 )
+
 [node name="ResultDialogue" parent="RoomPerson" index="5"]
 Title = "Chloe"
+Icon = ExtResource( 14 )
 Texts = PoolStringArray( "Excellent work, just as I imagined. You have great potential." )
 ResultThreshold = 38
 
 [node name="ResultDialogue2" parent="RoomPerson" index="6"]
 Title = "Chloe"
+Icon = ExtResource( 14 )
 Texts = PoolStringArray( "Your work is alright, not perfect though." )
 ResultThreshold = 23
 
 [node name="ResultDialogue3" parent="RoomPerson" index="7"]
 Title = "Chloe"
+Icon = ExtResource( 14 )
 Texts = PoolStringArray( "Oh well, this doesn’t really help us… " )
 
 [editable path="RoomPerson"]

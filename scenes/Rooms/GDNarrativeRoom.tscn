@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=17 format=2]
 
 [ext_resource path="res://scenes/Rooms/BaseRoom.cs" type="Script" id=1]
 [ext_resource path="res://scenes/Narrative/assets/GameDesignNarrativeRoom2.png" type="Texture" id=2]
@@ -12,6 +12,8 @@
 [ext_resource path="res://scenes/GameDesign/assets/GameDes/CanPopUp.PNG" type="Texture" id=10]
 [ext_resource path="res://scenes/GameDesign/assets/GameDes/Popup.PNG" type="Texture" id=11]
 [ext_resource path="res://SharedAssets/dialogue_characters/GameDesChar.PNG" type="Texture" id=12]
+[ext_resource path="res://SharedAssets/dialogue_characters/Story_blank.png" type="Texture" id=13]
+[ext_resource path="res://SharedAssets/dialogue_characters/Game Design ohne Hintergrund.PNG" type="Texture" id=14]
 
 [sub_resource type="ShaderMaterial" id=1]
 resource_local_to_scene = true
@@ -46,30 +48,38 @@ texture = ExtResource( 4 )
 [node name="InteractButton" parent="GDPerson" index="1"]
 margin_left = 1379.0
 margin_top = 313.0
-margin_right = 1662.0
-margin_bottom = 768.0
+margin_right = 1533.0
+margin_bottom = 626.0
 
 [node name="WelcomeDialogue" parent="GDPerson" index="2"]
 Title = "Mike"
+Icon = ExtResource( 14 )
 Texts = PoolStringArray( "Well you see, I started off as an intern just like you and… Oh right, you\'re here for your task!", "We are currently researching which player-motivations fit popular sci-fi games the best. I will explain everything in detail in a second, so don’t worry, you will get the hang of it!" )
 SceneToLoad = "GameDesign"
 
 [node name="EpicFailDialogue" parent="GDPerson" index="3"]
 Title = "Mike"
+Icon = ExtResource( 14 )
 Texts = PoolStringArray( "I’m honest with you, you should rethink if you want to become a Game-Designer, because your work didn’t help me here…" )
+
+[node name="TalkAgainDialogue" parent="GDPerson" index="4"]
+Icon = ExtResource( 14 )
 
 [node name="ResultDialogue" parent="GDPerson" index="5"]
 Title = "Mike"
+Icon = ExtResource( 14 )
 Texts = PoolStringArray( "Five-Star work you did there, I’m almost worried about my position…" )
 ResultThreshold = 38
 
 [node name="ResultDialogue2" parent="GDPerson" index="6"]
 Title = "Mike"
+Icon = ExtResource( 14 )
 Texts = PoolStringArray( "Decent, decent. Some minor adjustments from me and all should turn out as planned." )
 ResultThreshold = 23
 
 [node name="ResultDialogue3" parent="GDPerson" index="7"]
 Title = "Mike"
+Icon = ExtResource( 14 )
 Texts = PoolStringArray( "Looks like you aren’t really made to be a game-designer. Maybe you will do better at the other tasks." )
 
 [node name="NarrativePerson" parent="." instance=ExtResource( 3 )]
@@ -89,7 +99,7 @@ margin_bottom = 875.0
 
 [node name="WelcomeDialogue" parent="NarrativePerson" index="2"]
 Title = "Mary"
-Icon = ExtResource( 12 )
+Icon = ExtResource( 13 )
 Texts = PoolStringArray( " *Yawn*, huh who are you\? You seem quite interesting, just like a protagonist.Could you perhaps help me\? My whiteboard with all my great story ideas got messed up, I have no clue how that happened…", "You’re in\? Thank you very much!" )
 SceneToLoad = "Narrative"
 
@@ -100,27 +110,27 @@ texture = ExtResource( 12 )
 
 [node name="EpicFailDialogue" parent="NarrativePerson" index="3"]
 Title = "Marie"
-Icon = ExtResource( 12 )
+Icon = ExtResource( 13 )
 Texts = PoolStringArray( "That\'s an unexpected twist… . You said you are specialized in story design, did you try to deceive us\? " )
 
 [node name="TalkAgainDialogue" parent="NarrativePerson" index="4"]
-Icon = ExtResource( 12 )
+Icon = ExtResource( 13 )
 
 [node name="ResultDialogue" parent="NarrativePerson" index="5"]
 Title = "Marie"
-Icon = ExtResource( 12 )
+Icon = ExtResource( 13 )
 Texts = PoolStringArray( "Fantastic, you perfectly restored my whiteboard! You seem like a main character of some sort…" )
 ResultThreshold = 38
 
 [node name="ResultDialogue2" parent="NarrativePerson" index="6"]
 Title = "Marie"
-Icon = ExtResource( 12 )
+Icon = ExtResource( 13 )
 Texts = PoolStringArray( "That helped me a little bit. I think I can restore the rest myself." )
 ResultThreshold = 23
 
 [node name="ResultDialogue3" parent="NarrativePerson" index="7"]
 Title = "Marie"
-Icon = ExtResource( 12 )
+Icon = ExtResource( 13 )
 Texts = PoolStringArray( "*Yawn* oh well, let’s just leave it at that. Maybe I can find even better story ideas if I do that task myself." )
 
 [node name="BackButton" type="TextureButton" parent="."]
