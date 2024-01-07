@@ -1,5 +1,6 @@
 using Godot;
 using System;
+using GetOn.SharedAssets;
 
 namespace GetOn.scenes.GameSelectionRoom {
 	public class GameSelRoom : Node2D {
@@ -80,6 +81,10 @@ namespace GetOn.scenes.GameSelectionRoom {
 		}
 
 		private void CheckCompletions() {
+			if (_sharedNode.CompletedTasks.Count == Enum.GetValues(typeof(AbilitySpecialization)).Length - 1) {
+				GetNode<DialogueBox>("CompletedGameDialogue").Visible = true;
+				GetNode<Button>("PrintPDF").Visible = true;
+			}
 			foreach (var game in _sharedNode.CompletedTasks) {
 				switch (game) {
 					case AbilitySpecialization.Programming:
