@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Programmieren Theme Slowed Version.mp3-cc37863a8e40f01911ca23a1aa5c9392.mp3str"
+
+[deps]
+
+source_file="res://SharedAssets/music/Soundtracks/Programmieren Theme Slowed Version.mp3"
+dest_files=[ "res://.import/Programmieren Theme Slowed Version.mp3-cc37863a8e40f01911ca23a1aa5c9392.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

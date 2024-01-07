@@ -2,8 +2,8 @@ extends Node
 
 
 onready var main_music = load("res://SharedAssets/music/Soundtracks/Hauptraum Theme [V2].mp3")
-onready var prog_music = load("res://SharedAssets/music/Soundtracks/Programmieren Theme Slowed Version.wav")
-onready var gameStud_music = load("res://SharedAssets/music/Soundtracks/Game Design Theme Slowed Version.wav")
+onready var prog_music = load("res://SharedAssets/music/Soundtracks/Programmieren Theme Slowed Version.mp3")
+onready var gameStud_music = load("res://SharedAssets/music/Soundtracks/Game Design Theme Slowed Version.mp3")
 onready var gameDes_music = load("res://SharedAssets/music/Soundtracks/Game Studies Theme.mp3")
 onready var narr_music = load("res://SharedAssets/music/Soundtracks/Narrative Theme.mp3")
 onready var manage_music = load("res://SharedAssets/music/Soundtracks/Management Theme.mp3")

@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Game Design Theme Slowed Version.mp3-b8d81109d5522d5824a2d799b17faba1.mp3str"
+
+[deps]
+
+source_file="res://SharedAssets/music/Soundtracks/Game Design Theme Slowed Version.mp3"
+dest_files=[ "res://.import/Game Design Theme Slowed Version.mp3-b8d81109d5522d5824a2d799b17faba1.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0
