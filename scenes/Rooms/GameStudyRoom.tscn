@@ -46,26 +46,26 @@ Title = "Emily"
 Texts = PoolStringArray( "Oh, you want to start with your task\? - It´s quite simple. All you have to do is put the games and consoles back up on the shelves. We did some cleaning before you came." )
 SceneToLoad = "GameStudy"
 
-[node name="ResultDialogue" parent="GSPerson" index="3"]
+[node name="EpicFailDialogue" parent="GSPerson" index="3"]
+Title = "Emily"
+Texts = PoolStringArray( "I don’t want to be rude or something, but I don’t think that you have enough knowledge in game-studies to be specialized in this field…" )
+
+[node name="ResultDialogue" parent="GSPerson" index="5"]
 Title = "Emily"
 Texts = PoolStringArray( "You really love games, don’t you\? That’s very cool, thanks for your help." )
 SceneToLoad = "GameStudy"
 ResultThreshold = 38
 
-[node name="ResultDialogue2" parent="GSPerson" index="4"]
+[node name="ResultDialogue2" parent="GSPerson" index="6"]
 Title = "Emily"
 Texts = PoolStringArray( "Good enough, looks like you know a bit about game studies." )
 SceneToLoad = "GameStudy"
 ResultThreshold = 23
 
-[node name="ResultDialogue3" parent="GSPerson" index="5"]
+[node name="ResultDialogue3" parent="GSPerson" index="7"]
 Title = "Emily"
 Texts = PoolStringArray( "... If you don’t like this task, then I will gladly do it. There is much more to those old-time classics as you would think you know." )
 SceneToLoad = "GameStudy"
-
-[node name="EpicFailDialogue" parent="GSPerson" index="6"]
-Title = "Emily"
-Texts = PoolStringArray( "I don’t want to be rude or something, but I don’t think that you have enough knowledge in game-studies to be specialized in this field…" )
 
 [node name="BackButton" type="TextureButton" parent="."]
 margin_left = 1772.0

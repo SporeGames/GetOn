@@ -28,43 +28,6 @@ script = ExtResource( 1 )
 position = Vector2( 960, 540 )
 texture = ExtResource( 2 )
 
-[node name="RoomPerson" parent="." instance=ExtResource( 4 )]
-
-[node name="PersonSprite" parent="RoomPerson" index="0"]
-material = SubResource( 1 )
-position = Vector2( 764, 529 )
-scale = Vector2( 1.04576, 0.995164 )
-texture = ExtResource( 7 )
-
-[node name="InteractButton" parent="RoomPerson" index="1"]
-margin_left = 387.0
-margin_top = 279.0
-margin_right = 670.0
-margin_bottom = 769.0
-
-[node name="WelcomeDialogue" parent="RoomPerson" index="2"]
-Title = "Chloe"
-Texts = PoolStringArray( "I prepared an example of a management task for you, so you can show me whatcha got. " )
-SceneToLoad = "Management"
-
-[node name="ResultDialogue" parent="RoomPerson" index="3"]
-Title = "Chloe"
-Texts = PoolStringArray( "Excellent work, just as I imagined. You have great potential." )
-ResultThreshold = 38
-
-[node name="ResultDialogue2" parent="RoomPerson" index="4"]
-Title = "Chloe"
-Texts = PoolStringArray( "Your work is alright, not perfect though." )
-ResultThreshold = 23
-
-[node name="ResultDialogue3" parent="RoomPerson" index="5"]
-Title = "Chloe"
-Texts = PoolStringArray( "Oh well, this doesn’t really help us… " )
-
-[node name="EpicFailDialogue" parent="RoomPerson" index="6"]
-Title = "Chloe"
-Texts = PoolStringArray( "An advice for your next internship: Don’t choose Management as your specialization if you don’t have the abilities for the job, this could get you in trouble." )
-
 [node name="BackButton" type="TextureButton" parent="."]
 margin_left = 1772.0
 margin_right = 1919.0
@@ -86,5 +49,43 @@ texture = ExtResource( 11 )
 position = Vector2( 162, 443 )
 PopupTexture = ExtResource( 12 )
 SmallTexture = ExtResource( 13 )
+
+[node name="RoomPerson" parent="." instance=ExtResource( 4 )]
+GameSpecialization = 6
+
+[node name="PersonSprite" parent="RoomPerson" index="0"]
+material = SubResource( 1 )
+position = Vector2( 764, 529 )
+scale = Vector2( 1.04576, 0.995164 )
+texture = ExtResource( 7 )
+
+[node name="InteractButton" parent="RoomPerson" index="1"]
+margin_left = 617.0
+margin_top = 394.0
+margin_right = 900.0
+margin_bottom = 783.0
+
+[node name="WelcomeDialogue" parent="RoomPerson" index="2"]
+Title = "Chloe"
+Texts = PoolStringArray( "I prepared an example of a management task for you, so you can show me whatcha got. " )
+SceneToLoad = "Management"
+
+[node name="EpicFailDialogue" parent="RoomPerson" index="3"]
+Title = "Chloe"
+Texts = PoolStringArray( "An advice for your next internship: Don’t choose Management as your specialization if you don’t have the abilities for the job, this could get you in trouble." )
+
+[node name="ResultDialogue" parent="RoomPerson" index="5"]
+Title = "Chloe"
+Texts = PoolStringArray( "Excellent work, just as I imagined. You have great potential." )
+ResultThreshold = 38
+
+[node name="ResultDialogue2" parent="RoomPerson" index="6"]
+Title = "Chloe"
+Texts = PoolStringArray( "Your work is alright, not perfect though." )
+ResultThreshold = 23
+
+[node name="ResultDialogue3" parent="RoomPerson" index="7"]
+Title = "Chloe"
+Texts = PoolStringArray( "Oh well, this doesn’t really help us… " )
 
 [editable path="RoomPerson"]

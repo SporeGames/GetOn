@@ -56,26 +56,26 @@ Title = "Julia"
 Texts = PoolStringArray( "Hi again! Could you help me find fitting sounds for specific in-game moments of our new project\? We will make an action-adventure in a futuristic setting, it’s gonna be so awesome!" )
 SceneToLoad = "Sound"
 
-[node name="ResultDialogue" parent="SoundPerson" index="3"]
+[node name="EpicFailDialogue" parent="SoundPerson" index="3"]
+Title = "Julia"
+Texts = PoolStringArray( "I was really excited to work with a fellow sound designer, but it seems like you\'re not quite there yet…" )
+
+[node name="ResultDialogue" parent="SoundPerson" index="5"]
 position = Vector2( 4, 709 )
 Title = "Julia"
 Texts = PoolStringArray( "Inspiring, truly inspiring! Are you a relative of Hans Zimmer perhaps\? You can be really proud of your work." )
 ResultThreshold = 38
 
-[node name="ResultDialogue2" parent="SoundPerson" index="4"]
+[node name="ResultDialogue2" parent="SoundPerson" index="6"]
 position = Vector2( 4, 709 )
 Title = "Julia"
 Texts = PoolStringArray( "Not bad, you just need some more exercise." )
 ResultThreshold = 23
 
-[node name="ResultDialogue3" parent="SoundPerson" index="5"]
+[node name="ResultDialogue3" parent="SoundPerson" index="7"]
 position = Vector2( 4, 709 )
 Title = "Julia"
 Texts = PoolStringArray( "Hm… looks like you´re tone deaf. " )
-
-[node name="EpicFailDialogue" parent="SoundPerson" index="6"]
-Title = "Julia"
-Texts = PoolStringArray( "I was really excited to work with a fellow sound designer, but it seems like you\'re not quite there yet…" )
 
 [node name="ArtPerson" parent="." instance=ExtResource( 2 )]
 position = Vector2( -12, 32 )
@@ -99,13 +99,13 @@ Title = "Ash"
 Texts = PoolStringArray( "Do you have your portfolio ready\?" )
 SceneToLoad = "Art"
 
-[node name="ResultDialogue" parent="ArtPerson" index="3"]
+[node name="ResultDialogue" parent="ArtPerson" index="5"]
 position = Vector2( 0, 710 )
 
-[node name="ResultDialogue2" parent="ArtPerson" index="4"]
+[node name="ResultDialogue2" parent="ArtPerson" index="6"]
 position = Vector2( 0, 710 )
 
-[node name="ResultDialogue3" parent="ArtPerson" index="5"]
+[node name="ResultDialogue3" parent="ArtPerson" index="7"]
 position = Vector2( 0, 710 )
 
 [node name="BackButton" type="TextureButton" parent="."]

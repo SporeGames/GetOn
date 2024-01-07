@@ -53,29 +53,28 @@ Title = "Mike"
 Texts = PoolStringArray( "Well you see, I started off as an intern just like you and… Oh right, you\'re here for your task!", "We are currently researching which player-motivations fit popular sci-fi games the best. I will explain everything in detail in a second, so don’t worry, you will get the hang of it!" )
 SceneToLoad = "GameDesign"
 
-[node name="ResultDialogue" parent="GDPerson" index="3"]
+[node name="EpicFailDialogue" parent="GDPerson" index="3"]
+Title = "Mike"
+Texts = PoolStringArray( "I’m honest with you, you should rethink if you want to become a Game-Designer, because your work didn’t help me here…" )
+
+[node name="ResultDialogue" parent="GDPerson" index="5"]
 Title = "Mike"
 Texts = PoolStringArray( "Five-Star work you did there, I’m almost worried about my position…" )
 ResultThreshold = 38
 
-[node name="ResultDialogue2" parent="GDPerson" index="4"]
+[node name="ResultDialogue2" parent="GDPerson" index="6"]
 Title = "Mike"
 Texts = PoolStringArray( "Decent, decent. Some minor adjustments from me and all should turn out as planned." )
 ResultThreshold = 23
 
-[node name="ResultDialogue3" parent="GDPerson" index="5"]
+[node name="ResultDialogue3" parent="GDPerson" index="7"]
 Title = "Mike"
 Texts = PoolStringArray( "Looks like you aren’t really made to be a game-designer. Maybe you will do better at the other tasks." )
-
-[node name="EpicFailDialogue" parent="GDPerson" index="6"]
-Title = "Mike"
-Texts = PoolStringArray( "I’m honest with you, you should rethink if you want to become a Game-Designer, because your work didn’t help me here…" )
 
 [node name="NarrativePerson" parent="." instance=ExtResource( 3 )]
 GameSpecialization = 7
 
 [node name="PersonSprite" parent="NarrativePerson" index="0"]
-visible = false
 material = SubResource( 2 )
 position = Vector2( 378, 703 )
 scale = Vector2( 1.0241, 0.994314 )
@@ -92,23 +91,23 @@ Title = "Mary"
 Texts = PoolStringArray( " *Yawn*, huh who are you\? You seem quite interesting, just like a protagonist.Could you perhaps help me\? My whiteboard with all my great story ideas got messed up, I have no clue how that happened…", "You’re in\? Thank you very much!" )
 SceneToLoad = "Narrative"
 
-[node name="ResultDialogue" parent="NarrativePerson" index="3"]
+[node name="EpicFailDialogue" parent="NarrativePerson" index="3"]
+Title = "Marie"
+Texts = PoolStringArray( "That\'s an unexpected twist… . You said you are specialized in story design, did you try to deceive us\? " )
+
+[node name="ResultDialogue" parent="NarrativePerson" index="5"]
 Title = "Marie"
 Texts = PoolStringArray( "Fantastic, you perfectly restored my whiteboard! You seem like a main character of some sort…" )
 ResultThreshold = 38
 
-[node name="ResultDialogue2" parent="NarrativePerson" index="4"]
+[node name="ResultDialogue2" parent="NarrativePerson" index="6"]
 Title = "Marie"
 Texts = PoolStringArray( "That helped me a little bit. I think I can restore the rest myself." )
 ResultThreshold = 23
 
-[node name="ResultDialogue3" parent="NarrativePerson" index="5"]
+[node name="ResultDialogue3" parent="NarrativePerson" index="7"]
 Title = "Marie"
 Texts = PoolStringArray( "*Yawn* oh well, let’s just leave it at that. Maybe I can find even better story ideas if I do that task myself." )
-
-[node name="EpicFailDialogue" parent="NarrativePerson" index="6"]
-Title = "Marie"
-Texts = PoolStringArray( "That\'s an unexpected twist… . You said you are specialized in story design, did you try to deceive us\? " )
 
 [node name="BackButton" type="TextureButton" parent="."]
 margin_left = 1772.0
