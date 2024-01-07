@@ -49,10 +49,10 @@ position = Vector2( 808, 415 )
 z_index = 2048
 
 [node name="BackgroundColor" type="ColorRect" parent="Introduction"]
-margin_left = -808.0
-margin_top = -415.0
-margin_right = 1109.0
-margin_bottom = 664.0
+margin_left = -960.0
+margin_top = -487.0
+margin_right = 1224.0
+margin_bottom = 729.0
 mouse_filter = 2
 
 [node name="LeftSide" type="Sprite" parent="Introduction"]
@@ -104,6 +104,5 @@ position = Vector2( 608, 1 )
 scale = Vector2( 0.33, 0.33 )
 
 [node name="RightSide" type="Sprite" parent="Introduction"]
-visible = false
 position = Vector2( 159, 175 )
 scale = Vector2( 0.905092, 0.905093 )
