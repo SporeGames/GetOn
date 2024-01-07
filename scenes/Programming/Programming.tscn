@@ -1129,5 +1129,5 @@ Hint:
 To view all the boxes you may have to navigate with the scrollbar at the bottom of the screen.
 "
 
-[node name="Music2" type="Node" parent="."]
+[node name="Music" type="Node" parent="."]
 script = ExtResource( 20 )

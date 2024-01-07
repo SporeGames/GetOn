@@ -1,4 +1,4 @@
-[gd_scene load_steps=69 format=2]
+[gd_scene load_steps=70 format=2]
 
 [ext_resource path="res://SharedAssets/font/BAHNSCHRIFT 1.TTF" type="DynamicFontData" id=1]
 [ext_resource path="res://scenes/GameStudy/assets/Kärtchen2.png" type="Texture" id=2]
@@ -41,6 +41,7 @@
 [ext_resource path="res://scenes/GameStudy/assets/MittleresKärtchen.png" type="Texture" id=39]
 [ext_resource path="res://SharedAssets/Anleitungen/Game studies  ohne Hintergrund.PNG" type="Texture" id=40]
 [ext_resource path="res://SharedAssets/anleitung_gameStud.png" type="Texture" id=41]
+[ext_resource path="res://SharedAssets/music/Play/Music_GameStud.gd" type="Script" id=42]
 
 [sub_resource type="StyleBoxEmpty" id=49]
 
@@ -1100,6 +1101,9 @@ margin_top = 983.0
 margin_right = 223.0
 margin_bottom = 1081.0
 texture_normal = ExtResource( 13 )
+
+[node name="Node" type="Node" parent="."]
+script = ExtResource( 42 )
 
 [connection signal="body_exited" from="Consoles/SpawningGames/Area2D" to="Consoles/SpawningGames" method="_on_Area2D_body_exited"]
 [connection signal="body_entered" from="Consoles/CheckAreas/CheckXBOX" to="Consoles" method="_on_CheckXBOX_body_entered"]

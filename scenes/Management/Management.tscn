@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=2]
+[gd_scene load_steps=20 format=2]
 
 [ext_resource path="res://scenes/Management/Management.cs" type="Script" id=1]
 [ext_resource path="res://SharedAssets/Anleitungen/management  ohne Hintergrund.PNG" type="Texture" id=2]
@@ -16,6 +16,7 @@
 [ext_resource path="res://scenes/Sound/assets/DoneButton.png" type="Texture" id=14]
 [ext_resource path="res://scenes/Management/assets/cursor.png" type="Texture" id=15]
 [ext_resource path="res://SharedAssets/Anleitungen/Management.PNG" type="Texture" id=16]
+[ext_resource path="res://scenes/Management/ManagementMusicPlay.gd" type="Script" id=17]
 
 [sub_resource type="DynamicFont" id=2]
 size = 26
@@ -312,3 +313,6 @@ rotation = -3.14159
 scale = Vector2( 0.33, 0.33 )
 z_index = 2048
 texture = ExtResource( 15 )
+
+[node name="Node" type="Node" parent="."]
+script = ExtResource( 17 )
