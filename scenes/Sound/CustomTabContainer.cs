@@ -381,7 +381,8 @@ public class CustomTabContainer : Node2D
 		_lineEdit.Editable = true;
 		GD.Print(_lineEdit.Editable);
 		GD.Print(_lineEdit);
-		
+		_lineEdit.GrabFocus();
+		_lineEdit.CaretPosition = _lineEdit.Text.Length;
 		//_dragAndDropSound.ChangeText(name);
 	}
 	public void CheckBoxPressed(TextureButton checkbox)
