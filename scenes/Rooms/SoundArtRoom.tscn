@@ -116,21 +116,35 @@ Title = "Ash"
 Texts = PoolStringArray( "Do you have your portfolio ready\?" )
 SceneToLoad = "Art"
 
+[node name="EpicFailDialogue" parent="ArtPerson" index="3"]
+Title = "Ash"
+Texts = PoolStringArray( "All right!" )
+LoadSceneAfter = false
+
 [node name="TalkAgainDialogue" parent="ArtPerson" index="4"]
 Title = "Ash"
 
 [node name="ResultDialogue" parent="ArtPerson" index="5"]
 position = Vector2( 0, 710 )
+Title = "Ash"
+Texts = PoolStringArray( "All right!" )
+LoadSceneAfter = false
 IsUnique = true
 UniqueID = "20"
 
 [node name="ResultDialogue2" parent="ArtPerson" index="6"]
 position = Vector2( 0, 710 )
+Title = "Ash"
+Texts = PoolStringArray( "All right!" )
+LoadSceneAfter = false
 IsUnique = true
 UniqueID = "21"
 
 [node name="ResultDialogue3" parent="ArtPerson" index="7"]
 position = Vector2( 0, 710 )
+Title = "Ash"
+Texts = PoolStringArray( "All right!" )
+LoadSceneAfter = false
 IsUnique = true
 UniqueID = "22"
 

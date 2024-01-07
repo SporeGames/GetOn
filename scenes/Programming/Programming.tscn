@@ -73,7 +73,7 @@ script = ExtResource( 1 )
 margin_right = 1932.0
 margin_bottom = 80.0
 mouse_filter = 2
-color = Color( 0.0196078, 0.0156863, 0.211765, 1 )
+color = Color( 0.6, 0.752941, 0.843137, 1 )
 
 [node name="Checklist" type="Control" parent="."]
 margin_left = 1036.0
@@ -92,7 +92,7 @@ margin_left = 602.0
 margin_top = -597.0
 margin_right = 756.0
 margin_bottom = -555.0
-text = "Submit"
+text = "Done"
 
 [node name="Items" type="GridContainer" parent="Checklist"]
 margin_left = -5.0
@@ -246,7 +246,7 @@ shape = SubResource( 8 )
 position = Vector2( 1929.05, 501.576 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Game/WallRight"]
-position = Vector2( 3, -148 )
+position = Vector2( 2.94995, -146.576 )
 shape = SubResource( 8 )
 
 [node name="Floor" type="StaticBody2D" parent="Game"]
