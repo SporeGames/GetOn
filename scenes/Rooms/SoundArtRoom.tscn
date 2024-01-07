@@ -12,7 +12,6 @@
 [ext_resource path="res://scenes/Sound/assets/Art Sound.PNG" type="Texture" id=10]
 [ext_resource path="res://scenes/Sound/assets/SoundArt/Popup .PNG" type="Texture" id=11]
 
-
 [sub_resource type="ShaderMaterial" id=1]
 resource_local_to_scene = true
 shader = ExtResource( 9 )
