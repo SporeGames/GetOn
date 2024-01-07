@@ -49,6 +49,9 @@ namespace GetOn.scenes {
 		
 
 		public override void _Ready() {
+			foreach (var spec in Enum.GetValues(typeof(AbilitySpecialization))) {
+				HelpButtonPressed.Add((AbilitySpecialization) spec, 0);
+			}
 			var root = GetTree().Root;
 			CurrentScene = root.GetChild(root.GetChildCount() - 1);
 			isDragging = false;

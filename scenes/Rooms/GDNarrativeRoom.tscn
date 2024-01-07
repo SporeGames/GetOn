@@ -63,6 +63,7 @@ Icon = ExtResource( 14 )
 Texts = PoolStringArray( "I’m honest with you, you should rethink if you want to become a Game-Designer, because your work didn’t help me here…" )
 
 [node name="TalkAgainDialogue" parent="GDPerson" index="4"]
+Title = "Mike"
 Icon = ExtResource( 14 )
 
 [node name="ResultDialogue" parent="GDPerson" index="5"]
@@ -120,6 +121,7 @@ Icon = ExtResource( 13 )
 Texts = PoolStringArray( "That\'s an unexpected twist… . You said you are specialized in story design, did you try to deceive us\? " )
 
 [node name="TalkAgainDialogue" parent="NarrativePerson" index="4"]
+Title = "Marie"
 Icon = ExtResource( 13 )
 
 [node name="ResultDialogue" parent="NarrativePerson" index="5"]

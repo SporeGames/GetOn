@@ -115,6 +115,9 @@ Title = "Ash"
 Texts = PoolStringArray( "Do you have your portfolio ready\?" )
 SceneToLoad = "Art"
 
+[node name="TalkAgainDialogue" parent="ArtPerson" index="4"]
+Title = "Ash"
+
 [node name="ResultDialogue" parent="ArtPerson" index="5"]
 position = Vector2( 0, 710 )
 IsUnique = true
