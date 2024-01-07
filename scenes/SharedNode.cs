@@ -42,6 +42,7 @@ namespace GetOn.scenes {
 		[JsonProperty] public AbilitySpecialization Specialization = AbilitySpecialization.Programming;
 
 		public bool isDragging;
+		public bool HasDialogeBoxOpen = false;
 		
 
 		public override void _Ready() {
@@ -101,6 +102,7 @@ namespace GetOn.scenes {
 
 		public void SwitchScene(string path) {
 			CallDeferred(nameof(DeferredGotoScene), path);
+			HasDialogeBoxOpen = false;
 		}
 
 		public void DeferredGotoScene(string path) {
