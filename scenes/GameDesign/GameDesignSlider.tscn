@@ -250,9 +250,9 @@ text = "<game>"
 [node name="NextGame" type="RichTextLabel" parent="."]
 anchor_left = 0.5
 anchor_right = 0.5
-margin_left = 917.0
+margin_left = 415.0
 margin_top = 1000.0
-margin_right = 1193.0
+margin_right = 691.0
 margin_bottom = 1061.0
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 custom_fonts/normal_font = SubResource( 5 )

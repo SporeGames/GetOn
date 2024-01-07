@@ -4,7 +4,6 @@
 [ext_resource path="res://SharedAssets/dialogue_characters/Chloe.png" type="Texture" id=2]
 [ext_resource path="res://SharedAssets/DialogeBox.tscn" type="PackedScene" id=3]
 
-
 [node name="Intermission" type="Node2D"]
 
 [node name="Background" type="Sprite" parent="."]

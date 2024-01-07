@@ -19,6 +19,8 @@ namespace GetOn.scenes.Art {
 		}
 		
 		private void OnUploadButtonPressed() {
+			var _sharedNode = GetNode<SharedNode>("/root/SharedNode");
+			_sharedNode.CompletedTasks.Add(AbilitySpecialization.Art);
 			_comingSoonPopup.Visible = true;
 		}
 	}

@@ -20,10 +20,9 @@ font_data = ExtResource( 4 )
 script = ExtResource( 3 )
 
 [node name="BackButton" type="TextureButton" parent="."]
-margin_left = 1684.0
-margin_top = 864.0
-margin_right = 1920.0
-margin_bottom = 1078.0
+margin_left = 1690.0
+margin_right = 1926.0
+margin_bottom = 214.0
 texture_normal = ExtResource( 2 )
 texture_pressed = ExtResource( 1 )
 
