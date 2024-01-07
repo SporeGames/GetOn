@@ -20,7 +20,7 @@ width = 1025
 height = 600
 
 [sub_resource type="DynamicFont" id=6]
-size = 35
+size = 30
 font_data = ExtResource( 1 )
 
 [sub_resource type="DynamicFont" id=5]
@@ -123,10 +123,10 @@ texture_normal = ExtResource( 4 )
 expand = true
 
 [node name="GameDescription" type="RichTextLabel" parent="."]
-margin_left = 165.0
-margin_top = 222.0
+margin_left = 158.0
+margin_top = 220.0
 margin_right = 731.0
-margin_bottom = 884.0
+margin_bottom = 893.0
 focus_mode = 2
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 custom_fonts/normal_font = SubResource( 6 )
