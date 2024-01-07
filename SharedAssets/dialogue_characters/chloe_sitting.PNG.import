@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/story.PNG-77ba3921211fea1ebbc9aa8107acaf10.stex"
+path="res://.import/chloe_sitting.PNG-19fcef5922ac8c018288dea32767be5c.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://SharedAssets/Dialog Charakters/story.PNG"
-dest_files=[ "res://.import/story.PNG-77ba3921211fea1ebbc9aa8107acaf10.stex" ]
+source_file="res://SharedAssets/dialogue_characters/chloe_sitting.PNG"
+dest_files=[ "res://.import/chloe_sitting.PNG-19fcef5922ac8c018288dea32767be5c.stex" ]
 
 [params]
 

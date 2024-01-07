@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/gamedesign.PNG-388e3db983d14f6bdc0f78fe2d271627.stex"
+path="res://.import/gamedesign.PNG-7a5b27e03b496e2c4b5b1ca8ea37781e.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://SharedAssets/Dialog Charakters/gamedesign.PNG"
-dest_files=[ "res://.import/gamedesign.PNG-388e3db983d14f6bdc0f78fe2d271627.stex" ]
+source_file="res://SharedAssets/dialogue_characters/gamedesign.PNG"
+dest_files=[ "res://.import/gamedesign.PNG-7a5b27e03b496e2c4b5b1ca8ea37781e.stex" ]
 
 [params]
 

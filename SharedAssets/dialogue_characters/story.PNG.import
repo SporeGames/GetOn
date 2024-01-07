@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/sound.PNG-765afe405a438af1ae0179b390090fb3.stex"
+path="res://.import/story.PNG-05f77ce36bf322071f2867a65e876dbe.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://SharedAssets/Dialog Charakters/sound.PNG"
-dest_files=[ "res://.import/sound.PNG-765afe405a438af1ae0179b390090fb3.stex" ]
+source_file="res://SharedAssets/dialogue_characters/story.PNG"
+dest_files=[ "res://.import/story.PNG-05f77ce36bf322071f2867a65e876dbe.stex" ]
 
 [params]
 

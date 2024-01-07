@@ -6,7 +6,7 @@
 [ext_resource path="res://SharedAssets/RoomPerson.tscn" type="PackedScene" id=4]
 [ext_resource path="res://SharedAssets/ui/B_Home_pressed.png" type="Texture" id=5]
 [ext_resource path="res://SharedAssets/ui/B_menu.png" type="Texture" id=6]
-[ext_resource path="res://SharedAssets/Dialog Charakters/Chloe (2).PNG" type="Texture" id=7]
+[ext_resource path="res://SharedAssets/dialogue_characters/chloe_sitting.PNG" type="Texture" id=7]
 [ext_resource path="res://SharedAssets/OutlineShader.tres" type="Shader" id=8]
 [ext_resource path="res://scenes/Management/assets/ManagementPinnwand/CanPopUp.PNG" type="Texture" id=9]
 [ext_resource path="res://scenes/Management/assets/ManagementPinnwand/Popthisup.PNG" type="Texture" id=10]
@@ -69,10 +69,6 @@ margin_bottom = 783.0
 Title = "Chloe"
 Texts = PoolStringArray( "I prepared an example of a management task for you, so you can show me whatcha got. " )
 SceneToLoad = "Management"
-
-[node name="EpicFailDialogue" parent="RoomPerson" index="3"]
-Title = "Chloe"
-Texts = PoolStringArray( "An advice for your next internship: Don’t choose Management as your specialization if you don’t have the abilities for the job, this could get you in trouble." )
 
 [node name="ResultDialogue" parent="RoomPerson" index="5"]
 Title = "Chloe"

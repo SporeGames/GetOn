@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Chloe.png-611e372dd44398ef9c28ce6dd9832a70.stex"
+path="res://.import/sound.PNG-520f96ad0b1da44b4cbec75e009d0b65.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://SharedAssets/Dialog Charakters/Chloe.png"
-dest_files=[ "res://.import/Chloe.png-611e372dd44398ef9c28ce6dd9832a70.stex" ]
+source_file="res://SharedAssets/dialogue_characters/sound.PNG"
+dest_files=[ "res://.import/sound.PNG-520f96ad0b1da44b4cbec75e009d0b65.stex" ]
 
 [params]
 
