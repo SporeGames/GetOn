@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Sound.PNG-268a2172a80ddc3ed5c973c72b892c97.stex"
+path="res://.import/Game Design.PNG-f07c2b9ff10f858b62ca5e28e4691684.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://SharedAssets/ui/Sound.PNG"
-dest_files=[ "res://.import/Sound.PNG-268a2172a80ddc3ed5c973c72b892c97.stex" ]
+source_file="res://SharedAssets/Anleitungen/Game Design.PNG"
+dest_files=[ "res://.import/Game Design.PNG-f07c2b9ff10f858b62ca5e28e4691684.stex" ]
 
 [params]
 

@@ -1,11 +1,12 @@
 [gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://SharedAssets/font/BAHNSCHRIFT 1.TTF" type="DynamicFontData" id=1]
-[ext_resource path="res://SharedAssets/UI/Game Design.PNG" type="Texture" id=2]
+[ext_resource path="res://SharedAssets/Anleitungen/Game Design.PNG" type="Texture" id=2]
 [ext_resource path="res://SharedAssets/AnleitungStartButton.png" type="Texture" id=3]
 [ext_resource path="res://scenes/GameDesign/assets/ui/GameDesign.png" type="Texture" id=4]
 [ext_resource path="res://scenes/GameDesign/assets/ui/PfeilNachLinks.png" type="Texture" id=5]
 [ext_resource path="res://scenes/GameDesign/assets/ui/PfeilNachRechts.png" type="Texture" id=6]
+
 
 [sub_resource type="DynamicFont" id=1]
 size = 32

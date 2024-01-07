@@ -21,7 +21,7 @@
 [ext_resource path="res://scenes/Programming/assets/fahne (1).PNG" type="Texture" id=19]
 [ext_resource path="res://SharedAssets/music/Play/MusicProg.gd" type="Script" id=20]
 [ext_resource path="res://SharedAssets/font/BAHNSCHRIFT 1.TTF" type="DynamicFontData" id=21]
-[ext_resource path="res://SharedAssets/ui/Programming.PNG" type="Texture" id=22]
+[ext_resource path="res://SharedAssets/Anleitungen/Programming.PNG" type="Texture" id=22]
 [ext_resource path="res://SharedAssets/Anleitungen/Programming_blank.png" type="Texture" id=23]
 [ext_resource path="res://scenes/Programming/blocks/MoveTruckBlock.cs" type="Script" id=24]
 [ext_resource path="res://scenes/Programming/blocks/KeyFPressedCondition.cs" type="Script" id=25]

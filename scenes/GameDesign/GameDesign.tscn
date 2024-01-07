@@ -21,7 +21,7 @@
 [ext_resource path="res://SharedAssets/TopBar.tscn" type="PackedScene" id=19]
 [ext_resource path="res://SharedAssets/Anleitungen/Game Design ohne Hintergrund.PNG" type="Texture" id=20]
 [ext_resource path="res://SharedAssets/anleitung_gd.png" type="Texture" id=21]
-[ext_resource path="res://SharedAssets/UI/Game Design.PNG" type="Texture" id=22]
+[ext_resource path="res://SharedAssets/Anleitungen/Game Design.PNG" type="Texture" id=22]
 [ext_resource path="res://scenes/GameDesign/assets/games/detroit.jpg" type="Texture" id=29]
 [ext_resource path="res://scenes/GameDesign/assets/games/deadspace.jpg" type="Texture" id=38]
 

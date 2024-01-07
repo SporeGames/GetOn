@@ -3,7 +3,8 @@
 [ext_resource path="res://SharedAssets/DialogueBox.cs" type="Script" id=1]
 [ext_resource path="res://SharedAssets/font/BAHNSCHRIFT 1.TTF" type="DynamicFontData" id=2]
 [ext_resource path="res://scenes/GameDesign/assets/personas/Story.png" type="Texture" id=3]
-[ext_resource path="res://SharedAssets/UI/DialogFenster.png" type="Texture" id=4]
+[ext_resource path="res://SharedAssets/Anleitungen/DialogFenster.png" type="Texture" id=4]
+
 
 [sub_resource type="DynamicFont" id=2]
 size = 72

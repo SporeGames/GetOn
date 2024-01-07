@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/DialogFenster.png-03023837dae903938350fa0b8384c4d1.stex"
+path="res://.import/Story.PNG-9596a98cb1bafe231fec4b07fcc5a360.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://SharedAssets/ui/DialogFenster.png"
-dest_files=[ "res://.import/DialogFenster.png-03023837dae903938350fa0b8384c4d1.stex" ]
+source_file="res://SharedAssets/Anleitungen/Story.PNG"
+dest_files=[ "res://.import/Story.PNG-9596a98cb1bafe231fec4b07fcc5a360.stex" ]
 
 [params]
 

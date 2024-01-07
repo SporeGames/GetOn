@@ -22,7 +22,7 @@
 [ext_resource path="res://SharedAssets/Anleitungen/Programming_blank.png" type="Texture" id=20]
 [ext_resource path="res://scenes/Narrative/assets/IMG_0275.PNG" type="Texture" id=21]
 [ext_resource path="res://icon.png" type="Texture" id=22]
-[ext_resource path="res://SharedAssets/UI/Programming.PNG" type="Texture" id=23]
+[ext_resource path="res://SharedAssets/Anleitungen/Programming.PNG" type="Texture" id=23]
 [ext_resource path="res://scenes/Narrative/assets/EndingPopUp.png" type="Texture" id=24]
 [ext_resource path="res://SharedAssets/TopBar.tscn" type="PackedScene" id=25]
 

@@ -10,7 +10,7 @@
 [ext_resource path="res://scenes/GameStudy/DragAndDropConsoles.cs" type="Script" id=8]
 [ext_resource path="res://scenes/GameStudy/SpawningConsoles.cs" type="Script" id=9]
 [ext_resource path="res://SharedAssets/TopBar.tscn" type="PackedScene" id=10]
-[ext_resource path="res://SharedAssets/ui/Game studies.PNG" type="Texture" id=11]
+[ext_resource path="res://SharedAssets/Anleitungen/Game studies.PNG" type="Texture" id=11]
 [ext_resource path="res://scenes/GameStudy/assets/GameStudiesIngame.png" type="Texture" id=12]
 [ext_resource path="res://scenes/Sound/assets/DoneButton.png" type="Texture" id=13]
 [ext_resource path="res://scenes/GameStudy/assets/GameStudies_PopUp.png" type="Texture" id=14]
