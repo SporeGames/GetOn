@@ -40,16 +40,22 @@ public class RoomPerson : Node2D {
 				return;
 			}
 			dialogue.Visible = true;
+			_shared.HasDialogeBoxOpen = true;
 			_shared.SeenDialogues.Add(dialogue.Name);
 		}
 	}
 	
 	private void OnInteractButtonPressed() {
+		if (_shared.HasDialogeBoxOpen) {
+			return;
+		}
 		if (HasCompletedThisTask()) {
 			_talkAgainDialogueBox.Visible = true;
+			_shared.HasDialogeBoxOpen = true;
 			return;
 		}
 		_welcomeDialogueBox.Visible = true;
+		_shared.HasDialogeBoxOpen = true;
 	}
 	
 	private DialogueBox GetResultDialogueForResult() {

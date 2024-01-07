@@ -94,6 +94,7 @@ namespace GetOn.SharedAssets {
 				_currentIndex++;
 			}
 			else if (!timerTriggered) {
+				_sharedNode.HasDialogeBoxOpen = false;
 				if (IsUnique) {
 					_sharedNode.SeenDialogues.Add(UniqueID);
 				}
