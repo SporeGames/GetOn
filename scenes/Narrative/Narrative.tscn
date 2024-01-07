@@ -21,7 +21,7 @@
 [ext_resource path="res://SharedAssets/music/Play/Music_Narr.gd" type="Script" id=19]
 [ext_resource path="res://SharedAssets/Anleitungen/Story_blank.png" type="Texture" id=20]
 [ext_resource path="res://scenes/Narrative/assets/IMG_0275.PNG" type="Texture" id=21]
-[ext_resource path="res://icon.png" type="Texture" id=22]
+[ext_resource path="res://scenes/Narrative/AttributesNarrative.tscn" type="PackedScene" id=22]
 [ext_resource path="res://SharedAssets/Anleitungen/Story.PNG" type="Texture" id=23]
 [ext_resource path="res://scenes/Narrative/assets/EndingPopUp.png" type="Texture" id=24]
 [ext_resource path="res://SharedAssets/TopBar.tscn" type="PackedScene" id=25]
@@ -327,7 +327,7 @@ font_data = ExtResource( 11 )
 extents = Vector2( 261.5, 190 )
 
 [sub_resource type="DynamicFont" id=146]
-size = 32
+size = 44
 font_data = ExtResource( 11 )
 
 [sub_resource type="DynamicFont" id=145]
@@ -358,7 +358,6 @@ custom_styles/pressed = SubResource( 29 )
 custom_styles/focus = SubResource( 30 )
 custom_styles/disabled = SubResource( 31 )
 custom_styles/normal = SubResource( 32 )
-icon = ExtResource( 22 )
 flat = true
 expand_icon = true
 script = ExtResource( 2 )
@@ -1340,10 +1339,10 @@ texture = ExtResource( 24 )
 
 [node name="Ending1" type="Label" parent="EndingPopup"]
 visible = false
-margin_left = 442.0
-margin_top = 173.0
-margin_right = 1407.0
-margin_bottom = 742.0
+margin_left = 508.0
+margin_top = 265.0
+margin_right = 1473.0
+margin_bottom = 834.0
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_fonts/font = SubResource( 21 )
 text = "Through many challenges along their road, the crew slowly bonds with each other and grows stronger in their own way. After being saved by Tigress during a battle against a rivaling Starship-Crew, even Hound seems to bond. He acknowledges Tigress’s newly gained piloting and leading-qualities and even sees a friend in her. 
@@ -1356,10 +1355,10 @@ autowrap = true
 
 [node name="Ending2" type="Label" parent="EndingPopup"]
 visible = false
-margin_left = 439.0
-margin_top = 168.0
-margin_right = 1452.0
-margin_bottom = 737.0
+margin_left = 489.0
+margin_top = 265.0
+margin_right = 1502.0
+margin_bottom = 834.0
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_fonts/font = SubResource( 21 )
 text = "As the tensions within the crew escalate, Hound continues to mock the others, especially Tigress, leading to many troubles during fights. Although the crew manages to improve their own flying-skills, they lose many battles.
@@ -1371,10 +1370,10 @@ autowrap = true
 
 [node name="Ending3" type="Label" parent="EndingPopup"]
 visible = false
-margin_left = 437.0
-margin_top = 169.0
-margin_right = 1422.0
-margin_bottom = 738.0
+margin_left = 508.0
+margin_top = 295.0
+margin_right = 1493.0
+margin_bottom = 864.0
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_fonts/font = SubResource( 21 )
 text = "As the tensions within the crew escalate, Hound continues to mock the others, leading to many troubles during fights, while Tigress tries to become the leader they need. Although the crew manages to improve their own flying-skills, they lose many battles. It seems like a miracle they have come so far, when finally reaching the secret hideout of the mad scientist on planet Sulfur. 
@@ -1384,10 +1383,10 @@ autowrap = true
 
 [node name="Story1" type="Label" parent="EndingPopup"]
 visible = false
-margin_left = 438.0
-margin_top = 164.0
-margin_right = 1417.0
-margin_bottom = 733.0
+margin_left = 508.0
+margin_top = 309.0
+margin_right = 1487.0
+margin_bottom = 878.0
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_fonts/font = SubResource( 20 )
 text = "As daughter of a famous passed-away Starship-Pilot, Tigress can’t really meet the high expectations of the republic federation. While trying to improve her own flying skills, her newly formed crew seems to fall apart. Her newest recruit Hound often makes trouble, showing off his flying skills or mocking Tigress and the others.
@@ -1398,10 +1397,10 @@ autowrap = true
 
 [node name="Story2" type="Label" parent="EndingPopup"]
 visible = false
-margin_left = 436.0
-margin_top = 169.0
-margin_right = 1429.0
-margin_bottom = 738.0
+margin_left = 494.0
+margin_top = 265.0
+margin_right = 1487.0
+margin_bottom = 834.0
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_fonts/font = SubResource( 20 )
 text = "In the near future, humanly looking robots have come to realize their own existence and want to live freely. The humans however do not enjoy their own creations developing their own consciousness and fear a revolution. Therefore such robots would soon be tracked down and killed.
@@ -1413,10 +1412,10 @@ autowrap = true
 
 [node name="Story3" type="Label" parent="EndingPopup"]
 visible = false
-margin_left = 434.0
-margin_top = 164.0
-margin_right = 1424.0
-margin_bottom = 733.0
+margin_left = 489.0
+margin_top = 284.0
+margin_right = 1479.0
+margin_bottom = 853.0
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_fonts/font = SubResource( 20 )
 text = "Anne and Nora are twins who live in a trailer park in Detroit as orphans. Anne tries to keep their stomachs filled by selling drugs,  while Nora spends most of her time studying, so she can provide the two sisters a more hopeful future outside of the trailer park. 
@@ -1433,10 +1432,10 @@ text = "Close"
 
 [node name="Ending21" type="Label" parent="EndingPopup"]
 visible = false
-margin_left = 433.0
-margin_top = 165.0
-margin_right = 1442.0
-margin_bottom = 734.0
+margin_left = 489.0
+margin_top = 320.0
+margin_right = 1498.0
+margin_bottom = 889.0
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_fonts/font = SubResource( 21 )
 text = "As John learns from Claire, the numbers of robots and their fast learning processes allow them to become a strong force standing against the humans. Surely they could win an escalation. To be absolutely sure, John chooses to gather even more robots to join their alliance, fighting for their freedom.
@@ -1448,10 +1447,10 @@ autowrap = true
 
 [node name="Ending22" type="Label" parent="EndingPopup"]
 visible = false
-margin_left = 437.0
-margin_top = 164.0
-margin_right = 1425.0
-margin_bottom = 733.0
+margin_left = 508.0
+margin_top = 279.0
+margin_right = 1496.0
+margin_bottom = 848.0
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_fonts/font = SubResource( 21 )
 text = "As John learns from Claire, the numbers of robots and their fast learning processes allow them to become a strong force standing against the humans. Surely, they would win in an escalation. Letting his own rage of being betrayed and tossed away by the humans overcome him, John chooses to lead his kind, fighting for their freedom, ignoring what costs a war against humans would bring.
@@ -1461,10 +1460,10 @@ autowrap = true
 
 [node name="Ending23" type="Label" parent="EndingPopup"]
 visible = false
-margin_left = 433.0
-margin_top = 165.0
-margin_right = 1430.0
-margin_bottom = 734.0
+margin_left = 489.0
+margin_top = 284.0
+margin_right = 1486.0
+margin_bottom = 853.0
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_fonts/font = SubResource( 21 )
 text = "Thinking about all the bloody conflicts humanity had during their long history, John can’t really get the idea of fighting for freedom. Instead he chooses a more friendly approach, by talking to the public via friendly protest marches. Claire, who has gone through much with him, accepts his decision, but warns him about humanity's recklessness.
@@ -1475,10 +1474,10 @@ autowrap = true
 
 [node name="Ending31" type="Label" parent="EndingPopup"]
 visible = false
-margin_left = 317.0
-margin_top = 396.0
-margin_right = 1529.0
-margin_bottom = 965.0
+margin_left = 508.0
+margin_top = 295.0
+margin_right = 1416.0
+margin_bottom = 843.0
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_fonts/font = SubResource( 21 )
 text = "While Nora struggles between the decision of letting her sister go and living at her friend’s house in order to continue her studies or taking a break from school in order to save her sister, Anne died of an overdose and took that decision away. 
@@ -1488,10 +1487,10 @@ autowrap = true
 
 [node name="Ending32" type="Label" parent="EndingPopup"]
 visible = false
-margin_left = 317.0
-margin_top = 396.0
-margin_right = 1529.0
-margin_bottom = 965.0
+margin_left = 552.0
+margin_top = 327.0
+margin_right = 1385.0
+margin_bottom = 729.0
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_fonts/font = SubResource( 21 )
 text = "Nora lets go of her sister because her drug addiction led to huge arguments. She started a side job and lives with a friend. She realizes that she wasn’t the one who was relying on her sister, it was the other way around.
@@ -1503,10 +1502,10 @@ autowrap = true
 
 [node name="Ending33" type="Label" parent="EndingPopup"]
 visible = false
-margin_left = 317.0
-margin_top = 396.0
-margin_right = 1529.0
-margin_bottom = 965.0
+margin_left = 508.0
+margin_top = 327.0
+margin_right = 1419.0
+margin_bottom = 788.0
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_fonts/font = SubResource( 21 )
 text = "Nora takes a break from school and tries to help Anne with her drug addiction. While it was hard, Anne eventually stopped selling and taking drugs and found a new job in a restaurant. Nora didn’t finish her studies and started a business where she helps adolescents with drug addictions. "
@@ -1544,18 +1543,26 @@ text = "Submit"
 clip_text = true
 
 [node name="IntroStory1" type="Node2D" parent="."]
+visible = false
 z_index = 21
 
+[node name="Sprite" type="Sprite" parent="IntroStory1"]
+position = Vector2( 967, 577 )
+scale = Vector2( 1.40865, 1.40865 )
+texture = ExtResource( 24 )
+
 [node name="ColorRect" type="ColorRect" parent="IntroStory1"]
+visible = false
 margin_right = 1925.0
 margin_bottom = 1081.0
 color = Color( 0.027451, 0.364706, 0.317647, 1 )
 
 [node name="Label" type="Label" parent="IntroStory1"]
-margin_left = 335.0
-margin_top = 307.0
-margin_right = 1270.0
-margin_bottom = 342.0
+margin_left = 398.0
+margin_top = 237.0
+margin_right = 1515.0
+margin_bottom = 778.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_fonts/font = SubResource( 146 )
 text = "As daughter of a famous passed-away Starship-Pilot, Tigress can’t really meet the high expectations of the republic federation. While trying to improve her own flying skills, her newly formed crew seems to fall apart. Her newest recruit Hound often makes trouble, showing off his flying skills or mocking Tigress and the others.
 
@@ -1564,10 +1571,10 @@ When a mad scientist invents highly dangerous machines to conquer the solar syst
 autowrap = true
 
 [node name="Button" type="Button" parent="IntroStory1"]
-margin_left = 1610.0
-margin_top = 940.0
-margin_right = 1844.0
-margin_bottom = 1008.0
+margin_left = 1428.0
+margin_top = 893.0
+margin_right = 1662.0
+margin_bottom = 961.0
 custom_fonts/font = SubResource( 145 )
 text = "Ready?"
 
@@ -1649,6 +1656,10 @@ There will be a total of 2 stories, you can go to the next one with
 
 If you are done with both stories, click DONE
 "
+
+[node name="AttributesNarrative" parent="." instance=ExtResource( 22 )]
+Character = [ null, null ]
+ValidAttributes = PoolStringArray( "", "", "", "" )
 
 [connection signal="item_selected" from="1/DropDownAttribute4" to="CheckCorrect" method="_on_DropDownAttribute4_item_selected"]
 [connection signal="item_selected" from="1/DropDownAttribute3" to="CheckCorrect" method="_on_DropDownAttribute3_item_selected"]

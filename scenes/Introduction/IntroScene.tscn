@@ -85,7 +85,7 @@ text = "
 This is a qualification test disguised as a game!
 In order to apply for the Game Produktion & Management course,
 you have to complete this game.
-You have to slove different Tasks and will be tested on your knowledege."
+You have to solve different Tasks and will be tested on your knowledge."
 
 [node name="RichTextLabel2" type="RichTextLabel" parent="IntroScreen/Sprite"]
 margin_left = -111.0
