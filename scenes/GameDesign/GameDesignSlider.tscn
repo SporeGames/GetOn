@@ -2,14 +2,14 @@
 
 [ext_resource path="res://SharedAssets/font/BAHNSCHRIFT 1.TTF" type="DynamicFontData" id=1]
 [ext_resource path="res://scenes/GameDesign/GameDesignSlider.cs" type="Script" id=2]
-[ext_resource path="res://SharedAssets/UI/B_Base2.png" type="Texture" id=3]
+[ext_resource path="res://SharedAssets/UserInterface/B_Base2.png" type="Texture" id=3]
 [ext_resource path="res://scenes/GameDesign/assets/ui/PfeilNachLinks.png" type="Texture" id=4]
 [ext_resource path="res://scenes/GameDesign/assets/ui/PfeilNachRechts.png" type="Texture" id=5]
-[ext_resource path="res://SharedAssets/UI/B_Next.png" type="Texture" id=6]
+[ext_resource path="res://SharedAssets/UserInterface/B_Next.png" type="Texture" id=6]
 [ext_resource path="res://scenes/GameDesign/assets/ui/LayoutGameDesign.PNG" type="Texture" id=7]
 [ext_resource path="res://scenes/GameDesign/assets/ui/KästchenLeer.png" type="Texture" id=8]
 [ext_resource path="res://scenes/GameDesign/assets/ui/KästchenAbgehakt.png" type="Texture" id=9]
-[ext_resource path="res://SharedAssets/UI/B_Back.png" type="Texture" id=10]
+[ext_resource path="res://SharedAssets/UserInterface/B_Back.png" type="Texture" id=10]
 
 [sub_resource type="DynamicFont" id=1]
 size = 70

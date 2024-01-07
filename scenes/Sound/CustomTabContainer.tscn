@@ -26,7 +26,7 @@
 [ext_resource path="res://icon.png" type="Texture" id=24]
 [ext_resource path="res://scenes/GameDesign/assets/ui/KästchenLeer.png" type="Texture" id=25]
 [ext_resource path="res://scenes/GameDesign/assets/ui/KästchenAbgehakt.png" type="Texture" id=26]
-[ext_resource path="res://SharedAssets/UI/B_art.png" type="Texture" id=27]
+[ext_resource path="res://SharedAssets/UserInterface/B_art.png" type="Texture" id=27]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 347, 150.5 )

@@ -17,7 +17,7 @@
 [ext_resource path="res://scenes/GameDesign/assets/personas/Destruction.png" type="Texture" id=15]
 [ext_resource path="res://scenes/GameDesign/assets/personas/design.png" type="Texture" id=16]
 [ext_resource path="res://SharedAssets/font/BAHNSCHRIFT 1.TTF" type="DynamicFontData" id=17]
-[ext_resource path="res://SharedAssets/UI/B_Base2.png" type="Texture" id=18]
+[ext_resource path="res://SharedAssets/UserInterface/B_Base2.png" type="Texture" id=18]
 [ext_resource path="res://SharedAssets/TopBar.tscn" type="PackedScene" id=19]
 [ext_resource path="res://SharedAssets/Anleitungen/Game Design ohne Hintergrund.PNG" type="Texture" id=20]
 [ext_resource path="res://SharedAssets/anleitung_gd.png" type="Texture" id=21]
