@@ -55,6 +55,7 @@ Texts = PoolStringArray( "I don’t want to be rude or something, but I don’t 
 
 [node name="TalkAgainDialogue" parent="GSPerson" index="4"]
 position = Vector2( 58, 674 )
+Title = "Emily"
 Icon = ExtResource( 11 )
 
 [node name="ResultDialogue" parent="GSPerson" index="5"]
