@@ -23,6 +23,7 @@ public class TopBar : Node2D {
 	private RichTextLabel _introDescription;
 	private RichTextLabel _introImageCaption;
 	private CountdownTimer _timer;
+	private bool _wasHelpButtonPressed = false;
 	
 	public override void _Ready() {
 		_helpButton = GetNode<TextureButton>("HelpButton");
@@ -47,11 +48,27 @@ public class TopBar : Node2D {
 		GetNode<Node2D>("Introduction").Visible = true; // Do this so we can still see the scene lol
 	}
 
+
+	public override void _UnhandledInput(InputEvent @event) {
+		if (@event is InputEventMouse key) {
+			if (key.ButtonMask != (int) ButtonList.Left) {
+				return;
+			}
+		}
+		if (_introduction.Visible && _wasHelpButtonPressed) {
+			OnHelpButtonPressed();
+			GetViewport().SetInputAsHandled();
+			_wasHelpButtonPressed = false;
+		}
+	}
+
 	private void OnHelpButtonPressed() {
 		if (_introduction.Visible) {
 			_introduction.Visible = false;
+			_wasHelpButtonPressed = false;
 			return;
 		}
+		_wasHelpButtonPressed = true;
 		_leftSideImage.Visible = true;
 		_introduction.Visible = true;
 		_rightSideImage.Visible = false;

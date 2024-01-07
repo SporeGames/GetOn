@@ -1,4 +1,4 @@
-[gd_scene load_steps=37 format=2]
+[gd_scene load_steps=38 format=2]
 
 [ext_resource path="res://scenes/Programming/Programming.cs" type="Script" id=1]
 [ext_resource path="res://scenes/Programming/blocks/godot/VariableNode.cs" type="Script" id=2]
@@ -7,7 +7,7 @@
 [ext_resource path="res://icon.png" type="Texture" id=5]
 [ext_resource path="res://scenes/Programming/assets/LKW.PNG" type="Texture" id=6]
 [ext_resource path="res://scenes/Programming/assets/Background.PNG" type="Texture" id=7]
-[ext_resource path="res://SharedAssets/Anleitungen/Programming_blank.png" type="Texture" id=8]
+[ext_resource path="res://SharedAssets/anleitung_prog.png" type="Texture" id=8]
 [ext_resource path="res://SharedAssets/TopBar.tscn" type="PackedScene" id=9]
 [ext_resource path="res://scenes/Programming/blocks/KeyDPressedCondition.cs" type="Script" id=10]
 [ext_resource path="res://scenes/Programming/blocks/IfBlock.cs" type="Script" id=11]
@@ -22,6 +22,7 @@
 [ext_resource path="res://SharedAssets/music/Play/MusicProg.gd" type="Script" id=20]
 [ext_resource path="res://SharedAssets/font/BAHNSCHRIFT 1.TTF" type="DynamicFontData" id=21]
 [ext_resource path="res://SharedAssets/ui/Programming.PNG" type="Texture" id=22]
+[ext_resource path="res://SharedAssets/Anleitungen/Programming_blank.png" type="Texture" id=23]
 [ext_resource path="res://scenes/Programming/blocks/MoveTruckBlock.cs" type="Script" id=24]
 [ext_resource path="res://scenes/Programming/blocks/KeyFPressedCondition.cs" type="Script" id=25]
 [ext_resource path="res://scenes/Programming/assets/Checkliste.PNG" type="Texture" id=26]
@@ -1104,8 +1105,9 @@ text = "Press 'Execute Code' to see errors..."
 
 [node name="TopBar" parent="." instance=ExtResource( 9 )]
 Game = 2
-LeftImage = ExtResource( 8 )
+LeftImage = ExtResource( 23 )
 RightImage = ExtResource( 22 )
+HelpImage = ExtResource( 8 )
 Description = "There are boxes with different functions that you have to put in the right order and connect. 
 
 You can only connect the same colors.

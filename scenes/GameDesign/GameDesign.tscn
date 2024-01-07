@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=2]
+[gd_scene load_steps=27 format=2]
 
 [ext_resource path="res://scenes/GameDesign/assets/games/apex.jpg" type="Texture" id=1]
 [ext_resource path="res://scenes/GameDesign/GameDesignSlider.tscn" type="PackedScene" id=2]
@@ -21,6 +21,7 @@
 [ext_resource path="res://SharedAssets/TopBar.tscn" type="PackedScene" id=19]
 [ext_resource path="res://SharedAssets/Anleitungen/Game Design ohne Hintergrund.PNG" type="Texture" id=20]
 [ext_resource path="res://SharedAssets/anleitung_gd.png" type="Texture" id=21]
+[ext_resource path="res://SharedAssets/UI/Game Design.PNG" type="Texture" id=22]
 [ext_resource path="res://scenes/GameDesign/assets/games/detroit.jpg" type="Texture" id=29]
 [ext_resource path="res://scenes/GameDesign/assets/games/deadspace.jpg" type="Texture" id=38]
 
@@ -126,7 +127,7 @@ text = "Done"
 [node name="TopBar" parent="." instance=ExtResource( 19 )]
 Game = 1
 LeftImage = ExtResource( 20 )
-RightImage = ExtResource( 21 )
+RightImage = ExtResource( 22 )
 HelpImage = ExtResource( 21 )
 Description = "Instructions:
 

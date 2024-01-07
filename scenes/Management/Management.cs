@@ -114,7 +114,7 @@ public class Management : Node2D {
 		}
 
 		foreach (var entry in  BoxedNotes) {
-			if (entry.Value.Name.Equals(entry.Key.Name)) {
+			if (entry.Value.Name.Equals(entry.Key.Name) || entry.Key.ValidIDs.Contains(entry.Value.Name)) {
 				points += 3;
 			}
 			else {

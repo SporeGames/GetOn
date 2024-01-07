@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=2]
+[gd_scene load_steps=19 format=2]
 
 [ext_resource path="res://scenes/Management/Management.cs" type="Script" id=1]
 [ext_resource path="res://SharedAssets/Anleitungen/management  ohne Hintergrund.PNG" type="Texture" id=2]
@@ -15,6 +15,7 @@
 [ext_resource path="res://scenes/Management/assets/B_programming.png" type="Texture" id=13]
 [ext_resource path="res://scenes/Sound/assets/DoneButton.png" type="Texture" id=14]
 [ext_resource path="res://scenes/Management/assets/cursor.png" type="Texture" id=15]
+[ext_resource path="res://SharedAssets/UI/Management.PNG" type="Texture" id=16]
 
 [sub_resource type="DynamicFont" id=2]
 size = 26
@@ -126,7 +127,7 @@ ValidIDs = PoolStringArray(  )
 [node name="CharMovement" parent="Boxes" instance=ExtResource( 5 )]
 position = Vector2( 706, 993 )
 scale = Vector2( 0.8, 0.8 )
-ValidIDs = PoolStringArray(  )
+ValidIDs = PoolStringArray( "IdleAnim" )
 
 [node name="NPCSketch" parent="Boxes" instance=ExtResource( 5 )]
 position = Vector2( 692, 389 )
@@ -141,7 +142,7 @@ ValidIDs = PoolStringArray(  )
 [node name="IdleAnim" parent="Boxes" instance=ExtResource( 5 )]
 position = Vector2( 1196, 764 )
 scale = Vector2( 0.8, 0.8 )
-ValidIDs = PoolStringArray(  )
+ValidIDs = PoolStringArray( "CharMovement" )
 
 [node name="QuestButcher" parent="Boxes" instance=ExtResource( 5 )]
 position = Vector2( 1126, 510 )
@@ -291,7 +292,7 @@ texture_normal = ExtResource( 11 )
 [node name="TopBar" parent="." instance=ExtResource( 6 )]
 Game = 6
 LeftImage = ExtResource( 2 )
-RightImage = ExtResource( 4 )
+RightImage = ExtResource( 16 )
 HelpImage = ExtResource( 4 )
 Description = "Instructions:
 
