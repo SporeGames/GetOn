@@ -1,13 +1,11 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://scenes/Rooms/BaseRoom.cs" type="Script" id=1]
 [ext_resource path="res://scenes/GameStudy/assets/GameStudies3.png" type="Texture" id=2]
 [ext_resource path="res://SharedAssets/RoomPerson.tscn" type="PackedScene" id=3]
 [ext_resource path="res://scenes/GameStudy/assets/Standing_Charakter.PNG" type="Texture" id=4]
 [ext_resource path="res://SharedAssets/UserInterface/B_menu.png" type="Texture" id=6]
-[ext_resource path="res://SharedAssets/Decoration.tscn" type="PackedScene" id=7]
 [ext_resource path="res://SharedAssets/OutlineShader.tres" type="Shader" id=8]
-[ext_resource path="res://SharedAssets/UserInterface/B_Base1.png" type="Texture" id=9]
 [ext_resource path="res://SharedAssets/UserInterface/B_Home_pressed.png" type="Texture" id=10]
 [ext_resource path="res://SharedAssets/dialogue_characters/Game studies  ohne Hintergrund.PNG" type="Texture" id=11]
 
@@ -64,6 +62,8 @@ Title = "Emily"
 Icon = ExtResource( 11 )
 Texts = PoolStringArray( "You really love games, don’t you\? That’s very cool, thanks for your help." )
 ResultThreshold = 38
+IsUnique = true
+UniqueID = "1"
 
 [node name="ResultDialogue2" parent="GSPerson" index="6"]
 position = Vector2( 58, 674 )
@@ -71,12 +71,16 @@ Title = "Emily"
 Icon = ExtResource( 11 )
 Texts = PoolStringArray( "Good enough, looks like you know a bit about game studies." )
 ResultThreshold = 23
+IsUnique = true
+UniqueID = "2"
 
 [node name="ResultDialogue3" parent="GSPerson" index="7"]
 position = Vector2( 58, 674 )
 Title = "Emily"
 Icon = ExtResource( 11 )
 Texts = PoolStringArray( "... If you don’t like this task, then I will gladly do it. There is much more to those old-time classics as you would think you know." )
+IsUnique = true
+UniqueID = "3"
 
 [node name="BackButton" type="TextureButton" parent="."]
 margin_left = 1772.0
@@ -85,9 +89,5 @@ margin_bottom = 133.0
 texture_normal = ExtResource( 6 )
 texture_pressed = ExtResource( 10 )
 expand = true
-
-[node name="Deco" parent="." instance=ExtResource( 7 )]
-PopupTexture = ExtResource( 9 )
-SmallTexture = ExtResource( 10 )
 
 [editable path="GSPerson"]

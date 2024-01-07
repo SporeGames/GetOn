@@ -73,6 +73,8 @@ Title = "Julia"
 Icon = ExtResource( 12 )
 Texts = PoolStringArray( "Inspiring, truly inspiring! Are you a relative of Hans Zimmer perhaps\? You can be really proud of your work." )
 ResultThreshold = 38
+IsUnique = true
+UniqueID = "17"
 
 [node name="ResultDialogue2" parent="SoundPerson" index="6"]
 position = Vector2( 4, 709 )
@@ -80,12 +82,16 @@ Title = "Julia"
 Icon = ExtResource( 12 )
 Texts = PoolStringArray( "Not bad, you just need some more exercise." )
 ResultThreshold = 23
+IsUnique = true
+UniqueID = "18"
 
 [node name="ResultDialogue3" parent="SoundPerson" index="7"]
 position = Vector2( 4, 709 )
 Title = "Julia"
 Icon = ExtResource( 12 )
 Texts = PoolStringArray( "Hm… looks like you´re tone deaf. " )
+IsUnique = true
+UniqueID = "19"
 
 [node name="ArtPerson" parent="." instance=ExtResource( 2 )]
 position = Vector2( -12, 32 )
@@ -111,12 +117,18 @@ SceneToLoad = "Art"
 
 [node name="ResultDialogue" parent="ArtPerson" index="5"]
 position = Vector2( 0, 710 )
+IsUnique = true
+UniqueID = "20"
 
 [node name="ResultDialogue2" parent="ArtPerson" index="6"]
 position = Vector2( 0, 710 )
+IsUnique = true
+UniqueID = "21"
 
 [node name="ResultDialogue3" parent="ArtPerson" index="7"]
 position = Vector2( 0, 710 )
+IsUnique = true
+UniqueID = "22"
 
 [node name="BackButton" type="TextureButton" parent="."]
 margin_left = 1772.0

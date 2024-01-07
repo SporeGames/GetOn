@@ -35,13 +35,12 @@ public class RoomPerson : Node2D {
 		if (HasCompletedThisTask()) {
 			_sprite.Material = null; // remove the glow
 			var dialogue = GetResultDialogueForResult();
-			if (_shared.SeenDialogues.Contains(dialogue.Name)) { // Don't show the result dialogue if the player enter the room again for whatever reason
+			if (_shared.SeenDialogues.Contains(dialogue.UniqueID)) { // Don't show the result dialogue if the player enter the room again for whatever reason
 				GD.Print("Already seen this dialogue: " + dialogue.Name);
 				return;
 			}
 			dialogue.Visible = true;
-			_shared.HasDialogeBoxOpen = true;
-			_shared.SeenDialogues.Add(dialogue.Name);
+			_shared.SeenDialogues.Add(dialogue.UniqueID);
 		}
 	}
 	

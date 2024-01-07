@@ -79,6 +79,7 @@ namespace GetOn.scenes.Programming
 			if (_errors.Contains(error)) return;
 			_errors.Add(error);
 			_errorBox.Color = _errorColor;
+			GetNode<SharedNode>("/root/SharedNode").EncounteredErrors++;
 		}
 		
 		private void Run() {
@@ -89,6 +90,7 @@ namespace GetOn.scenes.Programming
 			_errorList.Text = "No errors!";
 			_checklist.Reset();
 			_checklist.SubmitButton.Disabled = false;
+			GetNode<SharedNode>("/root/SharedNode").TestsRun++;
 		}
 		
 		private void Stop() {
@@ -96,7 +98,6 @@ namespace GetOn.scenes.Programming
 			_runButton.Text = "Run";
 			_running = false;
 			_errors.Clear();
-			_errorList.Text = "Press 'Execute Code' to see errors...";
 			_errorBox.Color = new Color(0f, 0f, 0f);
 			//_programmingUI.Executor.Kill();
 		}

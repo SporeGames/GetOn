@@ -1,3 +1,4 @@
+using GetOn.scenes;
 using Godot;
 using GetOn.scenes.Programming.blocks;
 using GetOn.scenes.Programming.blocks.godot;
@@ -143,6 +144,7 @@ public class NodeGraph : GraphEdit {
 				blockNode.ConnectedConditions.Remove(node);
 			}
 		}
+		GetNode<SharedNode>("/root/SharedNode").DisconnectedNodes++;
 	}
 	
 }

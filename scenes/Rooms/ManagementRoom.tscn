@@ -83,16 +83,22 @@ Title = "Chloe"
 Icon = ExtResource( 14 )
 Texts = PoolStringArray( "Excellent work, just as I imagined. You have great potential." )
 ResultThreshold = 38
+IsUnique = true
+UniqueID = "11"
 
 [node name="ResultDialogue2" parent="RoomPerson" index="6"]
 Title = "Chloe"
 Icon = ExtResource( 14 )
 Texts = PoolStringArray( "Your work is alright, not perfect though." )
 ResultThreshold = 23
+IsUnique = true
+UniqueID = "12"
 
 [node name="ResultDialogue3" parent="RoomPerson" index="7"]
 Title = "Chloe"
 Icon = ExtResource( 14 )
 Texts = PoolStringArray( "Oh well, this doesn’t really help us… " )
+IsUnique = true
+UniqueID = "13"
 
 [editable path="RoomPerson"]

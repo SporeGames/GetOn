@@ -64,17 +64,23 @@ Title = "Justin"
 Icon = ExtResource( 13 )
 Texts = PoolStringArray( "Holy-moly! That worked better than I thought. Perfect work newbie." )
 ResultThreshold = 38
+IsUnique = true
+UniqueID = "14"
 
 [node name="ResultDialogue2" parent="RoomPerson" index="6"]
 Title = "Justin"
 Icon = ExtResource( 13 )
 Texts = PoolStringArray( "Not bad, but not really good either." )
 ResultThreshold = 23
+IsUnique = true
+UniqueID = "15"
 
 [node name="ResultDialogue3" parent="RoomPerson" index="7"]
 Title = "Justin"
 Icon = ExtResource( 13 )
 Texts = PoolStringArray( "You don’t have any experience with blueprints, have you\?" )
+IsUnique = true
+UniqueID = "16"
 
 [node name="DoorButton" type="TextureButton" parent="."]
 visible = false
