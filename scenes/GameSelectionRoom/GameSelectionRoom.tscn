@@ -92,6 +92,7 @@ custom_styles/disabled = SubResource( 5 )
 custom_styles/normal = SubResource( 1 )
 
 [node name="PrintPDF" type="Button" parent="."]
+visible = false
 margin_left = 66.0
 margin_top = 70.0
 margin_right = 238.0
@@ -234,3 +235,14 @@ AutoNextTime = 8.0
 ReadTime = 0.3
 IsUnique = true
 UniqueID = "IntroductionWithChloe"
+
+[node name="CompletedGameDialogue" parent="." instance=ExtResource( 11 )]
+visible = false
+position = Vector2( 0, 708 )
+Title = "Chloe"
+Icon = ExtResource( 12 )
+Texts = PoolStringArray( "Yay!" )
+AutoNext = true
+AutoNextTime = 8.0
+ReadTime = 0.3
+IsUnique = true
