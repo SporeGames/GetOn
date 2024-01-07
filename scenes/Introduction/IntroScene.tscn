@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=2]
+[gd_scene load_steps=17 format=2]
 
 [ext_resource path="res://scenes/Introduction/assets/Questionaire01.png" type="Texture" id=1]
 [ext_resource path="res://scenes/MainMenu/assets/Warning Message .PNG" type="Texture" id=2]
@@ -26,6 +26,10 @@ font_data = ExtResource( 8 )
 [sub_resource type="StyleBoxEmpty" id=2]
 
 [sub_resource type="StyleBoxEmpty" id=3]
+
+[sub_resource type="DynamicFont" id=7]
+size = 28
+font_data = ExtResource( 8 )
 
 [node name="Control" type="Control"]
 margin_right = 40.0
@@ -168,6 +172,7 @@ margin_left = 835.0
 margin_top = 717.0
 margin_right = 1015.0
 margin_bottom = 784.0
+custom_fonts/font = SubResource( 7 )
 text = "I understand"
 
 [node name="StartButton1" type="Button" parent="."]
