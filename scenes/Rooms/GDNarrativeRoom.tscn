@@ -1,12 +1,30 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://scenes/Rooms/BaseRoom.cs" type="Script" id=1]
-[ext_resource path="res://scenes/GameDesign/assets/personas/GameDesign.png" type="Texture" id=2]
+[ext_resource path="res://scenes/Narrative/assets/GameDesignNarrativeRoom2.png" type="Texture" id=2]
 [ext_resource path="res://SharedAssets/RoomPerson.tscn" type="PackedScene" id=3]
-[ext_resource path="res://scenes/GameDesign/assets/IMG_0257.PNG" type="Texture" id=4]
-[ext_resource path="res://scenes/Narrative/assets/IMG_0259.PNG" type="Texture" id=5]
+[ext_resource path="res://SharedAssets/Dialog Charakters/gamedesign.PNG" type="Texture" id=4]
+[ext_resource path="res://SharedAssets/Dialog Charakters/story.PNG" type="Texture" id=5]
 [ext_resource path="res://SharedAssets/ui/B_Home_pressed.png" type="Texture" id=6]
 [ext_resource path="res://SharedAssets/ui/B_menu.png" type="Texture" id=7]
+[ext_resource path="res://SharedAssets/OutlineShader.tres" type="Shader" id=8]
+[ext_resource path="res://SharedAssets/Decoration.tscn" type="PackedScene" id=9]
+[ext_resource path="res://scenes/GameDesign/assets/GameDes/CanPopUp.PNG" type="Texture" id=10]
+[ext_resource path="res://scenes/GameDesign/assets/GameDes/Popup.PNG" type="Texture" id=11]
+
+[sub_resource type="ShaderMaterial" id=1]
+resource_local_to_scene = true
+shader = ExtResource( 8 )
+shader_param/blink_strength = 0.1
+shader_param/blink_rate = 2.0
+shader_param/outline_color = Color( 1, 1, 1, 1 )
+
+[sub_resource type="ShaderMaterial" id=2]
+resource_local_to_scene = true
+shader = ExtResource( 8 )
+shader_param/blink_strength = 0.1
+shader_param/blink_rate = 2.0
+shader_param/outline_color = Color( 1, 1, 1, 1 )
 
 [node name="GDNarrativeRoom" type="Node2D"]
 script = ExtResource( 1 )
@@ -19,8 +37,9 @@ texture = ExtResource( 2 )
 GameSpecialization = 1
 
 [node name="PersonSprite" parent="GDPerson" index="0"]
-position = Vector2( 1518.5, 541.875 )
-scale = Vector2( 0.579832, 0.516286 )
+material = SubResource( 1 )
+position = Vector2( 1434, 443 )
+scale = Vector2( 1.04946, 0.995955 )
 texture = ExtResource( 4 )
 
 [node name="InteractButton" parent="GDPerson" index="1"]
@@ -56,8 +75,10 @@ Texts = PoolStringArray( "I’m honest with you, you should rethink if you want 
 GameSpecialization = 7
 
 [node name="PersonSprite" parent="NarrativePerson" index="0"]
-position = Vector2( 371.563, 665.39 )
-scale = Vector2( 0.497103, 0.482645 )
+visible = false
+material = SubResource( 2 )
+position = Vector2( 378, 703 )
+scale = Vector2( 1.0241, 0.994314 )
 texture = ExtResource( 5 )
 
 [node name="InteractButton" parent="NarrativePerson" index="1"]
@@ -97,5 +118,19 @@ texture_normal = ExtResource( 7 )
 texture_pressed = ExtResource( 6 )
 expand = true
 
+[node name="Deco" parent="." instance=ExtResource( 9 )]
+position = Vector2( 495, 743 )
+scale = Vector2( 0.733358, 0.733358 )
+PopupTexture = ExtResource( 11 )
+SmallTexture = ExtResource( 10 )
+
+[node name="Sprite" parent="Deco" index="0"]
+margin_left = 15.0
+margin_top = 22.0
+margin_right = 15.0
+margin_bottom = 22.0
+rect_scale = Vector2( 0.601389, 0.601389 )
+
 [editable path="GDPerson"]
 [editable path="NarrativePerson"]
+[editable path="Deco"]

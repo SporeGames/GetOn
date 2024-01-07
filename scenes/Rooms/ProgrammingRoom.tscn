@@ -1,11 +1,24 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=14 format=2]
 
-[ext_resource path="res://scenes/Programming/assets/Programmierraumm.png" type="Texture" id=1]
+[ext_resource path="res://SharedAssets/Decoration.tscn" type="PackedScene" id=1]
 [ext_resource path="res://SharedAssets/RoomPerson.tscn" type="PackedScene" id=2]
 [ext_resource path="res://scenes/Rooms/BaseRoom.cs" type="Script" id=3]
 [ext_resource path="res://SharedAssets/ui/B_menu.png" type="Texture" id=4]
 [ext_resource path="res://SharedAssets/ui/B_Home_pressed.png" type="Texture" id=5]
-[ext_resource path="res://scenes/Programming/assets/IMG_0267.PNG" type="Texture" id=6]
+[ext_resource path="res://SharedAssets/Dialog Charakters/Prog.PNG" type="Texture" id=6]
+[ext_resource path="res://scenes/Programming/assets/Programming/Popup.PNG" type="Texture" id=7]
+[ext_resource path="res://SharedAssets/OutlineShader.tres" type="Shader" id=8]
+[ext_resource path="res://scenes/Programming/assets/Programming/Can Popup.PNG" type="Texture" id=9]
+[ext_resource path="res://scenes/Programming/assets/Programming/Canpopup2.PNG" type="Texture" id=10]
+[ext_resource path="res://scenes/Programming/assets/Programming.PNG" type="Texture" id=11]
+[ext_resource path="res://scenes/Programming/assets/Programming/Popup2.PNG" type="Texture" id=12]
+
+[sub_resource type="ShaderMaterial" id=1]
+resource_local_to_scene = true
+shader = ExtResource( 8 )
+shader_param/blink_strength = 0.1
+shader_param/blink_rate = 2.0
+shader_param/outline_color = Color( 1, 1, 1, 1 )
 
 [node name="ProgrammingRoom" type="Node2D"]
 script = ExtResource( 3 )
@@ -13,14 +26,15 @@ HasDoor = true
 
 [node name="Background" type="Sprite" parent="."]
 position = Vector2( 959.75, 539.75 )
-texture = ExtResource( 1 )
+texture = ExtResource( 11 )
 
 [node name="RoomPerson" parent="." instance=ExtResource( 2 )]
 GameSpecialization = 2
 
 [node name="PersonSprite" parent="RoomPerson" index="0"]
-position = Vector2( 307.75, 731.75 )
-scale = Vector2( 0.583036, 0.548438 )
+material = SubResource( 1 )
+position = Vector2( 306, 755 )
+scale = Vector2( 1.04279, 0.980907 )
 texture = ExtResource( 6 )
 
 [node name="InteractButton" parent="RoomPerson" index="1"]
@@ -66,4 +80,22 @@ texture_normal = ExtResource( 4 )
 texture_pressed = ExtResource( 5 )
 expand = true
 
+[node name="Deco" parent="." instance=ExtResource( 1 )]
+position = Vector2( 148, 267 )
+PopupTexture = ExtResource( 12 )
+SmallTexture = ExtResource( 10 )
+
+[node name="Popup" parent="Deco" index="1"]
+position = Vector2( -14, -10 )
+
+[node name="Sprite" parent="Deco/Popup" index="0"]
+z_index = 6
+
+[node name="Deco2" parent="." instance=ExtResource( 1 )]
+position = Vector2( 426, 266 )
+PopupTexture = ExtResource( 7 )
+SmallTexture = ExtResource( 9 )
+
 [editable path="RoomPerson"]
+[editable path="Deco"]
+[editable path="Deco2"]

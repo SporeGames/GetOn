@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://scenes/Management/Management.cs" type="Script" id=1]
 [ext_resource path="res://SharedAssets/UI/Management.PNG" type="Texture" id=2]
@@ -6,6 +6,7 @@
 [ext_resource path="res://scenes/Management/assets/vereinfachtes Management background.jpg" type="Texture" id=4]
 [ext_resource path="res://scenes/Management/NoteBox.tscn" type="PackedScene" id=5]
 [ext_resource path="res://SharedAssets/TopBar.tscn" type="PackedScene" id=6]
+[ext_resource path="res://scenes/Management/ManagementMusicPlay.gd" type="Script" id=7]
 [ext_resource path="res://SharedAssets/font/BAHNSCHRIFT 1.TTF" type="DynamicFontData" id=12]
 [ext_resource path="res://scenes/Management/assets/Legend.png" type="Texture" id=16]
 [ext_resource path="res://scenes/Management/OpenLegend.gd" type="Script" id=17]
@@ -228,5 +229,8 @@ Programming - blue
 Sound - yellow									
 
 If you are done with this task click DONE."
+
+[node name="Music2" type="Node" parent="."]
+script = ExtResource( 7 )
 
 [connection signal="pressed" from="ColorSelector/Legend2" to="ColorSelector/Legend2" method="_on_Legend2_pressed"]

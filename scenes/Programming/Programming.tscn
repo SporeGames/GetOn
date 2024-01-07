@@ -19,7 +19,7 @@
 [ext_resource path="res://scenes/Programming/Checklist.cs" type="Script" id=17]
 [ext_resource path="res://scenes/Programming/assets/Münze.PNG" type="Texture" id=18]
 [ext_resource path="res://scenes/Programming/assets/fahne (1).PNG" type="Texture" id=19]
-[ext_resource path="res://SharedAssets/music/Play/MusicBack.gd" type="Script" id=20]
+[ext_resource path="res://SharedAssets/music/Play/MusicProg.gd" type="Script" id=20]
 [ext_resource path="res://SharedAssets/font/BAHNSCHRIFT 1.TTF" type="DynamicFontData" id=21]
 [ext_resource path="res://SharedAssets/ui/Programming.PNG" type="Texture" id=22]
 [ext_resource path="res://scenes/Programming/blocks/MoveTruckBlock.cs" type="Script" id=24]
@@ -1096,9 +1096,6 @@ margin_right = 842.0
 margin_bottom = 162.0
 text = "Press 'Execute Code' to see errors..."
 
-[node name="Music" type="Node" parent="."]
-script = ExtResource( 20 )
-
 [node name="TopBar" parent="." instance=ExtResource( 9 )]
 Game = 2
 LeftImage = ExtResource( 22 )
@@ -1117,4 +1114,5 @@ Hint:
 To view all the boxes you may have to navigate with the scrollbar at the bottom of the screen.
 "
 
-[connection signal="pressed" from="Checklist/SubmitButton" to="Music" method="_on_SubmitButton_pressed"]
+[node name="Music2" type="Node" parent="."]
+script = ExtResource( 20 )

@@ -1,12 +1,25 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://scenes/Rooms/BaseRoom.cs" type="Script" id=1]
-[ext_resource path="res://scenes/Management/assets/ManagementPrototyp2VerbesserteVersion.png" type="Texture" id=2]
-[ext_resource path="res://scenes/Management/ManagementMusicPlay.gd" type="Script" id=3]
+[ext_resource path="res://scenes/Management/assets/Management.PNG" type="Texture" id=2]
+[ext_resource path="res://SharedAssets/Decoration.tscn" type="PackedScene" id=3]
 [ext_resource path="res://SharedAssets/RoomPerson.tscn" type="PackedScene" id=4]
 [ext_resource path="res://SharedAssets/ui/B_Home_pressed.png" type="Texture" id=5]
 [ext_resource path="res://SharedAssets/ui/B_menu.png" type="Texture" id=6]
-[ext_resource path="res://scenes/Management/assets/IMG_0262.PNG" type="Texture" id=7]
+[ext_resource path="res://SharedAssets/Dialog Charakters/Chloe (2).PNG" type="Texture" id=7]
+[ext_resource path="res://SharedAssets/OutlineShader.tres" type="Shader" id=8]
+[ext_resource path="res://scenes/Management/assets/ManagementPinnwand/CanPopUp.PNG" type="Texture" id=9]
+[ext_resource path="res://scenes/Management/assets/ManagementPinnwand/Popthisup.PNG" type="Texture" id=10]
+[ext_resource path="res://scenes/Management/assets/ManagementPinnwand/Monstera.png" type="Texture" id=11]
+[ext_resource path="res://scenes/Management/assets/ManagementPinnwand/AktenPopUp.png" type="Texture" id=12]
+[ext_resource path="res://scenes/Management/assets/ManagementPinnwand/akternschrank mit pflanze.PNG" type="Texture" id=13]
+
+[sub_resource type="ShaderMaterial" id=1]
+resource_local_to_scene = true
+shader = ExtResource( 8 )
+shader_param/blink_strength = 0.1
+shader_param/blink_rate = 2.0
+shader_param/outline_color = Color( 1, 1, 1, 1 )
 
 [node name="ManagementRoom" type="Node2D"]
 script = ExtResource( 1 )
@@ -15,14 +28,12 @@ script = ExtResource( 1 )
 position = Vector2( 960, 540 )
 texture = ExtResource( 2 )
 
-[node name="Music" type="Node" parent="."]
-script = ExtResource( 3 )
-
 [node name="RoomPerson" parent="." instance=ExtResource( 4 )]
 
 [node name="PersonSprite" parent="RoomPerson" index="0"]
-position = Vector2( 517, 520 )
-scale = Vector2( 0.513035, 0.488212 )
+material = SubResource( 1 )
+position = Vector2( 764, 529 )
+scale = Vector2( 1.04576, 0.995164 )
 texture = ExtResource( 7 )
 
 [node name="InteractButton" parent="RoomPerson" index="1"]
@@ -61,5 +72,19 @@ margin_bottom = 133.0
 texture_normal = ExtResource( 6 )
 texture_pressed = ExtResource( 5 )
 expand = true
+
+[node name="Deco" parent="." instance=ExtResource( 3 )]
+position = Vector2( 1090, 252 )
+PopupTexture = ExtResource( 10 )
+SmallTexture = ExtResource( 9 )
+
+[node name="Monstera" type="Sprite" parent="Deco"]
+position = Vector2( 517, 238 )
+texture = ExtResource( 11 )
+
+[node name="Deco2" parent="." instance=ExtResource( 3 )]
+position = Vector2( 162, 443 )
+PopupTexture = ExtResource( 12 )
+SmallTexture = ExtResource( 13 )
 
 [editable path="RoomPerson"]
