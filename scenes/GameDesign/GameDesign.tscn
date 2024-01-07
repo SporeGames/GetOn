@@ -84,13 +84,14 @@ Descriptions = PoolStringArray( "These players tend to take more destructive mea
 PersonaMotivations = PoolStringArray( "Guns, Explosives, Chaos", "Fast-paced, Surprises, Thrills", "Duels, Matches, Ranking System", "Team, Chatting, Interaction", "Practice, High Difficulty, Challenges", "Thinking Ahead, Making Decisions", "Collectibles, Completions", "Powerful Character, Powerful Equipment", "Being someone else, Being somewhere else", "Elaborate plot, Interesting characters and story", "Expression, Customisation", "Exploration, Excitement" )
 Game = 2
 CategoryDisplayName = "Hollow Sky"
-GameDescription = "A single player survival horror game, with the player character visible at all times.
+GameDescription = "• Single player survival horror game, 
+• Player character visible at all times.
+• The character's can be equipped with two special abilities for use in combat and puzzle-solving \"Kinesis\" & \"Stasis\". 
 
-The character's RIG (Resource Integration Gear) can be equipped with two special abilities for use in combat and puzzle-solving \"Kinesis\" & \"Stasis\". 
-The RIG also has a slot-based inventory for carrying weapons, ammunition, healing items, and other objects. 
-
-Gunplay against Necromorphs which are re-animated and re-purposed corpses, lacking dependence on nervous, respiratory, and circulatory systems, the conventions of causing targets to be incapacitated or immobilized are largely irrelevant to them. 
-Ammunition tends to be uncommon, thus necessitating careful usage of the tools at hand."
+• Gunplay against Necromorphs which are re-animated and re-purposed corpses
+• The conventions of causing targets to be incapacitated or immobilized are largely irrelevant to them. 
+• Ammunition tends to be uncommon
+• Necessitating careful usage of the tools at hand."
 GameImage = ExtResource( 38 )
 ValidPersonas = PoolStringArray( "Excitement", "Strategy", "Completion", "Fantasy", "Story", "Discovery" )
 
@@ -133,12 +134,12 @@ HelpImage = ExtResource( 21 )
 Description = "Instructions:
 
 Read the following descriptions of the 3 games and choose the correct motivations that fit to each game by checking the box ☐.
-Use            and              to switch between the motivations.
+Use      <-      and       ->     to switch between the motivations.
 When you are finished with the first game use	        and        ,below the game descriptions, to switch between them. 
 
 If you are done with the task press DONE. 
 
-Use         and          to switch between personas. 
+Use     <-    and     ->   to switch between personas. 
 
 When you are finished with a game, press NEXT to go to the next game.
 

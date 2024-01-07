@@ -73,9 +73,11 @@ Texts = PoolStringArray( "I prepared an example of a management task for you, so
 SceneToLoad = "Management"
 
 [node name="EpicFailDialogue" parent="RoomPerson" index="3"]
+Title = "Chloe"
 Icon = ExtResource( 14 )
 
 [node name="TalkAgainDialogue" parent="RoomPerson" index="4"]
+Title = "Chloe"
 Icon = ExtResource( 14 )
 
 [node name="ResultDialogue" parent="RoomPerson" index="5"]

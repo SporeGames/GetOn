@@ -59,21 +59,14 @@ namespace GetOn.scenes.GameSelectionRoom {
 		}
 
 		public void OnGoToManagmentPressed() {
-			GD.Print("HUAN");
-		if (_DialogueBox != null) {
-			GD.Print("HUAN2111111111");
-			_DialogueBox.QueueFree();
-		}
 			_sharedNode.SwitchScene("res://scenes/Rooms/ManagementRoom.tscn");
 		}
 
 		public void OnGoToNarrativeAndSoundPressed() {
-			_DialogueBox.QueueFree();
 			_sharedNode.SwitchScene("res://scenes/Rooms/GDNarrativeRoom.tscn");//"res://scenes/Narrative/PrePuzzleRoom.tscn"
 		}
 
 		public void OnGoToSoundPressed() {
-			_DialogueBox.QueueFree();
 			_sharedNode.SwitchScene("res://scenes/Rooms/SoundArtRoom.tscn");
 		}
 
@@ -83,7 +76,6 @@ namespace GetOn.scenes.GameSelectionRoom {
 		}
 
 		public void OnGoToGameStudyPressed() {
-			_DialogueBox.QueueFree();
 			_sharedNode.SwitchScene("res://scenes/Rooms/GameStudyRoom.tscn");
 		}
 

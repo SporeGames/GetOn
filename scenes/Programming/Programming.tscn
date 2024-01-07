@@ -17,8 +17,8 @@
 [ext_resource path="res://scenes/Programming/blocks/KeySpacePressedCondition.cs" type="Script" id=15]
 [ext_resource path="res://scenes/Programming/blocks/JumpBlock.cs" type="Script" id=16]
 [ext_resource path="res://scenes/Programming/Checklist.cs" type="Script" id=17]
-[ext_resource path="res://scenes/Programming/assets/Münze.PNG" type="Texture" id=18]
-[ext_resource path="res://scenes/Programming/assets/fahne (1).PNG" type="Texture" id=19]
+[ext_resource path="res://scenes/Programming/assets/Kind.PNG" type="Texture" id=18]
+[ext_resource path="res://scenes/Programming/assets/Drohne.PNG" type="Texture" id=19]
 [ext_resource path="res://SharedAssets/music/Play/MusicProg.gd" type="Script" id=20]
 [ext_resource path="res://SharedAssets/font/BAHNSCHRIFT 1.TTF" type="DynamicFontData" id=21]
 [ext_resource path="res://SharedAssets/Anleitungen/Programming.PNG" type="Texture" id=22]
@@ -191,10 +191,7 @@ texture = ExtResource( 7 )
 position = Vector2( 1226.05, 454.576 )
 
 [node name="Flag" type="Sprite" parent="Game/EasyFlag"]
-position = Vector2( -4, 0 )
-rotation = -4.69843
-scale = Vector2( -0.277691, 0.277691 )
-texture = ExtResource( 18 )
+texture = ExtResource( 19 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Game/EasyFlag"]
 position = Vector2( 1, 2 )
@@ -212,9 +209,7 @@ text = "Easy
 position = Vector2( 1856.05, 316.576 )
 
 [node name="Flag" type="Sprite" parent="Game/HardFlag"]
-position = Vector2( 1, -4 )
-scale = Vector2( 0.218033, 0.218033 )
-texture = ExtResource( 19 )
+texture = ExtResource( 18 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Game/HardFlag"]
 position = Vector2( 2, -8 )
