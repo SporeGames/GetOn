@@ -809,7 +809,7 @@ slot/0/right_type = 0
 slot/0/right_color = Color( 1, 1, 1, 1 )
 slot/1/left_enabled = true
 slot/1/left_type = 1
-slot/1/left_color = Color( 0.933333, 0, 0.701961, 1 )
+slot/1/left_color = Color( 1, 0, 0.752941, 1 )
 slot/1/right_enabled = false
 slot/1/right_type = 0
 slot/1/right_color = Color( 1, 1, 1, 1 )
@@ -836,10 +836,10 @@ text = "Condition"
 fit_content_height = true
 
 [node name="IfBlock" type="GraphNode" parent="ProgrammingUI/AspectRatioContainer/NodeGraph"]
-margin_left = 250.0
-margin_top = 250.0
-margin_right = 401.0
-margin_bottom = 327.0
+margin_left = 731.0
+margin_top = 243.971
+margin_right = 882.0
+margin_bottom = 320.971
 hint_tooltip = "This node allows you to check if a condition
 is fulfilled. If the condition is fulfilled, the nodes
 connected after this node will be executed. If the
@@ -855,7 +855,7 @@ slot/0/right_type = 0
 slot/0/right_color = Color( 1, 1, 1, 1 )
 slot/1/left_enabled = true
 slot/1/left_type = 1
-slot/1/left_color = Color( 0.933333, 0, 0.701961, 1 )
+slot/1/left_color = Color( 1, 0, 0.752941, 1 )
 slot/1/right_enabled = false
 slot/1/right_type = 0
 slot/1/right_color = Color( 1, 1, 1, 1 )
@@ -895,7 +895,7 @@ slot/0/left_type = 0
 slot/0/left_color = Color( 1, 1, 1, 1 )
 slot/0/right_enabled = true
 slot/0/right_type = 1
-slot/0/right_color = Color( 0.933333, 0, 0.701961, 1 )
+slot/0/right_color = Color( 1, 0, 0.752941, 1 )
 script = ExtResource( 15 )
 
 [node name="RichTextLabel" type="RichTextLabel" parent="ProgrammingUI/AspectRatioContainer/NodeGraph/IfSpacePressed"]
@@ -911,10 +911,10 @@ text = "pressed"
 fit_content_height = true
 
 [node name="IfDPressed" type="GraphNode" parent="ProgrammingUI/AspectRatioContainer/NodeGraph"]
-margin_left = 250.0
-margin_top = 250.0
-margin_right = 397.0
-margin_bottom = 312.0
+margin_left = 563.0
+margin_top = 267.971
+margin_right = 710.0
+margin_bottom = 329.971
 mouse_filter = 1
 title = "isKeyPressed(\"D\")"
 slot/0/left_enabled = false
@@ -922,7 +922,7 @@ slot/0/left_type = 0
 slot/0/left_color = Color( 1, 1, 1, 1 )
 slot/0/right_enabled = true
 slot/0/right_type = 1
-slot/0/right_color = Color( 0.933333, 0, 0.701961, 1 )
+slot/0/right_color = Color( 1, 0, 0.752941, 1 )
 script = ExtResource( 10 )
 __meta__ = {
 "_editor_description_": "This condition node checks if the player
@@ -1018,7 +1018,7 @@ slot/0/right_type = 0
 slot/0/right_color = Color( 1, 1, 1, 1 )
 slot/1/left_enabled = true
 slot/1/left_type = 1
-slot/1/left_color = Color( 0.933333, 0, 0.701961, 1 )
+slot/1/left_color = Color( 1, 0, 0.752941, 1 )
 slot/1/right_enabled = false
 slot/1/right_type = 0
 slot/1/right_color = Color( 1, 1, 1, 1 )
