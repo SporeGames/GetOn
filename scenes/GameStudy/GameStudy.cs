@@ -11,6 +11,9 @@ public class GameStudy : Node2D
 	private Button _submit;
 
 	public Consoles _console;
+
+	private bool consolesOpened;
+	private bool gamesOpened;
 	
 	public override void _Ready()
 	{
@@ -27,6 +30,7 @@ public class GameStudy : Node2D
 		_submit.Connect("pressed", this, nameof(SubmitGame));
 
 		_console = GetNode<Consoles>("Consoles");
+		_submit.Visible = false;
 	}
 
 	public void SubmitGame()
@@ -40,6 +44,7 @@ public class GameStudy : Node2D
 		_close.Visible = true;
 		_openConsoles.SetMouseFilter(Control.MouseFilterEnum.Ignore);
 		_openGames.SetMouseFilter(Control.MouseFilterEnum.Ignore);
+		consolesOpened = true;
 	}
 
 	public void BackToGameStudy()
@@ -49,11 +54,13 @@ public class GameStudy : Node2D
 		_consoles.Visible = false;
 		_close.Visible = false;
 		_games.Visible = false;
-		
+		if (gamesOpened == true && consolesOpened == true)
+			_submit.Visible = true;
 	}
 
 	public void OpenGames()
 	{
+		gamesOpened = true;
 		_games.Visible = true;
 		_close.Visible = true;
 		_openGames.SetMouseFilter(Control.MouseFilterEnum.Ignore);
