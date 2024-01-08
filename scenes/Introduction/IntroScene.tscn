@@ -15,10 +15,14 @@ font_data = ExtResource( 8 )
 
 [sub_resource type="DynamicFont" id=5]
 size = 100
+use_mipmaps = true
+use_filter = true
 font_data = ExtResource( 8 )
 
 [sub_resource type="DynamicFont" id=6]
 size = 100
+use_mipmaps = true
+use_filter = true
 font_data = ExtResource( 8 )
 
 [sub_resource type="StyleBoxEmpty" id=1]
@@ -56,7 +60,7 @@ margin_right = 1097.0
 margin_bottom = 343.0
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 custom_fonts/normal_font = SubResource( 4 )
-text = "Questionare"
+text = "Questionnaire"
 
 [node name="Credits" type="Button" parent="HomeScreen"]
 visible = false
@@ -89,7 +93,7 @@ text = "
 This is a qualification test disguised as a game!
 In order to apply for the Game Produktion & Management course,
 you have to complete this game.
-You have to solve different Tasks and will be tested on your knowledge."
+You have to solve different tasks and will be tested on your knowledge."
 
 [node name="RichTextLabel2" type="RichTextLabel" parent="IntroScreen/Sprite"]
 margin_left = -111.0

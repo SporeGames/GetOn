@@ -105,6 +105,8 @@ extents = Vector2( 162.25, 86.25 )
 
 [sub_resource type="DynamicFont" id=152]
 size = 40
+use_mipmaps = true
+use_filter = true
 font_data = ExtResource( 11 )
 
 [sub_resource type="RectangleShape2D" id=12]
@@ -112,6 +114,8 @@ extents = Vector2( 118.25, 106.75 )
 
 [sub_resource type="DynamicFont" id=153]
 size = 40
+use_mipmaps = true
+use_filter = true
 font_data = ExtResource( 11 )
 
 [sub_resource type="RectangleShape2D" id=13]
@@ -123,6 +127,8 @@ font_data = ExtResource( 11 )
 
 [sub_resource type="DynamicFont" id=63]
 size = 60
+use_mipmaps = true
+use_filter = true
 font_data = ExtResource( 11 )
 
 [sub_resource type="StyleBoxEmpty" id=43]
@@ -378,6 +384,8 @@ font_data = ExtResource( 11 )
 
 [sub_resource type="DynamicFont" id=146]
 size = 44
+use_mipmaps = true
+use_filter = true
 font_data = ExtResource( 11 )
 
 [sub_resource type="DynamicFont" id=145]
@@ -1759,7 +1767,7 @@ HelpImage = ExtResource( 6 )
 Description = "Instructions:
                
 You will see post-its with a sci-fi story idea, it´s introduction and 2 main characters. 
-               
+                
 Your objective is to choose:
 
 1. Out of 3, the most appropriate ending for the story.
