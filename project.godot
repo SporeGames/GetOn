@@ -20,6 +20,10 @@ config/icon="res://icon.png"
 SharedNode="*res://scenes/SharedNode.tscn"
 MusicPlayer="*res://SharedAssets/music/MusicPlayer.tscn"
 
+[debug]
+
+settings/fps/force_fps=60
+
 [display]
 
 window/size/width=1920
