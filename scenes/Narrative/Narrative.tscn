@@ -1,4 +1,4 @@
-[gd_scene load_steps=182 format=2]
+[gd_scene load_steps=185 format=2]
 
 [ext_resource path="res://scenes/Narrative/assets/StickyNote2.PNG" type="Texture" id=1]
 [ext_resource path="res://scenes/Narrative/DropDownAttribute.cs" type="Script" id=2]
@@ -21,6 +21,7 @@
 [ext_resource path="res://SharedAssets/music/Play/Music_Narr.gd" type="Script" id=19]
 [ext_resource path="res://SharedAssets/Anleitungen/Story_blank.png" type="Texture" id=20]
 [ext_resource path="res://scenes/Narrative/assets/IMG_0275.PNG" type="Texture" id=21]
+[ext_resource path="res://scenes/Narrative/assets/Introduction PopUp.png" type="Texture" id=22]
 [ext_resource path="res://SharedAssets/Anleitungen/Story.PNG" type="Texture" id=23]
 [ext_resource path="res://scenes/Narrative/assets/ending1.PNG" type="Texture" id=24]
 [ext_resource path="res://SharedAssets/TopBar.tscn" type="PackedScene" id=25]
@@ -29,7 +30,6 @@
 [ext_resource path="res://scenes/Narrative/assets/yellow.PNG" type="Texture" id=28]
 [ext_resource path="res://scenes/Narrative/assets/ending 3.PNG" type="Texture" id=30]
 [ext_resource path="res://scenes/Narrative/assets/ending2.PNG" type="Texture" id=31]
-[ext_resource path="res://scenes/Narrative/assets/ThinkWhatThatIs.png" type="Texture" id=32]
 
 [sub_resource type="StyleBoxEmpty" id=28]
 
@@ -363,6 +363,18 @@ font_data = ExtResource( 11 )
 
 [sub_resource type="RectangleShape2D" id=22]
 extents = Vector2( 261.5, 190 )
+
+[sub_resource type="DynamicFont" id=161]
+size = 22
+font_data = ExtResource( 11 )
+
+[sub_resource type="DynamicFont" id=162]
+size = 22
+font_data = ExtResource( 11 )
+
+[sub_resource type="DynamicFont" id=163]
+size = 26
+font_data = ExtResource( 11 )
 
 [sub_resource type="DynamicFont" id=146]
 size = 44
@@ -1391,7 +1403,6 @@ custom_fonts/font = SubResource( 144 )
 text = "Will not change:"
 
 [node name="EndingPopup" type="Node2D" parent="."]
-visible = false
 position = Vector2( -18, -2 )
 scale = Vector2( 1.02765, 1.05431 )
 z_index = 21
@@ -1426,7 +1437,7 @@ texture = ExtResource( 30 )
 visible = false
 position = Vector2( 976.986, 512.183 )
 scale = Vector2( 1.02753, 1.02753 )
-texture = ExtResource( 32 )
+texture = ExtResource( 22 )
 
 [node name="Ending1" type="Label" parent="EndingPopup"]
 visible = false
@@ -1617,6 +1628,7 @@ margin_left = 1425.0
 margin_top = 988.0
 margin_right = 1497.0
 margin_bottom = 1031.0
+custom_fonts/font = SubResource( 161 )
 text = "Back"
 script = ExtResource( 10 )
 
@@ -1625,6 +1637,7 @@ margin_left = 1516.0
 margin_top = 988.0
 margin_right = 1588.0
 margin_bottom = 1031.0
+custom_fonts/font = SubResource( 162 )
 text = "Next"
 
 [node name="Submit" type="Button" parent="."]
@@ -1632,7 +1645,8 @@ margin_left = 1729.0
 margin_top = 988.0
 margin_right = 1865.0
 margin_bottom = 1031.0
-text = "Submit"
+custom_fonts/font = SubResource( 163 )
+text = "Done"
 clip_text = true
 
 [node name="IntroStory1" type="Node2D" parent="."]
@@ -1641,7 +1655,7 @@ z_index = 21
 [node name="Sprite" type="Sprite" parent="IntroStory1"]
 position = Vector2( 967, 538 )
 scale = Vector2( 1.40865, 1.40865 )
-texture = ExtResource( 32 )
+texture = ExtResource( 22 )
 
 [node name="ColorRect" type="ColorRect" parent="IntroStory1"]
 visible = false
@@ -1683,7 +1697,7 @@ color = Color( 0.027451, 0.364706, 0.317647, 1 )
 [node name="Sprite" type="Sprite" parent="IntroStory2"]
 position = Vector2( 935, 538 )
 scale = Vector2( 1.40865, 1.40865 )
-texture = ExtResource( 32 )
+texture = ExtResource( 22 )
 
 [node name="Label" type="Label" parent="IntroStory2"]
 margin_left = 476.0
@@ -1744,7 +1758,7 @@ RightImage = ExtResource( 23 )
 HelpImage = ExtResource( 6 )
 Description = "Instructions:
                
-You will see post-its with a sci-fi story idea, its introduction and 2 main characters. 
+You will see post-its with a sci-fi story idea, it´s introduction and 2 main characters. 
                
 Your objective is to choose:
 
