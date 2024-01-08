@@ -1,4 +1,4 @@
-[gd_scene load_steps=41 format=2]
+[gd_scene load_steps=56 format=2]
 
 [ext_resource path="res://scenes/Sound/assets/FeldFürSounds.png" type="Texture" id=1]
 [ext_resource path="res://scenes/Sound/Soundeffects/Wrong Sounds/Power Boost Sound.wav" type="AudioStream" id=2]
@@ -23,10 +23,25 @@
 [ext_resource path="res://scenes/Sound/Soundeffects/Wrong Sounds/Ambience Bar.wav" type="AudioStream" id=21]
 [ext_resource path="res://scenes/Sound/Soundeffects/Wrong Sounds/Level Up Sound.wav" type="AudioStream" id=22]
 [ext_resource path="res://scenes/Sound/Soundeffects/Perfect Block Sound.wav" type="AudioStream" id=23]
-[ext_resource path="res://icon.png" type="Texture" id=24]
+[ext_resource path="res://scenes/Sound/assets/Drunk.png" type="Texture" id=24]
 [ext_resource path="res://scenes/GameDesign/assets/ui/KästchenLeer.png" type="Texture" id=25]
 [ext_resource path="res://scenes/GameDesign/assets/ui/KästchenAbgehakt.png" type="Texture" id=26]
 [ext_resource path="res://SharedAssets/UserInterface/B_art.png" type="Texture" id=27]
+[ext_resource path="res://scenes/Sound/assets/AmbienceKeller.png" type="Texture" id=28]
+[ext_resource path="res://scenes/Sound/assets/PowerBoost.png" type="Texture" id=29]
+[ext_resource path="res://scenes/Sound/assets/Shot.png" type="Texture" id=30]
+[ext_resource path="res://scenes/Sound/assets/DeathSound.png" type="Texture" id=31]
+[ext_resource path="res://scenes/Sound/assets/SecretFound.png" type="Texture" id=32]
+[ext_resource path="res://scenes/Sound/assets/AmbienceCity.png" type="Texture" id=33]
+[ext_resource path="res://scenes/Sound/assets/ItemCollected.png" type="Texture" id=34]
+[ext_resource path="res://scenes/Sound/assets/LowOnEnergy.png" type="Texture" id=35]
+[ext_resource path="res://scenes/Sound/assets/Kill.png" type="Texture" id=36]
+[ext_resource path="res://scenes/Sound/assets/AmbienceBar.png" type="Texture" id=37]
+[ext_resource path="res://scenes/Sound/assets/SpendMoney.png" type="Texture" id=38]
+[ext_resource path="res://scenes/Sound/assets/Jumpstart.png" type="Texture" id=39]
+[ext_resource path="res://scenes/Sound/assets/PerfectBlockWave.png" type="Texture" id=40]
+[ext_resource path="res://scenes/Sound/assets/LevelUp.png" type="Texture" id=41]
+[ext_resource path="res://scenes/Sound/assets/AmbienceNight.png" type="Texture" id=42]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 347, 150.5 )
@@ -202,10 +217,8 @@ script = ExtResource( 9 )
 stream = ExtResource( 14 )
 
 [node name="Sprite" type="Sprite" parent="Sound1/Button"]
-visible = false
-position = Vector2( 120, -271 )
-scale = Vector2( 10.5, 4.375 )
-texture = ExtResource( 24 )
+position = Vector2( 568, -127 )
+texture = ExtResource( 28 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Sound1"]
 position = Vector2( -13.5, -2 )
@@ -274,9 +287,8 @@ script = ExtResource( 9 )
 stream = ExtResource( 16 )
 
 [node name="Sprite" type="Sprite" parent="Sound2/Button"]
-position = Vector2( 120, -335 )
-scale = Vector2( 10.5, 4.375 )
-texture = ExtResource( 24 )
+position = Vector2( 568, -186 )
+texture = ExtResource( 33 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Sound2"]
 position = Vector2( -13.5, -2 )
@@ -341,9 +353,8 @@ script = ExtResource( 9 )
 stream = ExtResource( 15 )
 
 [node name="Sprite" type="Sprite" parent="Sound3/Button"]
-position = Vector2( 120, -401 )
-scale = Vector2( 10.5, 4.375 )
-texture = ExtResource( 24 )
+position = Vector2( 568, -253 )
+texture = ExtResource( 42 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Sound3"]
 position = Vector2( -13.5, -2 )
@@ -412,9 +423,8 @@ script = ExtResource( 9 )
 stream = ExtResource( 21 )
 
 [node name="Sprite" type="Sprite" parent="Sound4/Button"]
-position = Vector2( 120, -467 )
-scale = Vector2( 10.5, 4.375 )
-texture = ExtResource( 24 )
+position = Vector2( 568, -319 )
+texture = ExtResource( 37 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Sound4"]
 position = Vector2( -13.5, -2 )
@@ -484,10 +494,8 @@ script = ExtResource( 9 )
 stream = ExtResource( 23 )
 
 [node name="Sprite" type="Sprite" parent="Sound5/Button"]
-visible = false
-position = Vector2( 120, -271 )
-scale = Vector2( 10.5, 4.375 )
-texture = ExtResource( 24 )
+position = Vector2( 568, -127 )
+texture = ExtResource( 40 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Sound5"]
 position = Vector2( -13.5, -2 )
@@ -557,9 +565,8 @@ script = ExtResource( 9 )
 stream = ExtResource( 20 )
 
 [node name="Sprite" type="Sprite" parent="Sound6/Button"]
-position = Vector2( 120, -335 )
-scale = Vector2( 10.5, 4.375 )
-texture = ExtResource( 24 )
+position = Vector2( 568, -187 )
+texture = ExtResource( 36 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Sound6"]
 position = Vector2( -13.5, -2 )
@@ -645,9 +652,8 @@ script = ExtResource( 9 )
 stream = ExtResource( 2 )
 
 [node name="Sprite" type="Sprite" parent="Sound7/Button"]
-position = Vector2( 120, -393 )
-scale = Vector2( 10.5, 4.375 )
-texture = ExtResource( 24 )
+position = Vector2( 568, -252 )
+texture = ExtResource( 29 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Sound7"]
 position = Vector2( -13.5, -2 )
@@ -717,9 +723,8 @@ script = ExtResource( 9 )
 stream = ExtResource( 17 )
 
 [node name="Sprite" type="Sprite" parent="Sound8/Button"]
-position = Vector2( 120, -459 )
-scale = Vector2( 10.5, 4.375 )
-texture = ExtResource( 24 )
+position = Vector2( 568, -319 )
+texture = ExtResource( 30 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Sound8"]
 position = Vector2( -13.5, -2 )
@@ -789,10 +794,8 @@ script = ExtResource( 9 )
 stream = ExtResource( 10 )
 
 [node name="Sprite" type="Sprite" parent="Sound9/Button"]
-visible = false
-position = Vector2( 120, -271 )
-scale = Vector2( 10.5, 4.375 )
-texture = ExtResource( 24 )
+position = Vector2( 568, -127 )
+texture = ExtResource( 31 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Sound9"]
 position = Vector2( -13.5, -2 )
@@ -862,8 +865,7 @@ script = ExtResource( 9 )
 stream = ExtResource( 19 )
 
 [node name="Sprite" type="Sprite" parent="Sound10/Button"]
-position = Vector2( 120, -335 )
-scale = Vector2( 10.5, 4.375 )
+position = Vector2( 568, -187 )
 texture = ExtResource( 24 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Sound10"]
@@ -950,9 +952,8 @@ script = ExtResource( 9 )
 stream = ExtResource( 12 )
 
 [node name="Sprite" type="Sprite" parent="Sound11/Button"]
-position = Vector2( 120, -401 )
-scale = Vector2( 10.5, 4.375 )
-texture = ExtResource( 24 )
+position = Vector2( 568, -253 )
+texture = ExtResource( 35 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Sound11"]
 position = Vector2( -13.5, -2 )
@@ -1022,9 +1023,8 @@ script = ExtResource( 9 )
 stream = ExtResource( 22 )
 
 [node name="Sprite" type="Sprite" parent="Sound12/Button"]
-position = Vector2( 120, -467 )
-scale = Vector2( 10.5, 4.375 )
-texture = ExtResource( 24 )
+position = Vector2( 568, -318 )
+texture = ExtResource( 41 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Sound12"]
 position = Vector2( -13.5, -2 )
@@ -1094,9 +1094,8 @@ script = ExtResource( 9 )
 stream = ExtResource( 18 )
 
 [node name="Sprite" type="Sprite" parent="Sound13/Button"]
-position = Vector2( 120, -271 )
-scale = Vector2( 10.5, 4.375 )
-texture = ExtResource( 24 )
+position = Vector2( 568, -126 )
+texture = ExtResource( 34 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Sound13"]
 position = Vector2( -13.5, -2 )
@@ -1166,9 +1165,8 @@ script = ExtResource( 9 )
 stream = ExtResource( 8 )
 
 [node name="Sprite" type="Sprite" parent="Sound14/Button"]
-position = Vector2( 120, -335 )
-scale = Vector2( 10.5, 4.375 )
-texture = ExtResource( 24 )
+position = Vector2( 568, -187 )
+texture = ExtResource( 32 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Sound14"]
 position = Vector2( -13.5, -2 )
@@ -1254,9 +1252,8 @@ script = ExtResource( 9 )
 stream = ExtResource( 11 )
 
 [node name="Sprite" type="Sprite" parent="Sound15/Button"]
-position = Vector2( 120, -401 )
-scale = Vector2( 10.5, 4.375 )
-texture = ExtResource( 24 )
+position = Vector2( 568, -253 )
+texture = ExtResource( 38 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Sound15"]
 position = Vector2( -13.5, -2 )
@@ -1326,9 +1323,8 @@ script = ExtResource( 9 )
 stream = ExtResource( 13 )
 
 [node name="Sprite" type="Sprite" parent="Sound16/Button"]
-position = Vector2( 120, -467 )
-scale = Vector2( 10.5, 4.375 )
-texture = ExtResource( 24 )
+position = Vector2( 568, -319 )
+texture = ExtResource( 39 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Sound16"]
 position = Vector2( -13.5, -2 )
