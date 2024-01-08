@@ -132,16 +132,11 @@ LeftImage = ExtResource( 20 )
 RightImage = ExtResource( 22 )
 HelpImage = ExtResource( 21 )
 Description = "Instructions:
-
-Read the following descriptions of the 3 games and choose the correct motivations that fit to each game by checking the box ☐.
-Use      <-      and       ->     to switch between the motivations.
-When you are finished with the first game use	  <-     and    ->    
-,below the game descriptions, to switch between them. 
-
-If you are done with the task press DONE. 
-
-Use     <-    and     ->   to switch between personas. 
-
-When you are finished with a game, press NEXT to go to the next game.
-
-There are a total of three games."
+               
+Carefully read the following descriptions of the 3 games and select the correct motivations for each game by ticking the box.
+Use <--- and ---> to switch between the motivations.
+When you have finished the first game, use <--- and ---> below the game descriptions to switch between them. 
+               
+When you have completed the task, press DONE.             
+               
+There are three games in total."

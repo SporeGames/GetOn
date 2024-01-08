@@ -1742,18 +1742,18 @@ Game = 7
 LeftImage = ExtResource( 20 )
 RightImage = ExtResource( 23 )
 HelpImage = ExtResource( 6 )
-Description = "Instruction:
+Description = "Instructions:
+               
+You will see post-its with a sci-fi story idea, its introduction and 2 main characters. 
+               
+Your objective is to choose:
 
-You will see Post-it´s with a Sci-Fi Story idea, the corresponding introduction, and 2 important characters. 
-
-Your goal is to choose:
 1. Out of 3, the most appropriate ending for the story.
-2. Attributes the characters will have developed at the chosen ending.
-
-There will be a total of 2 stories, you can go to the next one with                    
-
-
-If you are done with both stories, click DONE
+2. Attributes that the characters will have developed in the chosen ending.
+  
+There will be a total of 2 stories, you can move on to the next by clicking 'Next'               
+                         
+When you are finished with both stories, click DONE.
 "
 
 [connection signal="item_selected" from="1/DropDownAttribute4" to="CheckCorrect" method="_on_DropDownAttribute4_item_selected"]

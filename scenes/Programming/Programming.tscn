@@ -210,14 +210,6 @@ texture = ExtResource( 19 )
 position = Vector2( 1, 2 )
 shape = SubResource( 6 )
 
-[node name="RichTextLabel" type="RichTextLabel" parent="Game/EasyFlag"]
-margin_left = -45.0
-margin_top = -32.0
-margin_right = -5.0
-margin_bottom = 8.0
-text = "Easy
-"
-
 [node name="HardFlag" type="Area2D" parent="Game"]
 position = Vector2( 1856.05, 316.576 )
 
@@ -227,14 +219,6 @@ texture = ExtResource( 18 )
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Game/HardFlag"]
 position = Vector2( 2, -8 )
 shape = SubResource( 6 )
-
-[node name="RichTextLabel" type="RichTextLabel" parent="Game/HardFlag"]
-margin_left = -16.0
-margin_top = -80.0
-margin_right = 24.0
-margin_bottom = -40.0
-text = "Hard
-"
 
 [node name="BackToGameSelection" type="Button" parent="Game"]
 visible = false
@@ -836,10 +820,10 @@ text = "Condition"
 fit_content_height = true
 
 [node name="IfBlock" type="GraphNode" parent="ProgrammingUI/AspectRatioContainer/NodeGraph"]
-margin_left = 731.0
-margin_top = 243.971
-margin_right = 882.0
-margin_bottom = 320.971
+margin_left = 250.0
+margin_top = 250.0
+margin_right = 401.0
+margin_bottom = 327.0
 hint_tooltip = "This node allows you to check if a condition
 is fulfilled. If the condition is fulfilled, the nodes
 connected after this node will be executed. If the
@@ -911,10 +895,10 @@ text = "pressed"
 fit_content_height = true
 
 [node name="IfDPressed" type="GraphNode" parent="ProgrammingUI/AspectRatioContainer/NodeGraph"]
-margin_left = 563.0
-margin_top = 267.971
-margin_right = 710.0
-margin_bottom = 329.971
+margin_left = 250.0
+margin_top = 250.0
+margin_right = 397.0
+margin_bottom = 312.0
 mouse_filter = 1
 title = "isKeyPressed(\"D\")"
 slot/0/left_enabled = false
@@ -1118,26 +1102,31 @@ Game = 2
 LeftImage = ExtResource( 23 )
 RightImage = ExtResource( 22 )
 HelpImage = ExtResource( 8 )
-Description = "There are boxes with different functions that you have to put in the right order and connect. 
-
-You can only connect the same colors.
-You can only connect the right  side of boxes with left sides.
-You will only receive points if you reach the goals while executing the code.
-
+Description = "There are boxes with different functions that you have to connect in the right order. 
+               
+You can only connect boxes of the same colour.
+You can only connect the right side of boxes with the left side.
+You only get points if you reach the goals when executing the code.
+               
 Goals:
-- Move the player 
-	- when D is pressed
-	- at adequate speed
-- Make the player jump
-	- when Space is pressed
-- Collect the drone
-- Deliver the drone
-
-If you finish this task within 7 minutes you will receive Bonus Point.
-
-Hint: 
-To view all the boxes you may have to navigate with the scrollbar at the bottom of the screen.
+    - Move the player 
+        - when D is pressed
+        - at a reasonable speed
+    - Make the player jump
+        - when Space is pressed
+    - Collect the drone
+    - Deliver the drone
+               
+If you complete this task within 7 minutes, you will receive a bonus point.
 "
+
+[node name="Text" parent="TopBar/Introduction" index="3"]
+margin_bottom = 310.0
+
+[node name="Image" parent="TopBar/Introduction" index="6"]
+scale = Vector2( 0.7, 0.7 )
 
 [node name="Music" type="Node" parent="."]
 script = ExtResource( 20 )
+
+[editable path="TopBar"]
