@@ -233,11 +233,10 @@ position = Vector2( 484, 680 )
 texture = ExtResource( 14 )
 
 [node name="DialogueBox" parent="." instance=ExtResource( 11 )]
-visible = false
 position = Vector2( 0, 708 )
 Title = "Chloe"
 Icon = ExtResource( 12 )
-Texts = PoolStringArray( "Now your internship can start! You can move around our studio completely freely!", "Each team member has some work for you to do. After you´re done with all your tasks, I will talk to you again.", "Have fun!﻿" )
+Texts = PoolStringArray( "Now your internship can begin! You are free to move around our studio!", "Each member of the team has some work for you to do. When you\'ve completed all your tasks, I\'ll talk to you again.", "Have fun and good luck." )
 AutoNext = true
 AutoNextTime = 8.0
 ReadTime = 0.3
@@ -249,7 +248,7 @@ visible = false
 position = Vector2( 0, 708 )
 Title = "Chloe"
 Icon = ExtResource( 12 )
-Texts = PoolStringArray( "Yay! You completed all tasks.", "You can download your results in the top left." )
+Texts = PoolStringArray( "Yay! You completed all your tasks.", "You can download your results in the top left." )
 AutoNext = true
 AutoNextTime = 8.0
 ReadTime = 0.3

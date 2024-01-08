@@ -71,14 +71,14 @@ margin_bottom = 783.0
 position = Vector2( 0, 704 )
 Title = "Chloe"
 Icon = ExtResource( 14 )
-Texts = PoolStringArray( "Hello again! What you see here is our management room, where I plan our documents, meetings, protocols and much more.", "This is very important, since we have deadlines to meet.", "You will see what I mean by that in a few seconds. If you are ready, talk to me again, then I will explain your task." )
+Texts = PoolStringArray( "Hello again! What you see here is our management room, where I plan our documents, meetings, protocols and much more.", "This is very important, as we have deadlines to meet.", "You will see what I mean in a few seconds. When you are ready, speak to me again and I will explain your task." )
 IsUnique = true
 UniqueID = "103"
 
 [node name="WelcomeDialogue" parent="RoomPerson" index="3"]
 Title = "Chloe"
 Icon = ExtResource( 14 )
-Texts = PoolStringArray( "I prepared an example of a management task for you, so you can show me whatcha got. " )
+Texts = PoolStringArray( "I have prepared a sample management task for you to show me what you can do." )
 SceneToLoad = "Management"
 
 [node name="EpicFailDialogue" parent="RoomPerson" index="4"]
@@ -100,7 +100,7 @@ UniqueID = "11"
 [node name="ResultDialogue2" parent="RoomPerson" index="7"]
 Title = "Chloe"
 Icon = ExtResource( 14 )
-Texts = PoolStringArray( "Your work is alright, not perfect though." )
+Texts = PoolStringArray( "Your work is alright, but not perfect." )
 ResultThreshold = 23
 IsUnique = true
 UniqueID = "12"
@@ -108,7 +108,7 @@ UniqueID = "12"
 [node name="ResultDialogue3" parent="RoomPerson" index="8"]
 Title = "Chloe"
 Icon = ExtResource( 14 )
-Texts = PoolStringArray( "Oh well, this doesn’t really help us… " )
+Texts = PoolStringArray( "Oh well, that doesn't really help us..." )
 IsUnique = true
 UniqueID = "13"
 

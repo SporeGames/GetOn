@@ -5,7 +5,6 @@ namespace GetOn.scenes.Programming.blocks.godot {
         
         public override void _Ready() {
             RectMinSize = new Vector2(0, 50);
-            SetSlotColorRight(0, Colors.Purple);
         }
 
         public virtual bool Check() {

@@ -52,51 +52,51 @@ margin_top = 313.0
 margin_right = 1533.0
 margin_bottom = 626.0
 
-[node name="IntroductionDialogue" parent="GDPerson" instance=ExtResource( 15 )]
-position = Vector2( 0, 704 )
+[node name="WelcomeDialogue" parent="GDPerson" index="2"]
 Title = "Mike"
 Icon = ExtResource( 14 )
-Texts = PoolStringArray( "Hi, I’m Mike, Spore-Games Lead-Game-Designer! In this room me and Mary, over there, work at concepting ideas for our game. ", "This includes her ideas for the story, mine for the mechanics and in general how to make the game attractive for our target groups.", "Based on our research I then talk to the other departments and further elaborate… . You could almost say I’m the core of our studio!", "But enough about that… Just tell me or Mary if you want to start with your tasks, we both have one for you." )
-IsUnique = true
-UniqueID = "102"
-
-[node name="WelcomeDialogue" parent="GDPerson" index="3"]
-Title = "Mike"
-Icon = ExtResource( 14 )
-Texts = PoolStringArray( "Well you see, I started off as an intern just like you and… Oh right, you\'re here for your task!", "We are currently researching which player-motivations fit popular sci-fi games the best. I will explain everything in detail in a second, so don’t worry, you will get the hang of it!" )
+Texts = PoolStringArray( "Well you see, I started out as an intern just like you and… Oh right, you\'re here for your task!", "We are currently researching which player motivations are best suited to popular sci-fi games. I\'ll explain everything in detail in a second, so don\'t worry, you\'ll get the hang of it!" )
 SceneToLoad = "GameDesign"
 
-[node name="EpicFailDialogue" parent="GDPerson" index="4"]
+[node name="EpicFailDialogue" parent="GDPerson" index="3"]
 Title = "Mike"
 Icon = ExtResource( 14 )
-Texts = PoolStringArray( "I’m honest with you, you should rethink if you want to become a Game-Designer, because your work didn’t help me here…" )
+Texts = PoolStringArray( "I\'ll be honest with you, you should think twice about becoming a game designer, because your work hasn\'t helped me here." )
 
-[node name="TalkAgainDialogue" parent="GDPerson" index="5"]
+[node name="TalkAgainDialogue" parent="GDPerson" index="4"]
 Title = "Mike"
 Icon = ExtResource( 14 )
 
-[node name="ResultDialogue" parent="GDPerson" index="6"]
+[node name="ResultDialogue" parent="GDPerson" index="5"]
 Title = "Mike"
 Icon = ExtResource( 14 )
-Texts = PoolStringArray( "Five-Star work you did there, I’m almost worried about my position…" )
+Texts = PoolStringArray( "Five-star work you\'ve done there, I\'m almost worried about my position..." )
 ResultThreshold = 38
 IsUnique = true
 UniqueID = "5"
 
-[node name="ResultDialogue2" parent="GDPerson" index="7"]
+[node name="ResultDialogue2" parent="GDPerson" index="6"]
 Title = "Mike"
 Icon = ExtResource( 14 )
-Texts = PoolStringArray( "Decent, decent. Some minor adjustments from me and all should turn out as planned." )
+Texts = PoolStringArray( "Decent, decent. A few minor tweaks from me and it should all work out as planned." )
 ResultThreshold = 23
 IsUnique = true
 UniqueID = "6"
 
-[node name="ResultDialogue3" parent="GDPerson" index="8"]
+[node name="ResultDialogue3" parent="GDPerson" index="7"]
 Title = "Mike"
 Icon = ExtResource( 14 )
-Texts = PoolStringArray( "Looks like you aren’t really made to be a game-designer. Maybe you will do better at the other tasks." )
+Texts = PoolStringArray( "Looks like you\'re not really cut out to be a game designer. Perhaps you will be better at the other tasks." )
 IsUnique = true
 UniqueID = "7"
+
+[node name="IntroductionDialogue" parent="GDPerson" instance=ExtResource( 15 )]
+position = Vector2( 0, 704 )
+Title = "Mike"
+Icon = ExtResource( 14 )
+Texts = PoolStringArray( "Hi, I\'m Mike, the lead game designer for Spore Games! In this room, me and Mary over there are working on coming up with ideas for our game.", "This includes her ideas for story, mine for mechanics and generally making the game appealing to our target audience.", "Based on what we\'ve researched, I then talk to the other departments and work out more. You could almost say I\'m the heart of the studio!", "But enough of that... Just talk to me or Mary if you want to start with your tasks, we both have one for you." )
+IsUnique = true
+UniqueID = "102"
 
 [node name="NarrativePerson" parent="." instance=ExtResource( 3 )]
 GameSpecialization = 7
@@ -116,7 +116,7 @@ margin_bottom = 875.0
 [node name="WelcomeDialogue" parent="NarrativePerson" index="2"]
 Title = "Mary"
 Icon = ExtResource( 13 )
-Texts = PoolStringArray( " *Yawn*, huh who are you\? You seem quite interesting, just like a protagonist.Could you perhaps help me\? My whiteboard with all my great story ideas got messed up, I have no clue how that happened…", "You’re in\? Thank you very much!" )
+Texts = PoolStringArray( "*Yawn* Who are you\? You seem quite interesting, just like a protagonist. Could you maybe help me\? My whiteboard with all my great story ideas got messed up, I have no idea how that happened..", "You\'re in\? Thank you very much!" )
 SceneToLoad = "Narrative"
 
 [node name="Icon" parent="NarrativePerson/WelcomeDialogue" index="2"]
@@ -127,7 +127,7 @@ texture = ExtResource( 12 )
 [node name="EpicFailDialogue" parent="NarrativePerson" index="3"]
 Title = "Marie"
 Icon = ExtResource( 13 )
-Texts = PoolStringArray( "That\'s an unexpected twist… . You said you are specialized in story design, did you try to deceive us\? " )
+Texts = PoolStringArray( "This is an unexpected twist... . You said you specialised in story design, were you trying to deceive us\?" )
 
 [node name="TalkAgainDialogue" parent="NarrativePerson" index="4"]
 Title = "Marie"
@@ -136,7 +136,7 @@ Icon = ExtResource( 13 )
 [node name="ResultDialogue" parent="NarrativePerson" index="5"]
 Title = "Marie"
 Icon = ExtResource( 13 )
-Texts = PoolStringArray( "Fantastic, you perfectly restored my whiteboard! You seem like a main character of some sort…" )
+Texts = PoolStringArray( "Fantastic, you have restored my whiteboard perfectly! You seem like some kind of main character..." )
 ResultThreshold = 38
 IsUnique = true
 UniqueID = "8"
@@ -144,7 +144,7 @@ UniqueID = "8"
 [node name="ResultDialogue2" parent="NarrativePerson" index="6"]
 Title = "Marie"
 Icon = ExtResource( 13 )
-Texts = PoolStringArray( "That helped me a little bit. I think I can restore the rest myself." )
+Texts = PoolStringArray( "That helped me a little bit. I think I can restore the rest on my own." )
 ResultThreshold = 23
 IsUnique = true
 UniqueID = "9"
@@ -152,7 +152,7 @@ UniqueID = "9"
 [node name="ResultDialogue3" parent="NarrativePerson" index="7"]
 Title = "Marie"
 Icon = ExtResource( 13 )
-Texts = PoolStringArray( "*Yawn* oh well, let’s just leave it at that. Maybe I can find even better story ideas if I do that task myself." )
+Texts = PoolStringArray( "*Yawn* Well, let\'s just leave it at that. Maybe I can come up with even better story ideas if I do the job myself." )
 IsUnique = true
 UniqueID = "10"
 

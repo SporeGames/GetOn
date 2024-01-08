@@ -259,13 +259,13 @@ LeftImage = ExtResource( 40 )
 RightImage = ExtResource( 11 )
 HelpImage = ExtResource( 41 )
 Description = "Instructions:
-
-There are two glass cases. 
-The left one is for consoles, the right one is for video games.
-Click on one glass case and start dragging the objects to their corresponding places.
-By pressing BACK, you will get back to the overview of both cases.
-
-Once you have filled both glass cases a DONE button will appear so you can submit your task.  "
+               
+There are two showcases. 
+The left one is for consoles, the right one for video games.
+Click on one of the showcases and start dragging the objects to the right place.
+Press BACK to return to the overview of both glass cases.
+               
+Once you have filled both glass cases, a DONE button will appear, allowing you to submit your task."
 
 [node name="OpenConsoles" type="Button" parent="."]
 margin_left = 306.0

@@ -310,8 +310,8 @@ RightImage = ExtResource( 16 )
 HelpImage = ExtResource( 4 )
 Description = "Instructions:
 
-Drag the different tasks to their destined place.
-Additionally, you have to colorize them into their corresponding department color.
+Drag and drop the different tasks to the right place.
+You will also need to colour them in the corresponding department colour:
 Art - orange	
 Narrative - green
 Game Design - purple

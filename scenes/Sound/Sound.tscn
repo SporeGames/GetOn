@@ -133,8 +133,8 @@ Game = 4
 LeftImage = ExtResource( 18 )
 RightImage = ExtResource( 20 )
 HelpImage = ExtResource( 19 )
-Description = "Listen to the sound files in the sound library by pressing \"Play\" and match them with the right ingame moment by dragging them in the destined space.
-If you are certain of your answer you may press  --> to go to the next moment..
+Description = "Listen to the sound files in the sound library by pressing \"Play\" and match them with the right ingame moment by dragging them  to the desired location.
+If you are certain of your answer you may press --> to go to the next moment..
 If you want to go to the previous ingame moment you can press <--.
 
 If you finish this task within 5 minutes you will receive bonus points.

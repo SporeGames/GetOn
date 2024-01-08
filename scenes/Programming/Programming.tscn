@@ -210,14 +210,6 @@ texture = ExtResource( 19 )
 position = Vector2( 1, 2 )
 shape = SubResource( 6 )
 
-[node name="RichTextLabel" type="RichTextLabel" parent="Game/EasyFlag"]
-margin_left = -45.0
-margin_top = -32.0
-margin_right = -5.0
-margin_bottom = 8.0
-text = "Easy
-"
-
 [node name="HardFlag" type="Area2D" parent="Game"]
 position = Vector2( 1856.05, 316.576 )
 
@@ -227,14 +219,6 @@ texture = ExtResource( 18 )
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Game/HardFlag"]
 position = Vector2( 2, -8 )
 shape = SubResource( 6 )
-
-[node name="RichTextLabel" type="RichTextLabel" parent="Game/HardFlag"]
-margin_left = -16.0
-margin_top = -80.0
-margin_right = 24.0
-margin_bottom = -40.0
-text = "Hard
-"
 
 [node name="BackToGameSelection" type="Button" parent="Game"]
 visible = false
@@ -809,7 +793,7 @@ slot/0/right_type = 0
 slot/0/right_color = Color( 1, 1, 1, 1 )
 slot/1/left_enabled = true
 slot/1/left_type = 1
-slot/1/left_color = Color( 0.933333, 0, 0.701961, 1 )
+slot/1/left_color = Color( 1, 0, 0.752941, 1 )
 slot/1/right_enabled = false
 slot/1/right_type = 0
 slot/1/right_color = Color( 1, 1, 1, 1 )
@@ -855,7 +839,7 @@ slot/0/right_type = 0
 slot/0/right_color = Color( 1, 1, 1, 1 )
 slot/1/left_enabled = true
 slot/1/left_type = 1
-slot/1/left_color = Color( 0.933333, 0, 0.701961, 1 )
+slot/1/left_color = Color( 1, 0, 0.752941, 1 )
 slot/1/right_enabled = false
 slot/1/right_type = 0
 slot/1/right_color = Color( 1, 1, 1, 1 )
@@ -895,7 +879,7 @@ slot/0/left_type = 0
 slot/0/left_color = Color( 1, 1, 1, 1 )
 slot/0/right_enabled = true
 slot/0/right_type = 1
-slot/0/right_color = Color( 0.933333, 0, 0.701961, 1 )
+slot/0/right_color = Color( 1, 0, 0.752941, 1 )
 script = ExtResource( 15 )
 
 [node name="RichTextLabel" type="RichTextLabel" parent="ProgrammingUI/AspectRatioContainer/NodeGraph/IfSpacePressed"]
@@ -922,7 +906,7 @@ slot/0/left_type = 0
 slot/0/left_color = Color( 1, 1, 1, 1 )
 slot/0/right_enabled = true
 slot/0/right_type = 1
-slot/0/right_color = Color( 0.933333, 0, 0.701961, 1 )
+slot/0/right_color = Color( 1, 0, 0.752941, 1 )
 script = ExtResource( 10 )
 __meta__ = {
 "_editor_description_": "This condition node checks if the player
@@ -1018,7 +1002,7 @@ slot/0/right_type = 0
 slot/0/right_color = Color( 1, 1, 1, 1 )
 slot/1/left_enabled = true
 slot/1/left_type = 1
-slot/1/left_color = Color( 0.933333, 0, 0.701961, 1 )
+slot/1/left_color = Color( 1, 0, 0.752941, 1 )
 slot/1/right_enabled = false
 slot/1/right_type = 0
 slot/1/right_color = Color( 1, 1, 1, 1 )
@@ -1118,26 +1102,31 @@ Game = 2
 LeftImage = ExtResource( 23 )
 RightImage = ExtResource( 22 )
 HelpImage = ExtResource( 8 )
-Description = "There are boxes with different functions that you have to put in the right order and connect. 
-
-You can only connect the same colors.
-You can only connect the right  side of boxes with left sides.
-You will only receive points if you reach the goals while executing the code.
-
+Description = "There are boxes with different functions that you have to connect in the right order. 
+               
+You can only connect boxes of the same colour.
+You can only connect the right side of boxes with the left side.
+You only get points if you reach the goals when executing the code.
+               
 Goals:
-- Move the player 
-	- when D is pressed
-	- at adequate speed
-- Make the player jump
-	- when Space is pressed
-- Collect the drone
-- Deliver the drone
-
-If you finish this task within 7 minutes you will receive Bonus Point.
-
-Hint: 
-To view all the boxes you may have to navigate with the scrollbar at the bottom of the screen.
+    - Move the player 
+        - when D is pressed
+        - at a reasonable speed
+    - Make the player jump
+        - when Space is pressed
+    - Collect the drone
+    - Deliver the drone
+               
+If you complete this task within 7 minutes, you will receive a bonus point.
 "
+
+[node name="Text" parent="TopBar/Introduction" index="3"]
+margin_bottom = 310.0
+
+[node name="Image" parent="TopBar/Introduction" index="6"]
+scale = Vector2( 0.7, 0.7 )
 
 [node name="Music" type="Node" parent="."]
 script = ExtResource( 20 )
+
+[editable path="TopBar"]
