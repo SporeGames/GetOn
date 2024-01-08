@@ -87,7 +87,7 @@ public class NodeGraph : GraphEdit {
 			}
 			ConnectNode(from_node, 0, to_node, to_port);
 			toCondBlock.ConnectedConditions.Add(fromCondNode);
-			GD.Print("Connected condition " + from_node + " to " + to_node + " at port " + (to_port));
+			GD.Print("Connected condition " + from_node + " to " + to_node + " at slot " + (to_port));
 		}
 		
 		if (from is VariableNode fromVariable && to is BlockNode toVariableBlock) {
@@ -102,7 +102,7 @@ public class NodeGraph : GraphEdit {
 			}
 			GD.Print("Added at index " + to_port + "");
 			ConnectNode(from_node, 0, to_node, to_port);
-			GD.Print("Connected variable " + from_node + " to " + to_node + " at port " + (to_port));
+			GD.Print("Connected variable " + from_node + " to " + to_node + " at slot " + (to_port));
 		}
 
 		if (from is AbstractBlock fromBlock && to is AbstractBlock toBlock) {
@@ -113,14 +113,14 @@ public class NodeGraph : GraphEdit {
 				toBlock.PreviousBlock = fromBlock;
 				fromBlock.NextBlocks.Add(toBlock);
 				ConnectNode(from_node, from_port, to_node, 0);
-				GD.Print("Connected execution " + from_node + " to " + to_node + " at port " + (to_port));
+				GD.Print("Connected execution " + from_node + " to " + to_node + " at slot " + (to_port));
 				return;
 			}
 			if (!toBlock.Connected(fromBlock, to_port, from_port)) {
 				return;
 			}
 			ConnectNode(from_node, from_port, to_node, to_port);
-			GD.Print("Connected return variable " + fromBlock.Name + " to " + toBlock.Name + " at port " + (to_port));
+			GD.Print("Connected return variable " + fromBlock.Name + " to " + toBlock.Name + " at slot " + (to_port));
 		}
 	}
 	
@@ -135,14 +135,21 @@ public class NodeGraph : GraphEdit {
 		if (from_port == 0) {
 			if (from is AbstractBlock blockFrom && to is AbstractBlock blockTo) {
 				blockFrom.NextBlocks.Remove(blockTo);
+				GD.Print("Disconnected execution " + from_node + " from " + to_node + " at slot " + (from_port));
 				return;
 			}
 		}
 		if (to is BlockNode blockNode) {
-			blockNode.ConnectedVariables[to_port - 1] = null;
+			blockNode.ConnectedVariables[to_port] = null;
 			if (from is ConditionNode node) {
 				blockNode.ConnectedConditions.Remove(node);
+				GD.Print("Disconnected condition " + from_node + " from " + to_node + " at slot " + (to_port));
 			}
+		}
+		if (from is VariableNode fromVariable && to is AbstractBlock toVariableBlock) {
+			toVariableBlock.ConnectedVariables[to_port] = null;
+			toVariableBlock.Inputs[to_port] = null;
+			GD.Print("Disconnected variable " + from_node + " from " + to_node + " at slot " + (to_port));
 		}
 		GetNode<SharedNode>("/root/SharedNode").DisconnectedNodes++;
 	}
