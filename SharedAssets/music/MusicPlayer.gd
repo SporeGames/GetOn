@@ -1,14 +1,14 @@
 extends Node
 
 
-onready var main_music = load("res://SharedAssets/music/Soundtracks/Hauptraum Theme [V2].mp3")
-onready var prog_music = load("res://SharedAssets/music/Soundtracks/Programmieren Theme Slowed Version.mp3")
-onready var gameStud_music = load("res://SharedAssets/music/Soundtracks/Game Design Theme Slowed Version.mp3")
-onready var gameDes_music = load("res://SharedAssets/music/Soundtracks/Game Studies Theme.mp3")
-onready var narr_music = load("res://SharedAssets/music/Soundtracks/Narrative Theme.mp3")
-onready var manage_music = load("res://SharedAssets/music/Soundtracks/Management Theme.mp3")
-onready var soundG_music = load("res://SharedAssets/music/Soundtracks/Sound Design Theme.mp3")
-onready var test = load("res://scenes/Sound/Soundeffects/Stealth Sound.wav")
+onready var main_music = preload("res://SharedAssets/music/Soundtracks/Hauptraum Theme [V2].mp3")
+onready var prog_music = preload("res://SharedAssets/music/Soundtracks/Programmieren Theme Slowed Version.mp3")
+onready var gameStud_music = preload("res://SharedAssets/music/Soundtracks/Game Design Theme Slowed Version.mp3")
+onready var gameDes_music = preload("res://SharedAssets/music/Soundtracks/Game Studies Theme.mp3")
+onready var narr_music = preload("res://SharedAssets/music/Soundtracks/Narrative Theme.mp3")
+onready var manage_music = preload("res://SharedAssets/music/Soundtracks/Management Theme.mp3")
+onready var soundG_music = preload("res://SharedAssets/music/Soundtracks/Sound Design Theme.mp3")
+onready var test = preload("res://scenes/Sound/Soundeffects/Stealth Sound.wav")
 
 
 func play_music():

@@ -224,7 +224,10 @@ public class SwitchStory : Button
 			_story1Intro = false;
 			_story1.Visible = true;
 			_introStory1.Visible = false;
-			GetNode<CountdownTimer>("/root/Narrative/TopBar/Timer").running = true;
+			
+			CountdownTimer timer = GetNode<CountdownTimer>("/root/Narrative/TopBar/Timer");
+			timer.running = true;
+			timer.ResetTimer(); // Reset the timer
 		}
 		else
 		{

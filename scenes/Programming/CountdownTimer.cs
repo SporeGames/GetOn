@@ -10,6 +10,9 @@ public class CountdownTimer : Node2D {
 	public bool running = false;
 	private Timer _timer;
 	private RichTextLabel _displayText;
+	
+	public float InitialTime = 0;
+	
 	public override void _Ready() {
 		_displayText = GetNode<RichTextLabel>("Display");
 		_timer = new Timer();
@@ -38,4 +41,12 @@ public class CountdownTimer : Node2D {
 		int seconds = Mathf.FloorToInt(CurrentTime % 60);
 		_displayText.Text = $"Time: {minutes:00}:{seconds:00}";
 	}
+	
+	// Reset the timer to its initial state
+	public void ResetTimer() {
+		CurrentTime = InitialTime;
+		UpdateTimerDisplay();
+	}
+
+	
 }
