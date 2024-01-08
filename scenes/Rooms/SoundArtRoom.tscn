@@ -57,7 +57,7 @@ margin_bottom = 839.0
 position = Vector2( 78, 715 )
 Title = "Julia"
 Icon = ExtResource( 12 )
-Texts = PoolStringArray( "Hey, there you are, awesome! You really seem like an interesting person. ", "I’m Julia by the way, Spore-Games one and only sound-designer.", "Over there we have Ash, our art-designer. We both take care of creating wonderful aesthetics and music-themes for our games, even though much of our work gets scrapped." )
+Texts = PoolStringArray( "Hey, there you are, awesome! You seem like a really interesting person.", "I'm Julia, by the way, Spore Games' one and only sound designer.", "Over there we have Ash, our art designer. Both of us are responsible for creating beautiful aesthetics and music themes for our games, although a lot of our work gets scrapped." )
 IsUnique = true
 UniqueID = "105"
 
@@ -65,14 +65,14 @@ UniqueID = "105"
 position = Vector2( 78, 715 )
 Title = "Julia"
 Icon = ExtResource( 12 )
-Texts = PoolStringArray( "Hi again! Could you help me find fitting sounds for specific in-game moments of our new project\? We will make an action-adventure in a futuristic setting, it’s gonna be so awesome!" )
+Texts = PoolStringArray( "Hi again! Could you help me find suitable sounds for certain in-game moments in our new project? We're making an action adventure in a futuristic setting, it's going to be so awesome!" )
 SceneToLoad = "Sound"
 
 [node name="EpicFailDialogue" parent="SoundPerson" index="4"]
 position = Vector2( 74, 710 )
 Title = "Julia"
 Icon = ExtResource( 12 )
-Texts = PoolStringArray( "I was really excited to work with a fellow sound designer, but it seems like you\'re not quite there yet…" )
+Texts = PoolStringArray( "I was really looking forward to working with a fellow sound designer, but it seems like you're not quite there yet..." )
 
 [node name="TalkAgainDialogue" parent="SoundPerson" index="5"]
 position = Vector2( 74, 710 )
@@ -83,7 +83,7 @@ Icon = ExtResource( 12 )
 position = Vector2( 78, 715 )
 Title = "Julia"
 Icon = ExtResource( 12 )
-Texts = PoolStringArray( "Inspiring, truly inspiring! Are you a relative of Hans Zimmer perhaps\? You can be really proud of your work." )
+Texts = PoolStringArray( "Inspiring, really inspiring! Are you related to Hans Zimmer? You should be very proud of your work." )
 ResultThreshold = 38
 IsUnique = true
 UniqueID = "17"
@@ -92,7 +92,7 @@ UniqueID = "17"
 position = Vector2( 78, 715 )
 Title = "Julia"
 Icon = ExtResource( 12 )
-Texts = PoolStringArray( "Not bad, you just need some more exercise." )
+Texts = PoolStringArray( "Not bad, you just need a bit more practice." )
 ResultThreshold = 23
 IsUnique = true
 UniqueID = "18"
@@ -101,7 +101,7 @@ UniqueID = "18"
 position = Vector2( 78, 715 )
 Title = "Julia"
 Icon = ExtResource( 12 )
-Texts = PoolStringArray( "Hm… looks like you´re tone deaf. " )
+Texts = PoolStringArray( "Hm... looks like you're tone deaf." )
 IsUnique = true
 UniqueID = "19"
 
@@ -124,7 +124,7 @@ margin_bottom = 770.0
 [node name="WelcomeDialogue" parent="ArtPerson" index="2"]
 position = Vector2( 0, 710 )
 Title = "Ash"
-Texts = PoolStringArray( "Do you have your portfolio ready\?" )
+Texts = PoolStringArray( "Have you got your portfolio ready?" )
 SceneToLoad = "Art"
 
 [node name="EpicFailDialogue" parent="ArtPerson" index="3"]
