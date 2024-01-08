@@ -9,11 +9,13 @@ namespace GetOn.SharedAssets {
 		[Export] public Texture Icon; // The icon shown to the left of the box
 		[Export(PropertyHint.MultilineText)] public string[] Texts = new string[1]; // The texts to show in the box
 		[Export] public bool LoadSceneAfter = false; // Load a scene after all the text is shown
+		[Export] public bool ChangeNodeVisibility = false; // Change the visibility of a node after all the text is shown
 		[Export] public bool AutoNext = false; // Automatically go to the next text after a certain amount of time
 		[Export(PropertyHint.Range, "0, 20")] public float AutoNextTime = 5; // How long to wait before the next text is shown if AutoNext is true
 		[Export(PropertyHint.Range, "0.01,1.0")] public float TimePerCharacter = 0.08f; // How long to wait between each character being animated
 		[Export(PropertyHint.Range, "0.01, 0.3")] public float ReadTime = 0.2f; // How long to wait after the text is done animating before the next text is shown if AutoNext is true
 		[Export] public string SceneToLoad; // If LoadSceneAfter is true, this is the scene to load. Simple name is enough, e.g. "Management" to load "scenes/Management/Management.tscn"
+		[Export] public NodePath NodeToMakeVisible; // If ChangeNodeVisibility is true, this is the node to make visible
 		[Export] public int ResultThreshold = 0; // Result threshold for this dialogue box. If the player has less than this amount of points, the box will not be shown.
 		[Export] public bool IsUnique = false; // If true, this box will only be shown once per game
 		[Export] public string UniqueID = ""; // The name of this box. Used to check if it has been shown before.
@@ -103,6 +105,15 @@ namespace GetOn.SharedAssets {
 				}
 				else {
 					Visible = false;
+					if (ChangeNodeVisibility) {
+						var node = GetNode(NodeToMakeVisible);
+						if (node is Node2D n2d) {
+							n2d.Visible = true;
+						}
+						if (node is Control c) {
+							c.Visible = true;
+						}
+					}
 				}
 			}
 		}
