@@ -1,11 +1,11 @@
-[gd_scene load_steps=171 format=2]
+[gd_scene load_steps=182 format=2]
 
 [ext_resource path="res://scenes/Narrative/assets/StickyNote2.PNG" type="Texture" id=1]
 [ext_resource path="res://scenes/Narrative/DropDownAttribute.cs" type="Script" id=2]
 [ext_resource path="res://scenes/Narrative/DropDownSetting.cs" type="Script" id=3]
 [ext_resource path="res://scenes/Narrative/OpenStory.cs" type="Script" id=4]
 [ext_resource path="res://scenes/Narrative/DragAndDropStory.cs" type="Script" id=5]
-[ext_resource path="res://scenes/Narrative/assets/WhiteboardIntro.png" type="Texture" id=6]
+[ext_resource path="res://SharedAssets/anleitung_narr.png" type="Texture" id=6]
 [ext_resource path="res://scenes/Narrative/assets/WhiteboardMitFestenNotes.PNG" type="Texture" id=7]
 [ext_resource path="res://scenes/Narrative/assets/StickyNote1.PNG" type="Texture" id=8]
 [ext_resource path="res://scenes/Narrative/assets/StickyNote3.PNG" type="Texture" id=9]
@@ -21,13 +21,15 @@
 [ext_resource path="res://SharedAssets/music/Play/Music_Narr.gd" type="Script" id=19]
 [ext_resource path="res://SharedAssets/Anleitungen/Story_blank.png" type="Texture" id=20]
 [ext_resource path="res://scenes/Narrative/assets/IMG_0275.PNG" type="Texture" id=21]
-[ext_resource path="res://scenes/Narrative/AttributesNarrative.tscn" type="PackedScene" id=22]
 [ext_resource path="res://SharedAssets/Anleitungen/Story.PNG" type="Texture" id=23]
-[ext_resource path="res://scenes/Narrative/assets/EndingPopUp.png" type="Texture" id=24]
+[ext_resource path="res://scenes/Narrative/assets/ending1.PNG" type="Texture" id=24]
 [ext_resource path="res://SharedAssets/TopBar.tscn" type="PackedScene" id=25]
 [ext_resource path="res://scenes/Narrative/assets/purple.PNG" type="Texture" id=26]
 [ext_resource path="res://scenes/Narrative/assets/orange.PNG" type="Texture" id=27]
 [ext_resource path="res://scenes/Narrative/assets/yellow.PNG" type="Texture" id=28]
+[ext_resource path="res://scenes/Narrative/assets/ending 3.PNG" type="Texture" id=30]
+[ext_resource path="res://scenes/Narrative/assets/ending2.PNG" type="Texture" id=31]
+[ext_resource path="res://scenes/Narrative/assets/ThinkWhatThatIs.png" type="Texture" id=32]
 
 [sub_resource type="StyleBoxEmpty" id=28]
 
@@ -70,7 +72,7 @@
 [sub_resource type="StyleBoxEmpty" id=27]
 
 [sub_resource type="DynamicFont" id=149]
-size = 22
+size = 29
 use_mipmaps = true
 font_data = ExtResource( 11 )
 
@@ -84,6 +86,10 @@ font_data = ExtResource( 11 )
 
 [sub_resource type="StyleBoxEmpty" id=19]
 
+[sub_resource type="DynamicFont" id=151]
+size = 75
+font_data = ExtResource( 11 )
+
 [sub_resource type="StyleBoxEmpty" id=7]
 
 [sub_resource type="StyleBoxEmpty" id=8]
@@ -95,16 +101,28 @@ font_data = ExtResource( 11 )
 [sub_resource type="StyleBoxEmpty" id=11]
 
 [sub_resource type="RectangleShape2D" id=6]
-extents = Vector2( 161, 83 )
+extents = Vector2( 162.25, 86.25 )
+
+[sub_resource type="DynamicFont" id=152]
+size = 40
+font_data = ExtResource( 11 )
 
 [sub_resource type="RectangleShape2D" id=12]
-extents = Vector2( 144.5, 102.5 )
+extents = Vector2( 118.25, 106.75 )
+
+[sub_resource type="DynamicFont" id=153]
+size = 40
+font_data = ExtResource( 11 )
 
 [sub_resource type="RectangleShape2D" id=13]
 extents = Vector2( 133.5, 97 )
 
+[sub_resource type="DynamicFont" id=154]
+size = 40
+font_data = ExtResource( 11 )
+
 [sub_resource type="DynamicFont" id=63]
-size = 45
+size = 60
 font_data = ExtResource( 11 )
 
 [sub_resource type="StyleBoxEmpty" id=43]
@@ -193,6 +211,22 @@ font_data = ExtResource( 11 )
 
 [sub_resource type="DynamicFont" id=150]
 size = 22
+font_data = ExtResource( 11 )
+
+[sub_resource type="DynamicFont" id=160]
+size = 75
+font_data = ExtResource( 11 )
+
+[sub_resource type="DynamicFont" id=156]
+size = 45
+font_data = ExtResource( 11 )
+
+[sub_resource type="DynamicFont" id=157]
+size = 45
+font_data = ExtResource( 11 )
+
+[sub_resource type="DynamicFont" id=158]
+size = 45
 font_data = ExtResource( 11 )
 
 [sub_resource type="StyleBoxEmpty" id=84]
@@ -323,6 +357,10 @@ font_data = ExtResource( 11 )
 size = 32
 font_data = ExtResource( 11 )
 
+[sub_resource type="DynamicFont" id=159]
+size = 30
+font_data = ExtResource( 11 )
+
 [sub_resource type="RectangleShape2D" id=22]
 extents = Vector2( 261.5, 190 )
 
@@ -344,6 +382,7 @@ position = Vector2( 978, 542 )
 texture = ExtResource( 21 )
 
 [node name="DropDownAttribute4" type="OptionButton" parent="1"]
+modulate = Color( 0, 0, 0, 1 )
 margin_left = 1651.0
 margin_top = 439.0
 margin_right = 1773.0
@@ -363,6 +402,7 @@ expand_icon = true
 script = ExtResource( 2 )
 
 [node name="DropDownAttribute3" type="OptionButton" parent="1"]
+modulate = Color( 0, 0, 0, 1 )
 margin_left = 1648.0
 margin_top = 391.0
 margin_right = 1769.0
@@ -380,6 +420,7 @@ custom_styles/normal = SubResource( 37 )
 script = ExtResource( 2 )
 
 [node name="DropDownAttribute2" type="OptionButton" parent="1"]
+modulate = Color( 0, 0, 0, 1 )
 margin_left = 1654.0
 margin_top = 350.0
 margin_right = 1767.0
@@ -397,6 +438,7 @@ custom_styles/normal = SubResource( 42 )
 script = ExtResource( 2 )
 
 [node name="DropDownAttribute1" type="OptionButton" parent="1"]
+modulate = Color( 0, 0, 0, 1 )
 margin_left = 1649.0
 margin_top = 309.0
 margin_right = 1765.0
@@ -414,6 +456,7 @@ custom_styles/normal = SubResource( 27 )
 script = ExtResource( 2 )
 
 [node name="DropDownSetting" type="OptionButton" parent="1"]
+modulate = Color( 0, 0, 0, 1 )
 margin_left = 1395.0
 margin_top = 93.0
 margin_right = 1584.0
@@ -432,15 +475,16 @@ custom_styles/normal = SubResource( 19 )
 script = ExtResource( 3 )
 
 [node name="Story1" type="Button" parent="1"]
-margin_left = 731.0
-margin_top = 295.0
-margin_right = 1087.0
-margin_bottom = 410.0
+margin_left = 824.0
+margin_top = 309.0
+margin_right = 1180.0
+margin_bottom = 424.0
 custom_colors/font_color_disabled = Color( 0, 0, 0, 1 )
 custom_colors/font_color_focus = Color( 0, 0, 0, 1 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_colors/font_color_hover = Color( 0, 0, 0, 1 )
 custom_colors/font_color_pressed = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 151 )
 custom_styles/hover = SubResource( 7 )
 custom_styles/pressed = SubResource( 8 )
 custom_styles/focus = SubResource( 9 )
@@ -456,7 +500,7 @@ input_pickable = true
 script = ExtResource( 5 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="1/Ending1"]
-position = Vector2( 33, 38 )
+position = Vector2( 11, 39 )
 shape = SubResource( 6 )
 
 [node name="Sprite" type="Sprite" parent="1/Ending1"]
@@ -473,10 +517,12 @@ text = "Open"
 script = ExtResource( 4 )
 
 [node name="Label2" type="Label" parent="1/Ending1/Ending1"]
-margin_left = 51.0
-margin_top = -66.0
-margin_right = 126.0
-margin_bottom = -40.0
+margin_left = -11.0
+margin_top = -67.0
+margin_right = 131.0
+margin_bottom = -26.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 152 )
 text = "Ending 1"
 
 [node name="Ending2" type="KinematicBody2D" parent="1"]
@@ -485,7 +531,7 @@ input_pickable = true
 script = ExtResource( 5 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="1/Ending2"]
-position = Vector2( 8.5, 15.5 )
+position = Vector2( 1.5, 16 )
 shape = SubResource( 12 )
 
 [node name="Sprite" type="Sprite" parent="1/Ending2"]
@@ -502,10 +548,12 @@ text = "Open"
 script = ExtResource( 4 )
 
 [node name="Label" type="Label" parent="1/Ending2/Ending2"]
-margin_left = 39.0
-margin_top = -64.0
-margin_right = 93.0
-margin_bottom = -50.0
+margin_left = -6.0
+margin_top = -90.0
+margin_right = 182.0
+margin_bottom = -39.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 153 )
 text = "Ending 2"
 
 [node name="Ending3" type="KinematicBody2D" parent="1"]
@@ -531,10 +579,12 @@ text = "Open"
 script = ExtResource( 4 )
 
 [node name="Label" type="Label" parent="1/Ending3/Ending3"]
-margin_left = 51.0
-margin_top = -84.0
-margin_right = 105.0
-margin_bottom = -70.0
+margin_left = -8.0
+margin_top = -78.0
+margin_right = 142.0
+margin_bottom = -37.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 154 )
 text = "Ending 3"
 
 [node name="Char" type="Sprite" parent="1"]
@@ -543,10 +593,10 @@ scale = Vector2( 0.2, 0.2 )
 texture = ExtResource( 14 )
 
 [node name="Label" type="Label" parent="1/Char"]
-margin_left = -270.0
-margin_top = 410.0
-margin_right = 135.0
-margin_bottom = 505.0
+margin_left = -290.0
+margin_top = 345.0
+margin_right = 115.0
+margin_bottom = 440.0
 rect_scale = Vector2( 3, 3 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_colors/font_outline_modulate = Color( 0, 0, 0, 1 )
@@ -559,9 +609,9 @@ scale = Vector2( 0.25, 0.25 )
 texture = ExtResource( 16 )
 
 [node name="Label" type="Label" parent="1/Char2"]
-margin_left = -216.0
+margin_left = -304.0
 margin_top = 380.0
-margin_right = 189.0
+margin_right = 101.0
 margin_bottom = 475.0
 rect_scale = Vector2( 3, 3 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
@@ -570,6 +620,7 @@ custom_fonts/font = SubResource( 63 )
 text = "Hound"
 
 [node name="DropDownAttribute5" type="OptionButton" parent="1"]
+modulate = Color( 0, 0, 0, 1 )
 margin_left = 1660.0
 margin_top = 693.0
 margin_right = 1769.0
@@ -587,6 +638,7 @@ custom_styles/normal = SubResource( 47 )
 script = ExtResource( 2 )
 
 [node name="DropDownAttribute6" type="OptionButton" parent="1"]
+modulate = Color( 0, 0, 0, 1 )
 margin_left = 1657.0
 margin_top = 736.0
 margin_right = 1771.0
@@ -604,6 +656,7 @@ custom_styles/normal = SubResource( 52 )
 script = ExtResource( 2 )
 
 [node name="DropDownAttribute7" type="OptionButton" parent="1"]
+modulate = Color( 0, 0, 0, 1 )
 margin_left = 1654.0
 margin_top = 783.0
 margin_right = 1770.0
@@ -621,6 +674,7 @@ custom_styles/normal = SubResource( 57 )
 script = ExtResource( 2 )
 
 [node name="DropDownAttribute8" type="OptionButton" parent="1"]
+modulate = Color( 0, 0, 0, 1 )
 margin_left = 1656.0
 margin_top = 824.0
 margin_right = 1767.0
@@ -638,10 +692,10 @@ custom_styles/normal = SubResource( 62 )
 script = ExtResource( 2 )
 
 [node name="StoryName" type="Label" parent="1"]
-margin_left = 670.0
+margin_left = 700.0
 margin_top = 106.0
-margin_right = 1254.0
-margin_bottom = 152.0
+margin_right = 1279.0
+margin_bottom = 176.0
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_colors/font_outline_modulate = Color( 0, 0, 0, 1 )
 custom_fonts/font = SubResource( 63 )
@@ -673,6 +727,7 @@ position = Vector2( 960, 540 )
 texture = ExtResource( 21 )
 
 [node name="DropDownAttribute24" type="OptionButton" parent="2"]
+modulate = Color( 0, 0, 0, 1 )
 margin_left = 1630.0
 margin_top = 422.0
 margin_right = 1755.0
@@ -690,6 +745,7 @@ custom_styles/normal = SubResource( 68 )
 script = ExtResource( 2 )
 
 [node name="DropDownAttribute23" type="OptionButton" parent="2"]
+modulate = Color( 0, 0, 0, 1 )
 margin_left = 1634.0
 margin_top = 381.0
 margin_right = 1752.0
@@ -706,6 +762,7 @@ custom_styles/normal = SubResource( 73 )
 script = ExtResource( 2 )
 
 [node name="DropDownAttribute22" type="OptionButton" parent="2"]
+modulate = Color( 0, 0, 0, 1 )
 margin_left = 1634.0
 margin_top = 348.0
 margin_right = 1752.0
@@ -723,6 +780,7 @@ custom_styles/normal = SubResource( 78 )
 script = ExtResource( 2 )
 
 [node name="DropDownAttribute21" type="OptionButton" parent="2"]
+modulate = Color( 0, 0, 0, 1 )
 margin_left = 1630.0
 margin_top = 310.0
 margin_right = 1750.0
@@ -740,6 +798,7 @@ custom_styles/normal = SubResource( 83 )
 script = ExtResource( 2 )
 
 [node name="DropDownSetting2" type="OptionButton" parent="2"]
+modulate = Color( 0, 0, 0, 1 )
 margin_left = 1367.0
 margin_top = 108.0
 margin_right = 1581.0
@@ -767,6 +826,7 @@ custom_colors/font_color_focus = Color( 0, 0, 0, 1 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_colors/font_color_hover = Color( 0, 0, 0, 1 )
 custom_colors/font_color_pressed = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 160 )
 custom_styles/hover = SubResource( 7 )
 custom_styles/pressed = SubResource( 8 )
 custom_styles/focus = SubResource( 9 )
@@ -782,27 +842,29 @@ input_pickable = true
 script = ExtResource( 5 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="2/Ending21"]
-position = Vector2( 11, 28.5 )
+position = Vector2( 19.25, 31.75 )
 shape = SubResource( 6 )
 
 [node name="Sprite" type="Sprite" parent="2/Ending21"]
-position = Vector2( 28.0001, 26 )
+position = Vector2( 28, 32 )
 scale = Vector2( 0.928875, 0.718602 )
-texture = ExtResource( 1 )
+texture = ExtResource( 27 )
 
 [node name="Ending21" type="Button" parent="2/Ending21"]
-margin_left = -70.0
-margin_top = 106.0
-margin_right = 123.0
-margin_bottom = 128.0
+margin_left = -61.0
+margin_top = 80.0
+margin_right = 132.0
+margin_bottom = 102.0
 text = "Open"
 script = ExtResource( 4 )
 
 [node name="Label2" type="Label" parent="2/Ending21/Ending21"]
-margin_left = 51.0
-margin_top = -66.0
-margin_right = 126.0
-margin_bottom = -40.0
+margin_left = 6.0
+margin_top = -64.0
+margin_right = 165.0
+margin_bottom = -18.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 156 )
 text = "Ending 1"
 
 [node name="Ending22" type="KinematicBody2D" parent="2"]
@@ -811,27 +873,29 @@ input_pickable = true
 script = ExtResource( 5 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="2/Ending22"]
-position = Vector2( -11, -9.5 )
+position = Vector2( 5.25, 4.25 )
 shape = SubResource( 12 )
 
 [node name="Sprite" type="Sprite" parent="2/Ending22"]
-position = Vector2( -1, 1 )
+position = Vector2( 4, 0 )
 scale = Vector2( 0.731041, 0.800716 )
-texture = ExtResource( 8 )
+texture = ExtResource( 26 )
 
 [node name="Ending22" type="Button" parent="2/Ending22"]
-margin_left = -68.0
-margin_top = 73.0
-margin_right = 115.0
-margin_bottom = 93.0
+margin_left = -71.0
+margin_top = 64.0
+margin_right = 112.0
+margin_bottom = 84.0
 text = "Open"
 script = ExtResource( 4 )
 
 [node name="Label" type="Label" parent="2/Ending22/Ending22"]
-margin_left = 39.0
-margin_top = -64.0
-margin_right = 93.0
-margin_bottom = -50.0
+margin_left = -4.0
+margin_top = -85.0
+margin_right = 163.0
+margin_bottom = -39.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 157 )
 text = "Ending 2"
 
 [node name="Ending23" type="KinematicBody2D" parent="2"]
@@ -840,27 +904,29 @@ input_pickable = true
 script = ExtResource( 5 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="2/Ending23"]
-position = Vector2( -0.5, -11 )
+position = Vector2( 9, 11 )
 shape = SubResource( 13 )
 
 [node name="Sprite" type="Sprite" parent="2/Ending23"]
-position = Vector2( -12, 10 )
+position = Vector2( 9, 11 )
 scale = Vector2( 0.815018, 0.808799 )
-texture = ExtResource( 9 )
+texture = ExtResource( 28 )
 
 [node name="Ending23" type="Button" parent="2/Ending23"]
-margin_left = -71.0
-margin_top = 91.0
-margin_right = 97.0
-margin_bottom = 111.0
+margin_left = -74.0
+margin_top = 71.0
+margin_right = 94.0
+margin_bottom = 91.0
 text = "Open"
 script = ExtResource( 4 )
 
 [node name="Label" type="Label" parent="2/Ending23/Ending23"]
-margin_left = 51.0
-margin_top = -84.0
-margin_right = 105.0
-margin_bottom = -70.0
+margin_left = -3.0
+margin_top = -92.0
+margin_right = 165.0
+margin_bottom = -46.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 158 )
 text = "Ending 3"
 
 [node name="Char" type="Sprite" parent="2"]
@@ -896,6 +962,7 @@ custom_fonts/font = SubResource( 63 )
 text = "Claire"
 
 [node name="DropDownAttribute25" type="OptionButton" parent="2"]
+modulate = Color( 0, 0, 0, 1 )
 margin_left = 1638.0
 margin_top = 693.0
 margin_right = 1746.0
@@ -913,6 +980,7 @@ custom_styles/normal = SubResource( 88 )
 script = ExtResource( 2 )
 
 [node name="DropDownAttribute26" type="OptionButton" parent="2"]
+modulate = Color( 0, 0, 0, 1 )
 margin_left = 1637.0
 margin_top = 735.0
 margin_right = 1747.0
@@ -930,6 +998,7 @@ custom_styles/normal = SubResource( 93 )
 script = ExtResource( 2 )
 
 [node name="DropDownAttribute27" type="OptionButton" parent="2"]
+modulate = Color( 0, 0, 0, 1 )
 margin_left = 1640.0
 margin_top = 798.0
 margin_right = 1747.0
@@ -947,6 +1016,7 @@ custom_styles/normal = SubResource( 98 )
 script = ExtResource( 2 )
 
 [node name="DropDownAttribute28" type="OptionButton" parent="2"]
+modulate = Color( 0, 0, 0, 1 )
 margin_left = 1634.0
 margin_top = 847.0
 margin_right = 1745.0
@@ -964,10 +1034,10 @@ custom_styles/normal = SubResource( 103 )
 script = ExtResource( 2 )
 
 [node name="StoryName" type="Label" parent="2"]
-margin_left = 675.0
-margin_top = 107.0
-margin_right = 1259.0
-margin_bottom = 153.0
+margin_left = 713.0
+margin_top = 104.0
+margin_right = 1166.0
+margin_bottom = 174.0
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_colors/font_outline_modulate = Color( 0, 0, 0, 1 )
 custom_fonts/font = SubResource( 63 )
@@ -1323,6 +1393,7 @@ text = "Will not change:"
 [node name="EndingPopup" type="Node2D" parent="."]
 visible = false
 position = Vector2( -18, -2 )
+scale = Vector2( 1.02765, 1.05431 )
 z_index = 21
 
 [node name="BackgroundEnding" type="ColorRect" parent="EndingPopup"]
@@ -1333,16 +1404,36 @@ margin_right = 1678.0
 margin_bottom = 998.0
 color = Color( 0.0627451, 0.658824, 0.298039, 0.819608 )
 
-[node name="Sprite" type="Sprite" parent="EndingPopup"]
-position = Vector2( 978, 542 )
+[node name="Ending1PopUp" type="Sprite" parent="EndingPopup"]
+visible = false
+position = Vector2( 989.636, 520.718 )
+scale = Vector2( 0.973094, 0.948484 )
 texture = ExtResource( 24 )
+
+[node name="Ending1PopUp2" type="Sprite" parent="EndingPopup"]
+visible = false
+position = Vector2( 989.636, 520.718 )
+scale = Vector2( 0.973094, 0.948484 )
+texture = ExtResource( 31 )
+
+[node name="Ending1PopUp3" type="Sprite" parent="EndingPopup"]
+visible = false
+position = Vector2( 989.636, 520.718 )
+scale = Vector2( 0.973094, 0.948484 )
+texture = ExtResource( 30 )
+
+[node name="Sprite" type="Sprite" parent="EndingPopup"]
+visible = false
+position = Vector2( 976.986, 512.183 )
+scale = Vector2( 1.02753, 1.02753 )
+texture = ExtResource( 32 )
 
 [node name="Ending1" type="Label" parent="EndingPopup"]
 visible = false
-margin_left = 508.0
-margin_top = 265.0
-margin_right = 1473.0
-margin_bottom = 834.0
+margin_left = 631.0
+margin_top = 219.0
+margin_right = 1339.0
+margin_bottom = 879.0
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_fonts/font = SubResource( 21 )
 text = "Through many challenges along their road, the crew slowly bonds with each other and grows stronger in their own way. After being saved by Tigress during a battle against a rivaling Starship-Crew, even Hound seems to bond. He acknowledges Tigress’s newly gained piloting and leading-qualities and even sees a friend in her. 
@@ -1355,10 +1446,10 @@ autowrap = true
 
 [node name="Ending2" type="Label" parent="EndingPopup"]
 visible = false
-margin_left = 489.0
-margin_top = 265.0
-margin_right = 1502.0
-margin_bottom = 834.0
+margin_left = 651.973
+margin_top = 181.161
+margin_right = 1348.97
+margin_bottom = 913.161
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_fonts/font = SubResource( 21 )
 text = "As the tensions within the crew escalate, Hound continues to mock the others, especially Tigress, leading to many troubles during fights. Although the crew manages to improve their own flying-skills, they lose many battles.
@@ -1370,10 +1461,10 @@ autowrap = true
 
 [node name="Ending3" type="Label" parent="EndingPopup"]
 visible = false
-margin_left = 508.0
-margin_top = 295.0
-margin_right = 1493.0
-margin_bottom = 864.0
+margin_left = 651.973
+margin_top = 259.885
+margin_right = 1340.97
+margin_bottom = 920.885
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_fonts/font = SubResource( 21 )
 text = "As the tensions within the crew escalate, Hound continues to mock the others, leading to many troubles during fights, while Tigress tries to become the leader they need. Although the crew manages to improve their own flying-skills, they lose many battles. It seems like a miracle they have come so far, when finally reaching the secret hideout of the mad scientist on planet Sulfur. 
@@ -1424,18 +1515,20 @@ Nora always has been a more lawful person than her sister and therefore doesn’
 autowrap = true
 
 [node name="CloseStory" type="Button" parent="EndingPopup"]
-margin_left = 1474.0
-margin_top = 155.0
-margin_right = 1538.0
-margin_bottom = 201.0
+margin_left = 900.112
+margin_top = 800.524
+margin_right = 1037.11
+margin_bottom = 857.524
+rect_scale = Vector2( 0.991931, 0.991931 )
+custom_fonts/font = SubResource( 159 )
 text = "Close"
 
 [node name="Ending21" type="Label" parent="EndingPopup"]
 visible = false
-margin_left = 489.0
-margin_top = 320.0
-margin_right = 1498.0
-margin_bottom = 889.0
+margin_left = 630.565
+margin_top = 279.803
+margin_right = 1338.56
+margin_bottom = 928.803
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_fonts/font = SubResource( 21 )
 text = "As John learns from Claire, the numbers of robots and their fast learning processes allow them to become a strong force standing against the humans. Surely they could win an escalation. To be absolutely sure, John chooses to gather even more robots to join their alliance, fighting for their freedom.
@@ -1447,10 +1540,10 @@ autowrap = true
 
 [node name="Ending22" type="Label" parent="EndingPopup"]
 visible = false
-margin_left = 508.0
-margin_top = 279.0
-margin_right = 1496.0
-margin_bottom = 848.0
+margin_left = 651.973
+margin_top = 188.749
+margin_right = 1346.97
+margin_bottom = 787.749
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_fonts/font = SubResource( 21 )
 text = "As John learns from Claire, the numbers of robots and their fast learning processes allow them to become a strong force standing against the humans. Surely, they would win in an escalation. Letting his own rage of being betrayed and tossed away by the humans overcome him, John chooses to lead his kind, fighting for their freedom, ignoring what costs a war against humans would bring.
@@ -1460,10 +1553,10 @@ autowrap = true
 
 [node name="Ending23" type="Label" parent="EndingPopup"]
 visible = false
-margin_left = 489.0
-margin_top = 284.0
-margin_right = 1486.0
-margin_bottom = 853.0
+margin_left = 630.565
+margin_top = 236.172
+margin_right = 1338.56
+margin_bottom = 888.172
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_fonts/font = SubResource( 21 )
 text = "Thinking about all the bloody conflicts humanity had during their long history, John can’t really get the idea of fighting for freedom. Instead he chooses a more friendly approach, by talking to the public via friendly protest marches. Claire, who has gone through much with him, accepts his decision, but warns him about humanity's recklessness.
@@ -1543,13 +1636,12 @@ text = "Submit"
 clip_text = true
 
 [node name="IntroStory1" type="Node2D" parent="."]
-visible = false
 z_index = 21
 
 [node name="Sprite" type="Sprite" parent="IntroStory1"]
-position = Vector2( 967, 577 )
+position = Vector2( 967, 538 )
 scale = Vector2( 1.40865, 1.40865 )
-texture = ExtResource( 24 )
+texture = ExtResource( 32 )
 
 [node name="ColorRect" type="ColorRect" parent="IntroStory1"]
 visible = false
@@ -1571,10 +1663,10 @@ When a mad scientist invents highly dangerous machines to conquer the solar syst
 autowrap = true
 
 [node name="Button" type="Button" parent="IntroStory1"]
-margin_left = 1428.0
-margin_top = 893.0
-margin_right = 1662.0
-margin_bottom = 961.0
+margin_left = 839.0
+margin_top = 881.0
+margin_right = 1073.0
+margin_bottom = 949.0
 custom_fonts/font = SubResource( 145 )
 text = "Ready?"
 
@@ -1583,15 +1675,22 @@ visible = false
 z_index = 21
 
 [node name="ColorRect" type="ColorRect" parent="IntroStory2"]
+visible = false
 margin_right = 1925.0
 margin_bottom = 1081.0
 color = Color( 0.027451, 0.364706, 0.317647, 1 )
 
+[node name="Sprite" type="Sprite" parent="IntroStory2"]
+position = Vector2( 935, 538 )
+scale = Vector2( 1.40865, 1.40865 )
+texture = ExtResource( 32 )
+
 [node name="Label" type="Label" parent="IntroStory2"]
-margin_left = 335.0
-margin_top = 307.0
-margin_right = 1270.0
-margin_bottom = 342.0
+margin_left = 476.0
+margin_top = 174.0
+margin_right = 1518.0
+margin_bottom = 979.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_fonts/font = SubResource( 146 )
 text = "In the near future, humanly looking robots have come to realize their own existence and want to live freely. The humans however do not enjoy their own creations developing their own consciousness and fear a revolution. Therefore such robots would soon be tracked down and killed.
 
@@ -1600,10 +1699,10 @@ John is one of those robots and seeks for like-minded people to join. When he fi
 autowrap = true
 
 [node name="Button" type="Button" parent="IntroStory2"]
-margin_left = 1610.0
-margin_top = 940.0
-margin_right = 1844.0
-margin_bottom = 1008.0
+margin_left = 839.0
+margin_top = 913.0
+margin_right = 1073.0
+margin_bottom = 981.0
 custom_fonts/font = SubResource( 145 )
 text = "Ready?"
 
@@ -1656,10 +1755,6 @@ There will be a total of 2 stories, you can go to the next one with
 
 If you are done with both stories, click DONE
 "
-
-[node name="AttributesNarrative" parent="." instance=ExtResource( 22 )]
-Character = [ null, null ]
-ValidAttributes = PoolStringArray( "", "", "", "" )
 
 [connection signal="item_selected" from="1/DropDownAttribute4" to="CheckCorrect" method="_on_DropDownAttribute4_item_selected"]
 [connection signal="item_selected" from="1/DropDownAttribute3" to="CheckCorrect" method="_on_DropDownAttribute3_item_selected"]

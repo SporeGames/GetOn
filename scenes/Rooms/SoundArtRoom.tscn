@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=2]
+[gd_scene load_steps=17 format=2]
 
 [ext_resource path="res://SharedAssets/Decoration.tscn" type="PackedScene" id=1]
 [ext_resource path="res://SharedAssets/RoomPerson.tscn" type="PackedScene" id=2]
@@ -13,6 +13,7 @@
 [ext_resource path="res://scenes/Sound/assets/SoundArt/Popup .PNG" type="Texture" id=11]
 [ext_resource path="res://SharedAssets/dialogue_characters/Sound_blank.png" type="Texture" id=12]
 [ext_resource path="res://SharedAssets/music/Play/MusicSound.gd" type="Script" id=13]
+[ext_resource path="res://SharedAssets/DialogeBox.tscn" type="PackedScene" id=14]
 
 [sub_resource type="ShaderMaterial" id=1]
 resource_local_to_scene = true
@@ -52,24 +53,34 @@ margin_top = 349.0
 margin_right = 838.0
 margin_bottom = 839.0
 
-[node name="WelcomeDialogue" parent="SoundPerson" index="2"]
-position = Vector2( 4, 709 )
+[node name="IntroductionDialogue" parent="SoundPerson" instance=ExtResource( 14 )]
+position = Vector2( 78, 715 )
+Title = "Julia"
+Icon = ExtResource( 12 )
+Texts = PoolStringArray( "Hey, there you are, awesome! You really seem like an interesting person. ", "I’m Julia by the way, Spore-Games one and only sound-designer.", "Over there we have Ash, our art-designer. We both take care of creating wonderful aesthetics and music-themes for our games, even though much of our work gets scrapped." )
+IsUnique = true
+UniqueID = "105"
+
+[node name="WelcomeDialogue" parent="SoundPerson" index="3"]
+position = Vector2( 78, 715 )
 Title = "Julia"
 Icon = ExtResource( 12 )
 Texts = PoolStringArray( "Hi again! Could you help me find fitting sounds for specific in-game moments of our new project\? We will make an action-adventure in a futuristic setting, it’s gonna be so awesome!" )
 SceneToLoad = "Sound"
 
-[node name="EpicFailDialogue" parent="SoundPerson" index="3"]
+[node name="EpicFailDialogue" parent="SoundPerson" index="4"]
+position = Vector2( 74, 710 )
 Title = "Julia"
 Icon = ExtResource( 12 )
 Texts = PoolStringArray( "I was really excited to work with a fellow sound designer, but it seems like you\'re not quite there yet…" )
 
-[node name="TalkAgainDialogue" parent="SoundPerson" index="4"]
+[node name="TalkAgainDialogue" parent="SoundPerson" index="5"]
+position = Vector2( 74, 710 )
 Title = "Julia"
 Icon = ExtResource( 12 )
 
-[node name="ResultDialogue" parent="SoundPerson" index="5"]
-position = Vector2( 4, 709 )
+[node name="ResultDialogue" parent="SoundPerson" index="6"]
+position = Vector2( 78, 715 )
 Title = "Julia"
 Icon = ExtResource( 12 )
 Texts = PoolStringArray( "Inspiring, truly inspiring! Are you a relative of Hans Zimmer perhaps\? You can be really proud of your work." )
@@ -77,8 +88,8 @@ ResultThreshold = 38
 IsUnique = true
 UniqueID = "17"
 
-[node name="ResultDialogue2" parent="SoundPerson" index="6"]
-position = Vector2( 4, 709 )
+[node name="ResultDialogue2" parent="SoundPerson" index="7"]
+position = Vector2( 78, 715 )
 Title = "Julia"
 Icon = ExtResource( 12 )
 Texts = PoolStringArray( "Not bad, you just need some more exercise." )
@@ -86,8 +97,8 @@ ResultThreshold = 23
 IsUnique = true
 UniqueID = "18"
 
-[node name="ResultDialogue3" parent="SoundPerson" index="7"]
-position = Vector2( 4, 709 )
+[node name="ResultDialogue3" parent="SoundPerson" index="8"]
+position = Vector2( 78, 715 )
 Title = "Julia"
 Icon = ExtResource( 12 )
 Texts = PoolStringArray( "Hm… looks like you´re tone deaf. " )
@@ -95,7 +106,7 @@ IsUnique = true
 UniqueID = "19"
 
 [node name="ArtPerson" parent="." instance=ExtResource( 2 )]
-position = Vector2( -12, 32 )
+position = Vector2( -36, 22 )
 GameSpecialization = 3
 
 [node name="PersonSprite" parent="ArtPerson" index="0"]
@@ -105,10 +116,10 @@ scale = Vector2( 1.06142, 0.999785 )
 texture = ExtResource( 7 )
 
 [node name="InteractButton" parent="ArtPerson" index="1"]
-margin_left = 1429.0
-margin_top = 439.0
-margin_right = 1712.0
-margin_bottom = 929.0
+margin_left = 1585.0
+margin_top = 545.0
+margin_right = 1743.0
+margin_bottom = 770.0
 
 [node name="WelcomeDialogue" parent="ArtPerson" index="2"]
 position = Vector2( 0, 710 )
@@ -119,7 +130,6 @@ SceneToLoad = "Art"
 [node name="EpicFailDialogue" parent="ArtPerson" index="3"]
 Title = "Ash"
 Texts = PoolStringArray( "All right!" )
-LoadSceneAfter = false
 
 [node name="TalkAgainDialogue" parent="ArtPerson" index="4"]
 Title = "Ash"
@@ -128,7 +138,6 @@ Title = "Ash"
 position = Vector2( 0, 710 )
 Title = "Ash"
 Texts = PoolStringArray( "All right!" )
-LoadSceneAfter = false
 IsUnique = true
 UniqueID = "20"
 
@@ -136,7 +145,6 @@ UniqueID = "20"
 position = Vector2( 0, 710 )
 Title = "Ash"
 Texts = PoolStringArray( "All right!" )
-LoadSceneAfter = false
 IsUnique = true
 UniqueID = "21"
 
@@ -144,7 +152,6 @@ UniqueID = "21"
 position = Vector2( 0, 710 )
 Title = "Ash"
 Texts = PoolStringArray( "All right!" )
-LoadSceneAfter = false
 IsUnique = true
 UniqueID = "22"
 

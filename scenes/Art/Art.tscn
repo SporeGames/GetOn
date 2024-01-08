@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://SharedAssets/UserInterface/B_Home_pressed.png" type="Texture" id=1]
 [ext_resource path="res://SharedAssets/UserInterface/B_menu.png" type="Texture" id=2]
@@ -11,6 +11,10 @@
 size = 50
 use_mipmaps = true
 use_filter = true
+font_data = ExtResource( 4 )
+
+[sub_resource type="DynamicFont" id=3]
+size = 40
 font_data = ExtResource( 4 )
 
 [node name="Art" type="Node2D"]
@@ -46,6 +50,15 @@ mouse_filter = 1
 custom_colors/default_color = Color( 1, 1, 1, 1 )
 custom_fonts/normal_font = SubResource( 2 )
 text = "Upload your portfolio here"
+
+[node name="Click" type="RichTextLabel" parent="UploadButton"]
+margin_left = 610.0
+margin_top = 419.0
+margin_right = 831.0
+margin_bottom = 524.0
+mouse_filter = 1
+custom_fonts/normal_font = SubResource( 3 )
+text = "Click Here !"
 
 [node name="ComingSoonPopup" parent="." instance=ExtResource( 5 )]
 visible = false

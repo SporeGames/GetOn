@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=16 format=2]
 
 [ext_resource path="res://SharedAssets/Decoration.tscn" type="PackedScene" id=1]
 [ext_resource path="res://SharedAssets/RoomPerson.tscn" type="PackedScene" id=2]
@@ -13,6 +13,7 @@
 [ext_resource path="res://scenes/Programming/assets/Programming.PNG" type="Texture" id=11]
 [ext_resource path="res://scenes/Programming/assets/Programming/Popup2.PNG" type="Texture" id=12]
 [ext_resource path="res://SharedAssets/dialogue_characters/Programming_blank.png" type="Texture" id=13]
+[ext_resource path="res://SharedAssets/DialogeBox.tscn" type="PackedScene" id=14]
 
 [sub_resource type="ShaderMaterial" id=1]
 resource_local_to_scene = true
@@ -44,22 +45,30 @@ margin_top = 461.0
 margin_right = 435.0
 margin_bottom = 951.0
 
-[node name="WelcomeDialogue" parent="RoomPerson" index="2"]
+[node name="IntroductionDialogue" parent="RoomPerson" instance=ExtResource( 14 )]
+position = Vector2( 0, 704 )
+Title = "Justin"
+Icon = ExtResource( 13 )
+Texts = PoolStringArray( "Hey newbie, welcome to the show. I’m Justin.", "This is our Programming-Department where we work at implementing our mechanics and codes into the game. ", "Don’t take too long looking around here, I’ve got work for you to do. Talk to me again when you are ready." )
+IsUnique = true
+UniqueID = "104"
+
+[node name="WelcomeDialogue" parent="RoomPerson" index="3"]
 Title = "Justin"
 Icon = ExtResource( 13 )
 Texts = PoolStringArray( "Let’s get right into it, I need some assistance with implementing some basic mechanics into our game. Explanations will follow shortly…" )
 SceneToLoad = "Programming"
 
-[node name="EpicFailDialogue" parent="RoomPerson" index="3"]
+[node name="EpicFailDialogue" parent="RoomPerson" index="4"]
 Title = "Justin"
 Icon = ExtResource( 13 )
 Texts = PoolStringArray( "I get the point, that not everyone knows blueprints, but since you are supposed to be a specialized programmer, you should at least know in which order to place them… .", " I’m sorry newbie, but I don’t think you should consider yourself an experienced programmer in the game-industry." )
 
-[node name="TalkAgainDialogue" parent="RoomPerson" index="4"]
+[node name="TalkAgainDialogue" parent="RoomPerson" index="5"]
 Title = "Justin"
 Icon = ExtResource( 13 )
 
-[node name="ResultDialogue" parent="RoomPerson" index="5"]
+[node name="ResultDialogue" parent="RoomPerson" index="6"]
 Title = "Justin"
 Icon = ExtResource( 13 )
 Texts = PoolStringArray( "Holy-moly! That worked better than I thought. Perfect work newbie." )
@@ -67,7 +76,7 @@ ResultThreshold = 38
 IsUnique = true
 UniqueID = "14"
 
-[node name="ResultDialogue2" parent="RoomPerson" index="6"]
+[node name="ResultDialogue2" parent="RoomPerson" index="7"]
 Title = "Justin"
 Icon = ExtResource( 13 )
 Texts = PoolStringArray( "Not bad, but not really good either." )
@@ -75,7 +84,7 @@ ResultThreshold = 23
 IsUnique = true
 UniqueID = "15"
 
-[node name="ResultDialogue3" parent="RoomPerson" index="7"]
+[node name="ResultDialogue3" parent="RoomPerson" index="8"]
 Title = "Justin"
 Icon = ExtResource( 13 )
 Texts = PoolStringArray( "You don’t have any experience with blueprints, have you\?" )

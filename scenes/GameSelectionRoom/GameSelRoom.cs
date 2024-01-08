@@ -23,6 +23,7 @@ namespace GetOn.scenes.GameSelectionRoom {
 		private Sprite _gameStudyDone;
 		private Sprite _programmingDone;
 		private Sprite _storyDone;
+		private Sprite _artDone;
 
 		// Called when the node enters the scene tree for the first time.
 		public override void _Ready() {
@@ -49,6 +50,7 @@ namespace GetOn.scenes.GameSelectionRoom {
 			_gameStudyDone = GetNode<Sprite>("GameStudyDone");
 			_programmingDone = GetNode<Sprite>("ProgrammingDone");
 			_storyDone = GetNode<Sprite>("StoryDone");
+			_artDone = GetNode<Sprite>("ArtDone");
 			CheckCompletions();
 		}
 
@@ -82,7 +84,7 @@ namespace GetOn.scenes.GameSelectionRoom {
 		private void CheckCompletions() {
 			var completed = _sharedNode.CompletedTasks.Count;
 			GD.Print("Completed: " + completed + " of " + Enum.GetValues(typeof(AbilitySpecialization)).Length + "");
-			if (completed >= Enum.GetValues(typeof(AbilitySpecialization)).Length - 2) {
+			if (completed >= Enum.GetValues(typeof(AbilitySpecialization)).Length - 1) {
 				GetNode<DialogueBox>("CompletedGameDialogue").Visible = true;
 				GetNode<Button>("PrintPDF").Visible = true;
 			}
@@ -111,9 +113,15 @@ namespace GetOn.scenes.GameSelectionRoom {
 						_gameStudyDone.Visible = true;
 						break;
 					case AbilitySpecialization.GameDesign:
-
+						
 						_narrativeAndDesignDone.Visible = true;
 						break;
+					case AbilitySpecialization.Art:
+						
+						_artDone.Visible = true;
+						break;
+
+						
 				}
 			}
 		}

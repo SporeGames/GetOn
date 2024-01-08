@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=2]
+[gd_scene load_steps=18 format=2]
 
 [ext_resource path="res://scenes/Rooms/BaseRoom.cs" type="Script" id=1]
 [ext_resource path="res://scenes/Narrative/assets/GameDesignNarrativeRoom2.png" type="Texture" id=2]
@@ -14,6 +14,7 @@
 [ext_resource path="res://SharedAssets/dialogue_characters/GameDesChar.PNG" type="Texture" id=12]
 [ext_resource path="res://SharedAssets/dialogue_characters/Story_blank.png" type="Texture" id=13]
 [ext_resource path="res://SharedAssets/dialogue_characters/Game Design ohne Hintergrund.PNG" type="Texture" id=14]
+[ext_resource path="res://SharedAssets/DialogeBox.tscn" type="PackedScene" id=15]
 
 [sub_resource type="ShaderMaterial" id=1]
 resource_local_to_scene = true
@@ -51,22 +52,30 @@ margin_top = 313.0
 margin_right = 1533.0
 margin_bottom = 626.0
 
-[node name="WelcomeDialogue" parent="GDPerson" index="2"]
+[node name="IntroductionDialogue" parent="GDPerson" instance=ExtResource( 15 )]
+position = Vector2( 0, 704 )
+Title = "Mike"
+Icon = ExtResource( 14 )
+Texts = PoolStringArray( "Hi, I’m Mike, Spore-Games Lead-Game-Designer! In this room me and Mary, over there, work at concepting ideas for our game. ", "This includes her ideas for the story, mine for the mechanics and in general how to make the game attractive for our target groups.", "Based on our research I then talk to the other departments and further elaborate… . You could almost say I’m the core of our studio!", "But enough about that… Just tell me or Mary if you want to start with your tasks, we both have one for you." )
+IsUnique = true
+UniqueID = "102"
+
+[node name="WelcomeDialogue" parent="GDPerson" index="3"]
 Title = "Mike"
 Icon = ExtResource( 14 )
 Texts = PoolStringArray( "Well you see, I started off as an intern just like you and… Oh right, you\'re here for your task!", "We are currently researching which player-motivations fit popular sci-fi games the best. I will explain everything in detail in a second, so don’t worry, you will get the hang of it!" )
 SceneToLoad = "GameDesign"
 
-[node name="EpicFailDialogue" parent="GDPerson" index="3"]
+[node name="EpicFailDialogue" parent="GDPerson" index="4"]
 Title = "Mike"
 Icon = ExtResource( 14 )
 Texts = PoolStringArray( "I’m honest with you, you should rethink if you want to become a Game-Designer, because your work didn’t help me here…" )
 
-[node name="TalkAgainDialogue" parent="GDPerson" index="4"]
+[node name="TalkAgainDialogue" parent="GDPerson" index="5"]
 Title = "Mike"
 Icon = ExtResource( 14 )
 
-[node name="ResultDialogue" parent="GDPerson" index="5"]
+[node name="ResultDialogue" parent="GDPerson" index="6"]
 Title = "Mike"
 Icon = ExtResource( 14 )
 Texts = PoolStringArray( "Five-Star work you did there, I’m almost worried about my position…" )
@@ -74,7 +83,7 @@ ResultThreshold = 38
 IsUnique = true
 UniqueID = "5"
 
-[node name="ResultDialogue2" parent="GDPerson" index="6"]
+[node name="ResultDialogue2" parent="GDPerson" index="7"]
 Title = "Mike"
 Icon = ExtResource( 14 )
 Texts = PoolStringArray( "Decent, decent. Some minor adjustments from me and all should turn out as planned." )
@@ -82,7 +91,7 @@ ResultThreshold = 23
 IsUnique = true
 UniqueID = "6"
 
-[node name="ResultDialogue3" parent="GDPerson" index="7"]
+[node name="ResultDialogue3" parent="GDPerson" index="8"]
 Title = "Mike"
 Icon = ExtResource( 14 )
 Texts = PoolStringArray( "Looks like you aren’t really made to be a game-designer. Maybe you will do better at the other tasks." )

@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=2]
+[gd_scene load_steps=17 format=2]
 
 [ext_resource path="res://scenes/Rooms/BaseRoom.cs" type="Script" id=1]
 [ext_resource path="res://scenes/Management/assets/Management.PNG" type="Texture" id=2]
@@ -14,6 +14,7 @@
 [ext_resource path="res://scenes/Management/assets/ManagementPinnwand/AktenPopUp.png" type="Texture" id=12]
 [ext_resource path="res://scenes/Management/assets/ManagementPinnwand/akternschrank mit pflanze.PNG" type="Texture" id=13]
 [ext_resource path="res://SharedAssets/dialogue_characters/management  ohne Hintergrund.PNG" type="Texture" id=14]
+[ext_resource path="res://SharedAssets/DialogeBox.tscn" type="PackedScene" id=15]
 
 [sub_resource type="ShaderMaterial" id=1]
 resource_local_to_scene = true
@@ -66,21 +67,29 @@ margin_top = 394.0
 margin_right = 900.0
 margin_bottom = 783.0
 
-[node name="WelcomeDialogue" parent="RoomPerson" index="2"]
+[node name="IntroductionDialogue" parent="RoomPerson" instance=ExtResource( 15 )]
+position = Vector2( 0, 704 )
+Title = "Chloe"
+Icon = ExtResource( 14 )
+Texts = PoolStringArray( "Hello again! What you see here is our management room, where I plan our documents, meetings, protocols and much more.", "This is very important, since we have deadlines to meet.", "You will see what I mean by that in a few seconds. If you are ready, talk to me again, then I will explain your task." )
+IsUnique = true
+UniqueID = "103"
+
+[node name="WelcomeDialogue" parent="RoomPerson" index="3"]
 Title = "Chloe"
 Icon = ExtResource( 14 )
 Texts = PoolStringArray( "I prepared an example of a management task for you, so you can show me whatcha got. " )
 SceneToLoad = "Management"
 
-[node name="EpicFailDialogue" parent="RoomPerson" index="3"]
+[node name="EpicFailDialogue" parent="RoomPerson" index="4"]
 Title = "Chloe"
 Icon = ExtResource( 14 )
 
-[node name="TalkAgainDialogue" parent="RoomPerson" index="4"]
+[node name="TalkAgainDialogue" parent="RoomPerson" index="5"]
 Title = "Chloe"
 Icon = ExtResource( 14 )
 
-[node name="ResultDialogue" parent="RoomPerson" index="5"]
+[node name="ResultDialogue" parent="RoomPerson" index="6"]
 Title = "Chloe"
 Icon = ExtResource( 14 )
 Texts = PoolStringArray( "Excellent work, just as I imagined. You have great potential." )
@@ -88,7 +97,7 @@ ResultThreshold = 38
 IsUnique = true
 UniqueID = "11"
 
-[node name="ResultDialogue2" parent="RoomPerson" index="6"]
+[node name="ResultDialogue2" parent="RoomPerson" index="7"]
 Title = "Chloe"
 Icon = ExtResource( 14 )
 Texts = PoolStringArray( "Your work is alright, not perfect though." )
@@ -96,7 +105,7 @@ ResultThreshold = 23
 IsUnique = true
 UniqueID = "12"
 
-[node name="ResultDialogue3" parent="RoomPerson" index="7"]
+[node name="ResultDialogue3" parent="RoomPerson" index="8"]
 Title = "Chloe"
 Icon = ExtResource( 14 )
 Texts = PoolStringArray( "Oh well, this doesn’t really help us… " )
