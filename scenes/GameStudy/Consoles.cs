@@ -238,6 +238,7 @@ public class Consoles : Node2D
 		{
 			points += 2;
 		}
+		points += GetNode<CountdownTimer>("/root/GameStudy/TopBar/Timer").GetBonusPointsForTime();
 		_sharedNode.gameStudyPoints = points;
 		_sharedNode.gameStudyTime = GetNode<CountdownTimer>("/root/GameStudy/TopBar/Timer").CurrentTime;
 		_sharedNode.CompletedTasks.Add(AbilitySpecialization.GameStudy);

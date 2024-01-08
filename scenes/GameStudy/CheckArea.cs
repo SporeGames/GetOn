@@ -136,7 +136,7 @@ namespace GetOn.scenes.GameStudy
 				points += 2;
 			}
 			
-			
+			points += GetNode<CountdownTimer>("/root/GameStudy/TopBar/Timer").GetBonusPointsForTime();
 			GD.Print(points);
 			_sharedNode.gameStudyPoints = points;
 			_sharedNode.gameStudyTime = GetNode<CountdownTimer>("/root/GameStudy/TopBar/Timer").CurrentTime;

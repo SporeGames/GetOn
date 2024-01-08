@@ -121,6 +121,7 @@ public class Management : Node2D {
 				points += 1;
 			}
 		}
+		points += GetNode<CountdownTimer>("/root/Management/TopBar/Timer").GetBonusPointsForTime();
 		GD.Print("Points: " + points);
 		var shared = GetNode<SharedNode>("/root/SharedNode");
 		shared.managementPoints = points;

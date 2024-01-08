@@ -127,9 +127,7 @@ public class GameDesign : Node2D {
 		if (points < 0) {
 			points = 0;
 		}
-		if (_timer.CurrentTime < 240) {
-			points += 10;
-		}
+		points += _timer.GetBonusPointsForTime();
 		var node = GetNode<SharedNode>("/root/SharedNode");
 		node.gameDesignPoints = points;
 		node.gameDesignTime = (int) _timer.CurrentTime;

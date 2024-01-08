@@ -2238,13 +2238,7 @@ namespace GetOn.scenes.Narrative
 				points += 2;
 			}
 
-			if (GetNode<CountdownTimer>("/root/Narrative/TopBar/Timer").CurrentTime <= 300)
-			{
-				GD.Print("Time: "+GetNode<CountdownTimer>("/root/Narrative/TopBar/Timer").CurrentTime);
-				points += 6;
-			}
-			
-			
+			points += GetNode<CountdownTimer>("/root/Narrative/TopBar/Timer").GetBonusPointsForTime();
 			
 			_sharedNode.narrativePoints = points;
 			_sharedNode.narrativeTime = GetNode<CountdownTimer>("/root/Narrative/TopBar/Timer").CurrentTime;

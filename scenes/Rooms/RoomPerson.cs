@@ -78,6 +78,9 @@ public class RoomPerson : Node2D {
 			case AbilitySpecialization.Narrative:
 				gameResult = _shared.narrativePoints;
 				break;
+			case AbilitySpecialization.Art:
+				gameResult = 50; // We don't have a result for art
+				break;
 			default:
 				GD.Print("This specialization is not implemented: " + GameSpecialization);
 				break;

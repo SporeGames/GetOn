@@ -111,6 +111,7 @@ namespace GetOn.scenes.Programming {
 			if (_hardFlag.Pressed) {
 				points += 40;
 			}
+			points += _timer.GetBonusPointsForTime();
 			_sharedNode.programmingPoints = points;
 			_sharedNode.programmingTime = _timer.CurrentTime;
 			_sharedNode.CompletedTasks.Add(AbilitySpecialization.Programming);

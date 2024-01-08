@@ -22,7 +22,23 @@ public class CountdownTimer : Node2D {
 		_timer.Start();
 		_displayText.AddColorOverride("DefaultColor", FontColor);
 	}
+	
+	// Reset the timer to its initial state
+	public void ResetTimer() {
+		CurrentTime = InitialTime;
+		UpdateTimerDisplay();
+	}
 
+	public int GetBonusPointsForTime() {
+		if (CurrentTime < 300) {
+			return 2;
+		}
+		if (CurrentTime < 600) {
+			return 1;
+		}
+		return 0;
+	}
+	
 	private void OnTimerTimeout() {
 		if (!running) {
 			return;
@@ -40,12 +56,17 @@ public class CountdownTimer : Node2D {
 		int minutes = Mathf.FloorToInt(CurrentTime / 60);
 		int seconds = Mathf.FloorToInt(CurrentTime % 60);
 		_displayText.Text = $"Time: {minutes:00}:{seconds:00}";
+		_displayText.AddColorOverride("default_color", GetColorForTime());
 	}
-	
-	// Reset the timer to its initial state
-	public void ResetTimer() {
-		CurrentTime = InitialTime;
-		UpdateTimerDisplay();
+
+	private Color GetColorForTime() {
+		if (CurrentTime < 300) {
+			return Colors.Green;
+		}
+		if (CurrentTime < 600) {
+			return Colors.Yellow;
+		}
+		return Colors.Red;
 	}
 
 	

@@ -173,9 +173,10 @@ namespace GetOn.scenes.Sound
 			{
 				points += 7.5;
 			}
+			points += GetNode<CountdownTimer>("/root/Sound/TopBar/Timer").GetBonusPointsForTime();
 			GD.Print(points);
 			_sharedNode.soundPoints = (int) points;
-			_sharedNode.soundTime = GetNode<CountdownTimer>("/root/Sound/Timer").CurrentTime;
+			_sharedNode.soundTime = GetNode<CountdownTimer>("/root/Sound/TopBar/Timer").CurrentTime;
 			_sharedNode.CompletedTasks.Add(AbilitySpecialization.Sound);
 			_sharedNode.SwitchScene("res://scenes/Rooms/SoundArtRoom.tscn");
 		}

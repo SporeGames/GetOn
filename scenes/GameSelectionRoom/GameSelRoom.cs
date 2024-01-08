@@ -83,8 +83,8 @@ namespace GetOn.scenes.GameSelectionRoom {
 
 		private void CheckCompletions() {
 			var completed = _sharedNode.CompletedTasks.Count;
-			GD.Print("Completed: " + completed + " of " + Enum.GetValues(typeof(AbilitySpecialization)).Length + "");
-			if (completed >= Enum.GetValues(typeof(AbilitySpecialization)).Length) {
+			GD.Print("Completed: " + completed + " of " + (Enum.GetValues(typeof(AbilitySpecialization)).Length - 1) + "");
+			if (completed >= Enum.GetValues(typeof(AbilitySpecialization)).Length - 1) {
 				GetNode<DialogueBox>("CompletedGameDialogue").Visible = true;
 				GetNode<Button>("PrintPDF").Visible = true;
 			}
