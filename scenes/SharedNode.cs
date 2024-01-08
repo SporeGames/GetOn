@@ -35,7 +35,7 @@ namespace GetOn.scenes {
 		[JsonProperty] public float gameStudyTime = 0;
 		[JsonProperty] public int gameDesignPoints = 0;
 		[JsonProperty] public float gameDesignTime = 0;
-		[JsonProperty] public int narrativePoints = 0;
+		[JsonProperty] public double narrativePoints = 0;
 		[JsonProperty] public float narrativeTime = 0;
 		[JsonProperty] public double soundPoints = 0;
 		[JsonProperty] public float soundTime = 0;

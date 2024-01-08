@@ -17,6 +17,7 @@ public class DropDownSetting : OptionButton
 		this.AddItem("Bullet Hell");
 		this.AddItem("Thriller");
 		this.AddItem("Fighting Game");
+		this.AddItem("Adventure");
 		//this.HintTooltip = "Yoooo Setting dies das";
 		//SetItemTooltip(1,"Yoyoyoyyo");
 		//SetItemTooltip(2,"hohohoh");

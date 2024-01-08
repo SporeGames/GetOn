@@ -5,31 +5,11 @@ using System;
 
 public class DropDownAttribute : OptionButton
 {
-		// Declare member variables here. Examples:
-		// private int a = 2;
-		// private string b = "text";
-
-		// Called when the node enters the scene tree for the first time.
+	[Export] public bool FirstChar;
 	public override void _Ready()
 	{
 		this.AddItem("Attribute");
-		this.AddItem("Befriended");				//1
-		this.AddItem("Heroic");					//2
-		this.AddItem("Stubborn");					//3
-		this.AddItem("Integrated");				//4
-		this.AddItem("Possessed");					//5
-		this.AddItem("Sacrificing");				//6
-		this.AddItem("Aggressive");				//7
-		this.AddItem("Egoistic");					//8
-		this.AddItem("Cocky");						//9
-		this.AddItem("Hopeless");					//10
-		this.AddItem("Depressed");					//11
-		this.AddItem("Well-Liked");				//12
-		this.AddItem("Feels Guilty");				//13
-		this.AddItem("Heroic/Fulfilled");			//14
-		this.AddItem("Twisted");					//15
-		this.AddItem("Betrayed");					//16
-		this.AddItem("Leading");					//17
+
 	}
 
 	public void DisableHover()
@@ -46,13 +26,186 @@ public class DropDownAttribute : OptionButton
 	{
 		this.Select(0);
 	}
+
+	public void ClearItems()
+	{
+		this.RemoveItem(8);
+		this.RemoveItem(7);
+		this.RemoveItem(6);
+		this.RemoveItem(5);
+		this.RemoveItem(4);
+		this.RemoveItem(3);
+		this.RemoveItem(2);
+		this.RemoveItem(1);
+	}
+
+	public void EndingPerfect()
+	{
+		if (FirstChar == true)
+		{
+			ClearItems();
+			this.AddItem("Heroic");
+			this.AddItem("Talented");
+			this.AddItem("Fulfilled");
+			this.AddItem("Determined");
+			this.AddItem("Well-liked");
+			this.AddItem("Hopeless");
+			this.AddItem("Egoistic");
+			this.AddItem("Integrated");
+		}
+		else
+		{
+			ClearItems();
+			this.AddItem("Befriended");
+			this.AddItem("Loyal");
+			this.AddItem("Integrated");
+			this.AddItem("Heroic");
+			this.AddItem("Cocky");
+			this.AddItem("Aggressive");
+			this.AddItem("Egoistic");
+			this.AddItem("Talented");
+		}
+	}
+
+	public void EndingOk()
+	{
+		if (FirstChar == true)
+		{
+			ClearItems();
+			this.AddItem("Sacrificing");
+			this.AddItem("Determinded");
+			this.AddItem("Heroic");
+			this.AddItem("Selfless");
+			this.AddItem("Talented");
+			this.AddItem("Fullfilled");
+			this.AddItem("Thoughtless");
+			this.AddItem("Hopeless");
+		}
+		else
+		{
+			ClearItems();
+			this.AddItem("Leading");
+			this.AddItem("Feels Guilty");
+			this.AddItem("Integrated");
+			this.AddItem("Heroic");
+			this.AddItem("Fullfilled");
+			this.AddItem("Twisted");
+			this.AddItem("Talented");
+			this.AddItem("Cocky");
+		}
+	}
+
+	public void EndingCorrect()
+	{
+		if (FirstChar == true)
+		{
+			ClearItems();
+			this.AddItem("Hopeless");
+			this.AddItem("Depressed");
+			this.AddItem("Determined");
+			this.AddItem("Possessed");
+			this.AddItem("Aggressive");
+			this.AddItem("Egoistic");
+			this.AddItem("Leading");
+			this.AddItem("Twisted");
+		}
+		else
+		{
+			ClearItems();
+			this.AddItem("Talented");
+			this.AddItem("Aggressive");
+			this.AddItem("Egoistic");
+			this.AddItem("Cocky");
+			this.AddItem("Determined");
+			this.AddItem("Twisted");
+			this.AddItem("Depressed");
+			this.AddItem("Integrated");
+		}
+	}
+
+	public void EndingPerfect2()
+	{
+		if (FirstChar == true)
+		{
+			ClearItems();
+			this.AddItem("Feels Guilty");
+			this.AddItem("Heroic");
+			this.AddItem("Leading");
+			this.AddItem("Depressed");
+			this.AddItem("Fulfilled");
+			this.AddItem("Ruthless");
+			this.AddItem("Egoistic");
+			this.AddItem("Well-liked");
+		}
+		else
+		{
+			ClearItems();
+			this.AddItem("Sacrificing");
+			this.AddItem("Ruthless");
+			this.AddItem("Heroic");
+			this.AddItem("Loyal");
+			this.AddItem("Fulfilled");
+			this.AddItem("Hopeless");
+			this.AddItem("Thoughtless");
+			this.AddItem("Cocky");
+		}
+	}
+
+	public void EndingOk2()
+	{
+		if (FirstChar == true)
+		{
+			ClearItems();
+			this.AddItem("Possessed");
+			this.AddItem("Ruthless");
+			this.AddItem("Egoistic");
+			this.AddItem("Aggressive");
+			this.AddItem("Betraying");
+			this.AddItem("Hopeless");
+			this.AddItem("Depressed");
+			this.AddItem("Cocky");
+		}
+		else
+		{
+			ClearItems();
+			this.AddItem("Heroic");
+			this.AddItem("Betraying");
+			this.AddItem("Integrated");
+			this.AddItem("Twisted");
+			this.AddItem("Depressed");
+			this.AddItem("Well-Liked");
+			this.AddItem("Fulfilled");
+			this.AddItem("Forgiving");
+		}
+	}
+
+	public void EndingCorrect2()
+	{
+		if (FirstChar == true)
+		{
+			ClearItems();
+			this.AddItem("Fulfilled");
+			this.AddItem("Determined");
+			this.AddItem("Forgiving");
+			this.AddItem("Integrated");
+			this.AddItem("Ruthless");
+			this.AddItem("Egoistic");
+			this.AddItem("Heroic");
+			this.AddItem("Sacrificing");
+		}
+		else
+		{
+			ClearItems();
+			this.AddItem("Integrated");
+			this.AddItem("Twisted");
+			this.AddItem("Loyal");
+			this.AddItem("Sacrificing");
+			this.AddItem("Heroic");
+			this.AddItem("Depressed");
+			this.AddItem("Forgiving");
+			this.AddItem("Befriended");
+		}
+	}
 	
-
-
-//  // Called every frame. 'delta' is the elapsed time since the previous frame.
-//  public override void _Process(float delta)
-//  {
-//      
-//  }
 }
 

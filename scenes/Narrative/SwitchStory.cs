@@ -23,6 +23,7 @@ public class SwitchStory : Button
 	public Button _ready3;
 
 	public bool wrongWay = false;
+	private Button _submit;
 	
 	public override void _Ready()
 	{
@@ -45,8 +46,9 @@ public class SwitchStory : Button
 		_ready1.Connect("pressed", this, nameof(ReadyPressed));
 		_ready2.Connect("pressed", this, nameof(ReadyPressed));
 		_ready3.Connect("pressed", this, nameof(GreaterThanPressed));
-		
-		
+
+		_submit = GetNode<Button>("/root/Narrative/Submit");
+		_submit.Visible = false;
 	}
 	
 	public override void _Process(float delta)
@@ -136,10 +138,12 @@ public class SwitchStory : Button
 				wrongWay = true;
 				_introStory2.Visible = true;
 				GetNode<CountdownTimer>("/root/Narrative/TopBar/Timer").running = false;
+				_submit.Visible = true;
 			}
 	
 			_story1.Visible = false;
 			_story2.Visible = true;
+			_submit.Visible = true;
 		}
 		else
 		{
@@ -158,10 +162,12 @@ public class SwitchStory : Button
 				wrongWay = true;
 				_introStory2.Visible = true;
 				GetNode<CountdownTimer>("/root/Narrative/TopBar/Timer").running = false;
+				_submit.Visible = true;
 			}
 
 			_story1.Visible = false;
 			_story2.Visible = true;
+			_submit.Visible = true;
 		}
 		else
 		{

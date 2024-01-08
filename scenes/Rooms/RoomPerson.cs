@@ -76,7 +76,7 @@ public class RoomPerson : Node2D {
 				gameResult = (int) _shared.soundPoints;
 				break;
 			case AbilitySpecialization.Narrative:
-				gameResult = _shared.narrativePoints;
+				gameResult = (int) _shared.narrativePoints;
 				break;
 			case AbilitySpecialization.Art:
 				gameResult = 50; // We don't have a result for art

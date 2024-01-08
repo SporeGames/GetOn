@@ -13,13 +13,32 @@ namespace GetOn.scenes.Narrative
 	{
 		private SharedNode _sharedNode;
 		private DragAndDropStory _dragAndDropStory;
+		private DropDownAttribute _dropDownAttribute;
+		private DropDownAttribute _dropDownAttribute2;
+		private DropDownAttribute _dropDownAttribute3;
+		private DropDownAttribute _dropDownAttribute4;
+		
+		private DropDownAttribute _dropDownAttribute5;
+		private DropDownAttribute _dropDownAttribute6;
+		private DropDownAttribute _dropDownAttribute7;
+		private DropDownAttribute _dropDownAttribute8;
+		
+		private DropDownAttribute _dropDownAttribute21;
+		private DropDownAttribute _dropDownAttribute22;
+		private DropDownAttribute _dropDownAttribute23;
+		private DropDownAttribute _dropDownAttribute24;
+		
+		private DropDownAttribute _dropDownAttribute25;
+		private DropDownAttribute _dropDownAttribute26;
+		private DropDownAttribute _dropDownAttribute27;
+		private DropDownAttribute _dropDownAttribute28;
 			
 		//Story 1 
 		private bool endingPerfect;
 		private bool endingOk;
 		private bool settingCorrect;
 		private bool ending3;
-		private int points;
+		private double points;
 		private Button _submit;
 		private Label _attribute1;
 		private Label _attribute2;
@@ -29,21 +48,21 @@ namespace GetOn.scenes.Narrative
 		private List<int> correctAttributesKriv = new List<int> { 1, 2, 3, 4 };
 		private List<int> correctAttributesAshe = new List<int> { 2, 4, 5, 6 };
 
-		private List<int> correctAttributesEndingTigress1 = new List<int> {14,17,1,3 };
-		private List<int> correctAttributesEndingTigress2 = new List<int> {6,12,14,3 };
-		private List<int> correctAttributesEndingTigress3 = new List<int> {10,11,13,5};
+		private List<int> correctAttributesEndingTigress1 = new List<int> {1,2,3,4 };
+		private List<int> correctAttributesEndingTigress2 = new List<int> {1,2,3,4 };
+		private List<int> correctAttributesEndingTigress3 = new List<int> {1,2,3,4 };
 		
-		private List<int> correctAttributesEndingHound1 = new List<int> {1,12,4,2};
-		private List<int> correctAttributesEndingHound2 = new List<int> {17,13,4,2};
-		private List<int> correctAttributesEndingHound3 = new List<int> {10,7,8,9};
+		private List<int> correctAttributesEndingHound1 = new List<int> {1,2,3,4 };
+		private List<int> correctAttributesEndingHound2 = new List<int> {1,2,3,4 };
+		private List<int> correctAttributesEndingHound3 = new List<int> {1,2,3,4 };
 		
-		private List<int> correctAttributesEndingJohn1 = new List<int> {13,2,17,12 };
-		private List<int> correctAttributesEndingJohn2 = new List<int> {5,16,8,7 };
-		private List<int> correctAttributesEndingJohn3 = new List<int> {14,17,6,4 };
+		private List<int> correctAttributesEndingJohn1 = new List<int> {1,2,3,4 };
+		private List<int> correctAttributesEndingJohn2 = new List<int> {1,2,3,4 };
+		private List<int> correctAttributesEndingJohn3 = new List<int> {1,2,3,4 };
 		
-		private List<int> correctAttributesEndingClaire1 = new List<int> {6,3,2,9 };
-		private List<int> correctAttributesEndingClaire2 = new List<int> {14,3,4,15 };
-		private List<int> correctAttributesEndingClaire3 = new List<int> { 4,6,3,1};
+		private List<int> correctAttributesEndingClaire1 = new List<int> {1,2,3,4 };
+		private List<int> correctAttributesEndingClaire2 = new List<int> {1,2,3,4 };
+		private List<int> correctAttributesEndingClaire3 = new List<int> {1,2,3,4 };
 		
 		private bool indexCorrect1 = false;
 		private bool indexCorrect2 = false;
@@ -119,6 +138,23 @@ namespace GetOn.scenes.Narrative
 
 		public override void _Ready()
 		{
+			_dropDownAttribute = GetNode<DropDownAttribute>("/root/Narrative/1/DropDownAttribute1");
+			_dropDownAttribute2 = GetNode<DropDownAttribute>("/root/Narrative/1/DropDownAttribute2");
+			_dropDownAttribute3 = GetNode<DropDownAttribute>("/root/Narrative/1/DropDownAttribute3");
+			_dropDownAttribute4 = GetNode<DropDownAttribute>("/root/Narrative/1/DropDownAttribute4");
+			_dropDownAttribute5 = GetNode<DropDownAttribute>("/root/Narrative/1/DropDownAttribute5");
+			_dropDownAttribute6 = GetNode<DropDownAttribute>("/root/Narrative/1/DropDownAttribute6");
+			_dropDownAttribute7 = GetNode<DropDownAttribute>("/root/Narrative/1/DropDownAttribute7");
+			_dropDownAttribute8 = GetNode<DropDownAttribute>("/root/Narrative/1/DropDownAttribute8");
+			
+			_dropDownAttribute21 = GetNode<DropDownAttribute>("/root/Narrative/2/DropDownAttribute21");
+			_dropDownAttribute22 = GetNode<DropDownAttribute>("/root/Narrative/2/DropDownAttribute22");
+			_dropDownAttribute23 = GetNode<DropDownAttribute>("/root/Narrative/2/DropDownAttribute23");
+			_dropDownAttribute24 = GetNode<DropDownAttribute>("/root/Narrative/2/DropDownAttribute24");
+			_dropDownAttribute25 = GetNode<DropDownAttribute>("/root/Narrative/2/DropDownAttribute25");
+			_dropDownAttribute26 = GetNode<DropDownAttribute>("/root/Narrative/2/DropDownAttribute26");
+			_dropDownAttribute27 = GetNode<DropDownAttribute>("/root/Narrative/2/DropDownAttribute27");
+			_dropDownAttribute28 = GetNode<DropDownAttribute>("/root/Narrative/2/DropDownAttribute28");
 			_sharedNode = GetNode<SharedNode>("/root/SharedNode");
 			_dragAndDropStory = GetNode<DragAndDropStory>("/root/Narrative/1/Ending1");
 			endingPerfect = false;
@@ -141,6 +177,76 @@ namespace GetOn.scenes.Narrative
 		}
 
 		//Check if correct ending entered 
+		private void ChangeAttributes(string ending)
+		{
+			if (ending == "Ending1")
+			{
+				_dropDownAttribute.EndingPerfect();
+				_dropDownAttribute2.EndingPerfect();
+				_dropDownAttribute3.EndingPerfect();
+				_dropDownAttribute4.EndingPerfect();
+				_dropDownAttribute5.EndingPerfect();
+				_dropDownAttribute6.EndingPerfect();
+				_dropDownAttribute7.EndingPerfect();
+				_dropDownAttribute8.EndingPerfect();
+			}
+
+			if (ending == "Ending2")
+			{
+				_dropDownAttribute.EndingOk();
+				_dropDownAttribute2.EndingOk();
+				_dropDownAttribute3.EndingOk();
+				_dropDownAttribute4.EndingOk();
+				_dropDownAttribute5.EndingOk();
+				_dropDownAttribute6.EndingOk();
+				_dropDownAttribute7.EndingOk();
+				_dropDownAttribute8.EndingOk();
+			}
+			if (ending == "Ending3")
+			{
+				_dropDownAttribute.EndingCorrect();
+				_dropDownAttribute2.EndingCorrect();
+				_dropDownAttribute3.EndingCorrect();
+				_dropDownAttribute4.EndingCorrect();
+				_dropDownAttribute5.EndingCorrect();
+				_dropDownAttribute6.EndingCorrect();
+				_dropDownAttribute7.EndingCorrect();
+				_dropDownAttribute8.EndingCorrect();
+			}
+			if (ending == "Ending21")
+			{
+				_dropDownAttribute21.EndingPerfect2();
+				_dropDownAttribute22.EndingPerfect2();
+				_dropDownAttribute23.EndingPerfect2();
+				_dropDownAttribute24.EndingPerfect2();
+				_dropDownAttribute25.EndingPerfect2();
+				_dropDownAttribute26.EndingPerfect2();
+				_dropDownAttribute27.EndingPerfect2();
+				_dropDownAttribute28.EndingPerfect2();
+			}
+			if (ending == "Ending22")
+			{
+				_dropDownAttribute21.EndingOk2();
+				_dropDownAttribute22.EndingOk2();
+				_dropDownAttribute23.EndingOk2();
+				_dropDownAttribute24.EndingOk2();
+				_dropDownAttribute25.EndingOk2();
+				_dropDownAttribute26.EndingOk2();
+				_dropDownAttribute27.EndingOk2();
+				_dropDownAttribute28.EndingOk2();
+			}
+			if (ending == "Ending23")
+			{
+				_dropDownAttribute21.EndingCorrect2();
+				_dropDownAttribute22.EndingCorrect2();
+				_dropDownAttribute23.EndingCorrect2();
+				_dropDownAttribute24.EndingCorrect2();
+				_dropDownAttribute25.EndingCorrect2();
+				_dropDownAttribute26.EndingCorrect2();
+				_dropDownAttribute27.EndingCorrect2();
+				_dropDownAttribute28.EndingCorrect2();
+			}
+		}
 
 		private void _on_CheckCorrect_body_entered(object body)
 		{
@@ -149,26 +255,32 @@ namespace GetOn.scenes.Narrative
 				if (kinematicBody.Name == "Ending1")
 				{
 					endingPerfect = true;
+					ChangeAttributes(kinematicBody.Name);
 				}
 				else if (kinematicBody.Name == "Ending2")
 				{
 					endingOk = true;
+					ChangeAttributes(kinematicBody.Name);
 				}
 				else if (kinematicBody.Name == "Ending3")
 				{
 					ending3 = true;
+					ChangeAttributes(kinematicBody.Name);
 				}
 				else if (kinematicBody.Name == "Ending21")
 				{
 					endingPerfect2 = true;
+					ChangeAttributes(kinematicBody.Name);
 				}
 				else if (kinematicBody.Name == "Ending22")
 				{
 					endingOk2 = true;
+					ChangeAttributes(kinematicBody.Name);
 				}
 				else if (kinematicBody.Name == "Ending23")
 				{
 					ending23 = true;
+					ChangeAttributes(kinematicBody.Name);
 				}
 
 			}
@@ -258,13 +370,13 @@ namespace GetOn.scenes.Narrative
 		{
 			if (_part1.Visible == true)
 			{
-				correctAttributesEndingTigress1 = new List<int> { 14,17,1,3};
-				correctAttributesEndingTigress2 = new List<int> {6,12,14,3 };
-				correctAttributesEndingTigress3 = new List<int> {10,11,13,5};
+				correctAttributesEndingTigress1 = new List<int> {1,2,3,4 };
+				correctAttributesEndingTigress2 = new List<int> {1,2,3,4 };
+				correctAttributesEndingTigress3 = new List<int> {1,2,3,4 };
 			
-				correctAttributesEndingHound1 = new List<int> {1,12,4,2};
-				correctAttributesEndingHound2 = new List<int> {17,13,4,2};
-				correctAttributesEndingHound3 = new List<int> {10,7,8,9};
+				correctAttributesEndingHound1 = new List<int> {1,2,3,4 };
+				correctAttributesEndingHound2 = new List<int> {1,2,3,4 };
+				correctAttributesEndingHound3 = new List<int> {1,2,3,4 };
 				
 				indexCorrect1 = false;
 				indexCorrect2 = false;
@@ -280,13 +392,13 @@ namespace GetOn.scenes.Narrative
 			}
 			else
 			{
-				correctAttributesEndingJohn1 = new List<int> {13,2,17,12 };
-				correctAttributesEndingJohn2 = new List<int> {5,16,8,7 };
-				correctAttributesEndingJohn3 = new List<int> {14,17,6,4 };
+				correctAttributesEndingJohn1 = new List<int> {1,2,3,4 };
+				correctAttributesEndingJohn2 = new List<int> {1,2,3,4 };
+				correctAttributesEndingJohn3 = new List<int> {1,2,3,4 };
 			
-				correctAttributesEndingClaire1 = new List<int> {6,3,2,9 };
-				correctAttributesEndingClaire2 = new List<int> {14,3,4,15 };
-				correctAttributesEndingClaire3 = new List<int> { 4,6,3,1};
+				correctAttributesEndingClaire1 = new List<int> {1,2,3,4 };
+				correctAttributesEndingClaire2 = new List<int> {1,2,3,4 };
+				correctAttributesEndingClaire3 = new List<int> {1,2,3,4 };
 				
 				indexCorrect21 = false;
 				indexCorrect22 = false;
@@ -1200,7 +1312,7 @@ namespace GetOn.scenes.Narrative
 
 		private void _on_DropDownSetting2_item_selected(int index)
 		{
-			if (index == 4)
+			if (index == 8)
 			{
 				settingCorrect2 = true;
 				GD.Print(settingCorrect2);
@@ -1895,18 +2007,18 @@ namespace GetOn.scenes.Narrative
 			if (endingPerfect2)
 			{
 				
-				if (correctAttributesEndingClaire1.Contains(index) && indexCorrect27 == false)
+				if (correctAttributesEndingClaire1.Contains(index) && indexCorrect28 == false)
 				{
 					correctAttributesEndingClaire1.Remove(index);
-					indexCopy27 = index;
-					indexCorrect27 = true;
+					indexCopy28 = index;
+					indexCorrect28 = true;
 
 				}
-				else if (indexCorrect27 && correctAttributesEndingClaire1.Count <4)
+				else if (indexCorrect28 && correctAttributesEndingClaire1.Count <4)
 				{
-					correctAttributesEndingClaire1.Add(indexCopy27);
-					indexCorrect27 = false;
-					indexCopy27 = index;
+					correctAttributesEndingClaire1.Add(indexCopy28);
+					indexCorrect28 = false;
+					indexCopy28 = index;
 
 					if (correctAttributesEndingClaire1.Contains(index))
 					{
@@ -2026,220 +2138,246 @@ namespace GetOn.scenes.Narrative
 
 			if (correctAttributesEndingTigress1.Count == 0)
 			{
-				points += 8;
+				points += 10;
 			}
 			else if (correctAttributesEndingTigress1.Count == 1)
 			{
-				points += 6;
+				points += 7.5;
 			}
 			else if (correctAttributesEndingTigress1.Count == 2)
 			{
-				points += 4;
+				points += 5;
 			}
 			else if (correctAttributesEndingTigress1.Count == 3)
 			{
-				points += 2;
+				points += 2.5;
 			}
 			
 			if (correctAttributesEndingHound1.Count == 0)
 			{
-				points += 8;
+				points += 10;
 			}
 			else if (correctAttributesEndingHound1.Count == 1)
 			{
-				points += 6;
+				points += 7.5;
 			}
 			else if (correctAttributesEndingHound1.Count == 2)
 			{
-				points += 4;
+				points += 5;
 			}
 			else if (correctAttributesEndingHound1.Count == 3)
 			{
-				points += 2;
+				points += 2.5;
 			}
 			
 			//endingOk == true;
 			
 			if (correctAttributesEndingTigress2.Count == 0)
 			{
-				points += 8;
+				points += 10;
 			}
 			else if (correctAttributesEndingTigress2.Count == 1)
 			{
-				points += 6;
+				points += 7.5;
 			}
 			else if (correctAttributesEndingTigress2.Count == 2)
 			{
-				points += 4;
+				points += 5;
 			}
 			else if (correctAttributesEndingTigress2.Count == 3)
 			{
-				points += 2;
+				points += 2.5;
 			}
 			
 			if (correctAttributesEndingHound2.Count == 0)
 			{
-				points += 8;
+				points += 10;
 			}
 			else if (correctAttributesEndingHound2.Count == 1)
 			{
-				points += 6;
+				points += 7.5;
 			}
 			else if (correctAttributesEndingHound2.Count == 2)
 			{
-				points += 4;
+				points += 5;
 			}
 			else if (correctAttributesEndingHound2.Count == 3)
 			{
-				points += 2;
+				points += 2.5;
 			}
 			
 			//ending3 == true;
 			
 			if (correctAttributesEndingTigress3.Count == 0)
 			{
-				points += 8;
+				points += 10;
 			}
 			else if (correctAttributesEndingTigress3.Count == 1)
 			{
-				points += 6;
+				points += 7.5;
 			}
 			else if (correctAttributesEndingTigress3.Count == 2)
 			{
-				points += 4;
+				points += 5;
 			}
 			else if (correctAttributesEndingTigress3.Count == 3)
 			{
-				points += 2;
+				points += 2.5;
 			}
 			
 			if (correctAttributesEndingHound3.Count == 0)
 			{
-				points += 8;
+				points += 10;
 			}
 			else if (correctAttributesEndingHound3.Count == 1)
 			{
-				points += 6;
+				points += 7.5;
 			}
 			else if (correctAttributesEndingHound3.Count == 2)
 			{
-				points += 4;
+				points += 5;
 			}
 			else if (correctAttributesEndingHound3.Count == 3)
 			{
-				points += 2;
+				points += 2.5;
 			}
 			
 			//endingPerfect2 == true;
 			
 			if (correctAttributesEndingJohn1.Count == 0)
 			{
-				points += 8;
+				points += 10;
 			}
 			else if (correctAttributesEndingJohn1.Count == 1)
 			{
-				points += 6;
+				points += 7.5;
 			}
 			else if (correctAttributesEndingJohn1.Count == 2)
 			{
-				points += 4;
+				points += 5;
 			}
 			else if (correctAttributesEndingJohn1.Count == 3)
 			{
-				points += 2;
+				points += 2.5;
 			}
 			
 			if (correctAttributesEndingClaire1.Count == 0)
 			{
-				points += 8;
+				points += 10;
 			}
 			else if (correctAttributesEndingClaire1.Count == 1)
 			{
-				points += 6;
+				points += 7.5;
 			}
 			else if (correctAttributesEndingClaire1.Count == 2)
 			{
-				points += 4;
+				points += 5;
 			}
 			else if (correctAttributesEndingClaire1.Count == 3)
 			{
-				points += 2;
+				points += 2.5;
 			}
 			
 			//endingOk2 == true;
 			
 			if (correctAttributesEndingJohn2.Count == 0)
 			{
-				points += 8;
+				points += 10;
 			}
 			else if (correctAttributesEndingJohn2.Count == 1)
 			{
-				points += 6;
+				points += 7.5;
 			}
 			else if (correctAttributesEndingJohn2.Count == 2)
 			{
-				points += 4;
+				points += 5;
 			}
 			else if (correctAttributesEndingJohn2.Count == 3)
 			{
-				points += 2;
+				points += 2.5;
 			}
 			
 			if (correctAttributesEndingClaire2.Count == 0)
 			{
-				points += 8;
+				points += 10;
 			}
 			else if (correctAttributesEndingClaire2.Count == 1)
 			{
-				points += 6;
+				points += 7.5;
 			}
 			else if (correctAttributesEndingClaire2.Count == 2)
 			{
-				points += 4;
+				points += 5;
 			}
 			else if (correctAttributesEndingClaire2.Count == 3)
 			{
-				points += 2;
+				points += 2.5;
 			}
 			
 			//ending23 == true;
 			
 			if (correctAttributesEndingJohn3.Count == 0)
 			{
-				points += 8;
+				points += 10;
 			}
 			else if (correctAttributesEndingJohn3.Count == 1)
 			{
-				points += 6;
+				points += 7.5;
 			}
 			else if (correctAttributesEndingJohn3.Count == 2)
 			{
-				points += 4;
+				points += 5;
 			}
 			else if (correctAttributesEndingJohn3.Count == 3)
 			{
-				points += 2;
+				points += 2.5;
 			}
 			
 			if (correctAttributesEndingClaire3.Count == 0)
 			{
-				points += 8;
+				points += 10;
 			}
 			else if (correctAttributesEndingClaire3.Count == 1)
 			{
-				points += 6;
+				points += 7.5;
 			}
 			else if (correctAttributesEndingClaire3.Count == 2)
 			{
-				points += 4;
+				points += 5;
 			}
 			else if (correctAttributesEndingClaire3.Count == 3)
+			{
+				points += 2.5;
+			}
+
+			if (endingPerfect)
+			{
+				points += 2;
+			}
+			
+			if (endingOk)
+			{
+				points += 2;
+			}
+			
+			if (endingPerfect2)
+			{
+				points += 2;
+			}
+			
+			if (endingOk2)
 			{
 				points += 2;
 			}
 
+
 			points += GetNode<CountdownTimer>("/root/Narrative/TopBar/Timer").GetBonusPointsForTime();
 			
+
+			
+			
+			GD.Print(points);
+
 			_sharedNode.narrativePoints = points;
 			_sharedNode.narrativeTime = GetNode<CountdownTimer>("/root/Narrative/TopBar/Timer").CurrentTime;
 			GD.Print("points: "+points);
