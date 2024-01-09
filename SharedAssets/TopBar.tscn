@@ -44,7 +44,7 @@ expand = true
 position = Vector2( 98, 21 )
 
 [node name="Introduction" type="Node2D" parent="."]
-position = Vector2( 808, 415 )
+position = Vector2( 808, 416 )
 z_index = 2048
 
 [node name="BackgroundColor" type="ColorRect" parent="Introduction"]
@@ -55,12 +55,10 @@ margin_bottom = 729.0
 mouse_filter = 2
 
 [node name="RightSide" type="Sprite" parent="Introduction"]
-position = Vector2( 159, 175 )
-scale = Vector2( 0.905092, 0.905093 )
+position = Vector2( 152, 124 )
 
 [node name="LeftSide" type="Sprite" parent="Introduction"]
-position = Vector2( 159, 175 )
-scale = Vector2( 0.905092, 0.905093 )
+position = Vector2( 152, 124 )
 
 [node name="Text" type="RichTextLabel" parent="Introduction"]
 margin_left = -562.0

@@ -260,7 +260,6 @@ scale = Vector2( 0.3, 0.3 )
 texture = ExtResource( 22 )
 
 [node name="TopBar" parent="." instance=ExtResource( 10 )]
-visible = false
 Game = 5
 LeftImage = ExtResource( 40 )
 RightImage = ExtResource( 11 )
