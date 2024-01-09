@@ -53,42 +53,35 @@ margin_top = 349.0
 margin_right = 838.0
 margin_bottom = 839.0
 
-[node name="IntroductionDialogue" parent="SoundPerson" instance=ExtResource( 14 )]
+[node name="WelcomeDialogue" parent="SoundPerson" index="2"]
 position = Vector2( 78, 715 )
 Title = "Julia"
 Icon = ExtResource( 12 )
-Texts = PoolStringArray( "Hey, there you are, awesome! You seem like a really interesting person.", "I'm Julia, by the way, Spore Games' one and only sound designer.", "Over there we have Ash, our art designer. Both of us are responsible for creating beautiful aesthetics and music themes for our games, although a lot of our work gets scrapped." )
-IsUnique = true
-UniqueID = "105"
-
-[node name="WelcomeDialogue" parent="SoundPerson" index="3"]
-position = Vector2( 78, 715 )
-Title = "Julia"
-Icon = ExtResource( 12 )
-Texts = PoolStringArray( "Hi again! Could you help me find suitable sounds for certain in-game moments in our new project? We're making an action adventure in a futuristic setting, it's going to be so awesome!" )
+Texts = PoolStringArray( "Hi again! Could you help me find suitable sounds for certain in-game moments in our new project\? We\'re making an action adventure in a futuristic setting, it\'s going to be so awesome!" )
 SceneToLoad = "Sound"
 
-[node name="EpicFailDialogue" parent="SoundPerson" index="4"]
+[node name="EpicFailDialogue" parent="SoundPerson" index="3"]
 position = Vector2( 74, 710 )
 Title = "Julia"
 Icon = ExtResource( 12 )
-Texts = PoolStringArray( "I was really looking forward to working with a fellow sound designer, but it seems like you're not quite there yet..." )
+Texts = PoolStringArray( "I was really looking forward to working with a fellow sound designer, but it seems like you\'re not quite there yet..." )
+LoadSceneAfter = false
 
-[node name="TalkAgainDialogue" parent="SoundPerson" index="5"]
+[node name="TalkAgainDialogue" parent="SoundPerson" index="4"]
 position = Vector2( 74, 710 )
 Title = "Julia"
 Icon = ExtResource( 12 )
 
-[node name="ResultDialogue" parent="SoundPerson" index="6"]
+[node name="ResultDialogue" parent="SoundPerson" index="5"]
 position = Vector2( 78, 715 )
 Title = "Julia"
 Icon = ExtResource( 12 )
-Texts = PoolStringArray( "Inspiring, really inspiring! Are you related to Hans Zimmer? You should be very proud of your work." )
+Texts = PoolStringArray( "Inspiring, really inspiring! Are you related to Hans Zimmer\? You should be very proud of your work." )
 ResultThreshold = 38
 IsUnique = true
 UniqueID = "17"
 
-[node name="ResultDialogue2" parent="SoundPerson" index="7"]
+[node name="ResultDialogue2" parent="SoundPerson" index="6"]
 position = Vector2( 78, 715 )
 Title = "Julia"
 Icon = ExtResource( 12 )
@@ -97,13 +90,21 @@ ResultThreshold = 23
 IsUnique = true
 UniqueID = "18"
 
-[node name="ResultDialogue3" parent="SoundPerson" index="8"]
+[node name="ResultDialogue3" parent="SoundPerson" index="7"]
 position = Vector2( 78, 715 )
 Title = "Julia"
 Icon = ExtResource( 12 )
-Texts = PoolStringArray( "Hm... looks like you're tone deaf." )
+Texts = PoolStringArray( "Hm... looks like you\'re tone deaf." )
 IsUnique = true
 UniqueID = "19"
+
+[node name="IntroductionDialogue" parent="SoundPerson" instance=ExtResource( 14 )]
+position = Vector2( 78, 715 )
+Title = "Julia"
+Icon = ExtResource( 12 )
+Texts = PoolStringArray( "Hey, there you are, awesome! You seem like a really interesting person.", "I\'m Julia, by the way, Spore Games\' one and only sound designer.", "Over there we have Ash, our art designer. Both of us are responsible for creating beautiful aesthetics and music themes for our games, although a lot of our work gets scrapped." )
+IsUnique = true
+UniqueID = "105"
 
 [node name="ArtPerson" parent="." instance=ExtResource( 2 )]
 position = Vector2( -36, 22 )
@@ -124,12 +125,13 @@ margin_bottom = 770.0
 [node name="WelcomeDialogue" parent="ArtPerson" index="2"]
 position = Vector2( 0, 710 )
 Title = "Ash"
-Texts = PoolStringArray( "Have you got your portfolio ready?" )
+Texts = PoolStringArray( "Have you got your portfolio ready\?" )
 SceneToLoad = "Art"
 
 [node name="EpicFailDialogue" parent="ArtPerson" index="3"]
 Title = "Ash"
 Texts = PoolStringArray( "All right!" )
+LoadSceneAfter = false
 
 [node name="TalkAgainDialogue" parent="ArtPerson" index="4"]
 Title = "Ash"

@@ -55,6 +55,7 @@ SceneToLoad = "Programming"
 Title = "Justin"
 Icon = ExtResource( 13 )
 Texts = PoolStringArray( "I understand that not everyone knows blueprints, but since you are supposed to be a specialised programmer, you should at least know in which order to place them... .", "I\'m sorry newbie, but I don\'t think you should consider yourself an experienced programmer in the game industry." )
+LoadSceneAfter = false
 
 [node name="TalkAgainDialogue" parent="RoomPerson" index="4"]
 Title = "Justin"
@@ -64,6 +65,7 @@ Icon = ExtResource( 13 )
 Title = "Justin"
 Icon = ExtResource( 13 )
 Texts = PoolStringArray( "Holy moly! That worked better than I thought it would. Perfect job, newbie." )
+LoadSceneAfter = false
 ResultThreshold = 38
 IsUnique = true
 UniqueID = "14"
@@ -72,6 +74,7 @@ UniqueID = "14"
 Title = "Justin"
 Icon = ExtResource( 13 )
 Texts = PoolStringArray( "Not bad, but not really good either." )
+LoadSceneAfter = false
 ResultThreshold = 23
 IsUnique = true
 UniqueID = "15"
@@ -80,6 +83,7 @@ UniqueID = "15"
 Title = "Justin"
 Icon = ExtResource( 13 )
 Texts = PoolStringArray( "You don\'t have any experience with blueprints, do you\?" )
+LoadSceneAfter = false
 IsUnique = true
 UniqueID = "16"
 
@@ -114,7 +118,7 @@ SmallTexture = ExtResource( 10 )
 [node name="Popup" parent="Deco" index="1"]
 position = Vector2( -14, -10 )
 
-[node name="Sprite" parent="Deco/Popup" index="0"]
+[node name="Sprite" parent="Deco/Popup" index="1"]
 z_index = 6
 
 [node name="Deco2" parent="." instance=ExtResource( 1 )]

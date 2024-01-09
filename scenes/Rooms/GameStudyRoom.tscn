@@ -39,6 +39,54 @@ margin_top = 245.0
 margin_right = 388.0
 margin_bottom = 1000.0
 
+[node name="WelcomeDialogue" parent="GSPerson" index="2"]
+position = Vector2( 58, 674 )
+Title = "Emily"
+Icon = ExtResource( 11 )
+Texts = PoolStringArray( "Oh, you want to start with your task\? - It´s quite simple. All you have to do is put the games and consoles back up on the shelves. We did some cleaning before you came." )
+SceneToLoad = "GameStudy"
+
+[node name="EpicFailDialogue" parent="GSPerson" index="3"]
+position = Vector2( 58, 674 )
+Title = "Emily"
+Icon = ExtResource( 11 )
+Texts = PoolStringArray( "I don’t want to be rude or something, but I don’t think that you have enough knowledge in game-studies to be specialized in this field…" )
+LoadSceneAfter = false
+
+[node name="TalkAgainDialogue" parent="GSPerson" index="4"]
+position = Vector2( 58, 674 )
+Title = "Emily"
+Icon = ExtResource( 11 )
+
+[node name="ResultDialogue" parent="GSPerson" index="5"]
+position = Vector2( 58, 674 )
+Title = "Emily"
+Icon = ExtResource( 11 )
+Texts = PoolStringArray( "You really love games, don’t you\? That’s very cool, thanks for your help." )
+LoadSceneAfter = false
+ResultThreshold = 38
+IsUnique = true
+UniqueID = "1"
+
+[node name="ResultDialogue2" parent="GSPerson" index="6"]
+position = Vector2( 58, 674 )
+Title = "Emily"
+Icon = ExtResource( 11 )
+Texts = PoolStringArray( "Good enough, looks like you know a bit about game studies." )
+LoadSceneAfter = false
+ResultThreshold = 23
+IsUnique = true
+UniqueID = "2"
+
+[node name="ResultDialogue3" parent="GSPerson" index="7"]
+position = Vector2( 58, 674 )
+Title = "Emily"
+Icon = ExtResource( 11 )
+Texts = PoolStringArray( "... If you don’t like this task, then I will gladly do it. There is much more to those old-time classics as you would think you know." )
+LoadSceneAfter = false
+IsUnique = true
+UniqueID = "3"
+
 [node name="IntroductionDialogue" parent="GSPerson" instance=ExtResource( 5 )]
 position = Vector2( 58, 674 )
 Title = "Emily"
@@ -47,50 +95,6 @@ Texts = PoolStringArray( "H-Hello\? I… haven’t seen you around here, are you
 SceneToLoad = "GameStudy"
 IsUnique = true
 UniqueID = "101"
-
-[node name="WelcomeDialogue" parent="GSPerson" index="3"]
-position = Vector2( 58, 674 )
-Title = "Emily"
-Icon = ExtResource( 11 )
-Texts = PoolStringArray( "Oh, you want to start with your task\? - It´s quite simple. All you have to do is put the games and consoles back up on the shelves. We did some cleaning before you came." )
-SceneToLoad = "GameStudy"
-
-[node name="EpicFailDialogue" parent="GSPerson" index="4"]
-position = Vector2( 58, 674 )
-Title = "Emily"
-Icon = ExtResource( 11 )
-Texts = PoolStringArray( "I don’t want to be rude or something, but I don’t think that you have enough knowledge in game-studies to be specialized in this field…" )
-
-[node name="TalkAgainDialogue" parent="GSPerson" index="5"]
-position = Vector2( 58, 674 )
-Title = "Emily"
-Icon = ExtResource( 11 )
-
-[node name="ResultDialogue" parent="GSPerson" index="6"]
-position = Vector2( 58, 674 )
-Title = "Emily"
-Icon = ExtResource( 11 )
-Texts = PoolStringArray( "You really love games, don’t you\? That’s very cool, thanks for your help." )
-ResultThreshold = 38
-IsUnique = true
-UniqueID = "1"
-
-[node name="ResultDialogue2" parent="GSPerson" index="7"]
-position = Vector2( 58, 674 )
-Title = "Emily"
-Icon = ExtResource( 11 )
-Texts = PoolStringArray( "Good enough, looks like you know a bit about game studies." )
-ResultThreshold = 23
-IsUnique = true
-UniqueID = "2"
-
-[node name="ResultDialogue3" parent="GSPerson" index="8"]
-position = Vector2( 58, 674 )
-Title = "Emily"
-Icon = ExtResource( 11 )
-Texts = PoolStringArray( "... If you don’t like this task, then I will gladly do it. There is much more to those old-time classics as you would think you know." )
-IsUnique = true
-UniqueID = "3"
 
 [node name="BackButton" type="TextureButton" parent="."]
 margin_left = 1772.0
