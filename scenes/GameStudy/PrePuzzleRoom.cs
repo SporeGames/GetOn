@@ -115,13 +115,13 @@ namespace GetOn.scenes.GameStudy
 					case AbilitySpecialization.Management:
 						mangamentDone = true;
 						break;
-					case AbilitySpecialization.Narrative:
+					case AbilitySpecialization.Narrative_Design:
 						narrativeDone = true;
 						break;
-					case AbilitySpecialization.GameStudy:
+					case AbilitySpecialization.Game_Studies:
 						gameStudyDone = true;
 						break;
-					case AbilitySpecialization.GameDesign:
+					case AbilitySpecialization.Game_Design:
 						gamedesignDone = true;
 						break;
 				}

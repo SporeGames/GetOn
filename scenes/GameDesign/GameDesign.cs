@@ -130,7 +130,7 @@ public class GameDesign : Node2D {
 		var node = GetNode<SharedNode>("/root/SharedNode");
 		node.gameDesignPoints = points;
 		node.gameDesignTime = (int) _timer.CurrentTime;
-		node.CompletedTasks.Add(AbilitySpecialization.GameDesign);
+		node.CompletedTasks.Add(AbilitySpecialization.Game_Design);
 		node.SwitchScene("res://scenes/Rooms/GDNarrativeRoom.tscn");
 	}
 	

@@ -124,7 +124,7 @@ namespace GetOn.scenes {
 				case AbilitySpecialization.Management:
 					managementPoints *= 2;
 					break;
-				case AbilitySpecialization.Narrative:
+				case AbilitySpecialization.Narrative_Design:
 					narrativePoints *= 2;
 					break;
 				case AbilitySpecialization.Programming:
@@ -133,10 +133,10 @@ namespace GetOn.scenes {
 				case AbilitySpecialization.Sound:
 					soundPoints *= 2;
 					break;
-				case AbilitySpecialization.GameDesign:
+				case AbilitySpecialization.Game_Design:
 					gameDesignPoints *= 2;
 					break;
-				case AbilitySpecialization.GameStudy:
+				case AbilitySpecialization.Game_Studies:
 					gameStudyPoints *= 2;
 					break;
 			}
@@ -177,7 +177,7 @@ namespace GetOn.scenes {
 					Items = new List<ResultEntry> {
 						new ResultEntry { Title = "Points", Text = gameDesignPoints.ToString() },
 						new ResultEntry { Title = "Time", Text = FormatTime(gameDesignTime) },
-						new ResultEntry { Title = "Help button pressed", Text = HelpButtonPressed[AbilitySpecialization.GameDesign].ToString() }
+						new ResultEntry { Title = "Help button pressed", Text = HelpButtonPressed[AbilitySpecialization.Game_Design].ToString() }
 					}
 				},
 				new ResultCategory {
@@ -185,7 +185,7 @@ namespace GetOn.scenes {
 					Items = new List<ResultEntry> {
 						new ResultEntry { Title = "Points", Text = gameStudyPoints.ToString() },
 						new ResultEntry { Title = "Time", Text = FormatTime(gameStudyTime) },
-						new ResultEntry { Title = "Help button pressed", Text = HelpButtonPressed[AbilitySpecialization.GameStudy].ToString() }
+						new ResultEntry { Title = "Help button pressed", Text = HelpButtonPressed[AbilitySpecialization.Game_Studies].ToString() }
 					}
 				},
 				new ResultCategory {
@@ -193,7 +193,7 @@ namespace GetOn.scenes {
 					Items = new List<ResultEntry> {
 						new ResultEntry { Title = "Points", Text = narrativePoints.ToString() },
 						new ResultEntry { Title = "Time", Text = FormatTime(narrativeTime) },
-						new ResultEntry { Title = "Help button pressed", Text = HelpButtonPressed[AbilitySpecialization.Narrative].ToString() }
+						new ResultEntry { Title = "Help button pressed", Text = HelpButtonPressed[AbilitySpecialization.Narrative_Design].ToString() }
 					}
 				},
 				new ResultCategory() {

@@ -1,12 +1,13 @@
 ﻿namespace GetOn.scenes {
+    // ReSharper disable InconsistentNaming
     public enum AbilitySpecialization {
         None,
-        GameDesign,
+        Game_Design,
         Programming,
         Art,
         Sound,
-        GameStudy,
+        Game_Studies,
         Management,
-        Narrative
+        Narrative_Design
     }
 }

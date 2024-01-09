@@ -97,7 +97,7 @@ namespace GetOn.scenes.GameSelectionRoom {
 						
 						_managementDone.Visible = true;
 						break;
-					case AbilitySpecialization.Narrative:
+					case AbilitySpecialization.Narrative_Design:
 						_storyDone.Visible = true;
 						break;
 					case AbilitySpecialization.Sound:
@@ -107,11 +107,11 @@ namespace GetOn.scenes.GameSelectionRoom {
 						
 						_soundDone.Visible = true;
 						break;
-					case AbilitySpecialization.GameStudy:
+					case AbilitySpecialization.Game_Studies:
 						
 						_gameStudyDone.Visible = true;
 						break;
-					case AbilitySpecialization.GameDesign:
+					case AbilitySpecialization.Game_Design:
 						
 						_narrativeAndDesignDone.Visible = true;
 						break;

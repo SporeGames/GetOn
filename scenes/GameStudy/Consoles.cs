@@ -241,7 +241,7 @@ public class Consoles : Node2D
 		points += GetNode<CountdownTimer>("/root/GameStudy/TopBar/Timer").GetBonusPointsForTime();
 		_sharedNode.gameStudyPoints = points;
 		_sharedNode.gameStudyTime = GetNode<CountdownTimer>("/root/GameStudy/TopBar/Timer").CurrentTime;
-		_sharedNode.CompletedTasks.Add(AbilitySpecialization.GameStudy);
+		_sharedNode.CompletedTasks.Add(AbilitySpecialization.Game_Studies);
 		_sharedNode.SwitchScene("res://scenes/Rooms/GameStudyRoom.tscn");
 		GD.Print(points);
 	}

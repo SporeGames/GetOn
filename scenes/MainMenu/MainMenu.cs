@@ -24,7 +24,7 @@ namespace GetOn.scenes.MainMenu {
 			_testPDFButton.Connect("pressed", this, nameof(TestPDF));
 
 			foreach (var focus in Enum.GetValues(typeof(AbilitySpecialization))) {
-				_specializationSelect.AddItem(focus.ToString());
+				_specializationSelect.AddItem(focus.ToString().Replace("_", " "));
 			}
 		}
 

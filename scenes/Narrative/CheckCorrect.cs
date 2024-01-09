@@ -2381,7 +2381,7 @@ namespace GetOn.scenes.Narrative
 			_sharedNode.narrativePoints = points;
 			_sharedNode.narrativeTime = GetNode<CountdownTimer>("/root/Narrative/TopBar/Timer").CurrentTime;
 			GD.Print("points: "+points);
-			_sharedNode.CompletedTasks.Add(AbilitySpecialization.Narrative);
+			_sharedNode.CompletedTasks.Add(AbilitySpecialization.Narrative_Design);
 			_sharedNode.SwitchScene("res://scenes/Rooms/GDNarrativeRoom.tscn");
 		}
 	}
