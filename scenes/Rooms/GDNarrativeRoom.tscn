@@ -55,7 +55,7 @@ margin_bottom = 626.0
 [node name="WelcomeDialogue" parent="GDPerson" index="2"]
 Title = "Mike"
 Icon = ExtResource( 14 )
-Texts = PoolStringArray( "Well you see, I started out as an intern just like you and… Oh right, you\'re here for your task!", "We are currently researching which player motivations are best suited to popular sci-fi games. I\'ll explain everything in detail in a second, so don\'t worry, you\'ll get the hang of it!" )
+Texts = PoolStringArray( "Well you see, I started out as an intern just like you and… Oh right, you\'re here for your task!", "We are currently reviewing which player motivations are best suited to popular sci-fi games. I\'ll explain everything in detail in a second, so don\'t worry, you\'ll get the hang of it!" )
 SceneToLoad = "GameDesign"
 
 [node name="EpicFailDialogue" parent="GDPerson" index="3"]

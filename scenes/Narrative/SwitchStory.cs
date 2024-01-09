@@ -1,10 +1,10 @@
 using Godot;
 using System;
 
-public class SwitchStory : Button
+public class SwitchStory : TextureButton
 {
-	public Button _greaterThan;
-	public Button _lessThan;
+	public TextureButton _greaterThan;
+	public TextureButton _lessThan;
 
 	public Node2D _story1;
 	public Node2D _story2;
@@ -18,17 +18,17 @@ public class SwitchStory : Button
 	public Node2D _introStory2;
 	public Node2D _introStory3;
 
-	public Button _ready1;
-	public Button _ready2;
+	public TextureButton _ready1;
+	public TextureButton _ready2;
 	public Button _ready3;
 
 	public bool wrongWay = false;
-	private Button _submit;
+	private TextureButton _submit;
 	
 	public override void _Ready()
 	{
-		_greaterThan = GetNode<Button>("/root/Narrative/GreaterThan");
-		_lessThan = GetNode<Button>("/root/Narrative/LessThan");
+		_greaterThan = GetNode<TextureButton>("/root/Narrative/GreaterThan");
+		_lessThan = GetNode<TextureButton>("/root/Narrative/LessThan");
 		_greaterThan.Connect("pressed", this, nameof(GreaterThanPressed));
 		_lessThan.Connect("pressed", this, nameof(LessThanPressed));
 
@@ -40,14 +40,14 @@ public class SwitchStory : Button
 		_introStory2 = GetNode<Node2D>("/root/Narrative/IntroStory2");
 		_introStory3 = GetNode<Node2D>("/root/Narrative/IntroStory3");
 
-		_ready1 = GetNode<Button>("/root/Narrative/IntroStory1/Button");
-		_ready2 = GetNode<Button>("/root/Narrative/IntroStory2/Button");
+		_ready1 = GetNode<TextureButton>("/root/Narrative/IntroStory1/Button");
+		_ready2 = GetNode<TextureButton>("/root/Narrative/IntroStory2/Button");
 		_ready3 = GetNode<Button>("/root/Narrative/IntroStory3/Button");
 		_ready1.Connect("pressed", this, nameof(ReadyPressed));
 		_ready2.Connect("pressed", this, nameof(ReadyPressed));
 		_ready3.Connect("pressed", this, nameof(GreaterThanPressed));
 
-		_submit = GetNode<Button>("/root/Narrative/Submit");
+		_submit = GetNode<TextureButton>("/root/Narrative/Submit");
 		_submit.Visible = false;
 	}
 	

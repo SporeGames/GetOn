@@ -39,7 +39,7 @@ namespace GetOn.scenes.Narrative
 		private bool settingCorrect;
 		private bool ending3;
 		private double points;
-		private Button _submit;
+		private TextureButton _submit;
 		private Label _attribute1;
 		private Label _attribute2;
 		private Label _attribute3;
@@ -161,7 +161,7 @@ namespace GetOn.scenes.Narrative
 			endingOk = false;
 			settingCorrect = false;
 			points = 0;
-			_submit = GetNode<Button>("/root/Narrative/Submit");
+			_submit = GetNode<TextureButton>("/root/Narrative/Submit");
 			_submit.Connect("pressed", this, nameof(CountPoints));
 			_attribute1 = GetNode<Label>("/root/Narrative/1/Attribute");
 			_attribute2 = GetNode<Label>("/root/Narrative/1/Attribute2");
