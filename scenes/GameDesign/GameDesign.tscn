@@ -52,7 +52,8 @@ GameDescription = "• Online multiplayer battle royale game -teams of three pla
 • Last team with any members alive wins
 "
 GameImage = ExtResource( 1 )
-ValidPersonas = PoolStringArray( "Destruction", "Excitement", "Competition", "Community", "Challenge", "Strategy", "Power", "Fantasy", "Discovery" )
+ValidPersonas = PoolStringArray( "Destruction", "Excitement", "Competition", "Challenge", "Power", "Fantasy" )
+ALittleBitValidPersonas = PoolStringArray( "Community", "Strategy", "Discovery" )
 
 [node name="DetroitSlider" parent="." instance=ExtResource( 2 )]
 visible = false
@@ -74,7 +75,8 @@ GameDescription = "• adventure game
 • Certain scenes 
 "
 GameImage = ExtResource( 29 )
-ValidPersonas = PoolStringArray( "Strategy", "Completion", "Fantasy", "Story", "Discovery" )
+ValidPersonas = PoolStringArray( "Completion", "Fantasy", "Story", "Discovery" )
+ALittleBitValidPersonas = PoolStringArray( "Strategy" )
 
 [node name="DeadSpaceSlider" parent="." instance=ExtResource( 2 )]
 visible = false
@@ -93,7 +95,8 @@ GameDescription = "• Single player survival horror game,
 • Ammunition tends to be uncommon
 • Necessitating careful usage of the tools at hand."
 GameImage = ExtResource( 38 )
-ValidPersonas = PoolStringArray( "Excitement", "Strategy", "Completion", "Fantasy", "Story", "Discovery" )
+ValidPersonas = PoolStringArray( "Excitement", "Strategy", "Completion", "Story", "Discovery" )
+ALittleBitValidPersonas = PoolStringArray( "Destruction", "Fantasy" )
 
 [node name="SmallProfileAnchor" type="Node2D" parent="."]
 visible = false

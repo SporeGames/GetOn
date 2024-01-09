@@ -31,8 +31,7 @@ public class GameDesign : Node2D {
 		
 	}
 	
-		private void OnDonePressed()
-	{
+	private void OnDonePressed() {
 		GoBackAndCalculateResults();
 	}
 
@@ -96,30 +95,30 @@ public class GameDesign : Node2D {
 			if (entry.Key == GameDesignGame.Apex) {
 				foreach (var selected in entry.Value) {
 					if (_apexSlider.ValidPersonas.Contains(selected)) {
-						points += 2;
+						points += 3;
 					}
-					if (!_apexSlider.ValidPersonas.Contains(selected)) {
-						points -= 1;
+					if (!_apexSlider.ValidPersonas.Contains(selected) && !_detroitSlider.ALittleBitValidPersonas.Contains(selected)) {
+						points -= 3;
 					}
 				}
 			}
 			if (entry.Key == GameDesignGame.Detroit) {
 				foreach (var selected in entry.Value) {
 					if (_detroitSlider.ValidPersonas.Contains(selected)) {
-						points += 2;
+						points += 3;
 					}
-					if (!_detroitSlider.ValidPersonas.Contains(selected)) {
-						points -= 1;
+					if (!_detroitSlider.ValidPersonas.Contains(selected) && !_detroitSlider.ALittleBitValidPersonas.Contains(selected)) {
+						points -= 3;
 					}
 				}
 			}
 			if (entry.Key == GameDesignGame.DeadSpace) {
 				foreach (var selected in entry.Value) {
 					if (_deadSpaceSlider.ValidPersonas.Contains(selected)) {
-						points += 2;
+						points += 3;
 					}
-					if (!_deadSpaceSlider.ValidPersonas.Contains(selected)) {
-						points -= 1;
+					if (!_deadSpaceSlider.ValidPersonas.Contains(selected) && !_detroitSlider.ALittleBitValidPersonas.Contains(selected)) {
+						points -= 3;
 					}
 				}
 			}

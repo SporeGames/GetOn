@@ -33,6 +33,7 @@ public class GameDesignSlider : Node2D {
 	[Export(PropertyHint.MultilineText)] public string GameDescription;
 	[Export] public Texture GameImage;
 	[Export] public string[] ValidPersonas;
+	[Export] public string[] ALittleBitValidPersonas;
 	[Export] public Texture CheckboxChecked;
 	[Export] public Texture CheckboxUnchecked;
 
