@@ -58,24 +58,24 @@ public class RoomPerson : Node2D {
 	}
 	
 	private DialogueBox GetResultDialogueForResult() {
-		var gameResult = 0;
+		double gameResult = 0;
 		switch (GameSpecialization) {
 			case AbilitySpecialization.Management:
 				gameResult = _shared.managementPoints;
 				break;
-			case AbilitySpecialization.GameDesign:
+			case AbilitySpecialization.Game_Design:
 				gameResult = _shared.gameDesignPoints;
 				break;
 			case AbilitySpecialization.Programming:
 				gameResult = _shared.programmingPoints;
 				break;
-			case AbilitySpecialization.GameStudy:
+			case AbilitySpecialization.Game_Studies:
 				gameResult = (int) _shared.gameStudyPoints;
 				break;
 			case AbilitySpecialization.Sound:
 				gameResult = (int) _shared.soundPoints;
 				break;
-			case AbilitySpecialization.Narrative:
+			case AbilitySpecialization.Narrative_Design:
 				gameResult = (int) _shared.narrativePoints;
 				break;
 			case AbilitySpecialization.Art:
