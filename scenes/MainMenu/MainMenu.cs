@@ -7,7 +7,7 @@ namespace GetOn.scenes.MainMenu {
 		private SharedNode _sharedNode;
 
 		private LineEdit _nameInput;
-		private Button _submitButton;
+		private TextureButton _submitButton;
 		private Button _testPDFButton;
 		private OptionButton _specializationSelect;
 
@@ -18,7 +18,7 @@ namespace GetOn.scenes.MainMenu {
 			_specializationSelect = GetNode<OptionButton>("SpecializationSelect");
 			_specializationSelect.Connect("item_selected", this, nameof(OnSpecSelect));
 			_nameInput.Connect("text_changed", this, nameof(OnTextEntered));
-			_submitButton = GetNode<Button>("SubmitButton");
+			_submitButton = GetNode<TextureButton>("SubmitButton");
 			_submitButton.Connect("pressed", this, nameof(OnSubmitButtonPressed));
 			_testPDFButton = GetNode<Button>("TestPDFGenButton");
 			_testPDFButton.Connect("pressed", this, nameof(TestPDF));
