@@ -1,5 +1,6 @@
 using Godot;
 using System;
+using GetOn.scenes;
 using GetOn.scenes.Programming;
 
 public class CountdownTimer : Node2D {
@@ -10,6 +11,7 @@ public class CountdownTimer : Node2D {
 	public bool running = false;
 	private Timer _timer;
 	private RichTextLabel _displayText;
+	private AbilitySpecialization _spec = AbilitySpecialization.None;
 	
 	public float InitialTime = 0;
 	
@@ -21,6 +23,10 @@ public class CountdownTimer : Node2D {
 		_timer.Connect("timeout", this, nameof(OnTimerTimeout));
 		_timer.Start();
 		_displayText.AddColorOverride("DefaultColor", FontColor);
+		var parent = GetParent();
+		if (parent is TopBar bar) {
+			_spec = bar.Game;
+		}
 	}
 	
 	// Reset the timer to its initial state
@@ -30,6 +36,15 @@ public class CountdownTimer : Node2D {
 	}
 
 	public int GetBonusPointsForTime() {
+		if (_spec == AbilitySpecialization.Programming) {
+			if (CurrentTime < 420) {
+				return 2;
+			}
+			if (CurrentTime < 720) {
+				return 1;
+			}
+			return 0;
+		}
 		if (CurrentTime < 300) {
 			return 2;
 		}
@@ -60,6 +75,15 @@ public class CountdownTimer : Node2D {
 	}
 
 	private Color GetColorForTime() {
+		if (_spec == AbilitySpecialization.Programming) {
+			if (CurrentTime < 420) { 
+				return Colors.Green;
+			}
+			if (CurrentTime < 720) {
+				return Colors.Yellow;
+			}
+			return Colors.Red;
+		}
 		if (CurrentTime < 300) {
 			return Colors.Green;
 		}
