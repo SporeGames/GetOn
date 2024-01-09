@@ -44,7 +44,6 @@ expand = true
 position = Vector2( 98, 21 )
 
 [node name="Introduction" type="Node2D" parent="."]
-visible = false
 position = Vector2( 808, 415 )
 z_index = 2048
 
@@ -77,22 +76,21 @@ anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-margin_left = 672.0
-margin_top = 481.0
-margin_right = 1041.0
-margin_bottom = 625.0
+margin_top = 521.0
+margin_right = 377.0
+margin_bottom = 668.0
 texture_normal = ExtResource( 7 )
 
 [node name="RichTextLabel" type="RichTextLabel" parent="Introduction/CloseButton"]
-margin_left = 106.0
+margin_left = 37.0
 margin_top = 44.0
-margin_right = 259.0
+margin_right = 337.0
 margin_bottom = 107.0
 mouse_filter = 2
 mouse_default_cursor_shape = 1
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 custom_fonts/normal_font = SubResource( 2 )
-text = "Close"
+text = "Start Task"
 scroll_active = false
 
 [node name="ImageCaption" type="RichTextLabel" parent="Introduction"]
