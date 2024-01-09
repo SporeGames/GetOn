@@ -38,20 +38,6 @@ texture_normal = ExtResource( 5 )
 texture_pressed = ExtResource( 6 )
 expand = true
 
-[node name="Deco" parent="." instance=ExtResource( 3 )]
-position = Vector2( 1090, 252 )
-PopupTexture = ExtResource( 10 )
-SmallTexture = ExtResource( 9 )
-
-[node name="Monstera" type="Sprite" parent="Deco"]
-position = Vector2( 517, 238 )
-texture = ExtResource( 11 )
-
-[node name="Deco2" parent="." instance=ExtResource( 3 )]
-position = Vector2( 162, 443 )
-PopupTexture = ExtResource( 12 )
-SmallTexture = ExtResource( 13 )
-
 [node name="RoomPerson" parent="." instance=ExtResource( 4 )]
 GameSpecialization = 6
 
@@ -67,6 +53,43 @@ margin_top = 394.0
 margin_right = 900.0
 margin_bottom = 783.0
 
+[node name="WelcomeDialogue" parent="RoomPerson" index="2"]
+Title = "Chloe"
+Icon = ExtResource( 14 )
+Texts = PoolStringArray( "I have prepared a sample management task for you to show me what you can do." )
+SceneToLoad = "Management"
+
+[node name="EpicFailDialogue" parent="RoomPerson" index="3"]
+Title = "Chloe"
+Icon = ExtResource( 14 )
+
+[node name="TalkAgainDialogue" parent="RoomPerson" index="4"]
+Title = "Chloe"
+Icon = ExtResource( 14 )
+
+[node name="ResultDialogue" parent="RoomPerson" index="5"]
+Title = "Chloe"
+Icon = ExtResource( 14 )
+Texts = PoolStringArray( "Excellent work, just as I imagined. You have great potential." )
+ResultThreshold = 38
+IsUnique = true
+UniqueID = "11"
+
+[node name="ResultDialogue2" parent="RoomPerson" index="6"]
+Title = "Chloe"
+Icon = ExtResource( 14 )
+Texts = PoolStringArray( "Your work is alright, but not perfect." )
+ResultThreshold = 23
+IsUnique = true
+UniqueID = "12"
+
+[node name="ResultDialogue3" parent="RoomPerson" index="7"]
+Title = "Chloe"
+Icon = ExtResource( 14 )
+Texts = PoolStringArray( "Oh well, that doesn\'t really help us..." )
+IsUnique = true
+UniqueID = "13"
+
 [node name="IntroductionDialogue" parent="RoomPerson" instance=ExtResource( 15 )]
 position = Vector2( 0, 704 )
 Title = "Chloe"
@@ -75,41 +98,18 @@ Texts = PoolStringArray( "Hello again! What you see here is our management room,
 IsUnique = true
 UniqueID = "103"
 
-[node name="WelcomeDialogue" parent="RoomPerson" index="3"]
-Title = "Chloe"
-Icon = ExtResource( 14 )
-Texts = PoolStringArray( "I have prepared a sample management task for you to show me what you can do." )
-SceneToLoad = "Management"
+[node name="Deco2" parent="." instance=ExtResource( 3 )]
+position = Vector2( 162, 443 )
+PopupTexture = ExtResource( 12 )
+SmallTexture = ExtResource( 13 )
 
-[node name="EpicFailDialogue" parent="RoomPerson" index="4"]
-Title = "Chloe"
-Icon = ExtResource( 14 )
+[node name="Deco" parent="." instance=ExtResource( 3 )]
+position = Vector2( 1090, 252 )
+PopupTexture = ExtResource( 10 )
+SmallTexture = ExtResource( 9 )
 
-[node name="TalkAgainDialogue" parent="RoomPerson" index="5"]
-Title = "Chloe"
-Icon = ExtResource( 14 )
-
-[node name="ResultDialogue" parent="RoomPerson" index="6"]
-Title = "Chloe"
-Icon = ExtResource( 14 )
-Texts = PoolStringArray( "Excellent work, just as I imagined. You have great potential." )
-ResultThreshold = 38
-IsUnique = true
-UniqueID = "11"
-
-[node name="ResultDialogue2" parent="RoomPerson" index="7"]
-Title = "Chloe"
-Icon = ExtResource( 14 )
-Texts = PoolStringArray( "Your work is alright, but not perfect." )
-ResultThreshold = 23
-IsUnique = true
-UniqueID = "12"
-
-[node name="ResultDialogue3" parent="RoomPerson" index="8"]
-Title = "Chloe"
-Icon = ExtResource( 14 )
-Texts = PoolStringArray( "Oh well, that doesn't really help us..." )
-IsUnique = true
-UniqueID = "13"
+[node name="Monstera" type="Sprite" parent="Deco"]
+position = Vector2( 517, 238 )
+texture = ExtResource( 11 )
 
 [editable path="RoomPerson"]
