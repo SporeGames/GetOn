@@ -26,7 +26,7 @@ namespace GetOn.scenes {
 		[JsonProperty] public readonly List<string> SeenDialogues = new List<string>();
 		[JsonProperty] public readonly Dictionary<AbilitySpecialization, int> HelpButtonPressed = new Dictionary<AbilitySpecialization, int>();
 		
-		[JsonProperty] public int programmingPoints = 0;
+		[JsonProperty] public double programmingPoints = 0;
 		[JsonProperty] public int DisconnectedNodes = 0;
 		[JsonProperty] public int EncounteredErrors = 0;
 		[JsonProperty] public int TestsRun = 0;
@@ -39,7 +39,7 @@ namespace GetOn.scenes {
 		[JsonProperty] public float narrativeTime = 0;
 		[JsonProperty] public double soundPoints = 0;
 		[JsonProperty] public float soundTime = 0;
-		[JsonProperty]public int managementPoints = 0;
+		[JsonProperty]public double managementPoints = 0;
 		[JsonProperty] public int managementColors = 0;
 		[JsonProperty] public float managementTime = 0;
 		[JsonProperty] public AbilitySpecialization Specialization = AbilitySpecialization.Programming;
@@ -120,6 +120,26 @@ namespace GetOn.scenes {
 		}
 
 		public void Print() {
+			switch (Specialization) {
+				case AbilitySpecialization.Management:
+					managementPoints *= 2;
+					break;
+				case AbilitySpecialization.Narrative:
+					narrativePoints *= 2;
+					break;
+				case AbilitySpecialization.Programming:
+					programmingPoints *= 2;
+					break;
+				case AbilitySpecialization.Sound:
+					soundPoints *= 2;
+					break;
+				case AbilitySpecialization.GameDesign:
+					gameDesignPoints *= 2;
+					break;
+				case AbilitySpecialization.GameStudy:
+					gameStudyPoints *= 2;
+					break;
+			}
 			var result = new GameResult {
 				Name = PlayerName,
 				SelectedSpecialization = "Specialization: " + Specialization,

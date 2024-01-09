@@ -89,27 +89,27 @@ namespace GetOn.scenes.Programming {
 		}
 
 		private void Submit() {
-			var points = 0;
+			double points = 0;
 			if (_jumping.Pressed) {
-				points += 5;
+				points += 10;
 			}
 			if (_jumpingKey.Pressed) {
-				points += 15;
+				points += 4.5;
 			}
 			if (_moving.Pressed) {
 				points += 5;
 			}
 			if (_movingKey.Pressed) {
-				points += 25;
-			}
-			if (_movingSpeed.Pressed) {
-				points += 5;
-			}
-			if (_easyFlag.Pressed) {
 				points += 10;
 			}
+			if (_movingSpeed.Pressed) {
+				points += 10;
+			}
+			if (_easyFlag.Pressed) {
+				points += 5;
+			}
 			if (_hardFlag.Pressed) {
-				points += 40;
+				points += 5;
 			}
 			points += _timer.GetBonusPointsForTime();
 			_sharedNode.programmingPoints = points;
