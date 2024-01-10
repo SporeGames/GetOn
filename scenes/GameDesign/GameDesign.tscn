@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=2]
+[gd_scene load_steps=29 format=2]
 
 [ext_resource path="res://scenes/GameDesign/assets/games/apex.jpg" type="Texture" id=1]
 [ext_resource path="res://scenes/GameDesign/GameDesignSlider.tscn" type="PackedScene" id=2]
@@ -11,6 +11,7 @@
 [ext_resource path="res://scenes/GameDesign/assets/personas/completion.png" type="Texture" id=9]
 [ext_resource path="res://scenes/GameDesign/assets/personas/Community.png" type="Texture" id=10]
 [ext_resource path="res://scenes/GameDesign/assets/personas/excitement.png" type="Texture" id=11]
+[ext_resource path="res://SharedAssets/UserInterface/B_base_2_hovered.png" type="Texture" id=12]
 [ext_resource path="res://scenes/GameDesign/assets/personas/Story.png" type="Texture" id=13]
 [ext_resource path="res://scenes/GameDesign/assets/personas/competition.png" type="Texture" id=14]
 [ext_resource path="res://scenes/GameDesign/assets/personas/Destruction.png" type="Texture" id=15]
@@ -25,12 +26,16 @@
 [ext_resource path="res://scenes/GameDesign/assets/games/detroit.jpg" type="Texture" id=29]
 [ext_resource path="res://scenes/GameDesign/assets/games/deadspace.jpg" type="Texture" id=38]
 
-[sub_resource type="DynamicFont" id=9]
+[sub_resource type="DynamicFont" id=11]
 size = 100
 font_data = ExtResource( 17 )
 
-[sub_resource type="Theme" id=10]
-default_font = SubResource( 9 )
+[sub_resource type="Theme" id=12]
+default_font = SubResource( 11 )
+
+[sub_resource type="DynamicFont" id=13]
+size = 104
+font_data = ExtResource( 17 )
 
 [node name="GameDesign" type="Node2D"]
 script = ExtResource( 3 )
@@ -122,30 +127,6 @@ position = Vector2( 167, 0 )
 [node name="Music" type="Node" parent="."]
 script = ExtResource( 4 )
 
-[node name="DoneButton" type="TextureButton" parent="."]
-visible = false
-margin_left = 1638.0
-margin_top = 975.0
-margin_right = 1957.0
-margin_bottom = 1068.0
-rect_scale = Vector2( 0.789047, 0.935834 )
-texture_normal = ExtResource( 18 )
-expand = true
-stretch_mode = 3
-__meta__ = {
-"_editor_description_": ""
-}
-
-[node name="RichTextLabel" type="RichTextLabel" parent="DoneButton"]
-margin_left = 97.5862
-margin_top = 26.714
-margin_right = 352.586
-margin_bottom = 132.714
-rect_scale = Vector2( 0.489506, 0.489506 )
-mouse_filter = 2
-theme = SubResource( 10 )
-text = "Done"
-
 [node name="TopBar" parent="." instance=ExtResource( 19 )]
 Game = 1
 LeftImage = ExtResource( 20 )
@@ -160,3 +141,31 @@ When you have finished the first game, use <--- and ---> below the game descript
 When you have completed the task, press DONE.             
                
 There are three games in total."
+
+[node name="DoneButton" type="TextureButton" parent="."]
+visible = false
+margin_left = 1671.0
+margin_top = 989.0
+margin_right = 1990.0
+margin_bottom = 1082.0
+rect_scale = Vector2( 0.655883, 0.777897 )
+texture_normal = ExtResource( 18 )
+texture_pressed = ExtResource( 12 )
+texture_hover = ExtResource( 12 )
+expand = true
+stretch_mode = 3
+__meta__ = {
+"_editor_description_": ""
+}
+
+[node name="RichTextLabel" type="RichTextLabel" parent="DoneButton"]
+margin_left = 97.5862
+margin_top = 26.714
+margin_right = 352.586
+margin_bottom = 132.714
+rect_scale = Vector2( 0.489506, 0.489506 )
+mouse_filter = 2
+theme = SubResource( 12 )
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+custom_fonts/normal_font = SubResource( 13 )
+text = "Done"

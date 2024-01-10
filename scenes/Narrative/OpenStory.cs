@@ -23,7 +23,7 @@ public class OpenStory : Button
 	private Sprite _endingPopUp3;
 	private Sprite _storyPopUp;
 
-	private Button _close;
+	private TextureButton _close;
 
 	//private ColorRect _background;
 	private Node2D _background;
@@ -41,7 +41,7 @@ public class OpenStory : Button
 		_ending32 = GetNode<Label>("/root/Narrative/EndingPopup/Ending32");
 		_ending33 = GetNode<Label>("/root/Narrative/EndingPopup/Ending33");
 
-		_close = GetNode<Button>("/root/Narrative/EndingPopup/CloseStory");
+		_close = GetNode<TextureButton>("/root/Narrative/EndingPopup/CloseStory");
 		_background = GetNode<Node2D>("/root/Narrative/EndingPopup");
 		_story1 = GetNode<Label>("/root/Narrative/EndingPopup/Story1");
 		_story2 = GetNode<Label>("/root/Narrative/EndingPopup/Story2");

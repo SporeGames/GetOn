@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=2]
+[gd_scene load_steps=26 format=2]
 
 [ext_resource path="res://SharedAssets/font/BAHNSCHRIFT 1.TTF" type="DynamicFontData" id=1]
 [ext_resource path="res://scenes/GameDesign/GameDesignSlider.cs" type="Script" id=2]
@@ -10,6 +10,11 @@
 [ext_resource path="res://scenes/GameDesign/assets/ui/KästchenLeer.png" type="Texture" id=8]
 [ext_resource path="res://scenes/GameDesign/assets/ui/KästchenAbgehakt.png" type="Texture" id=9]
 [ext_resource path="res://SharedAssets/UserInterface/B_Back.png" type="Texture" id=10]
+[ext_resource path="res://SharedAssets/UserInterface/B_base_2_hovered.png" type="Texture" id=11]
+[ext_resource path="res://SharedAssets/UserInterface/B_Next_hovered.png" type="Texture" id=12]
+[ext_resource path="res://SharedAssets/UserInterface/B_Back_hovered.png" type="Texture" id=13]
+[ext_resource path="res://scenes/GameDesign/assets/ui/PfeilNachLinks_hovered.png" type="Texture" id=14]
+[ext_resource path="res://scenes/GameDesign/assets/ui/PfeilNachRechts_hovered.png" type="Texture" id=15]
 
 [sub_resource type="DynamicFont" id=1]
 size = 70
@@ -41,12 +46,16 @@ use_mipmaps = true
 use_filter = true
 font_data = ExtResource( 1 )
 
-[sub_resource type="DynamicFont" id=11]
+[sub_resource type="DynamicFont" id=13]
 size = 100
 font_data = ExtResource( 1 )
 
 [sub_resource type="Theme" id=10]
-default_font = SubResource( 11 )
+default_font = SubResource( 13 )
+
+[sub_resource type="DynamicFont" id=12]
+size = 104
+font_data = ExtResource( 1 )
 
 [sub_resource type="StyleBoxEmpty" id=8]
 
@@ -110,6 +119,8 @@ margin_top = 302.0
 margin_right = 1841.0
 margin_bottom = 461.0
 texture_normal = ExtResource( 5 )
+texture_pressed = ExtResource( 15 )
+texture_hover = ExtResource( 15 )
 expand = true
 
 [node name="LeftButton" type="TextureButton" parent="."]
@@ -120,6 +131,8 @@ margin_top = 302.0
 margin_right = 1175.0
 margin_bottom = 467.0
 texture_normal = ExtResource( 4 )
+texture_pressed = ExtResource( 14 )
+texture_hover = ExtResource( 14 )
 expand = true
 
 [node name="GameDescription" type="RichTextLabel" parent="."]
@@ -159,12 +172,15 @@ anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
 margin_left = 1104.0
-margin_top = 717.0
-margin_right = 1693.0
-margin_bottom = 822.0
+margin_top = 739.0
+margin_right = 1715.0
+margin_bottom = 824.0
+grow_vertical = 0
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 custom_fonts/normal_font = SubResource( 4 )
 text = "<motivation>"
+fit_content_height = true
+scroll_active = false
 
 [node name="DescriptionHint" type="RichTextLabel" parent="."]
 anchor_left = 0.5
@@ -194,12 +210,14 @@ text = "Description"
 
 [node name="DoneButton" type="TextureButton" parent="."]
 visible = false
-margin_left = 1638.0
-margin_top = 975.0
-margin_right = 1957.0
-margin_bottom = 1068.0
-rect_scale = Vector2( 0.789047, 0.935834 )
+margin_left = 1671.0
+margin_top = 989.0
+margin_right = 1990.0
+margin_bottom = 1082.0
+rect_scale = Vector2( 0.655883, 0.777897 )
 texture_normal = ExtResource( 3 )
+texture_pressed = ExtResource( 11 )
+texture_hover = ExtResource( 11 )
 expand = true
 stretch_mode = 3
 __meta__ = {
@@ -214,6 +232,8 @@ margin_bottom = 132.714
 rect_scale = Vector2( 0.489506, 0.489506 )
 mouse_filter = 2
 theme = SubResource( 10 )
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+custom_fonts/normal_font = SubResource( 12 )
 text = "Done"
 
 [node name="NextButton" type="TextureButton" parent="."]
@@ -223,6 +243,8 @@ margin_right = 806.0
 margin_bottom = 1064.0
 rect_scale = Vector2( 1.61215, 1.15803 )
 texture_normal = ExtResource( 6 )
+texture_pressed = ExtResource( 12 )
+texture_hover = ExtResource( 12 )
 expand = true
 stretch_mode = 3
 
@@ -278,6 +300,8 @@ margin_right = 273.0
 margin_bottom = 1057.0
 rect_scale = Vector2( 1.74337, 1.1426 )
 texture_normal = ExtResource( 10 )
+texture_pressed = ExtResource( 13 )
+texture_hover = ExtResource( 13 )
 expand = true
 stretch_mode = 3
 
