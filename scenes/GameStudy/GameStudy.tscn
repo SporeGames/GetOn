@@ -671,6 +671,7 @@ position = Vector2( 53, 15 )
 shape = SubResource( 65 )
 
 [node name="Games" type="Node2D" parent="."]
+visible = false
 
 [node name="Sprite" type="Sprite" parent="Games"]
 position = Vector2( 960, 540 )
