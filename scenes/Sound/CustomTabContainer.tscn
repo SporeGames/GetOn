@@ -1387,7 +1387,6 @@ valign = 1
 [connection signal="text_changed" from="Sound1/LineEdit" to="." method="_on_LineEdit_text_changed"]
 [connection signal="text_entered" from="Sound1/LineEdit" to="." method="_on_LineEdit_text_entered"]
 [connection signal="text_changed" from="Sound2/LineEdit" to="." method="_on_LineEdit_text_changed"]
-[connection signal="text_entered" from="Sound2/LineEdit" to="." method="_on_LineEdit_text_entered"]
 [connection signal="text_changed" from="Sound3/LineEdit" to="." method="_on_LineEdit_text_changed"]
 [connection signal="text_entered" from="Sound3/LineEdit" to="." method="_on_LineEdit_text_entered"]
 [connection signal="text_changed" from="Sound4/LineEdit" to="." method="_on_LineEdit_text_changed"]
