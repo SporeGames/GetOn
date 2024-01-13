@@ -52,7 +52,7 @@ The following data will be received from the server:
 - The result of the authentication process.
 - Already completed scores, if the game was started and then closed before completion.
 
-An example of the JSON for the administration task sent to the server:
+An example of the JSON for the management task sent to the server:
 ```json
 {
    "token": "<session token>",
