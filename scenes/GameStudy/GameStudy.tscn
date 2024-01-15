@@ -1,4 +1,4 @@
-[gd_scene load_steps=83 format=2]
+[gd_scene load_steps=87 format=2]
 
 [ext_resource path="res://SharedAssets/font/BAHNSCHRIFT 1.TTF" type="DynamicFontData" id=1]
 [ext_resource path="res://scenes/GameStudy/assets/Kärtchen2.png" type="Texture" id=2]
@@ -45,6 +45,10 @@
 [ext_resource path="res://SharedAssets/NewThiccAssOutline.tres" type="Material" id=43]
 [ext_resource path="res://scenes/GameStudy/assets/VitrineLinksVordergrund.png" type="Texture" id=44]
 [ext_resource path="res://scenes/GameStudy/SnapAreas.cs" type="Script" id=45]
+[ext_resource path="res://scenes/GameStudy/assets/SoundFX/Drag.wav" type="AudioStream" id=46]
+[ext_resource path="res://scenes/GameStudy/assets/SoundFX/Drop.wav" type="AudioStream" id=47]
+[ext_resource path="res://scenes/GameStudy/assets/SoundFX/UI Click 2 (1).wav" type="AudioStream" id=48]
+[ext_resource path="res://scenes/GameStudy/assets/SoundFX/UI Click.wav" type="AudioStream" id=49]
 
 [sub_resource type="StyleBoxEmpty" id=49]
 
@@ -1402,6 +1406,20 @@ text = "Close"
 
 [node name="Node" type="Node" parent="."]
 script = ExtResource( 42 )
+
+[node name="SoundFX" type="Node2D" parent="."]
+
+[node name="Drag" type="AudioStreamPlayer" parent="SoundFX"]
+stream = ExtResource( 46 )
+
+[node name="Drop" type="AudioStreamPlayer" parent="SoundFX"]
+stream = ExtResource( 47 )
+
+[node name="ShelfClicked" type="AudioStreamPlayer" parent="SoundFX"]
+stream = ExtResource( 48 )
+
+[node name="Back" type="AudioStreamPlayer" parent="SoundFX"]
+stream = ExtResource( 49 )
 
 [connection signal="body_exited" from="Consoles/SpawningGames/Area2D" to="Consoles/SpawningGames" method="_on_Area2D_body_exited"]
 [connection signal="body_entered" from="Consoles/CheckAreas/CheckXBOX" to="Consoles" method="_on_CheckXBOX_body_entered"]

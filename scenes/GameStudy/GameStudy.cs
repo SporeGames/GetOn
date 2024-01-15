@@ -14,6 +14,9 @@ public class GameStudy : Node2D
 
 	private bool consolesOpened;
 	private bool gamesOpened;
+
+	private AudioStreamPlayer _shelf;
+	private AudioStreamPlayer _backButtonSound;
 	
 	public override void _Ready()
 	{
@@ -31,6 +34,9 @@ public class GameStudy : Node2D
 
 		_console = GetNode<Consoles>("Consoles");
 		_submit.Visible = false;
+
+		_shelf = GetNode<AudioStreamPlayer>("SoundFX/ShelfClicked");
+		_backButtonSound = GetNode<AudioStreamPlayer>("SoundFX/Back");
 	}
 
 	public void SubmitGame()
@@ -40,6 +46,7 @@ public class GameStudy : Node2D
 	}
 	public void OpenConsoles()
 	{
+		_shelf.Play();
 		_consoles.Visible = true;
 		_close.Visible = true;
 		_openConsoles.SetMouseFilter(Control.MouseFilterEnum.Ignore);
@@ -49,6 +56,7 @@ public class GameStudy : Node2D
 
 	public void BackToGameStudy()
 	{
+		_backButtonSound.Play();
 		_openConsoles.SetMouseFilter(Control.MouseFilterEnum.Stop);
 		_openGames.SetMouseFilter(Control.MouseFilterEnum.Stop);
 		_consoles.Visible = false;
@@ -60,6 +68,7 @@ public class GameStudy : Node2D
 
 	public void OpenGames()
 	{
+		_shelf.Play();
 		gamesOpened = true;
 		_games.Visible = true;
 		_close.Visible = true;

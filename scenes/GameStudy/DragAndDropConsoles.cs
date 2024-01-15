@@ -66,6 +66,9 @@ public class DragAndDropConsoles : KinematicBody2D
 	private KinematicBody2D copy;
 	private bool megaDriveSnapped;
 	private bool isDragged;
+
+	private AudioStreamPlayer _drag;
+	private AudioStreamPlayer _drop;
 	
 	public override void _Ready()
 	{
@@ -73,13 +76,10 @@ public class DragAndDropConsoles : KinematicBody2D
 		Connect("mouse_exited", this, "OnMouseLeft");
 		originalPosition = Position;
 		GD.Print(_xBOX);
-
 		
 		_popUpText = GetNode<Label>("/root/GameStudy/Consoles/Label");
 		_popUpConsoles = GetNode<Label>("/root/GameStudy/Games/Label");
 		_consoleZoom = GetNode<Sprite>("/root/GameStudy/Games/ConsoleZoom");
-		
-	
 		
 		_xBOX = GetNode<KinematicBody2D>("/root/GameStudy/Consoles/XBOX");
 		_nES = GetNode<KinematicBody2D>("/root/GameStudy/Consoles/NES");
@@ -102,6 +102,9 @@ public class DragAndDropConsoles : KinematicBody2D
 		_bioshock = GetNode<KinematicBody2D>("/root/GameStudy/Games/Games/Bioshock");
 		_horizon= GetNode<KinematicBody2D>("/root/GameStudy/Games/Games/Horizon");
 		_stray= GetNode<KinematicBody2D>("/root/GameStudy/Games/Games/Stray");
+
+		_drag = GetNode<AudioStreamPlayer>("/root/GameStudy/SoundFX/Drag");
+		_drop = GetNode<AudioStreamPlayer>("/root/GameStudy/SoundFX/Drop");
 	}
 
 	public override void _Input(InputEvent @event)
@@ -114,24 +117,15 @@ public class DragAndDropConsoles : KinematicBody2D
 			
 			this.InputPickable = true;
 			this.ZIndex = 20;
-			currentlyDraggedObject = this; 
+			 
 			attached = true;
-			//offset = GetViewport().GetMousePosition();
+			if (currentlyDraggedObject == null)
+			{
+				currentlyDraggedObject = this;
+				_drag.Play();
+			}
 		}
-		/*
-		if (Input.IsActionPressed("left_click") && hovered == true || this.Name == "TennisForTwo" || this.Name == "Pong" || this.Name == "MazeWars" )
-		{
-			InputFalse(false);
-
-
-			this.InputPickable = true;
-			this.ZIndex = 20;
-			currentlyDraggedObject = this;
-			attached = true;
-			//offset = GetViewport().GetMousePosition();
-		}
-		*/
-
+		
 		if (Input.IsActionJustReleased("left_click"))
 		{
 			
@@ -139,10 +133,12 @@ public class DragAndDropConsoles : KinematicBody2D
 			
 			this.ZIndex = 0;
 			InputTrue(false);
+			
 		
 			if (currentlyDraggedObject == this)
 			{
 				currentlyDraggedObject = null; 
+				_drop.Play();
 			}
 		}
 
