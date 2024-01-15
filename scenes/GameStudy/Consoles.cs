@@ -1698,7 +1698,7 @@ public class Consoles : Node2D
 
 			if (kinematicBody.Name == "Stray")
 			{
-				//strayCorrect = true;
+				strayCorrect = true;
 				if (strayEntered == false)
 				{
 					AddConsoleToBackground(strayArea, Stray);
@@ -1800,7 +1800,7 @@ public class Consoles : Node2D
 
 			if (kinematicBody.Name == "Starfield")
 			{
-				//starfieldCorrect = true;
+				starfieldCorrect = true;
 				if (starfieldEntered == false)
 				{
 					AddConsoleToBackground(starfieldArea, Starfield);
@@ -1890,7 +1890,7 @@ public class Consoles : Node2D
 
 			if (kinematicBody.Name == "Cyberpunk")
 			{
-				//cyberpunkCorrect = true;
+				cyberpunkCorrect = true;
 				if (cyberpunkEntered == false)
 				{
 					AddConsoleToBackground(cyberpunkArea, Cyberpunk);
@@ -1981,7 +1981,7 @@ public class Consoles : Node2D
 
 			if (kinematicBody.Name == "Horizon")
 			{
-				//horizonCorrect = true;
+				horizonCorrect = true;
 				if (horizonEntered == false)
 				{
 					AddConsoleToBackground(horizonArea, Horizon);
@@ -2047,9 +2047,13 @@ public class Consoles : Node2D
 			}
 			if (kinematicBody.Name == "Starfield" && detriotEntered == false)
 			{
-				AddConsoleToBackground(detriotArea, Starfield);
-				detriotEntered = true;
-				thisEnteredDetriot = kinematicBody.Name;
+				starfieldCorrect = true;
+				if (detriotEntered == false)
+				{
+					AddConsoleToBackground(detriotArea, Starfield);
+					detriotEntered = true;
+					thisEnteredDetriot = kinematicBody.Name;
+				}
 			}
 			if (kinematicBody.Name == "Cyberpunk" && detriotEntered == false)
 			{
@@ -2066,7 +2070,7 @@ public class Consoles : Node2D
 
 			if (kinematicBody.Name == "Detriot")
 			{
-				//detriotCorrect = true;
+				detriotCorrect = true;
 				if (detriotEntered == false)
 				{
 					AddConsoleToBackground(detriotArea, Detriot);
@@ -2151,7 +2155,7 @@ public class Consoles : Node2D
 		{
 			if (kinematicBody.Name == "Stray")
 			{
-				//strayCorrect = false;
+				strayCorrect = false;
 				if (thisEnteredStray == kinematicBody.Name)
 				{
 					strayEntered = false;
@@ -2174,7 +2178,7 @@ public class Consoles : Node2D
 		{
 			if (kinematicBody.Name == "Starfield")
 			{
-				//starfieldCorrect = false;
+				starfieldCorrect = false;
 				if (thisEnteredStarfield == kinematicBody.Name)
 				{
 					starfieldEntered = false;
@@ -2197,7 +2201,7 @@ public class Consoles : Node2D
 		{
 			if (kinematicBody.Name == "Cyberpunk")
 			{
-				//cyberpunkCorrect = false;
+				cyberpunkCorrect = false;
 				if (thisEnteredCyberpunk == kinematicBody.Name)
 				{
 					cyberpunkEntered = false;
@@ -2220,7 +2224,7 @@ public class Consoles : Node2D
 		{
 			if (kinematicBody.Name == "Horizon")
 			{
-				//horizonCorrect = false;
+				horizonCorrect = false;
 				if (thisEnteredHorizon == kinematicBody.Name)
 				{
 					horizonEntered = false;
@@ -2243,7 +2247,7 @@ public class Consoles : Node2D
 		{
 			if (kinematicBody.Name == "Detriot")
 			{
-				//detriotCorrect = false;
+				detriotCorrect = false;
 				if (thisEnteredDetriot == kinematicBody.Name)
 				{
 					detriotEntered = false;
@@ -2284,6 +2288,7 @@ public class Consoles : Node2D
 	
 	private void _on_ActionRPG_body_entered(object body)
 	{
+		/*
 		if (body is KinematicBody2D kinematicBody)
 		{
 			if (kinematicBody.Name == "Starfield")
@@ -2295,11 +2300,13 @@ public class Consoles : Node2D
 				horizonCorrect = true;
 			}
 		}
+		*/
 	}
 
 
 	private void _on_ActionAdventure_body_entered(object body)
 	{
+		/*
 		if (body is KinematicBody2D kinematicBody)
 		{
 			if (kinematicBody.Name == "Cyberpunk")
@@ -2315,12 +2322,14 @@ public class Consoles : Node2D
 				strayCorrect = true;
 			}
 		}
+		*/
 	
 	}
 
 
 	private void _on_ActionRPG_body_exited(object body)
 	{
+		/*
 		if (body is KinematicBody2D kinematicBody)
 		{
 			if (kinematicBody.Name == "Starfield")
@@ -2332,11 +2341,13 @@ public class Consoles : Node2D
 				horizonCorrect = false;
 			}
 		}
+		*/
 	}
 
 
 	private void _on_ActionAdventure_body_exited(object body)
 	{
+		/*
 		if (body is KinematicBody2D kinematicBody)
 		{
 			if (kinematicBody.Name == "Cyberpunk")
@@ -2352,6 +2363,7 @@ public class Consoles : Node2D
 				strayCorrect = false;
 			}
 		}
+		*/
 	}
 
 }

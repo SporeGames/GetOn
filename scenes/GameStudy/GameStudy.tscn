@@ -1,4 +1,4 @@
-[gd_scene load_steps=81 format=2]
+[gd_scene load_steps=83 format=2]
 
 [ext_resource path="res://SharedAssets/font/BAHNSCHRIFT 1.TTF" type="DynamicFontData" id=1]
 [ext_resource path="res://scenes/GameStudy/assets/Kärtchen2.png" type="Texture" id=2]
@@ -146,6 +146,18 @@ use_mipmaps = true
 use_filter = true
 font_data = ExtResource( 1 )
 
+[sub_resource type="DynamicFont" id=84]
+size = 19
+use_mipmaps = true
+use_filter = true
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=85]
+size = 24
+use_mipmaps = true
+use_filter = true
+font_data = ExtResource( 1 )
+
 [sub_resource type="RectangleShape2D" id=83]
 extents = Vector2( 74.5, 28 )
 
@@ -164,6 +176,7 @@ position = Vector2( 960, 540 )
 texture = ExtResource( 35 )
 
 [node name="Left" type="Sprite" parent="."]
+visible = false
 material = ExtResource( 43 )
 position = Vector2( 687, 605 )
 texture = ExtResource( 44 )
@@ -338,6 +351,7 @@ custom_fonts/font = SubResource( 77 )
 text = "Submit"
 
 [node name="Consoles" type="Node2D" parent="."]
+visible = false
 script = ExtResource( 21 )
 XBOX = ExtResource( 5 )
 GameBoy = ExtResource( 6 )
@@ -765,7 +779,6 @@ position = Vector2( -0.5, -5.5 )
 shape = SubResource( 81 )
 
 [node name="Games" type="Node2D" parent="."]
-visible = false
 
 [node name="Sprite" type="Sprite" parent="Games"]
 position = Vector2( 960, 540 )
@@ -1025,28 +1038,28 @@ position = Vector2( 7.5, -2 )
 shape = SubResource( 72 )
 
 [node name="CheckStarfield" type="Area2D" parent="Games/CheckArea"]
-position = Vector2( 532, 680 )
+position = Vector2( 810, 887 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Games/CheckArea/CheckStarfield"]
 position = Vector2( 7.5, -2 )
 shape = SubResource( 72 )
 
 [node name="CheckCyberpunk" type="Area2D" parent="Games/CheckArea"]
-position = Vector2( 255, 887 )
+position = Vector2( 535, 886 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Games/CheckArea/CheckCyberpunk"]
 position = Vector2( 7.5, -2 )
 shape = SubResource( 72 )
 
 [node name="CheckHorizon" type="Area2D" parent="Games/CheckArea"]
-position = Vector2( 539, 887 )
+position = Vector2( 257, 888 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Games/CheckArea/CheckHorizon"]
 position = Vector2( 7.5, -2 )
 shape = SubResource( 72 )
 
 [node name="CheckDetriot" type="Area2D" parent="Games/CheckArea"]
-position = Vector2( 811, 886 )
+position = Vector2( 539, 680 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Games/CheckArea/CheckDetriot"]
 position = Vector2( 7.5, -2 )
@@ -1157,7 +1170,7 @@ autowrap = true
 clip_text = true
 
 [node name="Sprite6" type="Sprite" parent="Games/Cards"]
-position = Vector2( 679, 740 )
+position = Vector2( 557, 941 )
 scale = Vector2( 1.3, 1.2 )
 texture = ExtResource( 39 )
 
@@ -1210,7 +1223,7 @@ valign = 1
 autowrap = true
 
 [node name="Sprite9" type="Sprite" parent="Games/Cards"]
-position = Vector2( 556, 948 )
+position = Vector2( 548, 738 )
 scale = Vector2( 1.3, 1.2 )
 texture = ExtResource( 39 )
 
@@ -1221,10 +1234,66 @@ margin_right = 62.0
 margin_bottom = 38.0
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_fonts/font = SubResource( 82 )
-text = "Action Adventure 2020"
+text = "Action Adventure 2018"
 align = 1
 valign = 1
 autowrap = true
+
+[node name="Sprite10" type="Sprite" parent="Games/Cards"]
+position = Vector2( 831, 737 )
+scale = Vector2( 1.3, 1.2 )
+texture = ExtResource( 3 )
+
+[node name="Label" type="Label" parent="Games/Cards/Sprite10"]
+margin_left = -59.2308
+margin_top = -36.6667
+margin_right = 81.7692
+margin_bottom = 18.3333
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 84 )
+text = "Action Adventure 2022"
+align = 1
+valign = 1
+autowrap = true
+clip_text = true
+
+[node name="Sprite11" type="Sprite" parent="Games/Cards"]
+position = Vector2( 830, 941 )
+scale = Vector2( 1.3, 1.2 )
+texture = ExtResource( 3 )
+
+[node name="Label" type="Label" parent="Games/Cards/Sprite11"]
+margin_left = -60.7692
+margin_top = -35.0
+margin_right = 80.2308
+margin_bottom = 20.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 85 )
+text = "Action RPG 
+2023"
+align = 1
+valign = 1
+autowrap = true
+clip_text = true
+
+[node name="Sprite12" type="Sprite" parent="Games/Cards"]
+position = Vector2( 245, 943 )
+scale = Vector2( 1.3, 1.2 )
+texture = ExtResource( 2 )
+
+[node name="Label" type="Label" parent="Games/Cards/Sprite12"]
+margin_left = -73.8462
+margin_top = -32.5001
+margin_right = 67.1538
+margin_bottom = 22.4999
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 85 )
+text = "Action RPG 
+2017"
+align = 1
+valign = 1
+autowrap = true
+clip_text = true
 
 [node name="SnapAreas" type="Node2D" parent="Games"]
 
