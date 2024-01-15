@@ -13,6 +13,8 @@ public class DragAndDropConsoles : KinematicBody2D
 	
 	private Sprite _popUp;
 	private Label _popUpText;
+	private Label _popUpConsoles;
+	private Sprite _consoleZoom;
 
 	private Timer delayTimer;
 	private bool popUp;
@@ -46,6 +48,24 @@ public class DragAndDropConsoles : KinematicBody2D
 	private KinematicBody2D _stray;
 	
 	private  DragAndDropConsoles currentlyDraggedObject;
+
+	private Texture pacMan = GD.Load<Texture>("res://scenes/GameStudy/assets/Games/PacMan.png");
+	private Texture tennis = GD.Load<Texture>("res://scenes/GameStudy/assets/Games/TennisForTwo.PNG");
+	private Texture bioshock = GD.Load<Texture>("res://scenes/GameStudy/assets/Games/Bioshock.PNG");
+	private Texture cyberpunk = GD.Load<Texture>("res://scenes/GameStudy/assets/Games/Cyberpunk.PNG");
+	private Texture detriot = GD.Load<Texture>("res://scenes/GameStudy/assets/Games/DetroitBecomeHuman.PNG");
+	private Texture donkeyKong = GD.Load<Texture>("res://scenes/GameStudy/assets/Games/Donkey Kong.PNG");
+	private Texture horizon = GD.Load<Texture>("res://scenes/GameStudy/assets/Games/Horizon Zero Daw.PNG");
+	private Texture mazeWars = GD.Load<Texture>("res://scenes/GameStudy/assets/Games/MazeWars.PNG");
+	private Texture pong = GD.Load<Texture>("res://scenes/GameStudy/assets/Games/Pong.PNG");
+	private Texture spaceInvaders = GD.Load<Texture>("res://scenes/GameStudy/assets/Games/SpaceInvaders.png");
+	private Texture starfield = GD.Load<Texture>("res://scenes/GameStudy/assets/Games/Starfield.PNG");
+	private Texture stray = GD.Load<Texture>("res://scenes/GameStudy/assets/Games/Stray.PNG");
+
+	
+	private KinematicBody2D copy;
+	private bool megaDriveSnapped;
+	private bool isDragged;
 	
 	public override void _Ready()
 	{
@@ -56,8 +76,10 @@ public class DragAndDropConsoles : KinematicBody2D
 
 		
 		_popUpText = GetNode<Label>("/root/GameStudy/Consoles/Label");
+		_popUpConsoles = GetNode<Label>("/root/GameStudy/Games/Label");
+		_consoleZoom = GetNode<Sprite>("/root/GameStudy/Games/ConsoleZoom");
 		
-		
+	
 		
 		_xBOX = GetNode<KinematicBody2D>("/root/GameStudy/Consoles/XBOX");
 		_nES = GetNode<KinematicBody2D>("/root/GameStudy/Consoles/NES");
@@ -84,8 +106,8 @@ public class DragAndDropConsoles : KinematicBody2D
 
 	public override void _Input(InputEvent @event)
 	{
-		
-		if (Input.IsActionPressed("left_click") && hovered == true )
+		isDragged = true;
+		if (Input.IsActionPressed("left_click") && hovered == true && isDragged == true) 
 		{
 			InputFalse(false);
 			
@@ -110,7 +132,7 @@ public class DragAndDropConsoles : KinematicBody2D
 		}
 		*/
 
-		if (!Input.IsActionPressed("left_click"))
+		if (Input.IsActionJustReleased("left_click"))
 		{
 			
 			attached = false;
@@ -133,6 +155,7 @@ public class DragAndDropConsoles : KinematicBody2D
 
 	public void OnMouseEntered()
 	{
+			_consoleZoom.Visible = true;
 			hovered = true;
 			
 			GD.Print("entered: "+hovered);
@@ -177,6 +200,69 @@ public class DragAndDropConsoles : KinematicBody2D
 			{
 				_popUpText.Text = "First video game console, which was developed by Ralph Bear.";
 				
+			}
+			
+			if (this.Name == "PacMan"&& isOpen == false)
+			{
+				_popUpConsoles.Text = "PacMan";
+				_consoleZoom.Texture = pacMan;
+
+			}
+			if (this.Name == "Tennis"&& isOpen == false)
+			{
+				_popUpConsoles.Text = "Tennis For Two";
+				_consoleZoom.Texture = tennis;
+
+			}
+			if (this.Name == "Stray"&& isOpen == false)
+			{
+				_popUpConsoles.Text = "Stray";
+				_consoleZoom.Texture = stray;
+			}
+			if (this.Name == "Starfield"&& isOpen == false)
+			{
+				_popUpConsoles.Text = "Starfield";
+				_consoleZoom.Texture = starfield;
+			}
+			if (this.Name == "SpaceInvaders"&& isOpen == false)
+			{
+				_popUpConsoles.Text = "Space Invaders";
+				_consoleZoom.Texture = spaceInvaders;
+			}
+			if (this.Name == "Pong"&& isOpen == false)
+			{
+				_popUpConsoles.Text = "Pong";
+				_consoleZoom.Texture = pong;
+			}
+			if (this.Name == "MazeWars"&& isOpen == false)
+			{
+				_popUpConsoles.Text = "Maze Wars";
+				_consoleZoom.Texture = mazeWars;
+			}
+			if (this.Name == "Horizon"&& isOpen == false)
+			{
+				_popUpConsoles.Text = "Horizon Zero Dawn";
+				_consoleZoom.Texture = horizon;
+			}
+			if (this.Name == "DonkeyKong"&& isOpen == false)
+			{
+				_popUpConsoles.Text = "Donkey Kong";
+				_consoleZoom.Texture = donkeyKong;
+			}
+			if (this.Name == "Detriot"&& isOpen == false)
+			{
+				_popUpConsoles.Text = "Detriot: Become Human";
+				_consoleZoom.Texture = detriot;
+			}
+			if (this.Name == "Cyberpunk"&& isOpen == false)
+			{
+				_popUpConsoles.Text = "Cyberpunk 2077";
+				_consoleZoom.Texture = cyberpunk;
+			}
+			if (this.Name == "Bioshock"&& isOpen == false)
+			{
+				_popUpConsoles.Text = "Bioshock";
+				_consoleZoom.Texture = bioshock;
 			}
 	}
 
@@ -291,6 +377,54 @@ public class DragAndDropConsoles : KinematicBody2D
 		{
 			Position = new Vector2(offset);
 			//CheckSnap();
+			isDragged = true;
+		}
+		else
+		{
+			isDragged = false;
 		}
 	}
+
+	public void Snap(string name, Vector2 position)
+	{
+		
+		if (name == "XBOX")
+		{
+			copy = _xBOX;
+			copy.InputPickable = false;
+		}
+		else if (name == "GameBoy")
+		{
+			copy = _gameBoy;
+			copy.InputPickable = false;
+		}
+		
+		if (megaDriveSnapped == false && copy != null)
+		{
+			//copy.Position = position;
+			attached = false;
+			isDragged = false;
+			copy.Position = position;
+			GD.Print("Yes sir");
+			
+		}
+	}
+	private void _on_MegaDrive_body_entered(object body)
+	{
+		if (body is KinematicBody2D kinematicBody)
+		{
+			var position = new Vector2(297, 191);
+			Snap(kinematicBody.Name,new Vector2(297, 191));
+		}
+	}
+
+	public void ChangePosition(Vector2 position) {
+		attached = false;
+		isDragged = false;
+		InputPickable = false;
+		Position = position;
+	}
 }
+
+
+
