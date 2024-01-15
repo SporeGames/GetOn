@@ -64,6 +64,8 @@ public class Sound : Node2D
 	public string lineEdit16 = "Sound4";
 
 	private int count = 0;
+
+	private AudioStreamPlayer _nextMomentAudio;
 	public override void _Ready()
 	{
 		_sharedNode = GetNode<SharedNode>("/root/SharedNode");
@@ -109,6 +111,8 @@ public class Sound : Node2D
 		_done.Connect("pressed", this, nameof(CloseGame));
 		
 		array = new Node2D[] { _moment1, _moment2,_moment3,_moment4,_moment5,_moment6,_moment7,_moment8,_moment9 };
+		
+		_nextMomentAudio = GetNode<AudioStreamPlayer>("SoundFX/ChangeMoment");
 	}
 
 	public void CloseGame()
@@ -161,6 +165,7 @@ public class Sound : Node2D
 		_customTabContainer8.UpdateLineEdit();
 		_customTabContainer9.UpdateLineEdit();
 		
+		_nextMomentAudio.Play();
 		if (number < 8)
 		{
 			number++;
@@ -203,7 +208,7 @@ public class Sound : Node2D
 		_customTabContainer8.UpdateLineEdit();
 		_customTabContainer9.UpdateLineEdit();
 		
-		
+		_nextMomentAudio.Play();
 		if (number > 0)
 		{
 			number--;

@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=2]
+[gd_scene load_steps=26 format=2]
 
 [ext_resource path="res://scenes/Sound/assets/IngameMoments/drunk walk.PNG" type="Texture" id=1]
 [ext_resource path="res://scenes/Sound/assets/IngameMoments/collect item.PNG" type="Texture" id=2]
@@ -20,6 +20,8 @@
 [ext_resource path="res://SharedAssets/Anleitungen/Sound_blank.png" type="Texture" id=18]
 [ext_resource path="res://SharedAssets/anleitung_sound.png" type="Texture" id=19]
 [ext_resource path="res://SharedAssets/Anleitungen/Sound.PNG" type="Texture" id=20]
+[ext_resource path="res://scenes/Sound/assets/SoundFX/Abhaken 3.wav" type="AudioStream" id=21]
+[ext_resource path="res://scenes/GameStudy/assets/SoundFX/UI Click.wav" type="AudioStream" id=22]
 [ext_resource path="res://scenes/Sound/SoundSlider.tscn" type="PackedScene" id=52]
 [ext_resource path="res://scenes/Sound/Sound.cs" type="Script" id=53]
 
@@ -129,6 +131,7 @@ align = 1
 valign = 1
 
 [node name="TopBar" parent="." instance=ExtResource( 9 )]
+visible = false
 Game = 4
 LeftImage = ExtResource( 18 )
 RightImage = ExtResource( 20 )
@@ -142,3 +145,11 @@ If you finish this task within 5 minutes you will receive bonus points.
 
 [node name="Music" type="Node" parent="."]
 script = ExtResource( 17 )
+
+[node name="SoundFX" type="Node" parent="."]
+
+[node name="ChangeMoment" type="AudioStreamPlayer" parent="SoundFX"]
+stream = ExtResource( 22 )
+
+[node name="CheckBox" type="AudioStreamPlayer" parent="SoundFX"]
+stream = ExtResource( 21 )

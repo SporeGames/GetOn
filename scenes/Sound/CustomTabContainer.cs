@@ -151,6 +151,9 @@ public class CustomTabContainer : Node2D
 	private Label _selectedSound;
 
 	private bool soundIsSelected;
+
+	private AudioStreamPlayer _checkBoxAudio;
+	private AudioStreamPlayer _switchTabAudio;
 	
 	public override void _Ready()
 	{
@@ -372,6 +375,9 @@ public class CustomTabContainer : Node2D
 		_lineEdit16.Text = _sound.lineEdit16;
 		
 		UpdateLineEdit();
+
+		_checkBoxAudio = GetNode<AudioStreamPlayer>("SoundFX/CheckBox");
+		_switchTabAudio = GetNode<AudioStreamPlayer>("SoundFX/SwitchTab");
 	}
 
 	public void EditName(LineEdit _lineEdit)
@@ -391,6 +397,7 @@ public class CustomTabContainer : Node2D
 		{
 			
 			alreadyChecked = true;
+			
 		}
 		else
 		{
@@ -424,6 +431,7 @@ public class CustomTabContainer : Node2D
 			currentlyChecked = checkbox.Name;
 			checkbox.TextureNormal = checkBoxPressed;
 			SoundSelected(false);
+			_checkBoxAudio.Play();
 		}
 	}
 
@@ -573,11 +581,12 @@ public class CustomTabContainer : Node2D
 		_tab3.Modulate = new Color(1,1,1,0.5f);
 		_tab4.Modulate = new Color(1,1,1,0.5f);
 		tab.Modulate = new Color(1,1,1,1);
+		_switchTabAudio.Play();
 	}
 
 	public void ShowCurrentPanel(TextureButton  tab)
 	{
-		
+		//_switchTabAudio.Play();
 		_panel1.Visible = false;
 		_panel2.Visible = false;
 		_panel3.Visible = false;

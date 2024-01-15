@@ -1,4 +1,4 @@
-[gd_scene load_steps=56 format=2]
+[gd_scene load_steps=58 format=2]
 
 [ext_resource path="res://scenes/Sound/assets/FeldFürSounds.png" type="Texture" id=1]
 [ext_resource path="res://scenes/Sound/Soundeffects/Wrong Sounds/Power Boost Sound.wav" type="AudioStream" id=2]
@@ -42,6 +42,8 @@
 [ext_resource path="res://scenes/Sound/assets/PerfectBlockWave.png" type="Texture" id=40]
 [ext_resource path="res://scenes/Sound/assets/LevelUp.png" type="Texture" id=41]
 [ext_resource path="res://scenes/Sound/assets/AmbienceNight.png" type="Texture" id=42]
+[ext_resource path="res://scenes/GameStudy/assets/SoundFX/Abhaken 3.wav" type="AudioStream" id=43]
+[ext_resource path="res://scenes/GameStudy/assets/SoundFX/UI Click.wav" type="AudioStream" id=44]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 347, 150.5 )
@@ -1381,6 +1383,14 @@ custom_fonts/font = SubResource( 13 )
 text = "Sound"
 align = 1
 valign = 1
+
+[node name="SoundFX" type="Node" parent="."]
+
+[node name="CheckBox" type="AudioStreamPlayer" parent="SoundFX"]
+stream = ExtResource( 43 )
+
+[node name="SwitchTab" type="AudioStreamPlayer" parent="SoundFX"]
+stream = ExtResource( 44 )
 
 [connection signal="body_entered" from="CheckIfSoundInPanel" to="." method="_on_CheckIfSoundInPanel_body_entered"]
 [connection signal="body_exited" from="CheckIfSoundInPanel" to="." method="_on_CheckIfSoundInPanel_body_exited"]
