@@ -1121,7 +1121,7 @@ If you complete this task within 7 minutes, you will receive a bonus point.
 "
 
 [node name="Text" parent="TopBar/Introduction" index="3"]
-margin_bottom = 310.0
+margin_bottom = 287.0
 
 [node name="Image" parent="TopBar/Introduction" index="6"]
 scale = Vector2( 0.7, 0.7 )

@@ -47,6 +47,9 @@ namespace GetOn.scenes {
 
 		public bool isDragging;
 		public bool HasDialogeBoxOpen = false;
+
+		public string MouseHoverText = "";
+		private Node2D mousefollower;
 		
 
 		public override void _Ready() {
@@ -55,6 +58,7 @@ namespace GetOn.scenes {
 			}
 			var root = GetTree().Root;
 			CurrentScene = root.GetChild(root.GetChildCount() - 1);
+			mousefollower = GetNode<Node2D>("MouseHoverFollower");
 			isDragging = false;
 			_debugMenu = GetNode<Node2D>("DebugMenu");
 			_debugText = GetNode<RichTextLabel>("DebugMenu/DebugText");
@@ -72,6 +76,14 @@ namespace GetOn.scenes {
 		public override void _Process(float delta) {
 			if (!_debugMenu.Visible) {
 				return;
+			}
+
+			if (MouseHoverText != "") {
+				mousefollower.Visible = true;
+				mousefollower.Position = GetGlobalMousePosition();
+			}
+			else {
+				mousefollower.Visible = false;
 			}
 			_debugText.Text = "Debug \n \n" +
 							  "\nFPS: " + Engine.GetFramesPerSecond() +
