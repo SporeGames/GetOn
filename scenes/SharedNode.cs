@@ -18,6 +18,7 @@ namespace GetOn.scenes {
 
 		private List<string> _discoveredScenes = new List<string>();
 		[Export] public float SpecializationMultiplier = 1.5f;
+		[Export] public Texture MouseCursor;
 		
 		private Node CurrentScene { get; set; }
 		[JsonProperty] public string PlayerName { get; set; } = "No name";
@@ -65,6 +66,7 @@ namespace GetOn.scenes {
 			}
 			_debugMenuList.Connect("item_selected", this, nameof(OnDebugMenuItemSelected));
 			GetNode<CountdownTimer>("GlobalTimer").running = true;
+			Input.SetCustomMouseCursor(MouseCursor);
 		}
 
 		public override void _Process(float delta) {
