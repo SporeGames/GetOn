@@ -15,6 +15,10 @@ run/main_scene="res://scenes/Introduction/IntroScene.tscn"
 boot_splash/bg_color=Color( 0.0392157, 0.0313726, 0.0313726, 1 )
 config/icon="res://icon.png"
 
+[audio]
+
+output_latency.web=180
+
 [autoload]
 
 SharedNode="*res://scenes/SharedNode.tscn"
