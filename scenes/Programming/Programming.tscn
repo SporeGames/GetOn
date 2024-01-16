@@ -1,4 +1,4 @@
-[gd_scene load_steps=41 format=2]
+[gd_scene load_steps=42 format=2]
 
 [ext_resource path="res://scenes/Programming/Programming.cs" type="Script" id=1]
 [ext_resource path="res://scenes/Programming/blocks/godot/VariableNode.cs" type="Script" id=2]
@@ -27,9 +27,13 @@
 [ext_resource path="res://scenes/Programming/blocks/KeyFPressedCondition.cs" type="Script" id=25]
 [ext_resource path="res://scenes/Programming/assets/Checkliste.PNG" type="Texture" id=26]
 [ext_resource path="res://SharedAssets/font/PressStart2P-Regular.ttf" type="DynamicFontData" id=27]
+[ext_resource path="res://SharedAssets/UserInterface/B_Base2.png" type="Texture" id=28]
+[ext_resource path="res://SharedAssets/UserInterface/B_base_2_hovered.png" type="Texture" id=29]
 
-[sub_resource type="DynamicFont" id=16]
+[sub_resource type="DynamicFont" id=18]
 size = 30
+use_mipmaps = true
+use_filter = true
 font_data = ExtResource( 21 )
 
 [sub_resource type="DynamicFont" id=14]
@@ -65,11 +69,9 @@ use_filter = true
 font_data = ExtResource( 21 )
 
 [sub_resource type="DynamicFont" id=17]
-size = 22
-font_data = ExtResource( 21 )
-
-[sub_resource type="DynamicFont" id=18]
-size = 22
+size = 30
+use_mipmaps = true
+use_filter = true
 font_data = ExtResource( 21 )
 
 [sub_resource type="DynamicFont" id=15]
@@ -85,7 +87,7 @@ script = ExtResource( 1 )
 margin_right = 1932.0
 margin_bottom = 80.0
 mouse_filter = 2
-color = Color( 0.6, 0.752941, 0.843137, 1 )
+color = Color( 0, 0.180392, 0.286275, 1 )
 
 [node name="Checklist" type="Control" parent="."]
 margin_left = 1036.0
@@ -99,12 +101,26 @@ position = Vector2( 444, 114 )
 scale = Vector2( 0.848585, 0.896048 )
 texture = ExtResource( 26 )
 
-[node name="SubmitButton" type="Button" parent="Checklist"]
-margin_left = 602.0
-margin_top = -597.0
+[node name="SubmitButton" type="TextureButton" parent="Checklist"]
+margin_left = 600.0
+margin_top = -613.0
 margin_right = 756.0
-margin_bottom = -555.0
-custom_fonts/font = SubResource( 16 )
+margin_bottom = -543.0
+texture_normal = ExtResource( 28 )
+texture_pressed = ExtResource( 29 )
+texture_hover = ExtResource( 29 )
+expand = true
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Checklist/SubmitButton"]
+margin_left = 38.0
+margin_top = 20.0
+margin_right = 128.0
+margin_bottom = 60.0
+mouse_filter = 2
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+custom_fonts/normal_font = SubResource( 18 )
+bbcode_enabled = true
+bbcode_text = "[center]Done"
 text = "Done"
 
 [node name="Items" type="GridContainer" parent="Checklist"]
@@ -219,18 +235,6 @@ texture = ExtResource( 18 )
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Game/HardFlag"]
 position = Vector2( 2, -8 )
 shape = SubResource( 6 )
-
-[node name="BackToGameSelection" type="Button" parent="Game"]
-visible = false
-light_mask = 0
-anchor_left = 1.0
-anchor_right = 1.0
-margin_left = -90.0
-margin_top = 1.0
-margin_right = -48.0
-margin_bottom = 21.0
-rect_scale = Vector2( 2, 2 )
-text = "Back"
 
 [node name="WallLeft" type="StaticBody2D" parent="Game"]
 position = Vector2( 1041.05, 517.576 )
@@ -1043,29 +1047,58 @@ margin_left = -57.0
 margin_top = -19.5001
 margin_right = 65.57
 margin_bottom = 20.3489
+mouse_filter = 2
 text = "Code executing..."
 
-[node name="ResetButton" type="Button" parent="ProgrammingUI"]
+[node name="ResetButton" type="TextureButton" parent="ProgrammingUI"]
 anchor_left = 0.892
 anchor_right = 1.0
-margin_left = 317.264
-margin_top = 21.0
-margin_right = 297.0
-margin_bottom = 64.0
+margin_left = 402.264
+margin_top = 6.0
+margin_right = 461.0
+margin_bottom = 78.0
 focus_mode = 0
-custom_fonts/font = SubResource( 17 )
-text = "Reset Game"
+texture_normal = ExtResource( 28 )
+texture_pressed = ExtResource( 29 )
+texture_hover = ExtResource( 29 )
+expand = true
 
-[node name="RunButton" type="Button" parent="ProgrammingUI"]
+[node name="RichTextLabel" type="RichTextLabel" parent="ProgrammingUI/ResetButton"]
+margin_left = 28.0
+margin_top = 21.0
+margin_right = 152.0
+margin_bottom = 61.0
+mouse_filter = 2
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+custom_fonts/normal_font = SubResource( 17 )
+bbcode_enabled = true
+bbcode_text = "[center]Reset"
+text = "Reset"
+
+[node name="RunButton" type="TextureButton" parent="ProgrammingUI"]
 anchor_left = 0.892
 anchor_right = 1.0
-margin_left = 129.264
-margin_top = 22.0
-margin_right = 166.0
-margin_bottom = 64.0
+margin_left = 121.264
+margin_top = 6.0
+margin_right = 185.0
+margin_bottom = 76.0
 focus_mode = 0
-custom_fonts/font = SubResource( 18 )
-text = "Execute Code"
+texture_normal = ExtResource( 28 )
+texture_pressed = ExtResource( 29 )
+texture_hover = ExtResource( 29 )
+expand = true
+
+[node name="RichTextLabel" type="RichTextLabel" parent="ProgrammingUI/RunButton"]
+margin_left = 22.0
+margin_top = 21.0
+margin_right = 159.0
+margin_bottom = 61.0
+mouse_filter = 2
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+custom_fonts/normal_font = SubResource( 17 )
+bbcode_enabled = true
+bbcode_text = "[center]Run"
+text = "Run"
 
 [node name="ErrorBox" type="ColorRect" parent="ProgrammingUI"]
 margin_left = 1032.0

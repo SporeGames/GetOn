@@ -8,10 +8,9 @@ namespace GetOn.scenes.Programming
 		
 		private SharedNode _sharedNode;
 		
-		private Button _backToGameSelectionRoom;
 		
-		private Button _runButton;
-		private Button _resetButton;
+		private TextureButton _runButton;
+		private TextureButton _resetButton;
 		private ColorRect _runOverlay;
 		private NodeGraph _programmingUi;
 		private Checklist _checklist;
@@ -27,13 +26,11 @@ namespace GetOn.scenes.Programming
 		private List<string> _errors = new List<string>();
 		public override void _Ready() {
 			_sharedNode = GetNode<SharedNode>("/root/SharedNode");
-			_backToGameSelectionRoom = GetNode<Button>("Game/BackToGameSelection");
-			_backToGameSelectionRoom.Connect("pressed", this, nameof(OnBackToSelectionRoomPressed));
 			_programmingUi = GetNode<NodeGraph>("ProgrammingUI/AspectRatioContainer/NodeGraph");
-			_runButton = GetNode<Button>("ProgrammingUI/RunButton");
+			_runButton = GetNode<TextureButton>("ProgrammingUI/RunButton");
 			_runButton.Connect("pressed", this, nameof(OnRunPressed));
 			_runOverlay = GetNode<ColorRect>("ProgrammingUI/RunOverlay");
-			_resetButton = GetNode<Button>("ProgrammingUI/ResetButton");
+			_resetButton = GetNode<TextureButton>("ProgrammingUI/ResetButton");
 			_errorList = GetNode<RichTextLabel>("ProgrammingUI/ErrorBox/ErrorList");
 			_errorBox = GetNode<ColorRect>("ProgrammingUI/ErrorBox");
 			_resetButton.Connect("pressed", this, nameof(OnResetPressed));
@@ -85,7 +82,7 @@ namespace GetOn.scenes.Programming
 		private void Run() {
 			GetNode<Player>("Game/Player").Velocity = new Vector2(0, 0);
 			_runOverlay.Visible = true;
-			_runButton.Text = "Stop";
+			_runButton.GetNode<RichTextLabel>("RichTextLabel").Text  = "Stop";
 			_running = true;
 			_errorList.Text = "No errors!";
 			_checklist.Reset();
@@ -95,7 +92,7 @@ namespace GetOn.scenes.Programming
 		
 		private void Stop() {
 			_runOverlay.Visible = false;
-			_runButton.Text = "Run";
+			_runButton.GetNode<RichTextLabel>("RichTextLabel").Text = "Run";
 			_running = false;
 			_errors.Clear();
 			_errorBox.Color = new Color(0f, 0f, 0f);

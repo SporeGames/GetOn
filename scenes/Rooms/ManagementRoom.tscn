@@ -22,6 +22,7 @@ shader = ExtResource( 8 )
 shader_param/blink_strength = 0.1
 shader_param/blink_rate = 2.0
 shader_param/outline_color = Color( 1, 1, 1, 1 )
+shader_param/outline_size = 0.02
 
 [node name="ManagementRoom" type="Node2D"]
 script = ExtResource( 1 )

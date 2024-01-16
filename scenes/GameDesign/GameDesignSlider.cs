@@ -69,7 +69,7 @@ public class GameDesignSlider : Node2D {
 //		_doneButton.Connect("pressed", this, nameof(OnDonePressed));
 		_selectButton.Connect("pressed", this, nameof(OnSelectPressed));
 //		_backButton.Connect("pressed", this, nameof(OnBackPressed));
-		_gameName.Text = CategoryDisplayName;
+		_gameName.BbcodeText = "[center]" + CategoryDisplayName;
 		_gameDescription.Text = GameDescription;
 		_gameImage.Texture = GameImage;
 		_selectButton.ToggleMode = true;
@@ -136,9 +136,9 @@ public class GameDesignSlider : Node2D {
 			_centerImage.Texture = Images[_currentIndex];
 		}
 
-		_centerTitle.Text = PersonaNames[_currentIndex];
+		_centerTitle.BbcodeText = "[center]" + PersonaNames[_currentIndex];
 		_description.Text = Descriptions[_currentIndex];
-		_motivation.Text = PersonaMotivations[_currentIndex];
+		_motivation.BbcodeText = "[center]" + PersonaMotivations[_currentIndex];
 		var leftIndex = _currentIndex - 1;
 		if (leftIndex < 0)
 		{

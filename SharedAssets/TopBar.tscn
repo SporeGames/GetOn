@@ -45,6 +45,7 @@ expand = true
 position = Vector2( 98, 21 )
 
 [node name="Introduction" type="Node2D" parent="."]
+visible = false
 position = Vector2( 808, 416 )
 z_index = 2048
 

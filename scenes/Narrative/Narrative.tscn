@@ -426,6 +426,7 @@ custom_styles/normal = SubResource( 32 )
 flat = true
 expand_icon = true
 script = ExtResource( 2 )
+FirstChar = true
 
 [node name="DropDownAttribute3" type="OptionButton" parent="1"]
 modulate = Color( 0, 0, 0, 1 )
@@ -445,6 +446,7 @@ custom_styles/focus = SubResource( 35 )
 custom_styles/disabled = SubResource( 36 )
 custom_styles/normal = SubResource( 37 )
 script = ExtResource( 2 )
+FirstChar = true
 
 [node name="DropDownAttribute2" type="OptionButton" parent="1"]
 modulate = Color( 0, 0, 0, 1 )
@@ -464,6 +466,7 @@ custom_styles/focus = SubResource( 40 )
 custom_styles/disabled = SubResource( 41 )
 custom_styles/normal = SubResource( 42 )
 script = ExtResource( 2 )
+FirstChar = true
 
 [node name="DropDownAttribute1" type="OptionButton" parent="1"]
 modulate = Color( 0, 0, 0, 1 )
@@ -483,6 +486,7 @@ custom_styles/focus = SubResource( 25 )
 custom_styles/disabled = SubResource( 26 )
 custom_styles/normal = SubResource( 27 )
 script = ExtResource( 2 )
+FirstChar = true
 
 [node name="DropDownSetting" type="OptionButton" parent="1"]
 modulate = Color( 0, 0, 0, 1 )
@@ -778,6 +782,7 @@ custom_styles/focus = SubResource( 66 )
 custom_styles/disabled = SubResource( 67 )
 custom_styles/normal = SubResource( 68 )
 script = ExtResource( 2 )
+FirstChar = true
 
 [node name="DropDownAttribute23" type="OptionButton" parent="2"]
 modulate = Color( 0, 0, 0, 1 )
@@ -796,6 +801,7 @@ custom_styles/focus = SubResource( 71 )
 custom_styles/disabled = SubResource( 72 )
 custom_styles/normal = SubResource( 73 )
 script = ExtResource( 2 )
+FirstChar = true
 
 [node name="DropDownAttribute22" type="OptionButton" parent="2"]
 modulate = Color( 0, 0, 0, 1 )
@@ -815,6 +821,7 @@ custom_styles/focus = SubResource( 76 )
 custom_styles/disabled = SubResource( 77 )
 custom_styles/normal = SubResource( 78 )
 script = ExtResource( 2 )
+FirstChar = true
 
 [node name="DropDownAttribute21" type="OptionButton" parent="2"]
 modulate = Color( 0, 0, 0, 1 )
@@ -834,6 +841,7 @@ custom_styles/focus = SubResource( 81 )
 custom_styles/disabled = SubResource( 82 )
 custom_styles/normal = SubResource( 83 )
 script = ExtResource( 2 )
+FirstChar = true
 
 [node name="DropDownSetting2" type="OptionButton" parent="2"]
 modulate = Color( 0, 0, 0, 1 )

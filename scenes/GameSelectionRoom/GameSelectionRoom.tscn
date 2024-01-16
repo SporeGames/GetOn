@@ -237,7 +237,6 @@ position = Vector2( 0, 708 )
 Title = "Chloe"
 Icon = ExtResource( 12 )
 Texts = PoolStringArray( "Now your internship can begin! You are free to move around our studio!", "Each member of the team has some work for you to do. When you\'ve completed all your tasks, I\'ll talk to you again.", "Have fun and good luck." )
-AutoNext = true
 AutoNextTime = 8.0
 ReadTime = 0.3
 IsUnique = true

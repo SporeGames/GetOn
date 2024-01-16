@@ -75,13 +75,13 @@ __meta__ = {
 [node name="SliderTitle" type="RichTextLabel" parent="."]
 anchor_left = 0.5
 anchor_right = 0.5
-margin_left = 1226.0
-margin_top = 131.0
-margin_right = 1897.0
-margin_bottom = 257.0
+margin_left = 1077.0
+margin_top = 133.0
+margin_right = 1748.0
+margin_bottom = 259.0
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 custom_fonts/normal_font = SubResource( 1 )
-text = "<title>"
+bbcode_enabled = true
 
 [node name="GameImage" type="TextureRect" parent="."]
 visible = false
@@ -178,7 +178,7 @@ margin_bottom = 824.0
 grow_vertical = 0
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 custom_fonts/normal_font = SubResource( 4 )
-text = "<motivation>"
+bbcode_enabled = true
 fit_content_height = true
 scroll_active = false
 
@@ -261,14 +261,14 @@ stretch_mode = 3
 [node name="GameName" type="RichTextLabel" parent="."]
 anchor_left = 0.5
 anchor_right = 0.5
-margin_left = 360.0
-margin_top = 144.0
-margin_right = 867.0
-margin_bottom = 215.0
+margin_left = 211.0
+margin_top = 130.0
+margin_right = 718.0
+margin_bottom = 201.0
 rect_pivot_offset = Vector2( -1050, 560 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 custom_fonts/normal_font = SubResource( 5 )
-text = "<game>"
+bbcode_enabled = true
 
 [node name="NextGame" type="RichTextLabel" parent="."]
 anchor_left = 0.5

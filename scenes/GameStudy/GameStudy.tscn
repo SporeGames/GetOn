@@ -1,4 +1,4 @@
-[gd_scene load_steps=87 format=2]
+[gd_scene load_steps=88 format=2]
 
 [ext_resource path="res://SharedAssets/font/BAHNSCHRIFT 1.TTF" type="DynamicFontData" id=1]
 [ext_resource path="res://scenes/GameStudy/assets/Kärtchen2.png" type="Texture" id=2]
@@ -49,6 +49,7 @@
 [ext_resource path="res://scenes/GameStudy/assets/SoundFX/Drop.wav" type="AudioStream" id=47]
 [ext_resource path="res://scenes/GameStudy/assets/SoundFX/UI Click 2 (1).wav" type="AudioStream" id=48]
 [ext_resource path="res://scenes/GameStudy/assets/SoundFX/UI Click.wav" type="AudioStream" id=49]
+[ext_resource path="res://SharedAssets/OutlineMaterial.tres" type="Material" id=50]
 
 [sub_resource type="StyleBoxEmpty" id=49]
 
@@ -180,9 +181,8 @@ position = Vector2( 960, 540 )
 texture = ExtResource( 35 )
 
 [node name="Left" type="Sprite" parent="."]
-visible = false
-material = ExtResource( 43 )
-position = Vector2( 687, 605 )
+material = ExtResource( 50 )
+position = Vector2( 617, 513 )
 texture = ExtResource( 44 )
 
 [node name="Right" type="Sprite" parent="."]
@@ -325,9 +325,9 @@ Press BACK to return to the overview of both glass cases.
 Once you have filled both glass cases, a DONE button will appear, allowing you to submit your task."
 
 [node name="OpenConsoles" type="Button" parent="."]
-margin_left = 306.0
+margin_left = 309.0
 margin_top = 204.0
-margin_right = 930.0
+margin_right = 933.0
 margin_bottom = 848.0
 custom_styles/hover = SubResource( 49 )
 custom_styles/pressed = SubResource( 50 )
