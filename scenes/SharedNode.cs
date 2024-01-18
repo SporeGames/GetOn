@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 using System.Security.Cryptography;
 using System.Text;
 using Godot;
@@ -154,11 +155,26 @@ namespace GetOn.scenes {
 					gameStudyPoints *= 2;
 					break;
 			}
+
+			Dictionary<AbilitySpecialization, double> results = new Dictionary<AbilitySpecialization, double>();
+			results.Add(AbilitySpecialization.Management, managementPoints);
+			results.Add(AbilitySpecialization.Programming, programmingPoints);
+			results.Add(AbilitySpecialization.Sound, soundPoints);
+			results.Add(AbilitySpecialization.Game_Design, gameDesignPoints);
+			results.Add(AbilitySpecialization.Game_Studies, gameStudyPoints);
+			results.Add(AbilitySpecialization.Narrative_Design, narrativePoints);
+			var sortedList = results.ToList();
+			sortedList.Sort((pair1,pair2) => pair1.Value.CompareTo(pair2.Value));
+			var best = sortedList[sortedList.Count - 1];
+			var totalPoints = sortedList.Sum(pair => pair.Value);
 			var result = new GameResult {
 				Name = PlayerName,
 				SelectedSpecialization = "Specialization: " + Specialization,
 				Categories = ToCategories(),
+				BestName = best.Key.ToString().Replace("_", " "),
+				BestPoints = results[best.Key].ToString(),
 				TotalTime = "Time: " + FormatTime(GetNode<CountdownTimer>("GlobalTimer").CurrentTime, true),
+				TotalPoints = totalPoints.ToString()
 			};
 			using (var sha256 = SHA256.Create())
 			{

@@ -6,6 +6,9 @@ namespace GetOn.scenes {
         public string SelectedSpecialization { get; set; }
         public List<ResultCategory> Categories { get; set; }
         public string TotalTime { get; set; }
+        public string TotalPoints { get; set; }
+        public string BestName { get; set; }
+        public string BestPoints { get; set; }
         public string Hash { get; set; }
     }
 }

@@ -7,6 +7,7 @@ public class IntroScene : Control
 		private SharedNode _sharedNode;
 		private TextureButton _understandButton;
 		private TextureButton _startButton;
+		private Button _testPDFButton;
 		private Node2D _introScreen;
 		private Node2D _homeScreen;
 		
@@ -18,6 +19,8 @@ public class IntroScene : Control
 		_understandButton.Connect("pressed", this, nameof(OnUnderstandButtonPressed));  
 		_startButton = GetNode<TextureButton>("StartButton");
 		_startButton.Connect("pressed", this, nameof(OnStartButtonPressed));  
+		_testPDFButton = GetNode<Button>("TestPDFButton");
+		_testPDFButton.Connect("pressed", this, nameof(TestPDF));
 		
 		_introScreen = GetNode<Node2D>("IntroScreen");
 		
@@ -40,4 +43,7 @@ public class IntroScene : Control
 			_understandButton.Hide();
 		}
 		
+		private void TestPDF() {
+			_sharedNode.Print();
+		}
 }
