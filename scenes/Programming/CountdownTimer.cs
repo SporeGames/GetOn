@@ -14,14 +14,15 @@ public class CountdownTimer : Node2D {
 	private AbilitySpecialization _spec = AbilitySpecialization.None;
 	
 	public float InitialTime = 0;
-	private long _startTime = 0;
+	private DateTime _startTime;
+
 	
 	public override void _Ready() {
 		_displayText = GetNode<RichTextLabel>("Display");
 		_icon = GetNode<AnimatedSprite>("Icon");
 		_timer = new Timer();
 		AddChild(_timer);
-		_timer.WaitTime = 1; 
+		_timer.WaitTime = 0.1f; 
 		_timer.Connect("timeout", this, nameof(OnTimerTimeout));
 		_timer.Start();
 		_displayText.AddColorOverride("DefaultColor", FontColor);
@@ -57,25 +58,28 @@ public class CountdownTimer : Node2D {
 	}
 	
 	private void OnTimerTimeout() {
-		if (!running) {
+		if (!running)
+		{
 			return;
 		}
-		if (_startTime == 0) {
-			_startTime = DateTime.Now.Second;
+
+		if (_startTime == default)
+		{
+			_startTime = DateTime.Now;
 		}
-		CurrentTime = InitialTime + (DateTime.Now.Second - _startTime);
-		
+
+		TimeSpan elapsedTime = DateTime.Now - _startTime;
+		CurrentTime = InitialTime + (int)elapsedTime.TotalSeconds;
+
 		UpdateTimerDisplay();
 	}
 
 	private void UpdateTimerDisplay() {
-		
 		int minutes = Mathf.FloorToInt(CurrentTime / 60);
 		int seconds = Mathf.FloorToInt(CurrentTime % 60);
-		_displayText.Text = $"Time: {minutes:00}:{seconds:00}";
+		_displayText.Text = $"{minutes:00}:{seconds:00}";
 		_displayText.AddColorOverride("default_color", GetColorForTime());
 		_icon.Modulate = GetColorForTime();
-		
 	}
 
 	private Color GetColorForTime() {
