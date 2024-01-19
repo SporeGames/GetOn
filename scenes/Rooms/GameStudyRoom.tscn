@@ -1,7 +1,7 @@
 [gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://scenes/Rooms/BaseRoom.cs" type="Script" id=1]
-[ext_resource path="res://scenes/GameStudy/assets/GameStudies3.png" type="Texture" id=2]
+[ext_resource path="res://scenes/GameStudy/assets/GameStudyRaum.png" type="Texture" id=2]
 [ext_resource path="res://SharedAssets/RoomPerson.tscn" type="PackedScene" id=3]
 [ext_resource path="res://scenes/GameStudy/assets/Standing_Charakter.PNG" type="Texture" id=4]
 [ext_resource path="res://SharedAssets/DialogeBox.tscn" type="PackedScene" id=5]
@@ -30,15 +30,15 @@ GameSpecialization = 5
 
 [node name="PersonSprite" parent="GSPerson" index="0"]
 material = SubResource( 1 )
-position = Vector2( 274, 609 )
-scale = Vector2( 0.769759, 0.769759 )
+position = Vector2( 1206, 594 )
+scale = Vector2( 0.35729, 0.328113 )
 texture = ExtResource( 4 )
 
 [node name="InteractButton" parent="GSPerson" index="1"]
-margin_left = 169.0
-margin_top = 245.0
-margin_right = 388.0
-margin_bottom = 1000.0
+margin_left = 1146.0
+margin_top = 433.0
+margin_right = 1273.0
+margin_bottom = 763.0
 
 [node name="WelcomeDialogue" parent="GSPerson" index="2"]
 position = Vector2( 58, 674 )
