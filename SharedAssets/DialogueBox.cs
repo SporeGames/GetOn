@@ -48,7 +48,7 @@ namespace GetOn.SharedAssets {
 			_animationTimer.Connect("timeout", this, nameof(AnimateText));
 			_animationTimer.WaitTime = Mathf.Clamp(((AutoNextTime / Texts[_currentIndex - 1].Length) * TimePerCharacter) - ReadTime, 0.001f, 10f);
 			_title.Text = Title;
-			_text.Text = "";
+			_text.BbcodeText = "";
 			_icon.Texture = Icon;
 			_textToAnimate = Texts[0];
 			if (_sharedNode.SeenDialogues.Contains(UniqueID)) {
@@ -81,13 +81,13 @@ namespace GetOn.SharedAssets {
 
 		private void OnNextPressed(bool timerTriggered = false) {
 			if (_isAnimating) {
-				_text.Text = _textToAnimate;
+				_text.BbcodeText = _textToAnimate;
 				_isAnimating = false;
 				return;
 			}
 			if (_currentIndex < Texts.Length) {
 				_isAnimating = true;
-				_text.Text = "";
+				_text.BbcodeText = "";
 				_textToAnimate = Texts[_currentIndex];
 				_makeArrowBlink = false;
 				_nextButton.Modulate = new Color(1, 1, 1, 1);
@@ -127,7 +127,7 @@ namespace GetOn.SharedAssets {
 			if (_textToAnimate.Length < _animationIndex) {
 				return;
 			}
-			_text.Text += _textToAnimate[_animationIndex];
+			_text.BbcodeText += _textToAnimate[_animationIndex];
 			_animationIndex++;
 			if (_animationIndex >= _textToAnimate.Length) {
 				_animationIndex = 0;

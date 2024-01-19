@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://SharedAssets/Timer.tscn" type="PackedScene" id=1]
 [ext_resource path="res://SharedAssets/UserInterface/B_help_pressed.png" type="Texture" id=2]
@@ -7,6 +7,14 @@
 [ext_resource path="res://SharedAssets/UserInterface/B_base_2_hovered.png" type="Texture" id=5]
 [ext_resource path="res://SharedAssets/font/BAHNSCHRIFT 1.TTF" type="DynamicFontData" id=6]
 [ext_resource path="res://SharedAssets/UserInterface/B_Base2.png" type="Texture" id=7]
+
+[sub_resource type="DynamicFont" id=3]
+size = 32
+outline_size = 1
+outline_color = Color( 0, 0, 0, 1 )
+use_mipmaps = true
+use_filter = true
+font_data = ExtResource( 6 )
 
 [sub_resource type="DynamicFont" id=1]
 size = 32
@@ -68,8 +76,9 @@ margin_top = -276.0
 margin_right = 198.0
 margin_bottom = 182.0
 custom_colors/default_color = Color( 0, 0, 0, 1 )
+custom_fonts/bold_font = SubResource( 3 )
 custom_fonts/normal_font = SubResource( 1 )
-text = "This is placeholder text. You haven't entered any tutorial text yet."
+bbcode_enabled = true
 
 [node name="CloseButton" type="TextureButton" parent="Introduction"]
 anchor_left = 0.5

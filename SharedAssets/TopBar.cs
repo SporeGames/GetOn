@@ -40,7 +40,7 @@ public class TopBar : Node2D {
 		_introDescription = GetNode<RichTextLabel>("Introduction/Text");
 		_introImageCaption = GetNode<RichTextLabel>("Introduction/ImageCaption");
 		_introImage.Texture = HelpImage;
-		_introDescription.Text = Description;
+		_introDescription.BbcodeText = Description;
 		_introImageCaption.Text = ImageCaption;
 		_leftSideImage.Texture = LeftImage;
 		_rightSideImage.Texture = RightImage;

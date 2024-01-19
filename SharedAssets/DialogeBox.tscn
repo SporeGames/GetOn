@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://SharedAssets/DialogueBox.cs" type="Script" id=1]
 [ext_resource path="res://SharedAssets/font/BAHNSCHRIFT 1.TTF" type="DynamicFontData" id=2]
@@ -7,6 +7,14 @@
 
 [sub_resource type="DynamicFont" id=2]
 size = 72
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=4]
+size = 48
+outline_size = 1
+outline_color = Color( 0, 0, 0, 1 )
+use_mipmaps = true
+use_filter = true
 font_data = ExtResource( 2 )
 
 [sub_resource type="DynamicFont" id=3]
@@ -46,7 +54,9 @@ margin_top = -8.0
 margin_right = 1588.0
 margin_bottom = 300.0
 custom_colors/default_color = Color( 0, 0, 0, 1 )
+custom_fonts/bold_font = SubResource( 4 )
 custom_fonts/normal_font = SubResource( 3 )
+bbcode_enabled = true
 
 [node name="NextButton" type="TextureButton" parent="."]
 margin_left = 121.0
