@@ -44,10 +44,10 @@ texture = ExtResource( 10 )
 offset = Vector2( 873, -256 )
 
 [node name="GoToProgramming" type="Button" parent="."]
-margin_left = 1335.0
-margin_top = 475.0
-margin_right = 1857.0
-margin_bottom = 782.0
+margin_left = 1307.0
+margin_top = 520.0
+margin_right = 1829.0
+margin_bottom = 812.0
 custom_styles/hover = SubResource( 2 )
 custom_styles/pressed = SubResource( 3 )
 custom_styles/focus = SubResource( 4 )
@@ -55,10 +55,10 @@ custom_styles/disabled = SubResource( 5 )
 custom_styles/normal = SubResource( 1 )
 
 [node name="GoToManagment" type="Button" parent="."]
-margin_left = 283.0
-margin_top = 152.0
-margin_right = 802.0
-margin_bottom = 450.0
+margin_left = 311.0
+margin_top = 194.0
+margin_right = 781.0
+margin_bottom = 492.0
 custom_styles/hover = SubResource( 2 )
 custom_styles/pressed = SubResource( 3 )
 custom_styles/focus = SubResource( 4 )
@@ -66,10 +66,10 @@ custom_styles/disabled = SubResource( 5 )
 custom_styles/normal = SubResource( 1 )
 
 [node name="GoToNarrativeAndGameDesign" type="Button" parent="."]
-margin_left = 641.0
-margin_top = 467.0
-margin_right = 1261.0
-margin_bottom = 784.0
+margin_left = 640.0
+margin_top = 497.0
+margin_right = 1252.0
+margin_bottom = 814.0
 custom_styles/hover = SubResource( 2 )
 custom_styles/pressed = SubResource( 3 )
 custom_styles/focus = SubResource( 4 )
@@ -77,10 +77,10 @@ custom_styles/disabled = SubResource( 5 )
 custom_styles/normal = SubResource( 1 )
 
 [node name="GoToSoundAndArt" type="Button" parent="."]
-margin_left = 42.0
-margin_top = 466.0
-margin_right = 562.0
-margin_bottom = 783.0
+margin_left = 76.0
+margin_top = 500.0
+margin_right = 579.0
+margin_bottom = 817.0
 custom_styles/hover = SubResource( 2 )
 custom_styles/pressed = SubResource( 3 )
 custom_styles/focus = SubResource( 4 )
@@ -89,9 +89,9 @@ custom_styles/normal = SubResource( 1 )
 
 [node name="GoToGameStudy" type="Button" parent="."]
 margin_left = 811.0
-margin_top = 159.0
-margin_right = 1584.0
-margin_bottom = 444.0
+margin_top = 210.0
+margin_right = 1578.0
+margin_bottom = 495.0
 custom_styles/hover = SubResource( 2 )
 custom_styles/pressed = SubResource( 3 )
 custom_styles/focus = SubResource( 4 )
@@ -204,37 +204,43 @@ texture = ExtResource( 2 )
 
 [node name="GameStudyDone" type="Sprite" parent="."]
 visible = false
-position = Vector2( 958, 540 )
+position = Vector2( 954, 574 )
+scale = Vector2( 0.953646, 0.937963 )
 texture = ExtResource( 7 )
 
 [node name="SoundDone" type="Sprite" parent="."]
 visible = false
-position = Vector2( 958, 540 )
+position = Vector2( 963, 578 )
+scale = Vector2( 0.972396, 0.951852 )
 texture = ExtResource( 6 )
 
 [node name="NarrativeAndDesignDone" type="Sprite" parent="."]
 visible = false
-position = Vector2( 958, 540 )
+position = Vector2( 944, 579 )
 texture = ExtResource( 8 )
 
 [node name="ManagementDone" type="Sprite" parent="."]
 visible = false
-position = Vector2( 958, 540 )
+position = Vector2( 960, 578 )
+scale = Vector2( 0.972656, 0.954167 )
 texture = ExtResource( 3 )
 
 [node name="ProgrammingDone" type="Sprite" parent="."]
 visible = false
-position = Vector2( 958, 540 )
+position = Vector2( 949, 579 )
+scale = Vector2( 0.95957, 0.955903 )
 texture = ExtResource( 9 )
 
 [node name="StoryDone" type="Sprite" parent="."]
 visible = false
-position = Vector2( 958, 540 )
+position = Vector2( 954, 579 )
+scale = Vector2( 0.964844, 0.954167 )
 texture = ExtResource( 13 )
 
 [node name="ArtDone" type="Sprite" parent="."]
 visible = false
-position = Vector2( 484, 680 )
+position = Vector2( 498, 714 )
+scale = Vector2( 0.942553, 0.963542 )
 texture = ExtResource( 14 )
 
 [node name="HoverHighlights" type="Node2D" parent="."]

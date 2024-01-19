@@ -8,8 +8,6 @@
 
 [sub_resource type="DynamicFont" id=2]
 size = 20
-outline_size = 1
-outline_color = Color( 0, 0, 0, 1 )
 use_mipmaps = true
 use_filter = true
 font_data = ExtResource( 3 )
@@ -32,6 +30,7 @@ z_index = 4096
 margin_right = 223.0
 margin_bottom = 40.0
 mouse_filter = 2
+custom_colors/default_color = Color( 0, 0, 0, 1 )
 custom_fonts/normal_font = SubResource( 2 )
 
 [node name="DebugMenu" type="Node2D" parent="."]
