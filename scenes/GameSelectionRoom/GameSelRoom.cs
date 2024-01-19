@@ -138,7 +138,7 @@ namespace GetOn.scenes.GameSelectionRoom {
 		}
 		//Highlight hovered room & show name
 		private void _on_GoToManagment_mouse_entered() {
-			GD.Print(_sharedNode.MouseHoverText);
+			_sharedNode.MouseHoverText = "Management";
 			_hoverManagement.Visible = true;
 		}
 		private void _on_GoToManagment_mouse_exited() {
@@ -146,7 +146,7 @@ namespace GetOn.scenes.GameSelectionRoom {
 			_hoverManagement.Visible = false;
 		}
 		private void _on_GoToGameStudy_mouse_entered() {
-			_sharedNode.MouseHoverText = "GameStudy";
+			_sharedNode.MouseHoverText = "Game Study";
 			_hoverGameStudy.Visible = true;
 		}
 		private void _on_GoToGameStudy_mouse_exited() {

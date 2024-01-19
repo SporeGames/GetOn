@@ -93,16 +93,16 @@ namespace GetOn.scenes {
 		}
 
 		public override void _Process(float delta) {
-			if (!_debugMenu.Visible) {
-				return;
-			}
-
-			if (MouseHoverText != "") {
+			if (!MouseHoverText.Equals("")) {
 				mousefollower.Visible = true;
-				mousefollower.Position = GetGlobalMousePosition();
+				mousefollower.GetNode<RichTextLabel>("Text").Text = MouseHoverText;
+				mousefollower.Position = new Vector2(GetGlobalMousePosition().x + 25, GetGlobalMousePosition().y + 5);
 			}
 			else {
 				mousefollower.Visible = false;
+			}
+			if (!_debugMenu.Visible) {
+				return;
 			}
 			_debugText.Text = "Debug \n \n" +
 							  "\nFPS: " + Engine.GetFramesPerSecond() +
@@ -142,6 +142,7 @@ namespace GetOn.scenes {
 		public void SwitchScene(string path) {
 			CallDeferred(nameof(DeferredGotoScene), path);
 			HasDialogeBoxOpen = false;
+			MouseHoverText = "";
 		}
 
 		public void DeferredGotoScene(string path) {
