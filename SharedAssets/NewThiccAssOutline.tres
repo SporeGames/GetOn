@@ -5,7 +5,7 @@
 [resource]
 resource_local_to_scene = true
 shader = ExtResource( 1 )
-shader_param/blink_strength = 0.5
-shader_param/blink_rate = 3.0
-shader_param/outline_color = Color( 0, 0.8, 0.2, 1 )
-shader_param/outline_size = 1.0
+shader_param/blink_strength = 0.159
+shader_param/blink_rate = 1.4
+shader_param/outline_color = Color( 0.576471, 0.572549, 0.572549, 1 )
+shader_param/outline_size = 0.009

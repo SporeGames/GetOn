@@ -1,4 +1,4 @@
-[gd_scene load_steps=88 format=2]
+[gd_scene load_steps=91 format=2]
 
 [ext_resource path="res://SharedAssets/font/BAHNSCHRIFT 1.TTF" type="DynamicFontData" id=1]
 [ext_resource path="res://scenes/GameStudy/assets/Kärtchen2.png" type="Texture" id=2]
@@ -43,13 +43,16 @@
 [ext_resource path="res://SharedAssets/anleitung_gameStud.png" type="Texture" id=41]
 [ext_resource path="res://SharedAssets/music/Play/Music_GameStud.gd" type="Script" id=42]
 [ext_resource path="res://SharedAssets/NewThiccAssOutline.tres" type="Material" id=43]
-[ext_resource path="res://scenes/GameStudy/assets/VitrineLinksVordergrund.png" type="Texture" id=44]
+[ext_resource path="res://scenes/GameStudy/assets/LinkeVitrineVorderseiteMehrRand.png" type="Texture" id=44]
 [ext_resource path="res://scenes/GameStudy/SnapAreas.cs" type="Script" id=45]
 [ext_resource path="res://scenes/GameStudy/assets/SoundFX/Drag.wav" type="AudioStream" id=46]
 [ext_resource path="res://scenes/GameStudy/assets/SoundFX/Drop.wav" type="AudioStream" id=47]
 [ext_resource path="res://scenes/GameStudy/assets/SoundFX/UI Click 2 (1).wav" type="AudioStream" id=48]
 [ext_resource path="res://scenes/GameStudy/assets/SoundFX/UI Click.wav" type="AudioStream" id=49]
 [ext_resource path="res://SharedAssets/OutlineMaterial.tres" type="Material" id=50]
+[ext_resource path="res://scenes/GameStudy/assets/RechteVitrineVorderseiteMehrRand.png" type="Texture" id=51]
+[ext_resource path="res://SharedAssets/UserInterface/B_base_2_hovered.png" type="Texture" id=52]
+[ext_resource path="res://SharedAssets/UserInterface/B_Base2.png" type="Texture" id=53]
 
 [sub_resource type="StyleBoxEmpty" id=49]
 
@@ -71,8 +74,8 @@
 
 [sub_resource type="StyleBoxEmpty" id=70]
 
-[sub_resource type="DynamicFont" id=77]
-size = 24
+[sub_resource type="DynamicFont" id=86]
+size = 42
 font_data = ExtResource( 1 )
 
 [sub_resource type="RectangleShape2D" id=54]
@@ -182,10 +185,13 @@ texture = ExtResource( 35 )
 
 [node name="Left" type="Sprite" parent="."]
 material = ExtResource( 50 )
-position = Vector2( 617, 513 )
+position = Vector2( 620, 515 )
 texture = ExtResource( 44 )
 
 [node name="Right" type="Sprite" parent="."]
+material = ExtResource( 43 )
+position = Vector2( 1288, 518 )
+texture = ExtResource( 51 )
 
 [node name="SortedSprites" type="Node2D" parent="."]
 
@@ -310,7 +316,6 @@ scale = Vector2( 0.3, 0.3 )
 texture = ExtResource( 22 )
 
 [node name="TopBar" parent="." instance=ExtResource( 10 )]
-visible = false
 Game = 5
 LeftImage = ExtResource( 40 )
 RightImage = ExtResource( 11 )
@@ -346,13 +351,25 @@ custom_styles/focus = SubResource( 68 )
 custom_styles/disabled = SubResource( 69 )
 custom_styles/normal = SubResource( 70 )
 
-[node name="Submit" type="Button" parent="."]
-margin_left = 1763.0
-margin_top = 1011.0
-margin_right = 1901.0
-margin_bottom = 1070.0
-custom_fonts/font = SubResource( 77 )
-text = "Submit"
+[node name="Submit" type="TextureButton" parent="."]
+margin_left = 1549.0
+margin_top = 932.0
+margin_right = 1918.0
+margin_bottom = 1076.0
+texture_normal = ExtResource( 53 )
+texture_pressed = ExtResource( 52 )
+texture_hover = ExtResource( 52 )
+
+[node name="Label" type="Label" parent="Submit"]
+margin_left = 35.0
+margin_top = 35.0
+margin_right = 322.0
+margin_bottom = 109.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 86 )
+text = "Done"
+align = 1
+valign = 1
 
 [node name="Consoles" type="Node2D" parent="."]
 visible = false

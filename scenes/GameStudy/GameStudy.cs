@@ -8,7 +8,7 @@ public class GameStudy : Node2D
 	private TextureButton _close;
 	private Node2D _consoles;
 	private Node2D _games;
-	private Button _submit;
+	private TextureButton _submit;
 
 	public Consoles _console;
 
@@ -29,7 +29,7 @@ public class GameStudy : Node2D
 		_games = GetNode<Node2D>("Games");
 		_openGames = GetNode<Button>("OpenGames");
 		_openGames.Connect("pressed", this, nameof(OpenGames));
-		_submit = GetNode<Button>("Submit");
+		_submit = GetNode<TextureButton>("Submit");
 		_submit.Connect("pressed", this, nameof(SubmitGame));
 
 		_console = GetNode<Consoles>("Consoles");
