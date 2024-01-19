@@ -5,4 +5,7 @@
   <ItemGroup>
     <PackageReference Include="itext7" Version="8.0.2" />
   </ItemGroup>
+  <ItemGroup>
+    <Content Include="techdoc.md" />
+  </ItemGroup>
 </Project>

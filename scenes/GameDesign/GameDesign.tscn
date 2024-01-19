@@ -62,6 +62,7 @@ GameDescription = "• Online multiplayer battle royale game
 • Last team with any members alive wins
 "
 ValidPersonas = PoolStringArray( "Destruction", "Excitement", "Competition", "Challenge", "Power", "Fantasy" )
+ALittleBitValidPersonas = PoolStringArray( "Community", "Strategy", "Discovery" )
 
 [node name="DetroitSlider" parent="." instance=ExtResource( 2 )]
 visible = false
@@ -90,6 +91,7 @@ GameDescription = "• Adventure game
 • Certain scenes force quick action
 "
 ValidPersonas = PoolStringArray( "Completion", "Fantasy", "Story", "Discovery" )
+ALittleBitValidPersonas = PoolStringArray( "Strategy" )
 
 [node name="DeadSpaceSlider" parent="." instance=ExtResource( 2 )]
 visible = false
@@ -113,6 +115,7 @@ GameDescription = "• Single player survival horror game
 
 • Necessitating careful usage of the tools at hand"
 ValidPersonas = PoolStringArray( "Excitement", "Strategy", "Completion", "Story", "Discovery" )
+ALittleBitValidPersonas = PoolStringArray( "Destruction", "Fantasy" )
 
 [node name="SmallProfileAnchor" type="Node2D" parent="."]
 visible = false
