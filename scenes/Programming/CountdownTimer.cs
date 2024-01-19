@@ -5,7 +5,6 @@ using GetOn.scenes.Programming;
 
 public class CountdownTimer : Node2D {
 	
-	[Export] public bool countdown = false;
 	[Export] public float CurrentTime = 300; 
 	[Export] public Color FontColor = new Color(0.0f, 0.0f, 0.0f, 1.0f);
 	public bool running = false;
@@ -14,6 +13,7 @@ public class CountdownTimer : Node2D {
 	private AbilitySpecialization _spec = AbilitySpecialization.None;
 	
 	public float InitialTime = 0;
+	private long _startTime = 0;
 	
 	public override void _Ready() {
 		_displayText = GetNode<RichTextLabel>("Display");
@@ -58,11 +58,11 @@ public class CountdownTimer : Node2D {
 		if (!running) {
 			return;
 		}
-		if (countdown) {
-			CurrentTime -= 1;
-		} else {
-			CurrentTime += 1;
+		if (_startTime == 0) {
+			_startTime = DateTime.Now.Second;
 		}
+		CurrentTime = InitialTime + (DateTime.Now.Second - _startTime);
+		
 		UpdateTimerDisplay();
 	}
 
