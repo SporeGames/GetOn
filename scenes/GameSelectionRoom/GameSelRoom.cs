@@ -25,6 +25,12 @@ namespace GetOn.scenes.GameSelectionRoom {
 		private Sprite _storyDone;
 		private Sprite _artDone;
 
+		private Sprite _hoverGameStudy;
+		private Sprite _hoverManagement;
+		private Sprite _hoverSound;
+		private Sprite _hoverGDAndNarrative;
+		private Sprite _hoverProgramming;
+
 		// Called when the node enters the scene tree for the first time.
 		public override void _Ready() {
 			
@@ -52,6 +58,12 @@ namespace GetOn.scenes.GameSelectionRoom {
 			_storyDone = GetNode<Sprite>("StoryDone");
 			_artDone = GetNode<Sprite>("ArtDone");
 			CheckCompletions();
+
+			_hoverGameStudy = GetNode<Sprite>("HoverHighlights/HoverGameStudy");
+			_hoverManagement = GetNode<Sprite>("HoverHighlights/HoverManagement");
+			_hoverSound = GetNode<Sprite>("HoverHighlights/HoverSound");
+			_hoverGDAndNarrative = GetNode<Sprite>("HoverHighlights/HoverGDAndNarrative");
+			_hoverProgramming = GetNode<Sprite>("HoverHighlights/HoverProgramming");
 		}
 
 		public void OnGoToProgrammingPressed() {
@@ -124,6 +136,47 @@ namespace GetOn.scenes.GameSelectionRoom {
 				}
 			}
 		}
-		
+		//Highlight hovered room & show name
+		private void _on_GoToManagment_mouse_entered() {
+			GD.Print(_sharedNode.MouseHoverText);
+			_hoverManagement.Visible = true;
+		}
+		private void _on_GoToManagment_mouse_exited() {
+			_sharedNode.MouseHoverText = "";
+			_hoverManagement.Visible = false;
+		}
+		private void _on_GoToGameStudy_mouse_entered() {
+			_sharedNode.MouseHoverText = "GameStudy";
+			_hoverGameStudy.Visible = true;
+		}
+		private void _on_GoToGameStudy_mouse_exited() {
+			_sharedNode.MouseHoverText = "";
+			_hoverGameStudy.Visible = false;
+		}
+		private void _on_GoToProgramming_mouse_entered() {
+			_sharedNode.MouseHoverText = "Programming";
+			_hoverProgramming.Visible = true;
+		}
+		private void _on_GoToProgramming_mouse_exited() {
+			_hoverProgramming.Visible = false;
+			_sharedNode.MouseHoverText = "";
+		}
+		private void _on_GoToNarrativeAndGameDesign_mouse_entered() {
+			_sharedNode.MouseHoverText = "Game Design and Story";
+			_hoverGDAndNarrative.Visible = true;
+		}
+		private void _on_GoToNarrativeAndGameDesign_mouse_exited() {
+			_hoverGDAndNarrative.Visible = false;
+			_sharedNode.MouseHoverText = "";
+		}
+		private void _on_GoToSoundAndArt_mouse_entered() {
+			_sharedNode.MouseHoverText = "Sound and Art";
+			_hoverSound.Visible = true;
+		}
+		private void _on_GoToSoundAndArt_mouse_exited() {
+			_hoverSound.Visible = false;
+			_sharedNode.MouseHoverText = "";
+		}
 	}
 }
+

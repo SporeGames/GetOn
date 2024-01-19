@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=2]
+[gd_scene load_steps=26 format=2]
 
 [ext_resource path="res://SharedAssets/font/BAHNSCHRIFT 1.TTF" type="DynamicFontData" id=1]
 [ext_resource path="res://icon.png" type="Texture" id=2]
@@ -14,6 +14,11 @@
 [ext_resource path="res://SharedAssets/dialogue_characters/management  ohne Hintergrund.PNG" type="Texture" id=12]
 [ext_resource path="res://scenes/GameSelectionRoom/assets/pro 3.story grey .png" type="Texture" id=13]
 [ext_resource path="res://scenes/GameSelectionRoom/assets/art desk grey.png" type="Texture" id=14]
+[ext_resource path="res://scenes/GameSelectionRoom/assets/HoverGameStudys.png" type="Texture" id=15]
+[ext_resource path="res://scenes/GameSelectionRoom/assets/HoverProgramming.png" type="Texture" id=16]
+[ext_resource path="res://scenes/GameSelectionRoom/assets/HoverGD.png" type="Texture" id=17]
+[ext_resource path="res://scenes/GameSelectionRoom/assets/HoverSound.png" type="Texture" id=18]
+[ext_resource path="res://scenes/GameSelectionRoom/assets/HoverManagement.png" type="Texture" id=19]
 
 [sub_resource type="StyleBoxEmpty" id=2]
 
@@ -232,6 +237,33 @@ visible = false
 position = Vector2( 484, 680 )
 texture = ExtResource( 14 )
 
+[node name="HoverHighlights" type="Node2D" parent="."]
+
+[node name="HoverGameStudy" type="Sprite" parent="HoverHighlights"]
+visible = false
+position = Vector2( 960, 540 )
+texture = ExtResource( 15 )
+
+[node name="HoverManagement" type="Sprite" parent="HoverHighlights"]
+visible = false
+position = Vector2( 957, 540 )
+texture = ExtResource( 19 )
+
+[node name="HoverSound" type="Sprite" parent="HoverHighlights"]
+visible = false
+position = Vector2( 958, 540 )
+texture = ExtResource( 18 )
+
+[node name="HoverGDAndNarrative" type="Sprite" parent="HoverHighlights"]
+visible = false
+position = Vector2( 957, 539 )
+texture = ExtResource( 17 )
+
+[node name="HoverProgramming" type="Sprite" parent="HoverHighlights"]
+visible = false
+position = Vector2( 958, 537 )
+texture = ExtResource( 16 )
+
 [node name="DialogueBox" parent="." instance=ExtResource( 11 )]
 position = Vector2( 0, 708 )
 Title = "Chloe"
@@ -255,3 +287,14 @@ ReadTime = 0.3
 NodeToMakeVisible = NodePath("../PrintPDF")
 IsUnique = true
 UniqueID = "205"
+
+[connection signal="mouse_entered" from="GoToProgramming" to="." method="_on_GoToProgramming_mouse_entered"]
+[connection signal="mouse_exited" from="GoToProgramming" to="." method="_on_GoToProgramming_mouse_exited"]
+[connection signal="mouse_entered" from="GoToManagment" to="." method="_on_GoToManagment_mouse_entered"]
+[connection signal="mouse_exited" from="GoToManagment" to="." method="_on_GoToManagment_mouse_exited"]
+[connection signal="mouse_entered" from="GoToNarrativeAndGameDesign" to="." method="_on_GoToNarrativeAndGameDesign_mouse_entered"]
+[connection signal="mouse_exited" from="GoToNarrativeAndGameDesign" to="." method="_on_GoToNarrativeAndGameDesign_mouse_exited"]
+[connection signal="mouse_entered" from="GoToSoundAndArt" to="." method="_on_GoToSoundAndArt_mouse_entered"]
+[connection signal="mouse_exited" from="GoToSoundAndArt" to="." method="_on_GoToSoundAndArt_mouse_exited"]
+[connection signal="mouse_entered" from="GoToGameStudy" to="." method="_on_GoToGameStudy_mouse_entered"]
+[connection signal="mouse_exited" from="GoToGameStudy" to="." method="_on_GoToGameStudy_mouse_exited"]
