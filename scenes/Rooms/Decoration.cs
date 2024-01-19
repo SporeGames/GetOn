@@ -5,6 +5,7 @@ namespace GetOn.scenes.Rooms {
 
 		[Export] public Texture PopupTexture;
 		[Export] public Texture SmallTexture;
+		[Export] public string Description;
 		[Export(PropertyHint.Range, "0, 5")] public float SmallScale = 1.0f;
 		[Export(PropertyHint.Range, "0, 5")] public float PopupScale = 1.0f;
 	
@@ -21,6 +22,7 @@ namespace GetOn.scenes.Rooms {
 			_closeButton = GetNode<TextureButton>("Popup/CloseButton");
 			_popUp = GetNode<Node2D>("Popup");
 			_popUpSprite = GetNode<Sprite>("Popup/Sprite");
+			_popUp.GetNode<RichTextLabel>("Description").BbcodeText = "[center]" + Description;
 			_popUp.Visible = false;
 			_popUpSprite.Texture = PopupTexture;
 			_popUpSprite.Scale = new Vector2(PopupScale, PopupScale);
