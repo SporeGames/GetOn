@@ -102,17 +102,17 @@ Texts = PoolStringArray( "Hello again! What you see here is our management room,
 IsUnique = true
 UniqueID = "103"
 
-[node name="Deco2" parent="." instance=ExtResource( 3 )]
+[node name="ManagementDrawers" parent="." instance=ExtResource( 3 )]
 position = Vector2( 162, 443 )
 PopupTexture = ExtResource( 12 )
 SmallTexture = ExtResource( 13 )
 
-[node name="Deco" parent="." instance=ExtResource( 3 )]
+[node name="ManagementWhiteboard" parent="." instance=ExtResource( 3 )]
 position = Vector2( 1090, 252 )
 PopupTexture = ExtResource( 10 )
 SmallTexture = ExtResource( 9 )
 
-[node name="Monstera" type="Sprite" parent="Deco"]
+[node name="Monstera" type="Sprite" parent="ManagementWhiteboard"]
 position = Vector2( 517, 238 )
 texture = ExtResource( 11 )
 

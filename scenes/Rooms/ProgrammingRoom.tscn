@@ -21,6 +21,7 @@ shader = ExtResource( 8 )
 shader_param/blink_strength = 0.1
 shader_param/blink_rate = 2.0
 shader_param/outline_color = Color( 1, 1, 1, 1 )
+shader_param/outline_size = 0.02
 
 [node name="ProgrammingRoom" type="Node2D"]
 script = ExtResource( 3 )
@@ -110,22 +111,22 @@ texture_normal = ExtResource( 4 )
 texture_pressed = ExtResource( 5 )
 expand = true
 
-[node name="Deco" parent="." instance=ExtResource( 1 )]
+[node name="ProgrammingPoster2" parent="." instance=ExtResource( 1 )]
 position = Vector2( 148, 267 )
 PopupTexture = ExtResource( 12 )
 SmallTexture = ExtResource( 10 )
 
-[node name="Popup" parent="Deco" index="1"]
+[node name="Popup" parent="ProgrammingPoster2" index="1"]
 position = Vector2( -14, -10 )
 
-[node name="Sprite" parent="Deco/Popup" index="1"]
+[node name="Sprite" parent="ProgrammingPoster2/Popup" index="1"]
 z_index = 6
 
-[node name="Deco2" parent="." instance=ExtResource( 1 )]
+[node name="ProgrammingPoster1" parent="." instance=ExtResource( 1 )]
 position = Vector2( 426, 266 )
 PopupTexture = ExtResource( 7 )
 SmallTexture = ExtResource( 9 )
 
 [editable path="RoomPerson"]
-[editable path="Deco"]
-[editable path="Deco2"]
+[editable path="ProgrammingPoster2"]
+[editable path="ProgrammingPoster1"]

@@ -41,13 +41,18 @@ namespace GetOn.scenes.Rooms {
 	
 
 		private void OnClicked() {
-			if (GetNode<SharedNode>("/root/SharedNode").HasDialogeBoxOpen) {
+			var shared = GetNode<SharedNode>("/root/SharedNode");
+			if (shared.HasDialogeBoxOpen) {
 				return;
 			}
 			_popUp.Visible = true;
 			var center = GetViewportRect().Size / 2;
 			_popUp.GlobalPosition = center;
-			GetNode<SharedNode>("/root/SharedNode").HasDialogeBoxOpen = true;
+			shared.HasDialogeBoxOpen = true;
+			if (shared.ClickedDecorations.Contains(Name)) {
+				return;
+			}
+			shared.ClickedDecorations.Add(Name);
 		}
 	
 		private void OnMouseEntered() {

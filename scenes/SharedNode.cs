@@ -26,6 +26,7 @@ namespace GetOn.scenes {
 
 		[JsonProperty] public readonly List<AbilitySpecialization> CompletedTasks = new List<AbilitySpecialization>();
 		[JsonProperty] public readonly List<string> SeenDialogues = new List<string>();
+		[JsonProperty] public readonly List<string> ClickedDecorations = new List<string>();
 		[JsonProperty] public readonly Dictionary<AbilitySpecialization, int> HelpButtonPressed = new Dictionary<AbilitySpecialization, int>();
 		
 		// Programming
@@ -190,6 +191,7 @@ namespace GetOn.scenes {
 				Categories = ToCategories(),
 				BestName = best.Key.ToString().Replace("_", " "),
 				BestPoints = results[best.Key].ToString(),
+				Decorations = ClickedDecorations.Count.ToString(),
 				TotalTime = "Time: " + FormatTime(GetNode<CountdownTimer>("GlobalTimer").CurrentTime, true),
 				TotalPoints = totalPoints.ToString()
 			};

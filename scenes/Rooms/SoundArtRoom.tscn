@@ -21,6 +21,7 @@ shader = ExtResource( 9 )
 shader_param/blink_strength = 0.1
 shader_param/blink_rate = 2.0
 shader_param/outline_color = Color( 1, 1, 1, 1 )
+shader_param/outline_size = 0.02
 
 [sub_resource type="ShaderMaterial" id=2]
 resource_local_to_scene = true
@@ -28,6 +29,7 @@ shader = ExtResource( 9 )
 shader_param/blink_strength = 0.1
 shader_param/blink_rate = 2.0
 shader_param/outline_color = Color( 1, 1, 1, 1 )
+shader_param/outline_size = 0.02
 
 [node name="SoundArtRoom" type="Node2D"]
 script = ExtResource( 5 )
@@ -172,7 +174,7 @@ margin_top = 196.0
 margin_right = 1196.0
 margin_bottom = 619.0
 
-[node name="Deco" parent="." instance=ExtResource( 1 )]
+[node name="ArtTrashOnTheFloor" parent="." instance=ExtResource( 1 )]
 position = Vector2( 1198, 796 )
 PopupTexture = ExtResource( 11 )
 SmallTexture = ExtResource( 8 )

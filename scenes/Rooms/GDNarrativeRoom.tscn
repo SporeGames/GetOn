@@ -22,6 +22,7 @@ shader = ExtResource( 8 )
 shader_param/blink_strength = 0.1
 shader_param/blink_rate = 2.0
 shader_param/outline_color = Color( 1, 1, 1, 1 )
+shader_param/outline_size = 0.02
 
 [sub_resource type="ShaderMaterial" id=2]
 resource_local_to_scene = true
@@ -29,6 +30,7 @@ shader = ExtResource( 8 )
 shader_param/blink_strength = 0.1
 shader_param/blink_rate = 2.0
 shader_param/outline_color = Color( 1, 1, 1, 1 )
+shader_param/outline_size = 0.02
 
 [node name="GDNarrativeRoom" type="Node2D"]
 script = ExtResource( 1 )
@@ -170,13 +172,13 @@ texture_normal = ExtResource( 6 )
 texture_pressed = ExtResource( 7 )
 expand = true
 
-[node name="Deco" parent="." instance=ExtResource( 9 )]
+[node name="DecoNextToStoryPerson" parent="." instance=ExtResource( 9 )]
 position = Vector2( 495, 743 )
 scale = Vector2( 0.733358, 0.733358 )
 PopupTexture = ExtResource( 11 )
 SmallTexture = ExtResource( 10 )
 
-[node name="Sprite" parent="Deco" index="0"]
+[node name="Sprite" parent="DecoNextToStoryPerson" index="0"]
 margin_left = 15.0
 margin_top = 22.0
 margin_right = 15.0
@@ -186,4 +188,4 @@ rect_scale = Vector2( 0.601389, 0.601389 )
 [editable path="GDPerson"]
 [editable path="NarrativePerson"]
 [editable path="NarrativePerson/WelcomeDialogue"]
-[editable path="Deco"]
+[editable path="DecoNextToStoryPerson"]

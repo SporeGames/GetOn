@@ -9,6 +9,7 @@ namespace GetOn.scenes {
         public string TotalPoints { get; set; }
         public string BestName { get; set; }
         public string BestPoints { get; set; }
+        public string Decorations { get; set; }
         public string Hash { get; set; }
     }
 }
