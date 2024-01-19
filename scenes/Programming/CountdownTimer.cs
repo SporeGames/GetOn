@@ -10,6 +10,7 @@ public class CountdownTimer : Node2D {
 	public bool running = false;
 	private Timer _timer;
 	private RichTextLabel _displayText;
+	private AnimatedSprite _icon;
 	private AbilitySpecialization _spec = AbilitySpecialization.None;
 	
 	public float InitialTime = 0;
@@ -17,6 +18,7 @@ public class CountdownTimer : Node2D {
 	
 	public override void _Ready() {
 		_displayText = GetNode<RichTextLabel>("Display");
+		_icon = GetNode<AnimatedSprite>("Icon");
 		_timer = new Timer();
 		AddChild(_timer);
 		_timer.WaitTime = 1; 
@@ -72,6 +74,8 @@ public class CountdownTimer : Node2D {
 		int seconds = Mathf.FloorToInt(CurrentTime % 60);
 		_displayText.Text = $"Time: {minutes:00}:{seconds:00}";
 		_displayText.AddColorOverride("default_color", GetColorForTime());
+		_icon.Modulate = GetColorForTime();
+		
 	}
 
 	private Color GetColorForTime() {
