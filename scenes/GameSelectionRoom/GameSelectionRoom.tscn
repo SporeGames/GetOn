@@ -9,7 +9,7 @@
 [ext_resource path="res://scenes/GameSelectionRoom/assets/pro 3. game studies grey .png" type="Texture" id=7]
 [ext_resource path="res://scenes/GameSelectionRoom/assets/pro 3. game design grey .png" type="Texture" id=8]
 [ext_resource path="res://scenes/GameSelectionRoom/assets/pro 3. programming grey .png" type="Texture" id=9]
-[ext_resource path="res://scenes/GameSelectionRoom/assets/Layout3.png" type="Texture" id=10]
+[ext_resource path="res://scenes/GameSelectionRoom/assets/LayoutMitWänden.png" type="Texture" id=10]
 [ext_resource path="res://SharedAssets/DialogeBox.tscn" type="PackedScene" id=11]
 [ext_resource path="res://SharedAssets/dialogue_characters/management  ohne Hintergrund.PNG" type="Texture" id=12]
 [ext_resource path="res://scenes/GameSelectionRoom/assets/pro 3.story grey .png" type="Texture" id=13]
@@ -241,27 +241,32 @@ texture = ExtResource( 14 )
 
 [node name="HoverGameStudy" type="Sprite" parent="HoverHighlights"]
 visible = false
-position = Vector2( 960, 540 )
+position = Vector2( 950, 577 )
+scale = Vector2( 0.955208, 0.953704 )
 texture = ExtResource( 15 )
 
 [node name="HoverManagement" type="Sprite" parent="HoverHighlights"]
 visible = false
-position = Vector2( 957, 540 )
+position = Vector2( 953, 583 )
+scale = Vector2( 0.966667, 0.958333 )
 texture = ExtResource( 19 )
 
 [node name="HoverSound" type="Sprite" parent="HoverHighlights"]
 visible = false
-position = Vector2( 958, 540 )
+position = Vector2( 959, 579 )
+scale = Vector2( 0.966667, 0.946296 )
 texture = ExtResource( 18 )
 
 [node name="HoverGDAndNarrative" type="Sprite" parent="HoverHighlights"]
 visible = false
-position = Vector2( 957, 539 )
+position = Vector2( 953, 577 )
+scale = Vector2( 0.951237, 0.950232 )
 texture = ExtResource( 17 )
 
 [node name="HoverProgramming" type="Sprite" parent="HoverHighlights"]
 visible = false
-position = Vector2( 958, 537 )
+position = Vector2( 940, 579 )
+scale = Vector2( 0.971875, 0.94537 )
 texture = ExtResource( 16 )
 
 [node name="DialogueBox" parent="." instance=ExtResource( 11 )]
