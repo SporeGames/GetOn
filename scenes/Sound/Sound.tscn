@@ -131,7 +131,6 @@ align = 1
 valign = 1
 
 [node name="TopBar" parent="." instance=ExtResource( 9 )]
-visible = false
 Game = 4
 LeftImage = ExtResource( 18 )
 RightImage = ExtResource( 20 )

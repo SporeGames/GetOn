@@ -140,7 +140,7 @@ public class Sound : Node2D
 			//GD.Print("Mthe wurde so oft gecallt: ",count);
 			GD.Print(points);
 			_sharedNode.soundPoints = (double) points;
-			//_sharedNode.soundTime = GetNode<CountdownTimer>("/root/Sound/Timer").CurrentTime;
+			_sharedNode.soundTime = GetNode<CountdownTimer>("/root/Sound/TopBar/Timer").CurrentTime;
 			_sharedNode.CompletedTasks.Add(AbilitySpecialization.Sound);
 			_sharedNode.SwitchScene("res://scenes/Rooms/SoundArtRoom.tscn");
 		}
