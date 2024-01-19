@@ -170,8 +170,8 @@ public class Management : Node2D {
 				if (_dragOffset == Vector2.Zero) {
 					_dragOffset = _currentNote.Position - GetGlobalMousePosition();
 				}
-				var x = Mathf.Clamp(GetGlobalMousePosition().x + _dragOffset.x, 0, GetViewport().Size.x);
-				var y = Mathf.Clamp(GetGlobalMousePosition().y + _dragOffset.y, 0, GetViewport().Size.y);
+				var x = Mathf.Clamp(GetGlobalMousePosition().x + _dragOffset.x, 0, GetViewport().Size.x + 20);
+				var y = Mathf.Clamp(GetGlobalMousePosition().y + _dragOffset.y, 0, GetViewport().Size.y + 20);
 				_currentNote.Position = new Vector2(x, y);
 				if (BoxedNotes.ContainsValue(_currentNote)) { // Not used for now, maybe we allow reordering later
 					var box = BoxedNotes.First(n => n.Value == _currentNote).Key;
