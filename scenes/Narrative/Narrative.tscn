@@ -238,6 +238,8 @@ font_data = ExtResource( 11 )
 
 [sub_resource type="DynamicFont" id=158]
 size = 45
+use_mipmaps = true
+use_filter = true
 font_data = ExtResource( 11 )
 
 [sub_resource type="StyleBoxEmpty" id=84]

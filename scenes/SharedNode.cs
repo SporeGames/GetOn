@@ -28,22 +28,39 @@ namespace GetOn.scenes {
 		[JsonProperty] public readonly List<string> SeenDialogues = new List<string>();
 		[JsonProperty] public readonly Dictionary<AbilitySpecialization, int> HelpButtonPressed = new Dictionary<AbilitySpecialization, int>();
 		
+		// Programming
 		[JsonProperty] public double programmingPoints = 0;
 		[JsonProperty] public int DisconnectedNodes = 0;
 		[JsonProperty] public int EncounteredErrors = 0;
 		[JsonProperty] public int TestsRun = 0;
 		[JsonProperty] public float programmingTime = 0;
+		// Game Study
 		[JsonProperty] public double gameStudyPoints = 0;
 		[JsonProperty] public float gameStudyTime = 0;
+		[JsonProperty] public int gameStudyConsoles = 0;
+		[JsonProperty] public int gameStudyClassicGames = 0;
+		[JsonProperty] public int gameStudySciFiGames = 0;
+		// Game Design
 		[JsonProperty] public int gameDesignPoints = 0;
 		[JsonProperty] public float gameDesignTime = 0;
+		[JsonProperty] public int gameDesignMotivations = 0;
+		// Narrative
 		[JsonProperty] public double narrativePoints = 0;
 		[JsonProperty] public float narrativeTime = 0;
+		[JsonProperty] public int narrativeAttributes = 0;
+		[JsonProperty] public int narrativeSettings = 0;
+		[JsonProperty] public int narrativeEndings = 0;
+		// Sound
 		[JsonProperty] public double soundPoints = 0;
 		[JsonProperty] public float soundTime = 0;
+		[JsonProperty] public int soundEasySounds = 0;
+		[JsonProperty] public int soundMediumSounds = 0;
+		[JsonProperty] public int soundHardSounds = 0;
+		// Management
 		[JsonProperty]public double managementPoints = 0;
 		[JsonProperty] public int managementColors = 0;
 		[JsonProperty] public float managementTime = 0;
+		[JsonProperty] public int managementCardsPlaced = 0;
 		[JsonProperty] public AbilitySpecialization Specialization = AbilitySpecialization.Programming;
 
 		public bool isDragging;
@@ -203,19 +220,23 @@ namespace GetOn.scenes {
 					}
 				},
 				new ResultCategory {
-					Title = "Game Design",
-					Items = new List<ResultEntry> {
-						new ResultEntry { Title = "Points", Text = gameDesignPoints.ToString() },
-						new ResultEntry { Title = "Time", Text = FormatTime(gameDesignTime) },
-						new ResultEntry { Title = "Help button pressed", Text = HelpButtonPressed[AbilitySpecialization.Game_Design].ToString() }
-					}
-				},
-				new ResultCategory {
 					Title = "Game Study",
 					Items = new List<ResultEntry> {
 						new ResultEntry { Title = "Points", Text = gameStudyPoints.ToString() },
 						new ResultEntry { Title = "Time", Text = FormatTime(gameStudyTime) },
-						new ResultEntry { Title = "Help button pressed", Text = HelpButtonPressed[AbilitySpecialization.Game_Studies].ToString() }
+						new ResultEntry { Title = "Help button pressed", Text = HelpButtonPressed[AbilitySpecialization.Game_Studies].ToString() },
+						new ResultEntry { Title = "Consoles", Text = gameStudyConsoles.ToString() },
+						new ResultEntry { Title = "Classic games", Text = gameStudyClassicGames.ToString() },
+						new ResultEntry { Title = "Sci-fi games", Text = gameStudySciFiGames.ToString() }
+					}
+				},
+				new ResultCategory {
+					Title = "Game Design",
+					Items = new List<ResultEntry> {
+						new ResultEntry { Title = "Points", Text = gameDesignPoints.ToString() },
+						new ResultEntry { Title = "Time", Text = FormatTime(gameDesignTime) },
+						new ResultEntry { Title = "Help button pressed", Text = HelpButtonPressed[AbilitySpecialization.Game_Design].ToString() },
+						new ResultEntry { Title = "Motivations", Text = gameDesignMotivations.ToString() }
 					}
 				},
 				new ResultCategory {
@@ -223,7 +244,10 @@ namespace GetOn.scenes {
 					Items = new List<ResultEntry> {
 						new ResultEntry { Title = "Points", Text = narrativePoints.ToString() },
 						new ResultEntry { Title = "Time", Text = FormatTime(narrativeTime) },
-						new ResultEntry { Title = "Help button pressed", Text = HelpButtonPressed[AbilitySpecialization.Narrative_Design].ToString() }
+						new ResultEntry { Title = "Help button pressed", Text = HelpButtonPressed[AbilitySpecialization.Narrative_Design].ToString() },
+						new ResultEntry { Title = "Attributes", Text = narrativeAttributes.ToString() },
+						new ResultEntry { Title = "Settings", Text = narrativeSettings.ToString() },
+						new ResultEntry { Title = "Endings", Text = narrativeEndings.ToString() }
 					}
 				},
 				new ResultCategory() {
@@ -231,16 +255,20 @@ namespace GetOn.scenes {
 					Items = new List<ResultEntry> {
 						new ResultEntry { Title = "Points", Text = soundPoints.ToString() },
 						new ResultEntry { Title = "Time", Text = FormatTime(soundTime) },
-						new ResultEntry { Title = "Help button pressed", Text = HelpButtonPressed[AbilitySpecialization.Sound].ToString() }
+						new ResultEntry { Title = "Help button pressed", Text = HelpButtonPressed[AbilitySpecialization.Sound].ToString() },
+						new ResultEntry { Title = "Easy sounds", Text = soundEasySounds.ToString() },
+						new ResultEntry { Title = "Medium sounds", Text = soundMediumSounds.ToString() },
+						new ResultEntry { Title = "Hard sounds", Text = soundHardSounds.ToString() }
 					}
 				},
 				new ResultCategory() {
 					Title = "Management",
 					Items = new List<ResultEntry> {
 						new ResultEntry { Title = "Points", Text = managementPoints.ToString() },
-						new ResultEntry { Title = "Colors", Text = managementColors.ToString() },
 						new ResultEntry { Title = "Time", Text = FormatTime(managementTime) },
-						new ResultEntry { Title = "Help button pressed", Text = HelpButtonPressed[AbilitySpecialization.Management].ToString() }
+						new ResultEntry { Title = "Help button pressed", Text = HelpButtonPressed[AbilitySpecialization.Management].ToString() },
+						new ResultEntry { Title = "Cards colored", Text = managementColors.ToString() },
+						new ResultEntry { Title = "Cards correctly placed", Text = managementCardsPlaced.ToString() },
 					}
 				}
 			};
