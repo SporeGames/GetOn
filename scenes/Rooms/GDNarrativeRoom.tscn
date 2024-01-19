@@ -64,6 +64,10 @@ SceneToLoad = "GameDesign"
 Title = "Mike"
 Icon = ExtResource( 14 )
 Texts = PoolStringArray( "I\'ll be honest with you, you should think twice about becoming a game designer, because your work hasn\'t helped me here." )
+LoadSceneAfter = false
+ResultThreshold = 22
+IsUnique = true
+UniqueID = "667"
 
 [node name="TalkAgainDialogue" parent="GDPerson" index="4"]
 Title = "Mike"
@@ -133,6 +137,10 @@ texture = ExtResource( 12 )
 Title = "Marie"
 Icon = ExtResource( 13 )
 Texts = PoolStringArray( "This is an unexpected twist... . You said you specialised in story design, were you trying to deceive us\?" )
+LoadSceneAfter = false
+ResultThreshold = 22
+IsUnique = true
+UniqueID = "668"
 
 [node name="TalkAgainDialogue" parent="NarrativePerson" index="4"]
 Title = "Marie"

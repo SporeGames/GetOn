@@ -57,6 +57,9 @@ Title = "Justin"
 Icon = ExtResource( 13 )
 Texts = PoolStringArray( "I understand that not everyone knows blueprints, but since you are supposed to be a specialised programmer, you should at least know in which order to place them... .", "I\'m sorry newbie, but I don\'t think you should consider yourself an experienced programmer in the game industry." )
 LoadSceneAfter = false
+ResultThreshold = 22
+IsUnique = true
+UniqueID = "669"
 
 [node name="TalkAgainDialogue" parent="RoomPerson" index="4"]
 Title = "Justin"

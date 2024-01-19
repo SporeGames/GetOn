@@ -53,6 +53,9 @@ Title = "Emily"
 Icon = ExtResource( 11 )
 Texts = PoolStringArray( "I don’t want to be rude or something, but I don’t think that you have enough knowledge in game-studies to be specialized in this field…" )
 LoadSceneAfter = false
+ResultThreshold = 22
+IsUnique = true
+UniqueID = "671"
 
 [node name="TalkAgainDialogue" parent="GSPerson" index="4"]
 position = Vector2( 58, 674 )

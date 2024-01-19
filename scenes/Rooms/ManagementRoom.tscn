@@ -63,6 +63,11 @@ SceneToLoad = "Management"
 [node name="EpicFailDialogue" parent="RoomPerson" index="3"]
 Title = "Chloe"
 Icon = ExtResource( 14 )
+Texts = PoolStringArray( "Um yeah, let\'s leave it by that.", "If I work on that task myself, I can listen to my tracks again." )
+LoadSceneAfter = false
+ResultThreshold = 22
+IsUnique = true
+UniqueID = "666"
 
 [node name="TalkAgainDialogue" parent="RoomPerson" index="4"]
 Title = "Chloe"
@@ -106,11 +111,13 @@ UniqueID = "103"
 position = Vector2( 162, 443 )
 PopupTexture = ExtResource( 12 )
 SmallTexture = ExtResource( 13 )
+Description = "Drawers with stuff"
 
 [node name="ManagementWhiteboard" parent="." instance=ExtResource( 3 )]
 position = Vector2( 1090, 252 )
 PopupTexture = ExtResource( 10 )
 SmallTexture = ExtResource( 9 )
+Description = "Whiteboard"
 
 [node name="Monstera" type="Sprite" parent="ManagementWhiteboard"]
 position = Vector2( 517, 238 )

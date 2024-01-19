@@ -68,6 +68,9 @@ Title = "Julia"
 Icon = ExtResource( 12 )
 Texts = PoolStringArray( "I was really looking forward to working with a fellow sound designer, but it seems like you\'re not quite there yet..." )
 LoadSceneAfter = false
+ResultThreshold = 22
+IsUnique = true
+UniqueID = "670"
 
 [node name="TalkAgainDialogue" parent="SoundPerson" index="4"]
 position = Vector2( 74, 710 )

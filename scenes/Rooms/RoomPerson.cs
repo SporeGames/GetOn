@@ -85,7 +85,7 @@ public class RoomPerson : Node2D {
 				GD.Print("This specialization is not implemented: " + GameSpecialization);
 				break;
 		}
-		if (GameSpecialization == _shared.Specialization && gameResult < _epicFailDialogueBox.ResultThreshold) {
+		if (GameSpecialization == _shared.Specialization && gameResult <= _epicFailDialogueBox.ResultThreshold) { // Careful - this works the other way around
 			return _epicFailDialogueBox;
 		}
 		var sortedBoxes = _dialogueBoxes.OrderBy(b => b.ResultThreshold).ToList();
