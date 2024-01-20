@@ -47,6 +47,7 @@ namespace GetOn.scenes.Rooms {
 			if (shared.HasDialogeBoxOpen) {
 				return;
 			}
+			GetNode<SharedNode>("/root/SharedNode").PlayGenericClick();
 			_popUp.Visible = true;
 			var center = GetViewportRect().Size / 2;
 			_popUp.GlobalPosition = center;

@@ -17,10 +17,12 @@ public class BaseRoom : Node2D {
 	}
 	
 	private void OnBackButtonPressed() {
+		GetNode<SharedNode>("/root/SharedNode").PlayGenericClick();
 		GetNode<SharedNode>("/root/SharedNode").SwitchScene("res://scenes/GameSelectionRoom/GameSelectionRoom.tscn");
 	}
 	
 	public void OnDoorButtonPressed() {
+		GetNode<SharedNode>("/root/SharedNode").PlayGenericClick();
 		GetNode<SharedNode>("/root/SharedNode").SwitchScene("res://scenes/GameSelectionRoom/GameSelectionRoom.tscn");
 	}
 	

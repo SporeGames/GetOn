@@ -117,6 +117,7 @@ namespace GetOn.scenes.Programming {
 			_sharedNode.programmingTime = _timer.CurrentTime;
 			_sharedNode.CompletedTasks.Add(AbilitySpecialization.Programming);
 			_sharedNode.SwitchScene("res://scenes/Rooms/ProgrammingRoom.tscn");
+			_sharedNode.PlayGenericClick();
 		}
 	}
 }

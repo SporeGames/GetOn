@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=2]
+[gd_scene load_steps=29 format=2]
 
 [ext_resource path="res://SharedAssets/font/BAHNSCHRIFT 1.TTF" type="DynamicFontData" id=1]
 [ext_resource path="res://scenes/GameDesign/GameDesignSlider.cs" type="Script" id=2]
@@ -15,6 +15,9 @@
 [ext_resource path="res://SharedAssets/UserInterface/B_Back_hovered.png" type="Texture" id=13]
 [ext_resource path="res://scenes/GameDesign/assets/ui/PfeilNachLinks_hovered.png" type="Texture" id=14]
 [ext_resource path="res://scenes/GameDesign/assets/ui/PfeilNachRechts_hovered.png" type="Texture" id=15]
+[ext_resource path="res://SharedAssets/sounds/Karte wechseln.wav" type="AudioStream" id=16]
+[ext_resource path="res://scenes/Sound/assets/SoundFX/Abhaken 3.wav" type="AudioStream" id=17]
+[ext_resource path="res://SharedAssets/sounds/Papier wechseln 2.wav" type="AudioStream" id=18]
 
 [sub_resource type="DynamicFont" id=1]
 size = 70
@@ -63,6 +66,15 @@ font_data = ExtResource( 1 )
 script = ExtResource( 2 )
 CheckboxChecked = ExtResource( 9 )
 CheckboxUnchecked = ExtResource( 8 )
+
+[node name="SliderSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 16 )
+
+[node name="PageSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 18 )
+
+[node name="CheckboxSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 17 )
 
 [node name="Background" type="Sprite" parent="."]
 position = Vector2( 955, 541 )

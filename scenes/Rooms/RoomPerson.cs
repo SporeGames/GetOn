@@ -57,6 +57,7 @@ public class RoomPerson : Node2D {
 			_shared.HasDialogeBoxOpen = true;
 			return;
 		}
+		GetNode<SharedNode>("/root/SharedNode").PlayGenericClick();
 		_welcomeDialogueBox.Visible = true;
 		_shared.HasDialogeBoxOpen = true;
 	}

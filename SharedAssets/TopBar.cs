@@ -81,12 +81,13 @@ public class TopBar : Node2D {
 		else {
 			_shared.HelpButtonPressed[Game] += 1;
 		}
-		
+		GetNode<SharedNode>("/root/SharedNode").PlayGenericClick();
 	}
 	
 	private void OnCloseButtonPressed() {
 		_introduction.Visible = false;
 		_timer.running = true;
 		GetViewport().SetInputAsHandled();
+		GetNode<SharedNode>("/root/SharedNode").PlayGenericClick();
 	}
 }

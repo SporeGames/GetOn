@@ -18,12 +18,14 @@ namespace GetOn.scenes.Programming
 
 		private RichTextLabel _errorList;
 		private ColorRect _errorBox;
+		private AudioStreamPlayer _executeSound;
 
 		private Vector2 _playerOrigin;
 
 		private bool _running = false;
 		
 		private List<string> _errors = new List<string>();
+		
 		public override void _Ready() {
 			_sharedNode = GetNode<SharedNode>("/root/SharedNode");
 			_programmingUi = GetNode<NodeGraph>("ProgrammingUI/AspectRatioContainer/NodeGraph");
@@ -37,6 +39,7 @@ namespace GetOn.scenes.Programming
 			_playerOrigin = GetNode<KinematicBody2D>("Game/Player").Position;
 			_checklist = GetNode<Checklist>("Checklist");
 			Truck = GetNode<KinematicBody2D>("Game/Truck");
+			_executeSound = GetNode<AudioStreamPlayer>("ExecuteSound");
 		}
 
 		public override void _Process(float delta) {
@@ -60,6 +63,7 @@ namespace GetOn.scenes.Programming
 
 		public void OnResetPressed() {
 			GetNode<KinematicBody2D>("Game/Player").Position = _playerOrigin;
+			_sharedNode.PlayGenericClick();
 		}
 
 		public void OnRunPressed() {
@@ -88,6 +92,7 @@ namespace GetOn.scenes.Programming
 			_checklist.Reset();
 			_checklist.SubmitButton.Disabled = false;
 			GetNode<SharedNode>("/root/SharedNode").TestsRun++;
+			_executeSound.Playing = true;
 		}
 		
 		private void Stop() {
@@ -96,6 +101,7 @@ namespace GetOn.scenes.Programming
 			_running = false;
 			_errors.Clear();
 			_errorBox.Color = new Color(0f, 0f, 0f);
+			_sharedNode.PlayGenericClick();
 			//_programmingUI.Executor.Kill();
 		}
 	}

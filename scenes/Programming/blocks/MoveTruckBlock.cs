@@ -9,6 +9,10 @@ namespace GetOn.scenes.Programming.blocks {
 		
         public override BlockVariable Execute() {
             GetNode<KinematicBody2D>("/root/Programming/Game/Truck").MoveAndSlide(new Vector2(200, 0));
+            var audio = GetNode<AudioStreamPlayer>("/root/Programming/MoveTruckSound");
+            if (!audio.Playing) {
+                audio.Playing = true;
+            }
             return new BlockVariable("truckReturn", this, true);
         }
 		

@@ -33,6 +33,7 @@ public class GameDesign : Node2D {
 	
 	private void OnDonePressed() {
 		GoBackAndCalculateResults();
+		GetNode<SharedNode>("/root/SharedNode").PlayGenericClick();
 	}
 
 		public void NextSliderPressed(GameDesignGame game, string[] values) {

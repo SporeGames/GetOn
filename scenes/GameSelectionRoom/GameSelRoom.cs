@@ -67,20 +67,24 @@ namespace GetOn.scenes.GameSelectionRoom {
 		}
 
 		public void OnGoToProgrammingPressed() {
+			GetNode<SharedNode>("/root/SharedNode").PlayGenericClick();
 			_DialogueBox.QueueFree();
 			
 			_sharedNode.SwitchScene("res://scenes/Rooms/ProgrammingRoom.tscn");
 		}
 
 		public void OnGoToManagmentPressed() {
+			GetNode<SharedNode>("/root/SharedNode").PlayGenericClick();
 			_sharedNode.SwitchScene("res://scenes/Rooms/ManagementRoom.tscn");
 		}
 
 		public void OnGoToNarrativeAndSoundPressed() {
+			GetNode<SharedNode>("/root/SharedNode").PlayGenericClick();
 			_sharedNode.SwitchScene("res://scenes/Rooms/GDNarrativeRoom.tscn");//"res://scenes/Narrative/PrePuzzleRoom.tscn"
 		}
 
 		public void OnGoToSoundPressed() {
+			GetNode<SharedNode>("/root/SharedNode").PlayGenericClick();
 			_sharedNode.SwitchScene("res://scenes/Rooms/SoundArtRoom.tscn");
 		}
 
@@ -90,6 +94,7 @@ namespace GetOn.scenes.GameSelectionRoom {
 		}
 
 		public void OnGoToGameStudyPressed() {
+			GetNode<SharedNode>("/root/SharedNode").PlayGenericClick();
 			_sharedNode.SwitchScene("res://scenes/Rooms/GameStudyRoom.tscn");
 		}
 

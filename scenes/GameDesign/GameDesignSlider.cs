@@ -16,6 +16,9 @@ public class GameDesignSlider : Node2D {
 	private RichTextLabel _gameName;
 	private RichTextLabel _gameDescription;
 	private TextureRect _gameImage;
+	private AudioStreamPlayer _checkboxSound;
+	private AudioStreamPlayer _pageSound;
+	private AudioStreamPlayer _sliderSound;
 
 	private RichTextLabel _selectedText;
 	private VBoxContainer _selectedImagesContainer;
@@ -57,6 +60,9 @@ public class GameDesignSlider : Node2D {
 		_gameName = GetNode<RichTextLabel>("GameName");
 		_gameDescription = GetNode<RichTextLabel>("GameDescription");
 		_gameImage = GetNode<TextureRect>("GameImage");
+		_checkboxSound = GetNode<AudioStreamPlayer>("CheckboxSound");
+		_pageSound = GetNode<AudioStreamPlayer>("PageSound");
+		_sliderSound = GetNode<AudioStreamPlayer>("SliderSound");
 
 		_selectedText = GetNode<RichTextLabel>("Selected");
 		_selectedImagesContainer = GetNode<VBoxContainer>("ScrollContainer/SelectedImagesContainer");
@@ -105,6 +111,7 @@ public class GameDesignSlider : Node2D {
 		}
 
 		UpdateSelectedText();
+		_checkboxSound.Playing = true;
 	}
 
 	private void TurnLeft()
@@ -129,8 +136,7 @@ public class GameDesignSlider : Node2D {
 		UpdateSlider();
 	}
 
-	private void UpdateSlider()
-	{
+	private void UpdateSlider() {
 		if (_currentIndex < Images.Length && _currentIndex >= 0)
 		{
 			_centerImage.Texture = Images[_currentIndex];
@@ -152,6 +158,7 @@ public class GameDesignSlider : Node2D {
 		}
 
 		_selectButton.TextureNormal = _selectedValues.Contains(_centerTitle.Text) ? CheckboxChecked : CheckboxUnchecked;
+		_pageSound.Playing = true;
 	}
 
 	// Modify the UpdateSelectedText function
@@ -201,14 +208,14 @@ public class GameDesignSlider : Node2D {
 		}
 	}
 
-	private void _OnNextButtonPressed()
-	{
-			GetParent<GameDesign>().NextSliderPressed(Game, _selectedValues.ToArray());
+	private void _OnNextButtonPressed() {
+		_sliderSound.Playing = true;
+		GetParent<GameDesign>().NextSliderPressed(Game, _selectedValues.ToArray());
 	}
 
-	private void _OnBackButtonPressed()
-	{
-	GetParent<GameDesign>().PreviousSliderPressed(Game);
+	private void _OnBackButtonPressed() {
+		_sliderSound.Playing = true;
+		GetParent<GameDesign>().PreviousSliderPressed(Game);
 	}
 
 }

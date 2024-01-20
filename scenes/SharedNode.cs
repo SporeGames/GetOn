@@ -344,6 +344,10 @@ namespace GetOn.scenes {
 			var timeSpan = TimeSpan.FromSeconds(time);
 			return timeSpan.ToString(showHours ? @"hh\:mm\:ss" : @"mm\:ss");
 		}
+
+		public void PlayGenericClick() {
+			GetNode<AudioStreamPlayer>("GenericClick").Playing = true;
+		}
 	}
 }
 
