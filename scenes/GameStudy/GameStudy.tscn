@@ -1,4 +1,4 @@
-[gd_scene load_steps=91 format=2]
+[gd_scene load_steps=93 format=2]
 
 [ext_resource path="res://SharedAssets/font/BAHNSCHRIFT 1.TTF" type="DynamicFontData" id=1]
 [ext_resource path="res://scenes/GameStudy/assets/Kärtchen2.png" type="Texture" id=2]
@@ -53,6 +53,7 @@
 [ext_resource path="res://scenes/GameStudy/assets/RechteVitrineVorderseiteMehrRand.png" type="Texture" id=51]
 [ext_resource path="res://SharedAssets/UserInterface/B_base_2_hovered.png" type="Texture" id=52]
 [ext_resource path="res://SharedAssets/UserInterface/B_Base2.png" type="Texture" id=53]
+[ext_resource path="res://scenes/GameStudy/assets/SoundFX/Item auf Vitrine legen.wav" type="AudioStream" id=54]
 
 [sub_resource type="StyleBoxEmpty" id=49]
 
@@ -174,6 +175,9 @@ size = 30
 use_mipmaps = true
 use_filter = true
 font_data = ExtResource( 1 )
+
+[sub_resource type="RectangleShape2D" id=87]
+extents = Vector2( 402.5, 444.5 )
 
 [node name="GameStudy" type="Node2D"]
 script = ExtResource( 36 )
@@ -1438,6 +1442,16 @@ stream = ExtResource( 48 )
 [node name="Back" type="AudioStreamPlayer" parent="SoundFX"]
 stream = ExtResource( 49 )
 
+[node name="DropOnShowcase" type="AudioStreamPlayer" parent="SoundFX"]
+stream = ExtResource( 54 )
+
+[node name="ChangeSound" type="Area2D" parent="."]
+position = Vector2( 537, 549 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ChangeSound"]
+position = Vector2( 5.5, -12.5 )
+shape = SubResource( 87 )
+
 [connection signal="body_exited" from="Consoles/SpawningGames/Area2D" to="Consoles/SpawningGames" method="_on_Area2D_body_exited"]
 [connection signal="body_entered" from="Consoles/CheckAreas/CheckXBOX" to="Consoles" method="_on_CheckXBOX_body_entered"]
 [connection signal="body_exited" from="Consoles/CheckAreas/CheckXBOX" to="Consoles" method="_on_CheckXBOX_body_exited"]
@@ -1524,3 +1538,5 @@ stream = ExtResource( 49 )
 [connection signal="body_exited" from="Games/SnapAreas/Stray" to="Consoles/SnapAreas" method="_on_Stray_body_exited"]
 [connection signal="body_entered" from="Games/SnapAreas/Cyberpunk" to="Consoles/SnapAreas" method="_on_Cyberpunk_body_entered"]
 [connection signal="body_exited" from="Games/SnapAreas/Cyberpunk" to="Consoles/SnapAreas" method="_on_Cyberpunk_body_exited"]
+[connection signal="body_entered" from="ChangeSound" to="Consoles/GameBoy" method="_on_ChangeSound_body_entered"]
+[connection signal="body_exited" from="ChangeSound" to="Consoles/GameBoy" method="_on_ChangeSound_body_exited"]

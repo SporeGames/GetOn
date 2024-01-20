@@ -69,6 +69,30 @@ public class DragAndDropConsoles : KinematicBody2D
 
 	private AudioStreamPlayer _drag;
 	private AudioStreamPlayer _drop;
+	private AudioStreamPlayer _dropOnShowcase;
+	private bool onShowCase = false;
+
+	private DragAndDropConsoles _xboxConsoles;
+	private DragAndDropConsoles _nesConsoles;
+	private DragAndDropConsoles _megaDriveConsoles;
+	private DragAndDropConsoles _atariConsoles;
+	private DragAndDropConsoles _c64Consoles;
+	private DragAndDropConsoles _segaSaturnConsoles;
+	private DragAndDropConsoles _magnavoxConsoles;
+	
+	private DragAndDropConsoles _tennisGames;
+	private DragAndDropConsoles _pacManGames;
+	private DragAndDropConsoles _bioshockGames;
+	private DragAndDropConsoles _cyberpunkGames;
+	private DragAndDropConsoles _detriotGames;
+	private DragAndDropConsoles _donkeyKongGames;
+	private DragAndDropConsoles _horizonGames;
+	private DragAndDropConsoles _mazeWarsGames;
+	private DragAndDropConsoles _pongGames;
+	private DragAndDropConsoles _spaceInvadersGames;
+	private DragAndDropConsoles _starfieldGames;
+	private DragAndDropConsoles _strayGames;
+
 	
 	public override void _Ready()
 	{
@@ -105,6 +129,28 @@ public class DragAndDropConsoles : KinematicBody2D
 
 		_drag = GetNode<AudioStreamPlayer>("/root/GameStudy/SoundFX/Drag");
 		_drop = GetNode<AudioStreamPlayer>("/root/GameStudy/SoundFX/Drop");
+		_dropOnShowcase = GetNode<AudioStreamPlayer>("/root/GameStudy/SoundFX/DropOnShowcase");
+
+		_xboxConsoles = GetNode<DragAndDropConsoles>("/root/GameStudy/Consoles/XBOX");
+		_nesConsoles = GetNode<DragAndDropConsoles>("/root/GameStudy/Consoles/NES");
+		_megaDriveConsoles = GetNode<DragAndDropConsoles>("/root/GameStudy/Consoles/MegaDrive1");
+		_atariConsoles = GetNode<DragAndDropConsoles>("/root/GameStudy/Consoles/Atari");
+		_c64Consoles = GetNode<DragAndDropConsoles>("/root/GameStudy/Consoles/C64");
+		_segaSaturnConsoles = GetNode<DragAndDropConsoles>("/root/GameStudy/Consoles/SegaSaturn");
+		_magnavoxConsoles = GetNode<DragAndDropConsoles>("/root/GameStudy/Consoles/Magnavox");
+		
+		_tennisGames = GetNode<DragAndDropConsoles>("/root/GameStudy/Games/Games/Tennis");
+		_pacManGames= GetNode<DragAndDropConsoles>("/root/GameStudy/Games/Games/PacMan");
+		_bioshockGames= GetNode<DragAndDropConsoles>("/root/GameStudy/Games/Games/Bioshock");
+		_cyberpunkGames= GetNode<DragAndDropConsoles>("/root/GameStudy/Games/Games/Cyberpunk");
+		_detriotGames= GetNode<DragAndDropConsoles>("/root/GameStudy/Games/Games/Detriot");
+		_donkeyKongGames= GetNode<DragAndDropConsoles>("/root/GameStudy/Games/Games/DonkeyKong");
+		_horizonGames= GetNode<DragAndDropConsoles>("/root/GameStudy/Games/Games/Horizon");
+		_mazeWarsGames= GetNode<DragAndDropConsoles>("/root/GameStudy/Games/Games/MazeWars");
+		_pongGames= GetNode<DragAndDropConsoles>("/root/GameStudy/Games/Games/Pong");
+		_spaceInvadersGames= GetNode<DragAndDropConsoles>("/root/GameStudy/Games/Games/SpaceInvaders");
+		_starfieldGames= GetNode<DragAndDropConsoles>("/root/GameStudy/Games/Games/Starfield");
+		_strayGames= GetNode<DragAndDropConsoles>("/root/GameStudy/Games/Games/Stray");
 	}
 
 	public override void _Input(InputEvent @event)
@@ -133,8 +179,14 @@ public class DragAndDropConsoles : KinematicBody2D
 			
 			if (currentlyDraggedObject == this)
 			{
+				GD.Print("Hier nochmal: "+onShowCase);
+				if (onShowCase == false) {
+					_drop.Play();
+				}
+				else {
+					this._dropOnShowcase.Play();
+				}
 				currentlyDraggedObject = null; 
-				_drop.Play();
 			}
 		}
 
@@ -149,10 +201,7 @@ public class DragAndDropConsoles : KinematicBody2D
 	{
 			_consoleZoom.Visible = true;
 			hovered = true;
-			
-			GD.Print("entered: "+hovered);
 
-		
 			if (this.Name == "XBOX" && isOpen == false)
 			{
 				_popUpText.Text = "The first console with an integrated hard disk.";
@@ -262,7 +311,6 @@ public class DragAndDropConsoles : KinematicBody2D
 	{
 		popUp = true;
 		hovered = false;
-		GD.Print("left: "+hovered);
 	}
 	public void InputTrue(bool popUp)
 	{
@@ -400,7 +448,156 @@ public class DragAndDropConsoles : KinematicBody2D
 		InputPickable = false;
 		Position = position;
 	}
+	private void _on_ChangeSound_body_entered(object body)
+	{
+		if (body is KinematicBody2D kinematicBody)
+		{
+			if (kinematicBody.Name == "XBOX")
+			{
+				_xboxConsoles.onShowCase = true;
+			}
+			if (kinematicBody.Name == "NES")
+			{
+				_nesConsoles.onShowCase = true;
+			}
+			if (kinematicBody.Name == "MegaDrive1")
+			{
+				_megaDriveConsoles.onShowCase = true;
+			}
+			if (kinematicBody.Name == "Atari")
+			{
+				_atariConsoles.onShowCase = true;
+			}
+			if (kinematicBody.Name == "C64")
+			{
+				_c64Consoles.onShowCase = true;
+			}
+			if (kinematicBody.Name == "SegaSaturn")
+			{
+				_segaSaturnConsoles.onShowCase = true;
+			}
+			if (kinematicBody.Name == "Magnavox")
+			{
+				_magnavoxConsoles.onShowCase = true;
+			}
+			//Games
+			if (kinematicBody.Name == "Tennis") {
+				_tennisGames.onShowCase = true;
+			}
+			if (kinematicBody.Name == "PacMan") {
+				_pacManGames.onShowCase = true;
+			}
+			if (kinematicBody.Name == "Pong") {
+				_pongGames.onShowCase = true;
+			}
+			if (kinematicBody.Name == "MazeWars") {
+				_mazeWarsGames.onShowCase = true;
+			}
+			if (kinematicBody.Name == "SpaceInvaders") {
+				_spaceInvadersGames.onShowCase = true;
+			}
+			if (kinematicBody.Name == "DonkeyKong") {
+				_donkeyKongGames.onShowCase = true;
+			}
+			if (kinematicBody.Name == "Bioshock") {
+				_bioshockGames.onShowCase = true;
+			}
+			if (kinematicBody.Name == "Horizon") {
+				_horizonGames.onShowCase = true;
+			}
+			if (kinematicBody.Name == "Starfield") {
+				_starfieldGames.onShowCase = true;
+			}
+			if (kinematicBody.Name == "Cyberpunk") {
+				_cyberpunkGames.onShowCase = true;
+			}
+			if (kinematicBody.Name == "Stray") {
+				_strayGames.onShowCase = true;
+			}
+			if (kinematicBody.Name == "Detriot") {
+				_detriotGames.onShowCase = true;
+			}
+			this.onShowCase = true;
+			GD.Print("Drin: "+onShowCase);
+		}
+	}
+
+	private void _on_ChangeSound_body_exited(object body)
+	{
+		if (body is KinematicBody2D kinematicBody)
+		{
+			if (kinematicBody.Name == "XBOX")
+			{
+				_xboxConsoles.onShowCase = false;
+			}
+			if (kinematicBody.Name == "NES")
+			{
+				_nesConsoles.onShowCase = false;
+			}
+			if (kinematicBody.Name == "MegaDrive1")
+			{
+				_megaDriveConsoles.onShowCase = false;
+			}
+			if (kinematicBody.Name == "Atari")
+			{
+				_atariConsoles.onShowCase = false;
+			}
+			if (kinematicBody.Name == "C64")
+			{
+				_c64Consoles.onShowCase = false;
+			}
+			if (kinematicBody.Name == "SegaSaturn")
+			{
+				_segaSaturnConsoles.onShowCase = false;
+			}
+			if (kinematicBody.Name == "Magnavox")
+			{
+				_magnavoxConsoles.onShowCase = false;
+			}
+			
+			if (kinematicBody.Name == "Tennis") {
+				_tennisGames.onShowCase = false;;
+			}
+			if (kinematicBody.Name == "PacMan") {
+				_pacManGames.onShowCase = false;;
+			}
+			if (kinematicBody.Name == "Pong") {
+				_pongGames.onShowCase = false;;
+			}
+			if (kinematicBody.Name == "MazeWars") {
+				_mazeWarsGames.onShowCase = false;;
+			}
+			if (kinematicBody.Name == "SpaceInvaders") {
+				_spaceInvadersGames.onShowCase = false;;
+			}
+			if (kinematicBody.Name == "DonkeyKong") {
+				_donkeyKongGames.onShowCase = false;;
+			}
+			if (kinematicBody.Name == "Bioshock") {
+				_bioshockGames.onShowCase = false;;
+			}
+			if (kinematicBody.Name == "Horizon") {
+				_horizonGames.onShowCase = false;;
+			}
+			if (kinematicBody.Name == "Starfield") {
+				_starfieldGames.onShowCase = false;;
+			}
+			if (kinematicBody.Name == "Cyberpunk") {
+				_cyberpunkGames.onShowCase = false;;
+			}
+			if (kinematicBody.Name == "Stray") {
+				_strayGames.onShowCase = false;;
+			}
+			if (kinematicBody.Name == "Detriot") {
+				_detriotGames.onShowCase = false;;
+			}
+			this.onShowCase = false;
+			GD.Print("raus: "+onShowCase);
+		}
+	}
 }
+
+
 
 
 
