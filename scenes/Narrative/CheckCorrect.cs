@@ -167,10 +167,10 @@ namespace GetOn.scenes.Narrative
 			_attribute2 = GetNode<Label>("/root/Narrative/1/Attribute2");
 			_attribute3 = GetNode<Label>("/root/Narrative/2/Attribute");
 			_attribute4 = GetNode<Label>("/root/Narrative/2/Attribute2");
-			_attribute1.Text = "";
-			_attribute2.Text = "";
-			_attribute3.Text = "";
-			_attribute4.Text = "";
+			_attribute1.Text = "Choose Ending";
+			_attribute2.Text = "Choose Ending";
+			_attribute3.Text = "Choose Ending";
+			_attribute4.Text = "Choose Ending";
 
 			_part1 = GetNode<Node2D>("/root/Narrative/1");
 			_part2 = GetNode<Node2D>("/root/Narrative/2");
@@ -296,13 +296,11 @@ namespace GetOn.scenes.Narrative
 				{
 					endingPerfect = false;
 					GD.Print(endingPerfect);
-
 				}
 				else if (kinematicBody.Name == "Ending2")
 				{
 					endingOk = false;
 					GD.Print(endingOk);
-
 				}
 				else if (kinematicBody.Name == "Ending3")
 				{
@@ -321,6 +319,15 @@ namespace GetOn.scenes.Narrative
 					ending23 = false;
 				}
 			}
+
+			if (endingOk == false && endingPerfect == false && ending3 == false) {
+				_attribute1.Text = "Choose Ending";
+				_attribute2.Text = "Choose Ending";
+			}
+			if (endingOk2 == false && endingPerfect2 == false && ending23 == false) {
+				_attribute3.Text = "Choose Ending";
+				_attribute4.Text = "Choose Ending";
+			}
 			Reset();
 			ChangeLabel();
 		}
@@ -332,38 +339,32 @@ namespace GetOn.scenes.Narrative
 				_attribute1.Text = "Development";
 				_attribute2.Text = "Development";
 			}
-			else if (endingOk)
+			if (endingOk)
 			{
 				_attribute1.Text = "Development";
 				_attribute2.Text = "Development";
 			}
-			else if (ending3)
+			if (ending3)
 			{
 				_attribute1.Text = "Degeneration";
 				_attribute2.Text = "Doesn´t Change";
 			}
-			else if (endingPerfect2)
+			if (endingPerfect2)
 			{
 				_attribute3.Text = "Mixed";
 				_attribute4.Text = "Stays the same";
 			}
-			else if (endingOk2)
+			if (endingOk2)
 			{
 				_attribute3.Text = "Degeneration";
 				_attribute4.Text = "Stays the same";
 			}
-			else if (ending23)
+			if (ending23)
 			{
 				_attribute3.Text = "Development";
 				_attribute4.Text = "Development";
 			}
-			else
-			{
-				_attribute1.Text = "";
-				_attribute2.Text = "";
-				_attribute3.Text = "";
-				_attribute4.Text = "";
-			}
+			
 		}
 
 		private void Reset()
