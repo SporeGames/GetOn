@@ -96,8 +96,10 @@ namespace GetOn.scenes {
 			_debugMenuList = GetNode<ItemList>("DebugMenu/Levels");
 			_finishButton = GetNode<Button>("DebugMenu/FinishButton");
 			_finishButton.Connect("pressed", this, nameof(OnFinishButtonPressed));
+			_debugMenu.Visible = false;
 			_loadingBar = GetNode<ProgressBar>("LoadingScreen/ProgressBar");
 			_loadingScreen = GetNode<ColorRect>("LoadingScreen");
+			_loadingScreen.Visible = false;
 			DiscoverSceneFiles("res://scenes", true);
 			GD.Print("Discovered " + _discoveredScenes.Count + " scenes");
 			foreach (var scene in _discoveredScenes) {

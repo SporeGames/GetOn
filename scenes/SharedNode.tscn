@@ -73,6 +73,7 @@ custom_colors/default_color = Color( 0, 0, 0, 1 )
 custom_fonts/normal_font = SubResource( 2 )
 
 [node name="DebugMenu" type="Node2D" parent="."]
+visible = false
 z_index = 16
 
 [node name="DebugText" type="RichTextLabel" parent="DebugMenu"]
