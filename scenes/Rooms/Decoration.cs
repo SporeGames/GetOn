@@ -6,11 +6,13 @@ namespace GetOn.scenes.Rooms {
 		[Export] public Texture PopupTexture;
 		[Export] public Texture SmallTexture;
 		[Export] public string Description;
+		[Export] public Texture DescriptionImage;
 		[Export(PropertyHint.Range, "0, 5")] public float SmallScale = 1.0f;
 		[Export(PropertyHint.Range, "0, 5")] public float PopupScale = 1.0f;
 	
 		private TextureButton _decorationSprite;
 		private Sprite _popUpSprite;
+		private Sprite _descriptionImage;
 		private Node2D _popUp;
 		private TextureButton _closeButton;
 
@@ -19,6 +21,8 @@ namespace GetOn.scenes.Rooms {
 		public override void _Ready() {
 			_material = ResourceLoader.Load<Material>("res://SharedAssets/OutlineMaterial.tres");
 			_decorationSprite = GetNode<TextureButton>("Sprite");
+			_descriptionImage = GetNode<Sprite>("Popup/DescriptionImage");
+			_descriptionImage.Texture = DescriptionImage;
 			_closeButton = GetNode<TextureButton>("Popup/CloseButton");
 			_popUp = GetNode<Node2D>("Popup");
 			_popUpSprite = GetNode<Sprite>("Popup/Sprite");

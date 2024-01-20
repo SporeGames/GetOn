@@ -72,6 +72,13 @@ namespace GetOn.scenes {
 		public string MouseHoverText = "";
 		private Node2D mousefollower;
 		
+		private ResourceInteractiveLoader _sceneLoader;
+		private string _pathCurrentlyLoading = "";
+		private bool _isLoadingScene = false;
+		private double _loadingProgress = 0;
+		private ColorRect _loadingScreen;
+		private ProgressBar _loadingBar;
+		
 
 		public override void _Ready() {
 			foreach (var spec in Enum.GetValues(typeof(AbilitySpecialization))) {
@@ -84,6 +91,8 @@ namespace GetOn.scenes {
 			_debugMenu = GetNode<Node2D>("DebugMenu");
 			_debugText = GetNode<RichTextLabel>("DebugMenu/DebugText");
 			_debugMenuList = GetNode<ItemList>("DebugMenu/Levels");
+			_loadingBar = GetNode<ProgressBar>("LoadingScreen/ProgressBar");
+			_loadingScreen = GetNode<ColorRect>("LoadingScreen");
 			DiscoverSceneFiles("res://scenes", true);
 			GD.Print("Discovered " + _discoveredScenes.Count + " scenes");
 			foreach (var scene in _discoveredScenes) {
@@ -95,6 +104,28 @@ namespace GetOn.scenes {
 		}
 
 		public override void _Process(float delta) {
+			if (_isLoadingScene && _sceneLoader != null) {
+				var err = _sceneLoader.Poll();
+				switch (err) {
+					case Error.FileEof: {
+						_isLoadingScene = false;
+						_pathCurrentlyLoading = "";
+						var nextScene = (PackedScene) _sceneLoader.GetResource();
+						CurrentScene = nextScene.Instance();
+						GetTree().Root.AddChild(CurrentScene);
+						GetTree().CurrentScene = CurrentScene;
+						_loadingScreen.Visible = false;
+						_sceneLoader.Dispose(); // Need to dispose of the loader manually or we get a cyclic reference
+						_sceneLoader = null;
+						return;
+					}
+					case Error.Ok:
+						_loadingProgress = _sceneLoader.GetStage() / (double) _sceneLoader.GetStageCount();
+						_loadingProgress = Math.Round(_loadingProgress, 2);
+						_loadingBar.Value = _loadingProgress;
+						return;
+				}
+			}
 			if (!MouseHoverText.Equals("")) {
 				mousefollower.Visible = true;
 				mousefollower.GetNode<RichTextLabel>("Text").Text = MouseHoverText;
@@ -142,17 +173,25 @@ namespace GetOn.scenes {
 		}
 
 		public void SwitchScene(string path) {
-			CallDeferred(nameof(DeferredGotoScene), path);
+			if (_pathCurrentlyLoading.Equals(path)) {
+				return;
+			}
+			if (_isLoadingScene) {
+				return;
+			}
 			HasDialogeBoxOpen = false;
 			MouseHoverText = "";
+			CurrentScene.QueueFree();
+			_loadingScreen.Visible = true;
+			StartLoadingScene(path);
 		}
 
-		public void DeferredGotoScene(string path) {
-			CurrentScene.Free();
-			var nextScene = (PackedScene) GD.Load(path);
-			CurrentScene = nextScene.Instance();
-			GetTree().Root.AddChild(CurrentScene);
-			GetTree().CurrentScene = CurrentScene;
+		private void StartLoadingScene(string path) {
+			/*if (ResourceLoader.HasCached(path)) {
+				return;
+			}*/
+			_sceneLoader = ResourceLoader.LoadInteractive(path);
+			_isLoadingScene = true;
 		}
 
 		public void CalculatePoints() {

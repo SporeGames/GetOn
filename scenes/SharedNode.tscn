@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://scenes/SharedNode.cs" type="Script" id=1]
 [ext_resource path="res://scenes/Printer.gd" type="Script" id=2]
@@ -6,6 +6,12 @@
 [ext_resource path="res://SharedAssets/Timer.tscn" type="PackedScene" id=4]
 [ext_resource path="res://SharedAssets/MauszeigerKlein.png" type="Texture" id=5]
 [ext_resource path="res://scenes/GameStudy/assets/SoundFX/UI Click.wav" type="AudioStream" id=6]
+
+[sub_resource type="DynamicFont" id=3]
+size = 40
+use_mipmaps = true
+use_filter = true
+font_data = ExtResource( 3 )
 
 [sub_resource type="DynamicFont" id=2]
 size = 20
@@ -21,14 +27,43 @@ use_filter = true
 font_data = ExtResource( 3 )
 
 [node name="SharedNode" type="Node2D"]
+z_index = 4096
 script = ExtResource( 1 )
 MouseCursor = ExtResource( 5 )
+
+[node name="LoadingScreen" type="ColorRect" parent="."]
+visible = false
+margin_left = -88.0
+margin_top = -55.0
+margin_right = 2061.0
+margin_bottom = 1144.0
+color = Color( 0, 0, 0, 1 )
+
+[node name="RichTextLabel" type="RichTextLabel" parent="LoadingScreen"]
+margin_left = 991.0
+margin_top = 521.0
+margin_right = 1260.0
+margin_bottom = 568.0
+custom_fonts/normal_font = SubResource( 3 )
+text = "Loading..."
+
+[node name="ProgressBar" type="ProgressBar" parent="LoadingScreen"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -279.5
+margin_top = -31.5
+margin_right = 273.5
+margin_bottom = 21.5
+max_value = 1.0
+step = 0.016
 
 [node name="GenericClick" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 6 )
 
 [node name="MouseHoverFollower" type="Node2D" parent="."]
-z_index = 4096
+z_index = 4095
 
 [node name="Text" type="RichTextLabel" parent="MouseHoverFollower"]
 margin_right = 223.0
