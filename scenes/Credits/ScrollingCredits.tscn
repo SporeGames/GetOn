@@ -1,0 +1,119 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://scenes/Credits/assets/GetyourOn.png" type="Texture" id=1]
+[ext_resource path="res://scenes/Credits/assets/neuesLogo.png" type="Texture" id=2]
+[ext_resource path="res://scenes/Credits/ScrollingCredits.cs" type="Script" id=3]
+[ext_resource path="res://SharedAssets/font/BAHNSCHRIFT 1.TTF" type="DynamicFontData" id=4]
+
+[sub_resource type="NoiseTexture" id=1]
+
+[sub_resource type="DynamicFont" id=3]
+size = 40
+outline_size = 1
+use_mipmaps = true
+use_filter = true
+font_data = ExtResource( 4 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 40
+use_mipmaps = true
+use_filter = true
+font_data = ExtResource( 4 )
+
+[node name="ScrollingCredts" type="Node2D"]
+script = ExtResource( 3 )
+
+[node name="BackButton" type="TextureButton" parent="."]
+margin_left = -224.0
+margin_top = -121.0
+margin_right = 2216.0
+margin_bottom = 1353.0
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 978, 556 )
+scale = Vector2( 4.35156, 2.64648 )
+texture = SubResource( 1 )
+
+[node name="Label" type="Node2D" parent="."]
+position = Vector2( 1000, 1904 )
+
+[node name="SporeGames" type="Sprite" parent="Label"]
+position = Vector2( 0.00012207, -756 )
+scale = Vector2( 0.33, 0.33 )
+texture = ExtResource( 2 )
+
+[node name="Label" type="RichTextLabel" parent="Label"]
+margin_left = -1000.0
+margin_top = -551.0
+margin_right = 955.0
+margin_bottom = 1039.0
+custom_fonts/bold_font = SubResource( 3 )
+custom_fonts/normal_font = SubResource( 2 )
+bbcode_enabled = true
+bbcode_text = "[center]
+[b]Art[/b]
+
+Romy Bernhard
+Teuta Pretreshi
+
+
+
+[b]Game Design[/b]
+
+Sarah Hase
+Robin Holz
+Kim Nghiem
+Dinh Manh Nguyen
+
+
+[b]Programming[/b]
+
+Liam Kuke
+Dinh Manh Nguyen
+Malte Schümann
+
+
+[b]Narrative Design[/b]
+
+Robin Holz
+
+
+[b]Sound[/b]
+
+Kim Nghiem"
+text = "
+Art
+
+Romy Bernhard
+Teuta Pretreshi
+
+
+
+Game Design
+
+Sarah Hase
+Robin Holz
+Kim Nghiem
+Dinh Manh Nguyen
+
+
+Programming
+
+Liam Kuke
+Dinh Manh Nguyen
+Malte Schümann
+
+
+Narrative Design
+
+Robin Holz
+
+
+Sound
+
+Kim Nghiem"
+
+[node name="Logo" type="Sprite" parent="Label"]
+position = Vector2( -6.10352e-05, 946 )
+scale = Vector2( 0.619318, 0.619318 )
+texture = ExtResource( 1 )
