@@ -101,7 +101,8 @@ namespace GetOn.scenes.GameSelectionRoom {
 		private void CheckCompletions() {
 			var completed = _sharedNode.CompletedTasks.Count;
 			GD.Print("Completed: " + completed + " of " + (Enum.GetValues(typeof(AbilitySpecialization)).Length - 1) + "");
-			if (completed >= Enum.GetValues(typeof(AbilitySpecialization)).Length) {
+			if (completed >= Enum.GetValues(typeof(AbilitySpecialization)).Length - 1) {
+				GD.Print("Game completed, switching to ending room.");
 				_sharedNode.SwitchScene("res://scenes/Rooms/EndingRoom.tscn");
 				return;
 			}

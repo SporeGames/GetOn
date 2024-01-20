@@ -89,6 +89,7 @@ public class RoomPerson : Node2D {
 			case AbilitySpecialization.None:
 				_shared.CalculatePoints();
 				gameResult = _shared.TotalPoints;
+				GD.Print("Total points: " + gameResult + "");
 				break;
 			default:
 				GD.Print("This specialization is not implemented: " + GameSpecialization);
@@ -103,6 +104,7 @@ public class RoomPerson : Node2D {
 			if (gameResult >= box.ResultThreshold) {
 				return box;
 			}
+			GD.PrintErr("No result dialogue found for " + GameSpecialization + " with result " + gameResult + "");
 		}
 		return null;
 	}
