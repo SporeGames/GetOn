@@ -8,20 +8,30 @@ public class SubmitResults : Node2D
 	private TextureButton _yes;
 	private TextureButton _no;
 	[Export] private string currentGame;
+	//gameStudy
 	public double gameStudyPoints;
 	public float gameStudyTime;
+	public int gameStudyConsoles = 0;
+	public int gameStudyClassicGames = 0;
+	public int gameStudySciFiGames = 0;
+	
 	public double managementPoints;
 	public float managementTime;
 	public int cardsColoredCorrectly;
 	public double programmingPoints;
 	public float programmingTime;
+	//Sound
 	public double soundPoints;
 	public float soundTime;
 	public int soundEasySounds = 0;
 	public int soundMediumSounds = 0;
 	public int soundHardSounds = 0;
+	//Narrative
 	public double narrativePoints;
 	public float narrativeTime;
+	public int narrativeAttributes = 0;
+	public int narrativeSettings = 0;
+	public int narrativeEndings = 0;
 	public double gameDesignPoints;
 	public float gameDesignTime;
 	
@@ -63,6 +73,9 @@ public class SubmitResults : Node2D
 		gameStudyPoints += GetNode<CountdownTimer>("/root/GameStudy/TopBar/Timer").GetBonusPointsForTime();
 		_sharedNode.gameStudyPoints = (int) gameStudyPoints;
 		_sharedNode.gameStudyTime = gameStudyTime;
+		_sharedNode.gameStudySciFiGames = gameStudySciFiGames;
+		_sharedNode.gameStudyConsoles = gameStudyConsoles;
+		_sharedNode.gameStudyClassicGames = gameStudyClassicGames;
 		_sharedNode.CompletedTasks.Add(AbilitySpecialization.Game_Studies);
 		_sharedNode.SwitchScene("res://scenes/Rooms/GameStudyRoom.tscn");
 		GD.Print(gameStudyPoints);
@@ -104,6 +117,9 @@ public class SubmitResults : Node2D
 	}
 	private void SubmitNarrative()
 	{
+		_sharedNode.narrativeAttributes = narrativeAttributes;
+		_sharedNode.narrativeEndings = narrativeEndings;
+		_sharedNode.narrativeSettings = narrativeSettings;
 		_sharedNode.narrativePoints = narrativePoints;
 		_sharedNode.narrativeTime = narrativeTime;
 		_sharedNode.CompletedTasks.Add(AbilitySpecialization.Narrative_Design);

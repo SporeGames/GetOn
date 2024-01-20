@@ -15,6 +15,10 @@ namespace GetOn.scenes.Narrative
 		private SubmitResults _submitResults;
 		private Node2D _submitResultsPopUp;
 		
+		public int narrativeAttributes = 0;
+		public int narrativeSettings = 0;
+		public int narrativeEndings = 0;
+		
 		private DragAndDropStory _dragAndDropStory;
 		private DropDownAttribute _dropDownAttribute;
 		private DropDownAttribute _dropDownAttribute2;
@@ -2133,11 +2137,13 @@ namespace GetOn.scenes.Narrative
 			if (settingCorrect)
 			{
 				points += 4;
+				narrativeSettings++;
 			}
 			
 			if (settingCorrect2)
 			{
 				points += 4;
+				narrativeSettings++;
 			}
 			
 			//endingPerfect == true;
@@ -2145,35 +2151,43 @@ namespace GetOn.scenes.Narrative
 			if (correctAttributesEndingTigress1.Count == 0)
 			{
 				points += 10;
+				narrativeAttributes += 4;
 			}
 			else if (correctAttributesEndingTigress1.Count == 1)
 			{
 				points += 7.5;
+				narrativeAttributes += 3;
 			}
 			else if (correctAttributesEndingTigress1.Count == 2)
 			{
 				points += 5;
+				narrativeAttributes += 2;
 			}
 			else if (correctAttributesEndingTigress1.Count == 3)
 			{
 				points += 2.5;
+				narrativeAttributes += 1;
 			}
 			
 			if (correctAttributesEndingHound1.Count == 0)
 			{
 				points += 10;
+				narrativeAttributes += 4;
 			}
 			else if (correctAttributesEndingHound1.Count == 1)
 			{
 				points += 7.5;
+				narrativeAttributes += 3;
 			}
 			else if (correctAttributesEndingHound1.Count == 2)
 			{
 				points += 5;
+				narrativeAttributes += 2;
 			}
 			else if (correctAttributesEndingHound1.Count == 3)
 			{
 				points += 2.5;
+				narrativeAttributes += 1;
 			}
 			
 			//endingOk == true;
@@ -2181,35 +2195,43 @@ namespace GetOn.scenes.Narrative
 			if (correctAttributesEndingTigress2.Count == 0)
 			{
 				points += 10;
+				narrativeAttributes += 4;
 			}
 			else if (correctAttributesEndingTigress2.Count == 1)
 			{
 				points += 7.5;
+				narrativeAttributes += 3;
 			}
 			else if (correctAttributesEndingTigress2.Count == 2)
 			{
 				points += 5;
+				narrativeAttributes += 2;
 			}
 			else if (correctAttributesEndingTigress2.Count == 3)
 			{
 				points += 2.5;
+				narrativeAttributes += 1;
 			}
 			
 			if (correctAttributesEndingHound2.Count == 0)
 			{
 				points += 10;
+				narrativeAttributes += 4;
 			}
 			else if (correctAttributesEndingHound2.Count == 1)
 			{
 				points += 7.5;
+				narrativeAttributes += 3;
 			}
 			else if (correctAttributesEndingHound2.Count == 2)
 			{
 				points += 5;
+				narrativeAttributes += 2;
 			}
 			else if (correctAttributesEndingHound2.Count == 3)
 			{
 				points += 2.5;
+				narrativeAttributes += 1;
 			}
 			
 			//ending3 == true;
@@ -2217,35 +2239,43 @@ namespace GetOn.scenes.Narrative
 			if (correctAttributesEndingTigress3.Count == 0)
 			{
 				points += 10;
+				narrativeAttributes += 4;
 			}
 			else if (correctAttributesEndingTigress3.Count == 1)
 			{
 				points += 7.5;
+				narrativeAttributes += 3;
 			}
 			else if (correctAttributesEndingTigress3.Count == 2)
 			{
 				points += 5;
+				narrativeAttributes += 2;
 			}
 			else if (correctAttributesEndingTigress3.Count == 3)
 			{
 				points += 2.5;
+				narrativeAttributes += 1;
 			}
 			
 			if (correctAttributesEndingHound3.Count == 0)
 			{
 				points += 10;
+				narrativeAttributes += 4;
 			}
 			else if (correctAttributesEndingHound3.Count == 1)
 			{
 				points += 7.5;
+				narrativeAttributes += 3;
 			}
 			else if (correctAttributesEndingHound3.Count == 2)
 			{
 				points += 5;
+				narrativeAttributes += 2;
 			}
 			else if (correctAttributesEndingHound3.Count == 3)
 			{
 				points += 2.5;
+				narrativeAttributes += 1;
 			}
 			
 			//endingPerfect2 == true;
@@ -2253,35 +2283,43 @@ namespace GetOn.scenes.Narrative
 			if (correctAttributesEndingJohn1.Count == 0)
 			{
 				points += 10;
+				narrativeAttributes += 4;
 			}
 			else if (correctAttributesEndingJohn1.Count == 1)
 			{
 				points += 7.5;
+				narrativeAttributes += 3;
 			}
 			else if (correctAttributesEndingJohn1.Count == 2)
 			{
 				points += 5;
+				narrativeAttributes += 2;
 			}
 			else if (correctAttributesEndingJohn1.Count == 3)
 			{
 				points += 2.5;
+				narrativeAttributes += 1;
 			}
 			
 			if (correctAttributesEndingClaire1.Count == 0)
 			{
 				points += 10;
+				narrativeAttributes += 4;
 			}
 			else if (correctAttributesEndingClaire1.Count == 1)
 			{
 				points += 7.5;
+				narrativeAttributes += 3;
 			}
 			else if (correctAttributesEndingClaire1.Count == 2)
 			{
 				points += 5;
+				narrativeAttributes += 2;
 			}
 			else if (correctAttributesEndingClaire1.Count == 3)
 			{
 				points += 2.5;
+				narrativeAttributes += 1;
 			}
 			
 			//endingOk2 == true;
@@ -2289,35 +2327,43 @@ namespace GetOn.scenes.Narrative
 			if (correctAttributesEndingJohn2.Count == 0)
 			{
 				points += 10;
+				narrativeAttributes += 4;
 			}
 			else if (correctAttributesEndingJohn2.Count == 1)
 			{
 				points += 7.5;
+				narrativeAttributes += 3;
 			}
 			else if (correctAttributesEndingJohn2.Count == 2)
 			{
 				points += 5;
+				narrativeAttributes += 2;
 			}
 			else if (correctAttributesEndingJohn2.Count == 3)
 			{
 				points += 2.5;
+				narrativeAttributes += 1;
 			}
 			
 			if (correctAttributesEndingClaire2.Count == 0)
 			{
 				points += 10;
+				narrativeAttributes += 4;
 			}
 			else if (correctAttributesEndingClaire2.Count == 1)
 			{
 				points += 7.5;
+				narrativeAttributes += 3;
 			}
 			else if (correctAttributesEndingClaire2.Count == 2)
 			{
 				points += 5;
+				narrativeAttributes += 2;
 			}
 			else if (correctAttributesEndingClaire2.Count == 3)
 			{
 				points += 2.5;
+				narrativeAttributes += 1;
 			}
 			
 			//ending23 == true;
@@ -2325,55 +2371,67 @@ namespace GetOn.scenes.Narrative
 			if (correctAttributesEndingJohn3.Count == 0)
 			{
 				points += 10;
+				narrativeAttributes += 4;
 			}
 			else if (correctAttributesEndingJohn3.Count == 1)
 			{
 				points += 7.5;
+				narrativeAttributes += 3;
 			}
 			else if (correctAttributesEndingJohn3.Count == 2)
 			{
 				points += 5;
+				narrativeAttributes += 2;
 			}
 			else if (correctAttributesEndingJohn3.Count == 3)
 			{
 				points += 2.5;
+				narrativeAttributes += 1;
 			}
 			
 			if (correctAttributesEndingClaire3.Count == 0)
 			{
 				points += 10;
+				narrativeAttributes += 4;
 			}
 			else if (correctAttributesEndingClaire3.Count == 1)
 			{
 				points += 7.5;
+				narrativeAttributes += 3;
 			}
 			else if (correctAttributesEndingClaire3.Count == 2)
 			{
 				points += 5;
+				narrativeAttributes += 2;
 			}
 			else if (correctAttributesEndingClaire3.Count == 3)
 			{
 				points += 2.5;
+				narrativeAttributes += 1;
 			}
 
 			if (endingPerfect)
 			{
 				points += 2;
+				narrativeEndings++;
 			}
 			
 			if (endingOk)
 			{
 				points += 2;
+				narrativeEndings++;
 			}
 			
 			if (endingPerfect2)
 			{
 				points += 2;
+				narrativeEndings++;
 			}
 			
 			if (endingOk2)
 			{
 				points += 2;
+				narrativeEndings++;
 			}
 
 
@@ -2390,6 +2448,9 @@ namespace GetOn.scenes.Narrative
 			_sharedNode.CompletedTasks.Add(AbilitySpecialization.Narrative_Design);
 			_sharedNode.SwitchScene("res://scenes/Rooms/GDNarrativeRoom.tscn");
 			*/
+			_submitResults.narrativeAttributes = narrativeAttributes;
+			_submitResults.narrativeEndings = narrativeEndings;
+			_submitResults.narrativeSettings = narrativeSettings;
 			_submitResultsPopUp.Visible = true;
 			_submitResults.narrativePoints = points;
 			_submitResults.narrativeTime = GetNode<CountdownTimer>("/root/Narrative/TopBar/Timer").CurrentTime;

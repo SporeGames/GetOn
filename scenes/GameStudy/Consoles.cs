@@ -8,6 +8,10 @@ public class Consoles : Node2D
 	private SubmitResults _submitResults;
 	private Node2D _submitResultsPopUp;
 	
+	public int gameStudyConsoles = 0;
+	public int gameStudyClassicGames = 0;
+	public int gameStudySciFiGames = 0;
+	
 	private bool xboxCorrect;
 	private bool nesCorrect;
 	private bool atariCorrect;
@@ -159,89 +163,109 @@ public class Consoles : Node2D
 		if (nesCorrect == true)
 		{
 			points += 2.5;
+			gameStudyConsoles++;
 		}
 
 		if (xboxCorrect)
 		{
 			points += 2.5;
+			gameStudyConsoles++;
 		}
 
 		if (gameBoyCorrect)
 		{
 			points += 2.5;
+			gameStudyConsoles++;
 		}
 
 		if (megadrive1Correct)
 		{
 			points += 2.5;
+			gameStudyConsoles++;
 		}
 
 		if (atariCorrect)
 		{
 			points += 2.5;
+			gameStudyConsoles++;
 		}
 
 		if (c64Correct)
 		{
 			points += 2.5;
+			gameStudyConsoles++;
 		}
 
 		if (segaSaturnCorrect)
 		{
 			points += 2.5;
+			gameStudyConsoles++;
 		}
 
 		if (magnavoxCorrect)
 		{
 			points += 2.5;
+			gameStudyConsoles++;
 		}
 		if (tennisCorrect)
 		{
 			points += 2.5;
+			gameStudyClassicGames++;
 		}
 		if (mazeWarsCorrect)
 		{
 			points += 2.5;
+			gameStudyClassicGames++;
 		}
 		if (spaceInvadersCorrect)
 		{
 			points += 2.5;
+			gameStudyClassicGames++;
 		}
 		if (donkeyKongCorrect)
 		{
 			points += 2.5;
+			gameStudyClassicGames++;
 		}
 		if (pongCorrect)
 		{
 			points += 2.5;
+			gameStudyClassicGames++;
 		}
 		if (pacmanCorrect)
 		{
 			points += 2.5;
+			gameStudyClassicGames++;
 		}
 		if (bioshockCorrect)
 		{
 			points += 2;
+			gameStudySciFiGames++;
 		}
 		if (strayCorrect)
 		{
 			points += 2;
+			gameStudySciFiGames++;
 		}
 		if (starfieldCorrect)
 		{
 			points += 2;
+			gameStudySciFiGames++;
 		}
 		if (cyberpunkCorrect)
 		{
 			points += 2;
+			gameStudySciFiGames++;
 		}
 		if (horizonCorrect)
 		{
 			points += 2;
+			gameStudySciFiGames++;
 		}
 		if (detriotCorrect)
 		{
 			points += 2;
+			gameStudySciFiGames++;
 		}
 
 		if (atariCorrect && c64Correct && segaSaturnCorrect && magnavoxCorrect && nesCorrect && gameBoyCorrect &&
@@ -265,6 +289,9 @@ public class Consoles : Node2D
 		GD.Print(points);
 		*/
 		//points += GetNode<CountdownTimer>("/root/GameStudy/TopBar/Timer").GetBonusPointsForTime();
+		_submitResults.gameStudySciFiGames = gameStudySciFiGames;
+		_submitResults.gameStudyConsoles = gameStudyConsoles;
+		_submitResults.gameStudyClassicGames = gameStudyClassicGames;
 		_submitResultsPopUp.Visible = true;
 		_submitResults.gameStudyPoints = points;
 		_submitResults.gameStudyTime = GetNode<CountdownTimer>("/root/GameStudy/TopBar/Timer").CurrentTime;
