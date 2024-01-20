@@ -71,6 +71,9 @@ public class DragAndDropStory : KinematicBody2D
 	
 		
 	private DragAndDropStory currentlyDraggedObject;
+
+	private AudioStreamPlayer _postitAttached;
+	private AudioStreamPlayer _postitDepart;
 	
 	public override void _Ready()
 	{
@@ -139,6 +142,9 @@ public class DragAndDropStory : KinematicBody2D
 		Connect("mouse_entered", this, "OnMouseEntered");
 		Connect("mouse_exited", this, "OnMouseLeft");
 		originalPosition = Position;
+
+		_postitAttached = GetNode<AudioStreamPlayer>("/root/Narrative/SoundFX/PostItAttached");
+		_postitDepart = GetNode<AudioStreamPlayer>("/root/Narrative/SoundFX/PostItDepart");
 	}
 	
 	public override void _Input(InputEvent @event)
@@ -153,9 +159,14 @@ public class DragAndDropStory : KinematicBody2D
 
 			this.InputPickable = true;
 			this.ZIndex = 20;
-			currentlyDraggedObject = this; 
+			//currentlyDraggedObject = this; 
 			attached = true;
 			//offset = GetViewport().GetMousePosition();
+			if (currentlyDraggedObject == null)
+			{
+				currentlyDraggedObject = this;
+				_postitDepart.Play();
+			}
 		}
 
 		if (!Input.IsActionPressed("left_click"))
@@ -168,7 +179,8 @@ public class DragAndDropStory : KinematicBody2D
 			
 			if (currentlyDraggedObject == this)
 			{
-				currentlyDraggedObject = null; 
+				currentlyDraggedObject = null;
+				_postitAttached.Play();
 			}
 		}
 		if (@event is InputEventMouseMotion motion)

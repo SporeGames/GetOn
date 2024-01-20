@@ -27,6 +27,7 @@ public class OpenStory : Button
 
 	//private ColorRect _background;
 	private Node2D _background;
+	private AudioStreamPlayer _buttonSound;
 
 	public override void _Ready()
 	{
@@ -55,10 +56,13 @@ public class OpenStory : Button
 		_endingPopUp2 = GetNode<Sprite>("/root/Narrative/EndingPopup/Ending1PopUp2");
 		_endingPopUp3 = GetNode<Sprite>("/root/Narrative/EndingPopup/Ending1PopUp3");
 		_storyPopUp = GetNode<Sprite>("/root/Narrative/EndingPopup/Sprite");
+
+		_buttonSound = GetNode<AudioStreamPlayer>("/root/Narrative/SoundFX/UIBaseButton");
 	}
 
 	public void OnClosePressed()
 	{
+		_buttonSound.Play();
 		_ending1.Hide();
 		_ending2.Hide();
 		_ending3.Hide();
@@ -89,6 +93,7 @@ public class OpenStory : Button
 
 	public void OnStory1Pressed()
 	{
+		_buttonSound.Play();
 		//Story 1
 		if (this.Name == "Ending1")
 		{

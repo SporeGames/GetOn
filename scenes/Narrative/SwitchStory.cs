@@ -24,6 +24,8 @@ public class SwitchStory : TextureButton
 
 	public bool wrongWay = false;
 	private TextureButton _submit;
+
+	private AudioStreamPlayer _buttonSound;
 	
 	public override void _Ready()
 	{
@@ -49,88 +51,12 @@ public class SwitchStory : TextureButton
 
 		_submit = GetNode<TextureButton>("/root/Narrative/Submit");
 		_submit.Visible = false;
+		_buttonSound = GetNode<AudioStreamPlayer>("/root/Narrative/SoundFX/UIBaseButton");
 	}
 	
-	public override void _Process(float delta)
-	{
-		
-	}
-	
-	private void _OnTimeout()
-	{
-		//GD.Print("ohh no Booom");
-	}
-	
-
 	public void GreaterThanPressed()
 	{
-		/*
-		if (_story1.Visible == true)
-		{
-			if (_story2Intro && wrongWay == false)
-			{
-				GetNode<CountdownTimer>("/root/Narrative/Timer").running = false;
-				_story2Intro = false;
-				_introStory2.Visible = true;
-			}
-			else if(wrongWay == false)
-			{
-				GetNode<CountdownTimer>("/root/Narrative/Timer").running = true;
-				_introStory2.Visible = false;
-				_story1.Visible = false;
-				_story2.Visible = true;
-			}
-			else
-			{
-				
-				_introStory3.Visible = false;
-				_story1.Visible = false;
-				_story3.Visible = true;
-			}
-		}
-
-		else if (_story2.Visible == true)
-		{
-			if (_story3Intro && wrongWay == false)
-			{
-				GetNode<CountdownTimer>("/root/Narrative/Timer").running = false;
-				_story3Intro = false;
-				_introStory3.Visible = true;
-			}
-			else if(wrongWay == false)
-			{
-				GetNode<CountdownTimer>("/root/Narrative/Timer").running = true;
-				_story2.Visible = false;
-				_story3.Visible = true;
-				_introStory3.Visible = false;
-			}
-			else
-			{
-				_introStory2.Visible = false;
-				_story3.Visible = false;
-				_story2.Visible = true;
-				_story2Intro = false;
-				wrongWay = false;
-
-			}
-		}
-		
-		else if (_story3.Visible == true)
-		{
-			if (wrongWay == false)
-			{
-				_story3.Visible = false;
-				_story1.Visible = true;
-			}
-			else
-			{
-				_introStory3.Visible = false;
-				
-				
-			}
-			
-		}
-		*/
+		_buttonSound.Play();
 		if (_story1.Visible == true)
 		{
 			if (wrongWay == false)
@@ -155,6 +81,7 @@ public class SwitchStory : TextureButton
 
 	public void LessThanPressed()
 	{
+		_buttonSound.Play();
 		if (_story1.Visible == true)
 		{
 			if (wrongWay == false)
@@ -174,55 +101,11 @@ public class SwitchStory : TextureButton
 			_story1.Visible = true;
 			_story2.Visible = false;
 		}
-		
-		
-		
-		
-		/*
-		if (_story1.Visible == true)
-		{
-			if (_story3Intro)
-			{
-				wrongWay = true;
-				_story3Intro = false;
-				_introStory3.Visible = true;
-				//_story1.Visible = false;
-			}
-			else
-			{
-				_story1.Visible = false;
-				_introStory3.Visible = false;
-				_story3.Visible = true;
-			}
-		}
-
-		else if (_story3.Visible == true)
-		{
-			if (wrongWay)
-			{
-				//_story2Intro = true;
-				_story3.Visible = false;
-				_story2.Visible = true;
-				_introStory2.Visible = true;
-			}
-			else
-			{
-				_story3.Visible = false;
-				_story2.Visible = true;
-			}
-			
-		}
-		
-		else if (_story2.Visible == true)
-		{
-			_story2.Visible = false;
-			_story1.Visible = true;
-		}
-		*/
 	}
 
 	public void ReadyPressed()
 	{
+		_buttonSound.Play();
 		if (_story1Intro)
 		{
 			_story2Intro = true;
