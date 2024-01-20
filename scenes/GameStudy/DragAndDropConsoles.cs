@@ -114,7 +114,6 @@ public class DragAndDropConsoles : KinematicBody2D
 		{
 			InputFalse(false);
 			
-			
 			this.InputPickable = true;
 			this.ZIndex = 20;
 			 
@@ -128,13 +127,10 @@ public class DragAndDropConsoles : KinematicBody2D
 		
 		if (Input.IsActionJustReleased("left_click"))
 		{
-			
 			attached = false;
-			
 			this.ZIndex = 0;
 			InputTrue(false);
 			
-		
 			if (currentlyDraggedObject == this)
 			{
 				currentlyDraggedObject = null; 
@@ -265,16 +261,8 @@ public class DragAndDropConsoles : KinematicBody2D
 	public void OnMouseLeft()
 	{
 		popUp = true;
-		//delayTimer.WaitTime = 0.5f;
-		//delayTimer.Start();
 		hovered = false;
-		
 		GD.Print("left: "+hovered);
-		//Delay();
-		
-		//_popUp.Visible = false;
-		
-
 	}
 	public void InputTrue(bool popUp)
 	{
@@ -360,19 +348,12 @@ public class DragAndDropConsoles : KinematicBody2D
 			isOpen = true;
 		}
 	}
-	
-	private void _on_CheckTennis_body_entered(object body)
-	{
-		//snap versuch
-	}
-
 
 	public override void _Process(float delta)
 	{
 		if (attached == true && currentlyDraggedObject == this)
 		{
 			Position = new Vector2(offset);
-			//CheckSnap();
 			isDragged = true;
 		}
 		else
@@ -401,7 +382,6 @@ public class DragAndDropConsoles : KinematicBody2D
 			attached = false;
 			isDragged = false;
 			copy.Position = position;
-			GD.Print("Yes sir");
 			
 		}
 	}

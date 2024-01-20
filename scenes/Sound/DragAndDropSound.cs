@@ -146,8 +146,6 @@ public class DragAndDropSound : KinematicBody2D
 
 	private void OnDoubleClick()
 	{
-		GD.Print("Double-click detected!");
-		// Your double-click handling code here
 		if (!lineEdit)
 		{
 			_lineEdit.SetMouseFilter(Control.MouseFilterEnum.Stop);
@@ -210,10 +208,10 @@ public class DragAndDropSound : KinematicBody2D
 			
 			enteredAreasCount--;
 
-			// Only set raycastColliding to false if no areas are entered
+			
 			if (enteredAreasCount <= 0)
 			{
-				enteredAreasCount = 0; // Ensure the count doesn't go negative
+				enteredAreasCount = 0; 
 				colliding = false;
 				
 			}

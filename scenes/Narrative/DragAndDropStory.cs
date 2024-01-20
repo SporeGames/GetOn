@@ -194,6 +194,13 @@ public class DragAndDropStory : KinematicBody2D
 		hovered = true;
 	}
 	
+	public void ChangePosition(Vector2 position) {
+		attached = false;
+		
+		InputPickable = false;
+		Position = position;
+	}
+	
 	public void OnMouseLeft()
 	{
 		//attached = false;
