@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://scenes/Rooms/BaseRoom.cs" type="Script" id=1]
 [ext_resource path="res://scenes/GameStudy/assets/GameStudyRaum.png" type="Texture" id=2]
@@ -6,9 +6,12 @@
 [ext_resource path="res://scenes/GameStudy/assets/Standing_Charakter.PNG" type="Texture" id=4]
 [ext_resource path="res://SharedAssets/DialogeBox.tscn" type="PackedScene" id=5]
 [ext_resource path="res://SharedAssets/UserInterface/B_menu.png" type="Texture" id=6]
+[ext_resource path="res://scenes/GameStudy/assets/Deco/GameStudysPlanetenPopp.png" type="Texture" id=7]
 [ext_resource path="res://SharedAssets/OutlineShader.tres" type="Shader" id=8]
+[ext_resource path="res://scenes/GameStudy/assets/Deco/PlanetenKlein.png" type="Texture" id=9]
 [ext_resource path="res://SharedAssets/UserInterface/B_Home_pressed.png" type="Texture" id=10]
 [ext_resource path="res://SharedAssets/dialogue_characters/Game studies  ohne Hintergrund.PNG" type="Texture" id=11]
+[ext_resource path="res://SharedAssets/Decoration.tscn" type="PackedScene" id=12]
 
 [sub_resource type="ShaderMaterial" id=1]
 resource_local_to_scene = true
@@ -108,5 +111,11 @@ margin_bottom = 133.0
 texture_normal = ExtResource( 6 )
 texture_pressed = ExtResource( 10 )
 expand = true
+
+[node name="Planets" parent="." instance=ExtResource( 12 )]
+position = Vector2( 1444, 286 )
+scale = Vector2( 0.647284, 0.645349 )
+PopupTexture = ExtResource( 7 )
+SmallTexture = ExtResource( 9 )
 
 [editable path="GSPerson"]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=2]
+[gd_scene load_steps=27 format=2]
 
 [ext_resource path="res://SharedAssets/Decoration.tscn" type="PackedScene" id=1]
 [ext_resource path="res://SharedAssets/RoomPerson.tscn" type="PackedScene" id=2]
@@ -14,6 +14,16 @@
 [ext_resource path="res://SharedAssets/dialogue_characters/Sound_blank.png" type="Texture" id=12]
 [ext_resource path="res://SharedAssets/music/Play/MusicSound.gd" type="Script" id=13]
 [ext_resource path="res://SharedAssets/DialogeBox.tscn" type="PackedScene" id=14]
+[ext_resource path="res://scenes/Art/JazzDaysKlein.png" type="Texture" id=15]
+[ext_resource path="res://scenes/Art/JazzDaysPopUp.png" type="Texture" id=16]
+[ext_resource path="res://scenes/Art/TrashUprisingKlein.png" type="Texture" id=17]
+[ext_resource path="res://scenes/Art/TrashUprisingPopUp.png" type="Texture" id=18]
+[ext_resource path="res://scenes/Management/assets/ManagementPinnwand/Monstera.png" type="Texture" id=19]
+[ext_resource path="res://scenes/Art/Instrumentenschrank.PNG" type="Texture" id=20]
+[ext_resource path="res://scenes/Art/MusikschrankPopUp.png" type="Texture" id=21]
+[ext_resource path="res://scenes/Art/WandSkizzenArtKlein.png" type="Texture" id=22]
+[ext_resource path="res://scenes/Art/WandPopUpArtSkizzen.png" type="Texture" id=23]
+[ext_resource path="res://scenes/Art/MikroKopfhörer.PNG" type="Texture" id=24]
 
 [sub_resource type="ShaderMaterial" id=1]
 resource_local_to_scene = true
@@ -188,5 +198,69 @@ Description = "Here you can see some of my scrap drawings that I did for fun. As
 [node name="Music" type="Node" parent="."]
 script = ExtResource( 13 )
 
+[node name="PosterLeft" parent="." instance=ExtResource( 1 )]
+PopupTexture = ExtResource( 16 )
+SmallTexture = ExtResource( 15 )
+
+[node name="Sprite" parent="PosterLeft" index="0"]
+margin_left = -856.0
+margin_top = -542.0
+margin_right = -856.0
+margin_bottom = -542.0
+
+[node name="Monstera" type="Sprite" parent="PosterLeft"]
+position = Vector2( -812, -190 )
+scale = Vector2( 0.868709, 0.838794 )
+texture = ExtResource( 19 )
+
+[node name="PosterRight" parent="." instance=ExtResource( 1 )]
+PopupTexture = ExtResource( 18 )
+SmallTexture = ExtResource( 17 )
+
+[node name="Sprite" parent="PosterRight" index="0"]
+margin_left = -578.0
+margin_top = -492.0
+margin_right = -578.0
+margin_bottom = -492.0
+
+[node name="WallPopUp" parent="." instance=ExtResource( 1 )]
+position = Vector2( 1175, 670 )
+PopupTexture = ExtResource( 23 )
+SmallTexture = ExtResource( 22 )
+
+[node name="Sprite" parent="WallPopUp" index="0"]
+margin_left = -1.0
+margin_top = -522.0
+margin_right = -1.0
+margin_bottom = -522.0
+rect_scale = Vector2( 0.78636, 0.818169 )
+
+[node name="Instrumentenschrank" type="Sprite" parent="WallPopUp/Popup/CloseButton" index="0"]
+position = Vector2( 420, 828 )
+scale = Vector2( 0.811015, 0.811015 )
+texture = ExtResource( 20 )
+
+[node name="MikroKopfhörer" type="Sprite" parent="WallPopUp/Popup/CloseButton" index="1"]
+position = Vector2( 398, 894 )
+scale = Vector2( 0.843716, 0.867755 )
+texture = ExtResource( 24 )
+
+[node name="ShelfPop" parent="." instance=ExtResource( 1 )]
+visible = false
+position = Vector2( 1175, 670 )
+PopupTexture = ExtResource( 21 )
+SmallTexture = ExtResource( 20 )
+
+[node name="Sprite" parent="ShelfPop" index="0"]
+margin_left = -1052.0
+margin_top = -259.0
+margin_right = -1052.0
+margin_bottom = -259.0
+rect_scale = Vector2( 0.843716, 0.867755 )
+
 [editable path="SoundPerson"]
 [editable path="ArtPerson"]
+[editable path="PosterLeft"]
+[editable path="PosterRight"]
+[editable path="WallPopUp"]
+[editable path="ShelfPop"]

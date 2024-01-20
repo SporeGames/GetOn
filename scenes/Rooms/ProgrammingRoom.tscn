@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=2]
+[gd_scene load_steps=18 format=2]
 
 [ext_resource path="res://SharedAssets/Decoration.tscn" type="PackedScene" id=1]
 [ext_resource path="res://SharedAssets/RoomPerson.tscn" type="PackedScene" id=2]
@@ -14,6 +14,8 @@
 [ext_resource path="res://scenes/Programming/assets/Programming/Popup2.PNG" type="Texture" id=12]
 [ext_resource path="res://SharedAssets/dialogue_characters/Programming_blank.png" type="Texture" id=13]
 [ext_resource path="res://SharedAssets/DialogeBox.tscn" type="PackedScene" id=14]
+[ext_resource path="res://scenes/Programming/assets/Programming/StormtrooperPopUp.png" type="Texture" id=15]
+[ext_resource path="res://scenes/Programming/assets/Programming/StromtrooperKlein.png" type="Texture" id=16]
 
 [sub_resource type="ShaderMaterial" id=1]
 resource_local_to_scene = true
@@ -133,6 +135,13 @@ PopupTexture = ExtResource( 7 )
 SmallTexture = ExtResource( 9 )
 Description = "Back when I was a little Justin, this was the first console I got from my parents."
 
+[node name="TrooperStorm" parent="." instance=ExtResource( 1 )]
+position = Vector2( 1517, 469 )
+PopupTexture = ExtResource( 15 )
+SmallTexture = ExtResource( 16 )
+Description = "Back when I was a little Justin, this was the first console I got from my parents."
+
 [editable path="RoomPerson"]
 [editable path="ProgrammingPoster2"]
 [editable path="ProgrammingPoster1"]
+[editable path="TrooperStorm"]

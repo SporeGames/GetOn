@@ -196,7 +196,55 @@ margin_right = 15.0
 margin_bottom = 22.0
 rect_scale = Vector2( 0.601389, 0.601389 )
 
+[node name="BloodSweat" parent="." instance=ExtResource( 9 )]
+visible = false
+position = Vector2( 495, 743 )
+scale = Vector2( 0.733358, 0.733358 )
+PopupTexture = ExtResource( 11 )
+SmallTexture = ExtResource( 10 )
+Description = "It’s pretty stressful for me to always prepare a paper-prototype before implementing your ideas into the game…"
+
+[node name="Sprite" parent="BloodSweat" index="0"]
+margin_left = 15.0
+margin_top = 22.0
+margin_right = 15.0
+margin_bottom = 22.0
+rect_scale = Vector2( 0.601389, 0.601389 )
+
+[node name="Schell" parent="." instance=ExtResource( 9 )]
+visible = false
+position = Vector2( 495, 743 )
+scale = Vector2( 0.733358, 0.733358 )
+PopupTexture = ExtResource( 11 )
+SmallTexture = ExtResource( 10 )
+Description = "It’s pretty stressful for me to always prepare a paper-prototype before implementing your ideas into the game…"
+
+[node name="Sprite" parent="Schell" index="0"]
+margin_left = 15.0
+margin_top = 22.0
+margin_right = 15.0
+margin_bottom = 22.0
+rect_scale = Vector2( 0.601389, 0.601389 )
+
+[node name="VideoGameStory" parent="." instance=ExtResource( 9 )]
+visible = false
+position = Vector2( 495, 743 )
+scale = Vector2( 0.733358, 0.733358 )
+PopupTexture = ExtResource( 11 )
+SmallTexture = ExtResource( 10 )
+Description = "It’s pretty stressful for me to always prepare a paper-prototype before implementing your ideas into the game…"
+
+[node name="Sprite" parent="VideoGameStory" index="0"]
+margin_left = 15.0
+margin_top = 22.0
+margin_right = 15.0
+margin_bottom = 22.0
+rect_scale = Vector2( 0.601389, 0.601389 )
+
 [editable path="GDPerson"]
 [editable path="NarrativePerson"]
 [editable path="NarrativePerson/WelcomeDialogue"]
 [editable path="DecoNextToStoryPerson"]
+[editable path="BloodSweat"]
+[editable path="Schell"]
+[editable path="VideoGameStory"]
