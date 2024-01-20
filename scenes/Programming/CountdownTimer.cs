@@ -1,7 +1,6 @@
 using Godot;
 using System;
 using GetOn.scenes;
-using GetOn.scenes.Programming;
 
 public class CountdownTimer : Node2D {
 	

@@ -63,6 +63,8 @@ namespace GetOn.scenes {
 		[JsonProperty] public float managementTime = 0;
 		[JsonProperty] public int managementCardsPlaced = 0;
 		[JsonProperty] public AbilitySpecialization Specialization = AbilitySpecialization.Programming;
+		
+		public double TotalPoints = 0;
 
 		public bool isDragging;
 		public bool HasDialogeBoxOpen = false;
@@ -151,6 +153,41 @@ namespace GetOn.scenes {
 			CurrentScene = nextScene.Instance();
 			GetTree().Root.AddChild(CurrentScene);
 			GetTree().CurrentScene = CurrentScene;
+		}
+
+		public void CalculatePoints() {
+			switch (Specialization) {
+				case AbilitySpecialization.Management:
+					managementPoints *= 2;
+					break;
+				case AbilitySpecialization.Narrative_Design:
+					narrativePoints *= 2;
+					break;
+				case AbilitySpecialization.Programming:
+					programmingPoints *= 2;
+					break;
+				case AbilitySpecialization.Sound:
+					soundPoints *= 2;
+					break;
+				case AbilitySpecialization.Game_Design:
+					gameDesignPoints *= 2;
+					break;
+				case AbilitySpecialization.Game_Studies:
+					gameStudyPoints *= 2;
+					break;
+			}
+
+			Dictionary<AbilitySpecialization, double> results = new Dictionary<AbilitySpecialization, double>();
+			results.Add(AbilitySpecialization.Management, managementPoints);
+			results.Add(AbilitySpecialization.Programming, programmingPoints);
+			results.Add(AbilitySpecialization.Sound, soundPoints);
+			results.Add(AbilitySpecialization.Game_Design, gameDesignPoints);
+			results.Add(AbilitySpecialization.Game_Studies, gameStudyPoints);
+			results.Add(AbilitySpecialization.Narrative_Design, narrativePoints);
+			var sortedList = results.ToList();
+			sortedList.Sort((pair1,pair2) => pair1.Value.CompareTo(pair2.Value));
+			var best = sortedList[sortedList.Count - 1];
+			TotalPoints = sortedList.Sum(pair => pair.Value);
 		}
 
 		public void Print() {

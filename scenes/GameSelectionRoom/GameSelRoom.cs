@@ -97,7 +97,8 @@ namespace GetOn.scenes.GameSelectionRoom {
 			var completed = _sharedNode.CompletedTasks.Count;
 			GD.Print("Completed: " + completed + " of " + (Enum.GetValues(typeof(AbilitySpecialization)).Length - 1) + "");
 			if (completed >= Enum.GetValues(typeof(AbilitySpecialization)).Length) {
-				GetNode<DialogueBox>("CompletedGameDialogue").Visible = true;
+				_sharedNode.SwitchScene("res://scenes/Rooms/EndingRoom.tscn");
+				return;
 			}
 			foreach (var game in _sharedNode.CompletedTasks) {
 				switch (game) {

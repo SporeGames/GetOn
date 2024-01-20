@@ -10,6 +10,7 @@ public class RoomPerson : Node2D {
 	private SharedNode _shared;
 	
 	[Export] public AbilitySpecialization GameSpecialization;
+	[Export] public bool allowInteract = true;
 	
 	private DialogueBox _welcomeDialogueBox;
 	private DialogueBox _epicFailDialogueBox;
@@ -45,6 +46,9 @@ public class RoomPerson : Node2D {
 	}
 	
 	private void OnInteractButtonPressed() {
+		if (!allowInteract) {
+			return;
+		}
 		if (_shared.HasDialogeBoxOpen) {
 			return;
 		}
@@ -81,6 +85,10 @@ public class RoomPerson : Node2D {
 			case AbilitySpecialization.Art:
 				gameResult = 50; // We don't have a result for art
 				break;
+			case AbilitySpecialization.None:
+				_shared.CalculatePoints();
+				gameResult = _shared.TotalPoints;
+				break;
 			default:
 				GD.Print("This specialization is not implemented: " + GameSpecialization);
 				break;
@@ -99,6 +107,9 @@ public class RoomPerson : Node2D {
 	}
 	
 	private bool HasCompletedThisTask() {
+		if (GameSpecialization == AbilitySpecialization.None) {
+			return true;
+		}
 		return _shared.CompletedTasks.Contains(GameSpecialization);
 	}
 	
