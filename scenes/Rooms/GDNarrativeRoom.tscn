@@ -72,6 +72,7 @@ UniqueID = "667"
 [node name="TalkAgainDialogue" parent="GDPerson" index="4"]
 Title = "Mike"
 Icon = ExtResource( 14 )
+Texts = PoolStringArray( "Still on your tasks\? -Yeah, me too." )
 
 [node name="ResultDialogue" parent="GDPerson" index="5"]
 Title = "Mike"
@@ -136,7 +137,7 @@ texture = ExtResource( 12 )
 [node name="EpicFailDialogue" parent="NarrativePerson" index="3"]
 Title = "Marie"
 Icon = ExtResource( 13 )
-Texts = PoolStringArray( "This is an unexpected twist... . You said you specialised in story design, were you trying to deceive us\?" )
+Texts = PoolStringArray( "This is an unexpected twist... . You said you are specialized in story design, but couldn\'t do the task good. Were you trying to deceive us\?" )
 LoadSceneAfter = false
 ResultThreshold = 22
 IsUnique = true
@@ -145,6 +146,7 @@ UniqueID = "668"
 [node name="TalkAgainDialogue" parent="NarrativePerson" index="4"]
 Title = "Marie"
 Icon = ExtResource( 13 )
+Texts = PoolStringArray( "That\'s it for your hero\'s duty here." )
 
 [node name="ResultDialogue" parent="NarrativePerson" index="5"]
 Title = "Marie"
@@ -185,6 +187,7 @@ position = Vector2( 495, 743 )
 scale = Vector2( 0.733358, 0.733358 )
 PopupTexture = ExtResource( 11 )
 SmallTexture = ExtResource( 10 )
+Description = "It’s pretty stressful for me to always prepare a paper-prototype before implementing your ideas into the game…"
 
 [node name="Sprite" parent="DecoNextToStoryPerson" index="0"]
 margin_left = 15.0

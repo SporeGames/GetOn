@@ -76,6 +76,7 @@ UniqueID = "670"
 position = Vector2( 74, 710 )
 Title = "Julia"
 Icon = ExtResource( 12 )
+Texts = PoolStringArray( "Oh, you\'re back! I don\'t have anything left to do for you right now, so feel free to look around!" )
 
 [node name="ResultDialogue" parent="SoundPerson" index="5"]
 position = Vector2( 78, 715 )
@@ -130,7 +131,7 @@ margin_bottom = 770.0
 [node name="WelcomeDialogue" parent="ArtPerson" index="2"]
 position = Vector2( 0, 710 )
 Title = "Ash"
-Texts = PoolStringArray( "Have you got your portfolio ready\?" )
+Texts = PoolStringArray( "Oh, you must be our new intern.", "Well, you see, as an artist I am always very busy, drawing sketches of characters, buildings and so on...", "Therefore, to be honest: I didn\'t really think about a task for you to do.", "Well let\'s just say you hand me a portfolio of your previous work and I will give you some review about that later." )
 SceneToLoad = "Art"
 
 [node name="EpicFailDialogue" parent="ArtPerson" index="3"]
@@ -140,6 +141,7 @@ LoadSceneAfter = false
 
 [node name="TalkAgainDialogue" parent="ArtPerson" index="4"]
 Title = "Ash"
+Texts = PoolStringArray( "Huh\? Didn’t you already give me your portfolio\?" )
 
 [node name="ResultDialogue" parent="ArtPerson" index="5"]
 position = Vector2( 0, 710 )
@@ -181,6 +183,7 @@ margin_bottom = 619.0
 position = Vector2( 1198, 796 )
 PopupTexture = ExtResource( 11 )
 SmallTexture = ExtResource( 8 )
+Description = "Here you can see some of my scrap drawings that I did for fun. As an artist I have to practice everyday."
 
 [node name="Music" type="Node" parent="."]
 script = ExtResource( 13 )

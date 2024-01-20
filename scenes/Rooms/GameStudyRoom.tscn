@@ -51,7 +51,7 @@ SceneToLoad = "GameStudy"
 position = Vector2( 58, 674 )
 Title = "Emily"
 Icon = ExtResource( 11 )
-Texts = PoolStringArray( "I don’t want to be rude or something, but I don’t think that you have enough knowledge in game-studies to be specialized in this field…" )
+Texts = PoolStringArray( "I-I don’t want to be rude or something, but I don’t think that you have enough knowledge in game-studies to count as specialized in this field…" )
 LoadSceneAfter = false
 ResultThreshold = 22
 IsUnique = true
@@ -61,6 +61,7 @@ UniqueID = "671"
 position = Vector2( 58, 674 )
 Title = "Emily"
 Icon = ExtResource( 11 )
+Texts = PoolStringArray( "Hi... I hope you are doing fine with the tasks." )
 
 [node name="ResultDialogue" parent="GSPerson" index="5"]
 position = Vector2( 58, 674 )

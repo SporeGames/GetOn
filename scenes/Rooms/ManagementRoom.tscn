@@ -72,6 +72,7 @@ UniqueID = "666"
 [node name="TalkAgainDialogue" parent="RoomPerson" index="4"]
 Title = "Chloe"
 Icon = ExtResource( 14 )
+Texts = PoolStringArray( "Just talk to the others, they will inform you about your next task." )
 
 [node name="ResultDialogue" parent="RoomPerson" index="5"]
 Title = "Chloe"
@@ -111,13 +112,13 @@ UniqueID = "103"
 position = Vector2( 162, 443 )
 PopupTexture = ExtResource( 12 )
 SmallTexture = ExtResource( 13 )
-Description = "Drawers with stuff"
+Description = "In this file cabinet I store our cost calculations and other important documents."
 
 [node name="ManagementWhiteboard" parent="." instance=ExtResource( 3 )]
 position = Vector2( 1090, 252 )
 PopupTexture = ExtResource( 10 )
 SmallTexture = ExtResource( 9 )
-Description = "Whiteboard"
+Description = "I can see you’re looking at my pinboard. It keeps me organized at any time. Look at the cute photo we took at our new-year party."
 
 [node name="Monstera" type="Sprite" parent="ManagementWhiteboard"]
 position = Vector2( 517, 238 )

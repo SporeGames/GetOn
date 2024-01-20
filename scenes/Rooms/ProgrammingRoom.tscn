@@ -64,6 +64,7 @@ UniqueID = "669"
 [node name="TalkAgainDialogue" parent="RoomPerson" index="4"]
 Title = "Justin"
 Icon = ExtResource( 13 )
+Texts = PoolStringArray( "I don\'t have anything left to do for you newbie, don\'t let the others wait." )
 
 [node name="ResultDialogue" parent="RoomPerson" index="5"]
 Title = "Justin"
@@ -118,6 +119,7 @@ expand = true
 position = Vector2( 148, 267 )
 PopupTexture = ExtResource( 12 )
 SmallTexture = ExtResource( 10 )
+Description = "You may find it surprising, but Kirby is my spirit animal."
 
 [node name="Popup" parent="ProgrammingPoster2" index="1"]
 position = Vector2( -14, -10 )
@@ -129,6 +131,7 @@ z_index = 6
 position = Vector2( 426, 266 )
 PopupTexture = ExtResource( 7 )
 SmallTexture = ExtResource( 9 )
+Description = "Back when I was a little Justin, this was the first console I got from my parents."
 
 [editable path="RoomPerson"]
 [editable path="ProgrammingPoster2"]
