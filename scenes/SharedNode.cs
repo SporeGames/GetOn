@@ -21,6 +21,7 @@ namespace GetOn.scenes {
 		private List<string> _discoveredScenes = new List<string>();
 		[Export] public float SpecializationMultiplier = 1.5f;
 		[Export] public Texture MouseCursor;
+		[Export] bool _useQueuedSceneLoading = true;
 		
 		private Node CurrentScene { get; set; }
 		[JsonProperty] public string PlayerName { get; set; } = "No name";
@@ -195,20 +196,30 @@ namespace GetOn.scenes {
 		}
 
 		public void SwitchScene(string path) {
-			if (_pathCurrentlyLoading.Equals(path)) {
+			if (_useQueuedSceneLoading) {
+				if (_pathCurrentlyLoading.Equals(path)) {
+					return;
+				}
+
+				if (_isLoadingScene || _sceneLoader != null) {
+					_sceneQueue.Add(path);
+					return;
+				}
+
+				HasDialogeBoxOpen = false;
+				MouseHoverText = "";
+				GD.Print("Unloading scene: " + CurrentScene.Name);
+				CurrentScene.QueueFree();
+				_loadingScreen.Visible = true;
+				GD.Print("Loading scene: " + path);
+				StartLoadingScene(path);
 				return;
 			}
-			if (_isLoadingScene || _sceneLoader != null) {
-				_sceneQueue.Add(path);
-				return;
-			}
-			HasDialogeBoxOpen = false;
-			MouseHoverText = "";
-			GD.Print("Unloading scene: " + CurrentScene.Name);
 			CurrentScene.QueueFree();
-			_loadingScreen.Visible = true;
-			GD.Print("Loading scene: " + path);
-			StartLoadingScene(path);
+			var nextScene = (PackedScene) GD.Load(path);
+			CurrentScene = nextScene.Instance();
+			GetTree().Root.AddChild(CurrentScene);
+			GetTree().CurrentScene = CurrentScene;
 		}
 
 		private void StartLoadingScene(string path) {
