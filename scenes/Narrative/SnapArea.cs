@@ -102,8 +102,6 @@ public class SnapArea : Area2D
 				area2 = false;
 			}
 		}
-
-		
 	}
 }
 
