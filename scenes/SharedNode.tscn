@@ -73,17 +73,7 @@ custom_colors/default_color = Color( 0, 0, 0, 1 )
 custom_fonts/normal_font = SubResource( 2 )
 
 [node name="DebugMenu" type="Node2D" parent="."]
-visible = false
 z_index = 16
-
-[node name="Levels" type="ItemList" parent="DebugMenu"]
-margin_left = 1554.0
-margin_top = 7.0
-margin_right = 1897.0
-margin_bottom = 47.0
-allow_reselect = true
-allow_rmb_select = true
-auto_height = true
 
 [node name="DebugText" type="RichTextLabel" parent="DebugMenu"]
 margin_left = 15.0
@@ -94,6 +84,21 @@ custom_colors/default_color = Color( 0, 0, 0, 1 )
 custom_fonts/normal_font = SubResource( 1 )
 text = "Debug"
 fit_content_height = true
+
+[node name="FinishButton" type="Button" parent="DebugMenu"]
+margin_left = 286.0
+margin_right = 509.0
+margin_bottom = 40.0
+text = "Finish All Games"
+
+[node name="Levels" type="ItemList" parent="DebugMenu"]
+margin_left = 1554.0
+margin_top = 7.0
+margin_right = 1897.0
+margin_bottom = 47.0
+allow_reselect = true
+allow_rmb_select = true
+auto_height = true
 
 [node name="Printer" type="Node" parent="."]
 script = ExtResource( 2 )

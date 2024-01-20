@@ -79,7 +79,7 @@ Icon = ExtResource( 14 )
 Texts = PoolStringArray( "Seems like you are done with all of your tasks! I hope you had a great time with us and that you gathered some knowledge for your future career!", "However, there is one last thing I want to talk about. After that you can go home and enjoy your free time.", "So, the others gave me their assessments about you. Most of us agree, that you…:", "…are not made for the game-industry. It seems like you have no skills or knowledge to work in this field at all.", "All things considered, we still hope you learned a few things from us and that you will find the right thing to do in the future." )
 SceneToLoad = "Credits"
 IsUnique = true
-UniqueID = "13"
+UniqueID = "714"
 
 [node name="IntroductionDialogue" parent="RoomPerson" instance=ExtResource( 15 )]
 visible = false

@@ -104,8 +104,8 @@ public class RoomPerson : Node2D {
 			if (gameResult >= box.ResultThreshold) {
 				return box;
 			}
-			GD.PrintErr("No result dialogue found for " + GameSpecialization + " with result " + gameResult + "");
 		}
+		GD.PrintErr("No result dialogue found for " + GameSpecialization + " with result " + gameResult + "");
 		return null;
 	}
 	

@@ -16,6 +16,7 @@ namespace GetOn.scenes {
 		private Node2D _debugMenu;
 		private RichTextLabel _debugText;
 		private ItemList _debugMenuList;
+		private Button _finishButton;
 
 		private List<string> _discoveredScenes = new List<string>();
 		[Export] public float SpecializationMultiplier = 1.5f;
@@ -78,6 +79,7 @@ namespace GetOn.scenes {
 		private double _loadingProgress = 0;
 		private ColorRect _loadingScreen;
 		private ProgressBar _loadingBar;
+		private List<string> _sceneQueue = new List<string>();
 		
 
 		public override void _Ready() {
@@ -91,6 +93,8 @@ namespace GetOn.scenes {
 			_debugMenu = GetNode<Node2D>("DebugMenu");
 			_debugText = GetNode<RichTextLabel>("DebugMenu/DebugText");
 			_debugMenuList = GetNode<ItemList>("DebugMenu/Levels");
+			_finishButton = GetNode<Button>("DebugMenu/FinishButton");
+			_finishButton.Connect("pressed", this, nameof(OnFinishButtonPressed));
 			_loadingBar = GetNode<ProgressBar>("LoadingScreen/ProgressBar");
 			_loadingScreen = GetNode<ColorRect>("LoadingScreen");
 			DiscoverSceneFiles("res://scenes", true);
@@ -104,6 +108,10 @@ namespace GetOn.scenes {
 		}
 
 		public override void _Process(float delta) {
+			if (_sceneQueue.Count > 0 && !_isLoadingScene && _sceneLoader == null) {
+				SwitchScene(_sceneQueue[0]);
+				_sceneQueue.RemoveAt(0);
+			}
 			if (_isLoadingScene && _sceneLoader != null) {
 				var err = _sceneLoader.Poll();
 				switch (err) {
@@ -117,12 +125,16 @@ namespace GetOn.scenes {
 						_loadingScreen.Visible = false;
 						_sceneLoader.Dispose(); // Need to dispose of the loader manually or we get a cyclic reference
 						_sceneLoader = null;
+						GD.Print("Successfully loaded scene: " + CurrentScene.Name);
 						return;
 					}
 					case Error.Ok:
 						_loadingProgress = _sceneLoader.GetStage() / (double) _sceneLoader.GetStageCount();
 						_loadingProgress = Math.Round(_loadingProgress, 2);
 						_loadingBar.Value = _loadingProgress;
+						return;
+					default:
+						GD.PrintErr("Error loading scene: " + err);
 						return;
 				}
 			}
@@ -162,6 +174,16 @@ namespace GetOn.scenes {
 			GD.Print("Clicked on " + _discoveredScenes[index] + " at index " + index + " in the debug menu");
 			SwitchScene(_discoveredScenes[index]);
 		}
+		
+		private void OnFinishButtonPressed() {
+			CompletedTasks.Add(AbilitySpecialization.Art);
+			CompletedTasks.Add(AbilitySpecialization.Game_Design);
+			CompletedTasks.Add(AbilitySpecialization.Game_Studies);
+			CompletedTasks.Add(AbilitySpecialization.Management);
+			CompletedTasks.Add(AbilitySpecialization.Narrative_Design);
+			CompletedTasks.Add(AbilitySpecialization.Programming);
+			CompletedTasks.Add(AbilitySpecialization.Sound);
+		}
 
 		public override void _Input(InputEvent @event) {
 			if (@event is InputEventKey key) {
@@ -176,13 +198,16 @@ namespace GetOn.scenes {
 			if (_pathCurrentlyLoading.Equals(path)) {
 				return;
 			}
-			if (_isLoadingScene) {
+			if (_isLoadingScene || _sceneLoader != null) {
+				_sceneQueue.Add(path);
 				return;
 			}
 			HasDialogeBoxOpen = false;
 			MouseHoverText = "";
+			GD.Print("Unloading scene: " + CurrentScene.Name);
 			CurrentScene.QueueFree();
 			_loadingScreen.Visible = true;
+			GD.Print("Loading scene: " + path);
 			StartLoadingScene(path);
 		}
 
