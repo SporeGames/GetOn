@@ -6,6 +6,8 @@ namespace GetOn.scenes.GameStudy
 	public class CheckArea : Area2D
 	{
 		private SharedNode _sharedNode;
+		private SubmitResults _submitResults;
+		private Node2D _submitResultsPopUp;
 		
 		private bool nESCorrect;
 		private bool xBOXCorrect;
@@ -36,6 +38,8 @@ namespace GetOn.scenes.GameStudy
 		public override void _Ready()
 		{
 			_sharedNode = GetNode<SharedNode>("/root/SharedNode");
+			_submitResults = GetNode<SubmitResults>("/root/GameStudy/SubmitResults");
+			_submitResultsPopUp = GetNode<Node2D>("/root/GameStudy/SubmitResults");
 			nESCorrect = false;
 			xBOXCorrect = false;
 			gameBoyCorrect = false;
@@ -136,12 +140,17 @@ namespace GetOn.scenes.GameStudy
 				points += 2;
 			}
 			
-			points += GetNode<CountdownTimer>("/root/GameStudy/TopBar/Timer").GetBonusPointsForTime();
+			//points += GetNode<CountdownTimer>("/root/GameStudy/TopBar/Timer").GetBonusPointsForTime();
 			GD.Print(points);
+			/*
 			_sharedNode.gameStudyPoints = points;
 			_sharedNode.gameStudyTime = GetNode<CountdownTimer>("/root/GameStudy/TopBar/Timer").CurrentTime;
 			_sharedNode.CompletedTasks.Add(AbilitySpecialization.Game_Studies);
 			_sharedNode.SwitchScene("res://scenes/Rooms/GameStudyRoom.tscn");
+			*/
+			_submitResultsPopUp.Visible = true;
+			_submitResults.gameStudyPoints = points;
+			_submitResults.gameStudyTime = GetNode<CountdownTimer>("/root/GameStudy/TopBar/Timer").CurrentTime;
 		}
 
 		private void _on_CheckGameBoy_body_entered(object body)

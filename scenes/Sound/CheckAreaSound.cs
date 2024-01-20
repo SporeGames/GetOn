@@ -7,6 +7,8 @@ namespace GetOn.scenes.Sound
 	public class CheckAreaSound : Area2D
 	{
 		private SharedNode _sharedNode;
+		private SubmitResults _submitResults;
+		private Node2D _submitResultsPopUp;
 		private GameSelRoom _gameSelRoom;
 
 		private bool SoundItem;
@@ -28,6 +30,8 @@ namespace GetOn.scenes.Sound
 			_submitPoints.Connect("pressed", this, nameof(CountPoints));
 			_sharedNode = GetNode<SharedNode>("/root/SharedNode");
 			_gameSelRoom = GetNode<GameSelRoom>("/root/scenes/GameSelectionRoom/GameSelectionRoom");
+			_submitResults = GetNode<SubmitResults>("/root/GameStudy/SubmitResults");
+			_submitResultsPopUp = GetNode<Node2D>("/root/GameStudy/SubmitResults");
 		}
 
 		private void _on_CheckArea_body_entered(object body)
@@ -137,6 +141,7 @@ namespace GetOn.scenes.Sound
 
 		public void CountPoints()
 		{
+			points = 0;
 			if (SoundDeath)
 			{
 				points += 2.5;
@@ -173,12 +178,18 @@ namespace GetOn.scenes.Sound
 			{
 				points += 7.5;
 			}
+
+			_submitResultsPopUp.Visible = true;
+			_submitResults.soundPoints = points;
+			_submitResults.soundTime = GetNode<CountdownTimer>("/root/Sound/TopBar/Timer").CurrentTime;
+			/*
 			points += GetNode<CountdownTimer>("/root/Sound/TopBar/Timer").GetBonusPointsForTime();
 			GD.Print(points);
 			_sharedNode.soundPoints = (int) points;
 			_sharedNode.soundTime = GetNode<CountdownTimer>("/root/Sound/TopBar/Timer").CurrentTime;
 			_sharedNode.CompletedTasks.Add(AbilitySpecialization.Sound);
 			_sharedNode.SwitchScene("res://scenes/Rooms/SoundArtRoom.tscn");
+			*/
 		}
 	}
 }

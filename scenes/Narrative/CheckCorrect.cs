@@ -12,6 +12,9 @@ namespace GetOn.scenes.Narrative
 	public class CheckCorrect : Area2D
 	{
 		private SharedNode _sharedNode;
+		private SubmitResults _submitResults;
+		private Node2D _submitResultsPopUp;
+		
 		private DragAndDropStory _dragAndDropStory;
 		private DropDownAttribute _dropDownAttribute;
 		private DropDownAttribute _dropDownAttribute2;
@@ -156,6 +159,8 @@ namespace GetOn.scenes.Narrative
 			_dropDownAttribute27 = GetNode<DropDownAttribute>("/root/Narrative/2/DropDownAttribute27");
 			_dropDownAttribute28 = GetNode<DropDownAttribute>("/root/Narrative/2/DropDownAttribute28");
 			_sharedNode = GetNode<SharedNode>("/root/SharedNode");
+			_submitResults = GetNode<SubmitResults>("/root/Narrative/SubmitResults");
+			_submitResultsPopUp = GetNode<Node2D>("/root/Narrative/SubmitResults");
 			_dragAndDropStory = GetNode<DragAndDropStory>("/root/Narrative/1/Ending1");
 			endingPerfect = false;
 			endingOk = false;
@@ -2108,7 +2113,7 @@ namespace GetOn.scenes.Narrative
 		//CountPoints
 		public void CountPoints()
 		{
-			
+			points = 0;
 			GD.Print("Tigress1: "+correctAttributesEndingTigress1.Count);
 			GD.Print("Tigress2: "+correctAttributesEndingTigress2.Count);
 			GD.Print("Tigress3: "+correctAttributesEndingTigress3.Count);
@@ -2377,13 +2382,17 @@ namespace GetOn.scenes.Narrative
 
 			
 			
-			GD.Print(points);
-
+			
+			/*
 			_sharedNode.narrativePoints = points;
 			_sharedNode.narrativeTime = GetNode<CountdownTimer>("/root/Narrative/TopBar/Timer").CurrentTime;
 			GD.Print("points: "+points);
 			_sharedNode.CompletedTasks.Add(AbilitySpecialization.Narrative_Design);
 			_sharedNode.SwitchScene("res://scenes/Rooms/GDNarrativeRoom.tscn");
+			*/
+			_submitResultsPopUp.Visible = true;
+			_submitResults.narrativePoints = points;
+			_submitResults.narrativeTime = GetNode<CountdownTimer>("/root/Narrative/TopBar/Timer").CurrentTime;
 		}
 	}
 }

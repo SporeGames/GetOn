@@ -1,4 +1,4 @@
-[gd_scene load_steps=44 format=2]
+[gd_scene load_steps=45 format=2]
 
 [ext_resource path="res://scenes/Programming/Programming.cs" type="Script" id=1]
 [ext_resource path="res://scenes/Programming/blocks/godot/VariableNode.cs" type="Script" id=2]
@@ -31,6 +31,7 @@
 [ext_resource path="res://SharedAssets/UserInterface/B_base_2_hovered.png" type="Texture" id=29]
 [ext_resource path="res://SharedAssets/sounds/Execute Code 2.wav" type="AudioStream" id=30]
 [ext_resource path="res://SharedAssets/sounds/Move Truck.wav" type="AudioStream" id=31]
+[ext_resource path="res://SharedAssets/SubmitResults.tscn" type="PackedScene" id=32]
 
 [sub_resource type="DynamicFont" id=18]
 size = 30
@@ -1169,5 +1170,9 @@ scale = Vector2( 0.7, 0.7 )
 
 [node name="Music" type="Node" parent="."]
 script = ExtResource( 20 )
+
+[node name="SubmitResults" parent="." instance=ExtResource( 32 )]
+visible = false
+currentGame = "Programming"
 
 [editable path="TopBar"]

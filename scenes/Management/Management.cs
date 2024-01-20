@@ -41,8 +41,13 @@ public class Management : Node2D {
 
 	public Dictionary<Texture, int> TextureToColor;
 	
+	private SubmitResults _submitResults;
+	private Node2D _submitResultsPopUp;
+	
 	
 	public override void _Ready() {
+		_submitResults = GetNode<SubmitResults>("/root/Management/SubmitResults");
+		_submitResultsPopUp = GetNode<Node2D>("/root/Management/SubmitResults");
 		TextureToColor = _colorTextures.ToDictionary(x => x.Value, x => x.Key);
 		_mouseFollower = GetNode<Sprite>("MouseFollower");
 		_colorText = GetNode<RichTextLabel>("ColorSelector/Text");
@@ -116,6 +121,7 @@ public class Management : Node2D {
 			}
 		}
 		points += GetNode<CountdownTimer>("/root/Management/TopBar/Timer").GetBonusPointsForTime();
+		/*
 		GD.Print("Points: " + points);
 		var shared = GetNode<SharedNode>("/root/SharedNode");
 		shared.managementPoints = points;
@@ -123,6 +129,11 @@ public class Management : Node2D {
 		shared.managementTime = GetNode<CountdownTimer>("/root/Management/TopBar/Timer").CurrentTime;
 		shared.CompletedTasks.Add(AbilitySpecialization.Management);
 		shared.SwitchScene("res://scenes/Rooms/ManagementRoom.tscn");
+		*/
+		_submitResultsPopUp.Visible = true;
+		_submitResults.managementPoints = points;
+		_submitResults.cardsColoredCorrectly = cardsColoredCorrectly;
+		_submitResults.managementTime = GetNode<CountdownTimer>("/root/Management/TopBar/Timer").CurrentTime;
 	}
 
 	public override void _Process(float delta) {

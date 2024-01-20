@@ -6,6 +6,8 @@ using GetOn.scenes;
 public class Sound : Node2D
 {
 	private SharedNode _sharedNode;
+	private SubmitResults _submitResults;
+	private Node2D _submitResultsPopUp;
 	
 	private Node2D _moment1;
 	private Node2D _moment2;
@@ -69,6 +71,8 @@ public class Sound : Node2D
 	public override void _Ready()
 	{
 		_sharedNode = GetNode<SharedNode>("/root/SharedNode");
+		_submitResults = GetNode<SubmitResults>("/root/Sound/SubmitResults");
+		_submitResultsPopUp = GetNode<Node2D>("/root/Sound/SubmitResults");
 		
 		_soundSlider = GetNode<SoundSlider>("Moment1");
 		_soundSlider2 = GetNode<SoundSlider>("Moment2");
@@ -137,12 +141,17 @@ public class Sound : Node2D
 		count++;
 		if (count == 81) 
 		{
+			/*
 			//GD.Print("Mthe wurde so oft gecallt: ",count);
 			GD.Print(points);
 			_sharedNode.soundPoints = (double) points;
 			_sharedNode.soundTime = GetNode<CountdownTimer>("/root/Sound/TopBar/Timer").CurrentTime;
 			_sharedNode.CompletedTasks.Add(AbilitySpecialization.Sound);
 			_sharedNode.SwitchScene("res://scenes/Rooms/SoundArtRoom.tscn");
+			*/
+			_submitResultsPopUp.Visible = true;
+			_submitResults.soundPoints = points;
+			_submitResults.soundTime = GetNode<CountdownTimer>("/root/Sound/TopBar/Timer").CurrentTime;
 		}
 		
 		/*

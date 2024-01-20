@@ -4,6 +4,8 @@ namespace GetOn.scenes.Programming {
 	
 	public class Checklist : Control {
 		private SharedNode _sharedNode;
+		private SubmitResults _submitResults;
+		private Node2D _submitResultsPopUp;
 		
 		private CheckBox _jumping;
 		private CheckBox _jumpingKey;
@@ -20,6 +22,9 @@ namespace GetOn.scenes.Programming {
 
 		public override void _Ready() {
 			_sharedNode = GetNode<SharedNode>("/root/SharedNode");
+			_submitResults = GetNode<SubmitResults>("/root/Programming/SubmitResults");
+			_submitResultsPopUp = GetNode<Node2D>("/root/Programming/SubmitResults");
+			
 			_jumping = GetNode<CheckBox>("Items/Jumping");
 			_jumpingKey = GetNode<CheckBox>("Items/JumpingKey");
 			_moving = GetNode<CheckBox>("Items/Moving");
@@ -113,10 +118,16 @@ namespace GetOn.scenes.Programming {
 				points += 5;
 			}
 			points += _timer.GetBonusPointsForTime();
+			/*
 			_sharedNode.programmingPoints = points;
 			_sharedNode.programmingTime = _timer.CurrentTime;
 			_sharedNode.CompletedTasks.Add(AbilitySpecialization.Programming);
 			_sharedNode.SwitchScene("res://scenes/Rooms/ProgrammingRoom.tscn");
+			*/
+			_submitResultsPopUp.Visible = true;
+			_submitResults.programmingPoints = points;
+			_submitResults.programmingTime = _timer.CurrentTime;
+			
 			_sharedNode.PlayGenericClick();
 		}
 	}

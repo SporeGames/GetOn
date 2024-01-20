@@ -7,6 +7,8 @@ using GetOn.scenes.GameDesign;
 public class GameDesign : Node2D {
 
 	private CountdownTimer _timer;
+	private SubmitResults _submitResults;
+	private Node2D _submitResultsPopUp;
 	
 	private GameDesignSlider _apexSlider;
 	private GameDesignSlider _detroitSlider;
@@ -20,6 +22,8 @@ public class GameDesign : Node2D {
 	
 	
 	public override void _Ready() {
+		_submitResults = GetNode<SubmitResults>("/root/GameDesign/SubmitResults");
+		_submitResultsPopUp = GetNode<Node2D>("/root/GameDesign/SubmitResults");
 		_timer = GetNode<CountdownTimer>("/root/GameDesign/TopBar/Timer");
 		_apexSlider = GetNode<GameDesignSlider>("ApexSlider");
 		_detroitSlider = GetNode<GameDesignSlider>("DetroitSlider");
@@ -129,10 +133,15 @@ public class GameDesign : Node2D {
 		}
 		points += _timer.GetBonusPointsForTime();
 		var node = GetNode<SharedNode>("/root/SharedNode");
+		/*
 		node.gameDesignPoints = points;
 		node.gameDesignTime = (int) _timer.CurrentTime;
 		node.CompletedTasks.Add(AbilitySpecialization.Game_Design);
 		node.SwitchScene("res://scenes/Rooms/GDNarrativeRoom.tscn");
+		*/
+		_submitResultsPopUp.Visible = true;
+		_submitResults.gameDesignPoints = points;
+		_submitResults.gameDesignPoints = (int) _timer.CurrentTime;
 	}
 	
 }

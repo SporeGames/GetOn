@@ -5,6 +5,8 @@ using GetOn.scenes;
 public class Consoles : Node2D
 {
 	private SharedNode _sharedNode;
+	private SubmitResults _submitResults;
+	private Node2D _submitResultsPopUp;
 	
 	private bool xboxCorrect;
 	private bool nesCorrect;
@@ -125,6 +127,8 @@ public class Consoles : Node2D
 	public override void _Ready()
 	{
 		_sharedNode = GetNode<SharedNode>("/root/SharedNode");
+		_submitResults = GetNode<SubmitResults>("/root/GameStudy/SubmitResults");
+		_submitResultsPopUp = GetNode<Node2D>("/root/GameStudy/SubmitResults");
 		
 		xboxArea = GetNode<Sprite>("/root/GameStudy/SortedSprites/xboxArea");
 		gameboyArea = GetNode<Sprite>("/root/GameStudy/SortedSprites/gameboyArea");
@@ -151,6 +155,7 @@ public class Consoles : Node2D
 
 	public void CheckifCorrect()
 	{
+		points = 0;
 		if (nesCorrect == true)
 		{
 			points += 2.5;
@@ -192,27 +197,27 @@ public class Consoles : Node2D
 		}
 		if (tennisCorrect)
 		{
-			points += 3;
+			points += 2.5;
 		}
 		if (mazeWarsCorrect)
 		{
-			points += 3;
+			points += 2.5;
 		}
 		if (spaceInvadersCorrect)
 		{
-			points += 3;
+			points += 2.5;
 		}
 		if (donkeyKongCorrect)
 		{
-			points += 3;
+			points += 2.5;
 		}
 		if (pongCorrect)
 		{
-			points += 3;
+			points += 2.5;
 		}
 		if (pacmanCorrect)
 		{
-			points += 3;
+			points += 2.5;
 		}
 		if (bioshockCorrect)
 		{
@@ -238,12 +243,31 @@ public class Consoles : Node2D
 		{
 			points += 2;
 		}
+
+		if (atariCorrect && c64Correct && segaSaturnCorrect && magnavoxCorrect && nesCorrect && gameBoyCorrect &&
+			megadrive1Correct && xboxCorrect)
+		{
+			points += 0.5;
+		}
+
+		if (tennisCorrect && pongCorrect && mazeWarsCorrect && pacmanCorrect && spaceInvadersCorrect &&
+			donkeyKongCorrect && bioshockCorrect && horizonCorrect && starfieldCorrect && detriotCorrect &&
+			cyberpunkCorrect && strayCorrect)
+		{
+			points += 0.5;
+		}
+		/*
 		points += GetNode<CountdownTimer>("/root/GameStudy/TopBar/Timer").GetBonusPointsForTime();
 		_sharedNode.gameStudyPoints = points;
 		_sharedNode.gameStudyTime = GetNode<CountdownTimer>("/root/GameStudy/TopBar/Timer").CurrentTime;
 		_sharedNode.CompletedTasks.Add(AbilitySpecialization.Game_Studies);
 		_sharedNode.SwitchScene("res://scenes/Rooms/GameStudyRoom.tscn");
 		GD.Print(points);
+		*/
+		//points += GetNode<CountdownTimer>("/root/GameStudy/TopBar/Timer").GetBonusPointsForTime();
+		_submitResultsPopUp.Visible = true;
+		_submitResults.gameStudyPoints = points;
+		_submitResults.gameStudyTime = GetNode<CountdownTimer>("/root/GameStudy/TopBar/Timer").CurrentTime;
 	}
 
 	private void AddConsoleToBackground(Sprite area,Texture texture)
