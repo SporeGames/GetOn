@@ -67,6 +67,10 @@ public class Sound : Node2D
 
 	private int count = 0;
 
+	private int easySound;
+	private int midSound;
+	private int hardSound;
+
 	private AudioStreamPlayer _nextMomentAudio;
 	public override void _Ready()
 	{
@@ -134,24 +138,32 @@ public class Sound : Node2D
 		
 	}
 
-	public void CountPoints(double point)
+	public void CountPoints(double point, int easy, int mid, int hard)
 	{
+		easySound += easy;
+		midSound += mid;
+		hardSound += hard;
 		points += point;
-		//GD.Print(points);
+		GD.Print(points);
 		count++;
-		if (count == 81) 
-		{
-			/*
-			//GD.Print("Mthe wurde so oft gecallt: ",count);
-			GD.Print(points);
-			_sharedNode.soundPoints = (double) points;
-			_sharedNode.soundTime = GetNode<CountdownTimer>("/root/Sound/TopBar/Timer").CurrentTime;
-			_sharedNode.CompletedTasks.Add(AbilitySpecialization.Sound);
-			_sharedNode.SwitchScene("res://scenes/Rooms/SoundArtRoom.tscn");
-			*/
+		
+		if (count == 9) {
+			if (points == 45) {
+				points += 3;
+			}
+			GD.Print(easySound);
+			GD.Print(midSound);
+			GD.Print(hardSound);
+
+			_submitResults.soundEasySounds = easySound;
+			_submitResults.soundMediumSounds = midSound;
+			_submitResults.soundHardSounds = hardSound;
 			_submitResultsPopUp.Visible = true;
-			_submitResults.soundPoints = points;
+			_submitResults.soundPoints = (double) points;
 			_submitResults.soundTime = GetNode<CountdownTimer>("/root/Sound/TopBar/Timer").CurrentTime;
+			GD.Print(points);
+			count = 0;
+			points = 0;
 		}
 		
 		/*

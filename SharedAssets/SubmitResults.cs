@@ -17,6 +17,9 @@ public class SubmitResults : Node2D
 	public float programmingTime;
 	public double soundPoints;
 	public float soundTime;
+	public int soundEasySounds = 0;
+	public int soundMediumSounds = 0;
+	public int soundHardSounds = 0;
 	public double narrativePoints;
 	public float narrativeTime;
 	public double gameDesignPoints;
@@ -83,8 +86,11 @@ public class SubmitResults : Node2D
 	}
 	private void SubmitSound() {
 		soundPoints += GetNode<CountdownTimer>("/root/Sound/TopBar/Timer").GetBonusPointsForTime();
-		_sharedNode.soundPoints = (int) soundPoints;
+		_sharedNode.soundPoints = (double) soundPoints;
 		_sharedNode.soundTime = soundTime;
+		_sharedNode.soundEasySounds = soundEasySounds;
+		_sharedNode.soundMediumSounds = soundMediumSounds;
+		_sharedNode.soundHardSounds = soundHardSounds;
 		_sharedNode.CompletedTasks.Add(AbilitySpecialization.Sound);
 		_sharedNode.SwitchScene("res://scenes/Rooms/SoundArtRoom.tscn");
 		GD.Print(soundPoints);

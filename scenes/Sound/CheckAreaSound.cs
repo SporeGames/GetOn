@@ -178,11 +178,11 @@ namespace GetOn.scenes.Sound
 			{
 				points += 7.5;
 			}
-
+			/*
 			_submitResultsPopUp.Visible = true;
 			_submitResults.soundPoints = points;
 			_submitResults.soundTime = GetNode<CountdownTimer>("/root/Sound/TopBar/Timer").CurrentTime;
-			/*
+			
 			points += GetNode<CountdownTimer>("/root/Sound/TopBar/Timer").GetBonusPointsForTime();
 			GD.Print(points);
 			_sharedNode.soundPoints = (int) points;

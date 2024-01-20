@@ -171,7 +171,7 @@ public class CustomTabContainer : Node2D
 		
 		//_dragAndDropSound = GetNode<DragAndDropSound>("Sound1");
 		_selectedSound = GetNode<Label>("SelectedSound");
-		_selectedSound.Visible = false;
+		_selectedSound.Visible = true;
 		
 		_checkbox1 = GetNode<TextureButton>("Sound1/CheckBox1");
 		_checkbox2 = GetNode<TextureButton>("Sound2/CheckBox2");
@@ -423,7 +423,7 @@ public class CustomTabContainer : Node2D
 		{
 			checkbox.TextureNormal = checkBox;
 			currentlyChecked = null;
-			SoundSelected(false);
+			SoundSelected(true);
 			alreadyChecked = false;
 		}
 		else
@@ -441,100 +441,100 @@ public class CustomTabContainer : Node2D
 		{
 			soundIsSelected = true;
 			currentName = _lineEdit1.Text;
-			currentlyChecked = "CheckBox1";
+			currentlyChecked = "Sound1";
 		}
 		if (currentlyChecked == "CheckBox2")
 		{
 			soundIsSelected  = true;
 			currentName = _lineEdit2.Text;
-			currentlyChecked = "CheckBox2";
+			currentlyChecked = "Sound2";
 		}
 		if (currentlyChecked == "CheckBox3")
 		{
 			soundIsSelected = true;
 			currentName = _lineEdit3.Text;
-			currentlyChecked = "CheckBox3";
+			currentlyChecked = "Sound3";
 		}
 		if (currentlyChecked == "CheckBox4")
 		{
 			soundIsSelected = true;
 			currentName = _lineEdit4.Text;
-			currentlyChecked = "CheckBox4";
+			currentlyChecked = "Sound4";
 		}
 		if (currentlyChecked == "CheckBox5")
 		{
 			soundIsSelected = true;
 			currentName = _lineEdit5.Text;
-			currentlyChecked = "CheckBox5";
+			currentlyChecked = "Sound5";
 		}
 		if (currentlyChecked == "CheckBox6")
 		{
 			soundIsSelected = true;
 			currentName = _lineEdit6.Text;
-			currentlyChecked = "CheckBox6";
+			currentlyChecked = "Sound6";
 		}
 		if (currentlyChecked == "CheckBox7")
 		{
 			soundIsSelected = true;
 			currentName = _lineEdit7.Text;
-			currentlyChecked = "CheckBox7";
+			currentlyChecked = "Sound7";
 		}
 		if (currentlyChecked == "CheckBox8")
 		{
 			soundIsSelected = true;
 			currentName = _lineEdit8.Text;
-			currentlyChecked = "CheckBox8";
+			currentlyChecked = "Sound8";
 			
 		}
 		if (currentlyChecked == "CheckBox9")
 		{
 			soundIsSelected = true;
 			currentName = _lineEdit9.Text;
-			currentlyChecked = "CheckBox9";
+			currentlyChecked = "Sound9";
 		}
 		if (currentlyChecked == "CheckBox10")
 		{
 			soundIsSelected = true;
 			currentName = _lineEdit10.Text;
-			currentlyChecked = "CheckBox10";
+			currentlyChecked = "Sound10";
 		}
 		if (currentlyChecked == "CheckBox11")
 		{
 			soundIsSelected = true;
 			currentName = _lineEdit11.Text;
-			currentlyChecked = "CheckBox11";
+			currentlyChecked = "Sound11";
 		}
 		if (currentlyChecked == "CheckBox12")
 		{
 			soundIsSelected = true;
 			currentName = _lineEdit12.Text;
-			currentlyChecked = "CheckBox12";
+			currentlyChecked = "Sound12";
 		}
 		if (currentlyChecked == "CheckBox13")
 		{
 			soundIsSelected = true;
 			currentName = _lineEdit13.Text;
-			currentlyChecked = "CheckBox13";
+			currentlyChecked = "Sound13";
 		}
 		if (currentlyChecked == "CheckBox14")
 		{
 			soundIsSelected = true;
 			currentName = _lineEdit14.Text;
-			currentlyChecked = "CheckBox14";
+			currentlyChecked = "Sound14";
 		}
 		if (currentlyChecked == "CheckBox15")
 		{
 			soundIsSelected = true;
 			currentName = _lineEdit15.Text;
-			currentlyChecked = "CheckBox15";
+			currentlyChecked = "Sound15";
 		}
 		if (currentlyChecked == "CheckBox16")
 		{
 			soundIsSelected = true;
 			currentName = _lineEdit16.Text;
-			currentlyChecked = "CheckBox16";
+			currentlyChecked = "Sound16";
 		}
-		if (soundIsSelected && update == false)
+		if (update == false)
 		{
 			_selectedSound.Text = currentName;
 			_selectedSound.Visible = true;
@@ -542,6 +542,7 @@ public class CustomTabContainer : Node2D
 		}
 		else
 		{
+			GD.Print("bin doof");
 			_selectedSound.Text = currentName;
 			_selectedSound.Visible = false;
 		}
@@ -549,11 +550,38 @@ public class CustomTabContainer : Node2D
 		
 	}
 
-	public void CheckCorrect()
+	public void CheckCorrect(string correctSoundName)
 	{
-		
 		if (_soundSlider != null)
 		{
+			if (correctSoundName == "Sound10") {
+				_soundSlider.CheckCorrect(currentlyChecked);
+			}
+			if (correctSoundName == "Sound1") {
+				_soundSlider2.CheckCorrect(currentlyChecked);
+			}
+			if (correctSoundName == "Sound13") {
+				_soundSlider3.CheckCorrect(currentlyChecked);
+			}
+			if (correctSoundName == "Sound11") {
+				_soundSlider4.CheckCorrect(currentlyChecked);
+			}
+			if (correctSoundName == "Sound14") {
+				_soundSlider5.CheckCorrect(currentlyChecked);
+			}
+			if (correctSoundName == "Sound2") {
+				_soundSlider6.CheckCorrect(currentlyChecked);
+			}
+			if (correctSoundName == "Sound5") {
+				_soundSlider7.CheckCorrect(currentlyChecked);
+			}
+			if (correctSoundName == "Sound9") {
+				_soundSlider8.CheckCorrect(currentlyChecked);
+			}
+			if (correctSoundName == "Sound15") {
+				_soundSlider9.CheckCorrect(currentlyChecked);
+			}
+			/*
 			_soundSlider.CheckCorrect(currentlyChecked);
 			_soundSlider2.CheckCorrect(currentlyChecked);
 			_soundSlider3.CheckCorrect(currentlyChecked);
@@ -563,8 +591,8 @@ public class CustomTabContainer : Node2D
 			_soundSlider7.CheckCorrect(currentlyChecked);
 			_soundSlider8.CheckCorrect(currentlyChecked);
 			_soundSlider9.CheckCorrect(currentlyChecked);
+			*/
 		}
-		
 	}
 
 
