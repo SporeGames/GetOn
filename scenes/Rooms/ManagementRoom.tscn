@@ -13,7 +13,7 @@
 [ext_resource path="res://scenes/Management/assets/ManagementPinnwand/Monstera.png" type="Texture" id=11]
 [ext_resource path="res://scenes/Management/assets/ManagementPinnwand/AktenPopUp.png" type="Texture" id=12]
 [ext_resource path="res://scenes/Management/assets/ManagementPinnwand/akternschrank mit pflanze.PNG" type="Texture" id=13]
-[ext_resource path="res://SharedAssets/dialogue_characters/management  ohne Hintergrund.PNG" type="Texture" id=14]
+[ext_resource path="res://SharedAssets/dialogue_characters/ChloeImKreis.png" type="Texture" id=14]
 [ext_resource path="res://SharedAssets/DialogeBox.tscn" type="PackedScene" id=15]
 
 [sub_resource type="ShaderMaterial" id=1]
