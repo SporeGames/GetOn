@@ -309,17 +309,25 @@ Game = 6
 LeftImage = ExtResource( 2 )
 RightImage = ExtResource( 16 )
 HelpImage = ExtResource( 4 )
-Description = "Instructions:
+Description = "
 
-Drag and drop the different tasks to the right place.
-You will also need to colour them in the corresponding department colour:
+Drag the different [b]tasks[/b] to their destined place.
+Additionally, you have to [b]colorize[/b] them into their corresponding department color.
 Art - orange	
 Narrative - green
 Game Design - purple
 Programming - blue
 Sound - yellow									
 
-If you are done with this task click DONE."
+If you are done with this task click [b]DONE[/b].
+
+
+
+Art Assets
+Layout
+einzelne Kärtchen
+Farb drops 
+"
 
 [node name="MouseFollower" type="Sprite" parent="."]
 visible = false

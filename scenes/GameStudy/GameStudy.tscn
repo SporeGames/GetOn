@@ -1448,14 +1448,12 @@ Game = 5
 LeftImage = ExtResource( 40 )
 RightImage = ExtResource( 11 )
 HelpImage = ExtResource( 41 )
-Description = "Instructions:
-               
-There are two showcases. 
-The left one is for consoles, the right one for video games.
-Click on one of the showcases and start dragging the objects to the right place.
-Press BACK to return to the overview of both glass cases.
-               
-Once you have filled both glass cases, a DONE button will appear, allowing you to submit your task."
+Description = "There are two glass cases. 
+The left one is for [b]consoles[/b], the right one is for [b]video games[/b].
+Click on one glass case and start dragging the objects to their corresponding places.
+By pressing [b]BACK[/b], you will get back to the overview of both cases.
+
+Once you have filled both glass cases a [b]DONE[/b] button will appear so you can submit your task. "
 
 [connection signal="body_exited" from="Consoles/SpawningGames/Area2D" to="Consoles/SpawningGames" method="_on_Area2D_body_exited"]
 [connection signal="body_entered" from="Consoles/CheckAreas/CheckXBOX" to="Consoles" method="_on_CheckXBOX_body_entered"]
