@@ -33,8 +33,8 @@ GameSpecialization = 5
 
 [node name="PersonSprite" parent="GSPerson" index="0"]
 material = SubResource( 1 )
-position = Vector2( 1206, 594 )
-scale = Vector2( 0.35729, 0.328113 )
+position = Vector2( 1153, 589 )
+scale = Vector2( 0.357646, 0.32844 )
 texture = ExtResource( 4 )
 
 [node name="InteractButton" parent="GSPerson" index="1"]

@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/art desk grey.png-53148b29c720923a1308df5127368c44.stex"
+path="res://.import/art desk gray.png-3af9f909553986d4a985d76177d31e06.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://scenes/GameSelectionRoom/assets/art desk grey.png"
-dest_files=[ "res://.import/art desk grey.png-53148b29c720923a1308df5127368c44.stex" ]
+source_file="res://scenes/GameSelectionRoom/assets/art desk gray.png"
+dest_files=[ "res://.import/art desk gray.png-3af9f909553986d4a985d76177d31e06.stex" ]
 
 [params]
 

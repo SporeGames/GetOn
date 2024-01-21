@@ -13,7 +13,7 @@
 [ext_resource path="res://SharedAssets/DialogeBox.tscn" type="PackedScene" id=11]
 [ext_resource path="res://SharedAssets/dialogue_characters/ChloeImKreis.png" type="Texture" id=12]
 [ext_resource path="res://scenes/GameSelectionRoom/assets/pro 3.story grey .png" type="Texture" id=13]
-[ext_resource path="res://scenes/GameSelectionRoom/assets/art desk grey.png" type="Texture" id=14]
+[ext_resource path="res://scenes/GameSelectionRoom/assets/art desk gray.png" type="Texture" id=14]
 [ext_resource path="res://scenes/GameSelectionRoom/assets/HoverGameStudys.png" type="Texture" id=15]
 [ext_resource path="res://scenes/GameSelectionRoom/assets/HoverProgramming.png" type="Texture" id=16]
 [ext_resource path="res://scenes/GameSelectionRoom/assets/HoverGD.png" type="Texture" id=17]
@@ -239,7 +239,7 @@ texture = ExtResource( 13 )
 
 [node name="ArtDone" type="Sprite" parent="."]
 visible = false
-position = Vector2( 498, 714 )
+position = Vector2( 481, 711 )
 scale = Vector2( 0.942553, 0.963542 )
 texture = ExtResource( 14 )
 

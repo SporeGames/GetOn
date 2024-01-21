@@ -130,11 +130,12 @@ Game = 1
 LeftImage = ExtResource( 20 )
 RightImage = ExtResource( 22 )
 HelpImage = ExtResource( 21 )
-Description = "Instructions:
-               
-Carefully read the following descriptions of the 3 games and select the correct motivations for each game by ticking the box.
-Use <--- and ---> to switch between the motivations.
-When you have finished the first game, use <--- and ---> below the game descriptions to switch between them. 
+Description = "Read the following [b]descriptions[/b] of the 3 games and choose the correct motivations that fit to each game by checking the [b]box[/b].
+Use <-  and  -> to switch between the [b]motivations[/b].
+When you are finished with the first game use	-> ,below the game [b]descriptions[/b], to switch between them. 
+
+If you are done with the task press [b]DONE[/b]. 
+
                
 When you have completed the task, press DONE.             
                
