@@ -146,7 +146,6 @@ public class GameDesign : Node2D {
 		_submitResultsPopUp.Visible = true;
 		_submitResults.gameDesignPoints = points;
 		_submitResults.gameDesignMotivations = motivationsCorrect;
-		_submitResults.gameDesignPoints = (int) _timer.CurrentTime;
+		_submitResults.gameDesignTime = (int) _timer.CurrentTime;
 	}
-	
 }
