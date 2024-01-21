@@ -33,7 +33,6 @@ namespace GetOn.scenes.GameSelectionRoom {
 
 		// Called when the node enters the scene tree for the first time.
 		public override void _Ready() {
-			
 			_DialogueBox = GetNode<Node2D>("DialogueBox"); 
 			
 			_sharedNode = GetNode<SharedNode>("/root/SharedNode");
@@ -67,34 +66,52 @@ namespace GetOn.scenes.GameSelectionRoom {
 		}
 
 		public void OnGoToProgrammingPressed() {
-			GetNode<SharedNode>("/root/SharedNode").PlayGenericClick();
+			if (_sharedNode.HasDialogeBoxOpen) {
+				return;
+			}
+			_sharedNode.PlayGenericClick();
 			_DialogueBox.QueueFree();
 			
 			_sharedNode.SwitchScene("res://scenes/Rooms/ProgrammingRoom.tscn");
 		}
 
 		public void OnGoToManagmentPressed() {
-			GetNode<SharedNode>("/root/SharedNode").PlayGenericClick();
+			if (_sharedNode.HasDialogeBoxOpen) {
+				return;
+			}
+			_sharedNode.PlayGenericClick();
 			_sharedNode.SwitchScene("res://scenes/Rooms/ManagementRoom.tscn");
 		}
 
 		public void OnGoToNarrativeAndSoundPressed() {
-			GetNode<SharedNode>("/root/SharedNode").PlayGenericClick();
+			if (_sharedNode.HasDialogeBoxOpen) {
+				return;
+			}
+			_sharedNode.PlayGenericClick();
 			_sharedNode.SwitchScene("res://scenes/Rooms/GDNarrativeRoom.tscn");//"res://scenes/Narrative/PrePuzzleRoom.tscn"
 		}
 
 		public void OnGoToSoundPressed() {
-			GetNode<SharedNode>("/root/SharedNode").PlayGenericClick();
+			if (_sharedNode.HasDialogeBoxOpen) {
+				return;
+			}
+			_sharedNode.PlayGenericClick();
 			_sharedNode.SwitchScene("res://scenes/Rooms/SoundArtRoom.tscn");
 		}
 
 		public void OnPrintPDFPressed() {
+			if (_sharedNode.HasDialogeBoxOpen) {
+				return;
+			}
 			GD.Print("Print pdf jetzt los");
 			GetNode<SharedNode>("/root/SharedNode").Print();
 		}
 
 		public void OnGoToGameStudyPressed() {
-			GetNode<SharedNode>("/root/SharedNode").PlayGenericClick();
+			if (_sharedNode.HasDialogeBoxOpen) {
+				return;
+			}
+			_sharedNode.PlayGenericClick();
 			_sharedNode.SwitchScene("res://scenes/Rooms/GameStudyRoom.tscn");
 		}
 
@@ -145,6 +162,9 @@ namespace GetOn.scenes.GameSelectionRoom {
 		}
 		//Highlight hovered room & show name
 		private void _on_GoToManagment_mouse_entered() {
+			if (_sharedNode.HasDialogeBoxOpen) {
+				return;
+			}
 			_sharedNode.MouseHoverText = "Management";
 			_hoverManagement.Visible = true;
 		}
@@ -153,6 +173,9 @@ namespace GetOn.scenes.GameSelectionRoom {
 			_hoverManagement.Visible = false;
 		}
 		private void _on_GoToGameStudy_mouse_entered() {
+			if (_sharedNode.HasDialogeBoxOpen) {
+				return;
+			}
 			_sharedNode.MouseHoverText = "Game Study";
 			_hoverGameStudy.Visible = true;
 		}
@@ -161,6 +184,9 @@ namespace GetOn.scenes.GameSelectionRoom {
 			_hoverGameStudy.Visible = false;
 		}
 		private void _on_GoToProgramming_mouse_entered() {
+			if (_sharedNode.HasDialogeBoxOpen) {
+				return;
+			}
 			_sharedNode.MouseHoverText = "Programming";
 			_hoverProgramming.Visible = true;
 		}
@@ -169,6 +195,9 @@ namespace GetOn.scenes.GameSelectionRoom {
 			_sharedNode.MouseHoverText = "";
 		}
 		private void _on_GoToNarrativeAndGameDesign_mouse_entered() {
+			if (_sharedNode.HasDialogeBoxOpen) {
+				return;
+			}
 			_sharedNode.MouseHoverText = "Game Design and Story";
 			_hoverGDAndNarrative.Visible = true;
 		}
@@ -177,6 +206,9 @@ namespace GetOn.scenes.GameSelectionRoom {
 			_sharedNode.MouseHoverText = "";
 		}
 		private void _on_GoToSoundAndArt_mouse_entered() {
+			if (_sharedNode.HasDialogeBoxOpen) {
+				return;
+			}
 			_sharedNode.MouseHoverText = "Sound and Art";
 			_hoverSound.Visible = true;
 		}

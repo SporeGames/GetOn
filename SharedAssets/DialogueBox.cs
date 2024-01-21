@@ -59,6 +59,10 @@ namespace GetOn.SharedAssets {
 				_timer.WaitTime = AutoNextTime;
 				_timer.Start();
 			}
+
+			if (Visible) {
+				_sharedNode.HasDialogeBoxOpen = true;
+			}
 		}
 
 		public override void _PhysicsProcess(float delta) {
