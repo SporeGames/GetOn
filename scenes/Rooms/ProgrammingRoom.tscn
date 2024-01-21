@@ -34,6 +34,7 @@ position = Vector2( 959.75, 539.75 )
 texture = ExtResource( 11 )
 
 [node name="RoomPerson" parent="." instance=ExtResource( 2 )]
+position = Vector2( -1, -4 )
 GameSpecialization = 2
 
 [node name="PersonSprite" parent="RoomPerson" index="0"]
@@ -51,7 +52,7 @@ margin_bottom = 951.0
 [node name="WelcomeDialogue" parent="RoomPerson" index="2"]
 Title = "Justin"
 Icon = ExtResource( 13 )
-Texts = PoolStringArray( "Let\'s get right to it, I need some help implementing some basic mechanics into our game. Explanations will follow shortly..." )
+Texts = PoolStringArray( "Let\'s get right to it, I need some help [b]implementing[/b] some basic [b]mechanics[/b] into our game. Explanations will follow shortly..." )
 SceneToLoad = "Programming"
 
 [node name="EpicFailDialogue" parent="RoomPerson" index="3"]
@@ -98,7 +99,7 @@ UniqueID = "16"
 position = Vector2( 0, 704 )
 Title = "Justin"
 Icon = ExtResource( 13 )
-Texts = PoolStringArray( "Hey newbie, welcome to the show. I\'m Justin.", "This is our programming department. This is where we work on implementing our mechanics into the game.", "Don\'t look around too long, I have work for you to do. Speak to me again when you are ready." )
+Texts = PoolStringArray( "Hey newbie, welcome to the show. I\'m Justin.", "This is our programming department. This is where we work on [b]implementing[/b] our [b]mechanics[/b] into the game.", "Don\'t look around too long, I have work for you to do. Speak to me again when you are ready." )
 IsUnique = true
 UniqueID = "104"
 

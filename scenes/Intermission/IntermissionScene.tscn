@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://scenes/GameSelectionRoom/assets/LayoutMitWänden.png" type="Texture" id=1]
-[ext_resource path="res://SharedAssets/dialogue_characters/management  ohne Hintergrund.PNG" type="Texture" id=2]
+[ext_resource path="res://SharedAssets/dialogue_characters/ChloeImKreis.png" type="Texture" id=2]
 [ext_resource path="res://SharedAssets/DialogeBox.tscn" type="PackedScene" id=3]
 
 [node name="Intermission" type="Node2D"]
@@ -14,7 +14,7 @@ texture = ExtResource( 1 )
 position = Vector2( 0, 708 )
 Title = "Chloe"
 Icon = ExtResource( 2 )
-Texts = PoolStringArray( "Good morning! You must be our new intern, my name is Chloe and I\'m the manager here. ", "You know, it really doesn\'t matter what grades you got at university. The most important thing in the games industry is what skills you have.", "We\'re currently in the pre-production phase of our game, which, as you probably know, involves a lot of research. We have been commissioned to make a sci-fi game. So we\'re researching what kind of game would fit the genre and be the most fun to play.", "If you could, please take a moment to complete this questionnaire. We need to know which department you specialise in so that we can give you accurate feedback on your work." )
+Texts = PoolStringArray( "Good morning! You must be our new intern, my name is Chloe and I\'m the manager here. ", "You know, it really doesn\'t matter what grades you got at university. The most important thing in the games industry are your [b]abilities[/b].", "We\'re currently in the [b]pre-production[/b] phase of our game, which, as you probably know, involves a lot of research. We have been commissioned to make a [b]sci-fi game[/b]. So we\'re researching what kind of game would fit the genre [b]and[/b] be the most fun to play.", "If you could, please take a moment to complete this [b]questionnaire[/b]. We need to know which department you specialise in so that we can give you accurate [b]feedback[/b] on your work." )
 LoadSceneAfter = true
 AutoNextTime = 8.0
 ReadTime = 0.3

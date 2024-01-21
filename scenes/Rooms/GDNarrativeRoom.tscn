@@ -57,7 +57,7 @@ margin_bottom = 626.0
 [node name="WelcomeDialogue" parent="GDPerson" index="2"]
 Title = "Mike"
 Icon = ExtResource( 14 )
-Texts = PoolStringArray( "Well you see, I started out as an intern just like you and… Oh right, you\'re here for your task!", "We are currently reviewing which player motivations are best suited to popular sci-fi games. I\'ll explain everything in detail in a second, so don\'t worry, you\'ll get the hang of it!" )
+Texts = PoolStringArray( "Well you see, I started out as an intern just like you and… Oh right, you\'re here for your task!", "We are currently reviewing which [b]player-motivations[/b] are best suited to popular [b]sci-fi games[/b]. I\'ll explain everything in detail in a second, so don\'t worry, you\'ll get the hang of it!" )
 SceneToLoad = "GameDesign"
 
 [node name="EpicFailDialogue" parent="GDPerson" index="3"]
@@ -104,7 +104,7 @@ UniqueID = "7"
 position = Vector2( 0, 704 )
 Title = "Mike"
 Icon = ExtResource( 14 )
-Texts = PoolStringArray( "Hi, I\'m Mike, the lead game designer for Spore Games! In this room, me and Mary over there are working on coming up with ideas for our game.", "This includes her ideas for story, mine for mechanics and generally making the game appealing to our target audience.", "Based on what we\'ve researched, I then talk to the other departments and work out more. You could almost say I\'m the heart of the studio!", "But enough of that... Just talk to me or Mary if you want to start with your tasks, we both have one for you." )
+Texts = PoolStringArray( "Hi, I\'m Mike, the lead game designer for Spore Games! In this room, me and Mary over there are working on [b]concepting[/b] with ideas for our game.", "This includes her ideas for story, mine for [b]mechanics[/b] and generally making the game appealing to our [b]target audience[/b].", "Based on what we\'ve researched, I then talk to the other departments and work out more. You could almost say I\'m the heart of the studio!", "But enough of that... Just talk to me or Mary if you want to start with your [b]tasks[/b], we both have one for you." )
 IsUnique = true
 UniqueID = "102"
 
@@ -126,7 +126,7 @@ margin_bottom = 875.0
 [node name="WelcomeDialogue" parent="NarrativePerson" index="2"]
 Title = "Mary"
 Icon = ExtResource( 13 )
-Texts = PoolStringArray( "*Yawn* Who are you\? You seem quite interesting, just like a protagonist. Could you maybe help me\? My whiteboard with all my great story ideas got messed up, I have no idea how that happened..", "You\'re in\? Thank you very much!" )
+Texts = PoolStringArray( "*Yawn* Who are you\? You seem quite interesting, just like a protagonist. Could you maybe help me\? My whiteboard with all my great [b]story ideas[/b] got [b]messed up[/b], I have no idea how that happened..", "You\'re in\? Thank you very much!" )
 SceneToLoad = "Narrative"
 
 [node name="Icon" parent="NarrativePerson/WelcomeDialogue" index="2"]

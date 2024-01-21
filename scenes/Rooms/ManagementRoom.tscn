@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=2]
+[gd_scene load_steps=18 format=2]
 
 [ext_resource path="res://scenes/Rooms/BaseRoom.cs" type="Script" id=1]
 [ext_resource path="res://scenes/Management/assets/Management.PNG" type="Texture" id=2]
@@ -15,6 +15,7 @@
 [ext_resource path="res://scenes/Management/assets/ManagementPinnwand/akternschrank mit pflanze.PNG" type="Texture" id=13]
 [ext_resource path="res://SharedAssets/dialogue_characters/management  ohne Hintergrund.PNG" type="Texture" id=14]
 [ext_resource path="res://SharedAssets/DialogeBox.tscn" type="PackedScene" id=15]
+[ext_resource path="res://SharedAssets/dialogue_characters/ChloeImKreis.png" type="Texture" id=16]
 
 [sub_resource type="ShaderMaterial" id=1]
 resource_local_to_scene = true
@@ -56,13 +57,13 @@ margin_bottom = 783.0
 
 [node name="WelcomeDialogue" parent="RoomPerson" index="2"]
 Title = "Chloe"
-Icon = ExtResource( 14 )
+Icon = ExtResource( 16 )
 Texts = PoolStringArray( "I have prepared a sample management task for you to show me what you can do." )
 SceneToLoad = "Management"
 
 [node name="EpicFailDialogue" parent="RoomPerson" index="3"]
 Title = "Chloe"
-Icon = ExtResource( 14 )
+Icon = ExtResource( 16 )
 Texts = PoolStringArray( "Um yeah, let\'s leave it by that.", "If I work on that task myself, I can listen to my tracks again." )
 LoadSceneAfter = false
 ResultThreshold = 22
@@ -71,12 +72,12 @@ UniqueID = "666"
 
 [node name="TalkAgainDialogue" parent="RoomPerson" index="4"]
 Title = "Chloe"
-Icon = ExtResource( 14 )
+Icon = ExtResource( 16 )
 Texts = PoolStringArray( "Just talk to the others, they will inform you about your next task." )
 
 [node name="ResultDialogue" parent="RoomPerson" index="5"]
 Title = "Chloe"
-Icon = ExtResource( 14 )
+Icon = ExtResource( 16 )
 Texts = PoolStringArray( "Excellent work, just as I imagined. You have great potential." )
 LoadSceneAfter = false
 ResultThreshold = 38
@@ -85,7 +86,7 @@ UniqueID = "11"
 
 [node name="ResultDialogue2" parent="RoomPerson" index="6"]
 Title = "Chloe"
-Icon = ExtResource( 14 )
+Icon = ExtResource( 16 )
 Texts = PoolStringArray( "Your work is alright, but not perfect." )
 LoadSceneAfter = false
 ResultThreshold = 23
@@ -94,7 +95,7 @@ UniqueID = "12"
 
 [node name="ResultDialogue3" parent="RoomPerson" index="7"]
 Title = "Chloe"
-Icon = ExtResource( 14 )
+Icon = ExtResource( 16 )
 Texts = PoolStringArray( "Oh well, that doesn\'t really help us..." )
 LoadSceneAfter = false
 IsUnique = true
@@ -103,8 +104,8 @@ UniqueID = "13"
 [node name="IntroductionDialogue" parent="RoomPerson" instance=ExtResource( 15 )]
 position = Vector2( 0, 704 )
 Title = "Chloe"
-Icon = ExtResource( 14 )
-Texts = PoolStringArray( "Hello again! What you see here is our management room, where I plan our documents, meetings, protocols and much more.", "This is very important, as we have deadlines to meet.", "You will see what I mean in a few seconds. When you are ready, speak to me again and I will explain your task." )
+Icon = ExtResource( 16 )
+Texts = PoolStringArray( "Hello again! What you see here is our management room, where I [b]plan[/b] our documents, meetings, protocols and much more.", "This is very important, as we have [b]deadlines[/b] to meet.", "You will see what I mean in a few seconds. When you are ready, speak to me again and I will explain your task." )
 IsUnique = true
 UniqueID = "103"
 

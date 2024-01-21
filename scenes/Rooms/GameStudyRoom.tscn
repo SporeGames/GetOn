@@ -47,7 +47,7 @@ margin_bottom = 763.0
 position = Vector2( 58, 674 )
 Title = "Emily"
 Icon = ExtResource( 11 )
-Texts = PoolStringArray( "Oh, you want to start with your task\? - It´s quite simple. All you have to do is put the games and consoles back up on the shelves. We did some cleaning before you came." )
+Texts = PoolStringArray( "Oh, you want to start with your task\? - It´s quite simple. All you have to do is  [b]put the games and consoles[/b] back up on the shelves. We did some cleaning before you came." )
 SceneToLoad = "GameStudy"
 
 [node name="EpicFailDialogue" parent="GSPerson" index="3"]
@@ -99,7 +99,7 @@ UniqueID = "3"
 position = Vector2( 58, 674 )
 Title = "Emily"
 Icon = ExtResource( 11 )
-Texts = PoolStringArray( "[b]H-Hello\?[/b] I… haven’t seen you around here, are you our new intern\?", "Ok, so… In this room we meet, take our breaks and look at our great collection of games and consoles.", "I really like to take my breaks from programming here…", "If you like games as much as I do, you will surely like the task I have for you. Just talk to me again, if you want to start..." )
+Texts = PoolStringArray( "H-Hello\? I… haven’t seen you around here, are you our new intern\?", "Ok, so… In this room we meet, take our breaks and look at our great [b]collection of games and consoles[/b].", "I really like to take my breaks from programming here…", "If you like games as much as I do, you will surely like the task I have for you. Just talk to me again, if you want to start..." )
 SceneToLoad = "GameStudy"
 IsUnique = true
 UniqueID = "101"

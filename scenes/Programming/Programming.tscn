@@ -1144,22 +1144,21 @@ Game = 2
 LeftImage = ExtResource( 23 )
 RightImage = ExtResource( 22 )
 HelpImage = ExtResource( 8 )
-Description = "There are boxes with different functions that you have to connect in the right order. 
-               
-You can only connect boxes of the same colour.
-You can only connect the right side of boxes with the left side.
-You only get points if you reach the goals when executing the code.
-               
-Goals:
-    - Move the player 
-        - when D is pressed
-        - at a reasonable speed
-    - Make the player jump
-        - when Space is pressed
-    - Collect the drone
-    - Deliver the drone
-               
-If you complete this task within 7 minutes, you will receive a bonus point.
+Description = "There are blueprints with different [b]functions[/b] at the left screen that you have to put in the right order and connect. 
+If you click on [b]execute[/b] you can playtest if everything works as planned on the right screen.
+
+There will be a total of [b]7 tasks[/b] you will have to accomplish. Be aware that:
+
+You can [b]only[/b] connect the [b]same colors[/b]
+You can [b]only[/b] connect the [b]right side[/b] of boxes with [b]left sides[/b].
+You will [b]only[/b] receive points if you [b]accomplish the tasks while executing the code[/b].
+
+
+If you finish this task within 7 minutes you will receive a Bonus Point.
+
+Hint: 
+To view all the blueprints you may have to navigate with the scrollbars at the sides or by zooming in and out with your middle mouse button.
+
 "
 
 [node name="Text" parent="TopBar/Introduction" index="4"]

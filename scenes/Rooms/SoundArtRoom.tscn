@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=2]
+[gd_scene load_steps=28 format=2]
 
 [ext_resource path="res://SharedAssets/Decoration.tscn" type="PackedScene" id=1]
 [ext_resource path="res://SharedAssets/RoomPerson.tscn" type="PackedScene" id=2]
@@ -24,6 +24,7 @@
 [ext_resource path="res://scenes/Art/WandSkizzenArtKlein.png" type="Texture" id=22]
 [ext_resource path="res://scenes/Art/WandPopUpArtSkizzen.png" type="Texture" id=23]
 [ext_resource path="res://scenes/Art/MikroKopfhörer.PNG" type="Texture" id=24]
+[ext_resource path="res://SharedAssets/dialogue_characters/Ash-removebg-preview.png" type="Texture" id=25]
 
 [sub_resource type="ShaderMaterial" id=1]
 resource_local_to_scene = true
@@ -118,7 +119,7 @@ UniqueID = "19"
 position = Vector2( 78, 715 )
 Title = "Julia"
 Icon = ExtResource( 12 )
-Texts = PoolStringArray( "Hey, there you are, awesome! You seem like a really interesting person.", "I\'m Julia, by the way, Spore Games\' one and only sound designer.", "Over there we have Ash, our art designer. Both of us are responsible for creating beautiful aesthetics and music themes for our games, although a lot of our work gets scrapped." )
+Texts = PoolStringArray( "Hey, there you are, awesome! You seem like a really interesting person.", "I\'m Julia, by the way, Spore Games\' one and only sound designer.", "Over there we have Ash, our art designer. Both of us are responsible for creating beautiful [b]aesthetics[/b] and [b]music themes[/b] for our games, although a lot of our work gets scrapped." )
 IsUnique = true
 UniqueID = "105"
 
@@ -141,21 +142,25 @@ margin_bottom = 770.0
 [node name="WelcomeDialogue" parent="ArtPerson" index="2"]
 position = Vector2( 0, 710 )
 Title = "Ash"
-Texts = PoolStringArray( "Oh, you must be our new intern.", "Well, you see, as an artist I am always very busy, drawing sketches of characters, buildings and so on...", "Therefore, to be honest: I didn\'t really think about a task for you to do.", "Well let\'s just say you hand me a portfolio of your previous work and I will give you some review about that later." )
+Icon = ExtResource( 25 )
+Texts = PoolStringArray( "Oh, you must be our [b]new intern[/b].", "Well, you see, as an artist I am always very [b]busy[/b], drawing [b]sketches[/b] of characters, buildings and so on...", "Therefore, to be honest: I [b]didn\'t[/b] really think about a task for you to do.", "Well let\'s just say you hand me a [b]portfolio[/b] of your previous work and I will give you some review about that later." )
 SceneToLoad = "Art"
 
 [node name="EpicFailDialogue" parent="ArtPerson" index="3"]
 Title = "Ash"
+Icon = ExtResource( 25 )
 Texts = PoolStringArray( "All right!" )
 LoadSceneAfter = false
 
 [node name="TalkAgainDialogue" parent="ArtPerson" index="4"]
 Title = "Ash"
+Icon = ExtResource( 25 )
 Texts = PoolStringArray( "Huh\? Didn’t you already give me your portfolio\?" )
 
 [node name="ResultDialogue" parent="ArtPerson" index="5"]
 position = Vector2( 0, 710 )
 Title = "Ash"
+Icon = ExtResource( 25 )
 Texts = PoolStringArray( "All right!" )
 IsUnique = true
 UniqueID = "20"
@@ -163,6 +168,7 @@ UniqueID = "20"
 [node name="ResultDialogue2" parent="ArtPerson" index="6"]
 position = Vector2( 0, 710 )
 Title = "Ash"
+Icon = ExtResource( 25 )
 Texts = PoolStringArray( "All right!" )
 IsUnique = true
 UniqueID = "21"
@@ -170,6 +176,7 @@ UniqueID = "21"
 [node name="ResultDialogue3" parent="ArtPerson" index="7"]
 position = Vector2( 0, 710 )
 Title = "Ash"
+Icon = ExtResource( 25 )
 Texts = PoolStringArray( "All right!" )
 IsUnique = true
 UniqueID = "22"
@@ -234,6 +241,7 @@ position = Vector2( 1175, 670 )
 PopupTexture = ExtResource( 23 )
 SmallTexture = ExtResource( 22 )
 Description = "This is the color palette I chose for our upcoming game"
+DescriptionImage = ExtResource( 25 )
 PopupScale = 0.75
 
 [node name="Sprite" parent="WallPopUp" index="0"]

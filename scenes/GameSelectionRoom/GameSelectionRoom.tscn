@@ -11,7 +11,7 @@
 [ext_resource path="res://scenes/GameSelectionRoom/assets/pro 3. programming grey .png" type="Texture" id=9]
 [ext_resource path="res://scenes/GameSelectionRoom/assets/LayoutMitWänden.png" type="Texture" id=10]
 [ext_resource path="res://SharedAssets/DialogeBox.tscn" type="PackedScene" id=11]
-[ext_resource path="res://SharedAssets/dialogue_characters/management  ohne Hintergrund.PNG" type="Texture" id=12]
+[ext_resource path="res://SharedAssets/dialogue_characters/ChloeImKreis.png" type="Texture" id=12]
 [ext_resource path="res://scenes/GameSelectionRoom/assets/pro 3.story grey .png" type="Texture" id=13]
 [ext_resource path="res://scenes/GameSelectionRoom/assets/art desk grey.png" type="Texture" id=14]
 [ext_resource path="res://scenes/GameSelectionRoom/assets/HoverGameStudys.png" type="Texture" id=15]
@@ -279,7 +279,7 @@ texture = ExtResource( 16 )
 position = Vector2( 0, 708 )
 Title = "Chloe"
 Icon = ExtResource( 12 )
-Texts = PoolStringArray( "Now your internship can begin! You are free to move around our studio!", "Each member of the team has some work for you to do. When you\'ve completed all your tasks, I\'ll talk to you again.", "Have fun and good luck." )
+Texts = PoolStringArray( "Now your internship can begin! You can move around the studio [b]freely[/b]!", "Each member of the team has some work for you to do. When you\'ve completed all your tasks, I\'ll talk to you again.", "Have fun and good luck." )
 AutoNextTime = 8.0
 ReadTime = 0.3
 IsUnique = true
