@@ -19,6 +19,7 @@ script = ExtResource( 2 )
 [node name="Sprite" type="TextureButton" parent="."]
 
 [node name="Popup" type="Node2D" parent="."]
+visible = false
 position = Vector2( -287, -180 )
 z_index = 15
 
