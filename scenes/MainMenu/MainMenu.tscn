@@ -3,7 +3,7 @@
 [ext_resource path="res://scenes/MainMenu/MainMenu.cs" type="Script" id=1]
 [ext_resource path="res://ui/MainMenuTheme.tres" type="Theme" id=2]
 [ext_resource path="res://scenes/GameSelectionRoom/assets/LayoutMitWänden.png" type="Texture" id=3]
-[ext_resource path="res://SharedAssets/dialogue_characters/ChloeImKreis.png" type="Texture" id=4]
+[ext_resource path="res://SharedAssets/dialogue_characters/management  ohne Hintergrund.PNG" type="Texture" id=4]
 [ext_resource path="res://SharedAssets/font/BAHNSCHRIFT 1.TTF" type="DynamicFontData" id=5]
 [ext_resource path="res://scenes/MainMenu/assets/Questionair .PNG" type="Texture" id=6]
 [ext_resource path="res://SharedAssets/DialogeBox.tscn" type="PackedScene" id=7]

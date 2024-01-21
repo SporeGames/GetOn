@@ -156,7 +156,4 @@ stream = ExtResource( 21 )
 
 [node name="SubmitResults" parent="." instance=ExtResource( 23 )]
 visible = false
-<<<<<<< Updated upstream
 currentGame = "Sound"
-=======
->>>>>>> Stashed changes
