@@ -16,9 +16,14 @@ public class Credits : Node2D {
         _timer.Connect("timeout", this, nameof(OnTimerTimeout));
         _printButton.Connect("pressed", this, nameof(OnPrintButtonPressed));
         _creditsButton.Connect("pressed", this, nameof(OnCreditsButtonPressed));
-        
     }
-    
+
+    public override void _Process(float delta) {
+        if (_downloadNotification.Visible && _downloadNotification.Position.y < 800) {
+            _downloadNotification.Position = new Vector2(_downloadNotification.Position.x, _downloadNotification.Position.y + 3);
+        }
+    }
+
     private void OnPrintButtonPressed() {
         GetNode<SharedNode>("/root/SharedNode").Print();
         _downloadNotification.Visible = true;

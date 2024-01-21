@@ -33,7 +33,7 @@ stretch_mode = 6
 
 [node name="Notification" type="Node2D" parent="."]
 visible = false
-position = Vector2( 593, 807 )
+position = Vector2( 593, 646 )
 
 [node name="Timer" type="Timer" parent="Notification"]
 wait_time = 5.0

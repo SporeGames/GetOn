@@ -110,6 +110,18 @@ position = Vector2( 444, 114 )
 scale = Vector2( 0.848585, 0.896048 )
 texture = ExtResource( 26 )
 
+[node name="Tasks" type="RichTextLabel" parent="Checklist"]
+margin_left = 38.0
+margin_top = 1.0
+margin_right = 834.0
+margin_bottom = 41.0
+mouse_filter = 2
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+custom_fonts/normal_font = SubResource( 18 )
+bbcode_enabled = true
+bbcode_text = "[center]Tasks"
+text = "Tasks"
+
 [node name="SubmitButton" type="TextureButton" parent="Checklist"]
 margin_left = 600.0
 margin_top = -613.0
@@ -133,10 +145,10 @@ bbcode_text = "[center]Done"
 text = "Done"
 
 [node name="Items" type="GridContainer" parent="Checklist"]
-margin_left = -5.0
-margin_top = 30.0
-margin_right = 848.0
-margin_bottom = 252.0
+margin_left = -3.0
+margin_top = 42.0
+margin_right = 850.0
+margin_bottom = 264.0
 columns = 2
 
 [node name="Jumping" type="CheckBox" parent="Checklist/Items"]
@@ -1162,7 +1174,7 @@ To view all the blueprints you may have to navigate with the scrollbars at the s
 "
 
 [node name="Text" parent="TopBar/Introduction" index="4"]
-margin_bottom = 287.0
+margin_bottom = 272.0
 
 [node name="Image" parent="TopBar/Introduction" index="7"]
 scale = Vector2( 0.7, 0.7 )

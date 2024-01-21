@@ -100,7 +100,7 @@ namespace GetOn.scenes.Programming {
 				points += 10;
 			}
 			if (_jumpingKey.Pressed) {
-				points += 4.5;
+				points += 5;
 			}
 			if (_moving.Pressed) {
 				points += 5;

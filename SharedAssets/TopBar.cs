@@ -51,7 +51,13 @@ public class TopBar : Node2D {
 		GetNode<Node2D>("Introduction").Visible = true; // Do this so we can still see the scene lol
 		_bigCloseButton.Visible = false; // We don't want to see this yet
 	}
-	
+
+	public override void _Process(float delta) {
+		if (_introduction.Visible && !_rightSideImage.Visible && _wasHelpButtonPressed && _introduction.Position.x < 826) {
+			_introduction.Position = new Vector2(_introduction.Position.x + 50, _introduction.Position.y);
+		}
+	}
+
 	private void OnBigCloseButtonPressed() {
 		_wasHelpButtonPressed = false;
 		OnHelpButtonPressed();
@@ -70,6 +76,7 @@ public class TopBar : Node2D {
 		_rightSideImage.Visible = false;
 		_closeButton.Visible = false;
 		_introImage.Visible = false;
+		_introduction.Position = new Vector2(-160, _introduction.Position.y);
 		_backgroundColor.Modulate = new Color(0.33f, 0.33f, 0.33f, 0.4f);
 		if (!_shared.HelpButtonPressed.ContainsKey(Game)) {
 			_shared.HelpButtonPressed.Add(Game, 1);

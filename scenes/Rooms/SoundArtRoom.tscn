@@ -94,6 +94,7 @@ position = Vector2( 78, 715 )
 Title = "Julia"
 Icon = ExtResource( 12 )
 Texts = PoolStringArray( "Inspiring, really inspiring! Are you related to Hans Zimmer\? You should be very proud of your work." )
+LoadSceneAfter = false
 ResultThreshold = 38
 IsUnique = true
 UniqueID = "17"
@@ -103,6 +104,7 @@ position = Vector2( 78, 715 )
 Title = "Julia"
 Icon = ExtResource( 12 )
 Texts = PoolStringArray( "Not bad, you just need a bit more practice." )
+LoadSceneAfter = false
 ResultThreshold = 23
 IsUnique = true
 UniqueID = "18"
@@ -112,6 +114,7 @@ position = Vector2( 78, 715 )
 Title = "Julia"
 Icon = ExtResource( 12 )
 Texts = PoolStringArray( "Hm... looks like you\'re tone deaf." )
+LoadSceneAfter = false
 IsUnique = true
 UniqueID = "19"
 
@@ -162,6 +165,7 @@ position = Vector2( 0, 710 )
 Title = "Ash"
 Icon = ExtResource( 25 )
 Texts = PoolStringArray( "All right!" )
+LoadSceneAfter = false
 IsUnique = true
 UniqueID = "20"
 
@@ -170,6 +174,7 @@ position = Vector2( 0, 710 )
 Title = "Ash"
 Icon = ExtResource( 25 )
 Texts = PoolStringArray( "All right!" )
+LoadSceneAfter = false
 IsUnique = true
 UniqueID = "21"
 
@@ -178,6 +183,7 @@ position = Vector2( 0, 710 )
 Title = "Ash"
 Icon = ExtResource( 25 )
 Texts = PoolStringArray( "All right!" )
+LoadSceneAfter = false
 IsUnique = true
 UniqueID = "22"
 
