@@ -122,6 +122,8 @@ position = Vector2( 148, 267 )
 PopupTexture = ExtResource( 12 )
 SmallTexture = ExtResource( 10 )
 Description = "You may find it surprising, but Kirby is my spirit animal."
+DescriptionImage = ExtResource( 13 )
+PopupScale = 0.65
 
 [node name="Popup" parent="ProgrammingPoster2" index="1"]
 position = Vector2( -14, -10 )
@@ -134,12 +136,17 @@ position = Vector2( 426, 266 )
 PopupTexture = ExtResource( 7 )
 SmallTexture = ExtResource( 9 )
 Description = "Back when I was a little Justin, this was the first console I got from my parents."
+DescriptionImage = ExtResource( 13 )
+PopupScale = 0.65
 
 [node name="TrooperStorm" parent="." instance=ExtResource( 1 )]
 position = Vector2( 1517, 469 )
+scale = Vector2( 0.992925, 1.00442 )
 PopupTexture = ExtResource( 15 )
 SmallTexture = ExtResource( 16 )
-Description = "Back when I was a little Justin, this was the first console I got from my parents."
+Description = "It's funny how they always miss their target."
+DescriptionImage = ExtResource( 13 )
+PopupScale = 0.85
 
 [editable path="RoomPerson"]
 [editable path="ProgrammingPoster2"]

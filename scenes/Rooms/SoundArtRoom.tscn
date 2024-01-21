@@ -201,6 +201,9 @@ script = ExtResource( 13 )
 [node name="PosterLeft" parent="." instance=ExtResource( 1 )]
 PopupTexture = ExtResource( 16 )
 SmallTexture = ExtResource( 15 )
+Description = "They have a yearly concert in the city somwhere in december. This kind of old school music still has rizz if you ask me."
+DescriptionImage = ExtResource( 12 )
+PopupScale = 0.75
 
 [node name="Sprite" parent="PosterLeft" index="0"]
 margin_left = -856.0
@@ -216,6 +219,9 @@ texture = ExtResource( 19 )
 [node name="PosterRight" parent="." instance=ExtResource( 1 )]
 PopupTexture = ExtResource( 18 )
 SmallTexture = ExtResource( 17 )
+Description = "Mike already bought us tickets for their next concert. We can't wait to get there!"
+DescriptionImage = ExtResource( 12 )
+PopupScale = 0.75
 
 [node name="Sprite" parent="PosterRight" index="0"]
 margin_left = -578.0
@@ -227,6 +233,8 @@ margin_bottom = -492.0
 position = Vector2( 1175, 670 )
 PopupTexture = ExtResource( 23 )
 SmallTexture = ExtResource( 22 )
+Description = "This is the color palette I chose for our upcoming game"
+PopupScale = 0.75
 
 [node name="Sprite" parent="WallPopUp" index="0"]
 margin_left = -1.0
@@ -236,11 +244,13 @@ margin_bottom = -522.0
 rect_scale = Vector2( 0.78636, 0.818169 )
 
 [node name="Instrumentenschrank" type="Sprite" parent="WallPopUp/Popup/CloseButton" index="0"]
+visible = false
 position = Vector2( 420, 828 )
 scale = Vector2( 0.811015, 0.811015 )
 texture = ExtResource( 20 )
 
 [node name="MikroKopfhörer" type="Sprite" parent="WallPopUp/Popup/CloseButton" index="1"]
+visible = false
 position = Vector2( 398, 894 )
 scale = Vector2( 0.843716, 0.867755 )
 texture = ExtResource( 24 )
@@ -256,7 +266,6 @@ margin_left = -1052.0
 margin_top = -259.0
 margin_right = -1052.0
 margin_bottom = -259.0
-rect_scale = Vector2( 0.843716, 0.867755 )
 
 [editable path="SoundPerson"]
 [editable path="ArtPerson"]

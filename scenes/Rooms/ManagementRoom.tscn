@@ -113,12 +113,14 @@ position = Vector2( 162, 443 )
 PopupTexture = ExtResource( 12 )
 SmallTexture = ExtResource( 13 )
 Description = "In this file cabinet I store our cost calculations and other important documents."
+DescriptionImage = ExtResource( 14 )
 
 [node name="ManagementWhiteboard" parent="." instance=ExtResource( 3 )]
 position = Vector2( 1090, 252 )
 PopupTexture = ExtResource( 10 )
 SmallTexture = ExtResource( 9 )
 Description = "I can see you’re looking at my pinboard. It keeps me organized at any time. Look at the cute photo we took at our new-year party."
+DescriptionImage = ExtResource( 14 )
 
 [node name="Monstera" type="Sprite" parent="ManagementWhiteboard"]
 position = Vector2( 517, 238 )

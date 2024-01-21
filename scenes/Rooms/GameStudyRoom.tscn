@@ -117,5 +117,11 @@ position = Vector2( 1444, 286 )
 scale = Vector2( 0.647284, 0.645349 )
 PopupTexture = ExtResource( 7 )
 SmallTexture = ExtResource( 9 )
+Description = "These are some self-made concepts of planets for our game. What do you think? "
+DescriptionImage = ExtResource( 11 )
+
+[node name="Popup" parent="Planets" index="1"]
+scale = Vector2( 1.42616, 1.42616 )
 
 [editable path="GSPerson"]
+[editable path="Planets"]

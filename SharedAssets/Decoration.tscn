@@ -20,6 +20,7 @@ script = ExtResource( 2 )
 
 [node name="Popup" type="Node2D" parent="."]
 position = Vector2( -287, -180 )
+z_index = 15
 
 [node name="CloseButton" type="TextureButton" parent="Popup"]
 margin_left = -1071.0
@@ -37,6 +38,7 @@ texture = ExtResource( 4 )
 [node name="DescriptionImage" type="Sprite" parent="Popup"]
 position = Vector2( -396, -410 )
 scale = Vector2( 0.434848, 0.434848 )
+z_index = 1002
 texture = ExtResource( 3 )
 
 [node name="Description" type="RichTextLabel" parent="Popup"]

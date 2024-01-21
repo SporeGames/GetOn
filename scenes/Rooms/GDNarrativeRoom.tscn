@@ -188,6 +188,7 @@ scale = Vector2( 0.733358, 0.733358 )
 PopupTexture = ExtResource( 11 )
 SmallTexture = ExtResource( 10 )
 Description = "It’s pretty stressful for me to always prepare a paper-prototype before implementing your ideas into the game…"
+DescriptionImage = ExtResource( 13 )
 
 [node name="Sprite" parent="DecoNextToStoryPerson" index="0"]
 margin_left = 15.0
