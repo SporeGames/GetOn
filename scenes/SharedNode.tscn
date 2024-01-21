@@ -37,11 +37,12 @@ MouseCursor = ExtResource( 5 )
 z_index = 4096
 
 [node name="Text" type="RichTextLabel" parent="MouseHoverFollower"]
-margin_right = 223.0
-margin_bottom = 40.0
+margin_right = 286.0
+margin_bottom = 47.0
 mouse_filter = 2
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 custom_fonts/normal_font = SubResource( 2 )
+scroll_active = false
 
 [node name="LoadingScreen" type="ColorRect" parent="."]
 margin_left = -88.0
