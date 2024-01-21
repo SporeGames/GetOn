@@ -78,8 +78,9 @@ namespace GetOn.scenes {
 		private string _pathCurrentlyLoading = "";
 		private bool _isLoadingScene = false;
 		private double _loadingProgress = 0;
+		private int _waitFrames;
 		private ColorRect _loadingScreen;
-		private ProgressBar _loadingBar;
+		private TextureProgress _loadingBar;
 		private List<string> _sceneQueue = new List<string>();
 		
 
@@ -97,7 +98,7 @@ namespace GetOn.scenes {
 			_finishButton = GetNode<Button>("DebugMenu/FinishButton");
 			_finishButton.Connect("pressed", this, nameof(OnFinishButtonPressed));
 			_debugMenu.Visible = false;
-			_loadingBar = GetNode<ProgressBar>("LoadingScreen/ProgressBar");
+			_loadingBar = GetNode<TextureProgress>("LoadingScreen/ProgressBar");
 			_loadingScreen = GetNode<ColorRect>("LoadingScreen");
 			_loadingScreen.Visible = false;
 			DiscoverSceneFiles("res://scenes", true);
@@ -116,6 +117,7 @@ namespace GetOn.scenes {
 				_sceneQueue.RemoveAt(0);
 			}
 			if (_isLoadingScene && _sceneLoader != null) {
+				_loadingScreen.Color = new Color(0, 0, 0, Mathf.Lerp(_loadingScreen.Color.a, 1, 0.06f));
 				var err = _sceneLoader.Poll();
 				switch (err) {
 					case Error.FileEof: {
@@ -125,9 +127,9 @@ namespace GetOn.scenes {
 						CurrentScene = nextScene.Instance();
 						GetTree().Root.AddChild(CurrentScene);
 						GetTree().CurrentScene = CurrentScene;
-						_loadingScreen.Visible = false;
 						_sceneLoader.Dispose(); // Need to dispose of the loader manually or we get a cyclic reference
 						_sceneLoader = null;
+						_loadingScreen.Visible = false;
 						GD.Print("Successfully loaded scene: " + CurrentScene.Name);
 						return;
 					}
