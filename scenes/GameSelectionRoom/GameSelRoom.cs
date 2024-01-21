@@ -198,7 +198,7 @@ namespace GetOn.scenes.GameSelectionRoom {
 			if (_sharedNode.HasDialogeBoxOpen) {
 				return;
 			}
-			_sharedNode.MouseHoverText = "Game Design and Story";
+			_sharedNode.MouseHoverText = "Game and Narrative Design";
 			_hoverGDAndNarrative.Visible = true;
 		}
 		private void _on_GoToNarrativeAndGameDesign_mouse_exited() {
