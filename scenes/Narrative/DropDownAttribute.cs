@@ -1,6 +1,6 @@
 using Godot;
 using System;
-
+using iText.StyledXmlParser.Jsoup.Select;
 
 
 public class DropDownAttribute : OptionButton
@@ -8,7 +8,7 @@ public class DropDownAttribute : OptionButton
 	[Export] public bool FirstChar;
 	public override void _Ready()
 	{
-		this.AddItem("Attribute");
+		this.AddItem("Choose Ending");
 
 	}
 
@@ -37,6 +37,7 @@ public class DropDownAttribute : OptionButton
 		this.RemoveItem(3);
 		this.RemoveItem(2);
 		this.RemoveItem(1);
+		this.RemoveItem(0);
 	}
 
 	public void EndingPerfect()

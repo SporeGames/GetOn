@@ -225,6 +225,7 @@ margin_right = -856.0
 margin_bottom = -542.0
 
 [node name="Monstera" type="Sprite" parent="PosterLeft"]
+visible = false
 position = Vector2( -812, -190 )
 scale = Vector2( 0.868709, 0.838794 )
 texture = ExtResource( 19 )
