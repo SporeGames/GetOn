@@ -147,7 +147,7 @@ PopupTexture = ExtResource( 15 )
 SmallTexture = ExtResource( 16 )
 Description = "It's funny how they always miss their target."
 DescriptionImage = ExtResource( 13 )
-PopupScale = 0.85
+PopupScale = 0.75
 
 [editable path="RoomPerson"]
 [editable path="ProgrammingPoster2"]

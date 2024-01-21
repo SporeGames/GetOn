@@ -33,7 +33,7 @@ GameSpecialization = 5
 
 [node name="PersonSprite" parent="GSPerson" index="0"]
 material = SubResource( 1 )
-position = Vector2( 1153, 589 )
+position = Vector2( 1138, 606 )
 scale = Vector2( 0.357646, 0.32844 )
 texture = ExtResource( 4 )
 

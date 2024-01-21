@@ -501,9 +501,9 @@ FirstChar = true
 
 [node name="DropDownSetting" type="OptionButton" parent="1"]
 modulate = Color( 0, 0, 0, 1 )
-margin_left = 1650.0
+margin_left = 1408.0
 margin_top = 93.0
-margin_right = 1584.0
+margin_right = 1410.0
 margin_bottom = 156.0
 theme = ExtResource( 32 )
 custom_colors/font_color_disabled = Color( 0, 0, 0, 1 )
@@ -876,10 +876,10 @@ FirstChar = true
 
 [node name="DropDownSetting2" type="OptionButton" parent="2"]
 modulate = Color( 0, 0, 0, 1 )
-margin_left = 1635.0
-margin_top = 108.0
-margin_right = 1581.0
-margin_bottom = 149.0
+margin_left = 1390.0
+margin_top = 91.0
+margin_right = 1392.0
+margin_bottom = 132.0
 theme = ExtResource( 32 )
 custom_colors/font_color_disabled = Color( 0, 0, 0, 1 )
 custom_colors/font_color_focus = Color( 0, 0, 0, 1 )
