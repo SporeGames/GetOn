@@ -218,6 +218,8 @@ namespace GetOn.scenes {
 				StartLoadingScene(path);
 				return;
 			}
+			HasDialogeBoxOpen = false;
+			MouseHoverText = "";
 			CurrentScene.QueueFree();
 			var nextScene = (PackedScene) GD.Load(path);
 			CurrentScene = nextScene.Instance();
