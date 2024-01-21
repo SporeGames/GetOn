@@ -1162,10 +1162,10 @@ Goals:
 If you complete this task within 7 minutes, you will receive a bonus point.
 "
 
-[node name="Text" parent="TopBar/Introduction" index="3"]
+[node name="Text" parent="TopBar/Introduction" index="4"]
 margin_bottom = 287.0
 
-[node name="Image" parent="TopBar/Introduction" index="6"]
+[node name="Image" parent="TopBar/Introduction" index="7"]
 scale = Vector2( 0.7, 0.7 )
 
 [node name="Music" type="Node" parent="."]

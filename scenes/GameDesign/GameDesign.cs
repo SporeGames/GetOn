@@ -96,10 +96,12 @@ public class GameDesign : Node2D {
 
 	private void GoBackAndCalculateResults() {
 		var points = 0;
+		var motivationsCorrect = 0;
 		foreach (var entry in  _selectedValues) {
 			if (entry.Key == GameDesignGame.Apex) {
 				foreach (var selected in entry.Value) {
 					if (_apexSlider.ValidPersonas.Contains(selected)) {
+						motivationsCorrect++;
 						points += 3;
 					}
 					if (!_apexSlider.ValidPersonas.Contains(selected) && !_detroitSlider.ALittleBitValidPersonas.Contains(selected)) {
@@ -110,6 +112,7 @@ public class GameDesign : Node2D {
 			if (entry.Key == GameDesignGame.Detroit) {
 				foreach (var selected in entry.Value) {
 					if (_detroitSlider.ValidPersonas.Contains(selected)) {
+						motivationsCorrect++;
 						points += 3;
 					}
 					if (!_detroitSlider.ValidPersonas.Contains(selected) && !_detroitSlider.ALittleBitValidPersonas.Contains(selected)) {
@@ -120,6 +123,7 @@ public class GameDesign : Node2D {
 			if (entry.Key == GameDesignGame.DeadSpace) {
 				foreach (var selected in entry.Value) {
 					if (_deadSpaceSlider.ValidPersonas.Contains(selected)) {
+						motivationsCorrect++;
 						points += 3;
 					}
 					if (!_deadSpaceSlider.ValidPersonas.Contains(selected) && !_detroitSlider.ALittleBitValidPersonas.Contains(selected)) {
@@ -141,6 +145,7 @@ public class GameDesign : Node2D {
 		*/
 		_submitResultsPopUp.Visible = true;
 		_submitResults.gameDesignPoints = points;
+		_submitResults.gameDesignMotivations = motivationsCorrect;
 		_submitResults.gameDesignPoints = (int) _timer.CurrentTime;
 	}
 	

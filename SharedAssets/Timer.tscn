@@ -37,8 +37,9 @@ CurrentTime = 0.0
 
 [node name="Display" type="RichTextLabel" parent="."]
 margin_left = 71.0
+margin_top = 5.0
 margin_right = 415.0
-margin_bottom = 66.0
+margin_bottom = 71.0
 mouse_filter = 2
 custom_fonts/normal_font = SubResource( 1 )
 text = "0:00"
@@ -47,4 +48,5 @@ text = "0:00"
 position = Vector2( 42, 31 )
 scale = Vector2( 0.0711894, 0.0697151 )
 frames = SubResource( 2 )
+frame = 10
 playing = true

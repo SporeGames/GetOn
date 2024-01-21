@@ -107,6 +107,7 @@ public class Management : Node2D {
 	private void SubmitResult() {
 		double points = 0;
 		var cardsColoredCorrectly = 0;
+		var cardsPlacedCorrectly = 0;
 		foreach (var note in _notes) {
 			var colorId = TextureToColor[note.NoteColor.Texture];
 			if (colorId == note.ValidColorID) {
@@ -114,10 +115,11 @@ public class Management : Node2D {
 				cardsColoredCorrectly++;
 			}
 		}
-
+		
 		foreach (var entry in  BoxedNotes) {
 			if (entry.Value.Name.Equals(entry.Key.Name) || entry.Key.ValidIDs.Contains(entry.Value.Name)) {
 				points += 2.5;
+				cardsPlacedCorrectly++;
 			}
 		}
 		points += GetNode<CountdownTimer>("/root/Management/TopBar/Timer").GetBonusPointsForTime();
@@ -133,6 +135,7 @@ public class Management : Node2D {
 		_submitResultsPopUp.Visible = true;
 		_submitResults.managementPoints = points;
 		_submitResults.cardsColoredCorrectly = cardsColoredCorrectly;
+		_submitResults.managementCardsPlaced = cardsPlacedCorrectly;
 		_submitResults.managementTime = GetNode<CountdownTimer>("/root/Management/TopBar/Timer").CurrentTime;
 	}
 

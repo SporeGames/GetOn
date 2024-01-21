@@ -205,6 +205,7 @@ namespace GetOn.scenes {
 
 				if (_isLoadingScene || _sceneLoader != null) {
 					_sceneQueue.Add(path);
+					GD.Print("Queued scene: " + path);
 					return;
 				}
 

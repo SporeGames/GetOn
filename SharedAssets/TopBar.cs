@@ -15,6 +15,7 @@ public class TopBar : Node2D {
 	private SharedNode _shared;
 	private TextureButton _helpButton;
 	private TextureButton _closeButton;
+	private TextureButton _bigCloseButton;
 	private Node2D _introduction;
 	private Sprite _introImage;
 	private Sprite _rightSideImage;
@@ -31,6 +32,8 @@ public class TopBar : Node2D {
 		_helpButton.Connect("pressed", this, nameof(OnHelpButtonPressed));
 		_closeButton = GetNode<TextureButton>("Introduction/CloseButton");
 		_closeButton.Connect("pressed", this, nameof(OnCloseButtonPressed));
+		_bigCloseButton = GetNode<TextureButton>("Introduction/BigCloseButton");
+		_bigCloseButton.Connect("pressed", this, nameof(OnBigCloseButtonPressed));
 		_timer = GetNode<CountdownTimer>("Timer");
 		_introduction = GetNode<Node2D>("Introduction");
 		_introImage = GetNode<Sprite>("Introduction/Image");
@@ -46,20 +49,12 @@ public class TopBar : Node2D {
 		_rightSideImage.Texture = RightImage;
 		_leftSideImage.Visible = false;
 		GetNode<Node2D>("Introduction").Visible = true; // Do this so we can still see the scene lol
+		_bigCloseButton.Visible = false; // We don't want to see this yet
 	}
-
-
-	public override void _UnhandledInput(InputEvent @event) {
-		if (@event is InputEventMouse key) {
-			if (key.ButtonMask != (int) ButtonList.Left) {
-				return;
-			}
-		}
-		if (_introduction.Visible && _wasHelpButtonPressed) {
-			OnHelpButtonPressed();
-			GetViewport().SetInputAsHandled();
-			_wasHelpButtonPressed = false;
-		}
+	
+	private void OnBigCloseButtonPressed() {
+		_wasHelpButtonPressed = false;
+		OnHelpButtonPressed();
 	}
 
 	private void OnHelpButtonPressed() {
@@ -68,6 +63,7 @@ public class TopBar : Node2D {
 			_wasHelpButtonPressed = false;
 			return;
 		}
+		_bigCloseButton.Visible = true;
 		_wasHelpButtonPressed = true;
 		_leftSideImage.Visible = true;
 		_introduction.Visible = true;

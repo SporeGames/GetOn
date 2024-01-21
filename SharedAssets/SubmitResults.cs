@@ -14,12 +14,14 @@ public class SubmitResults : Node2D
 	public int gameStudyConsoles = 0;
 	public int gameStudyClassicGames = 0;
 	public int gameStudySciFiGames = 0;
-	
+	// Management
 	public double managementPoints;
 	public float managementTime;
 	public int cardsColoredCorrectly;
+	public int managementCardsPlaced = 0;
+	// Programming
 	public double programmingPoints;
-	public float programmingTime;
+	public float programmingTime; // Rest for programming can be counted continuously
 	//Sound
 	public double soundPoints;
 	public float soundTime;
@@ -32,8 +34,10 @@ public class SubmitResults : Node2D
 	public int narrativeAttributes = 0;
 	public int narrativeSettings = 0;
 	public int narrativeEndings = 0;
+	// Game Design
 	public double gameDesignPoints;
 	public float gameDesignTime;
+	public int gameDesignMotivations = 0;
 	
 	public override void _Ready() {
 		_sharedNode = GetNode<SharedNode>("/root/SharedNode");
@@ -85,6 +89,7 @@ public class SubmitResults : Node2D
 		_sharedNode.managementPoints = managementPoints;
 		_sharedNode.managementTime = managementTime;
 		_sharedNode.managementColors = cardsColoredCorrectly;
+		_sharedNode.managementCardsPlaced = managementCardsPlaced;
 		_sharedNode.CompletedTasks.Add(AbilitySpecialization.Management);
 		_sharedNode.SwitchScene("res://scenes/Rooms/ManagementRoom.tscn");
 		GD.Print(managementPoints);
@@ -111,6 +116,7 @@ public class SubmitResults : Node2D
 	private void SubmitGameDesign() {
 		_sharedNode.gameDesignPoints = (int) gameDesignPoints;
 		_sharedNode.gameDesignTime = gameDesignTime;
+		_sharedNode.gameDesignMotivations = gameDesignMotivations;
 		_sharedNode.CompletedTasks.Add(AbilitySpecialization.Game_Design);
 		_sharedNode.SwitchScene("res://scenes/Rooms/GDNarrativeRoom.tscn");
 		GD.Print(gameDesignPoints);
