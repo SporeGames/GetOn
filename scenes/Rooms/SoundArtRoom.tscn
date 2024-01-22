@@ -122,7 +122,7 @@ UniqueID = "19"
 position = Vector2( 78, 715 )
 Title = "Julia"
 Icon = ExtResource( 12 )
-Texts = PoolStringArray( "Hey, there you are, awesome! You seem like a really interesting person.", "I\'m Julia, by the way, Spore Games\' one and only sound designer.", "Over there we have Ash, our art designer. Both of us are responsible for creating beautiful [b]aesthetics[/b] and [b]music themes[/b] for our games, although a lot of our work gets scrapped." )
+Texts = PoolStringArray( "Hey, there you are, awesome! You seem like a really interesting person.", "I\'m Julia, by the way, Spore Games\' one and only sound designer.", "Over there we have Ash, our art designer. Both of us are responsible for creating beautiful [b]graphics[/b] and [b]music themes[/b] for our games, although a lot of our work gets scrapped." )
 IsUnique = true
 UniqueID = "105"
 

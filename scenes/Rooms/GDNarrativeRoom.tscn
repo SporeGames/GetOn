@@ -104,7 +104,7 @@ UniqueID = "7"
 position = Vector2( 0, 704 )
 Title = "Mike"
 Icon = ExtResource( 14 )
-Texts = PoolStringArray( "Hi, I\'m Mike, the lead game designer for Spore Games! In this room, me and Mary over there are working on [b]concepting[/b] with ideas for our game.", "This includes her ideas for story, mine for [b]mechanics[/b] and generally making the game appealing to our [b]target audience[/b].", "Based on what we\'ve researched, I then talk to the other departments and work out more. You could almost say I\'m the heart of the studio!", "But enough of that... Just talk to me or Mary if you want to start with your [b]tasks[/b], we both have one for you." )
+Texts = PoolStringArray( "Hi, I\'m Mike, the lead game designer for Spore Games! In this room, me and Mary over there are working on [b]concepts[/b] ideas for our game.", "This includes her ideas for story, mine for [b]mechanics[/b] in general how to make games attractive for our [b]target audience[/b].", "Based on what we\'ve researched, I then talk to the other departments and work out more. You could almost say I\'m the core of the studio!", "But enough of that... Just talk to me or Mary if you want to start with one of your [b]tasks[/b], we both have one for you." )
 IsUnique = true
 UniqueID = "102"
 

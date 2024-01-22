@@ -38,10 +38,10 @@ scale = Vector2( 0.357646, 0.32844 )
 texture = ExtResource( 4 )
 
 [node name="InteractButton" parent="GSPerson" index="1"]
-margin_left = 1146.0
-margin_top = 433.0
-margin_right = 1273.0
-margin_bottom = 763.0
+margin_left = 1091.0
+margin_top = 448.0
+margin_right = 1192.0
+margin_bottom = 687.0
 
 [node name="WelcomeDialogue" parent="GSPerson" index="2"]
 position = Vector2( 58, 674 )
