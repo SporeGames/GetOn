@@ -238,6 +238,12 @@ namespace GetOn.scenes {
 		}
 
 		public void CalculatePoints() {
+			var managementPoints = this.managementPoints;
+			var programmingPoints = this.programmingPoints;
+			var soundPoints = this.soundPoints;
+			var gameDesignPoints = this.gameDesignPoints;
+			var	gameStudyPoints = this.gameStudyPoints;
+			var narrativePoints = this.narrativePoints;
 			switch (Specialization) {
 				case AbilitySpecialization.Management:
 					managementPoints *= 2;
@@ -267,9 +273,8 @@ namespace GetOn.scenes {
 			results.Add(AbilitySpecialization.Game_Studies, gameStudyPoints);
 			results.Add(AbilitySpecialization.Narrative_Design, narrativePoints);
 			var sortedList = results.ToList();
-			sortedList.Sort((pair1,pair2) => pair1.Value.CompareTo(pair2.Value));
-			var best = sortedList[sortedList.Count - 1];
 			TotalPoints = sortedList.Sum(pair => pair.Value);
+			GD.Print("Total points for dialogue: " + TotalPoints);
 		}
 
 		public void Print() {
