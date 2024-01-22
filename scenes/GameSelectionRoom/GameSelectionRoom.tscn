@@ -7,7 +7,7 @@
 [ext_resource path="res://scenes/MainMenu/MainThemeMusic.gd" type="Script" id=5]
 [ext_resource path="res://scenes/GameSelectionRoom/assets/pro 3. sound grey .png" type="Texture" id=6]
 [ext_resource path="res://scenes/GameSelectionRoom/assets/pro 3. game studies grey .png" type="Texture" id=7]
-[ext_resource path="res://scenes/GameSelectionRoom/assets/pro 3. game design grey .png" type="Texture" id=8]
+[ext_resource path="res://scenes/GameSelectionRoom/assets/LayoutMitWandenNarrative.png" type="Texture" id=8]
 [ext_resource path="res://scenes/GameSelectionRoom/assets/pro 3. programming grey .png" type="Texture" id=9]
 [ext_resource path="res://scenes/GameSelectionRoom/assets/LayoutMitWänden.png" type="Texture" id=10]
 [ext_resource path="res://SharedAssets/DialogeBox.tscn" type="PackedScene" id=11]
@@ -16,7 +16,7 @@
 [ext_resource path="res://scenes/GameSelectionRoom/assets/art desk gray.png" type="Texture" id=14]
 [ext_resource path="res://scenes/GameSelectionRoom/assets/HoverGameStudys.png" type="Texture" id=15]
 [ext_resource path="res://scenes/GameSelectionRoom/assets/HoverProgramming.png" type="Texture" id=16]
-[ext_resource path="res://scenes/GameSelectionRoom/assets/HoverGD.png" type="Texture" id=17]
+[ext_resource path="res://scenes/GameSelectionRoom/assets/pro 3. game design grey .png" type="Texture" id=17]
 [ext_resource path="res://scenes/GameSelectionRoom/assets/HoverSound.png" type="Texture" id=18]
 [ext_resource path="res://scenes/GameSelectionRoom/assets/HoverManagement.png" type="Texture" id=19]
 
@@ -216,8 +216,8 @@ texture = ExtResource( 6 )
 
 [node name="NarrativeAndDesignDone" type="Sprite" parent="."]
 visible = false
-position = Vector2( 944, 579 )
-texture = ExtResource( 8 )
+position = Vector2( 944, 578 )
+texture = ExtResource( 17 )
 
 [node name="ManagementDone" type="Sprite" parent="."]
 visible = false
@@ -247,7 +247,7 @@ texture = ExtResource( 14 )
 
 [node name="HoverGameStudy" type="Sprite" parent="HoverHighlights"]
 visible = false
-position = Vector2( 950, 577 )
+position = Vector2( 951, 577 )
 scale = Vector2( 0.955208, 0.953704 )
 texture = ExtResource( 15 )
 
@@ -265,9 +265,8 @@ texture = ExtResource( 18 )
 
 [node name="HoverGDAndNarrative" type="Sprite" parent="HoverHighlights"]
 visible = false
-position = Vector2( 953, 577 )
-scale = Vector2( 0.951237, 0.950232 )
-texture = ExtResource( 17 )
+position = Vector2( 958, 536 )
+texture = ExtResource( 8 )
 
 [node name="HoverProgramming" type="Sprite" parent="HoverHighlights"]
 visible = false
