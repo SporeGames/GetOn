@@ -8,7 +8,8 @@ public class DropDownAttribute : OptionButton
 	[Export] public bool FirstChar;
 	public override void _Ready()
 	{
-		this.AddItem("Choose Ending");
+		this.AddItem("Attribute");
+		Visible = false;
 
 	}
 
@@ -37,11 +38,12 @@ public class DropDownAttribute : OptionButton
 		this.RemoveItem(3);
 		this.RemoveItem(2);
 		this.RemoveItem(1);
-		this.RemoveItem(0);
+		
 	}
 
 	public void EndingPerfect()
 	{
+		Visible = true;
 		if (FirstChar == true)
 		{
 			ClearItems();
@@ -70,6 +72,7 @@ public class DropDownAttribute : OptionButton
 
 	public void EndingOk()
 	{
+		Visible = true;
 		if (FirstChar == true)
 		{
 			ClearItems();
@@ -98,6 +101,7 @@ public class DropDownAttribute : OptionButton
 
 	public void EndingCorrect()
 	{
+		Visible = true;
 		if (FirstChar == true)
 		{
 			ClearItems();
@@ -126,6 +130,7 @@ public class DropDownAttribute : OptionButton
 
 	public void EndingPerfect2()
 	{
+		Visible = true;
 		if (FirstChar == true)
 		{
 			ClearItems();
@@ -154,6 +159,7 @@ public class DropDownAttribute : OptionButton
 
 	public void EndingOk2()
 	{
+		Visible = true;
 		if (FirstChar == true)
 		{
 			ClearItems();
@@ -182,6 +188,7 @@ public class DropDownAttribute : OptionButton
 
 	public void EndingCorrect2()
 	{
+		Visible = true;
 		if (FirstChar == true)
 		{
 			ClearItems();

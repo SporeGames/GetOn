@@ -225,10 +225,19 @@ margin_right = -856.0
 margin_bottom = -542.0
 
 [node name="Monstera" type="Sprite" parent="PosterLeft"]
-visible = false
 position = Vector2( -812, -190 )
 scale = Vector2( 0.868709, 0.838794 )
 texture = ExtResource( 19 )
+
+[node name="Instrumentenschrank" type="Sprite" parent="PosterLeft"]
+position = Vector2( -986, -20 )
+scale = Vector2( 0.811015, 0.811015 )
+texture = ExtResource( 20 )
+
+[node name="MikroKopfhörer" type="Sprite" parent="PosterLeft"]
+position = Vector2( -1008, 46 )
+scale = Vector2( 0.843716, 0.867755 )
+texture = ExtResource( 24 )
 
 [node name="PosterRight" parent="." instance=ExtResource( 1 )]
 PopupTexture = ExtResource( 18 )
@@ -258,17 +267,8 @@ margin_right = -1.0
 margin_bottom = -522.0
 rect_scale = Vector2( 0.78636, 0.818169 )
 
-[node name="Instrumentenschrank" type="Sprite" parent="WallPopUp/Popup/CloseButton" index="0"]
-visible = false
-position = Vector2( 420, 828 )
-scale = Vector2( 0.811015, 0.811015 )
-texture = ExtResource( 20 )
-
-[node name="MikroKopfhörer" type="Sprite" parent="WallPopUp/Popup/CloseButton" index="1"]
-visible = false
-position = Vector2( 398, 894 )
-scale = Vector2( 0.843716, 0.867755 )
-texture = ExtResource( 24 )
+[node name="Popup" parent="WallPopUp" index="1"]
+visible = true
 
 [node name="ShelfPop" parent="." instance=ExtResource( 1 )]
 visible = false

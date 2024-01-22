@@ -20,7 +20,7 @@
 [ext_resource path="res://scenes/Narrative/assets/John.png" type="Texture" id=18]
 [ext_resource path="res://SharedAssets/music/Play/Music_Narr.gd" type="Script" id=19]
 [ext_resource path="res://SharedAssets/Anleitungen/Story_blank.png" type="Texture" id=20]
-[ext_resource path="res://scenes/Narrative/assets/IMG_0275.PNG" type="Texture" id=21]
+[ext_resource path="res://scenes/Narrative/assets/Story.png" type="Texture" id=21]
 [ext_resource path="res://scenes/Narrative/assets/Introduction PopUp.png" type="Texture" id=22]
 [ext_resource path="res://SharedAssets/Anleitungen/Story.PNG" type="Texture" id=23]
 [ext_resource path="res://scenes/Narrative/assets/ending1.PNG" type="Texture" id=24]
@@ -182,7 +182,7 @@ font_data = ExtResource( 11 )
 [sub_resource type="StyleBoxEmpty" id=62]
 
 [sub_resource type="DynamicFont" id=144]
-size = 21
+size = 24
 use_filter = true
 font_data = ExtResource( 11 )
 
@@ -751,19 +751,19 @@ custom_fonts/font = SubResource( 63 )
 text = "Cosmic-Defenders"
 
 [node name="Attribute" type="Label" parent="1"]
-margin_left = 1634.0
-margin_top = 237.0
-margin_right = 1772.0
-margin_bottom = 259.0
+margin_left = 1635.0
+margin_top = 229.0
+margin_right = 1773.0
+margin_bottom = 251.0
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_fonts/font = SubResource( 144 )
 text = "Choose Ending"
 
 [node name="Attribute2" type="Label" parent="1"]
 margin_left = 1644.0
-margin_top = 609.0
+margin_top = 608.0
 margin_right = 1782.0
-margin_bottom = 631.0
+margin_bottom = 630.0
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_fonts/font = SubResource( 144 )
 text = "Will develop to:"
@@ -1126,19 +1126,19 @@ custom_fonts/font = SubResource( 63 )
 text = "Cyber Revolution"
 
 [node name="Attribute" type="Label" parent="2"]
-margin_left = 1633.0
-margin_top = 237.0
-margin_right = 1748.0
-margin_bottom = 254.0
+margin_left = 1623.0
+margin_top = 226.0
+margin_right = 1790.0
+margin_bottom = 251.0
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_fonts/font = SubResource( 144 )
 text = "Degenerates to:"
 
 [node name="Attribute2" type="Label" parent="2"]
-margin_left = 1637.0
-margin_top = 610.0
-margin_right = 1752.0
-margin_bottom = 627.0
+margin_left = 1631.0
+margin_top = 600.0
+margin_right = 1798.0
+margin_bottom = 625.0
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_fonts/font = SubResource( 144 )
 text = "Degenerates to:"
