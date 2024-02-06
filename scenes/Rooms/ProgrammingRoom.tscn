@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=2]
+[gd_scene load_steps=40 format=2]
 
 [ext_resource path="res://SharedAssets/Decoration.tscn" type="PackedScene" id=1]
 [ext_resource path="res://SharedAssets/RoomPerson.tscn" type="PackedScene" id=2]
@@ -16,6 +16,47 @@
 [ext_resource path="res://SharedAssets/DialogeBox.tscn" type="PackedScene" id=14]
 [ext_resource path="res://scenes/Programming/assets/Programming/StormtrooperPopUp.png" type="Texture" id=15]
 [ext_resource path="res://scenes/Programming/assets/Programming/StromtrooperKlein.png" type="Texture" id=16]
+[ext_resource path="res://scenes/Rooms/Animations/Programming/6program.PNG" type="Texture" id=17]
+[ext_resource path="res://scenes/Rooms/Animations/Programming/3program.PNG" type="Texture" id=18]
+[ext_resource path="res://scenes/Rooms/Animations/Programming/2program.PNG" type="Texture" id=19]
+[ext_resource path="res://scenes/Rooms/Animations/Programming/4program.PNG" type="Texture" id=20]
+[ext_resource path="res://scenes/Rooms/Animations/Programming/5program.PNG" type="Texture" id=21]
+[ext_resource path="res://scenes/Rooms/Animations/Programming/1program.PNG" type="Texture" id=22]
+[ext_resource path="res://scenes/Rooms/Animations/Programming/ProgrammierWandDeko3.png" type="Texture" id=23]
+[ext_resource path="res://scenes/Rooms/Animations/Programming/ProgrammierWandDeko2.png" type="Texture" id=24]
+[ext_resource path="res://scenes/Rooms/Animations/Programming/ProgrammierWandDeko1.png" type="Texture" id=25]
+[ext_resource path="res://scenes/Rooms/Animations/Programming/Pflanze2.png" type="Texture" id=26]
+[ext_resource path="res://scenes/Rooms/Animations/Programming/Pflanze3.png" type="Texture" id=27]
+[ext_resource path="res://scenes/Rooms/Animations/Programming/Pflanze1.png" type="Texture" id=28]
+[ext_resource path="res://scenes/Rooms/Animations/Programming/Baby4.png" type="Texture" id=29]
+[ext_resource path="res://scenes/Rooms/Animations/Programming/Baby2.png" type="Texture" id=30]
+[ext_resource path="res://scenes/Rooms/Animations/Programming/Baby1.png" type="Texture" id=31]
+[ext_resource path="res://scenes/Rooms/Animations/Programming/Baby3.png" type="Texture" id=32]
+[ext_resource path="res://scenes/Rooms/Animations/Programming/Pflanze4mdp.png" type="Texture" id=33]
+
+[sub_resource type="SpriteFrames" id=4]
+animations = [ {
+"frames": [ ExtResource( 25 ), ExtResource( 24 ), ExtResource( 23 ) ],
+"loop": true,
+"name": "default",
+"speed": 1.0
+} ]
+
+[sub_resource type="SpriteFrames" id=5]
+animations = [ {
+"frames": [ ExtResource( 28 ), ExtResource( 26 ), ExtResource( 27 ), ExtResource( 33 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[sub_resource type="SpriteFrames" id=6]
+animations = [ {
+"frames": [ ExtResource( 31 ), ExtResource( 31 ), ExtResource( 31 ), ExtResource( 31 ), ExtResource( 31 ), ExtResource( 31 ), ExtResource( 31 ), ExtResource( 31 ), ExtResource( 31 ), ExtResource( 31 ), ExtResource( 31 ), ExtResource( 30 ), ExtResource( 30 ), ExtResource( 32 ), ExtResource( 32 ), ExtResource( 32 ), ExtResource( 32 ), ExtResource( 32 ), ExtResource( 32 ), ExtResource( 32 ), ExtResource( 32 ), ExtResource( 32 ), ExtResource( 32 ), ExtResource( 29 ), ExtResource( 29 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
 
 [sub_resource type="ShaderMaterial" id=1]
 resource_local_to_scene = true
@@ -25,6 +66,21 @@ shader_param/blink_rate = 2.0
 shader_param/outline_color = Color( 1, 1, 1, 1 )
 shader_param/outline_size = 0.02
 
+[sub_resource type="ShaderMaterial" id=2]
+shader = ExtResource( 8 )
+shader_param/blink_strength = 0.5
+shader_param/blink_rate = 3.0
+shader_param/outline_color = Color( 1, 1, 1, 1 )
+shader_param/outline_size = 0.01
+
+[sub_resource type="SpriteFrames" id=3]
+animations = [ {
+"frames": [ ExtResource( 22 ), ExtResource( 22 ), ExtResource( 22 ), ExtResource( 22 ), ExtResource( 19 ), ExtResource( 18 ), ExtResource( 20 ), ExtResource( 21 ), ExtResource( 17 ), ExtResource( 17 ), ExtResource( 17 ), ExtResource( 17 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
 [node name="ProgrammingRoom" type="Node2D"]
 script = ExtResource( 3 )
 HasDoor = true
@@ -33,11 +89,29 @@ HasDoor = true
 position = Vector2( 959.75, 539.75 )
 texture = ExtResource( 11 )
 
+[node name="LED" type="AnimatedSprite" parent="."]
+position = Vector2( 1349, 294 )
+frames = SubResource( 4 )
+frame = 2
+playing = true
+
+[node name="Plant" type="AnimatedSprite" parent="."]
+position = Vector2( 943, 583 )
+frames = SubResource( 5 )
+frame = 2
+
+[node name="Duck" type="AnimatedSprite" parent="."]
+position = Vector2( 610, 666 )
+frames = SubResource( 6 )
+frame = 16
+playing = true
+
 [node name="RoomPerson" parent="." instance=ExtResource( 2 )]
 position = Vector2( -1, -4 )
 GameSpecialization = 2
 
 [node name="PersonSprite" parent="RoomPerson" index="0"]
+visible = false
 material = SubResource( 1 )
 position = Vector2( 306, 755 )
 scale = Vector2( 1.04279, 0.980907 )
@@ -102,6 +176,14 @@ Icon = ExtResource( 13 )
 Texts = PoolStringArray( "Hey newbie, welcome to the show. I\'m Justin.", "This is our programming department. This is where we work on [b]implementing[/b] our [b]mechanics[/b] into the game.", "Don\'t look around too long, I have work for you to do. Speak to me again when you are ready." )
 IsUnique = true
 UniqueID = "104"
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="RoomPerson"]
+material = SubResource( 2 )
+position = Vector2( 288, 764 )
+scale = Vector2( 0.49, 0.49 )
+frames = SubResource( 3 )
+frame = 6
+playing = true
 
 [node name="DoorButton" type="TextureButton" parent="."]
 visible = false

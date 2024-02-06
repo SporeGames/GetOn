@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=2]
+[gd_scene load_steps=44 format=2]
 
 [ext_resource path="res://SharedAssets/Decoration.tscn" type="PackedScene" id=1]
 [ext_resource path="res://SharedAssets/RoomPerson.tscn" type="PackedScene" id=2]
@@ -25,6 +25,18 @@
 [ext_resource path="res://scenes/Art/WandPopUpArtSkizzen.png" type="Texture" id=23]
 [ext_resource path="res://scenes/Art/MikroKopfhörer.PNG" type="Texture" id=24]
 [ext_resource path="res://SharedAssets/dialogue_characters/Ash-removebg-preview.png" type="Texture" id=25]
+[ext_resource path="res://scenes/Rooms/Animations/SoundArt/1Art.PNG.png" type="Texture" id=26]
+[ext_resource path="res://scenes/Rooms/Animations/SoundArt/2Art.PNG.png" type="Texture" id=27]
+[ext_resource path="res://scenes/Rooms/Animations/SoundArt/3Art.PNG.png" type="Texture" id=28]
+[ext_resource path="res://scenes/Rooms/Animations/SoundArt/2sound.PNG.png" type="Texture" id=29]
+[ext_resource path="res://scenes/Rooms/Animations/SoundArt/5sound.PNG.png" type="Texture" id=30]
+[ext_resource path="res://scenes/Rooms/Animations/SoundArt/4sound.PNG.png" type="Texture" id=31]
+[ext_resource path="res://scenes/Rooms/Animations/SoundArt/6sound.PNG.png" type="Texture" id=32]
+[ext_resource path="res://scenes/Rooms/Animations/SoundArt/1sound.PNG.png" type="Texture" id=33]
+[ext_resource path="res://scenes/Rooms/Animations/SoundArt/4Art.PNG.png" type="Texture" id=34]
+[ext_resource path="res://scenes/Rooms/Animations/SoundArt/5Art.PNG.png" type="Texture" id=35]
+[ext_resource path="res://scenes/Rooms/Animations/SoundArt/3sound.PNG.png" type="Texture" id=36]
+[ext_resource path="res://scenes/Rooms/Animations/SoundArt/6Art.PNG.png" type="Texture" id=37]
 
 [sub_resource type="ShaderMaterial" id=1]
 resource_local_to_scene = true
@@ -34,6 +46,21 @@ shader_param/blink_rate = 2.0
 shader_param/outline_color = Color( 1, 1, 1, 1 )
 shader_param/outline_size = 0.02
 
+[sub_resource type="ShaderMaterial" id=3]
+shader = ExtResource( 9 )
+shader_param/blink_strength = 0.5
+shader_param/blink_rate = 3.0
+shader_param/outline_color = Color( 1, 1, 1, 1 )
+shader_param/outline_size = 0.02
+
+[sub_resource type="SpriteFrames" id=4]
+animations = [ {
+"frames": [ ExtResource( 33 ), ExtResource( 33 ), ExtResource( 33 ), ExtResource( 33 ), ExtResource( 33 ), ExtResource( 33 ), ExtResource( 29 ), ExtResource( 29 ), ExtResource( 29 ), ExtResource( 36 ), ExtResource( 31 ), ExtResource( 30 ), ExtResource( 32 ), ExtResource( 32 ), ExtResource( 32 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
 [sub_resource type="ShaderMaterial" id=2]
 resource_local_to_scene = true
 shader = ExtResource( 9 )
@@ -41,6 +68,21 @@ shader_param/blink_strength = 0.1
 shader_param/blink_rate = 2.0
 shader_param/outline_color = Color( 1, 1, 1, 1 )
 shader_param/outline_size = 0.02
+
+[sub_resource type="ShaderMaterial" id=5]
+shader = ExtResource( 9 )
+shader_param/blink_strength = 0.5
+shader_param/blink_rate = 3.0
+shader_param/outline_color = Color( 1, 1, 1, 1 )
+shader_param/outline_size = 0.02
+
+[sub_resource type="SpriteFrames" id=6]
+animations = [ {
+"frames": [ ExtResource( 26 ), ExtResource( 26 ), ExtResource( 26 ), ExtResource( 26 ), ExtResource( 26 ), ExtResource( 26 ), ExtResource( 26 ), ExtResource( 26 ), ExtResource( 27 ), ExtResource( 28 ), ExtResource( 34 ), ExtResource( 35 ), ExtResource( 37 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
 
 [node name="SoundArtRoom" type="Node2D"]
 script = ExtResource( 5 )
@@ -55,6 +97,7 @@ position = Vector2( -48, -15 )
 GameSpecialization = 4
 
 [node name="PersonSprite" parent="SoundPerson" index="0"]
+visible = false
 material = SubResource( 1 )
 position = Vector2( 713, 544 )
 scale = Vector2( 1.01081, 0.987054 )
@@ -126,11 +169,19 @@ Texts = PoolStringArray( "Hey, there you are, awesome! You seem like a really in
 IsUnique = true
 UniqueID = "105"
 
+[node name="AnimatedSprite" type="AnimatedSprite" parent="SoundPerson"]
+material = SubResource( 3 )
+position = Vector2( 722, 549 )
+frames = SubResource( 4 )
+frame = 9
+playing = true
+
 [node name="ArtPerson" parent="." instance=ExtResource( 2 )]
 position = Vector2( -36, 22 )
 GameSpecialization = 3
 
 [node name="PersonSprite" parent="ArtPerson" index="0"]
+visible = false
 material = SubResource( 2 )
 position = Vector2( 1610, 729 )
 scale = Vector2( 1.06142, 0.999785 )
@@ -186,6 +237,13 @@ Texts = PoolStringArray( "All right!" )
 LoadSceneAfter = false
 IsUnique = true
 UniqueID = "22"
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="ArtPerson"]
+material = SubResource( 5 )
+position = Vector2( 1616, 727 )
+frames = SubResource( 6 )
+frame = 3
+playing = true
 
 [node name="BackButton" type="TextureButton" parent="."]
 margin_left = 1772.0

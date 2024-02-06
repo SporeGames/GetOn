@@ -48,5 +48,5 @@ text = "0:00"
 position = Vector2( 42, 31 )
 scale = Vector2( 0.0711894, 0.0697151 )
 frames = SubResource( 2 )
-frame = 10
+frame = 1
 playing = true
