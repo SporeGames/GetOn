@@ -5,8 +5,8 @@
 [ext_resource path="res://SharedAssets/RoomPerson.tscn" type="PackedScene" id=3]
 [ext_resource path="res://SharedAssets/dialogue_characters/gamedesign.PNG" type="Texture" id=4]
 [ext_resource path="res://SharedAssets/dialogue_characters/story.PNG" type="Texture" id=5]
-[ext_resource path="res://SharedAssets/UserInterface/B_menu.png" type="Texture" id=6]
-[ext_resource path="res://SharedAssets/UserInterface/B_Home_pressed.png" type="Texture" id=7]
+[ext_resource path="res://SharedAssets/UserInterface/B_Home_grünblau-neu.png" type="Texture" id=6]
+[ext_resource path="res://SharedAssets/UserInterface/B_Home_pressed_grau-neu.png" type="Texture" id=7]
 [ext_resource path="res://SharedAssets/OutlineShader.tres" type="Shader" id=8]
 [ext_resource path="res://SharedAssets/Decoration.tscn" type="PackedScene" id=9]
 [ext_resource path="res://scenes/GameDesign/assets/GameDes/CanPopUp.PNG" type="Texture" id=10]
@@ -166,7 +166,7 @@ material = SubResource( 4 )
 position = Vector2( 1439, 463 )
 scale = Vector2( 1.1, 1.1 )
 frames = SubResource( 5 )
-frame = 1
+frame = 2
 playing = true
 
 [node name="NarrativePerson" parent="." instance=ExtResource( 3 )]
@@ -183,7 +183,7 @@ texture = ExtResource( 5 )
 material = SubResource( 6 )
 position = Vector2( 359, 719 )
 frames = SubResource( 7 )
-frame = 2
+frame = 9
 playing = true
 
 [node name="InteractButton" parent="NarrativePerson" index="2"]

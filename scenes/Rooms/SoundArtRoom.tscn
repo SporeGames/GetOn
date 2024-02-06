@@ -3,9 +3,9 @@
 [ext_resource path="res://SharedAssets/Decoration.tscn" type="PackedScene" id=1]
 [ext_resource path="res://SharedAssets/RoomPerson.tscn" type="PackedScene" id=2]
 [ext_resource path="res://SharedAssets/dialogue_characters/sound.PNG" type="Texture" id=3]
-[ext_resource path="res://SharedAssets/UserInterface/B_Home_pressed.png" type="Texture" id=4]
+[ext_resource path="res://SharedAssets/UserInterface/B_Home_grünblau-neu.png" type="Texture" id=4]
 [ext_resource path="res://scenes/Rooms/BaseRoom.cs" type="Script" id=5]
-[ext_resource path="res://SharedAssets/UserInterface/B_menu.png" type="Texture" id=6]
+[ext_resource path="res://SharedAssets/UserInterface/B_Home_pressed_grau-neu.png" type="Texture" id=6]
 [ext_resource path="res://SharedAssets/dialogue_characters/art.PNG" type="Texture" id=7]
 [ext_resource path="res://scenes/Sound/assets/SoundArt/CanPopUp.PNG" type="Texture" id=8]
 [ext_resource path="res://SharedAssets/OutlineShader.tres" type="Shader" id=9]
@@ -173,7 +173,7 @@ UniqueID = "105"
 material = SubResource( 3 )
 position = Vector2( 722, 549 )
 frames = SubResource( 4 )
-frame = 9
+frame = 10
 playing = true
 
 [node name="ArtPerson" parent="." instance=ExtResource( 2 )]
@@ -242,15 +242,15 @@ UniqueID = "22"
 material = SubResource( 5 )
 position = Vector2( 1616, 727 )
 frames = SubResource( 6 )
-frame = 3
+frame = 7
 playing = true
 
 [node name="BackButton" type="TextureButton" parent="."]
 margin_left = 1772.0
 margin_right = 1919.0
 margin_bottom = 133.0
-texture_normal = ExtResource( 6 )
-texture_pressed = ExtResource( 4 )
+texture_normal = ExtResource( 4 )
+texture_pressed = ExtResource( 6 )
 expand = true
 
 [node name="DoorButton" type="TextureButton" parent="."]

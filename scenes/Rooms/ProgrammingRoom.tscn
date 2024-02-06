@@ -3,8 +3,8 @@
 [ext_resource path="res://SharedAssets/Decoration.tscn" type="PackedScene" id=1]
 [ext_resource path="res://SharedAssets/RoomPerson.tscn" type="PackedScene" id=2]
 [ext_resource path="res://scenes/Rooms/BaseRoom.cs" type="Script" id=3]
-[ext_resource path="res://SharedAssets/UserInterface/B_menu.png" type="Texture" id=4]
-[ext_resource path="res://SharedAssets/UserInterface/B_Home_pressed.png" type="Texture" id=5]
+[ext_resource path="res://SharedAssets/UserInterface/B_Home_grünblau-neu.png" type="Texture" id=4]
+[ext_resource path="res://SharedAssets/UserInterface/B_Home_pressed_grau-neu.png" type="Texture" id=5]
 [ext_resource path="res://SharedAssets/dialogue_characters/prog.PNG" type="Texture" id=6]
 [ext_resource path="res://scenes/Programming/assets/Programming/Popup.PNG" type="Texture" id=7]
 [ext_resource path="res://SharedAssets/OutlineShader.tres" type="Shader" id=8]
@@ -92,7 +92,6 @@ texture = ExtResource( 11 )
 [node name="LED" type="AnimatedSprite" parent="."]
 position = Vector2( 1349, 294 )
 frames = SubResource( 4 )
-frame = 2
 playing = true
 
 [node name="Plant" type="AnimatedSprite" parent="."]
@@ -103,7 +102,6 @@ frame = 2
 [node name="Duck" type="AnimatedSprite" parent="."]
 position = Vector2( 610, 666 )
 frames = SubResource( 6 )
-frame = 16
 playing = true
 
 [node name="RoomPerson" parent="." instance=ExtResource( 2 )]
@@ -182,7 +180,7 @@ material = SubResource( 2 )
 position = Vector2( 288, 764 )
 scale = Vector2( 0.49, 0.49 )
 frames = SubResource( 3 )
-frame = 6
+frame = 7
 playing = true
 
 [node name="DoorButton" type="TextureButton" parent="."]
