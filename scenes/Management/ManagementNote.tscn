@@ -42,6 +42,8 @@ margin_bottom = 100.0
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 custom_fonts/normal_font = SubResource( 3 )
 text = "RichTextLabel"
+fit_content_height = true
+scroll_active = false
 
 [node name="NoteColor" type="Sprite" parent="."]
 scale = Vector2( 0.782258, 0.782258 )
