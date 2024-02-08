@@ -435,6 +435,53 @@ namespace GetOn.scenes {
 		public void PlayGenericClick() {
 			GetNode<AudioStreamPlayer>("GenericClick").Playing = true;
 		}
+
+		public void ResetGame() {
+			programmingPoints = 0;
+			programmingTime = 0;
+			DisconnectedNodes = 0;
+			TestsRun = 0;
+			EncounteredErrors = 0;
+			
+			gameStudyPoints = 0;
+			gameStudyTime = 0;
+			gameStudyConsoles = 0;
+			gameStudySciFiGames = 0;
+			gameStudyConsoles = 0;
+			
+			gameDesignPoints = 0;
+			gameDesignTime = 0;
+			gameDesignMotivations = 0;
+			
+			soundPoints = 0;
+			soundTime = 0;
+			soundEasySounds = 0;
+			soundMediumSounds = 0;
+			soundHardSounds = 0;
+			
+			narrativePoints = 0;
+			narrativeTime = 0;
+			narrativeAttributes = 0;
+			narrativeEndings = 0;
+			narrativeSettings = 0;
+			
+			managementPoints = 0;
+			managementTime = 0;
+			managementColors = 0;
+			managementCardsPlaced = 0;
+			
+			CompletedTasks.Clear();
+			HelpButtonPressed.Clear();
+			SeenDialogues.Clear();
+			ClickedDecorations.Clear();
+			
+			isDragging = false;
+			HasDialogeBoxOpen = false;
+			PlayerName = "No name";
+			
+			SwitchScene("res://scenes/Introduction/IntroScene.tscn");
+			GD.Print("Game reset.");
+		}
 	}
 }
 
