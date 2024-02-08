@@ -1,4 +1,4 @@
-[gd_scene load_steps=34 format=2]
+[gd_scene load_steps=24 format=2]
 
 [ext_resource path="res://scenes/Rooms/BaseRoom.cs" type="Script" id=1]
 [ext_resource path="res://scenes/Narrative/assets/GameDesignNarrativeRoom2.png" type="Texture" id=2]
@@ -15,25 +15,12 @@
 [ext_resource path="res://SharedAssets/dialogue_characters/Story_blank.png" type="Texture" id=13]
 [ext_resource path="res://SharedAssets/dialogue_characters/Game Design ohne Hintergrund.PNG" type="Texture" id=14]
 [ext_resource path="res://SharedAssets/DialogeBox.tscn" type="PackedScene" id=15]
-[ext_resource path="res://scenes/Rooms/Animations/SoundArt/Monstera1.png" type="Texture" id=16]
-[ext_resource path="res://scenes/Rooms/Animations/GameDesign/2GameDesign.PNG.png" type="Texture" id=17]
-[ext_resource path="res://scenes/Rooms/Animations/GameDesign/1GameDesign.PNG.png" type="Texture" id=18]
-[ext_resource path="res://scenes/Rooms/Animations/GameDesign/3GameDesign.PNG.png" type="Texture" id=19]
-[ext_resource path="res://scenes/Rooms/Animations/GameDesign/4GameDesign.PNG.png" type="Texture" id=20]
-[ext_resource path="res://scenes/Rooms/Animations/Narrative/1story.PNG.png" type="Texture" id=21]
-[ext_resource path="res://scenes/Rooms/Animations/Narrative/4story.PNG.png" type="Texture" id=22]
-[ext_resource path="res://scenes/Rooms/Animations/Narrative/5story.PNG.png" type="Texture" id=23]
-[ext_resource path="res://scenes/Rooms/Animations/Narrative/3story.PNG.png" type="Texture" id=24]
-[ext_resource path="res://scenes/Rooms/Animations/Narrative/6story.PNG.png" type="Texture" id=25]
-[ext_resource path="res://scenes/Rooms/Animations/Narrative/2story.PNG.png" type="Texture" id=26]
-
-[sub_resource type="SpriteFrames" id=3]
-animations = [ {
-"frames": [ ExtResource( 16 ) ],
-"loop": true,
-"name": "default",
-"speed": 5.0
-} ]
+[ext_resource path="res://scenes/GameDesign/assets/GameDes/video game storytelling pop up.png" type="Texture" id=16]
+[ext_resource path="res://scenes/GameDesign/assets/GameDes/JesseSchell.png" type="Texture" id=17]
+[ext_resource path="res://scenes/GameDesign/assets/GameDes/kunst des game designs.png" type="Texture" id=18]
+[ext_resource path="res://scenes/GameDesign/assets/GameDes/VideoGameStorytelling.png" type="Texture" id=19]
+[ext_resource path="res://scenes/GameDesign/assets/GameDes/BloodSweatAndPixelsBuch (1).png" type="Texture" id=20]
+[ext_resource path="res://scenes/GameDesign/assets/GameDes/bloodswearpixels.png" type="Texture" id=21]
 
 [sub_resource type="ShaderMaterial" id=1]
 resource_local_to_scene = true
@@ -43,21 +30,6 @@ shader_param/blink_rate = 2.0
 shader_param/outline_color = Color( 1, 1, 1, 1 )
 shader_param/outline_size = 0.02
 
-[sub_resource type="ShaderMaterial" id=4]
-shader = ExtResource( 8 )
-shader_param/blink_strength = 0.5
-shader_param/blink_rate = 3.0
-shader_param/outline_color = Color( 1, 1, 1, 1 )
-shader_param/outline_size = 0.02
-
-[sub_resource type="SpriteFrames" id=5]
-animations = [ {
-"frames": [ ExtResource( 18 ), ExtResource( 18 ), ExtResource( 18 ), ExtResource( 18 ), ExtResource( 18 ), ExtResource( 17 ), ExtResource( 19 ), ExtResource( 20 ), ExtResource( 20 ), ExtResource( 20 ), ExtResource( 20 ), ExtResource( 20 ) ],
-"loop": true,
-"name": "default",
-"speed": 5.0
-} ]
-
 [sub_resource type="ShaderMaterial" id=2]
 resource_local_to_scene = true
 shader = ExtResource( 8 )
@@ -66,21 +38,6 @@ shader_param/blink_rate = 2.0
 shader_param/outline_color = Color( 1, 1, 1, 1 )
 shader_param/outline_size = 0.02
 
-[sub_resource type="ShaderMaterial" id=6]
-shader = ExtResource( 8 )
-shader_param/blink_strength = 0.5
-shader_param/blink_rate = 3.0
-shader_param/outline_color = Color( 1, 1, 1, 1 )
-shader_param/outline_size = 0.02
-
-[sub_resource type="SpriteFrames" id=7]
-animations = [ {
-"frames": [ ExtResource( 21 ), ExtResource( 21 ), ExtResource( 21 ), ExtResource( 21 ), ExtResource( 21 ), ExtResource( 26 ), ExtResource( 24 ), ExtResource( 22 ), ExtResource( 23 ), ExtResource( 25 ), ExtResource( 25 ), ExtResource( 25 ), ExtResource( 25 ), ExtResource( 25 ), ExtResource( 21 ), ExtResource( 21 ), ExtResource( 21 ) ],
-"loop": true,
-"name": "default",
-"speed": 5.0
-} ]
-
 [node name="GDNarrativeRoom" type="Node2D"]
 script = ExtResource( 1 )
 
@@ -88,17 +45,13 @@ script = ExtResource( 1 )
 position = Vector2( 960, 540 )
 texture = ExtResource( 2 )
 
-[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
-position = Vector2( -178, 308 )
-frames = SubResource( 3 )
-
 [node name="GDPerson" parent="." instance=ExtResource( 3 )]
 GameSpecialization = 1
 
 [node name="PersonSprite" parent="GDPerson" index="0"]
-visible = false
 material = SubResource( 1 )
 position = Vector2( 1434, 443 )
+scale = Vector2( 1.04946, 0.995955 )
 texture = ExtResource( 4 )
 
 [node name="InteractButton" parent="GDPerson" index="1"]
@@ -161,38 +114,22 @@ Texts = PoolStringArray( "Hi, I\'m Mike, the lead game designer for Spore Games!
 IsUnique = true
 UniqueID = "102"
 
-[node name="AnimatedSprite" type="AnimatedSprite" parent="GDPerson"]
-material = SubResource( 4 )
-position = Vector2( 1439, 463 )
-scale = Vector2( 1.1, 1.1 )
-frames = SubResource( 5 )
-frame = 2
-playing = true
-
 [node name="NarrativePerson" parent="." instance=ExtResource( 3 )]
 GameSpecialization = 7
 
 [node name="PersonSprite" parent="NarrativePerson" index="0"]
-visible = false
 material = SubResource( 2 )
 position = Vector2( 378, 703 )
 scale = Vector2( 1.0241, 0.994314 )
 texture = ExtResource( 5 )
 
-[node name="AnimatedSprite" type="AnimatedSprite" parent="NarrativePerson"]
-material = SubResource( 6 )
-position = Vector2( 359, 719 )
-frames = SubResource( 7 )
-frame = 9
-playing = true
-
-[node name="InteractButton" parent="NarrativePerson" index="2"]
+[node name="InteractButton" parent="NarrativePerson" index="1"]
 margin_left = 255.0
 margin_top = 443.0
 margin_right = 478.0
 margin_bottom = 875.0
 
-[node name="WelcomeDialogue" parent="NarrativePerson" index="3"]
+[node name="WelcomeDialogue" parent="NarrativePerson" index="2"]
 Title = "Mary"
 Icon = ExtResource( 13 )
 Texts = PoolStringArray( "*Yawn* Who are you\? You seem quite interesting, just like a protagonist. Could you maybe help me\? My whiteboard with all my great [b]story ideas[/b] got [b]messed up[/b], I have no idea how that happened..", "You\'re in\? Thank you very much!" )
@@ -203,7 +140,7 @@ scale = Vector2( 0.877229, 0.877229 )
 z_index = 1
 texture = ExtResource( 12 )
 
-[node name="EpicFailDialogue" parent="NarrativePerson" index="4"]
+[node name="EpicFailDialogue" parent="NarrativePerson" index="3"]
 Title = "Marie"
 Icon = ExtResource( 13 )
 Texts = PoolStringArray( "This is an unexpected twist... . You said you are specialized in story design, but couldn\'t do the task good. Were you trying to deceive us\?" )
@@ -212,12 +149,12 @@ ResultThreshold = 22
 IsUnique = true
 UniqueID = "668"
 
-[node name="TalkAgainDialogue" parent="NarrativePerson" index="5"]
+[node name="TalkAgainDialogue" parent="NarrativePerson" index="4"]
 Title = "Marie"
 Icon = ExtResource( 13 )
 Texts = PoolStringArray( "That\'s it for your hero\'s duty here." )
 
-[node name="ResultDialogue" parent="NarrativePerson" index="6"]
+[node name="ResultDialogue" parent="NarrativePerson" index="5"]
 Title = "Marie"
 Icon = ExtResource( 13 )
 Texts = PoolStringArray( "Fantastic, you have restored my whiteboard perfectly! You seem like some kind of main character..." )
@@ -226,7 +163,7 @@ ResultThreshold = 38
 IsUnique = true
 UniqueID = "8"
 
-[node name="ResultDialogue2" parent="NarrativePerson" index="7"]
+[node name="ResultDialogue2" parent="NarrativePerson" index="6"]
 Title = "Marie"
 Icon = ExtResource( 13 )
 Texts = PoolStringArray( "That helped me a little bit. I think I can restore the rest on my own." )
@@ -235,7 +172,7 @@ ResultThreshold = 23
 IsUnique = true
 UniqueID = "9"
 
-[node name="ResultDialogue3" parent="NarrativePerson" index="8"]
+[node name="ResultDialogue3" parent="NarrativePerson" index="7"]
 Title = "Marie"
 Icon = ExtResource( 13 )
 Texts = PoolStringArray( "*Yawn* Well, let\'s just leave it at that. Maybe I can come up with even better story ideas if I do the job myself." )
@@ -252,12 +189,12 @@ texture_pressed = ExtResource( 7 )
 expand = true
 
 [node name="DecoNextToStoryPerson" parent="." instance=ExtResource( 9 )]
+visible = false
 position = Vector2( 495, 743 )
 scale = Vector2( 0.733358, 0.733358 )
 PopupTexture = ExtResource( 11 )
 SmallTexture = ExtResource( 10 )
-Description = "It’s pretty stressful for me to always prepare a paper-prototype before implementing your ideas into the game…"
-DescriptionImage = ExtResource( 13 )
+Description = "It can be pretty stressful so always prepare a paper-prototype before implementing your ideas into the game…"
 
 [node name="Sprite" parent="DecoNextToStoryPerson" index="0"]
 margin_left = 15.0
@@ -266,28 +203,17 @@ margin_right = 15.0
 margin_bottom = 22.0
 rect_scale = Vector2( 0.601389, 0.601389 )
 
-[node name="BloodSweat" parent="." instance=ExtResource( 9 )]
-visible = false
-position = Vector2( 495, 743 )
-scale = Vector2( 0.733358, 0.733358 )
-PopupTexture = ExtResource( 11 )
-SmallTexture = ExtResource( 10 )
-Description = "It’s pretty stressful for me to always prepare a paper-prototype before implementing your ideas into the game…"
-
-[node name="Sprite" parent="BloodSweat" index="0"]
-margin_left = 15.0
-margin_top = 22.0
-margin_right = 15.0
-margin_bottom = 22.0
-rect_scale = Vector2( 0.601389, 0.601389 )
+[node name="Popup" parent="DecoNextToStoryPerson" index="1"]
+visible = true
 
 [node name="Schell" parent="." instance=ExtResource( 9 )]
-visible = false
-position = Vector2( 495, 743 )
+position = Vector2( 1352, 143 )
 scale = Vector2( 0.733358, 0.733358 )
-PopupTexture = ExtResource( 11 )
-SmallTexture = ExtResource( 10 )
-Description = "It’s pretty stressful for me to always prepare a paper-prototype before implementing your ideas into the game…"
+PopupTexture = ExtResource( 18 )
+SmallTexture = ExtResource( 17 )
+Description = "Every game designer has this book on their shelf."
+DescriptionImage = ExtResource( 13 )
+SmallScale = 1.5
 
 [node name="Sprite" parent="Schell" index="0"]
 margin_left = 15.0
@@ -296,13 +222,26 @@ margin_right = 15.0
 margin_bottom = 22.0
 rect_scale = Vector2( 0.601389, 0.601389 )
 
+[node name="TextBG" parent="Schell/Popup" index="2"]
+position = Vector2( -2.4729, -478.384 )
+
+[node name="DescriptionImage" parent="Schell/Popup" index="3"]
+position = Vector2( -398.473, -482.383 )
+
+[node name="Description" parent="Schell/Popup" index="4"]
+margin_left = -296.473
+margin_top = -533.384
+margin_right = 427.527
+margin_bottom = -423.384
+
 [node name="VideoGameStory" parent="." instance=ExtResource( 9 )]
-visible = false
-position = Vector2( 495, 743 )
+position = Vector2( 1395, 147 )
 scale = Vector2( 0.733358, 0.733358 )
-PopupTexture = ExtResource( 11 )
-SmallTexture = ExtResource( 10 )
-Description = "It’s pretty stressful for me to always prepare a paper-prototype before implementing your ideas into the game…"
+PopupTexture = ExtResource( 16 )
+SmallTexture = ExtResource( 19 )
+Description = "This book is a beginner guide on how to create a good video game story. I’ll always keep this book in my heart. But I lent it to Mike for now."
+DescriptionImage = ExtResource( 13 )
+SmallScale = 1.5
 
 [node name="Sprite" parent="VideoGameStory" index="0"]
 margin_left = 15.0
@@ -311,10 +250,50 @@ margin_right = 15.0
 margin_bottom = 22.0
 rect_scale = Vector2( 0.601389, 0.601389 )
 
+[node name="TextBG" parent="VideoGameStory/Popup" index="2"]
+position = Vector2( -61.1073, -483.838 )
+
+[node name="DescriptionImage" parent="VideoGameStory/Popup" index="3"]
+position = Vector2( -457.107, -487.838 )
+
+[node name="Description" parent="VideoGameStory/Popup" index="4"]
+margin_left = -355.107
+margin_top = -538.838
+margin_right = 368.893
+margin_bottom = -428.838
+
+[node name="BloodSw" parent="." instance=ExtResource( 9 )]
+position = Vector2( 1420, 173 )
+scale = Vector2( 0.733358, 0.733358 )
+PopupTexture = ExtResource( 21 )
+SmallTexture = ExtResource( 20 )
+Description = "In this book different game designers reflect on their past projects. Especially the story of how Stardew-Valley inspired me to keep dreaming big."
+DescriptionImage = ExtResource( 14 )
+SmallScale = 1.5
+
+[node name="Sprite" parent="BloodSw" index="0"]
+margin_left = 15.0
+margin_top = 22.0
+margin_right = 15.0
+margin_bottom = 22.0
+rect_scale = Vector2( 0.601389, 0.601389 )
+
+[node name="TextBG" parent="BloodSw/Popup" index="2"]
+position = Vector2( -61.1073, -483.838 )
+
+[node name="DescriptionImage" parent="BloodSw/Popup" index="3"]
+position = Vector2( -457.107, -487.838 )
+
+[node name="Description" parent="BloodSw/Popup" index="4"]
+margin_left = -355.107
+margin_top = -538.838
+margin_right = 368.893
+margin_bottom = -428.838
+
 [editable path="GDPerson"]
 [editable path="NarrativePerson"]
 [editable path="NarrativePerson/WelcomeDialogue"]
 [editable path="DecoNextToStoryPerson"]
-[editable path="BloodSweat"]
 [editable path="Schell"]
 [editable path="VideoGameStory"]
+[editable path="BloodSw"]

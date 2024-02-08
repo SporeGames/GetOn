@@ -323,10 +323,6 @@ If you are done with this task click [b]DONE[/b].
 
 
 
-Art Assets
-Layout
-einzelne Kärtchen
-Farb drops 
 "
 
 [node name="MouseFollower" type="Sprite" parent="."]
