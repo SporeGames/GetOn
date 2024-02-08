@@ -21,8 +21,8 @@
 [ext_resource path="res://scenes/Programming/assets/Drohne.PNG" type="Texture" id=19]
 [ext_resource path="res://SharedAssets/music/Play/MusicProg.gd" type="Script" id=20]
 [ext_resource path="res://SharedAssets/font/BAHNSCHRIFT 1.TTF" type="DynamicFontData" id=21]
-[ext_resource path="res://SharedAssets/Anleitungen/Programming.PNG" type="Texture" id=22]
-[ext_resource path="res://SharedAssets/Anleitungen/Programming_blank.png" type="Texture" id=23]
+[ext_resource path="res://scenes/Programming/assets/justinblankanleitung.png" type="Texture" id=22]
+[ext_resource path="res://scenes/Programming/assets/justinlilaanleitung.png" type="Texture" id=23]
 [ext_resource path="res://scenes/Programming/blocks/MoveTruckBlock.cs" type="Script" id=24]
 [ext_resource path="res://scenes/Programming/blocks/KeyFPressedCondition.cs" type="Script" id=25]
 [ext_resource path="res://scenes/Programming/assets/Checkliste.PNG" type="Texture" id=26]
@@ -1155,8 +1155,8 @@ text = "Press 'Execute Code' to see errors..."
 
 [node name="TopBar" parent="." instance=ExtResource( 9 )]
 Game = 2
-LeftImage = ExtResource( 23 )
-RightImage = ExtResource( 22 )
+LeftImage = ExtResource( 22 )
+RightImage = ExtResource( 23 )
 HelpImage = ExtResource( 8 )
 Description = "There are blueprints with different [b]functions[/b] at the left screen that you have to put in the right order and connect. 
 If you click on [b]execute[/b] you can playtest if everything works as planned on the right screen.

@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Pflanze4mdp.png-a8e09c31d9d363b666f256fed0fa379d.stex"
+path="res://.import/JustinKreis.png-569ff71b89c14650d6cdd051c855264f.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://scenes/Rooms/Animations/Programming/Pflanze4mdp.png"
-dest_files=[ "res://.import/Pflanze4mdp.png-a8e09c31d9d363b666f256fed0fa379d.stex" ]
+source_file="res://scenes/Programming/assets/JustinKreis.png"
+dest_files=[ "res://.import/JustinKreis.png-569ff71b89c14650d6cdd051c855264f.stex" ]
 
 [params]
 

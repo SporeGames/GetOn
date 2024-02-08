@@ -1,7 +1,7 @@
 [gd_scene load_steps=9 format=2]
 
-[ext_resource path="res://SharedAssets/UserInterface/B_Home_pressed.png" type="Texture" id=1]
-[ext_resource path="res://SharedAssets/UserInterface/B_menu.png" type="Texture" id=2]
+[ext_resource path="res://SharedAssets/UserInterface/B_Home_grünblau-neu.png" type="Texture" id=1]
+[ext_resource path="res://SharedAssets/UserInterface/B_Home_pressed_grau-neu.png" type="Texture" id=2]
 [ext_resource path="res://scenes/Art/Art.cs" type="Script" id=3]
 [ext_resource path="res://SharedAssets/font/BAHNSCHRIFT 1.TTF" type="DynamicFontData" id=4]
 [ext_resource path="res://SharedAssets/ComingSoonPopup.tscn" type="PackedScene" id=5]
@@ -28,8 +28,8 @@ texture = ExtResource( 6 )
 margin_left = 1690.0
 margin_right = 1926.0
 margin_bottom = 214.0
-texture_normal = ExtResource( 2 )
-texture_pressed = ExtResource( 1 )
+texture_normal = ExtResource( 1 )
+texture_pressed = ExtResource( 2 )
 
 [node name="UploadButton" type="TextureButton" parent="."]
 margin_left = 304.0

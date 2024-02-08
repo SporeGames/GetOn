@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Pflanze1.png-20b011d17c00d2dad242c1497d7b1451.stex"
+path="res://.import/Planto1.png-0b1a7da4de32b6c13d91b29b0257e450.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://scenes/Rooms/Animations/Programming/Pflanze1.png"
-dest_files=[ "res://.import/Pflanze1.png-20b011d17c00d2dad242c1497d7b1451.stex" ]
+source_file="res://scenes/Rooms/Animations/Programming/Planto1.png"
+dest_files=[ "res://.import/Planto1.png-0b1a7da4de32b6c13d91b29b0257e450.stex" ]
 
 [params]
 
