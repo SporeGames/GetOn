@@ -18,6 +18,7 @@ namespace GetOn.SharedAssets {
 		[Export] public NodePath NodeToMakeVisible; // If ChangeNodeVisibility is true, this is the node to make visible
 		[Export] public int ResultThreshold = 0; // Result threshold for this dialogue box. If the player has less than this amount of points, the box will not be shown.
 		[Export] public bool IsUnique = false; // If true, this box will only be shown once per game
+		[Export] public bool ShowKickstartPrintAfter = false; // If true, the kickstart print button will be shown after the text is done
 		[Export] public string UniqueID = ""; // The name of this box. Used to check if it has been shown before.
 
 		private RichTextLabel _text;
@@ -27,6 +28,7 @@ namespace GetOn.SharedAssets {
 		private Timer _timer;
 		private Timer _animationTimer;
 		private SharedNode _sharedNode;
+		private TextureButton _kickstartPrint;
 		
 		private int _currentIndex = 1;
 		private string _textToAnimate = "";
@@ -40,10 +42,12 @@ namespace GetOn.SharedAssets {
 			_title = GetNode<RichTextLabel>("Title");
 			_icon = GetNode<Sprite>("Icon");
 			_nextButton = GetNode<TextureButton>("NextButton");
+			_kickstartPrint = GetNode<TextureButton>("KickstartPrintButton");
 			_timer = GetNode<Timer>("Timer");
 			_animationTimer = GetNode<Timer>("AnimationTimer");
 			_sharedNode = GetNode<SharedNode>("/root/SharedNode");
 			_nextButton.Connect("pressed", this, nameof(OnNextPressed), new Godot.Collections.Array(false));
+			_kickstartPrint.Connect("pressed", this, nameof(OnKickstartPrintButtonPressed));
 			_timer.Connect("timeout", this, nameof(OnNextPressed), new Godot.Collections.Array(true));
 			_animationTimer.Connect("timeout", this, nameof(AnimateText));
 			_animationTimer.WaitTime = Mathf.Clamp(((AutoNextTime / Texts[_currentIndex - 1].Length) * TimePerCharacter) - ReadTime, 0.001f, 10f);
@@ -109,6 +113,13 @@ namespace GetOn.SharedAssets {
 				}
 				else {
 					Visible = false;
+					if (ShowKickstartPrintAfter) {
+						RemoveChild(_kickstartPrint);
+						GetParent().AddChild(_kickstartPrint);
+						_kickstartPrint.SetGlobalPosition(new Vector2(0, 0));
+						GD.Print("Adding kickstart print button to " + GetParent().Name);
+						_kickstartPrint.Visible = true;
+					}
 					if (ChangeNodeVisibility) {
 						var node = GetNode(NodeToMakeVisible);
 						if (node is Node2D n2d) {
@@ -139,6 +150,10 @@ namespace GetOn.SharedAssets {
 				_isAnimating = false;
 				_makeArrowBlink = true;
 			}
+		}
+		
+		private void OnKickstartPrintButtonPressed() {
+			_sharedNode.SwitchScene("res://scenes/Credits/Credits.tscn");
 		}
 
 	}

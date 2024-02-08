@@ -73,6 +73,7 @@ Texts = PoolStringArray( "I\'ll be honest with you, you should think twice about
 LoadSceneAfter = false
 ResultThreshold = 22
 IsUnique = true
+ShowKickstartPrintAfter = true
 UniqueID = "667"
 
 [node name="TalkAgainDialogue" parent="GDPerson" index="4"]
@@ -87,6 +88,7 @@ Texts = PoolStringArray( "Five-star work you\'ve done there, I\'m almost worried
 LoadSceneAfter = false
 ResultThreshold = 38
 IsUnique = true
+ShowKickstartPrintAfter = true
 UniqueID = "5"
 
 [node name="ResultDialogue2" parent="GDPerson" index="6"]
@@ -96,6 +98,7 @@ Texts = PoolStringArray( "Decent, decent. A few minor tweaks from me and it shou
 LoadSceneAfter = false
 ResultThreshold = 23
 IsUnique = true
+ShowKickstartPrintAfter = true
 UniqueID = "6"
 
 [node name="ResultDialogue3" parent="GDPerson" index="7"]
@@ -104,6 +107,7 @@ Icon = ExtResource( 14 )
 Texts = PoolStringArray( "Looks like you\'re not really cut out to be a game designer. Perhaps you will be better at the other tasks." )
 LoadSceneAfter = false
 IsUnique = true
+ShowKickstartPrintAfter = true
 UniqueID = "7"
 
 [node name="IntroductionDialogue" parent="GDPerson" instance=ExtResource( 15 )]
@@ -147,6 +151,7 @@ Texts = PoolStringArray( "This is an unexpected twist... . You said you are spec
 LoadSceneAfter = false
 ResultThreshold = 22
 IsUnique = true
+ShowKickstartPrintAfter = true
 UniqueID = "668"
 
 [node name="TalkAgainDialogue" parent="NarrativePerson" index="4"]
@@ -161,6 +166,7 @@ Texts = PoolStringArray( "Fantastic, you have restored my whiteboard perfectly! 
 LoadSceneAfter = false
 ResultThreshold = 38
 IsUnique = true
+ShowKickstartPrintAfter = true
 UniqueID = "8"
 
 [node name="ResultDialogue2" parent="NarrativePerson" index="6"]
@@ -170,6 +176,7 @@ Texts = PoolStringArray( "That helped me a little bit. I think I can restore the
 LoadSceneAfter = false
 ResultThreshold = 23
 IsUnique = true
+ShowKickstartPrintAfter = true
 UniqueID = "9"
 
 [node name="ResultDialogue3" parent="NarrativePerson" index="7"]
@@ -178,6 +185,7 @@ Icon = ExtResource( 13 )
 Texts = PoolStringArray( "*Yawn* Well, let\'s just leave it at that. Maybe I can come up with even better story ideas if I do the job myself." )
 LoadSceneAfter = false
 IsUnique = true
+ShowKickstartPrintAfter = true
 UniqueID = "10"
 
 [node name="BackButton" type="TextureButton" parent="."]

@@ -80,6 +80,7 @@ Texts = PoolStringArray( "I-I don’t want to be rude or something, but I don’
 LoadSceneAfter = false
 ResultThreshold = 22
 IsUnique = true
+ShowKickstartPrintAfter = true
 UniqueID = "671"
 
 [node name="TalkAgainDialogue" parent="GSPerson" index="4"]
@@ -96,6 +97,7 @@ Texts = PoolStringArray( "You really love games, don’t you\? That’s very coo
 LoadSceneAfter = false
 ResultThreshold = 38
 IsUnique = true
+ShowKickstartPrintAfter = true
 UniqueID = "1"
 
 [node name="ResultDialogue2" parent="GSPerson" index="6"]
@@ -106,6 +108,7 @@ Texts = PoolStringArray( "Good enough, looks like you know a bit about game stud
 LoadSceneAfter = false
 ResultThreshold = 23
 IsUnique = true
+ShowKickstartPrintAfter = true
 UniqueID = "2"
 
 [node name="ResultDialogue3" parent="GSPerson" index="7"]
@@ -115,6 +118,7 @@ Icon = ExtResource( 11 )
 Texts = PoolStringArray( "... If you don’t like this task, then I will gladly do it. There is much more to those old-time classics as you would think you know." )
 LoadSceneAfter = false
 IsUnique = true
+ShowKickstartPrintAfter = true
 UniqueID = "3"
 
 [node name="IntroductionDialogue" parent="GSPerson" instance=ExtResource( 5 )]
@@ -131,7 +135,7 @@ material = SubResource( 3 )
 position = Vector2( 1142, 602 )
 scale = Vector2( 0.358, 0.335 )
 frames = SubResource( 2 )
-frame = 11
+frame = 4
 playing = true
 
 [node name="BackButton" type="TextureButton" parent="."]

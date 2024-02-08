@@ -124,6 +124,7 @@ Texts = PoolStringArray( "I was really looking forward to working with a fellow 
 LoadSceneAfter = false
 ResultThreshold = 22
 IsUnique = true
+ShowKickstartPrintAfter = true
 UniqueID = "670"
 
 [node name="TalkAgainDialogue" parent="SoundPerson" index="4"]
@@ -140,6 +141,7 @@ Texts = PoolStringArray( "Inspiring, really inspiring! Are you related to Hans Z
 LoadSceneAfter = false
 ResultThreshold = 38
 IsUnique = true
+ShowKickstartPrintAfter = true
 UniqueID = "17"
 
 [node name="ResultDialogue2" parent="SoundPerson" index="6"]
@@ -150,6 +152,7 @@ Texts = PoolStringArray( "Not bad, you just need a bit more practice." )
 LoadSceneAfter = false
 ResultThreshold = 23
 IsUnique = true
+ShowKickstartPrintAfter = true
 UniqueID = "18"
 
 [node name="ResultDialogue3" parent="SoundPerson" index="7"]
@@ -159,6 +162,7 @@ Icon = ExtResource( 12 )
 Texts = PoolStringArray( "Hm... looks like you\'re tone deaf." )
 LoadSceneAfter = false
 IsUnique = true
+ShowKickstartPrintAfter = true
 UniqueID = "19"
 
 [node name="IntroductionDialogue" parent="SoundPerson" instance=ExtResource( 14 )]
@@ -173,7 +177,7 @@ UniqueID = "105"
 material = SubResource( 3 )
 position = Vector2( 722, 549 )
 frames = SubResource( 4 )
-frame = 10
+frame = 1
 playing = true
 
 [node name="ArtPerson" parent="." instance=ExtResource( 2 )]
@@ -205,6 +209,7 @@ Title = "Ash"
 Icon = ExtResource( 25 )
 Texts = PoolStringArray( "All right!" )
 LoadSceneAfter = false
+ShowKickstartPrintAfter = true
 
 [node name="TalkAgainDialogue" parent="ArtPerson" index="4"]
 Title = "Ash"
@@ -218,6 +223,7 @@ Icon = ExtResource( 25 )
 Texts = PoolStringArray( "All right!" )
 LoadSceneAfter = false
 IsUnique = true
+ShowKickstartPrintAfter = true
 UniqueID = "20"
 
 [node name="ResultDialogue2" parent="ArtPerson" index="6"]
@@ -227,6 +233,7 @@ Icon = ExtResource( 25 )
 Texts = PoolStringArray( "All right!" )
 LoadSceneAfter = false
 IsUnique = true
+ShowKickstartPrintAfter = true
 UniqueID = "21"
 
 [node name="ResultDialogue3" parent="ArtPerson" index="7"]
@@ -236,13 +243,14 @@ Icon = ExtResource( 25 )
 Texts = PoolStringArray( "All right!" )
 LoadSceneAfter = false
 IsUnique = true
+ShowKickstartPrintAfter = true
 UniqueID = "22"
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="ArtPerson"]
 material = SubResource( 5 )
 position = Vector2( 1616, 727 )
 frames = SubResource( 6 )
-frame = 7
+frame = 10
 playing = true
 
 [node name="BackButton" type="TextureButton" parent="."]

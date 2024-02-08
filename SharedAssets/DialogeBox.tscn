@@ -1,9 +1,11 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://SharedAssets/DialogueBox.cs" type="Script" id=1]
 [ext_resource path="res://SharedAssets/font/BAHNSCHRIFT 1.TTF" type="DynamicFontData" id=2]
 [ext_resource path="res://scenes/GameDesign/assets/personas/Story.png" type="Texture" id=3]
 [ext_resource path="res://SharedAssets/Anleitungen/DialogFenster.png" type="Texture" id=4]
+[ext_resource path="res://SharedAssets/UserInterface/B_base_1_hovered.png" type="Texture" id=5]
+[ext_resource path="res://SharedAssets/UserInterface/B_Base1.png" type="Texture" id=6]
 
 [sub_resource type="DynamicFont" id=2]
 size = 72
@@ -19,6 +21,12 @@ font_data = ExtResource( 2 )
 
 [sub_resource type="DynamicFont" id=3]
 size = 48
+use_mipmaps = true
+use_filter = true
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=5]
+size = 40
 use_mipmaps = true
 use_filter = true
 font_data = ExtResource( 2 )
@@ -69,3 +77,21 @@ stretch_mode = 4
 [node name="AnimationTimer" type="Timer" parent="."]
 wait_time = 0.05
 autostart = true
+
+[node name="KickstartPrintButton" type="TextureButton" parent="."]
+visible = false
+margin_right = 40.0
+margin_bottom = 40.0
+texture_normal = ExtResource( 6 )
+texture_pressed = ExtResource( 5 )
+stretch_mode = 3
+
+[node name="RichTextLabel" type="RichTextLabel" parent="KickstartPrintButton"]
+margin_left = 29.0
+margin_top = 39.0
+margin_right = 278.0
+margin_bottom = 102.0
+mouse_filter = 2
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+custom_fonts/normal_font = SubResource( 5 )
+text = "Show Results"

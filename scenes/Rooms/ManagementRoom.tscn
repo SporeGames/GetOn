@@ -88,6 +88,7 @@ Texts = PoolStringArray( "Um yeah, let\'s leave it by that.", "If I work on that
 LoadSceneAfter = false
 ResultThreshold = 22
 IsUnique = true
+ShowKickstartPrintAfter = true
 UniqueID = "666"
 
 [node name="TalkAgainDialogue" parent="RoomPerson" index="4"]
@@ -102,6 +103,7 @@ Texts = PoolStringArray( "Excellent work, just as I imagined. You have great pot
 LoadSceneAfter = false
 ResultThreshold = 38
 IsUnique = true
+ShowKickstartPrintAfter = true
 UniqueID = "11"
 
 [node name="ResultDialogue2" parent="RoomPerson" index="6"]
@@ -111,6 +113,7 @@ Texts = PoolStringArray( "Your work is alright, but not perfect." )
 LoadSceneAfter = false
 ResultThreshold = 23
 IsUnique = true
+ShowKickstartPrintAfter = true
 UniqueID = "12"
 
 [node name="ResultDialogue3" parent="RoomPerson" index="7"]
@@ -119,6 +122,7 @@ Icon = ExtResource( 16 )
 Texts = PoolStringArray( "Oh well, that doesn\'t really help us..." )
 LoadSceneAfter = false
 IsUnique = true
+ShowKickstartPrintAfter = true
 UniqueID = "13"
 
 [node name="IntroductionDialogue" parent="RoomPerson" instance=ExtResource( 15 )]
@@ -153,7 +157,7 @@ texture = ExtResource( 11 )
 material = SubResource( 3 )
 position = Vector2( 764, 545 )
 frames = SubResource( 2 )
-frame = 5
+frame = 2
 playing = true
 
 [editable path="RoomPerson"]
