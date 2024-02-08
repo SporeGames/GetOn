@@ -127,16 +127,18 @@ margin_left = 600.0
 margin_top = -613.0
 margin_right = 756.0
 margin_bottom = -543.0
+disabled = true
 texture_normal = ExtResource( 28 )
 texture_pressed = ExtResource( 29 )
 texture_hover = ExtResource( 29 )
+texture_disabled = ExtResource( 29 )
 expand = true
 
 [node name="RichTextLabel" type="RichTextLabel" parent="Checklist/SubmitButton"]
-margin_left = 38.0
-margin_top = 20.0
-margin_right = 128.0
-margin_bottom = 60.0
+margin_left = 33.0
+margin_top = 21.0
+margin_right = 123.0
+margin_bottom = 61.0
 mouse_filter = 2
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 custom_fonts/normal_font = SubResource( 18 )
@@ -1085,10 +1087,10 @@ texture_hover = ExtResource( 29 )
 expand = true
 
 [node name="RichTextLabel" type="RichTextLabel" parent="ProgrammingUI/ResetButton"]
-margin_left = 28.0
-margin_top = 21.0
-margin_right = 152.0
-margin_bottom = 61.0
+margin_left = 24.0
+margin_top = 22.0
+margin_right = 148.0
+margin_bottom = 62.0
 mouse_filter = 2
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 custom_fonts/normal_font = SubResource( 17 )
@@ -1110,10 +1112,10 @@ texture_hover = ExtResource( 29 )
 expand = true
 
 [node name="RichTextLabel" type="RichTextLabel" parent="ProgrammingUI/RunButton"]
-margin_left = 22.0
-margin_top = 21.0
-margin_right = 159.0
-margin_bottom = 61.0
+margin_left = 19.0
+margin_top = 20.0
+margin_right = 156.0
+margin_bottom = 60.0
 mouse_filter = 2
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 custom_fonts/normal_font = SubResource( 17 )

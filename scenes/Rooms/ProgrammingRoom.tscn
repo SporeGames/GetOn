@@ -92,6 +92,7 @@ texture = ExtResource( 11 )
 [node name="LED" type="AnimatedSprite" parent="."]
 position = Vector2( 1349, 294 )
 frames = SubResource( 4 )
+frame = 2
 playing = true
 
 [node name="Plant" type="AnimatedSprite" parent="."]
@@ -102,6 +103,7 @@ frame = 2
 [node name="Duck" type="AnimatedSprite" parent="."]
 position = Vector2( 610, 666 )
 frames = SubResource( 6 )
+frame = 11
 playing = true
 
 [node name="RoomPerson" parent="." instance=ExtResource( 2 )]
@@ -134,6 +136,7 @@ Texts = PoolStringArray( "I understand that not everyone knows blueprints, but s
 LoadSceneAfter = false
 ResultThreshold = 22
 IsUnique = true
+ShowKickstartPrintAfter = true
 UniqueID = "669"
 
 [node name="TalkAgainDialogue" parent="RoomPerson" index="4"]
@@ -148,6 +151,7 @@ Texts = PoolStringArray( "Holy moly! That worked better than I thought it would.
 LoadSceneAfter = false
 ResultThreshold = 38
 IsUnique = true
+ShowKickstartPrintAfter = true
 UniqueID = "14"
 
 [node name="ResultDialogue2" parent="RoomPerson" index="6"]
@@ -157,6 +161,7 @@ Texts = PoolStringArray( "Not bad, but not really good either." )
 LoadSceneAfter = false
 ResultThreshold = 23
 IsUnique = true
+ShowKickstartPrintAfter = true
 UniqueID = "15"
 
 [node name="ResultDialogue3" parent="RoomPerson" index="7"]
@@ -165,6 +170,7 @@ Icon = ExtResource( 13 )
 Texts = PoolStringArray( "You don\'t have any experience with blueprints, do you\?" )
 LoadSceneAfter = false
 IsUnique = true
+ShowKickstartPrintAfter = true
 UniqueID = "16"
 
 [node name="IntroductionDialogue" parent="RoomPerson" instance=ExtResource( 14 )]
@@ -180,7 +186,7 @@ material = SubResource( 2 )
 position = Vector2( 288, 764 )
 scale = Vector2( 0.49, 0.49 )
 frames = SubResource( 3 )
-frame = 7
+frame = 3
 playing = true
 
 [node name="DoorButton" type="TextureButton" parent="."]
