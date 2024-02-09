@@ -65,7 +65,6 @@ texture = ExtResource( 21 )
 GameSpecialization = 5
 
 [node name="PersonSprite" parent="GSPerson" index="0"]
-visible = false
 material = SubResource( 1 )
 position = Vector2( 1138, 606 )
 scale = Vector2( 0.357646, 0.32844 )
@@ -143,11 +142,12 @@ IsUnique = true
 UniqueID = "101"
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="GSPerson"]
+visible = false
 material = SubResource( 3 )
 position = Vector2( 1142, 602 )
 scale = Vector2( 0.358, 0.335 )
 frames = SubResource( 2 )
-frame = 14
+frame = 4
 playing = true
 
 [node name="BackButton" type="TextureButton" parent="."]
@@ -172,7 +172,7 @@ scale = Vector2( 1.42616, 1.42616 )
 [node name="Plant" type="AnimatedSprite" parent="."]
 position = Vector2( 353, 632 )
 frames = SubResource( 4 )
-frame = 12
+frame = 14
 playing = true
 
 [editable path="GSPerson"]

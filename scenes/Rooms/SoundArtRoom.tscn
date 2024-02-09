@@ -1,4 +1,4 @@
-[gd_scene load_steps=44 format=2]
+[gd_scene load_steps=38 format=2]
 
 [ext_resource path="res://SharedAssets/Decoration.tscn" type="PackedScene" id=1]
 [ext_resource path="res://SharedAssets/RoomPerson.tscn" type="PackedScene" id=2]
@@ -25,18 +25,12 @@
 [ext_resource path="res://scenes/Art/WandPopUpArtSkizzen.png" type="Texture" id=23]
 [ext_resource path="res://scenes/Art/MikroKopfhörer.PNG" type="Texture" id=24]
 [ext_resource path="res://SharedAssets/dialogue_characters/Ash-removebg-preview.png" type="Texture" id=25]
-[ext_resource path="res://scenes/Rooms/Animations/SoundArt/1Art.PNG.png" type="Texture" id=26]
-[ext_resource path="res://scenes/Rooms/Animations/SoundArt/2Art.PNG.png" type="Texture" id=27]
-[ext_resource path="res://scenes/Rooms/Animations/SoundArt/3Art.PNG.png" type="Texture" id=28]
-[ext_resource path="res://scenes/Rooms/Animations/SoundArt/2sound.PNG.png" type="Texture" id=29]
-[ext_resource path="res://scenes/Rooms/Animations/SoundArt/5sound.PNG.png" type="Texture" id=30]
-[ext_resource path="res://scenes/Rooms/Animations/SoundArt/4sound.PNG.png" type="Texture" id=31]
-[ext_resource path="res://scenes/Rooms/Animations/SoundArt/6sound.PNG.png" type="Texture" id=32]
-[ext_resource path="res://scenes/Rooms/Animations/SoundArt/1sound.PNG.png" type="Texture" id=33]
-[ext_resource path="res://scenes/Rooms/Animations/SoundArt/4Art.PNG.png" type="Texture" id=34]
-[ext_resource path="res://scenes/Rooms/Animations/SoundArt/5Art.PNG.png" type="Texture" id=35]
-[ext_resource path="res://scenes/Rooms/Animations/SoundArt/3sound.PNG.png" type="Texture" id=36]
-[ext_resource path="res://scenes/Rooms/Animations/SoundArt/6Art.PNG.png" type="Texture" id=37]
+[ext_resource path="res://scenes/Rooms/Animations/SoundArt/5sound.PNG (2).png" type="Texture" id=26]
+[ext_resource path="res://scenes/Rooms/Animations/SoundArt/2sound.PNG (2).png" type="Texture" id=27]
+[ext_resource path="res://scenes/Rooms/Animations/SoundArt/1sound.PNG (2).png" type="Texture" id=28]
+[ext_resource path="res://scenes/Rooms/Animations/SoundArt/6sound.PNG (2).png" type="Texture" id=29]
+[ext_resource path="res://scenes/Rooms/Animations/SoundArt/3sound.PNG (2).png" type="Texture" id=30]
+[ext_resource path="res://scenes/Rooms/Animations/SoundArt/4sound.PNG (2).png" type="Texture" id=31]
 
 [sub_resource type="ShaderMaterial" id=1]
 resource_local_to_scene = true
@@ -55,7 +49,7 @@ shader_param/outline_size = 0.02
 
 [sub_resource type="SpriteFrames" id=4]
 animations = [ {
-"frames": [ ExtResource( 33 ), ExtResource( 33 ), ExtResource( 33 ), ExtResource( 33 ), ExtResource( 33 ), ExtResource( 33 ), ExtResource( 29 ), ExtResource( 29 ), ExtResource( 29 ), ExtResource( 36 ), ExtResource( 31 ), ExtResource( 30 ), ExtResource( 32 ), ExtResource( 32 ), ExtResource( 32 ) ],
+"frames": [ ExtResource( 28 ), ExtResource( 27 ), ExtResource( 30 ), ExtResource( 31 ), ExtResource( 26 ), ExtResource( 29 ) ],
 "loop": true,
 "name": "default",
 "speed": 5.0
@@ -78,7 +72,7 @@ shader_param/outline_size = 0.02
 
 [sub_resource type="SpriteFrames" id=6]
 animations = [ {
-"frames": [ ExtResource( 26 ), ExtResource( 26 ), ExtResource( 26 ), ExtResource( 26 ), ExtResource( 26 ), ExtResource( 26 ), ExtResource( 26 ), ExtResource( 26 ), ExtResource( 27 ), ExtResource( 28 ), ExtResource( 34 ), ExtResource( 35 ), ExtResource( 37 ) ],
+"frames": [  ],
 "loop": true,
 "name": "default",
 "speed": 5.0
@@ -97,7 +91,6 @@ position = Vector2( -48, -15 )
 GameSpecialization = 4
 
 [node name="PersonSprite" parent="SoundPerson" index="0"]
-visible = false
 material = SubResource( 1 )
 position = Vector2( 713, 544 )
 scale = Vector2( 1.01081, 0.987054 )
@@ -174,10 +167,11 @@ IsUnique = true
 UniqueID = "105"
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="SoundPerson"]
+visible = false
 material = SubResource( 3 )
 position = Vector2( 722, 549 )
 frames = SubResource( 4 )
-frame = 1
+frame = 4
 playing = true
 
 [node name="ArtPerson" parent="." instance=ExtResource( 2 )]
@@ -185,7 +179,6 @@ position = Vector2( -36, 22 )
 GameSpecialization = 3
 
 [node name="PersonSprite" parent="ArtPerson" index="0"]
-visible = false
 material = SubResource( 2 )
 position = Vector2( 1610, 729 )
 scale = Vector2( 1.06142, 0.999785 )
@@ -250,7 +243,6 @@ UniqueID = "22"
 material = SubResource( 5 )
 position = Vector2( 1616, 727 )
 frames = SubResource( 6 )
-frame = 10
 playing = true
 
 [node name="BackButton" type="TextureButton" parent="."]

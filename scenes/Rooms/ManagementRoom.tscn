@@ -157,7 +157,7 @@ texture = ExtResource( 11 )
 material = SubResource( 3 )
 position = Vector2( 764, 545 )
 frames = SubResource( 2 )
-frame = 2
+frame = 10
 playing = true
 
 [editable path="RoomPerson"]
